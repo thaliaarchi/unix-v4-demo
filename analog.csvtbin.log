@@ -1,0 +1,10 @@
+CSVTBIN version 1.11 compiled on Dec 10 2025 at 13:32:59
+command line: csvtbin analog 
+opening  analog.csv
+creating analog.tbin
+WARNING: using the default track ordering, and marking the .tbin file to show it wasn't given
+input track order: 01234567p
+after 1,000,000 samples, the sample delta is 1.28 usec (1280 nsec), samples start at 5.811225 seconds, and the rounded-up maximum voltage is 5.0V
+
+done; minimum voltage was -4.5V, maximum voltage was 4.5V
+94,827,847 samples representing 121.380 tape seconds were processed in 62.0 seconds
