@@ -2,14 +2,14 @@ vert( )
   52  71        CHAR____  * lcase, * ucase
   53  72        STRUCT______  estack
   54  73        {
-  55  74            INT___  state
+  55  74   1        INT___  state
   56  75            STRUCT______  enode * pstr
   57  76            STRUCT______  etree * node
   58  77        }
 
 
 
-  59  79        STRUCT______  estack stack[ 20 ], * stop
+  59  79        STRUCT______  estack stack[ 20 ], * stop
 
 
 
