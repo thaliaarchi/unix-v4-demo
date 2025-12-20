@@ -1,0 +1,19 @@
+0 :__  
+
+
+
+ 498 552                    /*
+
+ integral with upper & lower limit 
+			
+ 499 554                    */
+
+
+ 500 555                     	( stop - 9 ) -> node = alcopy( 6,( stop - 9 ) -> pstr )
+ 501 556                    (( stop - 9 ) -> node ) -> strr =( stop - 3 ) -> pstr
+ 502 557                     pontr( 2, 9, 1 )
+ 503 558                     pontr( 0, 9, 7 )
+ 504 559                     pontr( 1, 9, 5 )
+ 505 560                     stop =- 8
+ 506 561                    BREAK_____ 
+ 5
