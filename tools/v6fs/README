@@ -1,0 +1,8 @@
+This is supposed to be a FUSE implementation to mount old UNIX filesystems.
+
+I never really finished it 100% but it may still be useful to some.
+Also currently only the V6 format is supported.
+
+Since disk images are loaded into memory and not stored back,
+you cannot currently make new images. Support for that can be added
+rather easily though.
