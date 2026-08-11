@@ -15,7 +15,7 @@
 /* base address */
 #define	KLADDR	0177560
 #define	KLBASE	0176500
-#define	NKL11	4
+#define	NKL11	17
 #define DSRDY	02
 #define	RDRENB	01
 

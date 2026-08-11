@@ -704,6 +704,212 @@ login: root
 
 All 16 lines now work!
 
+## Enable extra KL lines
+
+The KL11/DL11 is what handles the main console, but it also can have extra
+terminal lines.
+
+In SIMH, the main console is the `TTI`/`TTO` device and up to 16 extra lines are
+supported by the `DLI`/`DLO` device. Enable the lines in the SIMH config:
+
+```
+# Extra KL11 terminal lines
+set dli enabled
+set dli lines=16
+attach dli line=0,4016
+attach dli line=1,4017
+attach dli line=2,4018
+attach dli line=3,4019
+attach dli line=4,4020
+attach dli line=5,4021
+attach dli line=6,4022
+attach dli line=7,4023
+attach dli line=8,4024
+attach dli line=9,4025
+attach dli line=10,4026
+attach dli line=11,4027
+attach dli line=12,4028
+attach dli line=13,4029
+attach dli line=14,4030
+attach dli line=15,4031
+```
+
+However, this version of UNIX is configured for 4 KL lines (main console and 3
+extra). Raise `NKL11` to space for 17 KL lines and reconfigure the system with
+`16kl` for 16 extra lines, then rebuild the kernel.
+
+```
+login: bin
+% chdir /usr/sys/dmr
+% ed kl.c
+1609
+/NKL11/p
+#define NKL11   4
+s/4/17/
+w
+1610
+q
+% chdir ../conf
+% mkconf
+rk
+tc
+tm
+16kl
+16dc
+pc
+^D
+% diff conf.c c.c
+% diff low.s l.s
+88a89,118
+.       klin; br4+1+1.
+.       klou; br4+1+1.
+.       klin; br4+1+2.
+.       klou; br4+1+2.
+.       klin; br4+1+3.
+.       klou; br4+1+3.
+.       klin; br4+1+4.
+.       klou; br4+1+4.
+.       klin; br4+1+5.
+.       klou; br4+1+5.
+.       klin; br4+1+6.
+.       klou; br4+1+6.
+.       klin; br4+1+7.
+.       klou; br4+1+7.
+.       klin; br4+1+8.
+.       klou; br4+1+8.
+.       klin; br4+1+9.
+.       klou; br4+1+9.
+.       klin; br4+1+10.
+.       klou; br4+1+10.
+.       klin; br4+1+11.
+.       klou; br4+1+11.
+.       klin; br4+1+12.
+.       klou; br4+1+12.
+.       klin; br4+1+13.
+.       klou; br4+1+13.
+.       klin; br4+1+14.
+.       klou; br4+1+14.
+.       klin; br4+1+15.
+.       klou; br4+1+15.
+% mv c.c conf.c
+% mv l.s low.s
+% chdir ..
+% sh run
+...
+% mv a.out /nunix
+% sync
+% ^E
+Simulation stopped, PC: 014110 (BGE 14176)
+sim> b rk
+k
+nunix
+mem = 64526
+
+login: 
+```
+
+Conventionally the main console is `/dev/tty8` and the first extra terminal is
+`/dev/tty9`. I do not know what the further extra lines would traditionally be
+called, so I assign numbers after the DL assignments.
+
+```
+login: root
+# chdir /dev
+# /etc/mknod tty9 c 0 1
+# /etc/mknod ttyi c 0 2
+# /etc/mknod ttyj c 0 3
+# /etc/mknod ttyk c 0 4
+# /etc/mknod ttyl c 0 5
+# /etc/mknod ttym c 0 6
+# /etc/mknod ttyn c 0 7
+# /etc/mknod ttyo c 0 8
+# /etc/mknod ttyp c 0 9
+# /etc/mknod ttyq c 0 10
+# /etc/mknod ttyr c 0 11
+# /etc/mknod ttys c 0 12
+# /etc/mknod ttyt c 0 13
+# /etc/mknod ttyu c 0 14
+# /etc/mknod ttyv c 0 15
+# /etc/mknod ttyw c 0 16
+# ls -al tty*
+crw--w--w- 1 root    3,  0 Aug 11 14:52 tty0
+crw--w--w- 1 root    3,  1 Aug 11 14:52 tty1
+crw--w--w- 1 root    3,  2 Aug 11 14:52 tty2
+crw--w--w- 1 root    3,  3 Aug 11 14:52 tty3
+crw--w--w- 1 root    3,  4 Aug 11 14:52 tty4
+crw--w--w- 1 root    3,  5 Aug 11 14:52 tty5
+crw--w--w- 1 root    3,  6 Aug 11 14:52 tty6
+crw--w--w- 1 root    3,  7 Aug 11 14:52 tty7
+crw--w--w- 1 root    0,  0 Aug 11 16:30 tty8
+crw-rw-rw- 1 root    0,  1 Aug 11 16:29 tty9
+crw--w--w- 1 root    3,  8 Aug 11 14:52 ttya
+crw--w--w- 1 root    3,  9 Aug 11 14:52 ttyb
+crw--w--w- 1 root    3, 10 Aug 11 14:52 ttyc
+crw--w--w- 1 root    3, 11 Aug 11 14:52 ttyd
+crw--w--w- 1 root    3, 12 Aug 11 14:52 ttye
+crw--w--w- 1 root    3, 13 Aug 11 14:52 ttyf
+crw--w--w- 1 root    3, 14 Aug 11 14:52 ttyg
+crw--w--w- 1 root    3, 15 Aug 11 14:52 ttyh
+crw-rw-rw- 1 root    0,  2 Aug 11 16:29 ttyi
+crw-rw-rw- 1 root    0,  3 Aug 11 16:29 ttyj
+crw-rw-rw- 1 root    0,  4 Aug 11 16:29 ttyk
+crw-rw-rw- 1 root    0,  5 Aug 11 16:29 ttyl
+crw-rw-rw- 1 root    0,  6 Aug 11 16:30 ttym
+crw-rw-rw- 1 root    0,  7 Aug 11 16:30 ttyn
+crw-rw-rw- 1 root    0,  8 Aug 11 16:30 ttyo
+crw-rw-rw- 1 root    0,  9 Aug 11 16:30 ttyp
+crw-rw-rw- 1 root    0, 10 Aug 11 16:30 ttyq
+crw-rw-rw- 1 root    0, 11 Aug 11 16:30 ttyr
+crw-rw-rw- 1 root    0, 12 Aug 11 16:30 ttys
+crw-rw-rw- 1 root    0, 13 Aug 11 16:30 ttyt
+crw-rw-rw- 1 root    0, 14 Aug 11 16:30 ttyu
+crw-rw-rw- 1 root    0, 15 Aug 11 16:30 ttyv
+crw-rw-rw- 1 root    0, 16 Aug 11 16:30 ttyw
+```
+
+Enable the terminals:
+
+```
+# ed /etc/ttys
+72
+/9/
+090
+s/^0/1/
+$a
+1i0
+1j0
+1k0
+1l0
+1m0
+1n0
+1o0
+1p0
+1q0
+1r0
+1s0
+1t0
+1u0
+1v0
+1w0
+.
+w
+132
+q
+# sync
+# ^D
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64526
+
+login: root
+# mv nunix unix
+```
+
+Connecting to any of the ports 4016 to 4031 shows the PiDP-11 banner, but does
+not show a UNIX login prompt.
+
 ## Configure Silent 700
 
 `stty -tabs`

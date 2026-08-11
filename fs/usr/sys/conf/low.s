@@ -86,6 +86,36 @@ br7 = 340
 	dcou; br5+15.
 	klin; br4+1+0.
 	klou; br4+1+0.
+	klin; br4+1+1.
+	klou; br4+1+1.
+	klin; br4+1+2.
+	klou; br4+1+2.
+	klin; br4+1+3.
+	klou; br4+1+3.
+	klin; br4+1+4.
+	klou; br4+1+4.
+	klin; br4+1+5.
+	klou; br4+1+5.
+	klin; br4+1+6.
+	klou; br4+1+6.
+	klin; br4+1+7.
+	klou; br4+1+7.
+	klin; br4+1+8.
+	klou; br4+1+8.
+	klin; br4+1+9.
+	klou; br4+1+9.
+	klin; br4+1+10.
+	klou; br4+1+10.
+	klin; br4+1+11.
+	klou; br4+1+11.
+	klin; br4+1+12.
+	klou; br4+1+12.
+	klin; br4+1+13.
+	klou; br4+1+13.
+	klin; br4+1+14.
+	klou; br4+1+14.
+	klin; br4+1+15.
+	klou; br4+1+15.
 
 //////////////////////////////////////////////////////
 /		interface code to C
