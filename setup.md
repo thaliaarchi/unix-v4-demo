@@ -650,6 +650,60 @@ DCI CSR[14]: 0130200 = CSR_DONE | DCICSR_OVR | DCICSR_RNG | DCICSR_ERR
 DCO CSR[14]: 0000200 = CSR_DONE
 ```
 
+Turns out `NDC11` was reverted, probably from missing `sync` before a reboot or
+forgetting to reapply it after a disk restore.
+
+```
+login: bin
+% chdir /usr/sys/dmr
+% ed dc.c
+3526
+/NDC11/
+#define NDC11   14
+//
+struct  tty dc11[NDC11];
+//
+        if (dev.d_minor >= NDC11) {
+a
+                printf("minor %d > NDC11 %d\n", dev.d_minor, NDC11);
+.
+w
+3581
+q
+```
+
+After rebuilding the kernel and rebooting, this error is repeatedly printed, so
+this was the problem. Fix `NDC11` and remove the print:
+
+```
+login: bin
+% chdir /usr/sys/dmr
+% ed dc.c
+3526
+/NDC11/s/14/16/
+/printf/d
+w
+3526
+q
+% chdir ..
+% sh run
+...
+% mv a.out /nunix
+% ^D
+Simulation stopped, PC: 002240 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64529
+
+login: root
+# mv nunix unix
+# sync
+# 
+```
+
+All 16 lines now work!
+
 ## Configure Silent 700
 
 `stty -tabs`

@@ -14,7 +14,7 @@
 
 /* base address */
 #define	DCADDR	0174000
-#define	NDC11	14
+#define	NDC11	16
 
 /* Control bits */
 #define	CDLEAD	01
