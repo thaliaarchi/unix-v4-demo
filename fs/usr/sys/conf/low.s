@@ -52,8 +52,10 @@ br7 = 340
 
 / floating vectors
 . = 300^.
-	dhin; br5+0.
-	dhou; br5+0.
+	dcin; br5+0.
+	dcou; br5+0.
+	klin; br4+1+0.
+	klou; br4+1+0.
 
 //////////////////////////////////////////////////////
 /		interface code to C
@@ -83,7 +85,8 @@ rkio:	jsr	r0,call; _rkintr
 .globl	_tmintr
 tmio:	jsr	r0,call; _tmintr
 
-.globl	_dhrint
-dhin:	jsr	r0,call; _dhrint
-.globl	_dhxint
-dhou:	jsr	r0,call; _dhxint
+.globl	_dcrint
+dcin:	jsr	r0,call; _dcrint
+.globl	_dcxint
+dcou:	jsr	r0,call; _dcxint
+

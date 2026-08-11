@@ -196,7 +196,7 @@ Consulting conf.c, we see that the kernel is configured with `tm` (TM tape),
 reader/punch):
 
 ```
-# cat /usr/sys/conf/conf.c
+% cat /usr/sys/conf/conf.c
 /*
  *      Copyright 1974 Bell Telephone Laboratories Inc
  */
@@ -229,7 +229,9 @@ We do not need `dh`, as this SIMH does not support it, but we want `dc` (DC11).
 Regenerate conf.c using mkconf, as explained by [Berufsakademie Stuttgart](https://www.tuhs.org/Archive/Distributions/Other/OS_Course/script/chapt1.1):
 
 ```
-# mkconf
+login: bin
+% chdir /usr/sys/conf
+% mkconf
 rk
 tc
 tm
@@ -237,11 +239,66 @@ kl
 dc
 pc
 ^D
-# diff conf.c c.c
+% diff conf.c c.c
 18c18
 *       &dhopen,   &dhclose,   &dhread,   &dhwrite,   &dhsgtty,
 ---
 .       &dcopen,   &dcclose,   &dcread,   &dcwrite,   &dcsgtty,
+```
+
+Rebuild the kernel:
+
+```
+% mv c.c conf.c
+% mv l.s low.s
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% mv a.out /nunix
+% 
 ```
 
 TODO: Setup terminal connections over Telnet.
