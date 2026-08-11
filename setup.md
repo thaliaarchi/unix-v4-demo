@@ -373,3 +373,136 @@ attach dci line=5,4005
 attach dci line=6,4006
 attach dci line=7,4007
 ```
+
+## Enabling all 16 lines
+
+DC11 supports up to 16 lines. Enable the rest in boot.ini:
+
+```
+set dci lines=16
+...
+attach dci line=8,4008
+attach dci line=9,4009
+attach dci line=10,4010
+attach dci line=11,4011
+attach dci line=12,4012
+attach dci line=13,4013
+attach dci line=14,4014
+attach dci line=15,4015
+```
+
+Since the KL console occupies /dev/tty8, further lines are named by letter:
+
+```
+login: root
+# chdir /dev
+# /etc/mknod ttya c 3 8
+# /etc/mknod ttyb c 3 9
+# /etc/mknod ttyc c 3 10
+# /etc/mknod ttyd c 3 11
+# /etc/mknod ttye c 3 12
+# /etc/mknod ttyf c 3 13
+# /etc/mknod ttyg c 3 14
+# /etc/mknod ttyh c 3 15
+# ed /etc/ttys
+56
+1,$p
+100
+110
+120
+130
+140
+150
+160
+170
+180
+090
+0a0
+0b0
+0c0
+0d0
+/a/;$s/^0/1/
+a
+1e0
+1f0
+1g0
+1h0
+.
+w
+72
+q
+```
+
+But when we reboot, the kernel panics:
+
+```
+# sync
+^E
+Simulation stopped, PC: 002140 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64529
+ka6 = 2272
+aps = 141636
+
+```
+
+Restore your disk from a backup.
+
+The `dc(IV)` manual reveals the problem. Not all lines are enabled:
+
+```
+The special files /dev/tty0, /dev/tty1, ...   refer  to  the
+DC11  asynchronous communications interfaces.  At the moment
+there are 12 of them, but the number is subject to change.
+```
+
+Let's fix the `dc` driver. Evidently, by June 1974, the number of DC11 lines
+enabled had grown from 12 to 14. Change this to 16.
+
+```
+login: bin
+% chdir /usr/sys/dmr
+% ed dc.c
+3526
+/NDC11/
+#define NDC11	14
+s/14/16/
+w
+3526
+q
+% 
+```
+
+Rebuild the kernel:
+
+```
+login: bin
+% chdir /usr/sys
+% sh run
+...
+% mv a.out /nunix
+```
+
+Create and enable `tty{a..h}` as above.
+
+And reboot:
+
+```
+% ^E
+Simulation stopped, PC: 002140 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64529
+ka6 = 2222
+aps = 141630
+
+```
+
+Kernel panic!
+
+## Configure Silent 700
+
+`stty -tabs`
