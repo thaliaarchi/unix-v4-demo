@@ -1,0 +1,20 @@
+rm -f low.o mch.o conf.o lib1 lib2
+
+chdir ken
+cc -c *.c
+sh run
+rm *.o
+
+chdir ../dmr
+cc -c *.c
+sh run
+rm *.o
+
+chdir ..
+cc -c conf/conf.c
+mv conf/conf.o conf.o
+as conf/low.s
+mv a.out low.o
+as conf/mch.s
+mv a.out mch.o
+ld -x low.o mch.o conf.o lib1 lib2

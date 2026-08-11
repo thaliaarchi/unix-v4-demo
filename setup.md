@@ -43,3 +43,8 @@ drwxrwxrwx 2 bin        32 Jun 10 09:37 tmp
 login: thalia
 % 
 ```
+
+## Rebuilding the kernel
+
+Follow Angelo's "Rebuilding the kernel (without sys.tp)" instructions, but make
+sure to sign in as the `bin` user.
