@@ -301,4 +301,58 @@ vt.c:
 % 
 ```
 
-TODO: Setup terminal connections over Telnet.
+## Setup terminal lines
+
+Add the device files and enable the first three:
+
+```
+login: root
+# chdir /dev
+# /etc/mknod tty0 c 4 0
+# /etc/mknod tty1 c 4 1
+# /etc/mknod tty2 c 4 2
+# /etc/mknod tty3 c 4 3
+# /etc/mknod tty4 c 4 4
+# /etc/mknod tty5 c 4 5
+# /etc/mknod tty6 c 4 6
+# /etc/mknod tty7 c 4 7
+# ed /etc/ttys
+56
+1,$p
+000
+010
+020
+030
+040
+050
+060
+070
+180
+090
+0a0
+0b0
+0c0
+0d0
+1,4c
+100
+110
+120
+130
+.
+w
+56
+q
+# 
+```
+
+Enable DCI in the SIMH config:
+
+```
+set dci enabled
+set dci lines=8
+set dco0 dataset
+attach dci line=0,4000
+attach dci line=1,4001
+attach dci line=2,4002
+attach dci line=3,4003
+```
