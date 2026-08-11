@@ -157,3 +157,91 @@ brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
 brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
 crw--w--w- 1 root    0,  0 Aug 11 03:46 tty8
 ```
+
+## Setup a terminal multiplexer
+
+To use multiple terminals at once with UNIX, we need to setup a terminal
+multiplexer. By default, we have only the built-in KL11/DL11 console. SIMH
+supports the following terminal devices:
+
+| Device                | SIMH name   | Source               | Lines |
+| --------------------- | ----------- | -------------------- | ----- |
+| DC11                  | `DCI`/`DCO` | PDP11/pdp11_dc.c     | 1–16  |
+| DH11                  | `DH`        | PDP11/pdp11_dh.c     | 16    |
+| DZ11                  | `DZ`        | PDP11/pdp11_dz.c     | ×8    |
+| KL11/DL11 console     | `TTI`/`TTO` | PDP11/pdp11_stddev.c | 1     |
+| extra KL11/DL11 lines | `DLI`/`DLO` | PDP11/pdp11_dl.c     | 0–16  |
+
+The PiDP-11 build I am using is compiled with support for all of these, except
+for DH11:
+
+```
+PDP-11 simulator V4.0-0 Current  REALCONS build Dec  1 2024
+
+sim> show devices
+PDP-11 simulator configuration
+
+CPU     11/70, FPP, RH70, autoconfiguration enabled, idle enabled
+...
+DLI     disabled
+DLO     disabled
+DCI     address=17774000-17774077, vector=300-374*, BR4, lines=8
+DCO     8 units
+DZ      address=17760100-17760137*, vector=400-434*, BR5, lines=32
+...
+```
+
+Consulting conf.c, we see that the kernel is configured with `tm` (TM tape),
+`kl` (KL-11), `rk` (RK disk), `dh` (DH-11), and `pc` (PC-11 paper tape
+reader/punch):
+
+```
+# cat /usr/sys/conf/conf.c
+/*
+ *      Copyright 1974 Bell Telephone Laboratories Inc
+ */
+
+int     (*bdevsw[])()
+{
+        &nulldev,       &nulldev,       &rkstrategy,    &rktab,
+        &nulldev,       &tcclose,       &tcstrategy,    &tctab,
+        &tmopen,        &tmclose,       &tmstrategy,    &tmtab,
+        0
+};
+
+int     (*cdevsw[])()
+{
+        &klopen,   &klclose,   &klread,   &klwrite,   &klsgtty,
+        &nulldev,  &nulldev,   &rkread,   &rkwrite,   &nodev,
+        &tmopen,   &tmclose,   &tmread,   &tmwrite,   &nodev,
+        &dhopen,   &dhclose,   &dhread,   &dhwrite,   &dhsgtty,
+        &pcopen,   &pcclose,   &pcread,   &pcwrite,   &nodev,
+        0
+};
+
+int     rootdev {(0<<8)|0};
+int     swapdev {(0<<8)|0};
+int     swplo   4000;
+int     nswap   872;
+```
+
+We do not need `dh`, as this SIMH does not support it, but we want `dc` (DC11).
+Regenerate conf.c using mkconf, as explained by [Berufsakademie Stuttgart](https://www.tuhs.org/Archive/Distributions/Other/OS_Course/script/chapt1.1):
+
+```
+# mkconf
+rk
+tc
+tm
+kl
+dc
+pc
+^D
+# diff conf.c c.c
+18c18
+*       &dhopen,   &dhclose,   &dhread,   &dhwrite,   &dhsgtty,
+---
+.       &dcopen,   &dcclose,   &dcread,   &dcwrite,   &dcsgtty,
+```
+
+TODO: Setup terminal connections over Telnet.
