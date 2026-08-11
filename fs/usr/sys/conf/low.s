@@ -68,6 +68,22 @@ br7 = 340
 	dcou; br5+6.
 	dcin; br5+7.
 	dcou; br5+7.
+	dcin; br5+8.
+	dcou; br5+8.
+	dcin; br5+9.
+	dcou; br5+9.
+	dcin; br5+10.
+	dcou; br5+10.
+	dcin; br5+11.
+	dcou; br5+11.
+	dcin; br5+12.
+	dcou; br5+12.
+	dcin; br5+13.
+	dcou; br5+13.
+	dcin; br5+14.
+	dcou; br5+14.
+	dcin; br5+15.
+	dcou; br5+15.
 	klin; br4+1+0.
 	klou; br4+1+0.
 

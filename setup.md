@@ -475,14 +475,45 @@ q
 % 
 ```
 
-Rebuild the kernel:
+Rebuild the kernel with 16 lines:
 
 ```
 login: bin
-% chdir /usr/sys
+% chdir /usr/sys/conf
+% mkconf
+rk
+tc
+tm
+kl
+16dc
+pc
+^D
+% diff conf.c c.c
+% diff low.s .#l.s
+70a71,86
+.       dcin; br5+8.
+.       dcou; br5+8.
+.       dcin; br5+9.
+.       dcou; br5+9.
+.       dcin; br5+10.
+.       dcou; br5+10.
+.       dcin; br5+11.
+.       dcou; br5+11.
+.       dcin; br5+12.
+.       dcou; br5+12.
+.       dcin; br5+13.
+.       dcou; br5+13.
+.       dcin; br5+14.
+.       dcou; br5+14.
+.       dcin; br5+15.
+.       dcou; br5+15.
+% mv c.c conf.c
+% mv l.s low.s
+% chdir ..
 % sh run
 ...
-% mv a.out /nunix
+% mv a.out /unix
+% 
 ```
 
 Create and enable `tty{a..h}` as above.
@@ -494,14 +525,37 @@ And reboot:
 Simulation stopped, PC: 002140 (MOV (SP)+,177776)
 sim> b rk
 k
-nunix
+unix
 mem = 64529
-ka6 = 2222
-aps = 141630
 
+login: 
 ```
 
-Kernel panic!
+Connecting to line 13 works, but line 14 hangs before login:
+
+```
+$ telnet 192.168.0.16 4013
+Trying 192.168.0.16...
+Connected to 192.168.0.16.
+Escape character is '^]'.
+
+
+Connected to the PDP-11 simulator DCI device, line 13
+
+
+login: ^]
+telnet> q
+Connection closed.
+$ telnet 192.168.0.16 4014
+Trying 192.168.0.16...
+Connected to 192.168.0.16.
+Escape character is '^]'.
+
+
+Connected to the PDP-11 simulator DCI device, line 14
+
+
+```
 
 ## Configure Silent 700
 
