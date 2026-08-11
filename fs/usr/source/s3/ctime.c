@@ -57,14 +57,14 @@ int	dmsize[12]
 	31
 };
 
-int timezone	5*60*60;
+int timezone	6*60*60;
 int tzname[]
 {
-	"EST",
-	"EDT",
+	"MST",
+	"MDT",
 };
 int	daylight 1;	/* Allow daylight conversion */
-int	nixonflg 1;	/* Daylight time all year around */
+int	nixonflg 0;	/* Daylight time all year around */
 
 #define	SEC	0
 #define	MIN	1

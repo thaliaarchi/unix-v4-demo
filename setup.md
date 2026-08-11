@@ -48,3 +48,47 @@ login: thalia
 
 Follow Angelo's "Rebuilding the kernel (without sys.tp)" instructions, but make
 sure to sign in as the `bin` user.
+
+## Set time zone and date
+
+As detailed in ["Setting up UNIX"](https://www.tuhs.org/Archive/Applications/Dennis_Tapes/Gao_Analysis/v4_dist/setup.pdf):
+
+```
+login: bin
+% ed /usr/source/s3/ctime.c
+3992
+/int timezone/;.+7p
+int timezone    5*60*60;
+int tzname[]
+{
+        "EST",
+        "EDT",
+};
+int     daylight 1;     /* Allow daylight conversion */
+int     nixonflg 1;     /* Daylight time all year around */
+/5\*/s//6*/p
+int timezone    6*60*60;
+/EST/s//MST/p
+        "MST",
+/EDT/s//MDT/p
+        "MDT",
+/nixonflg/s/1/0/p
+int     nixonflg 0;     /* Daylight time all year around */
+w
+3992
+q
+% sh /usr/sys/conf/tmrc
+Cannot creat new file.
+40: Warning: assignment understood
+% ^D
+login: root
+# sh /usr/sys/conf/tmrc
+40: Warning: assignment understood
+```
+
+Set the date with [`date(I)`](http://squoze.net/UNIX/v4man/man1/date):
+
+```
+# date 0811033974
+Sun Aug 11 03:39:00 MDT 1974
+```
