@@ -92,3 +92,68 @@ Set the date with [`date(I)`](http://squoze.net/UNIX/v4man/man1/date):
 # date 0811033974
 Sun Aug 11 03:39:00 MDT 1974
 ```
+
+## Add device files
+
+As detailed in ["Setting up UNIX"](https://www.tuhs.org/Archive/Applications/Dennis_Tapes/Gao_Analysis/v4_dist/setup.pdf):
+
+```
+% ls /dev
+null
+tty8
+% 
+login: root
+# chdir /dev
+# ls -al /dev
+total 2
+drwxr-xr-x 2 bin        64 Jun 10 08:37 .
+drwxr-xr-x 9 bin       176 Aug 11 03:39 ..
+-r--r--r-- 1 bin         0 Jun 10 08:37 null
+crw--w--w- 1 root    0,  0 Jun 12 19:15 tty8
+# /etc/mknod rp0 b 0 0
+# /etc/mknod rp1 b 0 1
+# /etc/mknod rk0 b 1 0
+# /etc/mknod rk1 b 1 1
+# /etc/mknod tap0 b 2 0
+# /etc/mknod tap1 b 2 1
+# /etc/mknod tap2 b 2 2
+# /etc/mknod tap3 b 2 3
+# /etc/mknod tap4 b 2 4
+# /etc/mknod tap5 b 2 5
+# /etc/mknod tap6 b 2 6
+# /etc/mknod tap7 b 2 7
+# /etc/mknod mt0 b 3 0
+# /etc/mknod mt1 b 3 1
+# /etc/mknod mt2 b 3 2
+# /etc/mknod mt3 b 3 3
+# /etc/mknod mt4 b 3 4
+# /etc/mknod mt5 b 3 5
+# /etc/mknod mt6 b 3 6
+# /etc/mknod mt7 b 3 7
+# ls -al
+total 2
+drwxr-xr-x 2 bin       384 Aug 11 03:46 .
+drwxr-xr-x 9 bin       176 Aug 11 03:46 ..
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+-r--r--r-- 1 bin         0 Jun 10 08:37 null
+brw-rw-rw- 1 root    1,  0 Aug 11 03:44 rk0
+brw-rw-rw- 1 root    1,  1 Aug 11 03:44 rk1
+brw-rw-rw- 1 root    0,  0 Aug 11 03:44 rp0
+brw-rw-rw- 1 root    0,  1 Aug 11 03:44 rp1
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 root    0,  0 Aug 11 03:46 tty8
+```
