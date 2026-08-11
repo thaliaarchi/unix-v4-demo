@@ -225,8 +225,9 @@ int     swplo   4000;
 int     nswap   872;
 ```
 
-We do not need `dh`, as this SIMH does not support it, but we want `dc` (DC11).
-Regenerate conf.c using mkconf, as explained by [Berufsakademie Stuttgart](https://www.tuhs.org/Archive/Distributions/Other/OS_Course/script/chapt1.1):
+We do not need `dh`, as this SIMH does not support it, but we want `dc` (DC11)
+with 8 lines. Regenerate conf.c using mkconf, as explained by
+[Berufsakademie Stuttgart](https://www.tuhs.org/Archive/Distributions/Other/OS_Course/script/chapt1.1):
 
 ```
 login: bin
@@ -236,7 +237,7 @@ rk
 tc
 tm
 kl
-dc
+8dc
 pc
 ^D
 % diff conf.c c.c
@@ -244,6 +245,22 @@ pc
 *       &dhopen,   &dhclose,   &dhread,   &dhwrite,   &dhsgtty,
 ---
 .       &dcopen,   &dcclose,   &dcread,   &dcwrite,   &dcsgtty,
+# diff low.s l.s
+56a57,70
+.       dcin; br5+1.
+.       dcou; br5+1.
+.       dcin; br5+2.
+.       dcou; br5+2.
+.       dcin; br5+3.
+.       dcou; br5+3.
+.       dcin; br5+4.
+.       dcou; br5+4.
+.       dcin; br5+5.
+.       dcou; br5+5.
+.       dcin; br5+6.
+.       dcou; br5+6.
+.       dcin; br5+7.
+.       dcou; br5+7.
 ```
 
 Rebuild the kernel:
@@ -308,14 +325,14 @@ Add the device files and enable the first three:
 ```
 login: root
 # chdir /dev
-# /etc/mknod tty0 c 4 0
-# /etc/mknod tty1 c 4 1
-# /etc/mknod tty2 c 4 2
-# /etc/mknod tty3 c 4 3
-# /etc/mknod tty4 c 4 4
-# /etc/mknod tty5 c 4 5
-# /etc/mknod tty6 c 4 6
-# /etc/mknod tty7 c 4 7
+# /etc/mknod tty0 c 3 0
+# /etc/mknod tty1 c 3 1
+# /etc/mknod tty2 c 3 2
+# /etc/mknod tty3 c 3 3
+# /etc/mknod tty4 c 3 4
+# /etc/mknod tty5 c 3 5
+# /etc/mknod tty6 c 3 6
+# /etc/mknod tty7 c 3 7
 # ed /etc/ttys
 56
 1,$p
