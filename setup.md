@@ -557,6 +557,103 @@ Connected to the PDP-11 simulator DCI device, line 14
 
 ```
 
+Let's examine the DCI connections to determine what's wrong. Lines 0 and 1 are
+connected to physical terminals, lines 4 and 14 are connected over telnet, and
+all other lines have no connection.
+
+```
+^E
+Simulation stopped, PC: 002240 (MOV (SP)+,177776)
+sim> show dci connections
+line 0: Connecting to remote port /dev/ttyUSB0;1200-7E1
+Connected to serial port /dev/ttyUSB0;1200-7E1
+ Connected 00:28:25
+line 1: Connecting to remote port /dev/ttyUSB1;9600-8N1
+Connected to serial port /dev/ttyUSB1;9600-8N1
+ Connected 00:28:25
+line 4: Connection from IP address 192.168.0.11
+Connection [192.168.0.16]:4004->[192.168.0.11]:57828
+Listening on port 4004
+ Connected 00:28:14
+ Telnet protocol
+line 14: Connection from IP address 192.168.0.11
+Connection [192.168.0.16]:4014->[192.168.0.11]:57978
+Listening on port 4014
+ Connected 00:00:12
+ Telnet protocol
+```
+
+Testing the CSR registers:
+
+```
+sim> examine dci csr[0]
+CSR[0]: 000125
+sim> examine dco csr[0]
+CSR[0]: 000723
+sim> examine dci csr[1]
+CSR[1]: 000125
+sim> examine dco csr[1]
+CSR[1]: 000721
+sim> examine dci csr[4]
+CSR[4]: 000125
+sim> examine dco csr[4]
+CSR[4]: 000723
+sim> examine dci csr[5]
+CSR[5]: 000111
+sim> examine dco csr[5]
+CSR[5]: 000711
+sim> examine dci csr[14]
+CSR[14]:        130200
+sim> examine dco csr[14]
+CSR[14]:        000200
+sim> 
+```
+
+SIMH pdp11_dc.c and pdp11_defs.h and V4 dc.c reveal the meanings of some of
+these bits:
+
+| SIMH name    | V4 name   | Direction | Bit     | Meaning                   |
+| ------------ | --------- | --------- | ------- | ------------------------- |
+| `CSR_GO`     |           | DCI/DCO   | 0000001 | go                        |
+|              | `SPEED1`  |           | 0000010 | speed select bit 0        |
+|              |           |           | 0000020 | speed select bit 1        |
+|              | `PARITY`  |           | 0000040 |                           |
+| `CSR_IE`     |           | DCI/DCO   | 0000100 | interrupt enable          |
+| `CSR_DONE`   |           | DCI/DCO   | 0000200 | done                      |
+|              | `STOP1`   |           | 0000400 |                           |
+| `CSR_BUSY`   |           | DCI/DCO   | 0004000 | busy                      |
+| `CSR_ERR`    | `ERROR`   | DCI/DCO   | 0100000 | error                     |
+| `DCICSR_DTR` | `CDLEAD`  | DCI       | 0000001 | data terminal ready (DTR) |
+| `DCICSR_XBR` |           | DCI       | 0000002 | transmit break            |
+| `DCICSR_CDT` | `CARRIER` | DCI       | 0000004 | carier detect (CD)        |
+| `DCICSR_PAR` |           | DCI       | 0000040 | odd parity                |
+| `DCICSR_OVR` |           | DCI       | 0010000 | overrun                   |
+| `DCICSR_RNG` | `RINGIND` | DCI       | 0020000 | ring indicator (RI)       |
+| `DCICSR_CCH` | `CTRANS`  | DCI       | 0040000 | carrier change            |
+| `DCICSR_ERR` |           | DCI       | 0100000 | error                     |
+| `DCOCSR_RTS` | `RQSEND`  | DCO       | 0000001 | request to send (RTS)     |
+| `DCOCSR_CTS` |           | DCO       | 0000002 | clear to send (CTS)       |
+| `DCOCSR_MNT` |           | DCO       | 0000004 | maintenance               |
+
+We can see that line 14 does not have DTR/RTS:
+
+```
+DCI CSR[0]:  0000125 = DCICSR_DTR | DCICSR_CDT | SPEED2 | CSR_IE
+DCO CSR[0]:  0000723 = DCOCSR_RTS | DCOCSR_CTS | SPEED2 | CSR_IE | CSR_DONE | STOP1
+DCI CSR[1]:  0000125 = DCICSR_DTR | DCICSR_CDT | SPEED2 | CSR_IE
+DCO CSR[1]:  0000721 = DCOCSR_RTS | SPEED2 | CSR_IE | CSR_DONE | STOP1
+DCI CSR[4]:  0000125 = DCICSR_DTR | DCICSR_CDT | SPEED2 | CSR_IE
+DCO CSR[4]:  0000723 = DCOCSR_RTS | DCOCSR_CTS | SPEED2 | CSR_IE | CSR_DONE | STOP1
+DCI CSR[5]:  0000111 = DCICSR_DTR | SPEED1 | CSR_IE
+DCO CSR[5]:  0000711 = DCOCSR_RTS | SPEED1 | CSR_IE | CSR_DONE | STOP1
+DCI CSR[14]: 0130200 = CSR_DONE | DCICSR_OVR | DCICSR_RNG | DCICSR_ERR
+DCO CSR[14]: 0000200 = CSR_DONE
+```
+
 ## Configure Silent 700
 
 `stty -tabs`
+
+## Mirroring a terminal for a projector
+
+How to connect to a line a second time for read-only projection?
