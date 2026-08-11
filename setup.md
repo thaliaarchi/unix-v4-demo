@@ -350,11 +350,7 @@ login: root
 0b0
 0c0
 0d0
-1,4c
-100
-110
-120
-130
+1,8s/^0/1/
 .
 w
 56
@@ -372,4 +368,8 @@ attach dci line=0,4000
 attach dci line=1,4001
 attach dci line=2,4002
 attach dci line=3,4003
+attach dci line=4,4004
+attach dci line=5,4005
+attach dci line=6,4006
+attach dci line=7,4007
 ```
