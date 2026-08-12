@@ -1394,7 +1394,7 @@ login: bin
 % chdir /usr/source/s1
 % ed getty.s
 2096
-1,20p
+1,60p
 / getty --  get name and tty mode
 / for initialization
 
@@ -1411,15 +1411,6 @@ gtty = 32.
         mov     name+4,r0
         bic     $!26,r0
         mov     r0,flags        / use xtab,cr,ucase from driver
-        jsr     r5,nextspeed
-1:
-        mov     $name,r5
-2:
-?nextspeed?i
-again:
-.
-.,.+23p
-again:
         jsr     r5,nextspeed
 1:
         mov     $name,r5
@@ -1443,7 +1434,10 @@ again:
         movb    r0,(r5)+
         br      2b
 4:
-/1:/;.+10p
+        bis     $20,flags               /cr bit
+        mov     $'\n,r0
+        jsr     pc,putc
+        br      2f
 1:
         mov     $'\r,r0
         jsr     pc,putc
@@ -1455,53 +1449,66 @@ again:
         mov     $name,r5
 1:
         movb    (r5)+,r0
-?clrb?i
-        cmpb    r5,$name
-        beq     aa#gain         / skip empty name
+        beq     1f
+        cmp     r0,$'A
+        blo     2f
+        cmp     r0,$'Z
+        bhi     2f
+        add     $40,r0          / map to lc
+?nextspeed?i
+again:
+.
+/4:/a
+        cmp     r5,$name
+        beq     again                   / skip empty name
+.
+/1:/a
+        cmp     r5,$name
+        beq     again                   / skip empty name
 .
 w
-2148
+2193
 q
 % as getty.s
-% mv /etc/getty /etc/getty.bak
 % mv a.out /etc/getty
-% sync
 % 
-Simulation stopped, PC: 002430 (MOV (SP)+,177776)
-sim> b
-mem = 64526
-
 login: 
-
 login: 
-
 login: 
-
-login: 
-
 login: 
 ```
 
 Or as a patch:
 
 ```diff
+diff --git a/usr/source/s1/getty.s b/usr/source/s1/getty.s
+index 85b2090..b2afaa7 100644
+--- a/usr/source/s1/getty.s
++++ b/usr/source/s1/getty.s
 @@ -14,6 +14,7 @@ gtty = 32.
-        mov     name+4,r0
-        bic     $!26,r0
-        mov     r0,flags        / use xtab,cr,ucase from driver
+ 	mov	name+4,r0
+ 	bic	$!26,r0
+ 	mov	r0,flags	/ use xtab,cr,ucase from driver
 +again:
-        jsr     r5,nextspeed
+ 	jsr	r5,nextspeed
  1:
-        mov     $name,r5
-@@ -45,6 +46,8 @@ gtty = 32.
-        mov     $'\r,r0
-        jsr     pc,putc
+ 	mov	$name,r5
+@@ -37,11 +38,15 @@ gtty = 32.
+ 	movb	r0,(r5)+
+ 	br	2b
+ 4:
++	cmp	r5,$name
++	beq	again			/ skip empty name
+ 	bis	$20,flags		/cr bit
+ 	mov	$'\n,r0
+ 	jsr	pc,putc
+ 	br	2f
+ 1:
++	cmp	r5,$name
++	beq	again			/ skip empty name
+ 	mov	$'\r,r0
+ 	jsr	pc,putc
  2:
-+       cmp     r5,$name
-+       beq     again           / skip empty name
-        clrb    (r5)+
- 
- / determine whether terminal is upper-case only
 ```
 
 ## Configure Silent 700

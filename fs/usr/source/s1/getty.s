@@ -38,16 +38,18 @@ again:
 	movb	r0,(r5)+
 	br	2b
 4:
+	cmp	r5,$name
+	beq	again			/ skip empty name
 	bis	$20,flags		/cr bit
 	mov	$'\n,r0
 	jsr	pc,putc
 	br	2f
 1:
+	cmp	r5,$name
+	beq	again			/ skip empty name
 	mov	$'\r,r0
 	jsr	pc,putc
 2:
-	cmpb	r5,$name
-	beq	again		/ skip empty name
 	clrb	(r5)+
 
 / determine whether terminal is upper-case only
