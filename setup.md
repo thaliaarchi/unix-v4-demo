@@ -1372,6 +1372,138 @@ set dlo13 7b
 set dlo14 7b
 ```
 
+## Fix KL telnet login prompt
+
+The UNIX V4 kl driver is designed for always-connected terminals, not ones over
+dialup like telnet, so it doesn't wait for the terminal to come online and
+immediately prints the prompt. Thus, clients never see the prompt and it appears
+that the connection is stalled.
+
+One solution could be to modify the kl driver to wait for a carrier detect
+signal like dc does. It would need to explicitly exclude the main console from
+this logic, as it is always connected. Fortunately, SIMH supports dataset
+semantics for KL11 with `set dlo0 dataset` for each line. However, the changes
+to the driver would be extensive.
+
+A less invasive approach is to send the login prompt again when a blank line is
+received, instead of attempting to sign in with a blank username, which will
+never work.
+
+```
+login: bin
+% chdir /usr/source/s1
+% ed getty.s
+2096
+1,20p
+/ getty --  get name and tty mode
+/ for initialization
+
+/ cycle through speeds and "login:" messages
+/ summarized in itab
+
+stty = 31.
+gtty = 32.
+
+        sys     signal; 3; 1
+        sys     signal; 2; 1
+        clr     r0
+        sys     gtty; name
+        mov     name+4,r0
+        bic     $!26,r0
+        mov     r0,flags        / use xtab,cr,ucase from driver
+        jsr     r5,nextspeed
+1:
+        mov     $name,r5
+2:
+?nextspeed?i
+again:
+.
+.,.+23p
+again:
+        jsr     r5,nextspeed
+1:
+        mov     $name,r5
+2:
+        jsr     r5,getc
+        cmp     r0,$'\n
+        beq     1f
+        cmp     r0,$'\r
+        beq     4f
+        cmp     r0,$'@
+        beq     1b
+        cmp     r0,$'#
+        bne     3f
+        cmp     r5,$name
+        blos    2b
+        dec     r5
+        br      2b
+3:
+        cmp     r5,$name+30.
+        bhis    2b
+        movb    r0,(r5)+
+        br      2b
+4:
+/1:/;.+10p
+1:
+        mov     $'\r,r0
+        jsr     pc,putc
+2:
+        clrb    (r5)+
+
+/ determine whether terminal is upper-case only
+
+        mov     $name,r5
+1:
+        movb    (r5)+,r0
+?clrb?i
+        cmpb    r5,$name
+        beq     aa#gain         / skip empty name
+.
+w
+2148
+q
+% as getty.s
+% mv /etc/getty /etc/getty.bak
+% mv a.out /etc/getty
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b
+mem = 64526
+
+login: 
+
+login: 
+
+login: 
+
+login: 
+
+login: 
+```
+
+Or as a patch:
+
+```diff
+@@ -14,6 +14,7 @@ gtty = 32.
+        mov     name+4,r0
+        bic     $!26,r0
+        mov     r0,flags        / use xtab,cr,ucase from driver
++again:
+        jsr     r5,nextspeed
+ 1:
+        mov     $name,r5
+@@ -45,6 +46,8 @@ gtty = 32.
+        mov     $'\r,r0
+        jsr     pc,putc
+ 2:
++       cmp     r5,$name
++       beq     again           / skip empty name
+        clrb    (r5)+
+ 
+ / determine whether terminal is upper-case only
+```
+
 ## Configure Silent 700
 
 `stty -tabs`

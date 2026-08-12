@@ -14,6 +14,7 @@ gtty = 32.
 	mov	name+4,r0
 	bic	$!26,r0
 	mov	r0,flags	/ use xtab,cr,ucase from driver
+again:
 	jsr	r5,nextspeed
 1:
 	mov	$name,r5
@@ -45,6 +46,8 @@ gtty = 32.
 	mov	$'\r,r0
 	jsr	pc,putc
 2:
+	cmpb	r5,$name
+	beq	again		/ skip empty name
 	clrb	(r5)+
 
 / determine whether terminal is upper-case only
