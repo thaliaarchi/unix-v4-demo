@@ -1,5 +1,5 @@
-#define	tabsize	32
-#define	all	p = &itab[0]; p < &itab[32]; p++
+#define	tabsize	40
+#define	all	p = &itab[0]; p < &itab[40]; p++
 #define	ever	;;
 #define	ncom	1
 #define	single	0173030
