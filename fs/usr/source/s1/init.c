@@ -1,4 +1,4 @@
-#define	tabsize	20
+#define	tabsize	40
 #define	all	p = &itab[0]; p < &itab[20]; p++
 #define	ever	;;
 #define	ncom	1

@@ -907,8 +907,98 @@ login: root
 # mv nunix unix
 ```
 
-Connecting to any of the ports 4016 to 4031 shows the PiDP-11 banner, but does
-not show a UNIX login prompt.
+Connecting to ports 4016 to 4018 (tty9, ttyi, and ttyj) does not print the UNIX
+login prompt, but is still interactive:
+
+```
+$ telnet localhost 4016
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+
+
+Connected to the PDP-11 simulator DLI device, line 0
+
+ROOT
+# 
+```
+
+Connecting to ports 4019 to 4031 (ttyk to ttyw) shows the PiDP-11 banner, but
+does not print a UNIX login prompt:
+
+```
+$ telnet localhost 4019
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+
+
+Connected to the PDP-11 simulator DLI device, line 3
+
+
+```
+
+Looking at /etc/ttys, it is the first 20 terminals that work:
+
+```
+# cat /etc/ttys
+100
+110
+120
+130
+140
+150
+160
+170
+180
+190
+1a0
+1b0
+1c0
+1d0
+1e0
+1f0
+1g0
+1h0
+1i0
+1j0
+1k0
+1l0
+1m0
+1n0
+1o0
+1p0
+1q0
+1r0
+1s0
+1t0
+1u0
+1v0
+1w0
+```
+
+This is due to a limitation of `init`. It only has slots for 20 ttys and any
+more entries than that in `/etc/ttys` are silently dropped. We need 33 slots,
+but let's double it to 40.
+
+```
+login: bin
+% chdir /usr/source/s1
+% ed init.c
+3114
+1
+#define tabsize 20
+s/20/40/
+w
+3114
+q
+% cc init.c
+% mv a.out /etc/init
+% sync
+% 
+```
+
+But ttys above 20 still fail in the same way.
 
 ## Configure Silent 700
 
