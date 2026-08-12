@@ -1012,6 +1012,25 @@ aps = 141630
 login: 
 ```
 
+Restore from a backup to before overwriting `/etc/init`.
+
+Let's try gradually increasing `tabsize`. Sizes 21 to 32 work:
+
+- 21: up to port 4019
+- 22: up to port 4020
+- 25: up to port 4023
+- 30: up to port 4028
+- 32: up to port 4030
+- 33: kernel panic (ka6 = 5715, aps = 141630)
+- 34: kernel panic (ka6 = 5715, aps = 141630)
+- 35: kernel panic (ka6 = 5715, aps = 141630)
+- 36: kernel panic (ka6 = 5715, aps = 141630)
+- 37: kernel panic (ka6 = 5715, aps = 141630)
+- 38: kernel panic (ka6 = 5715, aps = 141630)
+- 39: kernel panic (ka6 = 5753, aps = 141630)
+- 40: kernel panic (ka6 = 5753, aps = 141630)
+- 50: kernel panic (ka6 = 6011, aps = 141630)
+
 ## Configure Silent 700
 
 `stty -tabs`
