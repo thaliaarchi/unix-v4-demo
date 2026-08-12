@@ -1031,6 +1031,41 @@ Let's try gradually increasing `tabsize`. Sizes 21 to 32 work:
 - 40: kernel panic (ka6 = 5753, aps = 141630)
 - 50: kernel panic (ka6 = 6011, aps = 141630)
 
+The 33rd terminal is ttyw, which has minor number 16. If we set `tabsize` to 32
+and disable ttyv, ttyw becomes active and causes a kernel panic. The problem is
+probably the minor number, not `tabsize`.
+
+```
+login: root
+# ed /usr/source/s1/init.c
+3114
+1
+#define tabsize 32
+q
+# ed /etc/ttys
+132
+^
+1v0
+s/1/0/
+w
+132
+q
+# sync
+# ^E
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64526
+
+ka6 = 5607
+aps = 141630
+login: 
+```
+
+If I set `tabsize` to 33 and reconfigure with 17kl instead of 16kl, then the
+kernel panics with ka6 = 5716, aps = 141630.
+
 ## Configure Silent 700
 
 `stty -tabs`
