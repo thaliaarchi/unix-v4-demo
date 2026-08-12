@@ -1352,6 +1352,26 @@ mem = 64526
 login: 
 ```
 
+SIMH defaults to `UC` uppercase for KL. Switch them to 7-bit, clearing parity:
+
+```
+set dlo0 7b
+set dlo1 7b
+set dlo2 7b
+set dlo3 7b
+set dlo4 7b
+set dlo5 7b
+set dlo6 7b
+set dlo7 7b
+set dlo8 7b
+set dlo9 7b
+set dlo10 7b
+set dlo11 7b
+set dlo12 7b
+set dlo13 7b
+set dlo14 7b
+```
+
 ## Configure Silent 700
 
 `stty -tabs`
