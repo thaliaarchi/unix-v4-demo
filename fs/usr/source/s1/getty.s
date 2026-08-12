@@ -14,7 +14,6 @@ gtty = 32.
 	mov	name+4,r0
 	bic	$!26,r0
 	mov	r0,flags	/ use xtab,cr,ucase from driver
-again:
 	jsr	r5,nextspeed
 1:
 	mov	$name,r5
@@ -38,15 +37,11 @@ again:
 	movb	r0,(r5)+
 	br	2b
 4:
-	cmp	r5,$name
-	beq	again			/ skip empty name
 	bis	$20,flags		/cr bit
 	mov	$'\n,r0
 	jsr	pc,putc
 	br	2f
 1:
-	cmp	r5,$name
-	beq	again			/ skip empty name
 	mov	$'\r,r0
 	jsr	pc,putc
 2:
