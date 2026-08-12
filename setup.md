@@ -1066,6 +1066,222 @@ login:
 If I set `tabsize` to 33 and reconfigure with 17kl instead of 16kl, then the
 kernel panics with ka6 = 5716, aps = 141630.
 
+By adding logging to `klopen`, `klrint`, and `klxint`, excluding device minor 0
+to avoid cycles, we see that `klopen(16)` is called, but never `klxint(16)`,
+while all others call `klxint`.
+
+```
+k
+unix
+mem = 64526
+
+klopen 1
+klxint 1
+klxint 1
+klxint 1
+klopen 2
+klxint 2
+klxint 2
+klxint 2
+klopen 3
+klxint 3
+klxint 3
+klxint 3
+klopen 4
+klxint 4
+klxint 4
+klxint 4
+klopen 5
+klxint 5
+klxint 5
+klopen 6
+klxint 6
+klopen 7
+klxint 7
+klopen 8
+klxint 8
+klopen 9
+klxint 9
+klopen 10
+klxint 10
+klopen 11
+klxint 11
+klopen 12
+klxint 12
+klxint 5
+klxint 6
+klxint 6
+klxint 7
+klxint 7
+klxint 8
+klxint 8
+klxint 9
+klxint 9
+klxint 10
+klxint 10
+klxint 11
+klxint 11
+klxint 12
+klxint 12
+klopen 13
+klxint 13
+klxint 13
+klxint 13
+klopen 14
+klxint 14
+klxint 14
+klxint 14
+klopen 15
+klxint 15
+klxint 15
+klxint 15
+klopen 16
+ka6 = 5717
+aps = 141630
+klxint 1
+klxint 1
+lklxint 1
+oklxint 1
+gklxint 1
+iklxint 1
+nklxint 1
+:klxint 1
+ klxint 1
+klxint 1
+klxint 2
+klxint 2
+klxint 2
+klxint 2
+klxint 2
+klxint 2
+klxint 2
+klxint 2
+klxint 2
+klxint 2
+klxint 3
+klxint 3
+klxint 3
+klxint 3
+klxint 3
+klxint 3
+klxint 3
+klxint 3
+klxint 3
+klxint 3
+klxint 4
+klxint 4
+klxint 4
+klxint 4
+klxint 4
+klxint 4
+klxint 4
+klxint 4
+klxint 4
+klxint 4
+klxint 5
+klxint 5
+klxint 5
+klxint 5
+klxint 5
+klxint 5
+klxint 5
+klxint 5
+klxint 5
+klxint 5
+klxint 6
+klxint 6
+klxint 6
+klxint 6
+klxint 6
+klxint 6
+klxint 6
+klxint 6
+klxint 6
+klxint 6
+klxint 7
+klxint 7
+klxint 7
+klxint 7
+klxint 7
+klxint 7
+klxint 7
+klxint 7
+klxint 7
+klxint 7
+klxint 8
+klxint 8
+klxint 8
+klxint 8
+klxint 8
+klxint 8
+klxint 8
+klxint 8
+klxint 8
+klxint 8
+klxint 9
+klxint 9
+klxint 9
+klxint 9
+klxint 9
+klxint 9
+klxint 9
+klxint 9
+klxint 9
+klxint 9
+klxint 10
+klxint 10
+klxint 10
+klxint 10
+klxint 10
+klxint 10
+klxint 10
+klxint 10
+klxint 10
+klxint 10
+klxint 11
+klxint 11
+klxint 11
+klxint 11
+klxint 11
+klxint 11
+klxint 11
+klxint 11
+klxint 11
+klxint 11
+klxint 12
+klxint 12
+klxint 12
+klxint 12
+klxint 12
+klxint 12
+klxint 12
+klxint 12
+klxint 12
+klxint 13
+klxint 13
+klxint 13
+klxint 13
+klxint 13
+klxint 13
+klxint 13
+klxint 13
+klxint 14
+klxint 14
+klxint 14
+klxint 14
+klxint 14
+klxint 14
+klxint 14
+klxint 15
+klxint 15
+klxint 15
+klxint 15
+klxint 15
+klxint 15
+ka6 = 5717
+aps = 141564
+```
+
 ## Configure Silent 700
 
 `stty -tabs`
