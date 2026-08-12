@@ -986,19 +986,31 @@ login: bin
 % chdir /usr/source/s1
 % ed init.c
 3114
-1
-#define tabsize 20
-s/20/40/
+g/20/s//40/p
+#define tabsize 40
+#define all     p = &itab[0]; p < &itab[40]; p++
 w
 3114
 q
 % cc init.c
 % mv a.out /etc/init
 % sync
-% 
 ```
 
-But ttys above 20 still fail in the same way.
+Kernel panic!
+
+```
+% ^E
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64526
+
+ka6 = 5753
+aps = 141630
+login: 
+```
 
 ## Configure Silent 700
 
