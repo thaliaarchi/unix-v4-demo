@@ -1,4 +1,7 @@
 #define FUSE_USE_VERSION 31
+#ifdef __APPLE__
+#define FUSE_DARWIN_ENABLE_EXTENSIONS 0
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,7 +12,11 @@
 #include <fcntl.h>
 #include <dirent.h>
 #include <time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#ifdef __linux__
 #include <sys/sysmacros.h>
+#endif
 
 
 #define nil NULL
