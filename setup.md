@@ -1385,6 +1385,121 @@ this logic, as it is always connected. Fortunately, SIMH supports dataset
 semantics for KL11 with `set dlo0 dataset` for each line. However, the changes
 to the driver would be extensive.
 
+## Fix `/dev/null`
+
+`/dev/null` is a regular file, but simply adding a file in `/dev` as shown by
+[aap](http://squoze.net/UNIX/v4/README) fails:
+
+```
+login: root
+# chdir /dev
+# ls -l dev
+-r--r--r-- 1 bin         0 Jun 10 08:37 null
+# echo hi >/dev/null
+# ls -l null
+-r--r--r-- 1 bin         3 Aug 16 13:49 null
+# cat /dev/null
+hi
+# rm -f null
+# /etc/mknod null c 1 2
+# ls -l null
+crw-rw-rw- 1 root    1,  2 Aug 16 13:54 null
+# echo hi >null
+Bad system call -- Core dumped
+# cat null
+```
+
+Looking at the V5 devices reveals that V5 has mem as device major 1:
+
+```diff
+diff --git a/Utah_v4/usr/sys/conf/conf.c b/Dennis_v5/usr/sys/conf/conf.c
+index f12dee9..57a9101 100644
+--- a/Utah_v4/usr/sys/conf/conf.c
++++ b/Dennis_v5/usr/sys/conf/conf.c
+@@ -5,17 +5,15 @@
+ int	(*bdevsw[])()
+ {
+ 	&nulldev,	&nulldev,	&rkstrategy, 	&rktab,
+-	&nulldev,	&tcclose,	&tcstrategy, 	&tctab,
+-	&tmopen,	&tmclose,	&tmstrategy, 	&tmtab,
+ 	0
+ };
+ 
+ int	(*cdevsw[])()
+ {
+ 	&klopen,   &klclose,   &klread,   &klwrite,   &klsgtty,
++	&nulldev,  &nulldev,   &mmread,   &mmwrite,   &nodev,
+ 	&nulldev,  &nulldev,   &rkread,   &rkwrite,   &nodev,
+-	&tmopen,   &tmclose,   &tmread,   &tmwrite,   &nodev,
+-	&dhopen,   &dhclose,   &dhread,   &dhwrite,   &dhsgtty,
+ 	&pcopen,   &pcclose,   &pcread,   &pcwrite,   &nodev,
++	&dcopen,   &dcclose,   &dcread,   &dcwrite,   &dcsgtty,
+ 	0
+ };
+```
+
+Reconfigure with mem as device 5, the next available device major:
+
+```
+login: bin
+% chdir /usr/sys/conf
+% mkconf
+rk
+tc
+tm
+16kl
+16dc
+pc
+mem
+^D
+% diff conf.c c.c
+19a20
+.       &nulldev,  &nulldev,   &mmread,   &mmwrite,   &nodev,
+% diff low.s l.s
+% mv c.c conf.c
+% mv l.s low.s
+% chdir ..
+% sh run
+...
+% mv a.out /nunix
+% sync
+% ^E
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64526
+
+login: 
+```
+
+In addition to `/dev/null`, mem also supports `/dev/mem` and `/dev/kmem`. Add
+device files for them:
+
+```
+# ed /usr/sys/dmr/mem.c
+1076
+1,23p
+6;/\*\//p
+/*
+ *      Memory special file
+ *      minor device 0 is physical memory
+ *      minor device 1 is kernel memory
+ *      minor device 2 is EOF/RATHOLE
+ */
+q
+# chdir /dev
+# rm -f null
+# /etc/mknod null c 5 2
+# /etc/mknod mem c 5 0
+# /etc/mknod kmem c 5 1
+# echo hi >/dev/null
+# cat /dev/null
+# ps a
+ f     0
+# 
+```
+
 ## Configure Silent 700
 
 `stty -tabs`

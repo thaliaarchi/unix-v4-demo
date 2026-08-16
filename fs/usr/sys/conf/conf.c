@@ -17,6 +17,7 @@ int	(*cdevsw[])()
 	&tmopen,   &tmclose,   &tmread,   &tmwrite,   &nodev,
 	&dcopen,   &dcclose,   &dcread,   &dcwrite,   &dcsgtty,
 	&pcopen,   &pcclose,   &pcread,   &pcwrite,   &nodev,
+	&nulldev,  &nulldev,   &mmread,   &mmwrite,   &nodev,
 	0
 };
 
