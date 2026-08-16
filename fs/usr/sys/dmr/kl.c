@@ -34,7 +34,6 @@ klopen(dev, flag)
 	register struct tty *tp;
 
 	if(dev.d_minor >= NKL11) {
-		printf("dev.d_minor %d > %d NKL11\n", dev.d_minor, NKL11);
 		u.u_error = ENXIO;
 		return;
 	}
