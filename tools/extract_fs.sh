@@ -6,17 +6,33 @@ if [[ ! -f tools/v6fs/v6fs ]]; then
 fi
 
 cleanup() {
-  umount fs
+  umount mnt
+  rmdir mnt
   git restore fs
 }
 trap cleanup EXIT
 
 git rm -qrf --ignore-unmatch fs
-rm -rf fs
-mkdir fs
+rm -rf fs mnt
+mkdir mnt
 
-tools/v6fs/v6fs -f -r disk.rk fs &
+tools/v6fs/v6fs -f -r disk.rk mnt &
 sleep 1
+
+mkdir fs
+find mnt -mindepth 1 -print0 |
+while IFS= read -r -d '' src; do
+  dest="fs/${src#mnt/}"
+  if [[ -d "$src" ]]; then
+    mkdir -p "$dest"
+  elif [[ -f "$src" || -L "$src" ]]; then
+    mkdir -p "${dest%/*}"
+    cp -Pp "$src" "$dest"
+  else # devices
+    mkdir -p "${dest%/*}"
+    touch -r "$src" "$dest"
+  fi
+done
 
 git -c core.ignorecase=false add -f disk.rk fs
 if ! git diff --quiet --staged; then
