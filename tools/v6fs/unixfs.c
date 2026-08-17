@@ -204,7 +204,7 @@ vfs_read(fuse_req_t req, fuse_ino_t ino, size_t size,
 
 	buf = malloc(size);
 	n = fs_read(ino, buf, off, size);
-	reply_buf_limited(req, buf, n, off, size);
+	fuse_reply_buf(req, buf, n);
 	free(buf);
 }
 
