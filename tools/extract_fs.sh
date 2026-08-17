@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -eEuo pipefail
 
+date="$(date +'%Y-%m-%d %H:%M:%S')"
+message_date="${date%:*}"
+cp -a disk.rk disk.rk.mnt
+
 if [[ ! -f tools/v6fs/v6fs ]]; then
   make -C tools/v6fs
 fi
@@ -8,6 +12,7 @@ fi
 cleanup() {
   umount mnt
   rmdir mnt
+  rm disk.rk.mnt
   git restore fs
 }
 trap cleanup EXIT
@@ -16,7 +21,7 @@ git rm -qrf --ignore-unmatch fs
 rm -rf fs mnt
 mkdir mnt
 
-tools/v6fs/v6fs -f -r disk.rk mnt &
+tools/v6fs/v6fs -f -r disk.rk.mnt mnt &
 sleep 1
 
 mkdir fs
@@ -36,5 +41,6 @@ done
 
 git -c core.ignorecase=false add -f disk.rk fs
 if ! git diff --quiet --staged; then
-  git commit -qm "Filesystem snapshot $(date +'%Y-%m-%d %H:%M')"
+  GIT_AUTHOR_DATE="$date" GIT_COMMITTER_DATE="$date" \
+  git commit -qm "Filesystem snapshot $message_date"
 fi
