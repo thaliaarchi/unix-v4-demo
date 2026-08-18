@@ -114,3 +114,31 @@ for (;;) {
 % 
 Disconnected from the PDP-11 simulator
 
+
+
+Connected to the PDP-11 simulator DCI device, line 4
+
+
+;login: thalia
+% who
+thalia  tty4 Aug 18 12:52
+% who
+root    tty1 Aug 18 12:53
+thalia  tty4 Aug 18 12:52
+% echo hi > /dev/tty12##
+% echo hi > /dev/tty1
+% ed logo
+?
+a
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+.
+w
+171
+q
+% 
+Disconnected from the PDP-11 simulator
+

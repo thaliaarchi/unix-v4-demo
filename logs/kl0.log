@@ -3912,4 +3912,124 @@ NAME: SYN
 LOGIN INCORRECT.
 NAME: ROOT
 # SYNC
-#                                                    
+#                                                    Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 13:46:20 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 13:48:24 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att ptr lrc_2026.txt
+sim> c
+
+LOGIN INCORRECT.
+NAME: 
+LOGIN INCORRECT.
+NAME: 
+;login: thalia
+% ls
+hints
+logo
+mullender.c
+rfc4
+s
+thanks
+% rm s
+% cat thanks
+thank_you
+from_darpa_dan
+% cat /dev/pt > lrc2026
+% cat lrc2026
+% cat /dev/ptr > lrc2026
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> detach ptr
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 15:56:06 2026
+boot.ini-25> attach dci line=4,4004
+Can't open network port: 4004
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> attach ptr lrc_2026.txt
+sim> c
+cat /dev/ptr > lrc2026
+Login incorrect.
+Name: thalia
+% cat /dev/ptr > lrc2026
+cat % lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% sync
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed

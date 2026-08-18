@@ -3134,3 +3134,277 @@ o888ooooo88 o888o  88o8  888oooo88
 
 
 % 
+;login: 
+;login: xroot
+Login incorrect.
+Name: 
+Login incorrect.
+Name: qrot@    @root
+Login incorrect.
+Name: root
+# H@hi
+
+# 
+;login: thalia
+% cat logo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+%      2  0  2  6
+2: not found
+% 
+% 
+% 
+% 
+% cat lr#ogo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+%           2  0  2  6
+% 
+% cat lrc##ogo; cat logo; cat l;o##ogo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+% catlogo@cat logo logo logo logo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+% echo> s
+% cat logo s logo s logo s logo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+% echo >> s
+% cat logo s logo s logo slo##logo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+% ed s
+0
+a
+
+
+/#.
+1,$p
+
+
+w
+2
+q
+% cat ;lo###@cat logo s logo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+
+
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+% ed s
+2
+d
+w
+1
+q
+% cat logo s logo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+% cat logo s logo s logo s logo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+% 1234567890123456789012345678901234567890123456789012345678901234567890123456789
+;login: root@
+Login incorrect.
+Name: thalia
+% ls
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88          sr	pc,iarg
+
+	br	loop
+
+
+
+out:
+
+	inc	nflg
+	mov	$2,obuf
+
+	clr	obuf+2
+	clr	obuf+4
+	clr	obuf+6
+	jsr	pc,nline
+	jsr	pc,nline
+	jsr	pc,pfile
+	mov	line,r0
+
+	mov	line+2,r1
+
+	jsr	pc,decml
+	jsr	pc,nline
+	jsr	r5,flush; obuf
+	sys	exit
+
+
+loop:
+	mov	$lbuf,r1
+	mov	$elbuf-1,r2
+
+	mov	$'\n,r3
+
+	mov	gc4,r4
+	mov	gc5,r5
+1:
+
+	dec	r4
+	bge	2f
+
+
+fread:
+
+	mov	gcf,r0
+	sys	read; ibuf; 51% 
+% 
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% 
