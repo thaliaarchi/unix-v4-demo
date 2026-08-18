@@ -1,0 +1,2872 @@
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: hello
+Login incorrect.
+Name: thalia
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% hello
+hello: not found
+% world
+world: not found
+% hi this is neat!
+hi: not found
+% t
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+boot.ini-101> o
+Invalid argument
+q
+
+Simulation stopped, PC: 137636 (BGE 137634)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% date 08180223
+Sun Aug 18 02:23:00 MDT 1974
+% ls
+hints
+mullender.c
+% chdir hints
+% ls
+semantics
+syntax
+% chdir semantics
+% ls
+mullender.s
+% cat mu        
+% cat m*
+pdp:
+        mov     pc,r4
+        tst     -(r4)
+        sub     $9,r4
+        ls
+mov     r4,0f
+        mov     $1, r0
+        sys     4; 0:0; 9
+        mov     $1000, r2
+1:
+        sys     55
+        sob     r2, 1b
+        br      pdp
+% mullender.s
+% chdir ..
+% ls
+semantics
+syntax
+% chdir sync#tax
+% ls
+% ed 1.#
+?
+1#a
+Hint: `long` @Hint: S#`shot#rt` (#@Hint: The short type was introdued ###ced in V7 to assist in porting@Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.
+.
+1,$p
+Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.
+w
+237
+q
+% ls
+1
+% mv 1 ../syntax1`#
+% ls
+% chdir ..
+% rmdir hi##syntax
+% ls
+semantics
+syntax1
+% ed syntax2
+?
+a
+Hint: Array declarations@Hint: Array in C as of UNIX V4 were declared without equals, e.g.,
+
+        int a[] {1, 2, 3};
+.
+1,$p
+Hint: Array in C as of UNIX V4 were declared without equals, e.g.,
+
+        int a[] {1, 2, 3};
+w
+88
+q
+% ls
+semantics
+syntax1
+syntax2
+% ed syntax #3
+?
+a
+Hint: 0x hexadecmi@Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+.
+1,$p
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+d
+1,$p
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+w
+119
+q
+% ls
+semantics
+syntax1
+syntax2
+syntax3
+% mv syntax3 syntax31#a
+% ls
+semantics
+syntax1
+syntax2
+syntax3a
+% ed syntax3b
+?
+q
+% ed syntax3a
+119
+1,$P
+?
+1,$p
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+a
+
+Octal was the preferred base for expressing bit patterns, a tradition inherited
+from earlier systems. Despite the 16-bit word size not being divisible by 3 (3
+bits per octal digit), all PDP-11 documentation used octal. Note that the
+switches on the PiDP-11 front panel are colored in groups of three, denoting
+octal digits.
+.
+1,$p
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+Octal was the preferred base for expressing bit patterns, a tradition inherited
+from earlier systems. Despite the 16-bit word size not being divisible by 3 (3
+bits per octal digit), all PDP-11 documentation used octal. Note that the
+switches on the PiDP-11 front panel are colored in groups of three, denoting
+octal digits.
+w
+444
+q
+% sync
+% ls
+semantics
+syntax1
+syntax2
+syntax3a
+% ed ../mullender.c
+469
+/0xbef/s/3055/
+?
+p
+        'p', 072163, 'r', 29303, 29801, 'e' };
+/0xbef/s//3055/
+ls
+?
+p
+        277, 04735, -4129, 25, 0, 477, 1019, 3055, 0, 12800,
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+/0x4bc/s//1212/
+?
+/0x4bc/s//1212/
+?
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+        277, 04735, -4129, 25, 0, 477, 1019, 3055, 0, 12800,
+        -113, 21119, 21207, -1006, -7151, 0, 1212, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+        4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+        32386, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+q
+% ls
+semantics
+syntax1
+syntax2
+syntax3a
+% ed ed1
+?
+a
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+q
+.
+q
+% ed syntax3b
+?
+a
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+.
+w
+331
+q
+% ls
+semantics
+syntax1
+syntax2
+syntax3a
+syntax3b
+% cd semantics
+cd: not found
+% ls
+semantics
+syntax1
+syntax2
+syntax3a
+syntax3b
+% chdir semantics
+% ls
+mullender.s
+% mv mullender.s ..
+% chdir ..
+% rmdir m#semantics
+% ls
+mullender.s
+syntax1
+syntax2
+syntax3a
+syntax3b
+% cat mullender.s
+pdp:
+        mov     pc,r4
+        tst     -(r4)
+        sub     $9,r4
+        mov     r4,0f
+        mov     $1, r0
+        sys     4; 0:0; 9
+        mov     $1000, r2
+1:
+        sys     55
+        sob     r2, 1b
+        br      pdp
+% ls
+mullender.s
+syntax1
+syntax2
+syntax3a
+syntax3b
+% as mullender.s
+% sync
+% a@@@ed mullender.dis
+?
+q
+% ed mullender.das
+?
+a
+000000: 010704                  mov     pc,r4
+000002: 005744                  tst     -(r4)
+000004: 162704 000011           sub     $11,r4
+000010: 010467 000006           mov     r4,22
+000014: 012700 000001           mov     $1,r0
+000020: 104404                  trap    4
+000022: 000000                  0
+000024: 000011                  11
+000026: 012702 001000           mov     $1000,r2
+000032: 104455                  trap    55
+000034: 077202                  sob     r2,32
+000036: 000760                  br      0
+.
+w
+327
+q
+% ls
+a.out
+mullender.das
+mullender.s
+syntax1
+syntax2
+syntax3a
+syntax3b
+% ;#ls -al
+total 9
+drwxrwxrwx 2 thalia    144 Aug 18 03:02 .
+drwxrwxrwx 3 thalia     64 Aug 16 23:40 ..
+-rwxrwxrwx 1 thalia     92 Aug 18 02:55 a.out
+-rw-rw-rw- 1 thalia    327 Aug 18 03:02 mullender.das
+-rw-rw-rw- 1 thalia    122 Aug 18 02:52 mullender.s
+-rw-rw-rw- 1 thalia    237 Aug 18 02:33 syntax1
+-rw-rw-rw- 1 thalia     88 Aug 18 02:37 syntax2
+-rw-rw-rw- 1 thalia    444 Aug 18 02:48 syntax3a
+-rw-rw-rw- 1 thalia    331 Aug 18 02:52 syntax3b
+% ed compile1
+?
+a
+Hint: Compile it @Hint: Compile mullender.c with
+        cc mullender.c
+or mullender.s with
+        as mullender.s
+The output is placed at a.out.
+.
+.s
+?
+1,$p
+Hint: Compile mullender.c with
+        cc mullender.c
+or mullender.s with
+        as mullender.s
+The output is placed at a.out.
+^
+        as mullender.s
+^
+or mullender.s with
+s/or/or assemble/p
+or assemble mullender.s with
+w
+123
+q
+% cat compile1
+Hint: Compile mullender.c with
+        cc mullender.c
+or assemble mullender.s with
+        as mullender.s
+The output is placed at a.out.
+% ls
+a.out
+compile1
+mullender.das
+mullender.s
+syntax1
+syntax2
+syntax3a
+syntax3b
+% w#ed asmsyntax1
+?
+a
+Hint: Numbers in PDP-11 assembly are in octal by default, unless they are
+suffixed with a period (.), making them decimal. Period does not mean floating
+point, although the PDP-11 did have floating point.
+.
+w
+205
+q
+% cat asmsyntax1
+Hint: Numbers in PDP-11 assembly are in octal by default, unless they are
+suffixed with a period (.), making them decimal. Period does not mean floating
+point, although the PDP-11 did have floating point.
+% ls
+a.out
+asmsyntax1
+compile1
+mullender.das
+mullender.s
+syntax1
+syntax2
+syntax3a
+syntax3b
+% sync
+% rm a.out
+% ed sya#s1
+?
+a
+q
+ls
+q
+q
+.
+q
+% ls
+asmsyntax1
+compile1
+mullender.das
+mullender.s
+syntax1
+syntax2
+syntax3a
+syntax3b
+% ed semantics1
+?
+q
+% mkdir 1compile
+% mv compile1 com###1compile/hint
+% s#ls -al 1compile/hint
+-rw-rw-rw- 1 thalia    123 Aug 18 03:08 1compile/hint
+% date
+Sun Aug 18 03:09:02 MDT 1974
+% ls -l
+total 8
+drwxrwxrwx 2 thalia     48 Aug 18 03:08 1compile
+-rw-rw-rw- 1 thalia    205 Aug 18 03:06 asmsyntax1
+-rw-rw-rw- 1 thalia    327 Aug 18 03:02 mullender.das
+-rw-rw-rw- 1 thalia    122 Aug 18 02:52 mullender.s
+-rw-rw-rw- 1 thalia    237 Aug 18 02:33 syntax1
+-rw-rw-rw- 1 thalia     88 Aug 18 02:37 syntax2
+-rw-rw-rw- 1 thalia    444 Aug 18 02:48 syntax3a
+-rw-rw-rw- 1 thalia    331 Aug 18 02:52 syntax3b
+% mkdir 2sn#yntax
+% ls
+1compile
+2syntax
+asmsyntax1
+mullender.das
+mullender.s
+syntax1
+syntax2
+syntax3a
+syntax3b
+% mv asmsyntax1 @mv syntax1 syn###2syntax/hint1
+% mv 3#syntax2 s#2syntax/hint2
+% mv syntax2#3 2syntax/i#hint3
+Source file non-existent
+% ls
+1compile
+2syntax
+asmsyntax1
+mullender.das
+mullender.s
+syntax3a
+syntax3b
+% mv syntax2#3a 2syntax/hint3a
+% mv syntax3b 2syntax/hint3b
+% ls
+1compile
+2syntax
+asmsyntax1
+mullender.das
+mullender.s
+% mkdir 3semantics
+% mv asmsyntax1 sema####3semantics/hint1
+% ed se##3semantics/hint1
+205
+1,$o
+?
+1,$p
+Hint: Numbers in PDP-11 assembly are in octal by default, unless they are
+suffixed with a period (.), making them decimal. Period does not mean floating
+point, although the PDP-11 did have floating point.
+q
+% mv hint1 hint2
+Source file non-existent
+% ed @
+% mv s#3semantics
+Usage: mv name1 name2
+% mv hint@chdir 3semantics
+% s
+s: not found
+% ls
+hint1
+% mv hint1 hint2
+% ed hint1
+?
+a
+Hint: The early C compiler did not check the type of main and the C runtime
+simply jumped to main. This definition is interpreted as PDP-11 machine code.
+.
+1,$p
+Hint: The early C compiler did not check the type of main and the C runtime
+simply jumped to main. This definition is interpreted as PDP-11 machine code.
+w
+154
+q
+% ls
+hint1
+hint2
+% ed hint2
+205
+1,$c
+Hint: The assembly code corresponding to the PDP-11 portion of the program is at
+mullender.s. A disassembly of it, showing the octal values of the words, is at
+mullender.das.
+
+Numbers in PDP-11 assembly are in octal by default, unless they are
+suffixed with a period (.), making them decimal. Period does not mean floating
+point, although the PDP-11 did have floating point.
+.
+w
+375
+q
+% ls
+hint1
+hint2
+% ed hint@
+% ;s@ls
+hint1
+hint2
+% ed hint3
+?
+a
+q
+.
+q
+% chdir ..
+% ls
+1compile
+2syntax
+3semantics
+mullender.das
+mullender.s
+% chirdir @chdir ..
+% ls
+hints
+mullender.c
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: lUnexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ls
+lls: not found
+% ls
+hints
+mullender.c
+% chdir hints
+% ls
+1compile
+2syntax
+3semantics
+mullender.das
+mullender.s
+% mkdir 4 #debug
+% ls
+1compile
+2syntax
+3semantics
+4debug
+mullender.das
+mullender.s
+% mkdir 5solution
+% mv mullender* 4debug/
+Usage: mv name1 name2
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.das
+mullender.s
+% mv mullender.das 4debug
+% mv mu* 4*
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% mv 4debug/*.s 3se*
+% m #v 4*/* 3*
+Usage: mv name1 name2
+% mv 4debug/* 3*
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% ls 3I*
+No match
+% ls e*
+No match
+% ls 3(#*
+hint1
+hint2
+mullender.das
+mullender.s
+% chdir 3de##4deug@chdir 5solution
+% ls
+% ed mullender@m@ed mullc4##v4.c
+?
+a
+/* Portable between VAX11 && PDP11 */
+int main[] {
+        277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+        -113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+        4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30440,
+        0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '\#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+.
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+        277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+        -113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+        4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30440,
+        0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+w
+465
+q
+% cc mullv4.c
+3: Expression syntax
+3: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ed mullv4.c
+465
+!cat ../stn##yntax/hint2
+!
+!cat ../sy##2syntax/hint3
+!
+q
+% ls
+mullv4.c
+% chdir ../2syntax
+% ls
+hint1
+hint2
+hint3a
+hint3b
+% cat hint2
+Hint: Array in C as of UNIX V4 were declared without equals, e.g.,
+
+        int a[] {1, 2, 3};
+% cat hint3a
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+Octal was the preferred base for expressing bit patterns, a tradition inherited
+from earlier systems. Despite the 16-bit word size not being divisible by 3 (3
+bits per octal digit), all PDP-11 documentation used octal. Note that the
+switches on the PiDP-11 front panel are colored in groups of three, denoting
+octal digits.
+% cat hint3b
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+% chdir ../5solution
+% ed mullv.#4.c
+465
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+w
+465
+q
+% cc mullv4.c
+% a.out
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)Quit -- Core dumped
+% ls
+a.out
+core
+mullv4.c
+% rm a.out core
+% ls
+mullv4.c
+% chdir ..
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir semantics
+chdir: bad directory
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir 3semantics
+% ls
+hint1
+hint2
+mullender.das
+mullender.s
+% ed algorithm.c
+?
+a
+for (;;) {
+        write(1, "  :-)\b\b\b\b", 9);
+        delay();
+}
+.
+w
+54
+q
+% ls
+algorithm.c
+hint1
+hint2
+mullender.das
+mullender.s
+% rm algorithm.c
+% d#ed hint.c@ed hint3
+?
+a
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+        write(1, "  :-)\b\b\b\b", 9);
+        delay();
+}
+.
+1,$p
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+        write(1, "  :-)\b\b\b\b", 9);
+        delay();
+}
+w
+315
+q
+% ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% chdir ../
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir 4debug
+% ls
+% ed hint1
+?
+a
+!cc mullender.c
+q
+q
+D
+
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+        write(1, "  :-)\b\b\b\b", 9);
+        delay();
+}
+.
+w
+339
+q
+% ls
+hint1
+% rm int1
+int1: non existent
+% rm hint1
+% chdir ../..
+% ls
+hints
+mullender.c
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef unchddefined
+11: x6176 undefined
+11: ix4bc undefined
+11: x8r undefined
+11: x9 u ndefined
+11: x52d7 undefined
+11: x7e82 undefined
+% hints/solution
+chdir: bad directory
+% chdir hints/so##5solution
+% ls
+mullv4.c
+% cc mullv4.c
+% ls
+a.out
+mullv4.c
+% mv a.out@a.out
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)
+% 
+% ls
+a.out
+mullv4.c
+% chdiur .@chdir ..
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir debug
+chdir: bad directory
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir 4deug##buf@@
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir 2syna#tax
+tax: not found
+% chdir 2syntax
+% cat ../../mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+        277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+        -113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+        4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+        0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+% ed solution.c
+?
+a
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+        277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+        -113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+        4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+        0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };.#
+.
+%
+?
+^
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+^
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, ',
+s/ @s/,#@s/,$/\#',/p
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+w
+525
+q
+% ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% ed solution.c
+525
+!cat hint3b
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+!
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+ls
+?
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+        277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+        -113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+        4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+        077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+/int@/short/s//int/
+/=/
+int main[] = {
+s/-?
+s/=//p
+int main[]  {
+s/  / /p
+int main[] {
+w
+521
+q
+% cc mullender@cc solution.c
+% a.out
+  :-)Bad system call -- Core dumped
+% ls
+a.out
+core
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% rm a.out core
+% ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% chdir ../3semantics
+% ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% chdir ../4e#debug
+% .s
+.s: not found
+% ls
+% ed hint1
+?
+a
+Hint: Now that it compiles, run it. What's broken?
+
+% cc solution.c
+% a.out
+ Bad system call -- Core dumped
+.
+w
+108
+q
+% ed hint1#2
+?
+ls
+?
+a
+q
+ls
+mv
+q
+.
+q
+% ls
+hint1
+% cat hint1
+Hint: Now that it compiles, run it. What's broken?
+
+% cc solution.c
+% a.out
+ Bad system call -- Core dumped
+% mv hint1 hint1a@
+% edhi@ed hint2
+?
+a
+Hint: The space before "Bad system call" is suspicious. Is it from another
+print?
+.
+w
+82
+q
+% ls
+hint1
+hint2
+% ed hint2@mv hint2 hint2a
+% ls
+hint1
+hint2a
+% ed hint2b
+?
+e#a
+!cc 
+q
+
+.
+q
+% ls
+hint1
+hint2a
+% chdir ../3@2syntax
+2syntax: not found
+% ls
+hint1
+hint2a
+% chdir ../2stn##yntax
+% ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% chdir ../4debug
+% ed hint1
+108
+ls
+?
+1,$p
+Hint: Now that it compiles, run it. What's broken?
+
+% cc solution.c
+% a.out
+ Bad system call -- Core dumped
+/solution/s//mullender/
+w
+109
+a
+.
+$a
+ @
+You can @If you want to skip fixing the syntax, you can start with 2syntax/solution.c.
+.
+.
+If you want to skip fixing the syntax, you can start with 2syntax/solution.c.
+w
+188
+q
+% ls
+hint1
+hint2a
+% ed hint2b@
+% ls
+hint1
+hint2a
+% cc ../2syntax.solution.c
+File not found: ../2syntax.solution.c
+un: _main
+% cc ../2syntax/solution.c
+% a.out
+  :-)Bad system call -- Core dumped
+% a.out >/dev/null
+Bad system call -- Core dumped
+% a.otu 2>/dev/null
+a.otu: not found
+% a.out 2>/dev/null
+Bad system call -- Core dumped
+% a.out > /dev/jull
+/dev/jull: cannot create
+% a.out > /dev/null
+Bad system call -- Core dumped
+% a.out > a
+Bad system call -- Core dumped
+% ls
+a
+a.out
+core
+hint1
+hint2a
+% cat a
+  :-)% 
+% a.out > out
+Bad system call -- Core dumped
+% cat out
+  :-)% cat out && echo
+247
+%   :-)
+% a.out > out
+Bad system call -- Core dumped
+% cat out && echo
+250
+%   :-)cat out ;echo
+  :-)% 
+% cat out; echo
+  :-)% 
+% 
+% 
+% 
+% a.out > out
+Bad system call -- Core dumped
+% out
+out: not found
+% cat out
+  :-)% 
+% ls
+a
+a.out
+core
+hint1
+hint2a
+out
+% ed hint2b
+?
+a
+Hint: You can isolate the text printed by the program from the error by
+redirecting to a file. Note that the prompt overlaps with the text, since it
+backspaces and does not end with a line feed.
+
+% a.out > out
+Bad system call -- Core dumped
+% cat out
+ % -)
+
+.
+d
+1,$p
+Hint: You can isolate the text printed by the program from the error by
+redirecting to a file. Note that the prompt overlaps with the text, since it
+backspaces and does not end with a line feed.
+
+% a.out > out
+Bad system call -- Core dumped
+% cat out
+ % -)
+w
+257
+ls
+?
+q
+% ls
+a
+a.out
+core
+hint1
+hint2a
+hint2b
+out
+% rm a a.out core out
+% ls
+hint1
+hint2a
+hint2b
+% ls -al
+total 5
+drwxrwxrwx 2 thalia    144 Aug 18 03:41 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-rw-rw- 1 thalia    188 Aug 18 03:36 hint1
+-rw-rw-rw- 1 thalia     82 Aug 18 03:34 hint2a
+-rw-rw-rw- 1 thalia    257 Aug 18 03:41 hint2b
+% chmod 644 *
+% ls -al
+total 5
+drwxrwxrwx 2 thalia    144 Aug 18 03:41 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-r--r-- 1 thalia    188 Aug 18 03:41 hint1
+-rw-r--r-- 1 thalia     82 Aug 18 03:41 hint2a
+-rw-r--r-- 1 thalia    257 Aug 18 03:41 hint2b
+% chmod ..
+arg count
+% ls
+hint1
+hint2a
+hint2b
+% chdir ..
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chmod 644@chmod 64@chmod 755 *
+% s @ls a-@ls -l
+total 5
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 1compile
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 2syntax
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 3semantics
+drwxr-xr-x 2 thalia    144 Aug 18 03:42 4debug
+drwxr-xr-x 2 thalia     96 Aug 18 03:42 5solution
+% chmod @ls a-l@ls -al @@ls a@ls -al om##1compile
+total 3
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-rw-rw- 1 thalia    123 Aug 18 03:08 hint
+% ls -al 2syntax
+total 8
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-rw-rw- 1 thalia    237 Aug 18 03:09 hint1
+-rw-rw-rw- 1 thalia     88 Aug 18 03:09 hint2
+-rw-rw-rw- 1 thalia    444 Aug 18 03:10 hint3a
+-rw-rw-rw- 1 thalia    331 Aug 18 03:10 hint3b
+-rw-rw-rw- 1 thalia    521 Aug 18 03:31 solution.c
+% ls -al 3semantics
+total 7
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-rw-rw- 1 thalia    154 Aug 18 03:14 hint1
+-rw-rw-rw- 1 thalia    375 Aug 18 03:16 hint2
+-rw-rw-rw- 1 thalia    315 Aug 18 03:26 hint3
+-rw-rw-rw- 1 thalia    327 Aug 18 03:19 mullender.das
+-rw-rw-rw- 1 thalia    122 Aug 18 03:19 mullender.s
+% chmod 1compile@chmod 644 1comiple####pile/* 2syntax/* 3semantics/*
+% ls -al 3debug/*
+No directory
+% ls -al 4/#debug
+total 5
+drwxr-xr-x 2 thalia    144 Aug 18 03:42 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-r--r-- 1 thalia    188 Aug 18 03:41 hint1
+-rw-r--r-- 1 thalia     82 Aug 18 03:41 hint2a
+-rw-r--r-- 1 thalia    257 Aug 18 03:41 hint2b
+% chm@ls -al *
+
+1compile:
+total 3
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-r--r-- 1 thalia    123 Aug 18 03:43 hint
+
+2syntax:
+total 8
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-r--r-- 1 thalia    237 Aug 18 03:43 hint1
+-rw-r--r-- 1 thalia     88 Aug 18 03:43 hint2
+-rw-r--r-- 1 thalia    444 Aug 18 03:43 hint3a
+-rw-r--r-- 1 thalia    331 Aug 18 03:43 hint3b
+-rw-r--r-- 1 thalia    521 Aug 18 03:43 solution.c
+
+3semantics:
+total 7
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-r--r-- 1 thalia    154 Aug 18 03:43 hint1
+-rw-r--r-- 1 thalia    375 Aug 18 03:43 hint2
+-rw-r--r-- 1 thalia    315 Aug 18 03:43 hint3
+-rw-r--r-- 1 thalia    327 Aug 18 03:43 mullender.das
+-rw-r--r-- 1 thalia    122 Aug 18 03:43 mullender.s
+
+4debug:
+total 5
+drwxr-xr-x 2 thalia    144 Aug 18 03:42 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rw-r--r-- 1 thalia    188 Aug 18 03:41 hint1
+-rw-r--r-- 1 thalia     82 Aug 18 03:41 hint2a
+-rw-r--r-- 1 thalia    257 Aug 18 03:41 hint2b
+
+5solution:
+total 4
+drwxr-xr-x 2 thalia     96 Aug 18 03:42 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rwxrwxrwx 1 thalia    248 Aug 18 03:27 a.out
+-rw-rw-rw- 1 thalia    465 Aug 18 03:21 mullv4.c
+% chmod 5solution/644@chmo #d 644 6#5*
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir 4#4#5*
+chdir: bad directory
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir 5*
+chdir: bad directory
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir 5*
+chdir: bad directory
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir 5solution
+chdir: bad directory
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% mv *5* 5solution
+Directory target exists.
+% chdir@mv *@chdir 5solution
+chdir: bad directory
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% ls -al
+total 7
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 .
+drwxrwxrwx 3 thalia     64 Aug 16 23:40 ..
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 1compile
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 2syntax
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 3semantics
+drwxr-xr-x 2 thalia    144 Aug 18 03:42 4debug
+drw-r--r-- 2 thalia     96 Aug 18 03:43 5solution
+% chmod 755 5solution
+% chdir 5solution
+% ls -al
+total 4
+drwxr-xr-x 2 thalia     96 Aug 18 03:44 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rwxrwxrwx 1 thalia    248 Aug 18 03:27 a.out
+-rw-rw-rw- 1 thalia    465 Aug 18 03:21 mullv4.c
+% chmod 644 m*
+% chmod 755 a*
+% ls -al
+total 4
+drwxr-xr-x 2 thalia     96 Aug 18 03:44 .
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 ..
+-rwxr-xr-x 1 thalia    248 Aug 18 03:44 a.out
+-rw-r--r-- 1 thalia    465 Aug 18 03:44 mullv4.c
+% chdir ..
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% chdir ..
+% ls
+hints
+mullender.c
+% ls -al
+total 4
+drwxrwxrwx 3 thalia     64 Aug 16 23:40 .
+drwxr-xr-x16 bin       256 Jun 12 18:51 ..
+drwxrwxrwx 7 thalia    176 Aug 18 03:20 hints
+-rw-rw-rw- 1 thalia    469 Aug 16 23:40 mullender.c
+% chd#mod 644 m*
+% ls
+hints
+mullender.c
+% chmod 755 hints
+% ls -al
+total 4
+drwxrwxrwx 3 thalia     64 Aug 16 23:40 .
+drwxr-xr-x16 bin       256 Jun 12 18:51 ..
+drwxr-xr-x 7 thalia    176 Aug 18 03:45 hints
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+% chdir ..
+% l
+l: not found
+% ls 
+adm
+bin
+c
+fort
+games
+lib
+lpd
+mdec
+pub
+sno
+source
+sychs
+thalia
+tmp
+% mod 755 thalia
+% ls a@ls -al
+total 16
+drwxr-xr-x16 bin       256 Jun 12 18:51 .
+drwxr-xr-x 9 bin       192 Aug 16 14:11 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     64 Aug 18 03:45 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% chdir thalia
+% ls
+hints
+mullender.c
+% chdir i#hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% h#chdir 5solution
+% ls
+a.out
+mullv4.c
+% chdir 4debug
+chdir: bad directory
+% h@chdir ../4*
+chdir: bad directory
+% ls
+a.out
+mullv4.c
+% chdir ../4*
+chdir: bad directory
+% ls
+a.out
+mullv4.c
+% chdir ../4debug
+% ls
+hint1
+hint2a
+hint2b
+% cat hint2b
+Hint: You can isolate the text printed by the program from the error by
+redirecting to a file. Note that the prompt overlaps with the text, since it
+backspaces and does not end with a line feed.
+
+% a.out > out
+Bad system call -- Core dumped
+% cat out
+ % -)
+% ed hint3
+?
+a
+Hint: You'll want to read kernel source code. Ask me fr ##or pointers :).
+.
+w
+70
+q
+% cat  hint3
+Hint: You'll want to read kernel source code. Ask me for pointers :).
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+ls
+hint1
+hint2a
+hint2b
+hint3
+% chdir ..
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+% ed resources
+?
+a
+Useful resources for mullender.c:
+-#https://www.ioccc.org/1984/mullender/
+        https://lainsystems.com/posts/exploring-mullender-dot-c/
+        https://lainsystems.com/mullender-excerpt.pdf
+.
+2s/^/   /p
+        https://www.ioccc.org/1984/mullender/
+1,$p
+Useful resources for mullender.c:
+        https://www.ioccc.org/1984/mullender/
+        https://lainsystems.com/posts/exploring-mullender-dot-c/
+        https://lainsystems.com/mullender-excerpt.pdf
+w
+178
+q
+% .
+.: not found
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+date 08180353
+Sun Aug 18 03:53:00 MDT 1974
+% at tc1 nroff.tp
+at: not found
+% a
+a: not found
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att tc1 nroff.tp
+TC1: 16b format, buffering file in memory
+sim> c
+chdir /usr/source/s7
+% tp lt
+Bad usage
+END
+% tp lt
+Bad usage
+END
+% tp 1t
+Tape read error
+END
+% ls -al /dev
+total 3
+drwxr-xr-x 2 bin       928 Aug 16 14:12 .
+drwxr-xr-x 9 bin       192 Aug 16 14:11 ..
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+brw-rw-rw- 1 root    1,  0 Aug 11 03:44 rk0
+brw-rw-rw- 1 root    1,  1 Aug 11 03:44 rk1
+brw-rw-rw- 1 root    0,  0 Aug 11 03:44 rp0
+brw-rw-rw- 1 root    0,  1 Aug 11 03:44 rp1
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 root    3,  0 Aug 17 00:34 tty0
+crw--w--w- 1 root    3,  1 Aug 17 00:34 tty1
+crw--w--w- 1 root    3,  2 Aug 17 00:34 tty2
+crw--w--w- 1 root    3,  3 Aug 17 00:34 tty3
+crw--w--w- 1 root    3,  4 Aug 17 00:34 tty4
+crw--w--w- 1 root    3,  5 Aug 17 00:34 tty5
+crw--w--w- 1 root    3,  6 Aug 17 00:34 tty6
+crw--w--w- 1 root    3,  7 Aug 17 00:34 tty7
+crw--w--w- 1 thalia  0,  0 Aug 18 03:53 tty8
+crw--w--w- 1 root    0,  1 Aug 18 03:53 tty9
+crw--w--w- 1 root    3,  8 Aug 17 00:34 ttya
+crw--w--w- 1 root    3,  9 Aug 17 00:34 ttyb
+crw--w--w- 1 root    3, 10 Aug 17 00:34 ttyc
+crw--w--w- 1 root    3, 11 Aug 17 00:34 ttyd
+crw--w--w- 1 root    3, 12 Aug 17 00:34 ttye
+crw--w--w- 1 root    3, 13 Aug 17 00:34 ttyf
+crw--w--w- 1 root    3, 14 Aug 17 00:34 ttyg
+crw--w--w- 1 root    3, 15 Aug 17 00:34 ttyh
+crw--w--w- 1 root    0,  2 Aug 18 03:53 ttyi
+crw--w--w- 1 root    0,  3 Aug 18 03:53 ttyj
+crw--w--w- 1 root    0,  4 Aug 18 03:53 ttyk
+crw--w--w- 1 root    0,  5 Aug 18 03:53 ttyl
+crw--w--w- 1 root    0,  6 Aug 18 03:53 ttym
+crw--w--w- 1 root    0,  7 Aug 18 03:53 ttyn
+crw--w--w- 1 root    0,  8 Aug 18 03:53 ttyo
+crw--w--w- 1 root    0,  9 Aug 18 03:53 ttyp
+crw--w--w- 1 root    0, 10 Aug 18 03:53 ttyq
+crw--w--w- 1 root    0, 11 Aug 18 03:53 ttyr
+crw--w--w- 1 root    0, 12 Aug 18 03:53 ttys
+crw--w--w- 1 root    0, 13 Aug 18 03:53 ttyt
+crw--w--w- 1 root    0, 14 Aug 18 03:53 ttyu
+crw--w--w- 1 root    0, 15 Aug 18 03:53 ttyv
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att tc1 nroff.tp
+TC1: 16b format, buffering file in memory
+sim> c
+tp 1t
+Tape read error
+END
+% 
+% tp 1t
+Tape read error
+END
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 04:02:25 2026
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-22> attach dci line=1,4001
+%SIM-INFO: Line 1 Listening on port 4001
+boot.ini-23> attach dci line=2,4002
+%SIM-INFO: Line 2 Listening on port 4002
+boot.ini-24> attach dci line=3,4003
+%SIM-INFO: Line 3 Listening on port 4003
+boot.ini-25> attach dci line=4,4004
+%SIM-INFO: Line 4 Listening on port 4004
+boot.ini-26> attach dci line=5,4005
+%SIM-INFO: Line 5 Listening on port 4005
+boot.ini-27> attach dci line=6,4006
+%SIM-INFO: Line 6 Listening on port 4006
+boot.ini-28> attach dci line=7,4007
+%SIM-INFO: Line 7 Listening on port 4007
+boot.ini-29> attach dci line=8,4008
+%SIM-INFO: Line 8 Listening on port 4008
+boot.ini-30> attach dci line=9,4009
+%SIM-INFO: Line 9 Listening on port 4009
+boot.ini-31> attach dci line=10,4010
+%SIM-INFO: Line 10 Listening on port 4010
+boot.ini-32> attach dci line=11,4011
+%SIM-INFO: Line 11 Listening on port 4011
+boot.ini-33> attach dci line=12,4012
+%SIM-INFO: Line 12 Listening on port 4012
+boot.ini-34> attach dci line=13,4013
+%SIM-INFO: Line 13 Listening on port 4013
+boot.ini-35> attach dci line=14,4014
+%SIM-INFO: Line 14 Listening on port 4014
+boot.ini-36> attach dci line=15,4015
+%SIM-INFO: Line 15 Listening on port 4015
+boot.ini-57> attach dli line=0,4016
+%SIM-INFO: Line 0 Listening on port 4016
+boot.ini-58> attach dli line=1,4017
+%SIM-INFO: Line 1 Listening on port 4017
+boot.ini-59> attach dli line=2,4018
+%SIM-INFO: Line 2 Listening on port 4018
+boot.ini-60> attach dli line=3,4019
+%SIM-INFO: Line 3 Listening on port 4019
+boot.ini-61> attach dli line=4,4020
+%SIM-INFO: Line 4 Listening on port 4020
+boot.ini-62> attach dli line=5,4021
+%SIM-INFO: Line 5 Listening on port 4021
+boot.ini-63> attach dli line=6,4022
+%SIM-INFO: Line 6 Listening on port 4022
+boot.ini-64> attach dli line=7,4023
+%SIM-INFO: Line 7 Listening on port 4023
+boot.ini-65> attach dli line=8,4024
+%SIM-INFO: Line 8 Listening on port 4024
+boot.ini-66> attach dli line=9,4025
+%SIM-INFO: Line 9 Listening on port 4025
+boot.ini-67> attach dli line=10,4026
+%SIM-INFO: Line 10 Listening on port 4026
+boot.ini-68> attach dli line=11,4027
+%SIM-INFO: Line 11 Listening on port 4027
+boot.ini-69> attach dli line=12,4028
+%SIM-INFO: Line 12 Listening on port 4028
+boot.ini-70> attach dli line=13,4029
+%SIM-INFO: Line 13 Listening on port 4029
+boot.ini-71> attach dli line=14,4030
+%SIM-INFO: Line 14 Listening on port 4030
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: se
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> set tc enabled
+sim> set tc disabled
+sim> set tc enabled
+sim> show tc
+TC      address=17777340-17777351, vector=214, BR6, 8 units
+  TC0   147KW, not attached, write enabled
+        16b
+  TC1   147KW, not attached, write enabled
+        16b
+  TC2   147KW, not attached, write enabled
+        16b
+  TC3   147KW, not attached, write enabled
+        16b
+  TC4   147KW, not attached, write enabled
+        16b
+  TC5   147KW, not attached, write enabled
+        16b
+  TC6   147KW, not attached, write enabled
+        16b
+  TC7   147KW, not attached, write enabled
+        16b
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 10:19:11 2026
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-23> attach dci line=2,4002
+%SIM-INFO: Line 2 Listening on port 4002
+boot.ini-24> attach dci line=3,4003
+%SIM-INFO: Line 3 Listening on port 4003
+boot.ini-25> attach dci line=4,4004
+%SIM-INFO: Line 4 Listening on port 4004
+boot.ini-26> attach dci line=5,4005
+%SIM-INFO: Line 5 Listening on port 4005
+boot.ini-27> attach dci line=6,4006
+%SIM-INFO: Line 6 Listening on port 4006
+boot.ini-28> attach dci line=7,4007
+%SIM-INFO: Line 7 Listening on port 4007
+boot.ini-29> attach dci line=8,4008
+%SIM-INFO: Line 8 Listening on port 4008
+boot.ini-30> attach dci line=9,4009
+%SIM-INFO: Line 9 Listening on port 4009
+boot.ini-31> attach dci line=10,4010
+%SIM-INFO: Line 10 Listening on port 4010
+boot.ini-32> attach dci line=11,4011
+%SIM-INFO: Line 11 Listening on port 4011
+boot.ini-33> attach dci line=12,4012
+%SIM-INFO: Line 12 Listening on port 4012
+boot.ini-34> attach dci line=13,4013
+%SIM-INFO: Line 13 Listening on port 4013
+boot.ini-35> attach dci line=14,4014
+%SIM-INFO: Line 14 Listening on port 4014
+boot.ini-36> attach dci line=15,4015
+%SIM-INFO: Line 15 Listening on port 4015
+boot.ini-57> attach dli line=0,4016
+%SIM-INFO: Line 0 Listening on port 4016
+boot.ini-58> attach dli line=1,4017
+%SIM-INFO: Line 1 Listening on port 4017
+boot.ini-59> attach dli line=2,4018
+%SIM-INFO: Line 2 Listening on port 4018
+boot.ini-60> attach dli line=3,4019
+%SIM-INFO: Line 3 Listening on port 4019
+boot.ini-61> attach dli line=4,4020
+%SIM-INFO: Line 4 Listening on port 4020
+boot.ini-62> attach dli line=5,4021
+%SIM-INFO: Line 5 Listening on port 4021
+boot.ini-63> attach dli line=6,4022
+%SIM-INFO: Line 6 Listening on port 4022
+boot.ini-64> attach dli line=7,4023
+%SIM-INFO: Line 7 Listening on port 4023
+boot.ini-65> attach dli line=8,4024
+%SIM-INFO: Line 8 Listening on port 4024
+boot.ini-66> attach dli line=9,4025
+%SIM-INFO: Line 9 Listening on port 4025
+boot.ini-67> attach dli line=10,4026
+%SIM-INFO: Line 10 Listening on port 4026
+boot.ini-68> attach dli line=11,4027
+%SIM-INFO: Line 11 Listening on port 4027
+boot.ini-69> attach dli line=12,4028
+%SIM-INFO: Line 12 Listening on port 4028
+boot.ini-70> attach dli line=13,4029
+%SIM-INFO: Line 13 Listening on port 4029
+boot.ini-71> attach dli line=14,4030
+%SIM-INFO: Line 14 Listening on port 4030
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% ed rfc4
+?
+a
+Network Working Group                                   Elmer B. Shapiro
+Request for Comment: 4                       Stanford Research Institute
+Category: Informational                                    24 March 1969
+
+
+                           Network Timetable
+
+
+1  (n10) network checkout
+
+2  Installation of communcation gear 8/1/69
+
+   2a  From AT&T and/or BBN need dimensional, power and cabling
+   specifications
+
+   2b  Need to establish SRI desired alternate locations so as to
+   determine maximum telco cable lengths
+
+   2c  Need to establish location and drops on voice coordination
+   circuits
+
+   2d  Need circuit information on voice drops for tie to intercom
+   system
+
+   2e  Need to order and install a.c. power (coordinate with 4b)
+
+   2f  See 16
+
+3  Design and construct hospecificationrdware loop test
+
+4  Imp installation 9/15/69
+
+   4a  from BBN get dimImp interface 10/1/69
+
+   5a  Get debug specifiatirams tfer tests
+
+       5c1  Verify transfers to Imp
+
+       5c2  Verify transfers3  Verify transfer    |
+                |
+                |
+                |
+                |
+                |
+        Fault reporting
+
+   6c  Test integrity of messages
+
+   6d  Test sequence oeasure3  Hosts
+
+   6i  Develop net trouble reporting sch
+   7a  Network config      ective
+
+   7d  Develop voice coordination sc
+       7d1  Three wayoute message     7e3d  UCSB-I,--UTAH
+               | .
+               |   .
+               |     .
+               |       |            
+       8b1  All of 6
+       8b UTAH has access to UCLAems
+
+   9a  Single user access  From host
+
+         9b1a  A,C to Bb3  Vaor mes   9g  File uivalent
+
+10  Run simple typewriter systems
+
+   10a  Same as 9c - 9gthout local feedba
+   14a  Fault detection
+of result
+
+       14a3  Comparison wit  14b1  Comm-Imp cb5a  Use dialup Daned messages
+
+   14c  Cause determination
+
+   14d  Cause correction
+.
+w
+2011
+q
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+ed rfc4
+2011
+c#1,$c
+a#Network Working Group                                   Elmer B. Shapiro
+Request for Comment: 4                       Stanford Research Institute
+Category: Informational                                    24 March 1969
+
+
+                           Network Timetable
+
+
+1  (n10) network checkout
+
+2  Installation of communcation gear 8/1/69
+
+   2a  From AT&T and/or BBN need dimensional, power and cabling
+   specifications
+
+   2b  Need to establish SRI desired alternate locations so as to
+   determine maximum telco cable lengths
+
+   2c  Need to establish location and drops on voice coordination
+   circuits
+
+   2d  Need circuit information on voice drops for tie to intercom
+   system
+
+   2e  Need to order and install a.c. power (coordinate with 4b)
+
+   2f  See 16
+
+3  Design and construct hospecificationrdware loop test
+.
+q
+% ed rfc4.@
+% rm rfc4
+% ls
+hints
+mullender.c
+% ed rt#fc@
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att pp
+Too few arguments
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 10:24:21 2026
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-23> attach dci line=2,4002
+%SIM-INFO: Line 2 Listening on port 4002
+boot.ini-24> attach dci line=3,4003
+%SIM-INFO: Line 3 Listening on port 4003
+boot.ini-25> attach dci line=4,4004
+%SIM-INFO: Line 4 Listening on port 4004
+boot.ini-26> attach dci line=5,4005
+%SIM-INFO: Line 5 Listening on port 4005
+boot.ini-27> attach dci line=6,4006
+%SIM-INFO: Line 6 Listening on port 4006
+boot.ini-28> attach dci line=7,4007
+%SIM-INFO: Line 7 Listening on port 4007
+boot.ini-29> attach dci line=8,4008
+%SIM-INFO: Line 8 Listening on port 4008
+boot.ini-30> attach dci line=9,4009
+%SIM-INFO: Line 9 Listening on port 4009
+boot.ini-31> attach dci line=10,4010
+%SIM-INFO: Line 10 Listening on port 4010
+boot.ini-32> attach dci line=11,4011
+%SIM-INFO: Line 11 Listening on port 4011
+boot.ini-33> attach dci line=12,4012
+%SIM-INFO: Line 12 Listening on port 4012
+boot.ini-34> attach dci line=13,4013
+%SIM-INFO: Line 13 Listening on port 4013
+boot.ini-35> attach dci line=14,4014
+%SIM-INFO: Line 14 Listening on port 4014
+boot.ini-36> attach dci line=15,4015
+%SIM-INFO: Line 15 Listening on port 4015
+boot.ini-57> attach dli line=0,4016
+%SIM-INFO: Line 0 Listening on port 4016
+boot.ini-58> attach dli line=1,4017
+%SIM-INFO: Line 1 Listening on port 4017
+boot.ini-59> attach dli line=2,4018
+%SIM-INFO: Line 2 Listening on port 4018
+boot.ini-60> attach dli line=3,4019
+%SIM-INFO: Line 3 Listening on port 4019
+boot.ini-61> attach dli line=4,4020
+%SIM-INFO: Line 4 Listening on port 4020
+boot.ini-62> attach dli line=5,4021
+%SIM-INFO: Line 5 Listening on port 4021
+boot.ini-63> attach dli line=6,4022
+%SIM-INFO: Line 6 Listening on port 4022
+boot.ini-64> attach dli line=7,4023
+%SIM-INFO: Line 7 Listening on port 4023
+boot.ini-65> attach dli line=8,4024
+%SIM-INFO: Line 8 Listening on port 4024
+boot.ini-66> attach dli line=9,4025
+%SIM-INFO: Line 9 Listening on port 4025
+boot.ini-67> attach dli line=10,4026
+%SIM-INFO: Line 10 Listening on port 4026
+boot.ini-68> attach dli line=11,4027
+%SIM-INFO: Line 11 Listening on port 4027
+boot.ini-69> attach dli line=12,4028
+%SIM-INFO: Line 12 Listening on port 4028
+boot.ini-70> attach dli line=13,4029
+%SIM-INFO: Line 13 Listening on port 4029
+boot.ini-71> attach dli line=14,4030
+%SIM-INFO: Line 14 Listening on port 4030
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: root
+# 
+;login: [A
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: root
+# chdir /dev
+# ls
+kmem
+mem
+mt0
+mt1
+mt2
+mt3
+mt4
+mt5
+mt6
+mt7
+null
+rk0
+rk1
+rp0
+rp1
+tap0
+tap1
+tap2
+tap3
+tap4
+tap5
+tap6
+tap7
+tty0
+tty1
+tty2
+tty3
+tty4
+tty5
+tty6
+tty7
+tty8
+tty9
+ttya
+ttyb
+ttyc
+ttyd
+ttye
+ttyf
+ttyg
+ttyh
+ttyi
+ttyj
+ttyk
+ttyl
+ttym
+ttyn
+ttyo
+ttyp
+ttyq
+ttyr
+ttys
+ttyt
+ttyu
+ttyv
+# ed /usr/sys/conf/conf.c
+653
+1,23p
+/*
+ *      Copyright 1974 Bell Telephone Laboratories Inc
+ */
+
+int     (*bdevsw[])()
+{
+        &nulldev,       &nulldev,       &rkstrategy,    &rktab,
+        &nulldev,       &tcclose,       &tcstrategy,    &tctab,
+        &tmopen,        &tmclose,       &tmstrategy,    &tmtab,
+        0
+};
+
+int     (*cdevsw[])()
+{
+        &klopen,   &klclose,   &klread,   &klwrite,   &klsgtty,
+        &nulldev,  &nulldev,   &rkread,   &rkwrite,   &nodev,
+        &tmopen,   &tmclose,   &tmread,   &tmwrite,   &nodev,
+        &dcopen,   &dcclose,   &dcread,   &dcwrite,   &dcsgtty,
+        &pcopen,   &pcclose,   &pcread,   &pcwrite,   &nodev,
+        &nulldev,  &nulldev,   &mmread,   &mmwrite,   &nodev,
+        0
+};
+
+q
+# ed /usr/sys/dmr/pc.c
+2309
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+/*
+ * PC-11 Paper tape reader/punch driver
+ */
+
+#include "../param.h"
+#include "../conf.h"
+#include "../user.h"
+
+#define PCADDR  0177550
+
+#define CLOSED  0
+#define WAITING 1
+#define READING 2
+#define EOF     3
+
+#define RDRENB  01
+#define IENABLE 0100
+#define DONE    0200
+q
+# s
+s: not found
+# ;s
+s: not found
+# ls
+kmem
+mem
+mt0
+mt1
+mt2
+mt3
+mt4
+mt5
+mt6
+mt7
+null
+rk0
+rk1
+rp0
+rp1
+tap0
+tap1
+tap2
+tap3
+tap4
+tap5
+tap6
+tap7
+tty0
+tty1
+tty2
+tty3
+tty4
+tty5
+tty6
+tty7
+tty8
+tty9
+ttya
+ttyb
+ttyc
+ttyd
+ttye
+ttyf
+ttyg
+ttyh
+ttyi
+ttyj
+ttyk
+ttyl
+ttym
+ttyn
+ttyo
+ttyp
+ttyq
+ttyr
+ttys
+ttyt
+ttyu
+ttyv
+# dat @date 08181027
+Sun Aug 18 10:27:00 MDT 1974
+# /etc/mknod /dev/ptr c 4 0
+# ls
+kmem
+mem
+mt0
+mt1
+mt2
+mt3
+mt4
+mt5
+mt6
+mt7
+null
+ptr
+rk0
+rk1
+rp0
+rp1
+tap0
+tap1
+tap2
+tap3
+tap4
+tap5
+tap6
+tap7
+tty0
+tty1
+tty2
+tty3
+tty4
+tty5
+tty6
+tty7
+tty8
+tty9
+ttya
+ttyb
+ttyc
+ttyd
+ttye
+ttyf
+ttyg
+ttyh
+ttyi
+ttyj
+ttyk
+ttyl
+ttym
+ttyn
+ttyo
+ttyp
+ttyq
+ttyr
+ttys
+ttyt
+ttyu
+ttyv
+# sync
+# chdir 
+chdir: arg count
+# 
+;login: tjhalia
+Login incorrect.
+Name: thalia
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> attach ptr rfc4
+sim> c
+cat /dev/ptr > rfc4
+
+% % cat rfc4
+Network Working Group                                   Elmer B. Shapiro
+Request for Comment: 4                       Stanford Research Institute
+Category: Informational                                    24 March 1969
+
+
+                           Network Timetable
+
+
+1  (n10) network checkout
+
+2  Installation of communcation gear 8/1/69
+
+   2a  From AT&T and/or BBN need dimensional, power and cabling
+   specifications
+
+   2b  Need to establish SRI desired alternate locations so as to
+   determine maximum telco cable lengths
+
+   2c  Need to establish location and drops on voice coordination
+   circuits
+
+   2d  Need circuit information on voice drops for tie to intercom
+   system
+
+   2e  Need to order and install a.c. power (coordinate with 4b)
+
+   2f  See 16
+
+3  Design and construct host-Imp interface 9/1/69
+
+   3a  Need specifications from BBN
+
+   3b  Develop trial design
+
+   3c  Review with system programmers
+
+   3d  Establish final design
+
+   3e  Build and design hardware
+
+   3f  Debug trial software with hardware loop test
+
+4  Imp installation 9/15/69
+
+   4a  from BBN get dimensional, power and cabling specifications
+
+   4b  SRI orders and installs a.c. power (coordinate with 2e)
+
+5  Debug host-Imp interface 10/1/69
+
+   5a  Get debug specifiations and procedures from BBN
+
+   5b  Write programs to debug with BBN
+
+       5b1  Transfers of test messages
+
+       5b2  Test procedures for crash and recovery
+
+       5b3  Check message fill and stripping procedures
+
+   5c Try own transfer tests
+
+       5c1  Verify transfers to Imp
+
+       5c2  Verify transfers from Imp
+
+       5c3  Verify transfers looped with Imp
+
+   5d  Work out Imp reload and restart procedures
+
+6  Test messages between UCLA-SRI 10/15/69
+
+   6a  Network configuration
+
+           SRI  |
+                |
+                |
+                |
+                |
+                |
+                |
+                |
+           UCLA |
+
+
+   6b  Agree with UCLA on nature of test messages
+
+       6b1  Formats
+
+       6b2  Sequences
+
+       6b3  Checks
+
+       6b4  Test procedures
+
+       6b5  Fault reporting
+
+   6c  Test integrity of messages
+
+   6d  Test sequence of delivery
+
+   6e  Measure delays
+
+   6f  Loop with UCLA
+
+   6g  System response to invalid and abnormal conditions
+
+   6h  Lose and restore facilities
+
+       6h1  Communication link
+
+       6h2  Imps
+
+       6h3  Hosts
+
+   6i  Develop net trouble reporting scheme
+
+7  Test messages between UCSB-SRI 11/15/69
+
+   7a  Network configuration
+
+           SRI .
+              |  .
+              |   .
+              |     .
+              |       .
+              |         .
+              ------------
+           UCLA           UCSB
+
+   7b  All of 6
+
+   7c  Load network for alternate routing to be effective
+
+   7d  Develop voice coordination scheme
+
+       7d1  Three way conference
+
+       7d2  Design and build conference gear
+
+       7d3  Deliver conference gear to UCLA and UCSB
+
+   7e  Route messages around ring
+
+       7e1  Via Imps
+
+       7e2  Via hosts
+
+       7e3  Six tests
+
+         7e3a  UCLA-I, UCSB-I
+
+         7e3b  UCLA-H, UCSB-I
+
+         7e3c  UCLA-H, UCSB-H
+
+         7e3d  UCSB-I, UCLA-I
+
+         7e3e  UCSB-H, UCLA-I
+
+         7e3f  UCSB-H, UCLA-H
+
+8  Test messges between UTAH-SRI 12/15/69
+
+   8a  Network configuration
+
+           SRI .----------------UTAH
+               | .
+               |   .
+               |     .
+               |       .
+               |         .
+               |           .
+               |             .
+               |               .
+           UCLA-----------------UCSB
+
+
+   8b  Selected group of previous test
+
+       8b1  All of 6
+
+       8b2  7b
+
+   8c  Expand voice coordination scheme
+
+       8c1  UTAH has access to UCLA and UCSB via SRI
+
+       8c2  with BBN and ARPA
+
+9  Run simple TTY systems
+
+   9a  Single user access
+
+       9a1  On a serving host
+
+         9a1a  A to B
+
+       9a2  From a using host
+
+         9a2a  A to B
+
+   9b Multiple user access
+
+       9b1  On a serving host
+
+         9b1a  A,C to B
+
+       9b2  From a using host
+
+         9b2a  A,A to B
+
+       9b3  Various combinations
+
+   9c  Login, logout, in and out of subsystems
+
+   9d  Handling of error messages, crashes, recoveries
+
+   9e  Establish message formats
+
+   9f  Establish protocols
+
+   9g  File storage and retrieval
+
+   9h  Need user's guides for each site
+
+   9i  Need to establish usage schedules
+
+   9j  Need to set user names
+
+   9k  Design and build comm exec or its equivalent
+
+10  Run simple typewriter systems
+
+   10a  Same as 9c - 9g
+
+   10b  How define when in half or full duplex mode
+
+   10c  How to set "break" characters
+
+11  Run arbitrary terminals without local feedback
+
+12  Run arbitrary terminals
+
+13  Move files
+
+14  Develop debugging techniques
+
+   14a  Fault detection
+
+       14a1  Conformance to manual
+
+       14a2  "Reasonableness" of result
+
+       14a3  Comparison with alternate form of use
+
+   14b  Cause localization
+
+       14b1  Comm-Imp complex
+
+       14b2  Serving host
+
+       14b3  Using host
+
+       14b3  Try other programs
+
+       14b5  Monitor subsystem via "link" procedures, where possible
+
+         14b5a  Use dialup Dataphone
+
+         14b5b  Use voice coordination channel
+
+       14b6  Move canned messages
+
+   14c  Cause determination
+
+   14d  Cause correction
+% q
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% q
+q: not found
+% 
+;login: root
+# 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> at tc1 nroff.tp
+TC1: 16b format, buffering file in memory
+sim> c
+
+# chdir /usr.s##/source/s7
+# tp 1t
+Tape read error
+END
+# q
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att tc1 sys.tp
+TC1: 16b format, buffering file in memory
+sim> c
+
+LOGIN INCORRECT.
+NAME: CHDIR /USR/SYS
+LOGIN INCORRECT.
+NAME: 
+;login: thalia
+% 
+;login: root
+# chdir /usr/sys
+# tp 1t
+Tape read error
+END
+# 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64530
+
+;login: root
+# 
+Simulation stopped, PC: 002040 (MOV (SP)+,177776)
+sim> att tc1 sys.tp
+TC1: 16b format, buffering file in memory
+sim> c
+cdir
+cdir: not found
+# chdir /usr/sys
+# tp 1t
+Tape open error
+END
+# 
+Simulation stopped, PC: 002040 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64530
+
+;login: 
+Simulation stopped, PC: 002040 (MOV (SP)+,177776)
+sim> att tc1 sys.tp
+TC1: 16b format, buffering file in memory
+sim> c
+root
+# tp 1t 
+Tape open error
+END
+# 
+Simulation stopped, PC: 002040 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% crypt
+crypt: not found
+% /etc/crypt
+/etc/crypt: not found
+% ls /
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% find .
+Insufficient args
+% find / -name crypt
+% find / -name crypt'*'
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
