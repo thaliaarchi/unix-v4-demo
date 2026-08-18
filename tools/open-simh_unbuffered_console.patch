@@ -1,0 +1,41 @@
+From 5e5c2013f92dc2afca174139119bdf842987bc24 Mon Sep 17 00:00:00 2001
+From: Thalia Archibald <thalia@archibald.dev>
+Date: Mon, 17 Aug 2026 23:50:48 -0400
+Subject: [PATCH] Make terminal logs unbuffered
+
+---
+ sim_console.c | 2 +-
+ sim_tmxr.c    | 4 +---
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/sim_console.c b/sim_console.c
+index 1c0e82d4..e5a02221 100644
+--- a/sim_console.c
++++ b/sim_console.c
+@@ -2751,7 +2751,7 @@ else {
+         *pref = NULL;
+         return SCPE_OPENERR;
+         }
+-    setvbuf (*pf, NULL, _IOFBF, 65536);
++    setvbuf (*pf, NULL, _IONBF, 0);
+     (*pref)->file = *pf;
+     (*pref)->refcount = 1;                               /* need close */
+     }
+diff --git a/sim_tmxr.c b/sim_tmxr.c
+index 2ae57914..80141a88 100644
+--- a/sim_tmxr.c
++++ b/sim_tmxr.c
+@@ -3501,9 +3501,7 @@ while (*tptr) {
+             lp->txlogname = (char *)realloc (lp->txlogname, 1 + strlen (logfiletmpl));
+             strcpy (lp->txlogname, logfiletmpl);
+             r = sim_open_logfile (lp->txlogname, TRUE, &lp->txlog, &lp->txlogref);
+-            if (r == SCPE_OK)
+-                setvbuf(lp->txlog, NULL, _IOFBF, 65536);
+-            else {
++            if (r != SCPE_OK) {
+                 free (lp->txlogname);
+                 lp->txlogname = NULL;
+                 return sim_messagef (r, "Can't open log file: %s\n", logfiletmpl);
+-- 
+2.55.0
+

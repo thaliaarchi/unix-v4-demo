@@ -1,0 +1,41 @@
+From 03e8525e3cadb20f02b7b5ddc1f62282ed6fa031 Mon Sep 17 00:00:00 2001
+From: Thalia Archibald <thalia@archibald.dev>
+Date: Mon, 17 Aug 2026 23:50:48 -0400
+Subject: [PATCH] Make terminal logs unbuffered
+
+---
+ src/02.3_simh/4.x+realcons/src/sim_console.c | 2 +-
+ src/02.3_simh/4.x+realcons/src/sim_tmxr.c    | 4 +---
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/src/02.3_simh/4.x+realcons/src/sim_console.c b/src/02.3_simh/4.x+realcons/src/sim_console.c
+index 01211a0..f258b4f 100644
+--- a/src/02.3_simh/4.x+realcons/src/sim_console.c
++++ b/src/02.3_simh/4.x+realcons/src/sim_console.c
+@@ -2611,7 +2611,7 @@ else {
+         *pref = NULL;
+         return SCPE_OPENERR;
+         }
+-    setvbuf (*pf, NULL, _IOFBF, 65536);
++    setvbuf (*pf, NULL, _IONBF, 0);
+     (*pref)->file = *pf;
+     (*pref)->refcount = 1;                               /* need close */
+     }
+diff --git a/src/02.3_simh/4.x+realcons/src/sim_tmxr.c b/src/02.3_simh/4.x+realcons/src/sim_tmxr.c
+index a16a9ce..fe9b702 100644
+--- a/src/02.3_simh/4.x+realcons/src/sim_tmxr.c
++++ b/src/02.3_simh/4.x+realcons/src/sim_tmxr.c
+@@ -2878,9 +2878,7 @@ while (*tptr) {
+             lp->txlogname = (char *)realloc (lp->txlogname, 1 + strlen (logfiletmpl));
+             strcpy (lp->txlogname, logfiletmpl);
+             r = sim_open_logfile (lp->txlogname, TRUE, &lp->txlog, &lp->txlogref);
+-            if (r == SCPE_OK)
+-                setvbuf(lp->txlog, NULL, _IOFBF, 65536);
+-            else {
++            if (r != SCPE_OK) {
+                 free (lp->txlogname);
+                 lp->txlogname = NULL;
+                 return sim_messagef (r, "Can't open log file: %s\n", logfiletmpl);
+-- 
+2.55.0
+
