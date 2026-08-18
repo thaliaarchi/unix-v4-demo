@@ -896,7 +896,7 @@ w
 132
 q
 # sync
-# ^D
+# ^E
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> b rk
 k
@@ -1497,6 +1497,24 @@ q
 # cat /dev/null
 # ps a
  f     0
+# 
+```
+
+## Setup paper tape
+
+The PC-11 driver for paper tape is currently configured as device major 4. Add a
+device, then attach it and read or write to it.
+
+```
+# /etc/mknod /dev/ptr c 4 0
+# ^E
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> attach ptr file.txt
+sim> c
+# cat /dev/ptr > file.txt
+# ^D
+sim> detach ptr
+sim> c
 # 
 ```
 
