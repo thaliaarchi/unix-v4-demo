@@ -1,0 +1,3136 @@
+
+;login: 
+;login: p'
+Login incorrect.
+Name: 
+Login incorrect.
+Name: 
+;login: 
+;login: 
+;login: thalia
+% ls{ a 
+: not found
+% ls
+hints
+mullender.c
+% cat hints{#  
+% cat hints
+A.k..#3semantics%4debugZ1compile 5solution'resourcesmullender.smullender.das72syntaxasmsyntax1% 
+% 
+% cd hints{l##
+cd: not found
+% cd hints
+cd: not found
+% chdir hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% 
+;login: root
+# 
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# lsbi## bin
+lsbi: not found
+# ls bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# 
+# 
+# 
+: not found
+# 
+# 
+# 
+# 
+;login: root
+# cle```
+cle```: not found
+# kkkk####
+# llllJ
+llllJ: not found
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls -l
+total 66
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 16 14:12 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       128 Aug 18 03:47 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x16 bin       256 Jun 12 18:51 usr
+# ls -h
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# man ls
+man: not found
+# chdir/# /usr
+# ls
+adm
+bin
+c
+fort
+games
+lib
+lpd
+mdec
+pub
+sno
+source
+sys
+thalia
+tmp
+# ed /etc/passwd
+56
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+a
+ben::5:5::/usr/ben:
+.
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+w
+76
+q
+# cd /usr
+cd: not found
+# pwd
+../usr
+# mkdir ben
+# chmod 
+arg count
+# chown ben:ben ben
+Who?
+# chown ben ben
+# chgrp ben ben
+chgrp: not found
+# ls -l
+total 15
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 ben        32 Aug 18 04:35 ben
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     64 Aug 18 03:45 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+# chmod 66
+arg count
+# chmn#od 755 ben
+# ls -l
+total 15
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxr-xr-x 2 ben        32 Aug 18 04:36 ben
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     64 Aug 18 03:45 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+# 
+;login: ben
+% env
+env: not found
+% echo $$$$$$$$$$$chdir /usr/thalias#
+chdir /usr/thalia
+% ls
+% ls -a
+.
+..
+% pwd
+../usr/ben
+% chdir /usr
+% chdir thalia
+% pwd
+../usr/thalia
+% ls{
+ls{: not found
+% ls
+hints
+mullender.c
+% cat hin	
+% cat hints
+A.k..#3semantics%4debugZ1compile 5solution'resourcesmullender.smullender.das72syntaxasmsyntax1% 
+;login: ben
+No directory
+Name: ben
+% cd /usr
+cd: not found
+% chdir @
+% ls /usr/src{
+/usr/src{ not found
+% ls/# /usr/source
+s1
+s2
+s3
+s4
+s7
+% cd @chdir /usr/source
+% {##
+% cd ####chdir s2
+% ls
+mail.c
+mesg.s
+mkdir.s
+mkfs.c
+mknod.c
+mount.c
+msh.s
+mv.c
+nice.c
+nm.c
+nohup.c
+od.c
+passwd.s
+pfe.s
+pr.c
+prof.c
+ps.c
+pwd.c
+restor.c
+rew.s
+rm.c
+rmdir.s
+sa.c
+sh.c
+size.c
+sleep.c
+sort.c
+split.c
+strip.s
+stty.c
+su.c
+sum.s
+sync.c
+tee.c
+time.s
+tp1.s
+tp2.s
+tp3.s
+tp4.s
+tr.c
+tty.s
+typo.c
+umount.c
+uniq.c
+update.s
+wc.c
+who.c
+write.s
+% ed sh.c
+10209
+/chdir/
+		if(equal(cp1, "chdir")) {
+q
+% ls
+mail.c
+mesg.s
+mkdir.s
+mkfs.c
+mknod.c
+mount.c
+msh.s
+mv.c
+nice.c
+nm.c
+nohup.c
+od.c
+passwd.s
+pfe.s
+pr.c
+prof.c
+ps.c
+pwd.c
+restor.c
+rew.s
+rm.c
+rmdir.s
+sa.c
+sh.c
+size.c
+sleep.c
+sort.c
+split.c
+strip.s
+stty.c
+su.c
+sum.s
+sync.c
+tee.c
+time.s
+tp1.s
+tp2.s
+tp3.s
+tp4.s
+tr.c
+tty.s
+typo.c
+umount.c
+uniq.c
+update.s
+wc.c
+who.c
+write.s
+% clear
+;login: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# h33333#####
+h: not found
+# 
+;login: 
+;login: root
+# vi```chdir /etc
+vi```chdir: not found
+# chdir /etc
+# ed passwd
+56
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+a
+newt::1000:###########@newt::64:64::/usr/newt:
+.
+w
+80
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+newt::64:64::/usr/newt:
+!mkdir /usr/newt
+!
+!chown 64##newt /usr/newt
+!
+q
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+newt::64:64::/usr/newt:
+# cd `####chdir /usr/newt
+# ls
+# cd ..
+cd: not found
+# D
+D: not found
+# 
+;login: newt
+% 
+;login: root
+# ed /etc/passwd
+80
+a
+ncb::12::12::#@ncb::12:12::/usr/ncb:
+.
+w
+102
+!mkdir /usr/ncb
+!
+chown ncb /usr/ncb
+?
+a joe::
+?
+a
+joe::88:88::/usr/joe:{
+.
+s/{//
+.
+joe::88:88::/usr/joe:
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+newt::64:64::/usr/newt:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+!mkdir /usr/joe
+!
+chown j
+?
+!
+!
+chown 
+?
+!chown joe u#/usr/joe
+Who?
+!
+!chown joe /usr/joe/
+Who?
+!
+w
+124
+!chown joe /usr/joe
+!
+a
+cody::25:25::/usr/cody:
+alex::9:9::/usr/alex:
+.
+w
+170
+!mkdir /usr/cody /usr/alex
+!
+!chown d#cody /usr/cody
+!
+!chown c#alex /usr/alex
+!
+a
+hash::31337:31337::/usr/hash:
+.
+w
+200
+!chown hash /usr/hash
+!
+a
+dnm::55555:55555::/usr/dnm:
+.
+w
+228
+!mkdir /usr/dnm
+!
+!chown dnm /usr/dnm
+!
+a
+ben::65536#5:65535@ben::-1"-##-1::/usr/ben:
+.
+.
+ben::-1-1::/usr/ben:
+c
+ben #::-1:-1##:-1::/usr/ben:
+.
+.
+ben::-1::-1::/usr/ben:
+w
+252
+!mkdir /usr/ben
+!
+!chown ben /usr/ben
+!
+a
+ty::1990:1990::/usr/ty:
+.
+w
+276
+!mkdir /usr/y#ty
+!
+!chown ty/usr/ty
+chown uid f1 ...
+Who?
+!
+!chown ty /usr/ty
+!
+q
+# 
+;login: ty
+% cat *
+No match
+% ls
+% xT
+xT: not found
+% CA
+CA: not found
+% cat *
+No match
+% exit
+% quit
+quit: not found
+% ls
+% login auberon
+% who
+root    tty0 Aug 18 10:36
+auberon tty1 Aug 18 10:57
+hash    tty2 Aug 18 10:50
+root    tty8 Aug 18 10:55
+newt    ttyk Aug 18 10:43
+cody    ttyl Aug 18 10:48
+alex    ttym Aug 18 10:48
+newt    ttyn Aug 18 10:39
+dnm     ttyq Aug 18 10:49
+ncb     ttyt Aug 18 10:43
+% write wh##root
+dont kill me session l
+;login: root
+# ls /usr/thalia
+hints
+mullender.c
+rfc4
+# cat/#####
+# mkdir /usr/alex
+# chdir /usr/alex
+# cc /usr/thalia/mullene#der.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+# ls /usr/thalia
+hints
+mullender.c
+rfc4
+# ca#hdir hin###/usr/thalia/hints
+# ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+# chdir 2syntax/3b##
+# ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+# cat hint3b
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+# cp hint3b /usr/alex
+# chdir/u##########chdir@chdir /usr/alex
+# ls
+hint3b
+# ed hint3b
+331
+1,$p
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+1,3d
+
+/0x52d7/s//051327/
+1
+/0xbef/s//05757/
+
+/0x52d7/s//051327/
+
+/0x4bc/s//02274/
+
+g/0x9/s//011/
+
+/0x7e82/s//077202/
+
+/0x8/s//010/
+
+/0x6176/s//060566/
+
+
+.,$d
+1{#
+/0xbef/s//05757/
+i
+ed mullender.c
+.
+$
+/0x6176/s//060566/
+a
+w
+.
+1,p#$p
+ed mullender.c
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+w
+.
+w
+a
+q
+.
+w
+137
+q
+# cp /usr/thalia/mullender.c .
+# ls
+hint3b
+mullender.c
+# sh hint3b
+469
+469
+# ca #t mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+# cc mullender.c
+2: Expression syntax
+2: External definition syntax
+8: Expression overflow
+# ed 8 m@ed mullender.c
+469
+8
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+s/short/int/
+?
+2
+short main[] = {
+
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+/short/p
+short main[] = {
+/short/s/short/int/
+p
+int main[] = {
+wq
+?
+w
+467
+q
+# ed mullender.c
+467
+!cc mullender.c
+2: Expression syntax
+2: External definition syntax
+8: Expression overflow
+!
+/=/s/=//
+p
+int main[]  {
+w
+466
+!cc mullender.c
+!
+q
+# a.out{
+a.out{: not found
+# a.out
+  :-)Bad system call -- Core dumped
+# ls
+a.out
+core
+hint3b
+mullender.c
+# ls bin
+bin not found
+# ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# dump
+/dev/rp0:
+incremental dump from
+the epoch
+631 files
+3316 blocks
+can not open /dev/mt0
+# cdb core
+.
+p
+?
+?
+h
+?
+bp 0100
+?
+q
+?
+# ls
+a.out
+core
+hint3b
+mullender.c
+# db core
+p
+?
+
+?
+{
+?
+# 
+# ls
+a.out
+core
+hint3b
+mullender.c
+# cdb a.out
+# 
+# ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# ed /usr/thalia/hints/
+176
+q
+# chdir /usr/thalia/hints
+# ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+# ed 3semantic
+?
+q
+# chdir 3semantics
+# ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+# cathint
+cathint: not found
+# cat hint1
+Hint: The early C compiler did not check the type of main and the C runtime
+simply jumped to main. This definition is interpreted as PDP-11 machine code.
+# cat hint2
+Hint: The assembly code corresponding to the PDP-11 portion of the program is at
+mullender.s. A disassembly of it, showing the octal values of the words, is at
+mullender.das.
+
+Numbers in PDP-11 assembly are in octal by default, unless they are
+suffixed with a period (.), making them decimal. Period does not mean floating
+point, although the PDP-11 did have floating point.
+# cat hint3
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+	write(1, "  :-)\b\b\b\b", 9);
+	delay();
+}
+# ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+# cat  mullender.s
+pdp:
+	mov	pc,r4
+	tst	-(r4)
+	sub	$9,r4
+	mov	r4,0f
+	mov	$1, r0
+	sys	4; 0:0; 9
+	mov	$1000, r2
+1:
+	sys	55
+	sob	r2, 1b
+	br	pdp
+# ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+# cat mullender.das
+000000: 010704			mov	pc,r4
+000002: 005744			tst	-(r4)
+000004: 162704 000011		sub	$11,r4
+000010: 010467 000006		mov	r4,22
+000014: 012700 000001		mov	$1,r0
+000020: 104404			trap	4
+000022: 000000			0
+000024: 000011			11
+000026: 012702 001000		mov	$1000,r2
+000032: 104455			trap	55
+000034: 077202			sob	r2,32
+000036: 000760			br	0
+# ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+# chditr @chdir /usr/alex
+# ed /usr@ed /etc/passwd
+56
+a
+alex::9:9::/usr/alex:
+.
+w
+78
+!mk##chown alex /usr/alex
+!
+# 
+;login: alex
+% ls
+a.out
+core
+hint3b
+mullender.c
+% a.out > 
+syntax error
+% 
+;login: root
+# chdir /usr/alex
+# chown alex *
+# 
+;login: alxe33ex
+Login incorrect.
+Name: alex
+% ls
+a.out
+core
+hint3b
+mullender.c
+% a.out > x
+Bad system call -- Core dumped
+% catx
+catx: not found
+% cat c
+% cta x
+cta: not found
+% cat x
+  :-)% chdir /8ur/####/usr/source#####sys
+chdir: bad directory
+% chdir /ustr/s@chdi@chdir /usr/sys
+% ;s{@ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% chdir ken
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% cat sysent.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/* 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+};
+% l;s
+l: not found
+s: not found
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% grep
+arg count
+% grep nosys sys1.c
+% grep nosys sys2.c
+% grep nosys g#sys3.c
+% grep nosys sys4.c
+% ed sysent.c@cat sysent.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/* 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+};
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% ls /usr/alex/m#
+a.out
+core
+hint3b
+mullender.c
+x
+% cat /usr/alex/mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% cp @pwd
+../usr/sys/ken
+% ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+% ls /bin > progs
+progs: cannot create
+% touch p####@touch progs
+touch: not found
+% ed progs
+?
+w
+?
+q
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% cd /usr/alex
+cd: not found
+% chdir /usr/alex
+% ls
+a.out
+core
+hint3b
+mullender.c
+x
+% ls /bin > progs
+% ed progs
+237
+.
+write
+
+?
+
+?
+p
+write
+
+?
+n
+
+1,$p
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+1##.,.+23p
+?
+1
+ar
+.,.+23p
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+.,.+23p
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+q
+% ls
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+% a.out
+  :-)Bad system call -- Core dumped
+% chdir /usr/thalia/hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% chdir 3semantics
+% ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% cat hint3
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+	write(1, "  :-)\b\b\b\b", 9);
+	delay();
+}
+% q
+q: not found
+% cat nu#@cat mullender.s
+pdp:
+	mov	pc,r4
+	tst	-(r4)
+	sub	$9,r4
+	mov	r4,0f
+	mov	$1, r0
+	sys	4; 0:0; 9
+	mov	$1000, r2
+1:
+	sys	55
+	sob	r2, 1b
+	br	pdp
+% cat mullender.das
+000000: 010704			mov	pc,r4
+000002: 005744			tst	-(r4)
+000004: 162704 000011		sub	$11,r4
+000010: 010467 000006		mov	r4,22
+000014: 012700 000001		mov	$1,r0
+000020: 104404			trap	4
+000022: 000000			0
+000024: 000011			11
+000026: 012702 001000		mov	$1000,r2
+000032: 104455			trap	55
+000034: 077202			sob	r2,32
+000036: 000760			br	0
+% pwd
+../usr/thalia/hints/3semantics
+% chdir /usr/sys/kwn##en
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% ed sysent.c
+1957
+1,23p
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+.,.+23p
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+.,$p
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/* 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+};
+ls
+?
+
+?
+q
+% ;ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% grep nosys sys1.c
+% grep nosys sys2.c
+% grep nosys sys34.##.c
+% grep nosys sys4.c
+% grep nosys *
+	0, &nosys,			/* 20 = x */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	0, &nosys,			/* 29 = x */
+	0, &nosys,			/* 33 = x */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &nosys,			/* 45 = tiu */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+nosys()
+% chdir /usr/source/sa1##1
+% s
+s: not found
+% s#ls
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% ed grep.s
+5105
+1,23p
+/ grep -- g/re/p
+/
+/ grep [ -v ] [ -l ] [ -n ] re [ input ] ...
+
+.globl	mesg, putc, flush, fcreat, _end
+
+	sys	signal; 2; 1
+	bit	$1,r0
+	bne	1f
+	sys	signal; 2; out
+1:
+	mov	(sp)+,narg
+	mov	sp,argp
+	jsr	pc,garg
+1:
+	jsr	pc,garg
+	cmpb	(r5),$'-
+	bne	1f
+	cmpb	1(r5),$'v
+	bne	2f
+	inc	vflg
+	br	1b
+2:
+q
+% grep -v nosys *
+Command not found
+% grep x
+x
+x
+D
+D
+% 
+% ls
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% grep a ls.c
+	char	*nextc;
+	char	buff[512];
+	int	iflags;
+	char	inl;
+	char	iuid;
+	char	igid;
+	char	isize0;
+	int	iaddr[8];
+	char	*iatime[2];
+	char	*imtime[2];
+	char	lname[14];
+	int	lflags;
+	char	lnl;
+	char	luid;
+	char	lgid;
+	char	lsize0;
+	char	*lmtime[2];
+	char	*namep;
+int	aflg, dflg, lflg, sflg, tflg, uflg, iflg, fflg;
+int	flags;
+int	statreq;
+struct	lbuf	*lastp	&end;
+struct	lbuf	*rlastp	&end;
+char	*dotp	".";
+main(argc, argv)
+char **argv;
+	register struct lbuf *slastp;
+	int compar();
+	if (--argc > 0 && *argv[1] == '-') {
+		argv++;
+		while (*++*argv) switch (**argv) {
+g		case 'a':
+			aflg++;
+		case 's':
+			statrreq++;
+		case 'd':
+		casepe 'l':
+			statreq++;
+			u idfil = open("/etc/passwd", 0);
+		case 'r':
+		case 't':
+			statreq++;
+		case- 'u':
+		case 'i':
+		casv e 'f':
+		default:
+		argc-a-;
+		aflg++;
+		statreq =  0;
+	if (argc==0) {
+		argc++;
+		argv = &dotp - 1;
+ls	for (i=0; i < argc; i++) {
+		if ((ep = gstat(.*++argv, 1))==0)
+		ep->namep = *argv;
+		ep->lflags =| ISARG;
+	qcsort(&end, lastp - &end, 28, compar);
+	slastp = lastp;
+	for (ep = &end; ep<slastp; ep++) {
+		if (ep->lflags&DIR && dflg==0 || fflg) {
+			if (argc>1)
+				printf("\n%s:\n", ep->namep);
+			lastp = slastp;
+			readdir(ep->namep);
+				qsort(slastp, lastp - slastp, 28, compar);
+			if (statreq)
+				printf("total %d\n", tblocks);
+			for (ep1=slastp; ep1<lastp; ep1++)
+pentry(ap)
+struct lbuf *ap;
+	char tbuf[16];
+	struct { char dminor, dmajor;};
+	p = ap;
+		pmode(p->lflags);
+		if (getname(p->luid&0377, tbuf)==0)
+		if (p->lflags & (BLK|CHR))
+			printf("%3d,%3d", p->lsize.dmajor&0377,
+	if (p->lflags&ISARG)
+		printf("%s\n", p->namep);
+		printf("%.14s\n", p->lname);
+getname(uid, buf)
+char buf[];
+char *size0, *size;
+pmode(aflag)
+	flags = aflag;
+select(pairp)
+int *pairp;
+	register int n, *ap;
+	ap = pairp;
+	n = *ap++;
+	while (--n>=0 && (flags&*ap++)==0)
+		*ap++;
+	putchar(*ap);
+makename(dir, file)
+char *dir, *file;
+	static char dfile[100];
+	register char *dp, *fp;
+readdir(dir)
+char *dir;
+	static struct {
+		char	dname[14];
+	register char *p;
+		printf("%s unreadable\n", dir);
+		 || aflg==0 && dentry.dname[0]=='.')
+			break;
+		ep = gstat(makename(dir, dentry.dname), 0);
+			ep->lname[j] = dentry.dname[j];
+gstat(file, argfl)
+char *file;
+	struct ibuf statb;
+	if (lastp+1 >= rlastp) {
+		rlastp.idev =+ 512;
+	rep = lastp;
+	lastp++;
+	rep->lflags = 0;
+	if (argfl || statreq) {
+		if (stat(file, &statb)<0) {
+			statb.inum = -1;
+			statb.isize0 = 0;
+			statb.isize = 0;
+			statb.iflags = 0;
+			if (argfl) {
+				lastp--;
+		rep->lnum = statb.inum;
+		statb.iflags =& ~(ISARG |  DIR);
+		if ((statb.iflags&IFMT) == 060000) {
+			statb.iflags =& ~020000;
+		} else if ((statb.iflags&IFMT)==040000) {
+			statb.iflags =& ~IFMT;
+			statb.iflags =| DIR;
+		rep->lflags = statb.iflags;
+		rep->luid = statb.iuid;
+		rep->lgid = statb.igid;
+		rep->lnl = statb.inl;
+		rep->lsize0 = statb.isize0;
+		rep->lsize = statb.isize;
+		if (rep->lflags & (BLK|CHR) && lflg)
+			rep->lsize = statb.iaddr[0];
+		rep->lmtime[0] = statb.imtime[0];
+		rep->lmtime[1] = statb.imtime[1];
+			rep->lmtime[0] = statb.iatime[0];
+			rep->lmtime[1] = statb.iatime[1];
+
+ls.c:384
+% 
+% grep -v == ls.c
+#
+/*
+ * list file or directory
+ */
+
+struct {
+	int	fdes;
+	int	nleft;
+	char	*nextc;
+	char	buff[512];
+} inf;
+
+struct ibuf {
+	int	idev;
+	int	inum;
+	int	iflags;
+	char	inl;
+	char	iuid;
+	char	igid;
+	char	isize0;
+	int	isize;
+	int	iaddr[8];
+	char	*iatime[2];
+	char	*imtime[2];
+};
+
+struct lbuf {
+	char	lname[14];
+	int	lnum;
+	int	lflags;
+	char	lnl;
+	char	luid;
+	char	lgid;
+	char	lsize0;
+	int	lsize;
+	char	*lmtime[2];
+};
+
+struct lbufx {
+	char
+	*namep;
+};
+
+int	aflg, dflg, lflg, sflg, tflg, uflg, iflg, fflg;
+int	fout;
+int	rflg	1;
+int	flags;
+int	uidfil	-1;
+int	tblocks;
+
+
+ls.c:50
+% chdir /usr
+% ls
+adm
+alex
+auberon
+bin
+c
+cody
+fort
+games
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+% chdri##ir ta#halia{
+chdir: bad directory
+% chdir thalia
+% ls
+hints
+mullender.c
+rfc4
+thanks
+% chdri##ir hints
+% grep nosys *
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% chdir /usr/sys/ken
+% grep nosys *
+	0, &nosys,			/* 20 = x */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	0, &nosys,			/* 29 = x */
+	0, &nosys,			/* 33 = x */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &nosys,			/* 45 = tiu */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+
+sysent.c:2945
+% grep nosys *
+	0, &nosys,			/* 20 = x */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	0, &nosys,			/* 29 = x */
+	0, &nosys,			/* 33 = x */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &nosys,			/* 45 = tiu */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+nosys()
+% grep -n s#nosys
+*
+\
+
+
+2
+% cat trap./#c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../proc.h"
+#include "../reg.h"
+#include "../text.h"
+#include "../seg.h"
+
+#define	CSW	0177570
+#define	EBIT	1
+#define	UMODE	0170000
+#define	SETD	0170011
+struct	{
+	int	count;
+	int	(*call)();
+} sysent[64];
+char	regloc[8]
+{
+	R0, R1, R2, R3, R4, R5, R6, R7
+};
+
+trap(dev, sp, r1, nps, r0, pc, ps)
+char *sp;
+{
+	register i, a;
+
+	savfp();
+	u.u_ar0 = &r0;
+	if(dev == 8) {
+		psignal(u.u_procp, SIGFPT);
+		if((ps&UMODE) == UMODE)
+			goto err;
+		return;
+	}
+	if(dev==1 && fuword(pc-2)==SETD && u.u_signal[SIGINS]==0)
+		return;
+	if((ps&UMODE) != UMODE)
+		goto bad;
+	if(dev==9 && sp<-u.u_ssize*64) {
+		if(backup(&r0) == 0)
+		if(!estabur(u.u_tsize, u.u_dsize, u.u_ssize+SINCR)) {
+			u.u_ssize =+ SINCR;
+			expand(u.u_procp->p_size+SINCR);
+			a = u.u_procp->p_addr + u.u_procp->p_size;
+			for(i=0; i<u.u_ssize; i++) {
+				a--;
+				copyseg(a-SINCR, a);
+			}
+			return;
+		}
+	}
+	u.u_error = 0;
+	switch(dev) {
+
+	case 0:
+		i = SIGBUS;
+		goto def;
+
+	case 1:
+		i = SIGINS;
+		goto def;
+
+	case 2:
+		i = SIGTRC;
+		goto def;
+
+	case 3:
+		i = SIGIOT;
+		goto def;
+
+	case 5:
+		i = SIGEMT;
+		goto def;
+
+	case 9:
+		i = SIGSEG;
+		goto def;
+
+	def:
+		psignal(u.u_procp, i);
+
+	default:
+		u.u_error = dev+100;
+
+	case 6:;
+	}
+	if(u.u_error)
+		goto err;
+	ps =& ~EBIT;
+	dev = fuword(pc-2)&077;
+	if(dev == 0) { /* indirect */
+		a = fuword(pc);
+		pc =+ 2;
+		dev = fuword(a)&077;
+		a =+ 2;
+	} else {
+		a = pc;
+		pc =+ sysent[dev].count*2;
+	}
+	for(i=0; i<sysent[dev].count; i++) {
+		u.u_arg[i] = fuword(a);
+		a =+ 2;
+	}
+	u.u_dirp = u.u_arg[0];
+	trap1(sysent[dev].call);
+	if(u.u_error >= 100)
+		psignal(u.u_procp, SIGSYS);
+err:
+	if(issig())
+		psig();
+	if(u.u_error != 0) {
+		ps =| EBIT;
+		r0 = u.u_error;
+	}
+	u.u_procp->p_pri = PUSER + u.u_nice;
+	if(u.u_dsleep++ > 15) {
+		u.u_dsleep = 0;
+		u.u_procp->p_pri++;
+		swtch();
+	}
+	return;
+
+bad:
+	printf("ka6 = %o\n", KISA->r[6]);
+	printf("aps = %o\n", &ps);
+	for(a = CSW->r[0]; a == CSW->r[0]; )
+		idle();
+	panic("trap");
+}
+
+trap1(f)
+int (*f)();
+{
+
+	savu(u.u_qsav);
+	(*f)();
+}
+
+nosys()
+{
+
+	u.u_error = 100;
+}
+
+nullsys()
+{
+}
+% ed trap.c
+2154
+q
+% 
+% ed sysent.h
+?
+q
+% ed sysent.c
+1957
+1,$p
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/* 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+};
+1
+#
+.,.+23p
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+.,.+23p
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+.,.+23p
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/*q 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+q
+?
+q
+% chdir /usr/alex
+% ls
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+% ed mullender.c
+466
+1.$p
+?
+1,#,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+!cat /usr/thalia/hints/3semantics/mullender.das
+000000: 010704			mov	pc,r4
+000002: 005744			tst	-(r4)
+000004: 162704 000011		sub	$11,r4
+000010: 010467 000006		mov	r4,22
+000014: 012700 000001		mov	$1,r0
+000020: 104404			trap	4
+000022: 000000			0
+000024: 000011			11
+000026: 012702 001000		mov	$1000,r2
+000032: 104455			trap	55
+000034: 077202			sob	r2,32
+000036: 000760			br	0
+!
+q
+% 222444
+222444: not found
+% 
+% ls
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+% pwd
+../usr/alex
+% c663333#####
+% lv#s
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+% 
+% 
+% 82v#
+82: not found
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ./a.out
+  :-)Bad system call -- Core dumped
+% chdir /usr/games
+% lsa#
+bj
+chess
+cubic
+moo
+ttt
+ttt.k
+wump
+% ./bj
+Black Jack
+new game
+Shuffle
+7H up
+KC+6H
+
+Hit? 
+You have 16
+Dealer has 7D+4C = 18
+
+You lose $2
+new game
+QS up
+7C+9C
+
+Hit? 
+You have 16
+Dealer has 5S+6C = 21
+
+You lose $2
+new game
+2H up
+TS+7S
+
+Hit? n
+You have 17
+Dealer has 6D+9H = 17
+
+You break even
+new game
+TC up
+AC+4S
+
+Hit? 
+You have 15
+Dealer has JS = 20
+
+You lose $2
+new game
+6S up
+2D+KD
+
+Hit? 
+You have 12
+Dealer has 4H+9S = 19
+
+You lose $2
+new game
+2S up
+AS+3D
+
+Hit? 
+Action $10
+You lose $8
+
+% 
+;login: root
+# ed /etc/passwd
+154
+?
+?
+?
+w?
+q
+# lq#s
+# lq#s
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls sr@@usr
+usr: not found
+# ls uisr@ls iu@l;s@ls /usr
+adm
+alex
+auberon
+bin
+c
+cody
+fort
+games
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+# rmdir auberon
+auberon -- directory not empty
+# 
+# chdir auberon
+# ls
+hello
+mullender.c
+# rm *
+# chdir ..
+# rmdior##ir auberon
+rmdiir: not found
+# 
+# 
+# rmdir auberon
+# ed /etc/passwd
+154
+p
+ncb::12:12::/usr/ncb:
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+ajustin::70:70::/usr/justin:
+?
+a
+justin::70::#70::/usr/justin:
+w
+q
+.
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+w
+q
+d
+d
+.
+justin::70:70::/usr/justin:
+w
+182
+q
+# mkidr ####dir /usr/juts##stin
+# cd usr
+cd: not found
+# chdir /usr
+# cd justin
+cd: not found
+# chr#dir /justin
+chdir: bad directory
+# ls
+adm
+alex
+auberon
+bin
+c
+cody
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+# cd justoni###in
+cd: not found
+# chri##dir /ju###justin
+# chown justin .
+# 
+;login: justin
+% pwd
+../usr/justin
+% 
+;login: alex
+% ls
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+% a.out
+  :-)  :-)  :-)  :-)  :-)  :-){  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)
+% 
+% ls
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+% ed##
+% echo 'ooooo       oooooooooo    oooooooo8'>lrc.txt
+% cat lrc.txt
+ooooo       oooooooooo    oooooooo8
+% 
+% 
+% 
+% 
+% 
+% 
+% echo ' 888ls@ls
+a.out
+core
+hint3b
+lrc
+mullender.c
+progs
+x
+% catl# lrc
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+% ed lrc
+171
+$
+o888ooooo88 o888o  88o8  888oooo88
+a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+q#w
+189
+q
+% cat lrc
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% clear
+clear: not found
+% 
+: not found
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% ca
+ca: not found
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% cat lrc
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% 

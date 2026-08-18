@@ -2870,3 +2870,1046 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 00:12:31 2026
+
+k
+unix
+mem = 64525
+
+;login: thaliahello world
+Login incorrect.
+Name: this is nice
+Login incorrect.
+Name: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> attach dci line=0,connect=/dev/ttyUSB0;9600-8N1
+Unexpected specifier: 9600-8N1
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 00:16:54 2026
+
+k
+unix
+mem = 64525
+
+;login: e
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+
+Login incorrect.
+Name: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> attach dci line=1,connect=/dev/ttyUSB0;1200-7E1
+Unexpected specifier: 1200-7E1
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 02:18:20 2026
+boot.ini-20> attach dci line=0,connect=/dev/ttyUSB0;9600-8N1
+Unexpected specifier: 9600-8N1
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 02:19:06 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+LOGIN INCORRECT.
+NAME: 
+LOGIN INCORRECT.
+NAME: 
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 02:23:38 2026
+
+k
+unix
+mem = 64525
+
+;login: Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 07:20:47 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 07:44:35 2026
+
+k
+unix
+mem = 64525
+
+;login: Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 07:52:09 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 07:54:37 2026
+
+k
+unix
+mem = 64525
+
+;login: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# chdir /usr/thalia
+# ls -al
+total 4
+drwxr-xr-x 3 thalia     64 Aug 18 03:45 .
+drwxr-xr-x17 bin       272 Aug 18 04:36 ..
+drwxr-xr-x 7 thalia    176 Aug 18 03:48 hints
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+# 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 08:45:15 2026
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 08:45:38 2026
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% ls
+hints
+mullender.c
+rfc4
+% ed /etc/passwd
+56
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+a
+ben::5:5::/usr/bd#en:
+.
+.
+ben::5:5::/usr/ben:
+w
+?
+q
+% 
+;login: root
+# d /usr/@ed /etc/passwd
+56
+a
+ben::5:5::/usr/ben:
+.
+w
+76
+q
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# mkdir ben
+# chown ben ben
+# rmdir ben
+# chdir usr
+# mkditr ben@mkdir ben
+# chown ben ben
+# 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> step 1
+
+Simulation stopped, PC: 001074 (MOV R1,-(SP))
+sim> step 1
+
+Simulation stopped, PC: 001076 (MFPI SP)
+sim> step 1
+
+Simulation stopped, PC: 001100 (MOV 4(SP),-(SP))
+sim> step 1
+
+Simulation stopped, PC: 001104 (BIC #177740,(SP))
+sim> step 1
+
+Simulation stopped, PC: 001110 (BIT #30000,177776)
+sim> step 1
+
+Simulation stopped, PC: 001116 (BEQ 1132)
+sim> step 1
+
+Simulation stopped, PC: 001132 (JSR PC,@(R0)+)
+sim> step 1
+
+Simulation stopped, PC: 035330 (JSR R5,3236)
+sim> step 1
+
+Simulation stopped, PC: 003236 (MOV R5,R0)
+sim> step 1
+
+Simulation stopped, PC: 003240 (MOV SP,R5)
+sim> step 1
+
+Simulation stopped, PC: 003242 (MOV R4,-(SP))
+sim> step 1
+
+Simulation stopped, PC: 003244 (MOV R3,-(SP))
+sim> step 1
+
+Simulation stopped, PC: 003246 (MOV R2,-(SP))
+sim> step 1
+
+Simulation stopped, PC: 003250 (SUB (R0)+,SP)
+sim> step 1
+
+Simulation stopped, PC: 003252 (JMP (R0))
+sim> step 1
+
+Simulation stopped, PC: 035336 (MOV #115,@61212)
+sim> step 1
+
+Simulation stopped, PC: 035344 (JSR PC,1402)
+sim> step 1
+
+Simulation stopped, PC: 001402 (MOV 177776,-(SP))
+sim> step 1
+
+Simulation stopped, PC: 001406 (MOV #340,177776)
+sim> step 1
+
+Simulation stopped, PC: 001414 (MOV 177570,R1)
+sim> examine 1414
+1414:	016701
+sim> examine 1416
+1416:	176150
+sim> examine 1420
+1420:	032701
+sim> examine 1422
+1422:	000001
+sim> examine 1424
+1424:	001404
+sim> examine 1426
+1426:	052767
+sim> examine 1430
+1430:	030000
+sim> examine 1432
+1432:	176342
+sim> examine 1434
+1434:	005301
+sim> examine 1436
+1436:	004767
+sim> examine 1440
+1440:	000512
+sim> examine 1442
+1442:	010067
+sim> examine 1444
+1444:	176122
+sim> examine 1446
+1446:	012667
+sim> examine 1450
+1450:	176324
+sim> examine 1452
+1452:	000207
+sim> examine 1454
+1454:	016601
+sim> examine 1456
+1456:	000002
+sim> examine 1460
+1460:	016746
+sim> examine 1462
+1462:	176312
+sim> examine 1464
+1464:	010246
+sim> examine 1466
+1466:	000235
+sim> examine 1470
+1470:	016102
+sim> examine 1472
+1472:	000002
+sim> examine 1474
+1474:	001434
+sim> examine 1476
+1476:	112200
+sim> examine 1500
+1500:	042700
+sim> examine 1502
+1502:	177400
+sim> examine 1504
+1504:	010261
+sim> examine 1506
+1506:	000002
+sim> examine 1510
+1510:	005321
+sim> examine 1512
+1512:	001003
+sim> examine 1514
+1514:	005021
+sim> examine 1516
+1516:	005021
+sim> examine 1520
+1520:	000407
+sim> examine 1522
+1522:	032702
+sim> examine 1524
+1524:	000007
+sim> examine 1526
+1526:	001013
+sim> examine 1530
+1530:	016211
+sim> examine 1532
+1532:	177770
+sim> examine 1534
+1534:	062711
+sim> examine 1536
+1536:	000002
+sim> examine 1540
+1540:	005302
+sim> examine 1542
+1542:	042702
+sim> examine 615566
+615566:	000000
+sim> examine 615570
+615570:	000000
+sim> examine 615572
+615572:	000000
+sim> examine 615574
+615574:	000000
+sim> examine 615576
+615576:	000000
+sim> examine 615600
+615600:	000000
+sim> examine 615602
+615602:	000000
+sim> examine 615604
+615604:	000000
+sim> examine 615606
+615606:	000000
+sim> examine 615610
+615610:	000000
+sim> examine 615612
+615612:	000000
+sim> examine 615614
+615614:	000000
+sim> examine 615616
+615616:	000000
+sim> examine 615620
+615620:	000000
+sim> c
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> sync
+Unknown command
+sim> c
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 10:31:22 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 10:38:35 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64525
+
+;login: rioot
+Login incorrect.
+Name: root
+# ed /etc/passwd
+276
+a
+michael::2:2::/usr/michael:
+.
+w
+304
+!mkduir /@!mkdir /usr/micahel####hael
+!
+!chown /usr/mk#@!/#chown michael /usr/micahel####hael
+!
+q
+# 
+;login: michael
+% 
+;login: root
+# sync
+# ed /usr/####etc/passwd
+304
+a
+auberon::218###18:28##18::/usr/auberon:
+.
+.
+auberon::18:18::/usr/auberon:
+w
+334
+!/#mkdir /usr/auberon
+!
+!chown auberon /usr/auberon
+!
+q
+# sync
+# 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 11:12:38 2026
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% /#cata /@cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+% chdir hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% cd ##hdir 2syntax
+% ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% cat hint3b
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+% dir
+dir: not found
+% ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% cls
+cls: not found
+% pwd
+../usr/thalia/hints/2syntax
+% cd ..
+cd: not found
+% chdir ..
+% pwd
+../usr/thalia/hints
+% cd ..
+cd: not found
+% chdir d\..
+chdir: bad directory
+% chdir ..
+% pwd
+../usr/thalia
+% dir
+dir: not found
+% ls
+hints
+mullender.c
+rfc4
+thanks
+% cd /
+cd: not found
+% chdir /
+% dir
+dir: not found
+% pwd
+..
+% ls
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% cd bin
+cd: not found
+% chdir bin
+% ls
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+% cd ..
+cd: not found
+% chdir ..
+% ls
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% d\
+
+d: not found
+% ls tmp
+etma
+utmp
+% ls t\
+
+t not found
+% u
+u: not found
+% 
+% ls unix
+unix
+% ls
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% cd usr
+cd: not found
+% ls
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% cd /usr
+cd: not found
+% chdir /usr
+% ls
+adm
+alex
+auberon
+bin
+c
+cody
+fort
+games
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+% cd games
+cd: not found
+% ls\\
+ls\: not found
+% chdir games
+% ls
+bj
+chess
+cubic
+moo
+ttt
+ttt.k
+wump
+% ttt
+Tic-Tac-Toe
+Accumulated knowledge? no
+0 'bits' of knowledge
+new game
+123
+456
+789
+
+? 1
+XO3
+456
+789
+
+? 9
+XOO
+456
+78X
+
+? 5
+You win
+new game
+123
+456
+789
+
+? 
+Illegal move
+123
+456
+789
+
+? exit
+Illegal move
+123
+456
+789
+
+? quit
+Illegal move
+123
+456
+789
+
+? 1
+XO3
+456
+789
+
+? 9
+XO3
+O56
+78X
+
+? 7
+XO3
+OO6
+X8X
+
+? 8
+You win
+new game
+123
+456
+789
+
+? q
+Illegal move
+123
+456
+789
+
+? Q
+Illegal move
+123
+456
+789
+
+? 
+Illegal move
+123
+456
+789
+
+? help
+Illegal move
+123
+456
+789
+
+? ?
+Illegal move
+123
+456
+789
+
+? 
+134 'bits' returned
+
+% ls
+bj
+chess
+cubic
+moo
+ttt
+ttt.k
+wump
+% moo
+MOO
+new game
+? help
+bad guess
+? 
+% ls
+bj
+chess
+cubic
+moo
+ttt
+ttt.k
+wump
+% cd /
+cd: not found
+% ls
+bj
+chess
+cubic
+moo
+ttt
+ttt.k
+wump
+% chdir /
+% ls
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% ls /mnt
+% ls /mtmp
+/mtmp not found
+% ls /tmop
+/tmop not found
+% ls /tmp
+utmp
+% cd /usr
+cd: not found
+% ls
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% cd /usr
+cd: not found
+% chdir /usr
+% ls
+adm
+alex
+auberon
+bin
+c
+cody
+fort
+games
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+% cat passwd
+R.Z..% 
+% ls
+adm
+alex
+auberon
+bin
+c
+cody
+fort
+games
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+% cd /usr/games
+cd: not found
+% ls
+adm
+alex
+auberon
+bin
+c
+cody
+fort
+games
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+% chidr 
+chidr: not found
+% chdir /usr/games
+% ls
+bj
+chess
+cubic
+moo
+ttt
+ttt.k
+wump
+% sync
+% sty
+sty: not found
+% Sync
+Sync: not found
+% syncv
+syncv: not found
+% syn c
+syn: not found
+% sync
+% 
+% 
+Simulation stopped, PC: 021044 (TST R0)
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 13:08:00 2026
+boot.ini-25> attach dci line=4,4004
+Can't open network port: 4004
+boot.ini-26> attach dci line=5,4005
+Can't open network port: 4005
+boot.ini-60> attach dli line=3,4019
+Can't open network port: 4019
+boot.ini-62> attach dli line=5,4021
+Can't open network port: 4021
+boot.ini-63> attach dli line=6,4022
+Can't open network port: 4022
+boot.ini-71> attach dli line=14,4030
+Can't open network port: 4030
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> examine 1070
+1070:	016746
+sim> examine 1072
+1072:	176702
+sim> examine 1074
+1074:	010146
+sim> examine 1076
+1076:	006506
+sim> examine 1100
+1100:	016646
+sim> examine 1102
+1102:	000004
+sim> examine 1104
+1104:	042716
+sim> examine 1106
+1106:	177740
+sim> examine 1110
+1110:	032767
+sim> examine 1112
+1112:	030000
+sim> examine 1114
+1114:	176660
+sim> examine 1116
+1116:	001405
+sim> examine 1120
+1120:	105067
+sim> examine 1122
+1122:	056332
+sim> examine 1124
+1124:	012767
+sim> examine 1126
+1126:	000020
+sim> examine 1130
+1130:	136652
+sim> examine 1132
+1132:	004730
+sim> examine 1134
+1134:	032767
+sim> examine 1136
+1136:	030000
+sim> examine 1140
+1140:	176634
+sim> examine 1142
+1142:	001427
+sim> examine 1144
+1144:	105767
+sim> examine 1146
+1146:	056306
+sim> examine 1150
+1150:	001404
+sim> examine 1152
+1152:	004767
+sim> examine 1154
+1154:	000060
+sim> examine 1156
+1156:	004767
+sim> examine 1160
+1160:	013032
+sim> examine 1162
+1162:	012701
+sim> examine 1164
+1164:	140004
+sim> examine 1166
+1166:	032711
+sim> examine 1170
+1170:	000020
+sim> examine 1172
+1172:	001013
+sim> examine 1174
+1174:	012100
+sim> examine 1176
+1176:	170100
+sim> examine 1200
+1200:	172421
+sim> examine 1202
+1202:	172521
+sim> cont
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+Unexpected specifier: 1200-7E1
+sim> c
+
+LOGIN INCORRECT.
+NAME: SYN
+LOGIN INCORRECT.
+NAME: ROOT
+# SYNC
+#                                                    

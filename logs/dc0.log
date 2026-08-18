@@ -1,0 +1,1321 @@
+
+;login: 
+;login: 
+;login: 
+;login: w
+;login: 
+;login: 2
+;login: 
+;login: 
+;login: 
+;login: 
+;login: 
+;login: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# lsd# /etc
+core
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# ed /etc/passwdq
+?
+cat /etc/passwdq
+?
+
+?
+ls
+?
+ls
+?
+
+?
+##########
+?
+chdir ?
+?
+chedir/
+?
+
+?
+q
+# 
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# chdir usr
+# ll#s
+ls: not found
+# ls
+ls: not found
+# chdr ..
+chdr: not found
+# chdir ..
+# ls
+ls: not found
+# ls
+ls: not found
+# pwd
+..
+# ls
+ls: not found
+# ls
+ls: not found
+# echo *
+bin dev etc lib mnt tmp unix usr
+# cat ###e#cd##chdir usr
+cchdir: not found
+# chdir usr
+# echo *
+adm bin c fort games hash lib lpd mdec ncb newt pub sno source sys thalia tmp
+# chdir games
+# echo *
+bj chess cubic moo ttt ttt.k wump
+# ./wump
+Instructions? (y-n) y
+
+Welcome to 'Hunt the Wumpus.'
+
+The Wumpus lives in a cave of 20 rooms.
+Each room has 3 tunnels leading to other rooms.
+
+Hazards:
+
+Bottomless Pits - Some rooms have Bottomless Pits in them.
+	If you go there, you fall into the pit and lose!
+Super Bats - Some other rooms have super bats.
+	If you go there, a bat will grab you and take you to
+	somewhere else in the cave where you could
+	fall into a pit or run into the . . .
+
+Wumpus:
+
+The Wumpus is not bothered by the hazards since
+he has sucker feet and is too big for a bat to lift.
+
+Usually he is asleep.
+Two things wake him up:
+	your entering his room
+	your shooting an arrow anywhere in the cave.
+If the wumpus wakes, he either decides to move one room or
+stay where he was.  But if he ends up where you are,
+he eats you up and you lose!
+
+You:
+
+Each turn you may either move or shoot a crooked arrow.
+
+Moving - You can move to one of the adjoining rooms;
+	that is, to one that has a tunnel connecting it with
+	the room you are in.
+
+Shooting - You have 5 arrows.  You lose when you run out.
+	Each arrow can go from 1 to 5 rooms.
+	You aim by telling the computer
+	The arrow's path is a list of room numbers
+	telling the arrow which room to go to next.
+	The list is terminated with a 0.
+	The first room in the path must be connected to the
+	room you are in.  Each succeeding room must be
+	connected to the previous room.
+	If there is no tunnel between two of the rooms
+	in the arrow's path, the arrow chooses one of the
+	three tunnels from the room it's in and goes its
+	own way.
+
+	If the arrow hits the wumpus, you win!
+	If the arrow hits you, you lose!
+
+Warnings:
+
+When you are one or two rooms away from the wumpus,
+the computer says:
+		'I smell a Wumpus'
+When you are one room away from some other hazard, it says:
+		Bat    - 'Bats nearby'
+		Pit    - 'I feel a draft'
+
+You are in room 16
+I feel a draft
+There are tunnels to 2 9 13
+Move or shoot (m-s) m 13
+You are in room 13
+You fell into a pit
+Another game? (y-n) y
+Same room setup? (y-n) y
+You are in room 16
+I smell a wumpus
+There are tunnels to 2 9 13
+Move or shoot (m-s) s 9
+
+You are in room 16
+I smell a wumpus
+There are tunnels to 2 9 13
+Move or shoot (m-s) s 2###
+Move or shoot (m-s) m 2
+You are in room 2
+I smell a wumpus
+Bats nearby
+There are tunnels to 10 16 17
+Move or shoot (m-s) s 10
+You slew the wumpus
+Another game? (y-n) n
+# wall hi
+wall: not found
+# ls
+bj
+chess
+cubic
+moo
+ttt
+ttt.k
+wump
+# mooq  
+mooq: not found
+# who
+root    tty0 Aug 18 10:36
+ty      tty1 Aug 18 10:52
+hash    tty2 Aug 18 10:50
+root    tty8 Aug 18 10:53
+ty      ttyc Aug 18 10:54
+newt    ttyk Aug 18 10:43
+cody    ttyl Aug 18 10:48
+alex    ttym Aug 18 10:48
+newt    ttyn Aug 18 10:39
+dnm     ttyq Aug 18 10:49
+ncb     ttyt Aug 18 10:43
+# write root hello
+root h not logged in.
+# write root
+
+Message from root...
+hiiiiiii
+hiiiiiii
+
+
+
+
+#
+
+q
+q
+EOT
+# 
+# write root
+
+Message from root...
+hello from teletype!
+hello from teletype!
+
+
+EOT
+# 
+# 
+Message from auberon...
+
+;login: auberon
+Login incorrect.
+Name: auberon
+Login incorrect.
+Name: ####
+Login incorrect.
+Name: 
+Login incorrect.
+Name: root
+Login incorrect.
+Name: auber::2
+Login incorrect.
+Name: auberon::18
+Login incorrect.
+Name: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# mkdir auberon
+# cd auberon
+cd: not found
+# chdir auberon
+# ls
+# cd ..
+cd: not found
+# chdir ..
+# ls
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls usr
+adm
+bin
+c
+cody
+fort
+games
+lib
+lpd
+mdec
+pub
+sno
+source
+sys
+thalia
+tmp
+# ls usr/thalia
+hints
+mullender.c
+rfc4
+# cd auberon
+cd: not found
+# chi#dir auberon
+# cp -r usr/thalia .
+Usage: cp oldfile newfile
+# cp ../usr/thalia/mullender.c ./mullender.c
+# ls
+mullender.c
+# cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+# cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+# cp ../usr/thalia/hint ./hint
+Cannot open old file.
+# ls ../usr/thalia/
+hints
+mullender.c
+rfc4
+# cat ../usr/thalia/hints
+A.k..#3semantics%4debugZ1compile 5solution'resourcesmullender.smullender.das72syntaxasmsyntax1# chdir ../usr/thalia/hints
+# ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+# cat compile
+# cat 1compile
+Z.A..1hint# cd compile
+cd: not found
+# chdir compile
+chdir: bad directory
+# ch####
+# chdir 2syntax
+# ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+# cat hint1
+Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.
+# 
+# 
+# 
+# 
+# cdh@
+# cd /auberon/
+cd: not found
+# chdir /auberon
+# ls
+mullender.c
+# 1,$@
+# ed mullender.c
+469
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+.a
+/*test append*/
+1,$p
+#####
+.
+
+?
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+/*test append*/
+1,$p
+
+$,$d
+$,$d
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+/*test append*/
+n
+
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+/*test append*/
+q
+# cc @
+# ls
+mullender.c
+# cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+# ed mullende.c
+?
+q
+# ed mullender.c
+469
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+2
+short main[] = {
+p
+short main[] = {
+c
+int main{#[] {
+.
+p
+int main[] {
+w
+465
+! cc mullender.c
+3: Expression syntax
+3: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+!
+s/0xbef/5757/
+?
+p
+int main[] {
+s/0xbef/5757/
+?
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+/0xbef/
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+s/0xbef/5757/
+!ls /us/thalia/
+/us/thalia/ not found
+!
+ls /usr/thl#alia
+?
+! ls /usr/thalia
+hints
+mullender.c
+rfc4
+!
+! ls /usr/thalia/hints/2syntax
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+!
+! cal /usr/thalia/hints/2syntax/hint1
+Bad argument
+!
+! cat /usr/thalia/hints/2syntax/hint1
+Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.
+!
+cat /usr/thalia/hints/2syntax/hints#hint2
+?
+! cat /usr/thalia/hints/2syntax/hints/hint2
+!
+
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+c#####
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+! cat /usr/thalia/hints/2syntax/hints/hint2
+!
+q
+# cd /
+cd: not found
+# chdir /
+# ls
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# cd usr######
+# chdir etc
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+# cd /auberon
+cd: not found
+# chdir auberon 
+chdir: bad directory
+# chdir /auberon
+# touch hello
+touch: not found
+# echo ""#something" > hello
+# cat hello
+something
+# echo 
+# 
+# echo ""#ekse" >> hello
+# cat hello
+something
+ekse
+# cd /etc
+cd: not found
+# chdir /etc
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+# echo ""#auberon::18::18::/usr/auberon: >> paswd
+syntax error
+# 
+# 
+# 
+# 
+# 
+# echo "auberon::18:18::/usr/auberon" >> passwd
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon
+# ed passwd
+131
+$
+auberon::18:18::/usr/auberon
+s/$/:/
+p
+auberon::18:18::/usr/auberon:
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+q
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# chdir ..
+# ls
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# cd usr
+cd: not found
+# chdir usr
+# ls
+adm
+alex
+bin
+c
+cody
+fort
+games
+lib
+lpd
+mdec
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+# mkdir auberon
+# cd ../..
+cd: not found
+# who
+root    tty0 Aug 18 10:30
+alex    tty1 Aug 18 11:01
+thalia  tty8 Aug 18 10:29
+root    ttyl Aug 18 10:32
+root    ttyn Aug 18 11:07
+root    ttyu Aug 18 10:41
+# exit
+# login auberon
+Bad /etc/passwd
+
+;login: auberon
+% ls
+% 
+% 
+% huh
+huh: not found
+% pwd
+../usr/auberon
+% cd##cp /auberon/mullender.c .
+% ls
+mullender.c
+% cc mullender.c
+3: Expression syntax
+3: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% cat @
+% cp /usr/thalia/hints/* .
+Usage: cp oldfile newfile
+% ls
+mullender.c
+% c@
+% cat /usr/thalia/hints/2syntax/*
+Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.
+Hint: Array in C as of UNIX V4 were declared without equals, e.g.,
+
+	int a[] {1, 2, 3};
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+Octal was the preferred base for expressing bit patterns, a tradition inherited
+from earlier systems. Despite the 16-bit word size not being divisible by 3 (3
+bits per octal digit), all PDP-11 documentation used octal. Note that the
+switches on the PiDP-11 front panel are colored in groups of three, denoting
+octal digits.
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+/* Portable between VAX11 && PDP11 */
+int main[] {
+        277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+        -113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+        4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+        077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+% ls
+mullender.c
+% cc mullender.c
+3: Expression syntax
+3: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ed mullender.c
+465
+/0x52d7/s//051327/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+/0x4bc/s//1212/
+g/0x9/s//32386/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 32386,
+	4407, 6, 5568, 1, -30460, 0, 32386, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+g/32386/s//9/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+w
+460
+3
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+/0xbef@
+	-113, 21119, 051327, -1006, -7151, 0, 1212, 020004,
+3
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+s/0xbef/05757/
+p
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+/@
+?
+
+?
+!cat /
+...bin;dev>etcKlibXmntYtmpZusr^unixaauberonnunix!
+!cat /usr/thalia/hints/2syntax/*
+Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.
+Hint: Array in C as of UNIX V4 were declared without equals, e.g.,
+
+	int a[] {1, 2, 3};
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+Octal was the preferred base for expressing bit patterns, a tradition inherited
+from earlier systems. Despite the 16-bit word size not being divisible by 3 (3
+bits per octal digit), all PDP-11 documentation used octal. Note that the
+switches on the PiDP-11 front panel are colored in groups of three, denoting
+octal digits.
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+/* Portable between VAX11 && PDP11 */
+int main[] {
+        277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+        -113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+        4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+        077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+!
+/0x7e82/s//32386/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	32386, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+w
+459
+q
+% cc mullender.c
+8: Expression syntax
+8: External definition syntax
+10: x6176 undefined
+10: x6176 undefined
+11: x6176 undefined
+% ed mullender.c
+459
+/0x6176/s//24950/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	32386, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+wq
+?
+w
+458
+q
+% cc mullender.c
+8: Expression syntax
+8: External definition syntax
+% eed #####ed mullender.c 
+458
+/0x8/s//8/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	32386, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+w
+456
+q
+% cc mullender.c
+% .@
+% a.ouy#t
+  :-)Bad system call -- Core dumped
+% cat /usr/thalia/hints
+A.k..#3semantics%4debugZ1compile 5solution'resources2restoremullender.das72syntaxasmsyntax1% cat /usr/thalia/hints/3semantics
+#.A..$hint1hint2cmullender.s*mullender.dashint3% cat /usr/thalia/hints/3semantics/hint1
+Hint: The early C compiler did not check the type of main and the C runtime
+simply jumped to main. This definition is interpreted as PDP-11 machine code.
+% echo
+% cat usr/thalia/hints/3semantics/hint2
+% cat /usr/thalia/hints/3semantics/hint2
+Hint: The assembly code corresponding to the PDP-11 portion of the program is at
+mullender.s. A disassembly of it, showing the octal values of the words, is at
+mullender.das.
+
+Numbers in PDP-11 assembly are in octal by default, unless they are
+suffixed with a period (.), making them decimal. Period does not mean floating
+point, although the PDP-11 did have floating point.
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% ls /usr/thalia/hints/3semantics
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% cat /usr/thalia/hints/3semantics/mullender.das
+000000: 010704			mov	pc,r4
+000002: 005744			tst	-(r4)
+000004: 162704 000011		sub	$11,r4
+000010: 010467 000006		mov	r4,22
+000014: 012700 000001		mov	$1,r0
+000020: 104404			trap	4
+000022: 000000			0
+000024: 000011			11
+000026: 012702 001000		mov	$1000,r2
+000032: 104455			trap	55
+000034: 077202			sob	r2,32
+000036: 000760			br	0
+% export hintdir=/usr/thalia/hints
+export: not found
+% ls /usr/thalia/hints/3semantics/hint3
+/usr/thalia/hints/3semantics/hint3
+% cat /usr/thalia/hints/3semantics/hints/hint3
+% cat /usr/thalia/hints/3semm#antics/hint3
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+	write(1, "  :-)\b\b\b\b", 9);
+	delay();
+}
+% ls
+a.out
+core
+mullender.c
+% chdir /usr/thalia
+% ls -l
+total 15
+drwxr-xr-x 7 thalia    176 Aug 18 12:05 hints
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia   5317 Aug 18 10:28 rfc4
+-rw-rw-rw- 1 thalia     25 Aug 18 11:08 thanks
+% cat m*.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% cp m*.c /usr/newt/m.c
+% cd /usr/newt
+cd: not found
+% chdir /ur/newt
+chdir: bad directory
+% chdir /usr/newt
+% ls
+m.c
+mullender.c
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% 
+;login: 
+Login incorrect.
+Name: 
+Login incorrect.
+Name: 
+Login incorrect.
+Name: auberon
+% logout
+logout: not found
+% exit
+% ls
+a.out
+core
+mullender.c
+% pwd
+../usr/auberon
+% cd ~
+cd: not found
+% chdir ~
+chdir: bad directory
+% chdir
+chdir: arg count
+% chdir /usr
+% login root
+# 
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+# ed /etc/##############
+# echo 
+# echo 'yang::16::16::/usr/yang:' >> /etc/passwd
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+# mkdir /usr/yang
+# chm#di#######
+# chown yang /usr/yang
+# ls -A yquit
+yquit not found
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls -A /usr/yang
+# ls -a /usr/yang
+.
+..
+# ls -l /usr/yang
+total 0
+# ls --help
+total 66
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 12:12 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x24 bin       384 Aug 18 12:14 usr
+# ls --help u
+u not found
+# ls --help /usr/yang
+total 0
+# ls -l /usr
+total 22
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      160 Aug 18 12:02 alex
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 12:16 cody
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     96 Aug 18 11:08 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+# login yang
+No shell.
+;login: 
+Login incorrect.
+Name: yang
+No shell.
+;login: yang
+No shell.
+;login: quit
+Login incorrect.
+Name: 
+Login incorrect.
+Name: yang
+No shell.
+;login: 
+Login incorrect.
+Name: 
+Login incorrect.
+Name: 
+Login incorrect.
+Name: thalia
+% 
+% ls
+hints
+mullender.c
+rfc4
+thanks
+% login yang
+No shell.
+;login: thalia
+% quit
+quit: not found
+% logout
+logout: not found
+% ed 
+?
+
+?
+ls
+?
+
+?
+
+?
+
+?
+login root
+?
+log
+?
+as
+?
+af
+?
+
+?
+h
+?
+H
+?
+H
+?
+
+?
+wow!!
+?
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;login: 
+:login: xx
+;login: x
+:login: xx
+;login: xxx
+:login: x
+;login: xxxxxx
+:login: x
+;login: xx
+:login: xxx
+;login: xxx
+:login: xxxxxxxxxxxx
+;login: xxx
+:login: xxxxxxxxxxxxxxxxxxxx
+;login: xx
+:login: xxx
+;login: x
+:login: x
+;login: xxx
+:login: x
+;login: xxxxxx
+:login: x
+;login: x
+:login: xx
+;login: x
+:login: x
+;login: xxxx
+:login: xx
+;login: xxxxxxxxxxxxx
+:login: xx
+;login: xx
+:login: xx
+;login: x
+:login: xx
+;login: xx
+:login: x
+;login: xxxxxxx
+:login: xxxxxxxxxxxxx
+;login: xx
+:login: xx
+;login: xx
+:login: xx
+;login: xxxxxxxx
+:login: xx
+;login: xx
+:login: xx
+;login: xx
+:login: xx
+;login: xx
+:login: xx
+;login: xx
+:login: xx
+;login: xxxxx
+:login: xxxxxxxxxx

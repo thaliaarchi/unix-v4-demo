@@ -1,0 +1,132 @@
+
+
+Connected to the PDP-11 simulator DCI device, line 5
+
+
+;login: 
+
+Connected to the PDP-11 simulator DCI device, line 5
+
+
+;login: joe
+% dir
+dir: not found
+% !
+!: not found
+% mkdir
+% cd
+cd: not found
+% ls
+% .
+.: not found
+% pwd
+../usr/joe
+% cd /usr
+cd: not found
+% 
+
+Connected to the PDP-11 simulator DCI device, line 5
+
+
+;login: joe
+% ls /
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% cd /unix
+cd: not found
+% chdir /unix
+chdir: bad directory
+% chdir unix
+chdir: bad directory
+% chdir /unix/
+chdir: bad directory
+% pwd
+../usr/joe
+% chdir ..
+% pwd
+../usr
+% ls
+adm
+alex
+ben
+bin
+c
+cody
+dnm
+fort
+games
+hash
+joe
+lib
+lpd
+mdec
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+ty
+% chdir fort
+% ls
+errors
+f1o.a
+f2o.a
+f3o.a
+f4o.a
+fc1
+fxo.a
+sum.s
+% print sum.s
+print: not found
+% sum.s
+sum.s: not found
+% cd ..
+cd: not found
+% chdir ..
+% ls
+adm
+alex
+ben
+bin
+c
+cody
+dnm
+fort
+games
+hash
+joe
+lib
+lpd
+mdec
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+ty
+% cd games
+cd: not found
+% 
+
+Connected to the PDP-11 simulator DCI device, line 5
+
+
+;login: joe
+Login incorrect.
+Name: joe
+Login incorrect.
+Name: 
+Disconnected from the PDP-11 simulator
+

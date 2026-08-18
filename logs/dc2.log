@@ -1,0 +1,403 @@
+
+
+Connected to the PDP-11 simulator DCI device, line 2
+
+
+;login: admin
+Login incorrect.
+Name: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls -al
+total 68
+drwxr-xr-x 9 bin       192 Aug 16 14:11 .
+drwxr-xr-x 9 bin       192 Aug 16 14:11 ..
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       128 Aug 18 03:51 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x16 bin       256 Jun 12 18:51 usr
+# cd /etc
+cd: not found
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# cd etc
+cd: not found
+# cd ./etc
+cd: not found
+# cd /etc
+cd: not found
+# helo
+helo: not found
+# help
+help: not found
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# chdir etc
+# pwd
+../etc
+# ls -al
+total 44
+drwxr-xr-x 2 bin       256 Aug 11 21:17 .
+drwxr-xr-x 9 bin       192 Aug 16 14:11 ..
+-rwxr--r-- 1 bin       446 Jun 10 08:37 getty
+-rwxr-xr-x 1 bin      2236 Jun 10 08:37 glob
+-rwxrwxrwx 1 bin      2738 Aug 11 21:17 init
+-rwxr-xr-x 1 bin       814 Jun 12 16:55 lpd
+-rwxr--r-- 1 bin      4136 Jun 10 08:37 mkfs
+-rwxr--r-- 1 bin      1800 Jun 10 08:37 mknod
+-rwsr-xr-x 1 root     2078 Jun 10 08:37 mount
+-rwxr-xr-x 1 bin       220 Jun 10 08:37 msh
+-rw-r--r-- 1 bin        56 Jun 12 18:51 passwd
+-rw-r--r-- 1 bin        70 Jun 10 08:37 rc
+-rw-r--r-- 1 bin       128 Aug 11 21:16 ttys
+-rwsr-xr-x 1 root     1990 Jun 10 08:37 umount
+-rwxr-xr-x 1 bin        32 Jun 10 08:37 update
+# cat
+
+
+ped
+
+
+
+
+s
+?
+Quit -- Core dumped
+# close
+close: not found
+# help
+help: not found
+# ls
+core
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+# [A[B
+Arg count
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+# mkdir /usr/hash
+# ls ../usr
+adm
+bin
+c
+fort
+games
+hash
+lib
+lpd
+mdec
+pub
+sno
+source
+sys
+thalia
+tmp
+# ls
+core
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# ed passwd
+102
+
+?
+q
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+newt::64:64::/usr/newt:
+ncb::12:12::/usr/ncb:
+# ed passwd
+102
+1,$
+ncb::12:12::/usr/ncb:
+exit
+?
+quit
+?
+q
+# exit
+# exit
+# quit
+quit: not found
+# 
+
+Connected to the PDP-11 simulator DCI device, line 2
+
+
+;login: hash
+% ls
+% ls -al
+total 2
+drwxrwxrwx 2 105        32 Aug 18 10:48 .
+drwxr-xr-x23 bin       368 Aug 18 10:49 ..
+% pwd
+../usr/hash
+% cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+newt::64:64::/usr/newt:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+alex::9:9::/usr/alex:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+% ls -al /etc
+total 51
+drwxr-xr-x 2 bin       256 Aug 18 10:50 .
+drwxr-xr-x 9 bin       192 Aug 16 14:11 ..
+-rw-rw-rw- 1 root     3520 Aug 18 10:35 core
+-rwxr--r-- 1 bin       446 Jun 10 08:37 getty
+-rwxr-xr-x 1 bin      2236 Jun 10 08:37 glob
+-rwxrwxrwx 1 bin      2738 Aug 11 21:17 init
+-rwxr-xr-x 1 bin       814 Jun 12 16:55 lpd
+-rwxr--r-- 1 bin      4136 Jun 10 08:37 mkfs
+-rwxr--r-- 1 bin      1800 Jun 10 08:37 mknod
+-rwsr-xr-x 1 root     2078 Jun 10 08:37 mount
+-rwxr-xr-x 1 bin       220 Jun 10 08:37 msh
+-rw-r--r-- 1 bin       252 Aug 18 10:50 passwd
+-rw-r--r-- 1 bin        70 Jun 10 08:37 rc
+-rw-r--r-- 1 bin       128 Aug 11 21:16 ttys
+-rwsr-xr-x 1 root     1990 Jun 10 08:37 umount
+-rwxr-xr-x 1 bin        32 Jun 10 08:37 update
+% sudo ls -al
+sudo: not found
+% so ls -al
+so: not found
+% su
+# ls -al
+total 2
+drwxrwxrwx 2 105        32 Aug 18 10:48 .
+drwxr-xr-x24 bin       384 Aug 18 10:50 ..
+# exit
+# whoami
+whoami: not found
+# who
+root    tty0 Aug 18 10:36
+root    tty1 Aug 18 10:39
+hash    tty2 Aug 18 10:50
+joe     tty5 Aug 18 10:50
+newt    ttyk Aug 18 10:43
+cody    ttyl Aug 18 10:48
+alex    ttym Aug 18 10:48
+newt    ttyn Aug 18 10:39
+dnm     ttyq Aug 18 10:49
+ncb     ttyt Aug 18 10:43
+# wall
+wall: not found
+# 
+Disconnected from the PDP-11 simulator
+
+
+
+Connected to the PDP-11 simulator DCI device, line 2
+
+
+;login: alex
+% ls
+a.out
+core
+hint3b
+lrc.txt
+mullender.c
+progs
+x
+% ooooo       oooooooooo    oooooooo8
+ooooo: not found
+%  888         888    888 o888     88
+888: not found
+%  888         888oooo88  888
+888: not found
+%  888      o  888  88o   888o     oo
+888: not found
+% o888ooooo88 o888o  88o8  888oooo88
+o888ooooo88: not found
+% ooooo       oooooooooo    oooooooo8
+ooooo: not found
+%  888         888    888 o888     88
+888: not found
+%  888         888oooo88  888
+888: not found
+%  888      o  888  88o   888o     oo
+888: not found
+% o888ooooo88 o888o  88o8  888oooo88
+o888ooooo88: not found
+% ed
+q
+% ed lrc.txt
+36
+p
+ooooo       oooooooooo    oooooooo8
+q
+% rm lrc.txt
+% ed lrc.txt
+?
+w
+?
+q
+% ls
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+% ed lrc.tstxt@ed lrc.txt
+?
+w lrc.txt
+?
+q
+% ls
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+% ed
+w lrc.txt
+?
+!ls
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+!
+e lrc.txt
+?
+!ls -al
+total 12
+drwxrwxrwx 2 alex      160 Aug 18 12:41 .
+drwxr-xr-x24 bin       384 Aug 18 12:14 ..
+-rwxrwxrwx 1 alex      248 Aug 18 11:58 a.out
+-rw-rw-rw- 1 alex     2496 Aug 18 12:02 core
+-rw-r--r-- 1 alex      137 Aug 18 11:01 hint3b
+-rw-r--r-- 1 alex      466 Aug 18 11:58 mullender.c
+-rw-rw-rw- 1 alex      237 Aug 18 11:11 progs
+-rw-rw-rw- 1 alex        9 Aug 18 11:01 x
+!
+q
+% ed
+elrc.?
+?
+q
+q
+% ed
+e lrc.txt
+?
+e lrc
+?
+w lrc
+?
+i
+?
+q
+% 
+;login: alex
+% ed
+e lrc
+?
+q
+% 
+;login: w
+
+Connected to the PDP-11 simulator DCI device, line 2
+
+
+;login: alex
+% ls
+a.out
+core
+hint3b
+mullender.c
+progs
+x
+% ed lrc
+?
+e lrc
+?
+w lrc
+?
+i
+?
+a
+hi
+.
+w
+3
+w lrc
+3
+p
+hi
+q
+% rm lrc
+% [A[A[B[Bed lrc####
+% ed
+a
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+.
+w lrc
+171
+q
+% 

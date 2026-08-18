@@ -1,0 +1,48 @@
+
+
+Connected to the PDP-11 simulator DCI device, line 10
+
+
+;login: 
+Login incorrect.
+Name: Ty
+Login incorrect.
+Name: ty
+% cd
+cd: not found
+% ?name
+Arg count
+% who
+root    tty0 Aug 18 10:36
+ty      tty1 Aug 18 10:52
+hash    tty2 Aug 18 10:50
+root    tty8 Aug 18 10:55
+ty      ttyc Aug 18 10:54
+newt    ttyk Aug 18 10:43
+cody    ttyl Aug 18 10:48
+alex    ttym Aug 18 10:48
+newt    ttyn Aug 18 10:39
+dnm     ttyq Aug 18 10:49
+ncb     ttyt Aug 18 10:43
+% 
+;login: ty
+% 
+;login: ty
+% who
+root    tty0 Aug 18 10:36
+ty      tty1 Aug 18 10:52
+hash    tty2 Aug 18 10:50
+root    tty8 Aug 18 10:55
+ty      ttyc Aug 18 10:56
+newt    ttyk Aug 18 10:43
+cody    ttyl Aug 18 10:48
+alex    ttym Aug 18 10:48
+newt    ttyn Aug 18 10:39
+dnm     ttyq Aug 18 10:49
+ncb     ttyt Aug 18 10:43
+% 
+;login: 
+Login incorrect.
+Name: 
+Disconnected from the PDP-11 simulator
+

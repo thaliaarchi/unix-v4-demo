@@ -1,0 +1,1023 @@
+
+
+Connected to the PDP-11 simulator DLI device, line 14
+
+
+
+Connected to the PDP-11 simulator DLI device, line 14
+
+
+Disconnected from the PDP-11 simulator
+
+
+
+Connected to the PDP-11 simulator DLI device, line 14
+
+ncb
+% chdir /
+% ls -la
+total 69
+drwxr-xr-x10 bin       192 Aug 18 11:21 .
+drwxr-xr-x10 bin       192 Aug 18 11:21 ..
+drwxrwxrwx 2 root       64 Aug 18 11:03 auberon
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 11:20 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x22 bin       352 Aug 18 11:15 usr
+% chdir /dev
+% ls -la
+total 3
+drwxr-xr-x 2 bin       928 Aug 18 10:27 .
+drwxr-xr-x10 bin       192 Aug 18 11:21 ..
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+crw-rw-rw- 1 root    4,  0 Aug 18 10:27 ptr
+brw-rw-rw- 1 root    1,  0 Aug 11 03:44 rk0
+brw-rw-rw- 1 root    1,  1 Aug 11 03:44 rk1
+brw-rw-rw- 1 root    0,  0 Aug 11 03:44 rp0
+brw-rw-rw- 1 root    0,  1 Aug 11 03:44 rp1
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 aubero  3,  0 Aug 18 11:21 tty0
+crw--w--w- 1 alex    3,  1 Aug 18 11:21 tty1
+crw--w--w- 1 root    3,  2 Aug 18 10:28 tty2
+crw--w--w- 1 root    3,  3 Aug 18 10:28 tty3
+crw--w--w- 1 root    3,  4 Aug 18 10:28 tty4
+crw--w--w- 1 root    3,  5 Aug 18 11:21 tty5
+crw--w--w- 1 root    3,  6 Aug 18 10:28 tty6
+crw--w--w- 1 root    3,  7 Aug 18 10:28 tty7
+crw--w--w- 1 thalia  0,  0 Aug 18 11:21 tty8
+crw--w--w- 1 root    0,  1 Aug 18 11:21 tty9
+crw--w--w- 1 root    3,  8 Aug 18 10:28 ttya
+crw--w--w- 1 root    3,  9 Aug 18 10:28 ttyb
+crw--w--w- 1 root    3, 10 Aug 18 10:28 ttyc
+crw--w--w- 1 root    3, 11 Aug 18 10:28 ttyd
+crw--w--w- 1 root    3, 12 Aug 18 10:28 ttye
+crw--w--w- 1 root    3, 13 Aug 18 10:28 ttyf
+crw--w--w- 1 root    3, 14 Aug 18 10:28 ttyg
+crw--w--w- 1 root    3, 15 Aug 18 10:28 ttyh
+crw--w--w- 1 root    0,  2 Aug 18 11:21 ttyi
+crw--w--w- 1 root    0,  3 Aug 18 11:21 ttyj
+crw--w--w- 1 root    0,  4 Aug 18 11:21 ttyk
+crw--w--w- 1 root    0,  5 Aug 18 11:21 ttyl
+crw--w--w- 1 root    0,  6 Aug 18 11:21 ttym
+crw--w--w- 1 ncb     0,  7 Aug 18 11:21 ttyn
+crw--w--w- 1 root    0,  8 Aug 18 11:21 ttyo
+crw--w--w- 1 root    0,  9 Aug 18 11:21 ttyp
+crw--w--w- 1 root    0, 10 Aug 18 11:21 ttyq
+crw--w--w- 1 root    0, 11 Aug 18 11:21 ttyr
+crw--w--w- 1 root    0, 12 Aug 18 11:21 ttys
+crw--w--w- 1 root    0, 13 Aug 18 11:21 ttyt
+crw--w--w- 1 root    0, 14 Aug 18 11:21 ttyu
+crw--w--w- 1 ncb     0, 15 Aug 18 11:21 ttyv
+% man ls
+man: not found
+% help ls
+help: not found
+% ls -la
+total 3
+drwxr-xr-x 2 bin       928 Aug 18 10:27 .
+drwxr-xr-x10 bin       192 Aug 18 11:23 ..
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+crw-rw-rw- 1 root    4,  0 Aug 18 10:27 ptr
+brw-rw-rw- 1 root    1,  0 Aug 11 03:44 rk0
+brw-rw-rw- 1 root    1,  1 Aug 11 03:44 rk1
+brw-rw-rw- 1 root    0,  0 Aug 11 03:44 rp0
+brw-rw-rw- 1 root    0,  1 Aug 11 03:44 rp1
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 aubero  3,  0 Aug 18 11:23 tty0
+crw--w--w- 1 alex    3,  1 Aug 18 11:23 tty1
+crw--w--w- 1 root    3,  2 Aug 18 10:28 tty2
+crw--w--w- 1 root    3,  3 Aug 18 10:28 tty3
+crw--w--w- 1 root    3,  4 Aug 18 10:28 tty4
+crw--w--w- 1 root    3,  5 Aug 18 11:23 tty5
+crw--w--w- 1 root    3,  6 Aug 18 10:28 tty6
+crw--w--w- 1 root    3,  7 Aug 18 10:28 tty7
+crw--w--w- 1 thalia  0,  0 Aug 18 11:23 tty8
+crw--w--w- 1 root    0,  1 Aug 18 11:23 tty9
+crw--w--w- 1 root    3,  8 Aug 18 10:28 ttya
+crw--w--w- 1 root    3,  9 Aug 18 10:28 ttyb
+crw--w--w- 1 root    3, 10 Aug 18 10:28 ttyc
+crw--w--w- 1 root    3, 11 Aug 18 10:28 ttyd
+crw--w--w- 1 root    3, 12 Aug 18 10:28 ttye
+crw--w--w- 1 root    3, 13 Aug 18 10:28 ttyf
+crw--w--w- 1 root    3, 14 Aug 18 10:28 ttyg
+crw--w--w- 1 root    3, 15 Aug 18 10:28 ttyh
+crw--w--w- 1 root    0,  2 Aug 18 11:23 ttyi
+crw--w--w- 1 root    0,  3 Aug 18 11:23 ttyj
+crw--w--w- 1 root    0,  4 Aug 18 11:23 ttyk
+crw--w--w- 1 root    0,  5 Aug 18 11:23 ttyl
+crw--w--w- 1 root    0,  6 Aug 18 11:23 ttym
+crw--w--w- 1 ncb     0,  7 Aug 18 11:23 ttyn
+crw--w--w- 1 root    0,  8 Aug 18 11:23 ttyo
+crw--w--w- 1 root    0,  9 Aug 18 11:23 ttyp
+crw--w--w- 1 root    0, 10 Aug 18 11:23 ttyq
+crw--w--w- 1 root    0, 11 Aug 18 11:23 ttyr
+crw--w--w- 1 root    0, 12 Aug 18 11:23 ttys
+crw--w--w- 1 root    0, 13 Aug 18 11:23 ttyt
+crw--w--w- 1 root    0, 14 Aug 18 11:23 ttyu
+crw--w--w- 1 ncb     0, 15 Aug 18 11:23 ttyv
+% cd#hdir ..
+hdir: not found
+% ls -la
+total 3
+drwxr-xr-x 2 bin       928 Aug 18 10:27 .
+drwxr-xr-x10 bin       192 Aug 18 11:23 ..
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+crw-rw-rw- 1 root    4,  0 Aug 18 10:27 ptr
+brw-rw-rw- 1 root    1,  0 Aug 11 03:44 rk0
+brw-rw-rw- 1 root    1,  1 Aug 11 03:44 rk1
+brw-rw-rw- 1 root    0,  0 Aug 11 03:44 rp0
+brw-rw-rw- 1 root    0,  1 Aug 11 03:44 rp1
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 aubero  3,  0 Aug 18 11:23 tty0
+crw--w--w- 1 alex    3,  1 Aug 18 11:23 tty1
+crw--w--w- 1 root    3,  2 Aug 18 10:28 tty2
+crw--w--w- 1 root    3,  3 Aug 18 10:28 tty3
+crw--w--w- 1 root    3,  4 Aug 18 10:28 tty4
+crw--w--w- 1 root    3,  5 Aug 18 11:23 tty5
+crw--w--w- 1 root    3,  6 Aug 18 10:28 tty6
+crw--w--w- 1 root    3,  7 Aug 18 10:28 tty7
+crwc--w--w- 1 thalia  0,  0 Aug 18 11:23 tty8
+crw--w--w- 1 root    0,  1 Aug 18 11:23 tty9
+crw--w--w- 1 root    3,  8 Aug 18 10:28 ttya
+crw--w--w- 1 root    3,  9 Aug 18 10:28 ttyb
+crw--w--w- 1 root    3, 10 Aug 18 10:28 ttyc
+crw--w--w- 1 root    3, 11 Aug 18 10:28 ttyd
+crw--w--w- 1 root    3, 12 Aug 18 10:28 ttye
+crw--w--w- 1 root    3, 13 Aug 18 10:28 ttyf
+crw--w--w- 1 root    3, 14 Aug 18 10:28 ttyg
+crw--w--w- 1 root    3, 15 Aug 18 10:28 ttyh
+crw--w--w- 1 root    0,  2 Aug 18 11:23 ttyi
+crw--w--w- 1 root    0,  3 Aug 18 11:23 ttyj
+crw--w--w- 1 root    0,  4 Aug 18 11:23 ttyk
+crw--w--w- 1 root    0,  5 Aug 18 11:23 ttyl
+crw--w--w- 1 root    0,  6 Aug 18 11:23 ttym
+crw--w--w- 1 ncb     0,  7 Aug 18 11:23 ttyn
+crw--w--w- 1 root    0,  8 Aug 18 11:23 ttyo
+crw--w--w- 1 root    0,  9 Aug 18 11:23 ttyp
+crw--w--w- 1 root    0, 10 Aug 18 11:23 ttyq
+crw--w--w- 1 root    0, 11 Aug 18 11:23 ttyr
+crw--w--w- 1 root    0, 12 Aug 18 11:23 ttys
+crw--w--w- 1 root    0, 13 Aug 18 11:23 ttyt
+crw--w--w- 1 root    0, 14 Aug 18 11:23 ttyu
+crw--w--w- 1 ncb     0, 15 Aug 18 11:23 ttyv
+% chdir /
+cchdir: not found
+% chdir /
+% ls -la
+total 69
+drwxr-xr-x10 bin       192 Aug 18 11:23 .
+drwxr-xr-x10 bin       192 Aug 18 11:23 ..
+drwxrwxrwx 2 root       64 Aug 18 11:03 auberon
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 11:22 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x22 bin       352 Aug 18 11:15 usr
+% chdir bin
+% ls -la
+total 319
+drwxr-xr-x 2 bin       944 Jun 12 16:54 .
+drwxr-xr-x10 bin       192 Aug 18 11:23 ..
+-rwxr-xr-x 1 bin      1514 Jun 10 08:37 ar
+-rwxr-xr-x 1 bin      5720 Jun 10 08:37 as
+-rwxr-xr-x 1 bin      5846 Jun 10 08:37 bas
+-rwxr-xr-x 1 bin       152 Jun 10 08:37 cat
+-rwxr-xr-x 1 bin      5104 Jun 10 08:37 cc
+-rwxr-xr-x 1 bin      4550 Jun 10 08:37 cdb
+-rwxr-xr-x 1 bin      7112 Jun 10 08:37 check
+-rwxr-xr-x 1 bin      1546 Jun 10 08:37 chmod
+-rwxr-xr-x 1 bin       484 Jun 10 08:37 chown
+-rwxr--r-- 1 bin       190 Jun 10 08:37 clri
+-rwxr-xr-x 1 bin       418 Jun 10 08:37 cmp
+-rwxr-xr-x 1 bin      1200 Jun 10 08:37 cp
+-rwsr-xr-x 1 root     2120 Jun 12 19:13 date
+-rwxr-xr-x 1 bin      4980 Jun 10 08:37 db
+-rwxr-xr-x 1 bin      6528 Jun 10 08:37 dc
+-rwxr-xr-x 1 bin      4246 Jun 10 08:37 dd
+-rwxr-xr-x 1 bin      1592 Jun 10 08:37 df
+-rwxr-xr-x 1 bin       262 Jun 10 08:37 dsw
+-rwxr-xr-x 1 bin       654 Jun 10 08:37 du
+-rwxr-xr-x 1 bin      4174 Jun 12 19:13 dump
+-rwxr-xr-x 1 bin       894 Jun 10 08:37 echo
+-rwxr-xr-x 1 bin      4292 Jun 10 08:37 ed
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 exit
+-rwxr-xr-x 1 bin      4642 Jun 10 08:37 fc
+-rwxr-xr-x 1 bin       942 Jun 10 08:37 goto
+-rwxr-xr-x 1 bin      1552 Jun 10 08:37 if
+-rwxr-xr-x 1 bin       192 Jun 10 08:37 kill
+-rwxr-xr-x 1 bin      3272 Jun 10 08:37 ld
+-rwxr-xr-x 1 bin       480 Jun 10 08:37 ln
+-rwsr-xr-x 1 root     2488 Jun 10 08:37 login
+-rwxr-xr-x 1 bin      3112 Jun 12 16:54 lpr
+-rwxr-xr-x 1 bin      5056 Jun 12 19:13 ls
+-rwxr-xr-x 1 bin      4608 Jun 12 19:13 mail
+-rwsr-xr-x 1 root      240 Jun 10 08:37 mkdir
+-rwsr-xr-x 1 root     2330 Jun 10 08:37 mv
+-rwxr-xr-x 1 bin      2518 Jun 10 08:37 nm
+-rwxr-xr-x 1 bin      4710 Jun 10 08:37 od
+-rwxr-xr-x 1 bin      3630 Jun 12 19:13 pr
+-rwsr-xr-x 1 bin      2286 Jun 10 08:37 ps
+-rwxr-xr-x 1 bin      4996 Jun 10 08:37 restor
+-rwxr-xr-x 1 bin       114 Jun 10 08:37 rew
+-rwxr-xr-x 1 bin      1602 Jun 10 08:37 rm
+-rwsr-xr-x 1 root      292 Jun 10 08:37 rmdir
+-rwxr-xr-x 1 bin      5572 Jun 10 08:37 sh
+-rwxr-xr-x 1 bin      1218 Jun 10 08:37 size
+-rwxr-xr-x 1 bin      4322 Jun 10 08:37 sort
+-rwxr-xr-x 1 bin       496 Jun 10 08:37 strip
+-rwxr-xr-x 1 bin      1542 Jun 10 08:37 stty
+-rwsr-xr-x 1 root     1944 Jun 10 08:37 su
+-rwxr-xr-x 1 bin       198 Jun 10 08:37 sum
+-rwxr-xr-x 1 bin       144 Jun 10 08:37 sync
+-rwxr-xr-x 1 bin       556 Jun 10 08:37 time
+-rwxr-xr-x 1 bin      4482 Jun 12 19:13 tp
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 tty
+-rwxr-xr-x 1 bin      1968 Jun 10 08:37 uniq
+-rwxr-xr-x 1 bin      1792 Jun 12 19:13 who
+-rwxr-xr-x 1 bin       682 Jun 10 08:37 write
+% ls @
+% chdir /
+% ls -la
+total 69
+drwxr-xr-x10 bin       192 Aug 18 11:27 .
+drwxr-xr-x10 bin       192 Aug 18 11:27 ..
+drwxrwxrwx 2 root       64 Aug 18 11:03 auberon
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 11:27 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x22 bin       352 Aug 18 11:15 usr
+% chdir /etc
+% ls -la\#
+% ls -la
+total 44
+drwxr-xr-x 2 bin       256 Aug 11 21:17 .
+drwxr-xr-x10 bin       192 Aug 18 11:28 ..
+-rwxr--r-- 1 bin       446 Jun 10 08:37 getty
+-rwxr-xr-x 1 bin      2236 Jun 10 08:37 glob
+-rwxrwxrwx 1 bin      2738 Aug 11 21:17 init
+-rwxr-xr-x 1 bin       814 Jun 12 16:55 lpd
+-rwxr--r-- 1 bin      4136 Jun 10 08:37 mkfs
+-rwxr--r-- 1 bin      1800 Jun 10 08:37 mknod
+-rwsr-xr-x 1 root     2078 Jun 10 08:37 mount
+-rwxr-xr-x 1 bin       220 Jun 10 08:37 msh
+-rw-r--r-- 1 bin       154 Aug 18 11:15 passwd
+-rw-r--r-- 1 bin        70 Jun 10 08:37 rc
+-rw-r--r-- 1 bin       128 Aug 11 21:16 ttys
+-rwsr-xr-x 1 root     1990 Jun 10 08:37 umount
+-rwxr-xr-x 1 bin        32 Jun 10 08:37 update
+% 
+;login: 
+
+Connected to the PDP-11 simulator DLI device, line 14
+
+ncb
+Login incorrect.
+Name:  ncb
+% ls /
+auberon
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% cd /dev
+cd: not found
+% chdir /lib
+% ls -la
+total 211
+drwxr-xr-x 2 bin       256 Jun 12 17:04 .
+drwxr-xr-x10 bin       192 Aug 18 11:29 ..
+-rwxr-xr-x 1 bin      5050 Jun 10 08:37 as2
+-rwxr-xr-x 1 bin     14504 Jun 10 08:37 c0
+-rwxr-xr-x 1 bin     18976 Jun 10 08:37 c1
+-rw-r--r-- 1 bin        96 Jun 10 08:37 crt0.o
+-rw-r--r-- 1 bin     13578 Jun 10 08:37 filib.a
+-rw-r--r-- 1 bin       340 Jun 10 08:37 fr0.o
+-rw-r--r-- 1 bin     12718 Jun 12 19:13 liba.a
+-rw-r--r-- 1 bin     18382 Jun 12 17:03 libc.a
+-rw-r--r-- 1 bin     12814 Jun 10 08:37 libf.a
+-rw-r--r-- 1 bin      3542 Jun 10 08:37 liby.a
+-rw-r--r-- 1 bin       588 Jun 10 08:37 mcrt0.o
+% chdir /
+% ls -la
+total 69
+drwxr-xr-x10 bin       192 Aug 18 11:29 .
+drwxr-xr-x10 bin       192 Aug 18 11:29 ..
+drwxrwxrwx 2 root       64 Aug 18 11:03 auberon
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 11:28 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x22 bin       352 Aug 18 11:15 usr
+% cd#hdir /tmp
+% s#ls _#-la
+total 3
+drwxrwxrwx 2 bin       176 Aug 18 11:30 .
+drwxr-xr-x10 bin       192 Aug 18 11:30 ..
+-rw-r--r-- 1 root      512 Aug 18 11:28 utmp
+% cd#dir@chdir /
+% cd /
+cd: not found
+% ls -la
+total 69
+drwxr-xr-x10 bin       192 Aug 18 11:30 .
+drwxr-xr-x10 bin       192 Aug 18 11:30 ..
+drwxrwxrwx 2 root       64 Aug 18 11:03 auberon
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 11:30 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x22 bin       352 Aug 18 11:15 usr
+% chdir /usr
+% ls -la
+total 22
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:30 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      128 Aug 18 11:14 alex
+drwxrwxrwx 2 root       96 Aug 18 11:30 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 11:30 cody
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       48 Aug 18 11:04 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     96 Aug 18 11:08 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% cd n#bin
+cd: not found
+% h#chdir bin
+% ls -la
+total 236
+drwxr-xr-x 2 bin       480 Jun 12 16:51 .
+drwxr-xr-x22 bin       352 Aug 18 11:15 ..
+-rwxr-xr-x 1 bin      2966 Jun 10 08:37 ac
+-rwxr-xr-x 1 bin      2006 Jun 10 08:37 cal
+-rwxr-xr-x 1 bin      1890 Jun 10 08:37 comm
+-rwxr-xr-x 1 bin      9258 Jun 10 08:37 cref
+-rwxr-xr-x 1 bin      2250 Jun 10 08:37 crpost
+-rwxr-xr-x 1 bin      4764 Jun 10 08:37 diff
+-rwxr-xr-x 1 bin      4826 Jun 10 08:37 fed
+-rwxr-xr-x 1 bin      5924 Jun 10 08:37 find
+-rwxr-xr-x 1 bin      4118 Jun 10 08:37 form
+-rwxr-xr-x 1 bin      1370 Jun 10 08:37 grep
+-rwxr-xr-x 1 bin       276 Jun 10 08:37 mesg
+-rwxr-xr-x 1 bin      1122 Jun 10 08:37 nice
+-rwxr-xr-x 1 bin      1328 Jun 10 08:37 nohup
+-rwsr-xr-x 1 root     1214 Jun 10 08:37 passwd
+-rwxr-xr-x 1 bin       240 Jun 10 08:37 pfe
+-rwxr-xr-x 1 bin      4448 Jun 10 08:37 prof
+-rwxr-xr-x 1 bin       794 Jun 12 16:51 pwd
+-rwxr-xr-x 1 bin      8114 Jun 10 08:37 roff
+-rwxr-xr-x 1 bin      5438 Jun 10 08:37 sa
+-rwxr-xr-x 1 bin       980 Jun 10 08:37 sleep
+-rwxr-xr-x 1 bin      9422 Jun 10 08:37 sno
+-rwxr-xr-x 1 bin      1082 Jun 10 08:37 split
+-rwxr-xr-x 1 bin       706 Jun 10 08:37 tee
+-rwxr-xr-x 1 bin      1840 Jun 10 08:37 tr
+-rwxr-xr-x 1 bin      6364 Jun 10 08:37 typo
+-rwxr-xr-x 1 bin      2198 Jun 10 08:37 upost
+-rwxr-xr-x 1 bin      1896 Jun 10 08:37 wc
+-rwxr-xr-x 1 bin     20258 Jun 10 08:37 yacc
+% chdit#r /usr
+% ls -la
+total 22
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:31 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      128 Aug 18 11:14 alex
+drwxrwxrwx 2 root       96 Aug 18 11:31 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 11:31 cody
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       48 Aug 18 11:04 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     96 Aug 18 11:08 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% chdir sys
+% ls -la
+total 215
+drwxr-xr-x 5 bin       448 Aug 16 14:08 .
+drwxr-xr-x22 bin       352 Aug 18 11:15 ..
+-rw-r--r-- 1 bin       628 Jun 10 08:37 buf.h
+drwxr-xr-x 2 bin       224 Aug 16 14:08 conf
+-rw-r--r-- 1 bin       291 Jun 10 08:37 conf.h
+-rw-rw-rw- 1 root      652 Aug 16 14:08 conf.o
+drwxr-xr-x 2 bin       848 Aug 16 14:08 dmr
+-rw-r--r-- 1 bin       157 Jun 10 08:37 file.h
+-rw-r--r-- 1 bin       188 Jun 10 08:37 filsys.h
+-rw-r--r-- 1 bin       561 Jun 10 08:37 inode.h
+drwxr-xr-x 2 bin       640 Aug 16 14:08 ken
+-rw-r--r-- 1 bin        35 Jun 10 08:37 ld
+-rw-rw-rw- 1 root    47398 Aug 16 14:08 lib1
+-rw-rw-rw- 1 root    40142 Aug 16 14:08 lib2
+-rw-rw-rw- 1 root     1356 Aug 16 14:08 low.o
+-rw-rw-rw- 1 root     3720 Aug 16 14:08 mch.o
+-rw-r--r-- 1 bin       941 Jun 10 08:37 param.h
+-rw-r--r-- 1 bin       387 Jun 10 08:37 proc.h
+-rw-r--r-- 1 bin       142 Jun 10 08:37 reg.h
+-rw-rw-rw- 1 bin       251 Jun 12 18:52 run
+-rw-r--r-- 1 bin       228 Jun 10 08:37 seg.h
+-rw-r--r-- 1 bin       410 Jun 10 08:37 systm.h
+-rw-r--r-- 1 bin       115 Jun 10 08:37 text.h
+-rw-r--r-- 1 bin       839 Jun 10 08:37 tty.h
+-rw-r--r-- 1 bin      1199 Jun 10 08:37 user.h
+% chdir @
+% cat inode.h
+struct inode {
+        char    i_flag;
+        char    i_count;
+        int     i_dev;
+        int     i_number;
+        int     i_mode;
+        char    i_nlink;
+        char    i_uid;
+        char    i_gid;
+        char    i_size0;
+        char    *i_size1;
+        int     i_addr[8];
+        int     i_lastr;
+} inode[NINODE];
+
+/* flags */
+#define ILOCK   01
+#define IUPD    02
+#define IACC    04
+#define IMOUNT  010
+#define IWANT   020
+#define ITEXT   040
+
+/* modes */
+#define IALLOC  0100000
+#define IFMT    060000
+#define         IFDIR   040000
+#define         IFCHR   020000
+#define         IFBLK   060000
+#define ILARG   010000
+#define ISUID   04000
+#define ISGID   02000
+#define IREAD   0400
+#define IWRITE  0200
+#define IEXEC   0100
+% cat proc.h
+struct proc {
+        char    p_stat;
+        char    p_flag;
+        char    p_pri;
+        char    p_sig;
+        char    p_null;
+        char    p_time;
+        int     p_ttyp;
+        int     p_pid;
+        int     p_ppid;
+        int     p_addr;
+        int     p_size;
+        int     p_wchan;
+        int     *p_textp;
+} proc[NPROC];
+
+/* stat codes */
+#define SSLEEP  1
+#define SWAIT   2
+#define SRUN    3
+#define SIDL    4
+#define SZOMB   5
+
+/* flag codes */
+#define SLOAD   01
+#define SSYS    02
+#define SLOCK   04
+#define SSWAP   010
+% ls -la
+total 215
+drwxr-xr-x 5 bin       448 Aug 16 14:08 .
+drwxr-xr-x22 bin       352 Aug 18 11:15 ..
+-rw-r--r-- 1 bin       628 Jun 10 08:37 buf.h
+drwxr-xr-x 2 bin       224 Aug 16 14:08 conf
+-rw-r--r-- 1 bin       291 Jun 10 08:37 conf.h
+-rw-rw-rw- 1 root      652 Aug 16 14:08 conf.o
+drwxr-xr-x 2 bin       848 Aug 16 14:08 dmr
+-rw-r--r-- 1 bin       157 Jun 10 08:37 file.h
+-rw-r--r-- 1 bin       188 Jun 10 08:37 filsys.h
+-rw-r--r-- 1 bin       561 Jun 10 08:37 inode.h
+drwxr-xr-x 2 bin       640 Aug 16 14:08 ken
+-rw-r--r-- 1 bin        35 Jun 10 08:37 ld
+-rw-rw-rw- 1 root    47398 Aug 16 14:08 lib1
+-rw-rw-rw- 1 root    40142 Aug 16 14:08 lib2
+-rw-rw-rw- 1 root     1356 Aug 16 14:08 low.o
+-rw-rw-rw- 1 root     3720 Aug 16 14:08 mch.o
+-rw-r--r-- 1 bin       941 Jun 10 08:37 param.h
+-rw-r--r-- 1 bin       387 Jun 10 08:37 proc.h
+-rw-r--r-- 1 bin       142 Jun 10 08:37 reg.h
+-rw-rw-rw- 1 bin       251 Jun 12 18:52 run
+-rw-r--r-- 1 bin       228 Jun 10 08:37 seg.h
+-rw-r--r-- 1 bin       410 Jun 10 08:37 systm.h
+-rw-r--r-- 1 bin       115 Jun 10 08:37 text.h
+-rw-r--r-- 1 bin       839 Jun 10 08:37 tty.h
+-rw-r--r-- 1 bin      1199 Jun 10 08:37 user.h
+% cd /usr
+cd: not found
+% chdir /usr
+% s -##########ls -la
+total 22
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:33 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      128 Aug 18 11:14 alex
+drwxrwxrwx 2 root       96 Aug 18 11:33 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 11:33 cody
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       48 Aug 18 11:04 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     96 Aug 18 11:08 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% chdir mdecc#
+% ls -la
+total 34
+drwxr-xr-x 2 bin       192 Jun 10 08:37 .
+drwxr-xr-x22 bin       352 Aug 18 11:15 ..
+-rw-r--r-- 1 bin       740 Jun 10 08:37 dldr.s
+-rw-r--r-- 1 bin      1272 Jun 10 08:37 dli.s
+-rw-r--r-- 1 bin      3794 Jun 10 08:37 dtf.s
+-rw-r--r-- 1 bin       205 Jun 10 08:37 list.s
+-rw-r--r-- 1 bin       492 Jun 10 08:37 mboot
+-rw-r--r-- 1 bin      1610 Jun 10 08:37 mcopy.s
+-rw-r--r-- 1 bin       298 Jun 10 08:37 rkf.s
+-rw-r--r-- 1 bin       452 Jun 10 08:37 tboot
+-rw-r--r-- 1 bin      2646 Jun 10 08:37 tboot.s
+-rw-r--r-- 1 bin      2447 Jun 10 08:37 uboot.s
+% chdir /ust#r
+% ls -la
+total 22
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:34 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      128 Aug 18 11:14 alex
+drwxrwxrwx 2 root       96 Aug 18 11:34 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 11:34 cody
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       48 Aug 18 11:04 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     96 Aug 18 11:08 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% ls -la | fre###grep bin
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:34 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% ps
+% ps -lf
+% ps -elf
+% man ps
+man: not found
+% ls -la
+total 22
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:35 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      128 Aug 18 11:14 alex
+drwxrwxrwx 2 root       96 Aug 18 11:35 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 11:35 cody
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       48 Aug 18 11:04 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     96 Aug 18 11:08 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% ls -la | grep bin
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:35 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% cd c
+cd: not found
+% chdir c
+% ls -la
+total 347
+drwxr-xr-x 2 bin       448 Jun 10 08:37 .
+drwxr-xr-x22 bin       352 Aug 18 11:15 ..
+-rw-r--r-- 1 bin     11616 Jun 10 08:37 c00.c
+-rw-r--r-- 1 bin     14028 Jun 10 08:37 c00.o
+-rw-r--r-- 1 bin      6615 Jun 10 08:37 c01.c
+-rw-r--r-- 1 bin      7912 Jun 10 08:37 c01.o
+-rw-r--r-- 1 bin     11397 Jun 10 08:37 c02.c
+-rw-r--r-- 1 bin     12660 Jun 10 08:37 c02.o
+-rw-r--r-- 1 bin      2353 Jun 10 08:37 c03.c
+-rw-r--r-- 1 bin      3392 Jun 10 08:37 c03.o
+-rw-r--r-- 1 bin      6186 Jun 10 08:37 c04.c
+-rw-r--r-- 1 bin      1500 Jun 10 08:37 c04.o
+-rw-r--r-- 1 bin      3635 Jun 10 08:37 c0h.c
+-rw-r--r-- 1 bin      1704 Jun 10 08:37 c0t.s
+-rw-r--r-- 1 bin     16649 Jun 10 08:37 c10.c
+-rw-r--r-- 1 bin      9124 Jun 10 08:37 c11.c
+-rw-r--r-- 1 bin      2126 Jun 10 08:37 c12.c
+-rw-r--r-- 1 bin      2747 Jun 10 08:37 c1h.c
+-rw-r--r-- 1 bin       776 Jun 10 08:37 c1t.s
+-rw-r--r-- 1 bin     16474 Jun 10 08:37 c20.c
+-rw-r--r-- 1 bin      1217 Jun 10 08:37 cctab.s
+-rwxr-xr-x 1 bin      2438 Jun 10 08:37 cvopt
+-rw-r--r-- 1 bin      3673 Jun 10 08:37 cvopt.c
+-rw-r--r-- 1 bin      1776 Jun 10 08:37 efftab.s
+-rw-r--r-- 1 bin      6655 Jun 10 08:37 regtab.s
+-rw-r--r-- 1 bin      1373 Jun 10 08:37 sptab.s
+-rw-r--r-- 1 bin     15870 Jun 10 08:37 tab.a
+-rw-r--r-- 1 bin        91 Jun 10 08:37 trc
+% cd /usr
+cd: not found
+% chdir /usr
+% cd##ls -la | grep bin
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:36 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% ls -la | grep root
+drwxrwxrwx 2 root       96 Aug 18 11:36 auberon
+drwxrwxrwx 2 root       96 Aug 18 11:36 cody
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+% ls -la
+total 22
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:36 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      128 Aug 18 11:14 alex
+drwxrwxrwx 2 root       96 Aug 18 11:36 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 11:36 cody
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       48 Aug 18 11:04 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     96 Aug 18 11:08 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% ls -la | grep bin
+drwxr-xr-x22 bin       352 Aug 18 11:15 .
+drwxr-xr-x10 bin       192 Aug 18 11:36 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+% cd mdec
+cd: not found
+% chdir ,dec###########@
+% chdir mdec
+% ls -la
+total 34
+drwxr-xr-x 2 bin       192 Jun 10 08:37 .
+drwxr-xr-x22 bin       352 Aug 18 11:15 ..
+-rw-r--r-- 1 bin       740 Jun 10 08:37 dldr.s
+-rw-r--r-- 1 bin      1272 Jun 10 08:37 dli.s
+-rw-r--r-- 1 bin      3794 Jun 10 08:37 dtf.s
+-rw-r--r-- 1 bin       205 Jun 10 08:37 list.s
+-rw-r--r-- 1 bin       492 Jun 10 08:37 mboot
+-rw-r--r-- 1 bin      1610 Jun 10 08:37 mcopy.s
+-rw-r--r-- 1 bin       298 Jun 10 08:37 rkf.s
+-rw-r--r-- 1 bin       452 Jun 10 08:37 tboot
+-rw-r--r-- 1 bin      2646 Jun 10 08:37 tboot.s
+-rw-r--r-- 1 bin      2447 Jun 10 08:37 uboot.s
+% ls ..
+adm
+alex
+auberon
+bin
+c
+cody
+fort
+games
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+% ps
+% ps -le
+% -s####ps elf
+% ps a
+ f     0 #?xf??@??b??`ex?v[? ????? x?  ?  
+ f     1 /etc/init  
+ 0   704 -  
+ 1   684 -  
+ f     6 /etc/update  
+ f     9
+ f    10
+ 4    11 -  
+ 5    12
+ f    13
+ f    14
+ 8    15 -  
+ 9    16
+ f    17
+ f    18
+ f    19
+ f    20
+ f    21
+ f    22
+ f    23
+ f    24
+ :    25
+ ;    26
+% p#cd##@
+% chdir /dev
+% ls -la
+total 3
+drwxr-xr-x 2 bin       928 Aug 18 10:27 .
+drwxr-xr-x 9 bin       192 Aug 18 12:20 ..
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+crw-rw-rw- 1 root    4,  0 Aug 18 10:27 ptr
+brw-rw-rw- 1 root    1,  0 Aug 11 03:44 rk0
+brw-rw-rw- 1 root    1,  1 Aug 11 03:44 rk1
+brw-rw-rw- 1 root    0,  0 Aug 11 03:44 rp0
+brw-rw-rw- 1 root    0,  1 Aug 11 03:44 rp1
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 thalia  3,  0 Aug 18 12:20 tty0
+crw--w--w- 1 justin  3,  1 Aug 18 12:20 tty1
+crw--w--w- 1 root    3,  2 Aug 18 10:28 tty2
+crw--w--w- 1 root    3,  3 Aug 18 10:28 tty3
+crw--w--w- 1 thalia  3,  4 Aug 18 12:20 tty4
+crw--w--w- 1 root    3,  5 Aug 18 12:20 tty5
+crw--w--w- 1 root    3,  6 Aug 18 10:28 tty6
+crw--w--w- 1 root    3,  7 Aug 18 10:28 tty7
+crw--w--w- 1 thalia  0,  0 Aug 18 12:20 tty8
+crw--w--w- 1 root    0,  1 Aug 18 12:20 tty9
+crw--w--w- 1 root    3,  8 Aug 18 10:28 ttya
+crw--w--w- 1 root    3,  9 Aug 18 10:28 ttyb
+crw--w--w- 1 root    3, 10 Aug 18 10:28 ttyc
+crw--w--w- 1 root    3, 11 Aug 18 10:28 ttyd
+crw--w--w- 1 root    3, 12 Aug 18 10:28 ttye
+crw--w--w- 1 root    3, 13 Aug 18 10:28 ttyf
+crw--w--w- 1 root    3, 14 Aug 18 10:28 ttyg
+crw--w--w- 1 root    3, 15 Aug 18 10:28 ttyh
+crw--w--w- 1 root    0,  2 Aug 18 12:20 ttyi
+crw--w--w- 1 root    0,  3 Aug 18 12:20 ttyj
+crw--w--w- 1 root    0,  4 Aug 18 12:20 ttyk
+crw--w--w- 1 root    0,  5 Aug 18 12:20 ttyl
+crw--w--w- 1 alex    0,  6 Aug 18 12:20 ttym
+crw--w--w- 1 root    0,  7 Aug 18 12:20 ttyn
+crw--w--w- 1 root    0,  8 Aug 18 12:20 ttyo
+crw--w--w- 1 root    0,  9 Aug 18 12:20 ttyp
+crw--w--w- 1 root    0, 10 Aug 18 12:20 ttyq
+crw--w--w- 1 root    0, 11 Aug 18 12:20 ttyr
+crw--w--w- 1 root    0, 12 Aug 18 12:20 ttys
+crw--w--w- 1 root    0, 13 Aug 18 12:20 ttyt
+crw--w--w- 1 root    0, 14 Aug 18 12:20 ttyu
+crw--w--w- 1 ncb     0, 15 Aug 18 12:20 ttyv
+% 
+;login: ncb
+% cd /usr/@
+% chdir /usr
+% ls -la
+total 24
+drwxr-xr-x24 bin       384 Aug 18 12:14 .
+drwxr-xr-x 9 bin       192 Aug 18 12:21 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      160 Aug 18 12:02 alex
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 12:21 cody
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia     96 Aug 18 11:08 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+% cd @
+% chdir sys
+% ls -la
+total 215
+drwxr-xr-x 5 bin       448 Aug 16 14:08 .
+drwxr-xr-x24 bin       384 Aug 18 12:14 ..
+-rw-r--r-- 1 bin       628 Jun 10 08:37 buf.h
+drwxr-xr-x 2 bin       224 Aug 16 14:08 conf
+-rw-r--r-- 1 bin       291 Jun 10 08:37 conf.h
+-rw-rw-rw- 1 root      652 Aug 16 14:08 conf.o
+drwxr-xr-x 2 bin       848 Aug 16 14:08 dmr
+-rw-r--r-- 1 bin       157 Jun 10 08:37 file.h
+-rw-r--r-- 1 bin       188 Jun 10 08:37 filsys.h
+-rw-r--r-- 1 bin       561 Jun 10 08:37 inode.h
+drwxr-xr-x 2 bin       640 Aug 16 14:08 ken
+-rw-r--r-- 1 bin        35 Jun 10 08:37 ld
+-rw-rw-rw- 1 root    47398 Aug 16 14:08 lib1
+-rw-rw-rw- 1 root    40142 Aug 16 14:08 lib2
+-rw-rw-rw- 1 root     1356 Aug 16 14:08 low.o
+-rw-rw-rw- 1 root     3720 Aug 16 14:08 mch.o
+-rw-r--r-- 1 bin       941 Jun 10 08:37 param.h
+-rw-r--r-- 1 bin       387 Jun 10 08:37 proc.h
+-rw-r--r-- 1 bin       142 Jun 10 08:37 reg.h
+-rw-rw-rw- 1 bin       251 Jun 12 18:52 run
+-rw-r--r-- 1 bin       228 Jun 10 08:37 seg.h
+-rw-r--r-- 1 bin       410 Jun 10 08:37 systm.h
+-rw-r--r-- 1 bin       115 Jun 10 08:37 text.h
+-rw-r--r-- 1 bin       839 Jun 10 08:37 tty.h
+-rw-r--r-- 1 bin      1199 Jun 10 08:37 user.h
+% ls -la | grep unix
+% 
+Disconnected from the PDP-11 simulator
+

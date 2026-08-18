@@ -1,0 +1,116 @@
+
+
+Connected to the PDP-11 simulator DCI device, line 4
+
+
+;login: 
+
+Connected to the PDP-11 simulator DCI device, line 4
+
+
+;login: 
+Disconnected from the PDP-11 simulator
+
+
+
+Connected to the PDP-11 simulator DCI device, line 4
+
+
+;login: thalia
+% chdir /usr/sys/ken
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% grep s#nosys sign#.c
+% grep nosys slp.c
+% grep nosys trapc
+trapc: cannot open
+% grep nosys trap.c
+nosys()
+% qchdir /usr/tal##halia\ls
+qchdir: not found
+% chdir /usr/thalia
+% ls
+hints
+mullender.c
+rfc4
+thanks
+% cjdor @chdir hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% chdir 3semantics
+% ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% chdir hin@chir@chdir @cat hint1
+Hint: The early C compiler did not check the type of main and the C runtime
+simply jumped to main. This definition is interpreted as PDP-11 machine code.
+% cat hint1
+Hint: The early C compiler did not check the type of main and the C runtime
+simply jumped to main. This definition is interpreted as PDP-11 machine code.
+% hcat@cat hint3
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+	write(1, "  :-)\b\b\b\b", 9);
+	delay();
+}
+% ps
+    11 -  
+   645 ps   
+% ps a
+ f     0 ??xf??@??b??`ex?v[? ????? x?  ?  
+ f     1 /etc/init  
+ 0   363 -  
+ 1   231 -  
+ f     6 /etc/update  
+ f     9
+ f    10
+ 4    11 -  
+ 5    12
+ f    13
+ f    14
+ 8    15 -  
+ 9    16
+ f    17
+ f    18
+ f    19
+ f    20
+ f    21
+ f    22
+ f    23
+ f    24
+ :    25
+ ;    26
+ 4   646 ps a   
+% 
+Disconnected from the PDP-11 simulator
+
