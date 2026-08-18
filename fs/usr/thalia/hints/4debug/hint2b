@@ -1,0 +1,8 @@
+Hint: You can isolate the text printed by the program from the error by
+redirecting to a file. Note that the prompt overlaps with the text, since it
+backspaces and does not end with a line feed.
+
+% a.out > out
+Bad system call -- Core dumped
+% cat out
+ % -)

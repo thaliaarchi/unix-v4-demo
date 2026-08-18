@@ -1,0 +1,8 @@
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+Octal was the preferred base for expressing bit patterns, a tradition inherited
+from earlier systems. Despite the 16-bit word size not being divisible by 3 (3
+bits per octal digit), all PDP-11 documentation used octal. Note that the
+switches on the PiDP-11 front panel are colored in groups of three, denoting
+octal digits.

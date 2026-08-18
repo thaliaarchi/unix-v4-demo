@@ -1,0 +1,2 @@
+Hint: The early C compiler did not check the type of main and the C runtime
+simply jumped to main. This definition is interpreted as PDP-11 machine code.

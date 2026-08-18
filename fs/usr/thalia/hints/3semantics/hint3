@@ -1,0 +1,9 @@
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+	write(1, "  :-)\b\b\b\b", 9);
+	delay();
+}

@@ -1,0 +1,5 @@
+Hint: Compile mullender.c with
+	cc mullender.c
+or assemble mullender.s with
+	as mullender.s
+The output is placed at a.out.

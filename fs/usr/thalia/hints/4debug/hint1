@@ -1,0 +1,7 @@
+Hint: Now that it compiles, run it. What's broken?
+
+% cc mullender.c
+% a.out
+ Bad system call -- Core dumped
+
+If you want to skip fixing the syntax, you can start with 2syntax/solution.c.

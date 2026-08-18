@@ -1,0 +1,4 @@
+Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.

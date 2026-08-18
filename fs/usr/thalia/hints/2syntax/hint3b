@@ -1,0 +1,18 @@
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/

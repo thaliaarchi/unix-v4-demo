@@ -1,0 +1,7 @@
+Hint: The assembly code corresponding to the PDP-11 portion of the program is at
+mullender.s. A disassembly of it, showing the octal values of the words, is at
+mullender.das.
+
+Numbers in PDP-11 assembly are in octal by default, unless they are
+suffixed with a period (.), making them decimal. Period does not mean floating
+point, although the PDP-11 did have floating point.
