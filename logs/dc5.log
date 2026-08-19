@@ -130,3 +130,313 @@ Login incorrect.
 Name: 
 Disconnected from the PDP-11 simulator
 
+
+
+Connected to the PDP-11 simulator DCI device, line 5
+
+
+;login: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# man
+man: not found
+# man ls
+man: not found
+# ls -h
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls -a
+.
+..
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls -l
+total 66
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 13:20 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x25 bin       400 Aug 18 13:17 usr
+# file
+file: not found
+# ls bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# la#s
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# time
+# who
+alex    tty0 Aug 18 13:12
+root    tty1 Aug 18 13:13
+root    tty2 Aug 18 13:18
+root    tty4 Aug 18 13:17
+root    tty5 Aug 18 13:22
+root    ttyc Aug 18 13:25
+root    ttyi Aug 18 13:21
+root    ttyv Aug 18 13:21
+# date
+Sun Aug 18 13:27:59 MDT 1974
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+yang
+# ls usr/thalia
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+# cat /usr/thalia/thanks
+thank_you
+from_darpa_dan
+# [A[Bcat /usr/thalia/rfc4
+No match
+# env
+env: not found
+# h#
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ed /etc/passwd###################
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+# echo michael::30:30::/usr/michael: > #> ###############################################
+# echo michael::30:30::/usr/michael: >> /etc/passwd
+# cat /etc/paswsw###swd
+swd: not found
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+# logout
+logout: not found
+# lquit#####quit
+quit: not found
+# lgo###logout
+logout: not found
+# 
+;login: michael
+No directory
+Name: root
+# mkdir /sr##/usr/michael
+/usr/michael: not found
+# ls
+a.out
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# mkdir usr/michael
+# 
+;login: michale
+Login incorrect.
+Name: michael
+% ls
+% 

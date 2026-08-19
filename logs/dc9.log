@@ -1,0 +1,1225 @@
+
+
+Connected to the PDP-11 simulator DCI device, line 9
+
+
+;login: 
+Login incorrect.
+Name: root
+# k
+
+Connected to the PDP-11 simulator DCI device, line 9
+
+
+;login: root
+# c##
+# ls
+a.out
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# cd /usr/
+cd: not found
+# ls
+a.out
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# chdir /usr
+# ls
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# chdir alex
+# ls
+a.out
+core
+hello.c
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+rw.c
+# a.	#*
+Arg count
+# a.out
+# echo $?
+No match
+# ls /usr/sys
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+# cat /usr/sys/text.h
+struct text
+{
+	int	x_daddr;
+	int	x_caddr;
+	int	x_size;
+	int	*x_iptr;
+	char	x_count;
+	char	x_ccount;
+} text[NTEXT];
+# cat /usr/sys/buf.h
+struct buf {
+	int	b_flags;
+	struct	buf *b_forw;
+	struct	buf *b_back;
+	struct	buf *av_forw;
+	struct	buf *av_back;
+	int	b_dev;
+	int	b_wcount;
+	char	*b_addr;
+	char	*b_blkno;
+	char	b_error;
+	char	*b_resid;
+} buf[NBUF];
+
+/*
+ * forw and back are shared with "buf" struct.
+ */
+struct devtab {
+	char	d_active;
+	char	d_errcnt;
+	struct	buf *b_forw;
+	struct	buf *b_back;
+	struct	buf *d_actf;
+	struct 	buf *d_actl;
+};
+
+struct	buf bfreelist;
+
+#define	B_WRITE	0
+#define	B_READ	01
+#define	B_DONE	02
+#define	B_ERROR	04
+#define	B_BUSY	010
+#define	B_XMEM	060
+#define	B_WANTED 0100
+#define	B_RELOC	0200
+#define	B_ASYNC	0400
+#define	B_DELWRI 01000
+# cat /usr/sys/user.h
+struct user {
+	int	u_rsav[2];		/* must be first */
+	int	u_fsav[25];		/* must be second */
+	char	u_segflg;
+	char	u_error;
+	char	u_uid;
+	char	u_gid;
+	char	u_ruid;
+	char	u_rgid;
+	int	u_procp;
+	char	*u_base;
+	char	*u_count;
+	char	*u_offset[2];
+	int	*u_cdir;
+	char	u_dbuf[DIRSIZ];
+	char	*u_dirp;
+	struct	{
+		int	u_ino;
+		char	u_name[DIRSIZ];
+	} u_dent;
+	int	*u_pdir;
+	int	u_uisa[8];
+	int	u_uisd[8];
+	int	u_ofile[NOFILE];
+	int	u_arg[5];
+	int	u_tsize;
+	int	u_dsize;
+	int	u_ssize;
+	int	u_qsav[2];
+	int	u_ssav[2];
+	int	u_signal[NSIG];
+	int	u_utime;
+	int	u_stime;
+	int	u_cutime[2];
+	int	u_cstime[2];
+	int	*u_ar0;
+	int	u_prof[4];
+	char	u_nice;
+	char	u_dsleep;
+} u;	/* u = 140000 */
+
+/* u_error codes */
+#define	EFAULT	106
+#define	EPERM	1
+#define	ENOENT	2
+#define	ESRCH	3
+#define	EIO	5
+#define	ENXIO	6
+#define	E2BIG	7
+#define	ENOEXEC	8
+#define	EBADF	9
+#define	ECHILD	10
+#define	EAGAIN	11
+#define	ENOMEM	12
+#define	EACCES	13
+#define	ENOTBLK	15
+#define	EBUSY	16
+#define	EEXIST	17
+#define	EXDEV	18
+#define	ENODEV	19
+#define	ENOTDIR	20
+#define	EISDIR	21
+#define	EINVAL	22
+#define	ENFILE	23
+#define	EMFILE	24
+#define	ENOTTY	25
+#define	ETXTBSY	26
+#define	EFBIG	27
+#define	ENOSPC	28
+#define	ESPIPE	29
+#define	EROFS	30
+# cd /usr
+cd: not found
+# ls
+a.out
+core
+hello.c
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+rw.c
+# chdir /usr/
+# ls
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# cd sour###ys
+ys: not found
+# cd /usr/sys
+cd: not found
+# chdir /usr/sys
+# ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+# cat file.h
+struct file {
+	char	f_flag;
+	char	f_count;
+	int	f_inode;
+	char	*f_offset[2];
+} file[NFILE];
+
+/* flags */
+#define	FREAD	01
+#define	FWRITE	02
+#define	FPIPE	04
+# grep putc *
+9)98X)9)9	Iy)_panicst _kisa6 _printf"rsave L2L3L4,L1_putchar"XL6~L7:L8LL9LL10LL10000XL10001\_printn"L5L11fL12nL13pL14|L10003\L10004fL10005L15rretrn _ldiv L17<_lrem L16TL18*L19hL20rL21 _panic"._update L23tL24R_idle L25XL22Xrdwri.o2q6(p8w	|
+_nchrdev _maptab#R_cfree  _cfreeli _gtty"rsave _sgtty"L1D_suword rretrn _stty"H_fuword L2~_getf L3FL4._wflusht"J_spl5 L6XL7p_sleep _flushtt"B_spl0 L5z_cinit"~L9L10(L11"L12.L13:L144L8>L16L_getc L17\L18\L19l_wakeup L20L21L15_canon"L23*L24JL25<L22pL26NL27RL28BL29hL308L31L32L33L348L358L10000*L366L37RL38j_putc _ttyinpu"tL40L41NL10001.L10002:L10003>_signal L39>L42\L43rL10004L44(L45(L46>_ttyoutp"B_tt
+w	~Ywxw	t_5hoN_	jowXW-RN_	w@I))		I)	IYy)(((Hh(		I(8))(h	_u r_partab _cat _ctopen"rsave L2L3L1rretrn _ctclose""L4,_ctwrite"0L66_cpass L7_spl5 L8BL9Z_sleep L10Z_putc L11z_lbolt _catintr"_spl0 L5L13<_getc L100004L14<_wakeup L12<dc.oo2$q6b@,w	|W-w#GAWpAeD@t@ex4tUKUAt5ttKIsIttHK5tUt5N
+_nchrdev _u r_pc11 _pcopen"rsave L2@L3L1JL4 L5>_lbolt _sleep L6J_pcleade"Trretrn _pcclose"NL8z_spl4 L9^_getc L10l_spl0 L11~L7~_pcread"L15L16L17>L18HL19.L13>_passc L14HL12L_pcwrite"PL21V_cpass L22f_pcoutpu"L20f_pcstart"jL24L23_pcrint"L26(L25dL27dL28@L29\_putc L30\_wakeup _pcpint"hL32~L33L31L35(L34PL36>L40^L38dL39hL37hrf.oo2&q6Hw	|D
+N&_	VN_	wl~Y	Y8	Y		YI)	Y88	YI8)	Y8	_partab _vs L1_vsmap"_vsopen"rsave _vschar"|L2*rretrn _vsclose".L4:_getc L5HL3H_vswrite"LL7T_cpass L8rL9jL6x_spl5 L11L12._vsxintr"H_sleep _putc _spl0 L10DL14L15(L16nL17 L18L19L20(_wakeup L13(_vsread",L226L23R_passc L21f_vsrintr"jL25L24vt.oo2(q6T4\w	|uw%_ xowbw	^_zo_UxowLw	Hw	B&
+_nchrdev _u r_lp11 _lpopen"rsave L10000L2L10_lpcanon"drretrn _lpclose"4L3F_lpwrite"JL5P_cpass L6`L4`L8HL9L10HL128L13L14(L15L16L17L18$L11HL10002L10003L10004@L19HL21xL22LL7L23^L24^L10005rL25L26_lpoutpu"TL27L28L29$L30.L310L326L33JL34rL35RL36hL20L10007&L100082L10009_lpstart"L38L39,_getc L37,_lpint"0L10010HL41P_wakeup L40PL43p_sleep _putc _spl4 _spl0 L42
+6r@@A6v@@&f&dHEeF)999999ihHXHi.45.fppmfpi@mtpisplrtiresettrap"call"<_trap PS~nofault$@SSR0zssr$BSSR1|SSR2~call16_runrun _swtch _u!@_savfp""_incupc"@_display"CSWxfuwordp_getc"0_putc"
+_cfreeli _spl5"X_backup"l_regloc backupjflgbflgfetcht00t01t02t03t04t05t06t07t10t11t12t13t14t15t16t17u0u1u2u3u4u5u6u7setreg_fubyte"(_subyte"B_fuword"l_suword"
+# cd #####
+# chdir /usr/alex
+# ed test.c
+?
+a
+int main() { putchar('a'); )#}
+.
+1,$p
+int main() { putchar('a'); }
+w
+29
+# cc test.c
+# a.out
+a# ed test.c
+29
+1d
+a
+int main() { printf("%d", 5); }
+.
+w
+32
+# cc test.c
+# a.out
+5# rm test.c
+# v##
+# chdir /usr/sy#ource/s2
+# ls
+mail.c
+mesg.s
+mkdir.s
+mkfs.c
+mknod.c
+mount.c
+msh.s
+mv.c
+nice.c
+nm.c
+nohup.c
+od.c
+passwd.s
+pfe.s
+pr.c
+prof.c
+ps.c
+pwd.c
+restor.c
+rew.s
+rm.c
+rmdir.s
+sa.c
+sh.c
+size.c
+sleep.c
+sort.c
+split.c
+strip.s
+stty.c
+su.c
+sum.s
+sync.c
+tee.c
+time.s
+tp1.s
+tp2.s
+tp3.s
+tp4.s
+tr.c
+tty.s
+typo.c
+umount.c
+uniq.c
+update.s
+wc.c
+who.c
+write.s
+# cat sh.c
+#
+/*
+ * copyright 1973 bell telephone laboratories inc.
+ */
+
+#define	intr	2
+#define	quit	3
+#define linesiz 1000
+#define argsiz 50
+#define tresiz 50
+
+#define quote 0200
+#define fand 1
+#define fcat 2
+#define fpin 4
+#define fpou 8
+#define fpar 16
+#define fint 32
+#define tcom 1
+#define tpar 2
+#define tfil 3
+#define tlst 4
+#define dtyp 0
+#define dlef 1
+#define drit 2
+#define dflg 3
+#define dspr 4
+#define dcom 5
+
+char	*dolp;
+char	**dolv;
+int	dolc;
+char	*promp;
+char	*linep;
+char	*elinep;
+char	**argp;
+char	**eargp;
+int	*treep;
+char	peekc;
+char	gflg;
+char	error;
+char	acctf;
+char	uid;
+char	setintr;
+
+char	*mesg[] {
+	0,
+	"Hangup",
+	0,
+	"Quit",
+	"Illegal instruction",
+	"Trace/BPT trap",
+	"IOT trap",
+	"EMT trap",
+	"Floating exception",
+	"Killed",
+	"Bus error",
+	"Memory fault",
+	"Bad system call"
+};
+
+struct stime {
+	int proct[2];
+	int cputim[2];
+	int systim[2];
+} timeb;
+
+main(c, av)
+int c;
+char **av;
+{
+	register f;
+	register char *acname, **v;
+
+	close(2);
+	if((f=dup(1)) != 2)
+		close(f);
+	v = av;
+	acname = "/usr/adm/sh_acct";
+	promp = "% ";
+	if(((uid = getuid())&0377) == 0) {
+		promp = "# ";
+		acname = "/usr/adm/su_acct";
+	}
+	acctf = open(acname, 1);
+	if(c > 1) {
+		promp = 0;
+		close(0);
+		f = open(v[1], 0);
+		if(f < 0) {
+			prs(v[1]);
+			err(": cannot open");
+		}
+	}
+	if(**v == '-') {
+		setintr++;
+		signal(quit, 1);
+		signal(intr, 1);
+	}
+	dolv = v+1;
+	dolc = c-1;
+
+loop:
+	if(promp != 0)
+		prs(promp);
+	peekc = getc();
+	main1();
+	goto loop;
+}
+
+main1()
+{
+	char line[linesiz];
+	char *args[argsiz];
+	int trebuf[tresiz];
+	register char c, *cp;
+	register *t;
+
+	argp = args;
+	eargp = args+argsiz-5;
+	linep = line;
+	elinep = line+linesiz-5;
+	error = 0;
+	gflg = 0;
+	do {
+		cp = linep;
+		word();
+	} while(*cp != '\n');
+	treep = trebuf;
+	if(gflg == 0) {
+		if(error == 0)
+			t = syntax(args, argp);
+		if(error != 0)
+			err("syntax error"); else
+			execute(t);
+	}
+}
+
+word()
+{
+	register char c, c1;
+
+	*argp++ = linep;
+
+loop:
+	switch(c = getc()) {
+
+	case ' ':
+	case '\t':
+		goto loop;
+
+	case '\'':
+	case '"':
+		c1 = c;
+		while((c=readc()) != c1) {
+			if(c == '\n') {
+				error++;
+				peekc = c;
+				return;
+			}
+			*linep++ = c|quote;
+		}
+		goto pack;
+
+	case '&':
+	case ';':
+	case '<':
+	case '>':
+	case '(':
+	case ')':
+	case '|':
+	case '^':
+	case '\n':
+		*linep++ = c;
+		*linep++ = '\0';
+		return;
+	}
+
+	peekc = c;
+
+pack:
+	for(;;) {
+		c = getc();
+		if(any(c, " '\"\t;&<>()|^\n")) {
+			peekc = c;
+			if(any(c, "\"'"))
+				goto loop;
+			*linep++ = '\0';
+			return;
+		}
+		*linep++ = c;
+	}
+}
+
+tree(n)
+int n;
+{
+	register *t;
+
+	t = treep;
+	treep =+ n;
+	return(t);
+}
+
+getc()
+{
+	register char c;
+
+	if(peekc) {
+		c = peekc;
+		peekc = 0;
+		return(c);
+	}
+	if(argp > eargp) {
+		argp =- 10;
+		while((c=getc()) != '\n');
+		argp =+ 10;
+		err("Too many args");
+		gflg++;
+		return(c);
+	}
+	if(linep > elinep) {
+		linep =- 10;
+		while((c=getc()) != '\n');
+		linep =+ 10;
+		err("Too many characters");
+		gflg++;
+		return(c);
+	}
+getd:
+	if(dolp) {
+		c = *dolp++;
+		if(c != '\0')
+			return(c);
+		dolp = 0;
+	}
+	c = readc();
+	if(c == '\\') {
+		c = readc();
+		if(c == '\n')
+			return(' ');
+		return(c|quote);
+	}
+	if(c == '$') {
+		c = getc();
+		if(c>='0' && c<='9') {
+			if(c-'0' < dolc)
+				dolp = dolv[c-'0'];
+			goto getd;
+		}
+	}
+	return(c&0177);
+}
+
+readc()
+{
+	int c;
+
+	if(read(0, &c, 1) != 1)
+		exit();
+	return(c&0377);
+}
+
+/*
+ * syntax
+ *	empty
+ *	syn1
+ */
+
+syntax(p1, p2)
+char **p1, **p2;
+{
+
+	while(p1 != p2) {
+		if(any(**p1, ";&\n"))
+			p1++; else
+			return(syn1(p1, p2));
+	}
+	return(0);
+}
+
+/*
+ * syn1
+ *	syn2
+ *	syn2 & syntax
+ *	syn2 ; syntax
+ */
+
+syn1(p1, p2)
+char **p1, **p2;
+{
+	register char **p;
+	register *t, *t1;
+	int l;
+
+	l = 0;
+	for(p=p1; p!=p2; p++)
+	switch(**p) {
+
+	case '(':
+		l++;
+		continue;
+
+	case ')':
+		l--;
+		if(l < 0)
+			error++;
+		continue;
+
+	case '&':
+	case ';':
+	case '\n':
+		if(l == 0) {
+			t = tree(4);
+			t[dtyp] = tlst;
+			t[dlef] = syn2(p1, p);
+			t[dflg] = 0;
+			if(**p == '&') {
+				t1 = t[dlef];
+				t1[dflg] =| fand|fint;
+			}
+			t[drit] = syntax(p+1, p2);
+			return(t);
+		}
+	}
+	if(l == 0)
+		return(syn2(p1, p2));
+	error++;
+}
+
+/*
+ * syn2
+ *	syn3
+ *	syn3 | syn2
+ */
+
+syn2(p1, p2)
+char **p1, **p2;
+{
+	char **p;
+	int l, *t;
+
+	l = 0;
+	for(p=p1; p!=p2; p++)
+	switch(**p) {
+
+	case '(':
+		l++;
+		continue;
+
+	case ')':
+		l--;
+		continue;
+
+	case '|':
+	case '^':
+		if(l == 0) {
+			t = tree(4);
+			t[dtyp] = tfil;
+			t[dlef] = syn3(p1, p);
+			t[drit] = syn2(p+1, p2);
+			t[dflg] = 0;
+			return(t);
+		}
+	}
+	return(syn3(p1, p2));
+}
+
+/*
+ * syn3
+ *	( syn1 ) [ < in  ] [ > out ]
+ *	word word* [ < in ] [ > out ]
+ */
+
+syn3(p1, p2)
+char **p1, **p2;
+{
+	register char **p;
+	char **lp, **rp;
+	register *t;
+	int b[100], n, l, i, o, c, flg;
+
+	flg = 0;
+	if(**p2 == ')')
+		flg =| fpar;
+	lp = 0;
+	rp = 0;
+	i = 0;
+	o = 0;
+	n = 0;
+	l = 0;
+	for(p=p1; p!=p2; p++)
+	switch(c = **p) {
+
+	case '(':
+		if(l == 0) {
+			if(lp != 0)
+				error++;
+			lp = p+1;
+		}
+		l++;
+		continue;
+
+	case ')':
+		l--;
+		if(l == 0)
+			rp = p;
+		continue;
+
+	case '>':
+		p++;
+		if(p!=p2 && **p=='>')
+			flg =| fcat; else
+			p--;
+
+	case '<':
+		if(l == 0) {
+			p++;
+			if(p == p2) {
+				error++;
+				p--;
+			}
+			if(any(**p, "<>("))
+				error++;
+			if(c == '<') {
+				if(i != 0)
+					error++;
+				i = *p;
+				continue;
+			}
+			if(o != 0)
+				error++;
+			o = *p;
+		}
+		continue;
+
+	default:
+		if(l == 0)
+			b[n++] = *p;
+	}
+	if(lp != 0) {
+		if(n != 0)
+			error++;
+		t = tree(5);
+		t[dtyp] = tpar;
+		t[dspr] = syn1(lp, rp);
+		goto out;
+	}
+	if(n == 0)
+		error++;
+	b[n++] = 0;
+	t = tree(n+5);
+	t[dtyp] = tcom;
+	for(l=0; l<n; l++)
+		t[l+dcom] = b[l];
+out:
+	t[dflg] = flg;
+	t[dlef] = i;
+	t[drit] = o;
+	return(t);
+}
+
+scan(t, f)
+int *t;
+int (*f)();
+{
+	register char *p, c;
+
+	t =+ dcom;
+	while(p = *t++)
+		while(c = *p)
+			*p++ = (*f)(c);
+}
+
+tglob(c)
+int c;
+{
+
+	if(any(c, "[?*"))
+		gflg = 1;
+	return(c);
+}
+
+trim(c)
+int c;
+{
+
+	return(c&0177);
+}
+
+execute(t, pf1, pf2)
+int *t, *pf1, *pf2;
+{
+	int i, f, pv[2];
+	register *t1;
+	register char *cp1, *cp2;
+
+	if(t != 0)
+	switch(t[dtyp]) {
+
+	case tcom:
+		cp1 = t[dcom];
+		if(equal(cp1, "chdir")) {
+			if(t[dcom+1] != 0) {
+				if(chdir(t[dcom+1]) < 0)
+					err("chdir: bad directory");
+			} else
+				err("chdir: arg count");
+			return;
+		}
+		if(equal(cp1, "shift")) {
+			if(dolc < 1) {
+				prs("shift: no args\n");
+				return;
+			}
+			dolv[1] = dolv[0];
+			dolv++;
+			dolc--;
+			return;
+		}
+		if(equal(cp1, "login")) {
+			if(promp != 0) {
+				close(acctf);
+				execv("/bin/login", t+dcom);
+			}
+			prs("login: cannot execute\n");
+			return;
+		}
+		if(equal(cp1, "wait")) {
+			pwait(-1, 0);
+			return;
+		}
+		if(equal(cp1, ":"))
+			return;
+
+	case tpar:
+		f = t[dflg];
+		i = 0;
+		if((f&fpar) == 0)
+			i = fork();
+		if(i == -1) {
+			err("try again");
+			return;
+		}
+		if(i != 0) {
+			if((f&fpin) != 0) {
+				close(pf1[0]);
+				close(pf1[1]);
+			}
+			if((f&fand) != 0) {
+				prn(i);
+				prs("\n");
+				return;
+			}
+			if((f&fpou) == 0)
+				pwait(i, t);
+			return;
+		}
+		if(t[dlef] != 0) {
+			close(0);
+			i = open(t[dlef], 0);
+			if(i < 0) {
+				prs(t[dlef]);
+				err(": cannot open");
+				exit();
+			}
+		}
+		if(t[drit] != 0) {
+			if((f&fcat) != 0) {
+				i = open(t[drit], 1);
+				if(i >= 0) {
+					seek(i, 0, 2);
+					goto f1;
+				}
+			}
+			i = creat(t[drit], 0666);
+			if(i < 0) {
+				prs(t[drit]);
+				err(": cannot create");
+				exit();
+			}
+		f1:
+			close(1);
+			dup(i);
+			close(i);
+		}
+		if((f&fpin) != 0) {
+			close(0);
+			dup(pf1[0]);
+			close(pf1[0]);
+			close(pf1[1]);
+		}
+		if((f&fpou) != 0) {
+			close(1);
+			dup(pf2[1]);
+			close(pf2[0]);
+			close(pf2[1]);
+		}
+		if((f&fint)!=0 && t[dlef]==0 && (f&fpin)==0) {
+			close(0);
+			open("/dev/null", 0);
+		}
+		if((f&fint) == 0 && setintr) {
+			signal(intr, 0);
+			signal(quit, 0);
+		}
+		if(t[dtyp] == tpar) {
+			if(t1 = t[dspr])
+				t1[dflg] =| f&fint;
+			execute(t1);
+			exit();
+		}
+		close(acctf);
+		gflg = 0;
+		scan(t, &tglob);
+		if(gflg) {
+			t[dspr] = "/etc/glob";
+			execv(t[dspr], t+dspr);
+			prs("glob: cannot execute\n");
+			exit();
+		}
+		scan(t, &trim);
+		execv(t[dcom], t+dcom);
+		cp1 = linep;
+		cp2 = "/usr/bin/";
+		while(*cp1 = *cp2++)
+			cp1++;
+		cp2 = t[dcom];
+		while(*cp1++ = *cp2++);
+		execv(linep+4, t+dcom);
+		execv(linep, t+dcom);
+		if(runcom()) {
+			t[dspr] = "/bin/sh";
+			t[dcom] = linep;
+			execv(t[dspr], t+dspr);
+		}
+		prs(t[dcom]);
+		err(": not found");
+		exit();
+
+	case tfil:
+		f = t[dflg];
+		pipe(pv);
+		t1 = t[dlef];
+		t1[dflg] =| fpou | (f&(fpin|fint));
+		execute(t1, pf1, pv);
+		t1 = t[drit];
+		t1[dflg] =| fpin | (f&(fpou|fint|fand));
+		execute(t1, pv, pf2);
+		return;
+
+	case tlst:
+		f = t[dflg]&fint;
+		if(t1 = t[dlef])
+			t1[dflg] =| f;
+		execute(t1);
+		if(t1 = t[drit])
+			t1[dflg] =| f;
+		execute(t1);
+		return;
+
+	}
+}
+
+err(s)
+char *s;
+{
+
+	prs(s);
+	prs("\n");
+	if(promp == 0) {
+		seek(0, 0, 2);
+		exit();
+	}
+}
+
+prs(s)
+char *s;
+{
+
+	while(*s)
+		putc(*s++);
+}
+
+putc(c)
+{
+
+	write(2, &c, 1);
+}
+
+prn(n)
+int n;
+{
+	register a;
+
+	if(a=ldiv(0,n,10))
+		prn(a);
+	putc(lrem(0,n,10)+'0');
+}
+
+any(c, s)
+int c;
+char *s;
+{
+
+	while(*s)
+		if(*s++ == c)
+			return(1);
+	return(0);
+}
+
+equal(s1, s2)
+char *s1, *s2;
+{
+
+	while(*s1++ == *s2)
+		if(*s2++ == '\0')
+			return(1);
+	return(0);
+}
+
+pwait(i, t)
+int i, *t;
+{
+	register p, e;
+	int s;
+
+	if(i != 0)
+	for(;;) {
+		times(&timeb);
+		time(timeb.proct);
+		p = wait(&s);
+		if(p == -1)
+			break;
+		e = s&0177;
+		if(mesg[e] != 0) {
+			if(p != i) {
+				prn(p);
+				prs(": ");
+			}
+			prs(mesg[e]);
+			if(s&0200)
+				prs(" -- Core dumped");
+		}
+		if(e != 0)
+			err("");
+		if(i == p) {
+			acct(t);
+			break;
+		} else
+			acct(0);
+	}
+}
+
+acct(t)
+int *t;
+{
+	if(t == 0)
+		enacct("**gok"); else
+	if(*t == tpar)
+		enacct("()"); else
+	enacct(t[dcom]);
+}
+
+enacct(s)
+char *s;
+{
+	struct stime timbuf;
+	struct {
+		char cname[14];
+		int realt;
+		int bcput;
+		int bsyst;
+	} tbuf;
+	register i;
+	register char *np;
+
+	times(&timbuf);
+	time(timbuf.proct);
+	tbuf.realt = timbuf.proct[1] -
+		timeb.proct[1];
+	tbuf.bcput = timbuf.cputim[1] -
+		timeb.cputim[1];
+	tbuf.bsyst = timbuf.systim[1] -
+		timeb.systim[1];
+	do {
+		np = s;
+		while (*s != '\0' && *s != '/')
+			s++;
+	} while (*s++ != '\0');
+	for (i=0; i<13; i++) {
+		tbuf.cname[i] = *np;
+		if (*np)
+			np++;
+	}
+	tbuf.cname[13] = uid;
+	seek(acctf, 0, 2);
+	write(acctf, &tbuf, 20);
+}
+
+runcom()
+{
+	int buf[40];
+
+	if(stat(linep, buf) < 0)
+		return(0);
+	if((buf[2]&060111) != 0)
+		return(0);
+	return(1);
+}
+# 
+# echo #####
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+# /usr/adm/su_acct

@@ -1,13 +1,18 @@
 
-;login: 
-;login: p'
+
+;login: 
+
+;login: p'
 Login incorrect.
 Name: 
 Login incorrect.
 Name: 
-;login: 
-;login: 
-;login: thalia
+
+;login: 
+
+;login: 
+
+;login: thalia
 % ls{ a 
 : not found
 % ls
@@ -30,7 +35,8 @@ cd: not found
 5solution
 resources
 % 
-;login: root
+
+;login: root
 # 
 # ls
 bin
@@ -109,7 +115,8 @@ write
 # 
 # 
 # 
-;login: root
+
+;login: root
 # cle```
 cle```: not found
 # kkkk####
@@ -228,7 +235,8 @@ drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
 drwxr-xr-x 3 thalia     64 Aug 18 03:45 thalia
 drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
 # 
-;login: ben
+
+;login: ben
 % env
 env: not found
 % echo $$$$$$$$$$$chdir /usr/thalias#
@@ -251,7 +259,8 @@ mullender.c
 % cat hin	
 % cat hints
 A.k..#3semantics%4debugZ1compile 5solution'resourcesmullender.smullender.das72syntaxasmsyntax1% 
-;login: ben
+
+;login: ben
 No directory
 Name: ben
 % cd /usr
@@ -372,7 +381,8 @@ wc.c
 who.c
 write.s
 % clear
-;login: root
+
+;login: root
 # ls
 bin
 dev
@@ -385,8 +395,10 @@ usr
 # h33333#####
 h: not found
 # 
-;login: 
-;login: root
+
+;login: 
+
+;login: root
 # vi```chdir /etc
 vi```chdir: not found
 # chdir /etc
@@ -423,9 +435,11 @@ cd: not found
 # D
 D: not found
 # 
-;login: newt
+
+;login: newt
 % 
-;login: root
+
+;login: root
 # ed /etc/passwd
 80
 a
@@ -529,7 +543,8 @@ Who?
 !
 q
 # 
-;login: ty
+
+;login: ty
 % cat *
 No match
 % ls
@@ -557,7 +572,8 @@ dnm     ttyq Aug 18 10:49
 ncb     ttyt Aug 18 10:43
 % write wh##root
 dont kill me session l
-;login: root
+
+;login: root
 # ls /usr/thalia
 hints
 mullender.c
@@ -1127,7 +1143,8 @@ w
 !mk##chown alex /usr/alex
 !
 # 
-;login: alex
+
+;login: alex
 % ls
 a.out
 core
@@ -1136,11 +1153,13 @@ mullender.c
 % a.out > 
 syntax error
 % 
-;login: root
+
+;login: root
 # chdir /usr/alex
 # chown alex *
 # 
-;login: alxe33ex
+
+;login: alxe33ex
 Login incorrect.
 Name: alex
 % ls
@@ -2234,7 +2253,8 @@ char *file;
 		rep->lmtime[0] = statb.imtime[0];
 		rep->lmtime[1] = statb.imtime[1];
 			rep->lmtime[0] = statb.iatime[0];
-			rep->lmtime[1] = statb.iatime[1];
+			rep->lmtime[1] = statb.iatime[1];
+
 
 ls.c:384
 % 
@@ -2342,7 +2362,8 @@ resources
 	0, &nosys,			/* 45 = tiu */
 	0, &nosys,			/* 49 = x */
 	0, &nosys,			/* 50 = x */
-	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 51 = x */
+
 
 sysent.c:2945
 % grep nosys *
@@ -2832,7 +2853,8 @@ Action $10
 You lose $8
 
 % 
-;login: root
+
+;login: root
 # ed /etc/passwd
 154
 ?
@@ -2960,11 +2982,13 @@ cd: not found
 # chri##dir /ju###justin
 # chown justin .
 # 
-;login: justin
+
+;login: justin
 % pwd
 ../usr/justin
 % 
-;login: alex
+
+;login: alex
 % ls
 a.out
 core
@@ -3407,4 +3431,3148 @@ fread:
              888         888oooo88  888                  888888888o 
              888      o  888  88o   888o     oo          88o    o888
             o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% 
+;login: 
+;login: 
+:login: 
+;login: 
+;login: root
+# ed /etc/pass*
+207
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+!mkdir /usr/doug
+!
+a
+doug::8"""""/usr/doug
+.
+s/#/:/g
+?
+p
+doug::8"""""/usr/doug
+s/\*"/:/g
+?
+p
+doug::8"""""/usr/doug
+s/"/:/g{
+?
+p{p
+?
+p
+doug::8"""""/usr/doug
+d
+a
+doug::8::::/usr/doug
+.
+w
+228
+q
+# chown doug/#qqq
+chown uid f1 ...
+Who?
+# chownd doug /usr/doug
+chownd: not found
+# d
+d: not found
+# d
+d: not found
+# ed /etc/passwd
+228
+1
+root::0:1::/:
+
+bin::3:1::/bin:
+$
+doug::8::::/usr/doug
+s/:::/::
+?
+s/:::/::
+?
+s/:::/::/
+p
+doug::8:::/usr/doug
+s/$/:
+?
+s/$/:/
+p
+doug::8:::/usr/doug:
+w
+228
+q
+# dd
+d
+d
+0+2 records in
+0+1 records out
+# log
+log: not found
+# 
+# 
+# ##########
+# 
+;login: doud#g
+% who
+alex    tty0 Aug 18 13:12
+doug    tty1 Aug 18 13:30
+root    tty2 Aug 18 13:18
+root    tty4 Aug 18 13:17
+root    tty5 Aug 18 13:22
+root    ttyb Aug 18 13:27
+root    ttyc Aug 18 13:25
+root    ttyi Aug 18 13:21
+root    ttyv Aug 18 13:21
+% t
+t: not found
+% sort
+% echo hi
+hi
+% speak
+speak: not found
+% spell
+spell: not found
+% chdir /e#usr/sys/dmr
+% ls
+bio.c
+cat.c
+dc.c
+dh.c
+dhdm.c
+dhfdm.c
+dn.c
+dp.c
+dv.c
+kl.c
+lp.c
+malloc.c
+mem.c
+partab.c
+pc.c
+pipe.c
+rf.c
+rk.c
+rp.c
+run
+tc.c
+tm.c
+tty.c
+vs.c
+vt.c
+% ed vs.c
+1585
+1,23p
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+/*
+ * Screw Works interface via DC-11
+ */
+
+#include "../tty.h"
+
+#define	VSADDR	0174150
+#define	CDLEAD	01
+#define	B1200	030
+#define	STOP1	0400
+#define	CLSEND	02
+#define	RQSEND	01
+
+struct {
+	int	vsrcsr;
+	int	vsrbuf;
+	int	vsxcsr;
+	int	vsxbuf;
+.,.+23p
+	int	vsxbuf;
+};
+
+struct {
+	struct	clist	iq;
+	struct	clist	oq;
+} vs;
+
+char	vsmap[] "?0*#?546?213?879?";
+
+vsopen(dev)
+{
+	VSADDR->vsrcsr = IENABLE|B1200|CDLEAD;
+	VSADDR->vsxcsr = STOP1|IENABLE|B1200;
+	vschar(0);
+}
+
+vsclose(dev)
+{
+	VSADDR->vsrcsr =& ~IENABLE;
+	while (getc(&vs.iq) >= 0);
+}
+
+vswrite(dev)
+.,.+23p
+vswrite(dev)
+{
+	register int count, c;
+
+	count = 0;
+	while ((c=cpass()) >= 0) {
+		if (--count <= 0) {
+			count = 60;
+			vschar(0);
+		}
+		vschar(c);
+	}
+	vschar(0);
+}
+
+vschar(c)
+{
+
+	c =^ 0277;		/* magic map */
+	spl5();
+	while (vs.oq.c_cc > 60) {
+		vsxintr();
+		sleep(&vs.oq, TTIPRI);
+	}
+.,.+23p
+	}
+	putc(c, &vs.oq);
+	vsxintr();
+	spl0();
+}
+
+vsxintr()
+{
+	static lchar;
+	register c;
+	register int *xcsr;
+
+	xcsr = &VSADDR->vsxcsr;
+	if (*xcsr&DONE) {
+		if (lchar==0277) {
+			*xcsr =& ~RQSEND;
+			lchar = 0;
+			if (vs.oq.c_cc==0)
+				goto wake;
+		}
+		if ((*xcsr&CLSEND) == 0) {
+			*xcsr =& ~RQSEND;
+			*xcsr =| RQSEND;
+			if ((*xcsr&CLSEND) == 0)
+.,.+23p
+			if ((*xcsr&CLSEND) == 0)
+				goto wake;
+		}
+		if ((c = getc(&vs.oq)) >= 0)
+			VSADDR->vsxbuf = lchar = c;
+		if (vs.oq.c_cc <= 15)
+	    wake:
+			wakeup(&vs.oq);
+	}
+}
+
+vsread(dev)
+{
+	register int c;
+
+	spl5();
+	while ((c = getc(&vs.iq)) < 0)
+		sleep(&vs.iq, TTIPRI);
+	spl0();
+	passc(vsmap[c&017]);
+}
+
+vsrintr()
+{
+.,.+23p
+?
+.,$p
+{
+	register int c;
+
+	c = VSADDR->vsrbuf;
+	if (vs.iq.c_cc<=10)
+		putc(c, &vs.iq);
+	wakeup(&vs.iq);
+}
+q
+% ed /usr###etc/passwd
+358
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+q
+% cat ####
+% D##
+% exit
+% 
+;login: root
+# cat /etc passwd
+..>.?getty@glob+initBmkfsCmknodDmountEmshFpasswdGrcHttysIumountJupdatea.outnlpd# cat 
+# 
+# 
+# 
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+# echo 'hacker::256:256::/usr/hacker: >> /etc/passwd###############' >> /etc/passwd
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+# 
+;login: hacker
+No directory
+Name: root
+# mkdir /usr/hacker
+# 
+;login: hacker
+# echo 'gotcha' >> /etc/passwd
+# cat /tec/####etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+gotcha
+# 
+Message from alex...
+hey! what ar you doing???
+EOT
+
+# 
+# write alex
+{not much!!! hacking the planet)
+# 
+;login: root
+# ed /etc/passwd
+395
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+gotcha
+$
+gotcha
+d
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+w
+388
+# 
+;login: root
+# ed /etfd##c/a#passwd
+388
+.
+hacker::256:256::/usr/hacker:
+
+?
+
+?
+q
+# ls
+a.out
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# cd
+cd: not found
+# lls
+lls: not found
+# ls
+a.out
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# cdcd 
+cdcd: not found
+# ls /home
+/home not found
+# ls /us
+/us not found
+# ls /usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+hacker
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# ctc
+# ls /usr/kevin
+a.out
+core
+mullender.c
+o
+# ls /usr/bin
+ac
+cal
+comm
+cref
+crpost
+diff
+fed
+find
+form
+grep
+mesg
+nice
+nohup
+passwd
+pfe
+prof
+pwd
+roff
+sa
+sleep
+sno
+split
+tee
+tr
+typo
+upost
+wc
+yacc
+# man find
+man: not found
+# m``
+: not found
+# 
+# find --help
+Insufficient args
+# in######
+# #
+# find / -name grep.s
+# findm @ find / -name sys1.c
+# pwd
+..
+# find / -name passwd
+# find . -name etcv#
+# ls
+a.out
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls unix
+unix
+# lsunix### unix
+lsun: not found
+# ls usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+hacker
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# ls usr/c
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+# cat usr/c/c01.c
+#
+/* C compiler
+
+Copyright 1972 Bell Telephone Laboratories, Inc. 
+
+*/
+
+#include "c0h.c"
+
+build(op) {
+	register int t1;
+	int t2, t3, t;
+	struct tnode *p3, *disarray();
+	register struct tnode *p1, *p2;
+	int d, dope, leftc, cvn, pcvn;
+
+	if (op==LBRACK) {
+		build(PLUS);
+		op = STAR;
+	}
+	dope = opdope[op];
+	if ((dope&BINARY)!=0) {
+		p2 = chkfun(disarray(*--cp));
+		t2 = p2->type;
+	}
+	p1 = *--cp;
+	if (op==SIZEOF) {
+		t1 = length(p1);
+		p1->op = CON;
+		p1->type = INT;
+		p1->dimp = 0;
+		p1->value = t1;
+		*cp++ = p1;
+		return;
+	}
+	if (op!=AMPER) {
+		p1 = disarray(p1);
+		if (op!=CALL)
+			p1 = chkfun(p1);
+	}
+	t1 = p1->type;
+	pcvn = 0;
+	switch (op) {
+
+	/* end of expression */
+	case 0:
+		*cp++ = p1;
+		return;
+
+	/* no-conversion operators */
+	case COMMA:
+	case LOGAND:
+	case LOGOR:
+		*cp++ = block(2, op, 0, 0, p1, p2);
+		return;
+
+	case QUEST:
+		if (p2->op!=COLON)
+			error("Illegal conditional");
+		t = t2;
+		goto nocv;
+
+	case CALL:
+		if ((t1&030) != FUNC)
+			error("Call of non-function");
+		*cp++ = block(2,CALL,decref(t1),p1->dimp,p1,p2);
+		return;
+
+	case STAR:
+		if (p1->op==AMPER || p1->op==AMPERA) {
+			*cp++ = p1->tr1;
+			return;
+		}
+		if ((t1&030) == FUNC)
+			error("Illegal indirection");
+		*cp++ = block(1,STAR,decref(t1),p1->dimp,p1);
+		return;
+
+	case AMPER:
+		if (p1->op==STAR) {
+			p1->tr1->dimp = p1->dimp;
+			p1->tr1->type = incref(t1);
+			*cp++ = p1->tr1;
+			return;
+		}
+		if (p1->op==NAME) {
+			if (p1->class==AUTO)
+				op = AMPERA;
+			*cp++ = block(1,op,incref(t1),p1->dimp,p1);
+			return;
+		}
+		error("Illegal lvalue");
+		break;
+
+	case INCBEF:
+	case DECBEF:
+	case INCAFT:
+	case DECAFT:
+		chklval(p1);
+		*cp++ = block(2,op,t1,p1->dimp,p1,plength(p1));
+		return;
+
+	case ARROW:
+		*cp++ = p1;
+		chkw(p1);
+		p1->type = PTR+STRUCT;
+		build(STAR);
+		p1 = *--cp;
+
+	case DOT:
+		if (p2->op!=NAME || p2->class!=MOS)
+			error("Illegal structure ref");
+		*cp++ = p1;
+		t = t2;
+		if ((t&030) == ARRAY) {
+			t = decref(t);
+			p2->ssp++;
+		}
+		setype(p1, t, p2->dimp);
+		build(AMPER);
+		*cp++ = block(1,CON,7,0,p2->nloc);
+		build(PLUS);
+		if ((t2&030) != ARRAY)
+			build(STAR);
+		return;
+	}
+	if ((dope&LVALUE)!=0)
+		chklval(p1);
+	if ((dope&LWORD)!=0)
+		chkw(p1);
+	if ((dope&RWORD)!=0)
+		chkw(p2);
+	if ((dope&BINARY)==0) {
+		if (!fold(op, p1, 0))
+			*cp++ = block(1,op,t1,p1->dimp,p1);
+		return;
+	}
+	if (t2==7) {
+		t = t1;
+		p2->type = 0;	/* no int cv for struct */
+		t2 = 0;
+		goto nocv;
+	}
+	cvn = cvtab[11*lintyp(t1)+lintyp(t2)];
+	leftc = cvn&0100;
+	t = leftc? t2:t1;
+	if (op==ASSIGN && t1!=STRUCT && t2!=STRUCT) {
+		t = t1;
+		if (leftc || cvn!=3)		/* int -> float */
+			goto nocv;
+	}
+	if (cvn =& 077) {
+		if (op==COLON && t1>=PTR && t1==t2)
+			goto nocv;
+		if (cvn==077) {
+			if ((dope&RELAT)==0 || t1<PTR || t2<PTR)
+		illcv:
+				error("Illegal conversion");
+			goto nocv;
+		}
+		if (cvn==2) {			/* ptr conv */
+			t = 0;			/* integer result */
+			if ((dope&RELAT)!=0) {
+				cvn = 0;
+				goto nocv;
+			}
+			if (op!=MINUS)
+				goto illcv;
+			pcvn = cvn;
+			cvn = 0;
+			goto nocv;
+		}
+		if (leftc) {
+			if ((dope&ASSGOP) != 0) {
+				if (cvn == 3) {	/* int->float */
+					leftc = 0;
+					cvn = 4;
+					t = t1;
+					goto rcvt;
+				} else
+					goto illcv;
+			}
+			p1 = convert(p1, t, cvn, plength(p2));
+		} else {
+		rcvt:
+			p2 = convert(p2, t, cvn, plength(p1));
+		}
+nocv:;	}
+	if ((dope&RELAT)!=0) {
+		if (op>NEQUAL && (t1>=PTR || t2>=PTR))
+			op =+ 4;	  /* ptr relation */
+		t = 0;		/* relational is integer */
+	}
+	if (fold(op, p1, p2))
+		return;
+	*cp++ = block(2,op,t,(p1->dimp==0? p2:p1)->dimp,p1,p2);
+	if (pcvn) {
+		p1 = *--cp;
+		*cp++ = convert(p1, 0, pcvn, plength(p1->tr1));
+	}
+}
+
+convert(p, t, cvn, len)
+struct tnode *p;
+{
+	register int n;
+
+	switch(cvn) {
+
+	/* int -> ptr */
+	case 1:
+		n = TIMES;
+		goto md;
+
+	/* ptr -> int */
+	case 2:
+		n = DIVIDE;
+	md:
+		return(block(2, n, t, 0, p, block(1, CON, 0, 0, len)));
+
+	/* int -> double */
+	case 3:
+		n = ITOF;
+		goto di;
+
+	/* double -> int */
+	case 4:
+		n = FTOI;
+	di:
+		return(block(1, n, t, 0, p));
+	}
+	error("C error-- convert");
+	return(p);
+}
+
+setype(ap, at, adimptr)
+struct tnode *ap;
+{
+	register struct tnode *p;
+	register t, dimptr;
+
+	p = ap;
+	t = at;
+	dimptr = adimptr;
+	p->type = t;
+	if (dimptr != -1)
+		p->dimp = dimptr;
+	switch(p->op) {
+
+	case AMPERA:
+	case AMPER:
+		setype(p->tr1, decref(t), dimptr);
+		return;
+
+	case STAR:
+		setype(p->tr1, incref(t), dimptr);
+		return;
+
+	case PLUS:
+	case MINUS:
+		setype(p->tr1, t, dimptr);
+	}
+}
+
+chkfun(ap)
+struct tnode *ap;
+{
+	register struct tnode *p;
+	register int t;
+
+	p = ap;
+	if (((t = p->type)&030)==FUNC)
+		return(block(1,AMPER,incref(t),p->dimp,p));
+	return(p);
+}
+
+struct tnode *disarray(ap)
+struct tnode *ap;
+{
+	register int t;
+	register struct tnode *p;
+
+	p = ap;
+	/* check array & not MOS */
+	if (((t = p->type)&030)!=ARRAY || p->op==NAME&&p->class==MOS)
+		return(p);
+	p->ssp++;
+	*cp++ = p;
+	setype(p, decref(t), -1);
+	build(AMPER);
+	return(*--cp);
+}
+
+chkw(p)
+struct tnode *p;
+{
+	register int t;
+
+	if ((t=p->type)>CHAR && t<PTR)
+		error("Integer operand required");
+	return;
+}
+
+lintyp(at)
+{
+	register t;
+
+	t = at;
+	if (t<PTR)
+		return(t);
+	if ((t&0170) == 0150)		/* ptr to array */
+		return(9);
+	if ((t&037)==t)
+		return((t&07)+5);
+	return(10);
+}
+
+error(s, p1, p2, p3, p4, p5, p6)
+{
+	register f;
+
+	nerror++;
+	fflush(ascbuf);
+	f = ascbuf[0];
+	ascbuf[0] = 1;
+	printf("%d: ", line);
+	printf(s, p1, p2, p3, p4, p5, p6);
+	putchar('\n');
+	fflush(ascbuf);
+	ascbuf[0] = f;
+}
+
+block(n, op, t, d, p1,p2,p3)
+int *p1, *p2, *p3;
+{
+	register int *ap, *p;
+
+	ap = &op;
+	n =+ 3;
+	p = space;
+	while(n--)
+		pblock(*ap++);
+	return(p);
+}
+
+pblock(p)
+{
+
+	*space++ = p;
+	if (--osleft<=0) {
+		error("Expression overflow");
+		exit(1);
+	}
+}
+
+chklval(ap)
+struct tnode *ap;
+{
+	register struct tnode *p;
+
+	p = ap;
+	if (p->op!=NAME && p->op!=STAR)
+		error("Lvalue required");
+}
+
+fold(op, ap1, ap2)
+struct tnode *ap1, *ap2;
+{
+	register struct tnode *p1;
+	register int v1, v2;
+
+	p1 = ap1;
+	if (p1->op!=CON || (ap2!=0 && ap2->op!=CON))
+		return(0);
+	v1 = p1->value;
+	v2 = ap2->value;
+	switch (op) {
+
+	case PLUS:
+		v1 =+ v2;
+		break;
+
+	case MINUS:
+		v1 =- v2;
+		break;
+
+	case TIMES:
+		v1 =* v2;
+		break;
+
+	case DIVIDE:
+		v1 =/ v2;
+		break;
+
+	case MOD:
+		v1 =% v2;
+		break;
+
+	case AND:
+		v1 =& v2;
+		break;
+
+	case OR:
+		v1 =| v2;
+		break;
+
+	case EXOR:
+		v1 =^ v2;
+		break;
+
+	case NEG:
+		v1 = - v1;
+		break;
+
+	case COMPL:
+		v1 = ~ v1;
+		break;
+
+	case LSHIFT:
+		v1 =<< v2;
+		break;
+
+	case RSHIFT:
+		v1 =>> v2;
+		break;
+
+	default:
+		return(0);
+	}
+	p1->value = v1;
+	*cp++ = p1;
+	return(1);
+}
+
+conexp()
+{
+	register struct tnode *t;
+
+	initflg++;
+	if (t = tree())
+		if (t->op != CON)
+			error("Constant required");
+	initflg--;
+	return(t->value);
+}
+# ls usr/c
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+# ed usr/c/regtab.s
+6655
+?
+?
+?1,$p
+?
+help
+?
+q
+# 
+# ls usr/c
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+# ls
+a.out
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls dev
+kmem
+mem
+mt0
+mt1
+mt2
+mt3
+mt4
+mt5
+mt6
+mt7
+null
+ptr
+rk0
+rk1
+rp0
+rp1
+tap0
+tap1
+tap2
+tap3
+tap4
+tap5
+tap6
+tap7
+tty0
+tty1
+tty2
+tty3
+tty4
+tty5
+tty6
+tty7
+tty8
+tty9
+ttya
+ttyb
+ttyc
+ttyd
+ttye
+ttyf
+ttyg
+ttyh
+ttyi
+ttyj
+ttyk
+ttyl
+ttym
+ttyn
+ttyo
+ttyp
+ttyq
+ttyr
+ttys
+ttyt
+ttyu
+ttyv
+# ed /dev/kmem
+?
+pp+p
+?
+p
+bbdbnbpbtb"bbcdc:c<c|cBdDdXdZdHeJexezeee
+ee+pteff*f,fTfdfBfFfJfLfvfFgfgjglgpgrgvgxg"h$h+
+0h2hBhDhPhRhbhphzhhhh h2h4hDhPhRh^h`hjhth~hiii(i6i8iFiHiTibidiliniDiFiHiJiPiRiTiViXiZi\i^i`ilinipirijjjjjjjjNjPjRjTjjj"k$knkpkrktkvkxkzk|kkkkkk
+kkkkkkkkFk*l,l@ljllljl
+?
+q
+# sls bni##in
+sls: not found
+# ls bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# ls usr/bin{#
+ac
+cal
+comm
+cref
+crpost
+diff
+fed
+find
+form
+grep
+mesg
+nice
+nohup
+passwd
+pfe
+prof
+pwd
+roff
+sa
+sleep
+sno
+split
+tee
+tr
+typo
+upost
+wc
+yacc
+# roff
+# 
+# wc -l /usr/c/c01.c
+    445 /usr/c/c01.c
+# file
+file: not found
+# ls usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+hacker
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# ls usr/thalia
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+# cat usr/thalia/thanks
+thank_you
+from_darpa_dan
+# ls -l usr/thalia/thanks
+-rw-rw-rw- 1 thalia     25 Aug 18 11:08 usr/thalia/thanks
+# ls  usr/thalia
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+# ls -l
+total 67
+-rw-rw-rw- 1 root       96 Aug 18 13:54 a.out
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 15:30 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x30 bin       496 Aug 18 14:30 usr
+# whoami
+whoami: not found
+# id
+id: not found
+# ui
+ui: not found
+# uid
+uid: not found
+# chdir /etc
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+# echo jo
+jo
+# echo 'jordan::69:69""##::usr###/usr/jordan:' >> passwd
+# catpasswd
+catpasswd: not found
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+# cd usr
+cd: not found
+# chdir /usr
+# mkdir jordan
+# cp thalia/mulender.c jordan/
+Cannot open old file.
+# chown 69:69 jordan
+# ls -l
+total 29
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      224 Aug 18 14:25 alex
+drwxrwxrwx 2 root      112 Aug 18 15:44 amitb
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxrwxrwx 2 bx        128 Aug 18 15:44 bx
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 12:23 cody
+drwxrwxrwx 2 root       32 Aug 18 13:17 doug
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 root       32 Aug 18 14:20 hacker
+drwxrwxrwx 2 jordan     32 Aug 18 15:43 jordan
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxrwxrwx 2 kevin     128 Aug 18 15:29 kevin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 13:55 michael
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia    128 Aug 18 13:07 thalia
+drwxrwxrwx 2 bin        48 Aug 18 13:31 tmp
+drwxrwxrwx 2 root       32 Aug 18 13:49 voytilla
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+# ls thalia
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+# cp thalia/mullender.c jordan/
+# chdir jorda
+chdir: bad directory
+# chdirjorda@
+# login
+Name: jordan
+% echo hi
+hi
+% ls
+mullender.c
+% catmullen@cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% cat ta
+% mvmullender.c main.c
+mvmullender.c: not found
+% mv mullender.c main.c
+% cat main.s#c
+% vi main.c
+vi: not found
+% ed
+q
+% ed a#main.c
+?
+1,$p
+?
+
+?
+q
+% ls
+main.c
+% cat main.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ed main.c
+469
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+/short/p
+short main[] = {
+/short/s//int/
+/int/p
+int main[] = {
+/=/p
+int main[] = {
+s/int/short/
+/short/p
+short main[] = {
+s/short/int/
+s/=//
+/p
+?
+$p
+	'p', 072163, 'r', 29303, 29801, 'e' };
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+q
+% cc main.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ed main.c
+469
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+//
+?
+s/short/int/
+?
+s/=//
+?
+w
+?
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+s/short/int
+?
+/short/p
+short main[] = {
+s/short/int/
+/short/p
+?
+s/=//
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+w
+?
+q
+% cc main.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ec@@@cat main.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ls -l
+total 1
+-rw-r--r-- 1 root      469 Aug 18 15:47 main.c
+% chown69:69 jordan
+chown69:69: not found
+% chownCCCC
+chownCCCC: not found
+% chown 69:69 main`#####jordan main.c
+jordan?
+main.c?
+% ls
+main.c
+% ls -l
+total 1
+-rw-r--r-- 1 root      469 Aug 18 15:47 main.c
+% chown 69:69 main.c
+main.c?
+% ls -l
+total 1
+-rw-r--r-- 1 root      469 Aug 18 15:47 main.c
+% logout
+logout: not found
+% 
+;login: root
+Login incorrect.
+Name: root
+# chown 69:69 usr/jordan/main.c
+# ls -l usr/jordan
+total 1
+-rw-r--r-- 1 jordan    469 Aug 18 15:56 main.c
+# login
+Name: jordan
+% ls
+main.c
+% ccmain.c
+ccmain.c: not found
+% cc mc@@
+% ed main.c
+469
+/short/p
+short main[] = {
+s/short/int/
+/shot/p
+?
+/short
+?
+/
+?
+s/=//
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+w
+466
+q
+% cat main.c
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% cc main.c
+3: Expression syntax
+3: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ed main.c
+466
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+s/0xbef/0xbef/
+?
+cat /usr/thalis
+?
+ls/usr
+?
+q
+% ls /usr/thalia
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% ls /usr/thalia/hints
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% cat /usr/thalia/hints/2syntax
+7.A..hint1hint2hint3a2hint3b!solution.csolution.osolution.oa.out% ls /usr/ta#halia/hints/2syntax
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% ls /usr/thalia/hints/hint1
+/usr/thalia/hints/hint1 not found
+% cat /usr/thalia/hints/2syntax/hint1
+Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.
+% cat /usr/thalia/hints/2syntax/hint2
+Hint: Array in C as of UNIX V4 were declared without equals, e.g.,
+
+	int a[] {1, 2, 3};
+% cat /usr/thalia/hints/2syntax/hint3
+% !!
+!!: not found
+% cat /usr/thalia/hints/2syntax/hint3a
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+Octal was the preferred base for expressing bit patterns, a tradition inherited
+from earlier systems. Despite the 16-bit word size not being divisible by 3 (3
+bits per octal digit), all PDP-11 documentation used octal. Note that the
+switches on the PiDP-11 front panel are colored in groups of three, denoting
+octal digits.
+% cat /usr/thalia/hints/2syntax/hint3b
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+% ed maain@ed main.c
+466
+s/0xbef/05757/
+?
+/0xbef/p
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+s/0xbef//
+/0xbef/p
+?
+q
+% ed main.c
+466
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+q
+% ls /usr/thalia/hints/2syntax
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% cat /ust/thaalia/@ cat /usr/thalia/hints/2syntax/hint3b
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+% ed main.c
+466
+/0xbef
+?
+s/0xbef/05757/
+?
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+/0x5s#2d7/s//21207/
+?
+q
+% cat /usr/thalia/hints/2ynta####syntax/hint3b
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+% ed main.c
+466
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011
+?
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+w
+466
+q
+% cc main.c
+% ls
+a.out
+main.c
+% a.out
+  :-)Bad system call -- Core dumped
+% ls
+a.out
+core
+main.c
+% cat core
+fCnCEEEELe>@@D@lcore\)core@l'
+l:u:u:u9	8ZCbC6C>CzC@lD0lD0HtlD0ptFCv@ptptlD0ttXCv@ttlD0ttdC,ULeN2nCxNzD0Le
+zC^tNzNz@sC0@@sNz2_@sCZ?@s>Nz@s$C,>@s]py2Cd6CkJC&@s@sLekVC$kLebC`#^nC,"9\-pf0	^p	p&P6w	%
+	]	_o]{o2RWR|d<  :-)DdDe	7@	9	B##-	~p##,#vaxpdpstrwrite#####vza.out% % % 
+% 
+% ls /usr/thalia/hints
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% ls /usr/thalia/hints/4debug
+hint1
+hint2a
+hint2b
+hint3
+% ls/usr@ls /usr/thalia/hints/4debug######3semantics
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% cp /ust/thalia/hin@cp /usr/thalia/hints/3semantics/* .
+Usage: cp oldfile newfile
+% cp /usr/thalia/hints/3semantics/mullender.das .
+% cat mullendar.dar#s
+% cat mullender.das
+000000: 010704			mov	pc,r4
+000002: 005744			tst	-(r4)
+000004: 162704 000011		sub	$11,r4
+000010: 010467 000006		mov	r4,22
+000014: 012700 000001		mov	$1,r0
+000020: 104404			trap	4
+000022: 000000			0
+000024: 000011			11
+000026: 012702 001000		mov	$1000,r2
+000032: 104455			trap	55
+000034: 077202			sob	r2,32
+000036: 000760			br	0
+% ./a.out
+  :-)Bad system call -- Core dumped
+% a.out
+  :-)Bad system call -- Core dumped
+% a.out > tmp.log
+Bad system call -- Core dumped
+% cat tmp.log
+  :-)% 
+% cattmp.log@cat tmp.log; echo''## ''
+  :-)
+% ls /usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+dominic
+doug
+fort
+games
+hacker
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+% ls /usr/source
+s1
+s2
+s3
+s4
+s7
+% ls /usr/source/s1
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% chdir /usr/sys
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% ls ken
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% cat ken/sys2.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../reg.h"
+#include "../file.h"
+#include "../inode.h"
+
+read()
+{
+	rdwr(FREAD);
+}
+
+write()
+{
+	rdwr(FWRITE);
+}
+
+rdwr(mode)
+{
+	register *fp, m;
+
+	m = mode;
+	fp = getf(u.u_ar0[R0]);
+	if(fp == NULL)
+		return;
+	if((fp->f_flag&m) == 0) {
+		u.u_error = EBADF;
+		return;
+	}
+	u.u_base = u.u_arg[0];
+	u.u_count = u.u_arg[1];
+	u.u_segflg = 0;
+	if(fp->f_flag&FPIPE) {
+		if(m==FREAD)
+			readp(fp); else
+			writep(fp);
+	} else {
+		u.u_offset[1] = fp->f_offset[1];
+		u.u_offset[0] = fp->f_offset[0];
+		if(m==FREAD)
+			readi(fp->f_inode); else
+			writei(fp->f_inode);
+		dpadd(fp->f_offset, u.u_arg[1]-u.u_count);
+	}
+	u.u_ar0[R0] = u.u_arg[1]-u.u_count;
+}
+
+open()
+{
+	register *ip;
+	extern uchar;
+
+	ip = namei(&uchar, 0);
+	if(ip == NULL)
+		return;
+	u.u_arg[1]++;
+	open1(ip, u.u_arg[1], 0);
+}
+
+creat()
+{
+	register *ip;
+	extern uchar;
+
+	ip = namei(&uchar, 1);
+	if(ip == NULL) {
+		if(u.u_error)
+			return;
+		ip = maknode(u.u_arg[1]&07777);
+		open1(ip, FWRITE, 2);
+	} else
+		open1(ip, FWRITE, 1);
+}
+
+open1(ip, mode, trf)
+int *ip;
+{
+	register struct file *fp;
+	register *rip, m;
+
+	rip = ip;
+	m = mode;
+	if(trf != 2) {
+		if(m&FREAD)
+			access(rip, IREAD);
+		if(m&FWRITE) {
+			access(rip, IWRITE);
+			if((rip->i_mode&IFMT) == IFDIR)
+				u.u_error = EISDIR;
+		}
+	}
+	if(u.u_error)
+		goto out;
+	if(trf)
+		itrunc(rip);
+	prele(rip);
+	openi(rip, m&FWRITE);
+	if(u.u_error)
+		goto out;
+	if ((fp = falloc()) == NULL)
+		goto out;
+	fp->f_flag = m&(FREAD|FWRITE);
+	fp->f_inode = rip;
+	return;
+
+out:
+	iput(rip);
+}
+
+close()
+{
+	register *fp;
+
+	fp = getf(u.u_ar0[R0]);
+	if(fp == NULL)
+		return;
+	u.u_ofile[u.u_ar0[R0]] = NULL;
+	closef(fp);
+}
+
+seek()
+{
+	int n[2];
+	register *fp, t;
+
+	fp = getf(u.u_ar0[R0]);
+	if(fp == NULL)
+		return;
+	if(fp->f_flag&FPIPE) {
+		u.u_error = ESPIPE;
+		return;
+	}
+	t = u.u_arg[1];
+	if(t > 2) {
+		n[1] = u.u_arg[0]<<9;
+		n[0] = (u.u_arg[0]>>7) & 0777;
+	} else {
+		n[1] = u.u_arg[0];
+		n[0] = 0;
+		if(t!=0 && t!=3 && n[1]<0)
+			n[0] = -1;
+	}
+	switch(t) {
+
+	case 1:
+	case 4:
+		n[0] =+ fp->f_offset[0];
+		dpadd(n, fp->f_offset[1]);
+		break;
+
+	default:
+		n[0] =+ fp->f_inode->i_size0;
+		dpadd(n, fp->f_inode->i_size1);
+
+	case 0:
+	case 3:
+		;
+	}
+	fp->f_offset[1] = n[1];
+	fp->f_offset[0] = n[0];
+}
+
+link()
+{
+	register *ip, *xp;
+	extern uchar;
+
+	ip = namei(&uchar, 0);
+	if(ip == NULL)
+		return;
+	if((ip->i_mode&IFMT)==IFDIR && !suser())
+		goto out;
+/*
+ * NOTE:
+ * the ip should not be unlocked here, BUT
+ * if its not, the following namei may hang
+ */
+	ip->i_flag =& ~ILOCK;
+	u.u_dirp = u.u_arg[1];
+	xp = namei(&uchar, 1);
+	if(xp != NULL) {
+		u.u_error = EEXIST;
+		iput(xp);
+	}
+	if(u.u_error)
+		goto out;
+	if(u.u_pdir->i_dev != ip->i_dev) {
+		iput(u.u_pdir);
+		u.u_error = EXDEV;
+		goto out;
+	}
+	wdir(ip);
+	ip->i_nlink++;
+	ip->i_flag =| IUPD;
+
+out:
+	iput(ip);
+}
+
+mknod()
+{
+	register *ip;
+	extern uchar;
+
+	if(suser()) {
+		ip = namei(&uchar, 1);
+		if(ip != NULL) {
+			u.u_error = EEXIST;
+			goto out;
+		}
+	}
+	if(u.u_error)
+		return;
+	ip = maknode(u.u_arg[1]);
+	ip->i_addr[0] = u.u_arg[2];
+
+out:
+	iput(ip);
+}
+
+sslep()
+{
+	char *d[2];
+
+	spl7();
+	d[0] = time[0];
+	d[1] = time[1];
+	dpadd(d, u.u_ar0[R0]);
+
+	while(dpcmp(d[0], d[1], time[0], time[1]) > 0) {
+		if(dpcmp(tout[0], tout[1], time[0], time[1]) <= 0 ||
+		   dpcmp(tout[0], tout[1], d[0], d[1]) > 0) {
+			tout[0] = d[0];
+			tout[1] = d[1];
+		}
+		sleep(tout, PSLEP);
+	}
+	spl0();
+}
+% cat sys@cat ken/sysent.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/* 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+};
+% grep -rni nonsys .
+nonsys: cannot open
+% grep -rni . nosys
+nosys: cannot open
+% grep nosys .
+% grep -rni nosys .
+nosys: cannot open
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% grep -r nosys .
+nosys: cannot open
+% grep -r . nosys
+nosys: cannot open
+% grep nosys -r .
+-r: cannot open
+% grep nosys sysent.c
+sysent.c: cannot open
+% grep nosys ken/sysent.c
+	0, &nosys,			/* 20 = x */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	0, &nosys,			/* 29 = x */
+	0, &nosys,			/* 33 = x */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &nosys,			/* 45 = tiu */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% ed ken/sysent.c
+1957
+1,$p
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/* 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+};
+q
+% grep getgid ken/
+% grep -r getgid ken/
+getgid: cannot open
+% cat ken/trap.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../proc.h"
+#include "../reg.h"
+#include "../text.h"
+#include "../seg.h"
+
+#define	CSW	0177570
+#define	EBIT	1
+#define	UMODE	0170000
+#define	SETD	0170011
+struct	{
+	int	count;
+	int	(*call)();
+} sysent[64];
+char	regloc[8]
+{
+	R0, R1, R2, R3, R4, R5, R6, R7
+};
+
+trap(dev, sp, r1, nps, r0, pc, ps)
+char *sp;
+{
+	register i, a;
+
+	savfp();
+	u.u_ar0 = &r0;
+	if(dev == 8) {
+		psignal(u.u_procp, SIGFPT);
+		if((ps&UMODE) == UMODE)
+			goto err;
+		return;
+	}
+	if(dev==1 && fuword(pc-2)==SETD && u.u_signal[SIGINS]==0)
+		return;
+	if((ps&UMODE) != UMODE)
+		goto bad;
+	if(dev==9 && sp<-u.u_ssize*64) {
+		if(backup(&r0) == 0)
+		if(!estabur(u.u_tsize, u.u_dsize, u.u_ssize+SINCR)) {
+			u.u_ssize =+ SINCR;
+			expand(u.u_procp->p_size+SINCR);
+			a = u.u_procp->p_addr + u.u_procp->p_size;
+			for(i=0; i<u.u_ssize; i++) {
+				a--;
+				copyseg(a-SINCR, a);
+			}
+			return;
+		}
+	}
+	u.u_error = 0;
+	switch(dev) {
+
+	case 0:
+		i = SIGBUS;
+		goto def;
+
+	case 1:
+		i = SIGINS;
+		goto def;
+
+	case 2:
+		i = SIGTRC;
+		goto def;
+
+	case 3:
+		i = SIGIOT;
+		goto def;
+
+	case 5:
+		i = SIGEMT;
+		goto def;
+
+	case 9:
+		i = SIGSEG;
+		goto def;
+
+	def:
+		psignal(u.u_procp, i);
+
+	default:
+		u.u_error = dev+100;
+
+	case 6:;
+	}
+	if(u.u_error)
+		goto err;
+	ps =& ~EBIT;
+	dev = fuword(pc-2)&077;
+	if(dev == 0) { /* indirect */
+		a = fuword(pc);
+		pc =+ 2;
+		dev = fuword(a)&077;
+		a =+ 2;
+	} else {
+		a = pc;
+		pc =+ sysent[dev].count*2;
+	}
+	for(i=0; i<sysent[dev].count; i++) {
+		u.u_arg[i] = fuword(a);
+		a =+ 2;
+	}
+	u.u_dirp = u.u_arg[0];
+	trap1(sysent[dev].call);
+	if(u.u_error >= 100)
+		psignal(u.u_procp, SIGSYS);
+err:
+	if(issig())
+		psig();
+	if(u.u_error != 0) {
+		ps =| EBIT;
+		r0 = u.u_error;
+	}
+	u.u_procp->p_pri = PUSER + u.u_nice;
+	if(u.u_dsleep++ > 15) {
+		u.u_dsleep = 0;
+		u.u_procp->p_pri++;
+		swtch();
+	}
+	return;
+
+bad:
+	printf("ka6 = %o\n", KISA->r[6]);
+	printf("aps = %o\n", &ps);
+	for(a = CSW->r[0]; a == CSW->r[0]; )
+		idle();
+	panic("trap");
+}
+
+trap1(f)
+int (*f)();
+{
+
+	savu(u.u_qsav);
+	(*f)();
+}
+
+nosys()
+{
+
+	u.u_error = 100;
+}
+
+nullsys()
+{
+}
+% ls@cat ken/sys1.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../proc.h"
+#include "../text.h"
+#include "../buf.h"
+#include "../reg.h"
+#include "../inode.h"
+
+char regloc[8];
+
+exec()
+{
+	int ap, na, nc, *bp;
+	int ts, ds;
+	register c, *ip;
+	register char *cp;
+	extern uchar;
+
+	/*
+	 * pick up file names
+	 * and check various modes
+	 * for execute permission
+	 */
+
+	ip = namei(&uchar, 0);
+	if(ip == NULL)
+		return;
+	bp = getblk(NODEV);
+	if(access(ip, IEXEC))
+		goto bad;
+
+	/*
+	 * pack up arguments into
+	 * allocated disk buffer
+	 */
+
+	cp = bp->b_addr;
+	na = 0;
+	nc = 0;
+	while(ap = fuword(u.u_arg[1])) {
+		na++;
+		if(ap == -1)
+			goto bad;
+		u.u_arg[1] =+ 2;
+		for(;;) {
+			c = fubyte(ap++);
+			if(c == -1)
+				goto bad;
+			*cp++ = c;
+			nc++;
+			if(nc > 510) {
+				u.u_error = E2BIG;
+				goto bad;
+			}
+			if(c == 0)
+				break;
+		}
+	}
+	if((nc&1) != 0) {
+		*cp++ = 0;
+		nc++;
+	}
+
+	/*
+	 * read in first 8 bytes
+	 * of file for segment
+	 * sizes:
+	 * w0 = 407/410 (410 implies RO text)
+	 * w1 = text size
+	 * w2 = data size
+	 * w3 = bss size
+	 */
+
+	u.u_base = &u.u_arg[0];
+	u.u_count = 8;
+	u.u_offset[1] = 0;
+	u.u_offset[0] = 0;
+	u.u_segflg = 1;
+	readi(ip);
+	u.u_segflg = 0;
+	if(u.u_error)
+		goto bad;
+	if(u.u_arg[0] == 0407) {
+		u.u_arg[2] =+ u.u_arg[1];
+		u.u_arg[1] = 0;
+	} else
+	if(u.u_arg[0] != 0410) {
+		u.u_error = ENOEXEC;
+		goto bad;
+	}
+	if(u.u_arg[1]!=0 && (ip->i_flag&ITEXT)==0 && ip->i_count!=1) {
+		u.u_error = ETXTBSY;
+		goto bad;
+	}
+
+	/*
+	 * find text and data sizes
+	 * try them out for possible
+	 * exceed of max sizes
+	 */
+
+	ts = ((u.u_arg[1]+63)>>6) & 01777;
+	ds = ((u.u_arg[2]+u.u_arg[3]+63)>>6) & 01777;
+	if(estabur(ts, ds, SSIZE))
+		goto bad;
+
+	/*
+	 * allocate and clear core
+	 * at this point, committed
+	 * to the new image
+	 */
+
+	u.u_prof[3] = 0;
+	xfree();
+	xalloc(ip);
+	c = USIZE+ds+SSIZE;
+	expand(USIZE);
+	expand(c);
+	while(--c >= USIZE)
+		clearseg(u.u_procp->p_addr+c);
+
+	/*
+	 * read in data segment
+	 */
+
+	estabur(0, ds, 0);
+	u.u_base = 0;
+	u.u_offset[1] = 020+u.u_arg[1];
+	u.u_count = u.u_arg[2];
+	readi(ip);
+
+	/*
+	 * initialize stack segment
+	 */
+
+	u.u_tsize = ts;
+	u.u_dsize = ds;
+	u.u_ssize = SSIZE;
+	estabur(u.u_tsize, u.u_dsize, u.u_ssize);
+	cp = bp->b_addr;
+	ap = -nc - na*2 - 4;
+	u.u_ar0[R6] = ap;
+	suword(ap, na);
+	c = -nc;
+	while(na--) {
+		suword(ap=+2, c);
+		do
+			subyte(c++, *cp);
+		while(*cp++);
+	}
+	suword(ap+2, -1);
+
+	/*
+	 * set SUID/SGID protections
+	 */
+
+	if(ip->i_mode&ISUID)
+		if(u.u_uid != 0)
+			u.u_uid = ip->i_uid;
+	if(ip->i_mode&ISGID)
+		u.u_gid = ip->i_gid;
+
+	/*
+	 * clear sigs, regs and return
+	 */
+
+	c = ip;
+	for(ip = &u.u_signal[0]; ip < &u.u_signal[NSIG]; ip++)
+		if((*ip & 1) == 0)
+			*ip = 0;
+	for(cp = &regloc[0]; cp < &regloc[6];)
+		u.u_ar0[*cp++] = 0;
+	u.u_ar0[R7] = 0;
+	for(ip = &u.u_fsav[0]; ip < &u.u_fsav[25];)
+		*ip++ = 0;
+	ip = c;
+
+bad:
+	iput(ip);
+	brelse(bp);
+}
+
+rexit()
+{
+
+	u.u_arg[0] = u.u_ar0[R0] << 8;
+	exit();
+}
+
+exit()
+{
+	register int *q, a;
+	register struct proc *p;
+
+	for(q = &u.u_signal[0]; q < &u.u_signal[NSIG];)
+		*q++ = 1;
+	for(q = &u.u_ofile[0]; q < &u.u_ofile[NOFILE]; q++)
+		if(a = *q) {
+			*q = NULL;
+			closef(a);
+		}
+	iput(u.u_cdir);
+	xfree();
+	a = malloc(swapmap, 8);
+	p = getblk(swapdev, a);
+	bcopy(&u, p->b_addr, 256);
+	bwrite(p);
+	q = u.u_procp;
+	mfree(coremap, q->p_size, q->p_addr);
+	q->p_addr = a;
+	q->p_stat = SZOMB;
+
+loop:
+	for(p = &proc[0]; p < &proc[NPROC]; p++)
+	if(q->p_ppid == p->p_pid) {
+		wakeup(&proc[1]);
+		wakeup(p);
+		for(p = &proc[0]; p < &proc[NPROC]; p++)
+		if(q->p_pid == p->p_ppid)
+			p->p_ppid  = 1;
+		swtch();
+		/* no return */
+	}
+	if(q->p_ppid == 1)
+		panic("no init proc");
+	q->p_ppid = 1;
+	goto loop;
+}
+
+wait()
+{
+	register f, *bp;
+	register struct proc *p;
+
+	f = 0;
+
+loop:
+	for(p = &proc[0]; p < &proc[NPROC]; p++)
+	if(p->p_ppid == u.u_procp->p_pid) {
+		f++;
+		if(p->p_stat == SZOMB) {
+			u.u_ar0[R0] = p->p_pid;
+			bp = bread(swapdev, f=p->p_addr);
+			mfree(swapmap, 8, f);
+			p->p_stat = NULL;
+			p->p_pid = 0;
+			p->p_ppid = 0;
+			p->p_sig = 0;
+			p->p_ttyp = 0;
+			p->p_flag = 0;
+			p = bp->b_addr;
+			u.u_cstime[0] =+ p->u_cstime[0];
+			dpadd(u.u_cstime, p->u_cstime[1]);
+			dpadd(u.u_cstime, p->u_stime);
+			u.u_cutime[0] =+ p->u_cutime[0];
+			dpadd(u.u_cutime, p->u_cutime[1]);
+			dpadd(u.u_cutime, p->u_utime);
+			u.u_ar0[R1] = p->u_arg[0];
+			brelse(bp);
+			return;
+		}
+	}
+	if(f) {
+		sleep(u.u_procp, PWAIT);
+		goto loop;
+	}
+	u.u_error = ECHILD;
+}
+
+fork()
+{
+	register struct proc *p1, *p2;
+
+	p1 = u.u_procp;
+	for(p2 = &proc[0]; p2 < &proc[NPROC]; p2++)
+		if(p2->p_stat == NULL)
+			goto found;
+	u.u_error = EAGAIN;
+	goto out;
+
+found:
+	if(newproc()) {
+		u.u_ar0[R0] = p1->p_pid;
+		u.u_cstime[0] = 0;
+		u.u_cstime[1] = 0;
+		u.u_stime = 0;
+		u.u_cutime[0] = 0;
+		u.u_cutime[1] = 0;
+		u.u_utime = 0;
+		return;
+	}
+	u.u_ar0[R0] = p2->p_pid;
+
+out:
+	u.u_ar0[R7] =+ 2;
+}
+
+sbreak()
+{
+	register a, n, d;
+	int i;
+
+	/*
+	 * set n to new data size
+	 * set d to new-old
+	 * set n to new total size
+	 */
+
+	n = (((u.u_arg[0]+63)>>6) & 01777) - nseg(u.u_tsize)*128;
+	if(n < 0)
+		n = 0;
+	d = n - u.u_dsize;
+	n =+ USIZE+u.u_ssize;
+	if(estabur(u.u_tsize, u.u_dsize+d, u.u_ssize))
+		return;
+	u.u_dsize =+ d;
+	if(d > 0)
+		goto bigger;
+	a = u.u_procp->p_addr + n - u.u_ssize;
+	i = n;
+	n = u.u_ssize;
+	while(n--) {
+		copyseg(a-d, a);
+		a++;
+	}
+	expand(i);
+	return;
+
+bigger:
+	expand(n);
+	a = u.u_procp->p_addr + n;
+	n = u.u_ssize;
+	while(n--) {
+		a--;
+		copyseg(a-d, a);
+	}
+	while(d--)
+		clearseg(--a);
+}
 % 

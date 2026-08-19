@@ -3,12 +3,14 @@
 Connected to the PDP-11 simulator DCI device, line 4
 
 
-;login: 
+
+;login: 
 
 Connected to the PDP-11 simulator DCI device, line 4
 
 
-;login: 
+
+;login: 
 Disconnected from the PDP-11 simulator
 
 
@@ -16,7 +18,8 @@ Disconnected from the PDP-11 simulator
 Connected to the PDP-11 simulator DCI device, line 4
 
 
-;login: thalia
+
+;login: thalia
 % chdir /usr/sys/ken
 % ls
 alloc.c
@@ -142,3 +145,77 @@ q
 % 
 Disconnected from the PDP-11 simulator
 
+
+
+Connected to the PDP-11 simulator DCI device, line 4
+
+
+;login: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# 

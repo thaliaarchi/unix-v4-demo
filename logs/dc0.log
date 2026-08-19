@@ -1,16 +1,28 @@
 
-;login: 
-;login: 
-;login: 
-;login: w
-;login: 
-;login: 2
-;login: 
-;login: 
-;login: 
-;login: 
-;login: 
-;login: root
+
+;login: 
+
+;login: 
+
+;login: 
+
+;login: w
+
+;login: 
+
+;login: 2
+
+;login: 
+
+;login: 
+
+;login: 
+
+;login: 
+
+;login: 
+
+;login: root
 # ls
 bin
 dev
@@ -236,7 +248,8 @@ EOT
 # 
 Message from auberon...
 
-;login: auberon
+
+;login: auberon
 Login incorrect.
 Name: auberon
 Login incorrect.
@@ -718,7 +731,8 @@ root    ttyu Aug 18 10:41
 # login auberon
 Bad /etc/passwd
 
-;login: auberon
+
+;login: auberon
 % ls
 % 
 % 
@@ -1093,7 +1107,8 @@ short main[] = {
 	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
 	'p', 072163, 'r', 29303, 29801, 'e' };
 % 
-;login: 
+
+;login: 
 Login incorrect.
 Name: 
 Login incorrect.
@@ -1200,19 +1215,23 @@ drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
 drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
 # login yang
 No shell.
-;login: 
+
+;login: 
 Login incorrect.
 Name: yang
 No shell.
-;login: yang
+
+;login: yang
 No shell.
-;login: quit
+
+;login: quit
 Login incorrect.
 Name: 
 Login incorrect.
 Name: yang
 No shell.
-;login: 
+
+;login: 
 Login incorrect.
 Name: 
 Login incorrect.
@@ -1227,7 +1246,8 @@ rfc4
 thanks
 % login yang
 No shell.
-;login: thalia
+
+;login: thalia
 % quit
 quit: not found
 % logout
@@ -1265,60 +1285,114 @@ H
 wow!!
 ?
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;login: 
-:login: xx
-;login: x
-:login: xx
-;login: xxx
-:login: x
-;login: xxxxxx
-:login: x
-;login: xx
-:login: xxx
-;login: xxx
-:login: xxxxxxxxxxxx
-;login: xxx
-:login: xxxxxxxxxxxxxxxxxxxx
-;login: xx
-:login: xxx
-;login: x
-:login: x
-;login: xxx
-:login: x
-;login: xxxxxx
-:login: x
-;login: x
-:login: xx
-;login: x
-:login: x
-;login: xxxx
-:login: xx
-;login: xxxxxxxxxxxxx
-:login: xx
-;login: xx
-:login: xx
-;login: x
-:login: xx
-;login: xx
-:login: x
-;login: xxxxxxx
-:login: xxxxxxxxxxxxx
-;login: xx
-:login: xx
-;login: xx
-:login: xx
-;login: xxxxxxxx
-:login: xx
-;login: xx
-:login: xx
-;login: xx
-:login: xx
-;login: xx
-:login: xx
-;login: xx
-:login: xx
-;login: xxxxx
-:login: xxxxxxxxxx
+
+;login: 
+
+:login: xx
+
+;login: x
+
+:login: xx
+
+;login: xxx
+
+:login: x
+
+;login: xxxxxx
+
+:login: x
+
+;login: xx
+
+:login: xxx
+
+;login: xxx
+
+:login: xxxxxxxxxxxx
+
+;login: xxx
+
+:login: xxxxxxxxxxxxxxxxxxxx
+
+;login: xx
+
+:login: xxx
+
+;login: x
+
+:login: x
+
+;login: xxx
+
+:login: x
+
+;login: xxxxxx
+
+:login: x
+
+;login: x
+
+:login: xx
+
+;login: x
+
+:login: x
+
+;login: xxxx
+
+:login: xx
+
+;login: xxxxxxxxxxxxx
+
+:login: xx
+
+;login: xx
+
+:login: xx
+
+;login: x
+
+:login: xx
+
+;login: xx
+
+:login: x
+
+;login: xxxxxxx
+
+:login: xxxxxxxxxxxxx
+
+;login: xx
+
+:login: xx
+
+;login: xx
+
+:login: xx
+
+;login: xxxxxxxx
+
+:login: xx
+
+;login: xx
+
+:login: xx
+
+;login: xx
+
+:login: xx
+
+;login: xx
+
+:login: xx
+
+;login: xx
+
+:login: xx
+
+;login: xxxxx
+
+:login: xxxxxxxxxx
 ;login: 
 ;login: xxx
 :login: xxxxxxxxxxxx
@@ -1326,3 +1400,1964 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 :login: xxxxx
 ;login: xx
 ;login: 
+;login: 
+;login: 
+;login: thalia
+% 
+% ks
+ks: not found
+% ls
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% 
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% cat       
+
+
+
+
+cat lrc 2026
+
+  
+cat
+cat
+
+ 
+   
+
+
+
+   
+   
+
+
+cat lrc 2026
+xp
+
+
+
+
+cat lrc 2026
+
+  
+cat
+cat
+
+ 
+
+   
+
+
+
+   
+   
+
+
+cat lrc 2026
+xp
+% % 
+% 
+% 
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% 
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% xp
+xp: not found
+% 
+% 
+% 
+% 
+% 
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% ls
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+%               
+% xpxxxxxxxxxxxxxx
+xpxxx: not found
+% 
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% 
+% cat  lrc2026
+% 
+% cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+% xx  
+;login: alex
+% ls
+a.out
+core
+hint3b
+lrc
+mullender.c
+progs
+x
+% cat lrc
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ls /usr/thalia
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% ed rfc4
+?
+
+?
+e rfc4
+?
+q
+% cp /usr/thla##alia/rfc4 .
+% ed rfc4
+5317
+p
+   14d  Cause correction
+.
+   14d  Cause correction
+
+?
+.
+   14d  Cause correction
+.
+   14d  Cause correction
+.=
+277
+1
+Network Working Group                                   Elmer B. Shapiro
+
+Request for Comment: 4                       Stanford Research Institute
+
+Category: Informational                                    24 March 1969
+
+
+
+
+
+                           Network Timetable
+
+
+
+
+
+1  (n10) network checkout
+
+
+
+2  Installation of communcation gear 8/1/69
+
+
+
+   2a  From AT&T and/or BBN need dimensional, power and cabling
+
+   specifications
+
+
+
+   2b  Need to establish SRI desired alternate locations so as to
+q
+% ls
+a.out
+core
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+x
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30440,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% a.out
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-) # :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)
+% xp
+xp: not found
+% ls
+a.out
+core
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+x
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30440,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% stty-tabs@stty -tabs
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+        277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+        -113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+        4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30440,
+        077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+% ed lrc
+189
+1,6p
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+
+                                                        
+
+.,$d
+1
+ooooo       oooooooooo    oooooooo8
+q
+% ls
+a.out
+core
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+x
+% ed x
+9
+
+?
+q
+% cat x
+  :-)% 
+% 
+% rm x
+% ls
+a.out
+core
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+% ed fib.c
+?
+
+?
+e fib.c
+?
+a
+int main() {
+        write(1, "hello, lrc!", 12);
+}
+.
+q
+% cc@ls
+a.out
+core
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+% ed
+a
+int main() {
+        write(1, 
+}
+.
+2
+        write(1, 
+s/$/"hello, lrc!", 12);/
+p
+        write(1, "hello, lrc!", 12);
+w hello.c
+45
+!cc hello.c
+!
+
+}
+!a.out
+hello, lrc!!
+ls@q
+% ls
+a.out
+core
+hello.c
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+% cat hint3b
+ed mullender.c
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+w
+q
+% ed /usr/sys/ken/sysent.c
+1957
+.,.+23p
+?
+.=
+72
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int     sysent[]
+{
+        0, &nullsys,                    /*  0 = indir */
+        0, &rexit,                      /*  1 = exit */
+        0, &fork,                       /*  2 = fork */
+        2, &read,                       /*  3 = read */
+        2, &write,                      /*  4 = write */
+        2, &open,                       /*  5 = open */
+        0, &close,                      /*  6 = close */
+        0, &wait,                       /*  7 = wait */
+        2, &creat,                      /*  8 = creat */
+        2, &link,                       /*  9 = link */
+        1, &unlink,                     /* 10 = unlink */
+        2, &exec,                       /* 11 = exec */
+        1, &chdir,                      /* 12 = chdir */
+        0, &gtime,                      /* 13 = time */
+        3, &mknod,                      /* 14 = mknod */
+        2, &chmod,                      /* 15 = chmod */
+.,.+23p
+        2, &chmod,                      /* 15 = chmod */
+        2, &chown,                      /* 16 = chown */
+        1, &sbreak,                     /* 17 = break */
+        2, &stat,                       /* 18 = stat */
+        2, &seek,                       /* 19 = seek */
+        0, &nosys,                      /* 20 = x */
+        3, &smount,                     /* 21 = mount */
+        1, &sumount,                    /* 22 = umount */
+        0, &setuid,                     /* 23 = setuid */
+        0, &getuid,                     /* 24 = getuid */
+        0, &stime,                      /* 25 = stime */
+        0, &nosys,                      /* 26 = x */
+        0, &nosys,                      /* 27 = x */
+        1, &fstat,                      /* 28 = fstat */
+        0, &nosys,                      /* 29 = x */
+        1, &nullsys,                    /* 30 = smdate */
+        1, &stty,                       /* 31 = stty */
+        1, &gtty,                       /* 32 = gtty */
+        0, &nosys,                      /* 33 = x */
+        0, &nice,                       /* 34 = nice */
+        0, &sslep,                      /* 35 = sleep */
+        0, &sync,                       /* 36 = sync */
+        1, &kill,                       /* 37 = kill */
+        0, &getswit,                    /* 38 = switch */
+.,.+23p
+        0, &getswit,                    /* 38 = switch */
+        0, &nosys,                      /* 39 = x */
+        0, &nosys,                      /* 40 = x */
+        0, &dup,                        /* 41 = dup */
+        0, &pipe,                       /* 42 = pipe */
+        1, &times,                      /* 43 = times */
+        4, &profil,                     /* 44 = prof */
+        0, &nosys,                      /* 45 = tiu */
+        0, &setgid,                     /* 46 = setgid */
+        0, &getgid,                     /* 47 = getgid */
+        2, &ssig,                       /* 48 = sig */
+        0, &nosys,                      /* 49 = x */
+        0, &nosys,                      /* 50 = x */
+        0, &nosys,                      /* 51 = x */
+        0, &nosys,                      /* 52 = x */
+        0, &nosys,                      /* 53 = x */
+        0, &nosys,                      /* 54 = x */
+        0, &nosys,                      /* 55 = x */
+        0, &nosys,                      /* 56 = x */
+        0, &nosys,                      /* 57 = x */
+        0, &nosys,                      /* 58 = x */
+        0, &nosys,                      /* 59 = x */
+        0, &nosys,                      /* 60 = x */
+        0, &nosys,                      /* 61 = x */
+q
+% who
+alex    tty0 Aug 18 13:12
+doug    tty1 Aug 18 13:30
+root    tty2 Aug 18 13:18
+root    tty4 Aug 18 13:17
+root    tty5 Aug 18 13:22
+root    ttyb Aug 18 13:27
+root    ttyc Aug 18 13:25
+root    ttyi Aug 18 13:21
+thalia  ttym Aug 18 13:38
+root    ttyu Aug 18 13:40
+amitb   ttyv Aug 18 13:39
+% ps
+     7 -  
+   336 ps   
+% ps -ef
+     7 -  
+   337 ps -ef   
+% nm a.out
+000226B _errno
+000026T _main
+000062T _write
+000124T cerror
+000000a crt0.o
+000026a hello.o
+000142T mrsave
+000134T retrn
+000124a retrn.o
+000162T rretrn
+000144T rsave
+000142a rsave.o
+000224B savr5
+000062a write.o
+% date
+Sun Aug 18 13:47:34 MDT 1974
+% 
+% 
+% 
+% 
+% ed
+a
+int main() {
+        read(0, &buf);
+        write(1, buf, 4);
+}
+.
+w rw.c
+50
+1a
+char[64] buf;
+s/^/    /
+1,$p
+1,$p
+1
+.
+1,$p
+int main() {
+char[64] buf;
+s/^/    /
+1,$p
+1,$p
+1
+        read(0, &buf);
+        write(1, buf, 4);
+}
+3,6d
+1,$p
+int main() {
+char[64] buf;
+        read(0, &buf);
+        write(1, buf, 4);
+}
+2
+char[64] buf;
+c
+char buf[64];
+p
+.
+1,$p
+int main() {
+char buf[64];
+p
+        read(0, &buf);
+        write(1, buf, 4);
+}
+3d
+2
+char buf[64];
+s/^/    /
+w
+65
+p
+        char buf[64];
+3c
+        int n = read #(0, buf, 64);
+.
+4c
+        write #(1, buf, n);
+w
+1,$p
+.
+1,$p
+int main() {
+        char buf[64];
+        int n = read(0, buf, 64);
+        write(1, buf, n);
+w
+1,$p
+}
+5,6d
+1,$p
+int main() {
+        char buf[64];
+        int n = read(0, buf, 64);
+        write(1, buf, n);
+}
+!cc rw.c
+!
+
+?
+q
+% a.out
+% ed hello.c
+45
+1,$p
+int main() {
+        write(1, "hello, lrc!", 12);
+}
+2
+        write(1, "hello, lrc!", 12);
+s/@q
+% ed
+a
+int main() {
+        printf(
+"hello, printf!");
+.
+q
+% ed rw.c
+65
+1,$p
+int main() {
+        char buf[64];
+        read(0, &buf);
+        write(1, buf, 4);
+}
+q
+% ls
+a.out
+core
+hello.c
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+rw.c
+% ed rw.c
+65
+3c
+        read(#####int n = read(0, buf, 64);
+.
+4c
+        write(1, buf, n);
+.
+1,$p
+int main() {
+        char buf[64];
+        int n = read(0, buf, 64);
+        write(1, buf, n);
+}
+w rw.c
+76
+q
+% cc rw.c
+3: Declaration syntax
+5: read undefined
+% cat rw.c
+int main() {
+        char buf[64];
+        int n = read(0, buf, 64);
+        write(1, buf, n);
+}
+% ed rw.c
+76
+3c
+int n;
+n = read(0, buf, 64);
+.
+1,$p
+int main() {
+        char buf[64];
+int n;
+n = read(0, buf, 64);
+        write(1, buf, n);
+}
+3,4s/^/ /
+1,$p
+int main() {
+        char buf[64];
+        int n;
+        n = read(0, buf, 64);
+        write(1, buf, n);
+}
+w 
+80
+!cat rw.c
+int main() {
+        char buf[64];
+        int n;
+        n = read(0, buf, 64);
+        write(1, buf, n);
+}
+!
+q
+% cc rw.c
+% a.out
+hey!hey!% cat rw.c@who
+alex    tty0 Aug 18 13:12
+root    tty1 Aug 18 14:19
+root    tty4 Aug 18 13:17
+michael tty5 Aug 18 13:55
+root    ttyb Aug 18 14:03
+bx      ttyc Aug 18 13:58
+root    ttyi Aug 18 13:21
+kevin   ttym Aug 18 13:52
+voytillattyu Aug 18 13:49
+amitb   ttyv Aug 18 13:39
+% 
+% 
+% 
+% 
+% write hacker
+hey! what ar you dong##ing???
+% 
+Message from hacker...
+{not much!!! hacking the planet)
+EOT
+cc mullender.c
+% a.out | write root 
+
+% a.out
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)
+% 
+;login: d#####alex
+% 
+;login: kevin
+% ls -al ../thalia/hints
+total 8
+drwxr-xr-x 7 thalia    176 Aug 18 12:23 .
+drwxr-xr-x 3 thalia    128 Aug 18 13:07 ..
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 1compile
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 2syntax
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 3semantics
+drwxr-xr-x 2 thalia    144 Aug 18 03:47 4debug
+drwxr-xr-x 2 thalia     96 Aug 18 03:44 5solution
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 resources
+% pwd
+../usr/kevin
+% chdir ..
+% ls
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+hacker
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+% cat passwd
+R.Z..% rm passwd
+passwd: directory
+% ls passwd
+% rm #dir passwd
+% cd chdir
+cd: not found
+% 
+% chdir sys
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% chdir ken
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% catsys@cat sysent.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/* 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+};
+% stty -tabs
+% cat sysent.c
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int     sysent[]
+{
+        0, &nullsys,                    /*  0 = indir */
+        0, &rexit,                      /*  1 = exit */
+        0, &fork,                       /*  2 = fork */
+        2, &read,                       /*  3 = read */
+        2, &write,                      /*  4 = write */
+        2, &open,                       /*  5 = open */
+        0, &close,                      /*  6 = close */
+        0, &wait,                       /*  7 = wait */
+        2, &creat,                      /*  8 = creat */
+        2, &link,                       /*  9 = link */
+        1, &unlink,                     /* 10 = unlink */
+        2, &exec,                       /* 11 = exec */
+        1, &chdir,                      /* 12 = chdir */
+        0, &gtime,                      /* 13 = time */
+        3, &mknod,                      /* 14 = mknod */
+        2, &chmod,                      /* 15 = chmod */
+        2, &chown,                      /* 16 = chown */
+        1, &sbreak,                     /* 17 = break */
+        2, &stat,                       /* 18 = stat */
+        2, &seek,                       /* 19 = seek */
+        0, &nosys,                      /* 20 = x */
+        3, &smount,                     /* 21 = mount */
+        1, &sumount,                    /* 22 = umount */
+        0, &setuid,                     /* 23 = setuid */
+        0, &getuid,                     /* 24 = getuid */
+        0, &stime,                      /* 25 = stime */
+        0, &nosys,                      /* 26 = x */
+        0, &nosys,                      /* 27 = x */
+        1, &fstat,                      /* 28 = fstat */
+        0, &nosys,                      /* 29 = x */
+        1, &nullsys,                    /* 30 = smdate */
+        1, &stty,                       /* 31 = stty */
+        1, &gtty,                       /* 32 = gtty */
+        0, &nosys,                      /* 33 = x */
+        0, &nice,                       /* 34 = nice */
+        0, &sslep,                      /* 35 = sleep */
+        0, &sync,                       /* 36 = sync */
+        1, &kill,                       /* 37 = kill */
+        0, &getswit,                    /* 38 = switch */
+        0, &nosys,                      /* 39 = x */
+        0, &nosys,                      /* 40 = x */
+        0, &dup,                        /* 41 = dup */
+        0, &pipe,                       /* 42 = pipe */
+        1, &times,                      /* 43 = times */
+        4, &profil,                     /* 44 = prof */
+        0, &nosys,                      /* 45 = tiu */
+        0, &setgid,                     /* 46 = setgid */
+        0, &getgid,                     /* 47 = getgid */
+        2, &ssig,                       /* 48 = sig */
+        0, &nosys,                      /* 49 = x */
+        0, &nosys,                      /* 50 = x */
+        0, &nosys,                      /* 51 = x */
+        0, &nosys,                      /* 52 = x */
+        0, &nosys,                      /* 53 = x */
+        0, &nosys,                      /* 54 = x */
+        0, &nosys,                      /* 55 = x */
+        0, &nosys,                      /* 56 = x */
+        0, &nosys,                      /* 57 = x */
+        0, &nosys,                      /* 58 = x */
+        0, &nosys,                      /* 59 = x */
+        0, &nosys,                      /* 60 = x */
+        0, &nosys,                      /* 61 = x */
+        0, &nosys,                      /* 62 = x */
+        0, &nosys                       /* 63 = x */
+};
+% ed trap.c
+2154
+/nosys/p
+nosys()
+/nosys/+10p
+?
+1
+#
+.;/}/p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../proc.h"
+#include "../reg.h"
+#include "../text.h"
+#include "../seg.h"
+
+#define CSW     0177570
+#define EBIT    1
+#define UMODE   0170000
+#define SETD    0170011
+struct  {
+        int     count;
+        int     (*call)();
+} sysent[64];
+/nosys/;/}/p
+nosys()
+{
+
+        u.u_error = 100;
+}
+q
+% pwd
+../usr/sys/ken
+% c .#/usr/kevin
+c: not found
+% chdir /usr/kevin
+% ls -l /usr/thalia/hint/3semantics
+/usr/thalia/hint/3semantics not found
+% ls /usr/than#lia/hints/3semantics
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% cat /usr/thalia/hints/3semantics/mullender.das
+000000: 010704                  mov     pc,r4
+000002: 005744                  tst     -(r4)
+000004: 162704 000011           sub     $11,r4
+000010: 010467 000006           mov     r4,22
+000014: 012700 000001           mov     $1,r0
+000020: 104404                  trap    4
+000022: 000000                  0
+000024: 000011                  11
+000026: 012702 001000           mov     $1000,r2
+000032: 104455                  trap    55
+000034: 077202                  sob     r2,32
+000036: 000760                  br      0
+% pwd
+../usr/kevin
+% ed mullender.c
+465
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+        277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+        -113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+        4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+        077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+q
+% bc
+bc: not found
+% e mullender.ced mullender.c
+e: not found
+% e mullender.c
+e: not found
+% ed mullender.c
+465
+/-30419/s//-30440/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+        277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+        -113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+        4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30440,
+        077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+w
+465
+q
+% cc mullender.c
+% ./a.ot
+./a.ot: not found
+% ./a.out
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)
+% 
+;login: thalia
+% cat rfc4
+Network Working Group                                   Elmer B. Shapiro
+Request for Comment: 4                       Stanford Research Institute
+Category: Informational                                    24 March 1969
+
+
+                           Network Timetable
+
+
+1  (n10) network checkout
+
+2  Installation of communcation gear 8/1/69
+
+   2a  From AT&T and/or BBN need dimensional, power and cabling
+   specifications
+
+   2b  Need to establish SRI desired alternate locations so as to
+   determine maximum telco cable lengths
+
+   2c  Need to establish location and drops on voice coordination
+   circuits
+
+   2d  Need circuit information on voice drops for tie to intercom
+   system
+
+   2e  Need to order and install a.c. power (coordinate with 4b)
+
+   2f  See 16
+
+3  Design and construct host-Imp interface 9/1/69
+
+   3a  Need specifications from BBN
+
+   3b  Develop trial design
+
+   3c  Review with system programmers
+
+   3d  Establish final design
+
+   3e  Build and design hardware
+
+   3f  Debug trial software with hardware loop test
+
+4  Imp installation 9/15/69
+
+   4a  from BBN get dimensional, power and cabling specifications
+
+   4b  SRI orders and installs a.c. power (coordinate with 2e)
+
+5  Debug host-Imp interface 10/1/69
+
+   5a  Get debug specifiations and procedures from BBN
+
+   5b  Write programs to debug with BBN
+
+       5b1  Transfers of test messages
+
+       5b2  Test procedures for crash and recovery
+
+       5b3  Check message fill and stripping procedures
+
+   5c Try own transfer tests
+
+       5c1  Verify transfers to Imp
+
+       5c2  Verify transfers from Imp
+
+       5c3  Verify transfers looped with Imp
+
+   5d  Work out Imp reload and restart procedures
+
+6  Test messages between UCLA-SRI 10/15/69
+
+   6a  Network configuration
+
+           SRI  |
+                |
+                |
+                |
+                |
+                |
+                |
+                |
+           UCLA |
+
+
+   6b  Agree with UCLA on nature of test messages
+
+       6b1  Formats
+
+       6b2  Sequences
+
+       6b3  Checks
+
+       6b4  Test procedures
+
+       6b5  Fault reporting
+
+   6c  Test integrity of messages
+
+   6d  Test sequence of delivery
+
+   6e  Measure delays
+
+   6f  Loop with UCLA
+
+   6g  System response to invalid and abnormal conditions
+
+   6h  Lose and restore facilities
+
+       6h1  Communication link
+
+       6h2  Imps
+
+       6h3  Hosts
+
+   6i  Develop net trouble reporting scheme
+
+7  Test messages between UCSB-SRI 11/15/69
+
+   7a  Network configuration
+
+           SRI .
+              |  .
+              |   .
+              |     .
+              |       .
+              |         .
+              ------------
+           UCLA           UCSB
+
+   7b  All of 6
+
+   7c  Load network for alternate routing to be effective
+
+   7d  Develop voice coordination scheme
+
+       7d1  Three way conference
+
+       7d2  Design and build conference gear
+
+       7d3  Deliver conference gear to UCLA and UCSB
+
+   7e  Route messages around ring
+
+       7e1  Via Imps
+
+       7e2  Via hosts
+
+       7e3  Six tests
+
+         7e3a  UCLA-I, UCSB-I
+
+         7e3b  UCLA-H, UCSB-I
+
+         7e3c  UCLA-H, UCSB-H
+
+         7e3d  UCSB-I, UCLA-I
+
+         7e3e  UCSB-H, UCLA-I
+
+         7e3f  UCSB-H, UCLA-H
+
+8  Test messges between UTAH-SRI 12/15/69
+
+   8a  Network configuration
+
+           SRI .----------------UTAH
+               | .
+               |   .
+               |     .
+               |       .
+               |         .
+               |           .
+               |             .
+               |               .
+           UCLA-----------------UCSB
+
+
+   8b  Selected group of previous test
+
+       8b1  All of 6
+
+       8b2  7b
+
+   8c  Expand voice coordination scheme
+
+       8c1  UTAH has access to UCLA and UCSB via SRI
+
+       8c2  with BBN and ARPA
+
+9  Run simple TTY systems
+
+   9a  Single user access
+
+       9a1  On a serving host
+
+         9a1a  A to B
+
+       9a2  From a using host
+
+         9a2a  A to B
+
+   9b Multiple user access
+
+       9b1  On a serving host
+
+         9b1a  A,C to B
+
+       9b2  From a using host
+
+         9b2a  A,A to B
+
+       9b3  Various combinations
+
+   9c  Login, logout, in and out of subsystems
+
+   9d  Handling of error messages, crashes, recoveries
+
+   9e  Establish message formats
+
+   9f  Establish protocols
+
+   9g  File storage and retrieval
+
+   9h  Need user's guides for each site
+
+   9i  Need to establish usage schedules
+
+   9j  Need to set user names
+
+   9k  Design and build comm exec or its equivalent
+
+10  Run simple typewriter systems
+
+   10a  Same as 9c - 9g
+
+   10b  How define when in half or full duplex mode
+
+   10c  How to set "break" characters
+
+11  Run arbitrary terminals without local feedback
+
+12  Run arbitrary terminals
+
+13  Move files
+
+14  Develop debugging techniques
+
+   14a  Fault detection
+
+       14a1  Conformance to manual
+
+       14a2  "Reasonableness" of result
+
+       14a3  Comparison with alternate form of use
+
+   14b  Cause localization
+
+       14b1  Comm-Imp complex
+
+       14b2  Serving host
+
+       14b3  Using host
+
+       14b3  Try other programs
+
+       14b5  Monitor subsystem via "link" procedures, where possible
+
+         14b5a  Use dialup Dataphone
+
+         14b5b  Use voice coordination channel
+
+       14b6  Move canned messages
+
+   14c  Cause determination
+
+   14d  Cause correction
+% 
+% d
+d: not found
+% ls
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% pwd
+../usr/thalia
+% cd ../..
+cd: not found
+% chdir
+chdir: arg count
+% logot
+logot: not found
+% sf#####
+% logout
+logout: not found
+% exit
+% whoami
+whoami: not found
+% 
+;login: root
+# ed /etc/pass
+?
+q
+# cat /et /##c/passwds
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+# echo dominic::111:111::/usr/dominic:
+dominic::111:111::/usr/dominic:
+# echo dominic::
+dominic::
+# echo dominic 
+dominic
+# echo dominic::111:111::/usr/dominic: >> /etc/passwd
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+# mdir /etc###hoe#@mkdir /h#usr/home/#####dominic
+# ls /lusr######@s@ls /usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+dominic
+doug
+fort
+games
+hacker
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# chown dom###/usr/dominic dominic
+Who?
+# chwon
+chwon: not found
+# chown
+chown uid f1 ...
+Who?
+# chown -h
+chown uid f1 ...
+Who?
+# chown dominnc /@chown /#dominic /usr/dominic
+# loout#
+;login: dominic
+% whoami
+whoami: not found
+% pwd
+../usr/dominic
+% ls==@
+% ls
+% ls -l
+total 0
+% c @ c 
+c: not found
+% chdir ../..
+% pwd
+..
+% ls -l
+total 67
+-rw-rw-rw- 1 root       96 Aug 18 13:54 a.out
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 15:58 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x32 bin       512 Aug 18 15:54 usr
+% c u
+c: not found
+% chdir /usr/games
+% ls -l
+total 58
+-rwxr-xr-x 1 bin      1562 Jun 10 08:37 bj
+-rwxr-xr-x 1 bin     14310 Jun 10 08:37 chess
+-rwxr-xr-x 1 bin      2468 Jun 10 08:37 cubic
+-rwxr-xr-x 1 bin       624 Jun 10 08:37 moo
+-rwxr-xr-x 1 bin      2192 Jun 10 08:37 ttt
+-rw-rw-rw- 1 bin       268 Aug 18 11:58 ttt.k
+-rwxr-xr-x 1 bin      5386 Jun 10 08:37 wump
+% cd @./moo
+MOO
+new game
+? yes
+bad guess
+? sorry
+bad guess
+? cow
+bad guess
+? y
+bad guess
+? why
+bad guess
+? :(
+bad guess
+? MOO
+bad guess
+? COW
+bad guess
+? 1
+bad guess
+? 2
+bad guess
+? 3
+bad guess
+? M
+bad guess
+? help
+bad guess
+? q
+bad guess
+? quit
+bad guess
+? Dbad guess
+
+% moo --help
+MOO
+new game
+? 
+% 
+;login: dmi@dominic
+% cd ../us##games
+cd: not found
+% chdir ../games
+% ./moo
+MOO
+new game
+? 11111
+bad guess
+? 1234
+0 bulls; 1 cows
+? 234@
+bad guess
+? 1212
+bad guess
+? 2345
+0 bulls; 2 cows
+? 1246
+0 bulls; 1 cows
+? 24
+bad guess
+? 423
+bad guess
+? 4136
+1 bulls; 0 cows
+? 4
+bad guess
+? 4512
+2 bulls; 0 cows
+? 6
+bad guess
+? 4578
+3 bulls; 0 cows
+? 4571
+3 bulls; 0 cows
+? 4579
+4 bulls; 0 cows
+7 guesses
+
+new game
+? 
+% ls
+bj
+chess
+cubic
+moo
+ttt
+ttt.k
+wump
+% chdir ../talia
+chdir: bad directory
+% chdir ../thalia
+% ls -l
+total 19
+drwxr-xr-x 7 thalia    176 Aug 18 12:23 hints
+-rw-rw-rw- 1 thalia    171 Aug 18 12:54 logo
+-rw-rw-rw- 1 thalia   1383 Aug 18 13:08 lrc2026
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia   5317 Aug 18 10:28 rfc4
+-rw-rw-rw- 1 thalia     25 Aug 18 11:08 thanks
+% ls
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% cat ls#rc2026
+ardware loop test
+
+4  Imp installation 9/15/69
+
+   4a  from BBN get dimensional, power and cabling specifications
+
+   4b  SRI orders and installs a.c. power (coordinate with 2e)
+
+5  Debug host-Imp interface 10/1/69
+
+   5a  Get debug specifiations and procedures from BBN
+
+   5b  Write programs to debug with BBN
+
+       5b1  Transfers of test messages
+
+       5b2  Test procedures for crash and recovery
+
+       5b3  Check message fill and stripping procedures
+
+   5c Try own transfer tests
+
+       5c1  Verify tlco cable lengths
+
+   2c  Need to establish location and drops on voice coordination
+   circuits
+
+   2d  Need circuit information on voice drops for tie to intercom
+   system
+
+   2e  Need to order and install a.c. power (coordinate with 4b)
+
+   2f  See 16
+
+3  Design and construct host-Imp interface 9/1/69
+
+   3a  Need specifications from BBN
+
+   3b  Develop trial design
+
+   3c  Review with system programmers
+
+   3d  Establish final design
+
+   3e  Build and design hardware
+
+   3f  Debug trial software with hNetwork Working Group                                   Elmer B. Shapiro
+Request for Comment: 4                       Stanford Research Institute
+Category: Informational                                    24 March 1969
+
+
+                           Network Timetable
+
+
+1  (n10) network checkout
+
+2  Installation of communcation gear 8/1/69
+
+   2a  From AT&T an% 
+% cat lrc2026
+ardware loop test
+
+4  Imp installation 9/15/69
+
+   4a  from BBN get dimensional, power and cabling specifications
+
+   4b  SRI orders and installs a.c. power (coordinate with 2e)
+
+5  Debug host-Imp interface 10/1/69
+
+   5a  Get debug specifiations and procedures from BBN
+
+   5b  Write programs to debug with BBN
+
+       5b1  Transfers of test messages
+
+       5b2  Test procedures for crash and recovery
+
+       5b3  Check message fill and stripping procedures
+
+   5c Try own transfer tests
+
+       5c1  Verify tlco cable lengths
+
+   2c  Need to establish location and drops on voice coordination
+   circuits
+
+   2d  Need circuit information on voice drops for tie to intercom
+   system
+
+   2e  Need to order and install a.c. power (coordinate with 4b)
+
+   2f  See 16
+
+3  Design and construct host-Imp interface 9/1/69
+
+   3a  Need specifications from BBN
+
+   3b  Develop trial design
+
+   3c  Review with system programmers
+
+   3d  Establish final design
+
+   3e  Build and design hardware
+
+   3f  Debug trial software with hNetwork Working Group                                   Elmer B. Shapiro
+Request for Comment: 4                       Stanford Research Institute
+Category: Informational                                    24 March 1969
+
+
+                           Network Timetable
+
+
+1  (n10) network checkout
+
+2  Installation of communcation gear 8/1/69
+
+   2a  From AT&T an% ls
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% cat 
+stat 
+
+
+% stat lrc2026
+stat: not found
+% cat logo
+ooooo       oooooooooo    oooooooo8
+ 888         888    888 o888     88
+ 888         888oooo88  888
+ 888      o  888  88o   888o     oo
+o888ooooo88 o888o  88o8  888oooo88
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% c h#@chdir hints
+% pwd
+../usr/thalia/hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% cat 1compile
+Z.A..1hint% chdir 1cmpi
+chdir: bad directory
+% chdir ..
+% ls
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% cp mullender.c ../dominic/
+% chdir c#../dominic
+% cc
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% 

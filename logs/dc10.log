@@ -46,3 +46,4424 @@ Login incorrect.
 Name: 
 Disconnected from the PDP-11 simulator
 
+
+
+Connected to the PDP-11 simulator DCI device, line 10
+
+
+;login: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# cd etc
+cd: not found
+# dir	
+# dir etc
+dir: not found
+# cat bin##@@@
+: not found
+# chdir etc
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# cd ..
+cd: not found
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# chdir ..
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls unix
+unix
+# ls dev
+kmem
+mem
+mt0
+mt1
+mt2
+mt3
+mt4
+mt5
+mt6
+mt7
+null
+ptr
+rk0
+rk1
+rp0
+rp1
+tap0
+tap1
+tap2
+tap3
+tap4
+tap5
+tap6
+tap7
+tty0
+tty1
+tty2
+tty3
+tty4
+tty5
+tty6
+tty7
+tty8
+tty9
+ttya
+ttyb
+ttyc
+ttyd
+ttye
+ttyf
+ttyg
+ttyh
+ttyi
+ttyj
+ttyk
+ttyl
+ttym
+ttyn
+ttyo
+ttyp
+ttyq
+ttyr
+ttys
+ttyt
+ttyu
+ttyv
+# ls mnt
+ls: not found
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls /mnt
+# cd /
+cd: not found
+# chdir /
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls tmp
+etma
+utmp
+# ls mnt
+# ls unix
+unix
+# ls unix/unix
+unix/unix not found
+# ls unix
+unix
+# chdi
+# ls usr
+adm
+alex
+auberon
+bin
+c
+cody
+doug
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+yang
+# ls passwd
+passwd not found
+# ls usr/passwd
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# cd usr
+cd: not found
+# cd
+cd: not found
+# chdir usr
+# c
+# mkdir bx
+# chdir bx
+# ls
+# ls
+s: not found
+# ls
+# ls ..
+adm
+alex
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+yang
+# ls ../c
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+# ks ,.adm
+ks: not found
+# ls ../dad
+# ks 
+# ls ../adm
+# ls ../source
+s1
+s2
+s3
+s4
+s7
+# .l
+# ls ..
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+yang
+# ls #####[D[D[D[D[Dkkkkk
+: not found
+# cat ../s[Dc
+No match
+# cat ../c
+Z..x.yc00.czc00.o{c01.c|c01.o}c02.c~c02.oc03.cc03.oc04.cc04.oc0h.cc0t.sc10.cc11.cc12.cc1h.c	c1t.s
+cctab.scvoptcvopt.cefftab.sregtab.ssptab.stab.ac20.ctrc# ls ../c
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+# ls ..
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+yang
+# ls ../pub
+ascii
+greek
+kbd
+tabs
+# ls ../pub/ascii
+../pub/ascii
+# ls ../c
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+# cat ../c00.c
+# cat ../c/c00.c
+#
+/* C compiler
+
+Copyright 1972 Bell Telephone Laboratories, Inc. 
+
+*/
+
+#include "c0h.c"
+
+int	isn 1;
+int	peeksym -1;
+int	line 1;
+int	debug 0;
+int	dimp	0;
+
+struct kwtab {
+	char	*kwname;
+	int	kwval;
+} kwtab[]
+{
+	"int",		INT,
+	"char",		CHAR,
+	"float",	FLOAT,
+	"double",	DOUBLE,
+	"struct",	STRUCT,
+	"auto",		AUTO,
+	"extern",	EXTERN,
+	"static",	STATIC,
+	"register",	REG,
+	"goto",		GOTO,
+	"return",	RETURN,
+	"if",		IF,
+	"while",	WHILE,
+	"else",		ELSE,
+	"switch",	SWITCH,
+	"case",		CASE,
+	"break",	BREAK,
+	"continue",	CONTIN,
+	"do",		DO,
+	"default",	DEFAULT,
+	"for",		FOR,
+	"sizeof",	SIZEOF,
+	0,		0,
+};
+
+main(argc, argv)
+char *argv[];
+{
+	extern fin;
+	int treespace[ossiz];
+	register char *sp, *np;
+	register struct kwtab *ip;
+
+	if(argc<4) {
+		error("Arg count");
+		exit(1);
+	}
+	if((fin=open(argv[1],0))<0) {
+		error("Can't find %s", argv[1]);
+		exit(1);
+	}
+	if (fcreat(argv[2], ascbuf)<0 || fcreat(argv[3], binbuf)<0) {
+		error("Can't create temp");
+		exit(1);
+	}
+	if (argc>4)
+		proflg++;
+	xdflg++;
+	for (ip=kwtab; (np = ip->kwname); ip++) {
+		for (sp = symbuf; sp<symbuf+ncps;)
+			if ((*sp++ = *np++) == '\0')
+				np--;
+		np = lookup();
+		np->hclass = KEYWC;
+		np->htype = ip->kwval;
+	}
+	xdflg = 0;
+	treebase = treespace+10;
+	putw(treebase, binbuf);
+	while(!eof) {
+		extdef();
+		blkend();
+	}
+	fflush(ascbuf);
+	fflush(binbuf);
+	exit(nerror!=0);
+}
+
+struct hshtab *lookup()
+{
+	int ihash;
+	register struct hshtab *rp;
+	register char *sp, *np;
+
+	ihash = 0;
+	for (sp=symbuf; sp<symbuf+ncps;)
+		ihash =+ *sp++ & 0177;
+	rp = &hshtab[ihash%hshsiz];
+	while (*(np = rp->name)) {
+		for (sp=symbuf; sp<symbuf+ncps;)
+			if ((*np++&0177) != *sp++)
+				goto no;
+		return(rp);
+	no:
+		if (++rp >= &hshtab[hshsiz])
+			rp = hshtab;
+	}
+	if(++hshused >= hshsiz) {
+		error("Symbol table overflow");
+		exit(1);
+	}
+	rp->hclass = 0;
+	rp->htype = 0;
+	rp->hoffset = 0;
+	rp->dimp = 0;
+	sp = symbuf;
+	if (xdflg)
+		*sp =| 0200;
+	for (np=rp->name; sp<symbuf+ncps;)
+		*np++ = *sp++;
+	return(rp);
+}
+
+symbol() {
+	register c;
+	register char *sp;
+
+	if (peeksym>=0) {
+		c = peeksym;
+		peeksym = -1;
+		if (c==NAME)
+			mosflg = 0;
+		return(c);
+	}
+	if (peekc) {
+		c = peekc;
+		peekc = 0;
+	} else
+		if (eof)
+			return(EOF);
+		else
+			c = getchar();
+loop:
+	switch(ctab[c]) {
+
+	case INSERT:		/* ignore newlines */
+		inhdr = 1;
+		c = getchar();
+		goto loop;
+
+	case NEWLN:
+		if (!inhdr)
+			line++;
+		inhdr = 0;
+
+	case SPACE:
+		c = getchar();
+		goto loop;
+
+	case EOF:
+		eof++;
+		return(0);
+
+	case PLUS:
+		return(subseq(c,PLUS,INCBEF));
+
+	case MINUS:
+		return(subseq(c,subseq('>',MINUS,ARROW),DECBEF));
+
+	case ASSIGN:
+		if (subseq(' ',0,1)) return(ASSIGN);
+		c = symbol();
+		if (c>=PLUS && c<=EXOR) {
+			if (peekc==0)
+				peekc = getchar();
+			if (ctab[peekc] != SPACE 
+			 && (c==MINUS || c==AND || c==TIMES)) {
+				error("Warning: assignment understood");
+				nerror--;
+			}
+			return(c+30);
+		}
+		if (c==ASSIGN)
+			return(EQUAL);
+		peeksym = c;
+		return(ASSIGN);
+
+	case LESS:
+		if (subseq(c,0,1)) return(LSHIFT);
+		return(subseq('=',LESS,LESSEQ));
+
+	case GREAT:
+		if (subseq(c,0,1)) return(RSHIFT);
+		return(subseq('=',GREAT,GREATEQ));
+
+	case EXCLA:
+		return(subseq('=',EXCLA,NEQUAL));
+
+	case DIVIDE:
+		if (subseq('*',1,0))
+			return(DIVIDE);
+com:
+		c = getchar();
+com1:
+		switch(c) {
+		case '\0':
+			eof++;
+			error("Nonterminated comment");
+			return(0);
+		case '\n':
+			if (!inhdr)
+				line++;
+			inhdr = 0;
+			goto com;
+		case 001:		/* SOH, insert marker */
+			inhdr++;
+		default:
+			goto com;
+		case '*':
+			c = getchar();
+			if (c!='/')
+				goto com1;
+		}
+		c = getchar();
+		goto loop;
+
+	case PERIOD:
+	case DIGIT:
+		peekc = c;
+		if ((c=getnum(c=='0'?8:10)) == FCON)
+			cval = isn++;
+		return(c);
+
+	case DQUOTE:
+		return(getstr());
+
+	case SQUOTE:
+		return(getcc());
+
+	case LETTER:
+		sp = symbuf;
+		if (mosflg) {
+			*sp++ = '.';
+			mosflg = 0;
+		}
+		while(ctab[c]==LETTER || ctab[c]==DIGIT) {
+			if (sp<symbuf+ncps) *sp++ = c;
+			c = getchar();
+		}
+		while(sp<symbuf+ncps)
+			*sp++ = '\0';
+		peekc = c;
+		csym = lookup();
+		if (csym->hclass==KEYWC) {
+			if (csym->htype==SIZEOF)
+				return(SIZEOF);
+			cval = csym->htype;
+			return(KEYW);
+		}
+		return(NAME);
+
+	case AND:
+		return(subseq('&', AND, LOGAND));
+
+	case OR:
+		return(subseq('|', OR, LOGOR));
+
+	case UNKN:
+		error("Unknown character");
+		c = getchar();
+		goto loop;
+
+	}
+	return(ctab[c]);
+}
+
+subseq(c,a,b) {
+	if (!peekc)
+		peekc = getchar();
+	if (peekc != c)
+		return(a);
+	peekc = 0;
+	return(b);
+}
+
+getstr() {
+	register int c;
+	register char *t, *d;
+
+	nchstr = 1;
+	t = ".text";
+	d = ".data";
+	printf("%s\nL%d:.byte ", (strflg?t:d), cval=isn++);
+	while((c=mapch('"')) >= 0) {
+		printf("0%o,", c);
+		nchstr++;
+	}
+	printf("0\n.even\n%s\n", (strflg?d:t));
+	return(STRING);
+}
+
+getcc()
+{
+	register int c, cc;
+	register char *ccp;
+
+	cval = 0;
+	ccp = &cval;
+	cc = 0;
+	while((c=mapch('\'')) >= 0)
+		if(cc++ < ncpw)
+			*ccp++ = c;
+	if(cc>ncpw)
+		error("Long character constant");
+	return(CON);
+}
+
+mapch(ac)
+{
+	register int a, c, n;
+	static mpeek;
+
+	c = ac;
+	if (mpeek) {
+		a = mpeek;
+		mpeek = 0;
+	} else
+		a = getchar();
+loop:
+	if (a==c)
+		return(-1);
+	switch(a) {
+
+	case '\n':
+	case '\0':
+		error("Nonterminated string");
+		peekc = a;
+		return(-1);
+
+	case '\\':
+		switch (a=getchar()) {
+
+		case 't':
+			return('\t');
+
+		case 'n':
+			return('\n');
+
+		case 'b':
+			return('\b');
+
+		case '0': case '1': case '2': case '3':
+		case '4': case '5': case '6': case '7':
+			n = 0;
+			while (n<0100 && '0'<=a && a<='7') {
+				n =<< 3;
+				n =+ a-'0';
+				a = getchar();
+			}
+			mpeek = a;
+			return(n);
+
+		case 'r':
+			return('\r');
+
+		case '\n':
+			if (!inhdr)
+				line++;
+			inhdr = 0;
+			a = getchar();
+			goto loop;
+		}
+	}
+	return(a);
+}
+
+tree()
+{
+#define	SEOF	200
+#define	SSIZE	20
+	int *op, opst[SSIZE], *pp, prst[SSIZE];
+	register int andflg, o;
+	register struct hshtab *cs;
+	int p, ps, os, *np;
+
+	osleft = ossiz;
+	space = treebase;
+	op = opst;
+	pp = prst;
+	cp = cmst;
+	*op = SEOF;
+	*pp = 06;
+	andflg = 0;
+
+advanc:
+	switch (o=symbol()) {
+
+	case NAME:
+		cs = csym;
+		if (cs->hclass==0 && cs->htype==0)
+			if(nextchar()=='(') {
+				/* set function */
+				cs->hclass = EXTERN;
+				cs->htype = FUNC;
+			} else if (initflg)
+				cs->hclass = EXTERN;
+			else {
+				/* set label */
+				cs->htype = ARRAY;
+				if (cs->hoffset==0)
+					cs->hoffset = isn++;
+			}
+		*cp++ = block(2,NAME,cs->htype,cs->hdimp,
+		    cs->hclass,0);
+		if (cs->hclass==EXTERN) {
+			np = cs->name;
+			for (o=0; o<4; o++) {
+				pblock(*np);
+				if (((*np++)&~0177) == 0)
+					break;
+			}
+		} else
+			pblock(cs->hoffset);
+		goto tand;
+
+	case FCON:
+		if (!initflg)
+			printf(".data\nL%d:0%o;0%o;0%o;0%o\n.text\n",cval,fcval);
+
+	case CON:
+	case SFCON:
+		*cp++ = block(1,o,(o==CON?INT:DOUBLE),0,cval);
+		goto tand;
+
+	/* fake a static char array */
+	case STRING:
+		*cp++ = block(3, NAME, ARRAY+CHAR,0,STATIC,0,cval);
+
+tand:
+		if(cp>=cmst+cmsiz) {
+			error("Expression overflow");
+			exit(1);
+		}
+		if (andflg)
+			goto syntax;
+		andflg = 1;
+		goto advanc;
+
+	case INCBEF:
+	case DECBEF:
+		if (andflg)
+			o =+ 2;
+		goto oponst;
+
+	case COMPL:
+	case EXCLA:
+	case SIZEOF:
+		if (andflg)
+			goto syntax;
+		goto oponst;
+
+	case MINUS:
+		if (!andflg)  {
+			if ((peeksym=symbol())==FCON) {
+				fcval = - fcval;
+				goto advanc;
+			}
+			if (peeksym==SFCON) {
+				fcval = - fcval;
+				cval =^ 0100000;
+				goto advanc;
+			}
+			o = NEG;
+		}
+		andflg = 0;
+		goto oponst;
+
+	case AND:
+	case TIMES:
+		if (andflg)
+			andflg = 0; else
+			if(o==AND)
+				o = AMPER;
+			else
+				o = STAR;
+		goto oponst;
+
+	case LPARN:
+		if (andflg) {
+			o = symbol();
+			if (o==RPARN)
+				o = MCALL;
+			else {
+				peeksym = o;
+				o = CALL;
+				andflg = 0;
+			}
+		}
+		goto oponst;
+
+	case RBRACK:
+	case RPARN:
+		if (!andflg)
+			goto syntax;
+		goto oponst;
+
+	case DOT:
+	case ARROW:
+		mosflg++;
+		break;
+
+	}
+	/* binaries */
+	if (!andflg)
+		goto syntax;
+	andflg = 0;
+
+oponst:
+	p = (opdope[o]>>9) & 077;
+	if ((o==COMMA || o==COLON) && initflg)
+		p = 05;
+opon1:
+	ps = *pp;
+	if (p>ps || p==ps && (opdope[o]&RASSOC)!=0) {
+		switch (o) {
+
+		case INCAFT:
+		case DECAFT:
+			p = 37;
+			break;
+		case LPARN:
+		case LBRACK:
+		case CALL:
+			p = 04;
+		}
+		if(op>=opst+SSIZE) {
+			error("expression overflow");
+			exit(1);
+		}
+		*++op = o;
+		*++pp = p;
+		goto advanc;
+	}
+	--pp;
+	switch (os = *op--) {
+
+	case SEOF:
+		peeksym = o;
+		build(0);		/* flush conversions */
+		return(*--cp);
+
+	case CALL:
+		if (o!=RPARN)
+			goto syntax;
+		build(os);
+		goto advanc;
+
+	case MCALL:
+		*cp++ = block(0,0,0,0);	/* 0 arg call */
+		os = CALL;
+		goto fbuild;
+
+	case LPARN:
+		if (o!=RPARN)
+			goto syntax;
+		goto advanc;
+
+	case LBRACK:
+		if (o!=RBRACK)
+			goto syntax;
+		build(LBRACK);
+		goto advanc;
+	}
+fbuild:
+	build(os);
+	goto opon1;
+
+syntax:
+	error("Expression syntax");
+	errflush(o);
+	return(0);
+}
+
+declare(askw, tkw, offset, elsize)
+{
+	register int o;
+	register int skw;
+
+	skw = askw;
+	do {
+		offset =+ decl1(skw, tkw, offset, elsize);
+		if (xdflg && skw!=MOS)
+			return;
+	} while ((o=symbol()) == COMMA);
+	if (o==SEMI || o==RPARN && skw==ARG1)
+		return(offset);
+	decsyn(o);
+}
+
+decl1(askw, tkw, offset, elsize)
+{
+	int t1, chkoff;
+	register int type, skw;
+	register struct hshtab *dsym;
+
+	skw = askw;
+	chkoff = 0;
+	mosflg = skw==MOS;
+	if ((peeksym=symbol())==SEMI || peeksym==RPARN)
+		return(0);
+	if ((t1=getype()) < 0)
+		goto syntax;
+	type = 0;
+	do
+		type = type<<2 | (t1 & 030);
+	while (((t1=>>2) & 030)!=0);
+	type =| tkw;
+	dsym = defsym;
+	if (!(dsym->hclass==0
+	   || (skw==ARG && dsym->hclass==ARG1)
+	   || (skw==EXTERN && dsym->hclass==EXTERN && dsym->htype==type)))
+		if (skw==MOS && dsym->hclass==MOS && dsym->htype==type)
+			chkoff = 1;
+		else {
+			redec();
+			goto syntax;
+		}
+	dsym->htype = type;
+	if (skw)
+		dsym->hclass = skw;
+	if (skw==ARG1) {
+		if (paraml==0)
+			paraml = dsym;
+		else
+			parame->hoffset = dsym;
+		parame = dsym;
+	}
+	if (elsize && ((type&07)==RSTRUCT || (type&07)==STRUCT)) {
+		dsym->lenp = dimp;
+		chkdim();
+		dimtab[dimp++] = elsize;
+	}
+	elsize = 0;
+	if (skw==MOS) {
+		elsize = length(dsym);
+		if ((offset&1)!=0 && elsize!=1) {
+			offset++;
+			elsize++;
+		}
+		if (chkoff && dsym->hoffset != offset)
+			redec();
+		dsym->hoffset = offset;
+	}
+	if ((dsym->htype&030)==FUNC) {
+		if (dsym->hclass!=EXTERN && dsym->hclass!=AUTO)
+			error("Bad function");
+		dsym->hclass = EXTERN;
+	}
+	if (dsym->hclass==AUTO) {
+		autolen =+ rlength(dsym);
+		dsym->hoffset = -autolen;
+	} else if (dsym->hclass==STATIC) {
+		dsym->hoffset = isn;
+		printf(".bss\nL%d:.=.+%d.\n.text\n", isn++, rlength(dsym));
+	} else if (dsym->hclass==REG) {
+		if ((type&07)>CHAR && (type&030)==0
+		 || (type&030)>PTR || regvar<3)
+			error("Bad register %o", type);
+		dsym->hoffset = --regvar;
+	}
+syntax:
+	return(elsize);
+}
+
+getype()
+{
+	register int o, type;
+	register struct hshtab *ds;
+
+	switch(o=symbol()) {
+
+	case TIMES:
+		return(getype()<<2 | PTR);
+
+	case LPARN:
+		type = getype();
+		if ((o=symbol()) != RPARN)
+			goto syntax;
+		goto getf;
+
+	case NAME:
+		defsym = ds = csym;
+		type = 0;
+		ds->ssp = dimp;
+	getf:
+		switch(o=symbol()) {
+
+		case LPARN:
+			if (xdflg) {
+				xdflg = 0;
+				ds = defsym;
+				declare(ARG1, 0, 0, 0);
+				defsym = ds;
+				xdflg++;
+			} else
+				if ((o=symbol()) != RPARN)
+					goto syntax;
+			type = type<<2 | FUNC;
+			goto getf;
+
+		case LBRACK:
+			if ((o=symbol()) != RBRACK) {
+				peeksym = o;
+				cval = conexp();
+				for (o=ds->ssp&0377; o<dimp; o++)
+					dimtab[o] =* cval;
+				dimtab[dimp++] = cval;
+				if ((o=symbol())!=RBRACK)
+					goto syntax;
+			} else
+				dimtab[dimp++] = 1;
+			type = type<<2 | ARRAY;
+			goto getf;
+		}
+		peeksym = o;
+		return(type);
+	}
+syntax:
+	decsyn(o);
+	return(-1);
+}
+
+decsyn(o)
+{
+	error("Declaration syntax");
+	errflush(o);
+}
+
+redec()
+{
+	error("%.8s redeclared", defsym->name);
+}
+
+# ls ..
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+yang
+# ls ../sno
+sno.h
+sno1.c
+sno2.c
+sno3.c
+sno4.c
+# ls ../source
+s1
+s2
+s3
+s4
+s7
+# ls ../source/s`[D[C[D[C#[D[D1 
+Arg count
+# ls ../source/s1
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+# ls
+# ls ../source/s1
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+# ls
+# ls ../
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+yang
+# ls ../alex
+a.out
+core
+hello.c
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+# ls ../newt
+m.c
+mullender.c
+# ed
+q?
+q
+.
+?
+
+?
+q
+# ed
+q
+# ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# ls -l
+total 0
+# ls -l /bin
+total 316
+-rwxr-xr-x 1 bin      1514 Jun 10 08:37 ar
+-rwxr-xr-x 1 bin      5720 Jun 10 08:37 as
+-rwxr-xr-x 1 bin      5846 Jun 10 08:37 bas
+-rwxr-xr-x 1 bin       152 Jun 10 08:37 cat
+-rwxr-xr-x 1 bin      5104 Jun 10 08:37 cc
+-rwxr-xr-x 1 bin      4550 Jun 10 08:37 cdb
+-rwxr-xr-x 1 bin      7112 Jun 10 08:37 check
+-rwxr-xr-x 1 bin      1546 Jun 10 08:37 chmod
+-rwxr-xr-x 1 bin       484 Jun 10 08:37 chown
+-rwxr--r-- 1 bin       190 Jun 10 08:37 clri
+-rwxr-xr-x 1 bin       418 Jun 10 08:37 cmp
+-rwxr-xr-x 1 bin      1200 Jun 10 08:37 cp
+-rwsr-xr-x 1 root     2120 Jun 12 19:13 date
+-rwxr-xr-x 1 bin      4980 Jun 10 08:37 db
+-rwxr-xr-x 1 bin      6528 Jun 10 08:37 dc
+-rwxr-xr-x 1 bin      4246 Jun 10 08:37 dd
+-rwxr-xr-x 1 bin      1592 Jun 10 08:37 df
+-rwxr-xr-x 1 bin       262 Jun 10 08:37 dsw
+-rwxr-xr-x 1 bin       654 Jun 10 08:37 du
+-rwxr-xr-x 1 bin      4174 Jun 12 19:13 dump
+-rwxr-xr-x 1 bin       894 Jun 10 08:37 echo
+-rwxr-xr-x 1 bin      4292 Jun 10 08:37 ed
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 exit
+-rwxr-xr-x 1 bin      4642 Jun 10 08:37 fc
+-rwxr-xr-x 1 bin       942 Jun 10 08:37 goto
+-rwxr-xr-x 1 bin      1552 Jun 10 08:37 if
+-rwxr-xr-x 1 bin       192 Jun 10 08:37 kill
+-rwxr-xr-x 1 bin      3272 Jun 10 08:37 ld
+-rwxr-xr-x 1 bin       480 Jun 10 08:37 ln
+-rwsr-xr-x 1 root     2488 Jun 10 08:37 login
+-rwxr-xr-x 1 bin      3112 Jun 12 16:54 lpr
+-rwxr-xr-x 1 bin      5056 Jun 12 19:13 ls
+-rwxr-xr-x 1 bin      4608 Jun 12 19:13 mail
+-rwsr-xr-x 1 root      240 Jun 10 08:37 mkdir
+-rwsr-xr-x 1 root     2330 Jun 10 08:37 mv
+-rwxr-xr-x 1 bin      2518 Jun 10 08:37 nm
+-rwxr-xr-x 1 bin      4710 Jun 10 08:37 od
+-rwxr-xr-x 1 bin      3630 Jun 12 19:13 pr
+-rwsr-xr-x 1 bin      2286 Jun 10 08:37 ps
+-rwxr-xr-x 1 bin      4996 Jun 10 08:37 restor
+-rwxr-xr-x 1 bin       114 Jun 10 08:37 rew
+-rwxr-xr-x 1 bin      1602 Jun 10 08:37 rm
+-rwsr-xr-x 1 root      292 Jun 10 08:37 rmdir
+-rwxr-xr-x 1 bin      5572 Jun 10 08:37 sh
+-rwxr-xr-x 1 bin      1218 Jun 10 08:37 size
+-rwxr-xr-x 1 bin      4322 Jun 10 08:37 sort
+-rwxr-xr-x 1 bin       496 Jun 10 08:37 strip
+-rwxr-xr-x 1 bin      1542 Jun 10 08:37 stty
+-rwsr-xr-x 1 root     1944 Jun 10 08:37 su
+-rwxr-xr-x 1 bin       198 Jun 10 08:37 sum
+-rwxr-xr-x 1 bin       144 Jun 10 08:37 sync
+-rwxr-xr-x 1 bin       556 Jun 10 08:37 time
+-rwxr-xr-x 1 bin      4482 Jun 12 19:13 tp
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 tty
+-rwxr-xr-x 1 bin      1968 Jun 10 08:37 uniq
+-rwxr-xr-x 1 bin      1792 Jun 12 19:13 who
+-rwxr-xr-x 1 bin       682 Jun 10 08:37 write
+# ls
+# cd ..
+cd: not found
+# l
+# chdir ..
+# ls
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+kevin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# rm -r bx
+# cd /
+cd: not found
+# chdir
+chdir: arg count
+# chdir /
+# ls /
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls lib
+as2
+c0
+c1
+crt0.o
+filib.a
+fr0.o
+liba.a
+libc.a
+libf.a
+liby.a
+mcrt0.o
+# ls lib/c0
+lib/c0
+# ls /
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# ls usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+kevin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# cc -h
+un: _main
+# cc --help
+un: _main
+# ls /usr
+usr: not found
+# ls usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+kevin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# ls usr/lib
+aign
+atab
+cign
+ctab
+salt
+suftab
+w2006
+# ls usr/source
+s1
+s2
+s3
+s4
+s7
+# chdir etc
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+# echo "bx::42:42::/usr/bx:" >> passwd
+#  cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+# mkdir /usr/bx
+/usr/bx ?
+# cd /usr
+cd: not found
+# cd#hdir
+hdir: not found
+# cd /
+cd: not found
+# chdir /usr
+# ls
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+# chown bx bx
+# ls -l bx
+total 0
+# ls -l
+total 28
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      192 Aug 18 13:58 alex
+drwxrwxrwx 2 root       48 Aug 18 13:58 amitb
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxrwxrwx 2 bx         32 Aug 18 13:58 bx
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 12:23 cody
+drwxrwxrwx 2 root       32 Aug 18 13:17 doug
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxrwxrwx 2 kevin      48 Aug 18 13:58 kevin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 13:55 michael
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia    128 Aug 18 13:07 thalia
+drwxrwxrwx 2 bin        48 Aug 18 13:31 tmp
+drwxrwxrwx 2 root       32 Aug 18 13:49 voytilla
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+# cd
+cd: not found
+# 
+;login: bx
+% cd /usr/ta
+cd: not found
+% chdir /usr/talia
+chdir: bad directory
+% chdir /usr/thalia
+% ls
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% catmullend
+catmullend: not found
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% cp mullender.c /usr/bx
+% ls /urs
+/urs not found
+% ls /usr/bx
+mullender.c
+% chdir /usr/bx
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% cat mullin
+% cp mullender.c m.c
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ed m.c
+469
+q
+% ed
+e m.c
+469
+2p
+short main[] = {
+p
+short main[] = {
+2s/ =/;/
+p
+short main[]; {
+q
+% cc m.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ed
+e m.c
+469
+2s/{//
+2p
+short main[] = 
+2s/=/;/
+p
+short main[] ; 
+3 i
+{
+.
+p
+{
+2p
+short main[] ; 
+3p
+{
+4p
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+w
+470
+q
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+short main[] ; 
+{
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% cc m.c
+2: Expression syntax
+3: External definition syntax
+4: Expression syntax
+11: Statement syntax
+12: Unexpected EOF
+12: Missing '}'
+12: xbef undefined
+12: x6176 undefined
+12: x4bc undefined
+12: x8 undefined
+12: x9 undefined
+12: x52d7 undefined
+12: x7e82 undefined
+% ed
+e m.c
+470
+3p
+{
+2p
+short main[] ; 
+2c
+short main[];
+.
+2p
+short main[];
+w
+468
+q
+% cc m.c
+2: Expression syntax
+3: External definition syntax
+4: Expression syntax
+11: Statement syntax
+12: Unexpected EOF
+12: Missing '}'
+12: xbef undefined
+12: x6176 undefined
+12: x4bc undefined
+12: x8 undefined
+12: x9 undefined
+12: x52d7 undefined
+12: x7e82 undefined
+% ed
+size.c
+?
+e size.c
+?
+a
+main () {
+printf("d %d", sizeof int;);
+.
+cat 
+?
+w
+39
+2p
+printf("d %d", sizeof int;);
+a
+}
+.
+w
+41
+q
+% cc size.c
+2: Expression syntax
+2: Expression syntax
+% ed
+e size.c
+41
+p
+}
+2p
+printf("d %d", sizeof int;);
+c
+printf("%d", sizeof(int));
+.
+w
+39
+q
+% cat size.c
+main () {
+printf("%d", sizeof(int));
+}
+% cc size.c
+2: Expression syntax
+% [A[B[Bed
+Arg count
+% ed
+e size.c
+39
+q
+% ed
+e size.c
+39
+2p
+printf("%d", sizeof(int));
+c
+printf("%d", sizeof int);
+.
+w
+38
+q
+% cc size.c
+2: Expression syntax
+% ed
+e size.c
+38
+p
+}
+1p
+main () {
+2p
+printf("%d", sizeof int);
+2i
+int i;
+.
+w
+45
+3p
+printf("%d", sizeof int);
+3edsf
+?
+3c
+printf("%d", sizeof i);
+.
+w
+43
+q
+% [A[B[Bca
+Arg count
+% cc size.c
+% ls
+a.out
+m.c
+mullender.c
+size.c
+% ./a.out
+2% ed mu
+?
+q
+% ed
+e m.c
+468
+2p
+short main[];
+2s/short/int/
+2p
+int main[];
+w
+466
+q
+% cc m.c
+3: External definition syntax
+4: Expression syntax
+11: Statement syntax
+12: Unexpected EOF
+12: Missing '}'
+12: xbef undefined
+12: x6176 undefined
+12: x4bc undefined
+12: x8 undefined
+12: x9 undefined
+12: x52d7 undefined
+12: x7e82 undefined
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+int main[];
+{
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% 2p
+2p: not found
+% 2
+% edi
+edi: not found
+% ed 
+e m.c
+466
+2p
+int main[];
+2c
+int main[
+.
+w
+464
+q
+% ed mfsdf
+fsdf: not found
+% q
+q: not found
+% ed
+e m.c
+464
+p11
+?
+p11
+?
+p10
+?
+10p
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+11p
+	'p', 072163, 'r', 29303, 29801, 'e' };
+11s/}/]/
+.
+	'p', 072163, 'r', 29303, 29801, 'e' ];
+11p
+	'p', 072163, 'r', 29303, 29801, 'e' ];
+w
+464
+q
+% cc m.c
+3: Expression syntax
+3: Declaration syntax
+4: Expression syntax
+4: Too many initializers
+4: External definition syntax
+4: Expression syntax
+12: Unexpected EOF
+12: Missing '}'
+12: main undefined
+12: x6176 undefined
+12: x4bc undefined
+12: x8 undefined
+12: x9 undefined
+12: x52d7 undefined
+12: x7e82 undefined
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+int main[
+{
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' ];
+% cc 
+% ed
+e m.c
+464
+3p
+{
+3d
+w
+462
+q
+% cc m.c
+3: Declaration syntax
+10: main undefined
+10: xbef undefined
+10: x6176 undefined
+10: x4bc undefined
+10: x8 undefined
+10: x9 undefined
+10: x52d7 undefined
+10: x7e82 undefined
+11: main undefined
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ed
+e m.c
+462
+3p
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+3s/0xbef/c[D[C[D[D[D
+?
+.
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+3s/0xbef/05, 07 , 05, 07/?
+,/
+?
+3s/0xbef/05, 07 , 05, 07,/
+.
+	277, 04735, -4129, 25, 0, 477, 1019, 05, 07 , 05, 07,, 0, 12800,
+s,,
+?
+3s/,,/,/
+,
+?
+3p
+	277, 04735, -4129, 25, 0, 477, 1019, 05, 07 , 05, 07, 0, 12800,
+w
+472
+q
+% cc m.c
+3: Declaration syntax
+10: main undefined
+10: x6176 undefined
+10: x4bc undefined
+10: x8 undefined
+10: x9 undefined
+10: x52d7 undefined
+10: x7e82 undefined
+11: main undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ed
+e m.c
+472
+4p
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+5p
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+6p
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+7p
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+7sp/
+?
+8p
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+9p
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+9s/0x6176/24950/
+.
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+3p
+	277, 04735, -4129, 25, 0, 477, 1019, 05, 07 , 05, 07, 0, 12800,
+3s/05, 07, 05, 07/3055/
+?
+.
+	277, 04735, -4129, 25, 0, 477, 1019, 05, 07 , 05, 07, 0, 12800,
+3s/05, 07, 05, 07,/3055,/
+?
+3p
+	277, 04735, -4129, 25, 0, 477, 1019, 05, 07 , 05, 07, 0, 12800,
+3s/05, 07,
+?
+3s/05, 07 , 05, 07/3055/
+w
+460
+q
+% cc m.c
+3: Declaration syntax
+10: main undefined
+10: x4bc undefined
+10: x8 undefined
+10: x9 undefined
+10: x52d7 undefined
+10: x7e82 undefined
+11: main undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% [A[B[Bed 
+Arg count
+% e
+% ed
+e m.c
+460
+4p
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+4s/0x4bc/1212/
+.
+	-113, 21119, 0x52d7, -1006, -7151, 0, 1212, 020004,
+w
+459
+4s/0x52d7/21207/
+.
+	-113, 21119, 21207, -1006, -7151, 0, 1212, 020004,
+10p
+	'p', 072163, 'r', 29303, 29801, 'e' ];
+9p
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+8p
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+8s/0x8/8/
+.
+	4, 0, 0, 0, 8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+6p
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+s6p/0x9/9/
+?
+6s/0x9/9/
+.
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+8[
+?
+5p
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+5s/0x9/9/
+.
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+w
+452
+4p
+	-113, 21119, 21207, -1006, -7151, 0, 1212, 020004,
+3p
+	277, 04735, -4129, 25, 0, 477, 1019, 3055, 0, 12800,
+2p
+int main[
+q
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+int main[
+	277, 04735, -4129, 25, 0, 477, 1019, 3055, 0, 12800,
+	-113, 21119, 21207, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' ];
+% ed
+e m.c
+452
+7p
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+s?
+7s/0x7e81//
+?
+7s/0x7e82/32386/
+.
+	32386, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+ww
+?
+w
+451
+q
+% cc m.c
+3: Declaration syntax
+10: main undefined
+11: main undefined
+% ed
+e m.c
+451
+2p
+int main[
+e?
+2c
+int main[]
+.
+3p
+	277, 04735, -4129, 25, 0, 477, 1019, 3055, 0, 12800,
+2p
+int main[]
+3i
+{
+.
+10e
+?
+11e
+?
+11p
+	'p', 072163, 'r', 29303, 29801, 'e' ];
+11s/]/}/
+.
+	'p', 072163, 'r', 29303, 29801, 'e' };
+w
+454
+q
+% make
+make: not found
+% cc m.c
+% ./m
+% ./a.out
+  :-)Bad system call -- Core dumped
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+int main[]
+{
+	277, 04735, -4129, 25, 0, 477, 1019, 3055, 0, 12800,
+	-113, 21119, 21207, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	32386, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ls -l
+total 9
+-rwxrwxrwx 1 bx        248 Aug 18 14:50 a.out
+-rw-rw-rw- 1 bx       2496 Aug 18 14:51 core
+-rw-r--r-- 1 bx        454 Aug 18 14:50 m.c
+-rw-r--r-- 1 bx        469 Aug 18 14:00 mullender.c
+-rw-rw-rw- 1 bx         43 Aug 18 14:27 size.c
+% cat core
+fCnC****`e>@@D@lcore\+core@l'
+lBuBuBu9	8ZCbC6C>CzC@lD0Zt<Cv@4I@@w4I@i$04ZCdO4I4I@i<cc[Bls`eN> l2_tCj@t
+ l2_tC,Ut l2_HtCvU l2_Ht6C\]v2Cd6C l
+
+Connected to the PDP-11 simulator DCI device, line 10
+
+
+;login: bx
+% chdir /usr/bx
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+int main[]
+{
+	277, 04735, -4129, 25, 0, 477, 1019, 3055, 0, 12800,
+	-113, 21119, 21207, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	32386, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ca
+% ls /usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+hacker
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+lspub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+% ls /usr/thalia
+lsls: not found
+% ls /usr/thalia
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% ls /usr/thalia/hints
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% cat /usr/thalia/debug
+% ls /usr/thalia/hints/debug
+/usr/thalia/hints/debug not found
+% ls /usr/thalia/de
+/usr/thalia/de not found
+% ls /usr/thalia/hints/4debug
+hint1
+hint2a
+hint2b
+hint3
+% ls 
+% cat /usr/thalia/hints/4debug/hint1
+Hint: Now that it compiles, run it. What's broken?
+
+% cc mullender.c
+% a.out
+ Bad system call -- Core dumped
+
+If you want to skip fixing the syntax, you can start with 2syntax/solution.c.
+% cat /usr/thalia/hints/4debug/hint2a
+Hint: The space before "Bad system call" is suspicious. Is it from another
+print?
+% cat /usr/thalia/hints/4debug/hint2b
+Hint: You can isolate the text printed by the program from the error by
+redirecting to a file. Note that the prompt overlaps with the text, since it
+backspaces and does not end with a line feed.
+
+% a.out > out
+Bad system call -- Core dumped
+% cat out
+ % -)
+% ls
+a.out
+core
+m.c
+mullender.c
+size.c
+% ./a.out > out
+Bad system call -- Core dumped
+% cat out
+  :-)% [C[C[D[D[D[D[D[D[C[C[C
+Arg count
+% cat /usr/thalia/hints/4debug/hint3
+Hint: You'll want to read kernel source code. Ask me for pointers :).
+% lsls
+lsls: not found
+% sfdsf
+% ls /
+a.out
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% ls /usr/
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+hacker
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+% ls /usr/source
+s1
+s2
+s3
+s4
+s7
+% /
+% find
+Insufficient args
+% find /usr/source
+Insufficient args
+% ls /usr/source/s1
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% ls /usr
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+hacker
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+% ls /usr/source/s2
+mail.c
+mesg.s
+mkdir.s
+mkfs.c
+mknod.c
+mount.c
+msh.s
+mv.c
+nice.c
+nm.c
+nohup.c
+od.c
+passwd.s
+pfe.s
+pr.c
+prof.c
+ps.c
+pwd.c
+restor.c
+rew.s
+rm.c
+rmdir.s
+sa.c
+sh.c
+size.c
+sleep.c
+sort.c
+split.c
+strip.s
+stty.c
+su.c
+sum.s
+sync.c
+tee.c
+time.s
+tp1.s
+tp2.s
+tp3.s
+tp4.s
+tr.c
+tty.s
+typo.c
+umount.c
+uniq.c
+update.s
+wc.c
+who.c
+write.s
+% ls /usr/source/s3
+atan.s
+atof.s
+atoi.s
+compar.s
+crypt.s
+ctime.c
+dpadd.s
+ecvt.s
+exp.s
+fakfp.s
+fp1.s
+fp2.s
+fp3.s
+fpx.s
+gamma.s
+get.s
+hypot.s
+ldiv.s
+log.s
+mesg.s
+mon.s
+nlist.s
+pow.s
+put.s
+qsort.s
+rand.s
+sin.s
+sqrt.s
+switch.s
+ttyn.s
+% ls /usr/source/s4
+abort.s
+atan.s
+atan2.s
+atof.s
+chdir.s
+chmod.s
+chown.s
+close.s
+cos.s
+crand.s
+creat.s
+crt0.s
+crypt.s
+dup.s
+ecvt.s
+errlst.c
+execl.s
+execv.s
+exit.s
+exp.s
+ffltpr.s
+floor.s
+fltpr.s
+fmod.s
+fork.s
+fstat.s
+gamma.s
+getc.s
+getchr.s
+getcsw.s
+getgid.s
+getpw.c
+getuid.s
+gtty.s
+hmul.s
+hsw.s
+kill.s
+link.s
+locv.s
+log.s
+ltod.s
+makdir.s
+mcrt0.s
+mdate.s
+mknod.s
+mon.c
+mount.s
+nargs.s
+nice.s
+nlist.s
+open.s
+perror.c
+pipe.s
+pow.s
+printf.s
+prof.s
+putc.s
+putchr.s
+qsort.c
+read.s
+reset.s
+retrn.s
+rin.c
+rsave.s
+sbrk.s
+seek.s
+setgid.s
+setuid.s
+signal.s
+sin.s
+sleep.s
+sqrt.s
+ssw.s
+stat.s
+stime.s
+stty.s
+switch.s
+sync.s
+time.s
+times.s
+umount.s
+unlink.s
+wait.s
+write.s
+% cat /usr/source/s4/execl.s
+/ C library -- execl
+
+/ execl(file, arg1, arg2, ... , 0);
+/
+
+.globl	_execl, cerror
+
+_execl:
+	mov	r5,-(sp)
+	mov	sp,r5
+	mov	4(r5),0f
+	mov	r5,r0
+	add	$6,r0
+	mov	r0,0f+2
+	sys	0; 9f
+	jmp	cerror
+.data
+9:
+	sys	exec; 0:..; ..
+% grep
+arg count
+% grep main /usr/source/s4/ex*
+% crep 
+crep: not found
+% grep main /usr/source/s3/*
+Command not found
+% l
+% ma
+ma: not found
+% man
+man: not found
+% find /usr/source
+Insufficient args
+% find -help
+Insufficient args
+% find /help
+Insufficient args
+% find --help
+Insufficient args
+% ls
+a.out
+core
+m.c
+mullender.c
+out
+size.c
+% ls /etc
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+% ls /bn
+/bn not found
+% ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+% ls /usr/
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+doug
+fort
+games
+hacker
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+voytilla
+yang
+% ls /usr/thalia
+hints
+logo
+lrc2026
+mullender.c
+rfc4
+thanks
+% ls /usr/thalia/hints
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% ls /usr/thalia/hints/resources
+/usr/thalia/hints/resources
+% cat /usr/thalia/hints/resources
+Useful resources for mullender.c:
+	https://www.ioccc.org/1984/mullender/
+	https://lainsystems.com/posts/exploring-mullender-dot-c/
+	https://lainsystems.com/mullender-excerpt.pdf
+% ls
+a.out
+core
+m.c
+mullender.c
+out
+size.c
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+int main[]
+{
+	277, 04735, -4129, 25, 0, 477, 1019, 3055, 0, 12800,
+	-113, 21119, 21207, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	32386, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% saf
+% find s
+Insufficient args
+% find
+% ls -l /bin
+total 316
+-rwxr-xr-x 1 bin      1514 Jun 10 08:37 ar
+-rwxr-xr-x 1 bin      5720 Jun 10 08:37 as
+-rwxr-xr-x 1 bin      5846 Jun 10 08:37 bas
+-rwxr-xr-x 1 bin       152 Jun 10 08:37 cat
+-rwxr-xr-x 1 bin      5104 Jun 10 08:37 cc
+-rwxr-xr-x 1 bin      4550 Jun 10 08:37 cdb
+-rwxr-xr-x 1 bin      7112 Jun 10 08:37 check
+-rwxr-xr-x 1 bin      1546 Jun 10 08:37 chmod
+-rwxr-xr-x 1 bin       484 Jun 10 08:37 chown
+-rwxr--r-- 1 bin       190 Jun 10 08:37 clri
+-rwxr-xr-x 1 bin       418 Jun 10 08:37 cmp
+-rwxr-xr-x 1 bin      1200 Jun 10 08:37 cp
+-rwsr-xr-x 1 root     2120 Jun 12 19:13 date
+-rwxr-xr-x 1 bin      4980 Jun 10 08:37 db
+-rwxr-xr-x 1 bin      6528 Jun 10 08:37 dc
+-rwxr-xr-x 1 bin      4246 Jun 10 08:37 dd
+-rwxr-xr-x 1 bin      1592 Jun 10 08:37 df
+-rwxr-xr-x 1 bin       262 Jun 10 08:37 dsw
+-rwxr-xr-x 1 bin       654 Jun 10 08:37 du
+-rwxr-xr-x 1 bin      4174 Jun 12 19:13 dump
+-rwxr-xr-x 1 bin       894 Jun 10 08:37 echo
+-rwxr-xr-x 1 bin      4292 Jun 10 08:37 ed
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 exit
+-rwxr-xr-x 1 bin      4642 Jun 10 08:37 fc
+-rwxr-xr-x 1 bin       942 Jun 10 08:37 goto
+-rwxr-xr-x 1 bin      1552 Jun 10 08:37 if
+-rwxr-xr-x 1 bin       192 Jun 10 08:37 kill
+-rwxr-xr-x 1 bin      3272 Jun 10 08:37 ld
+-rwxr-xr-x 1 bin       480 Jun 10 08:37 ln
+-rwsr-xr-x 1 root     2488 Jun 10 08:37 login
+-rwxr-xr-x 1 bin      3112 Jun 12 16:54 lpr
+-rwxr-xr-x 1 bin      5056 Jun 12 19:13 ls
+-rwxr-xr-x 1 bin      4608 Jun 12 19:13 mail
+-rwsr-xr-x 1 root      240 Jun 10 08:37 mkdir
+-rwsr-xr-x 1 root     2330 Jun 10 08:37 mv
+-rwxr-xr-x 1 bin      2518 Jun 10 08:37 nm
+-rwxr-xr-x 1 bin      4710 Jun 10 08:37 od
+-rwxr-xr-x 1 bin      3630 Jun 12 19:13 pr
+-rwsr-xr-x 1 bin      2286 Jun 10 08:37 ps
+-rwxr-xr-x 1 bin      4996 Jun 10 08:37 restor
+-rwxr-xr-x 1 bin       114 Jun 10 08:37 rew
+-rwxr-xr-x 1 bin      1602 Jun 10 08:37 rm
+-rwsr-xr-x 1 root      292 Jun 10 08:37 rmdir
+-rwxr-xr-x 1 bin      5572 Jun 10 08:37 sh
+-rwxr-xr-x 1 bin      1218 Jun 10 08:37 size
+-rwxr-xr-x 1 bin      4322 Jun 10 08:37 sort
+-rwxr-xr-x 1 bin       496 Jun 10 08:37 strip
+-rwxr-xr-x 1 bin      1542 Jun 10 08:37 stty
+-rwsr-xr-x 1 root     1944 Jun 10 08:37 su
+-rwxr-xr-x 1 bin       198 Jun 10 08:37 sum
+-rwxr-xr-x 1 bin       144 Jun 10 08:37 sync
+-rwxr-xr-x 1 bin       556 Jun 10 08:37 time
+-rwxr-xr-x 1 bin      4482 Jun 12 19:13 tp
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 tty
+-rwxr-xr-x 1 bin      1968 Jun 10 08:37 uniq
+-rwxr-xr-x 1 bin      1792 Jun 12 19:13 who
+-rwxr-xr-x 1 bin       682 Jun 10 08:37 write
+% ls /usr/bin
+ac
+cal
+comm
+cref
+crpost
+diff
+fed
+find
+form
+grep
+mesg
+nice
+nohup
+passwd
+pfe
+prof
+pwd
+roff
+sa
+sleep
+sno
+split
+tee
+tr
+typo
+upost
+wc
+yacc
+% ls -l /usr/bin
+total 234
+-rwxr-xr-x 1 bin      2966 Jun 10 08:37 ac
+-rwxr-xr-x 1 bin      2006 Jun 10 08:37 cal
+-rwxr-xr-x 1 bin      1890 Jun 10 08:37 comm
+-rwxr-xr-x 1 bin      9258 Jun 10 08:37 cref
+-rwxr-xr-x 1 bin      2250 Jun 10 08:37 crpost
+-rwxr-xr-x 1 bin      4764 Jun 10 08:37 diff
+-rwxr-xr-x 1 bin      4826 Jun 10 08:37 fed
+-rwxr-xr-x 1 bin      5924 Jun 10 08:37 find
+-rwxr-xr-x 1 bin      4118 Jun 10 08:37 form
+-rwxr-xr-x 1 bin      1370 Jun 10 08:37 grep
+-rwxr-xr-x 1 bin       276 Jun 10 08:37 mesg
+-rwxr-xr-x 1 bin      1122 Jun 10 08:37 nice
+-rwxr-xr-x 1 bin      1328 Jun 10 08:37 nohup
+-rwsr-xr-x 1 root     1214 Jun 10 08:37 passwd
+-rwxr-xr-x 1 bin       240 Jun 10 08:37 pfe
+-rwxr-xr-x 1 bin      4448 Jun 10 08:37 prof
+-rwxr-xr-x 1 bin       794 Jun 12 16:51 pwd
+-rwxr-xr-x 1 bin      8114 Jun 10 08:37 roff
+-rwxr-xr-x 1 bin      5438 Jun 10 08:37 sa
+-rwxr-xr-x 1 bin       980 Jun 10 08:37 sleep
+-rwxr-xr-x 1 bin      9422 Jun 10 08:37 sno
+-rwxr-xr-x 1 bin      1082 Jun 10 08:37 split
+-rwxr-xr-x 1 bin       706 Jun 10 08:37 tee
+-rwxr-xr-x 1 bin      1840 Jun 10 08:37 tr
+-rwxr-xr-x 1 bin      6364 Jun 10 08:37 typo
+-rwxr-xr-x 1 bin      2198 Jun 10 08:37 upost
+-rwxr-xr-x 1 bin      1896 Jun 10 08:37 wc
+-rwxr-xr-x 1 bin     20258 Jun 10 08:37 yacc
+% ls
+a.out
+core
+m.c
+mullender.c
+out
+size.c
+% od an
+% od a.out
+0000000 000407 000026 000242 000002 000060 000000 000000 000001
+0000020 170011 010600 011046 005720 010066 000002 004767 000006
+0000040 022626 005000 104401 000425 004735 167737 000031 000000
+0000060 000735 001773 005757 000000 031000 177617 051177 051327
+0000100 176022 162021 000000 002274 020004 035040 024455 004010
+0000120 004010 010704 005744 162704 000011 010467 000006 012700
+0000140 000001 104404 000000 000011 012702 001000 104455 077202
+0000160 000760 000006 000000 000004 002400 000017 000000 000004
+0000200 002400 000004 000000 000004 000000 000000 000000 000010
+0000220 000000 000004 000000 000054 000000 000014 000000 000004
+0000240 000000 000043 000000 000020 000000 000004 000000 000036
+0000260 000000 000026 000000 060566 000170 062160 000160 072163
+0000300 000162 071167 072151 000145 071143 030164 067456 000000
+0000320 000037 000000 027155 000157 000000 000000 000037 000026
+0000340 060563 071166 000065 000000 000044 000270 066537 064541
+0000360 000156 000000 000043 000026
+0000370 
+% ls
+a.out
+core
+m.c
+mullender.c
+out
+size.c
+% db core
+
+141756
+
+200
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+
+
+
+c0
+0
+0
+0
+
+?
+q
+?
+/?
+.
+0
+Exit
+?
+&
+0
+%
+% exit
+% Exit
+Exit: not found
+% ls
+a.out
+core
+m.c
+mullender.c
+out
+size.c
+% deb
+deb: not found
+% db core
+?
+bicb (pc),-(sp)
+
+bicb (pc),*-(sp)
+
+rts r0
+
+halt
+$
+sp	0
+ps	0
+pc	0
+r0	0
+r1	0
+r2	0
+r3	0
+r4	0
+r5	0
+fpsr	0
+. 20
+halt
+
+halt
+
+halt
+
+halt
+
+halt
+q
+?
+Exit
+?
+exit
+?
+
+halt
+
+halt
+
+halt
+ %
+% [A[B[B[B
+Arg count
+% db core main
+$
+sp	177756
+ps	170000
+pc	136
+r0	11
+r1	0
+r2	1000
+r3	0
+r4	71
+r5	0
+fpsr	200
+?
+setd
+
+mov sp,r0
+
+mov (r0),-(sp)
+
+tst (r0)+
+
+mov r0,2(sp)
+
+jsr pc,26
+
+cmp (sp)+,(sp)+
+
+clr r0
+
+sys exit
+
+br 102
+%
+% [A[B[Bq
+% e
+% db core
+?
+bicb (pc),-(sp)
+
+bicb (pc),*-(sp)
+
+rts r0
+
+halt
+
+halt
+
+halt
+
+halt
+%
+% db a.out
+?
+setd
+?
+setd
+
+mov sp,r0
+
+mov (r0),-(sp)
+[B[B
+?
+?
+mov (r0),-(sp)
+?
+mov (r0),-(sp)
+?
+mov (r0),-(sp)
+
+tst (r0)+
+
+mov r0,crt0.o+2(sp)
+
+jsr pc,_main
+
+cmp (sp)+,(sp)+
+
+clr r0
+
+sys exit
+
+br _main+54
+
+jsr pc,*(r5)+
+
+sub *_main+41,*$crt0.o
+
+br 177734
+
+beq _main+4
+
+tst *-(pc)
+
+halt
+
+bit (r0),r0
+
+movof (pc),r2
+
+bis (r1),*51407
+
+movfo r0,(r2)+
+
+sub (r0)+,(r1)+
+
+halt
+
+bge 177660
+
+cmp r0,r4
+
+bit *-(r0),-(r0)
+
+cmp -(r4),*-(r5)
+
+jsr r0,(r0)
+
+jsr r0,(r0)
+
+mov pc,r4
+
+tst -(r4)
+
+sub $crt0.o+11,r4
+
+mov r4,_main+76
+
+mov $crt0.o+1,r0
+
+sys write;crt0.o;crt0.o+11
+
+mov $savr5+510,r2
+
+sys 55
+
+sob r2,_main+106
+
+br _main+54
+
+oct 6
+
+halt
+
+iot
+
+blt _main+124
+
+oct 17
+
+halt
+
+iot
+
+blt _main+134
+%
+% db a.out _main
+?
+?
+
+?
+
+?
+
+?
+%
+% db a.out main
+?
+?
+
+?
+
+?
+
+?
+
+?
+q
+?
+??
+%
+% [A[B[Bdb a.out
+No match
+% db a.out
+?
+setd
+
+mov sp,r0
+
+mov (r0),-(sp)
+
+tst (r0)+
+
+mov r0,crt0.o+2(sp)
+
+jsr pc,_main
+
+cmp (sp)+,(sp)+
+
+clr r0
+
+sys exit
+
+br _main+54
+& _main
+savr5+135
+& main
+savr5+135
+& savr5
+savr5+135
+:
+_main
+?
+br _main+54
+
+jsr pc,*(r5)+
+
+sub *_main+41,*$crt0.o
+
+br 177734
+
+beq _main+4
+
+tst *-(pc)
+
+halt
+
+bit (r0),r0
+
+movof (pc),r2
+
+bis (r1),*51407
+
+movfo r0,(r2)+
+
+sub (r0)+,(r1)+
+
+halt
+/ 17734
+0
+? 17734
+halt
+?
+halt
+
+bge 177660
+
+cmp r0,r4
+
+bit *-(r0),-(r0)
+
+cmp -(r4),*-(r5)
+
+jsr r0,(r0)
+
+jsr r0,(r0)
+
+mov pc,r4
+
+tst -(r4)
+
+sub $crt0.o+11,r4
+
+mov r4,_main+76
+
+mov $crt0.o+1,r0
+
+sys write;crt0.o;crt0.o+11
+
+mov $savr5+510,r2
+
+sys 55
+q
+?
+%
+% adb c
+% adb a.out
+adb: not found
+% ab
+ab: not found
+% adb
+adb: not found
+% 
+% db a.out
+" crt0.o
+	\360
+
+\200\021
+
+&\022
+
+\320\013
+
+6\020
+
+\002\000
+
+\367	
+
+\006\000
+
+\226%
+
+\000
+
+
+\001\211
+
+\025\001
+
+\335	
+
+\337\357
+
+\031\000
+
+\000\000
+
+\335\001
+
+\373\003
+
+\357\013
+
+\000\000
+
+\0002
+
+\217\377
+
+\177R
+
+\327R
+
+\022\374
+
+\021\344
+
+\000\000
+
+\274\004
+
+\004 
+
+ :
+
+-)
+$
+sp	0	crt0.o
+ps	0
+pc	0	crt0.o
+r0	0	crt0.o
+r1	0	crt0.o
+r2	0	crt0.o
+r3	0	crt0.o
+r4	0	crt0.o
+r5	0	crt0.o
+fpsr	0
+:
+_main+46
+" _main
+-)
+" _main-1
+-)
+^
+ :
+:
+_main+44
+=_m?
+m?
++
+-)
+=_main
+74
+Q?
+%
+% l
+l: not found
+% db a.out
+?
+setd
+
+mov sp,r0
+
+mov (r0),-(sp)
+
+tst (r0)+
+
+mov r0,crt0.o+2(sp)
+
+jsr pc,_main
+
+cmp (sp)+,(sp)+
+
+clr r0
+
+sys exit
+
+br _main+54
+
+jsr pc,*(r5)+
+
+sub *_main+41,*$crt0.o
+
+br 177734
+
+beq _main+4
+
+tst *-(pc)
+
+halt
+
+bit (r0),r0
+
+movof (pc),r2
+
+bis (r1),*51407
+
+movfo r0,(r2)+
+
+sub (r0)+,(r1)+
+
+halt
+
+bge 177660
+
+cmp r0,r4
+
+bit *-(r0),-(r0)
+
+cmp -(r4),*-(r5)
+
+jsr r0,(r0)
+
+jsr r0,(r0)
+
+mov pc,r4
+
+tst -(r4)
+
+sub $crt0.o+11,r4
+
+mov r4,_main+76
+
+mov $crt0.o+1,r0
+
+sys write;crt0.o;crt0.o+11
+
+mov $savr5+510,r2
+^
+oct 11
+
+mov $savr5+510,r2
+
+sys 55
+
+sob r2,_main+106
+
+br _main+54
+
+oct 6
+
+halt
+
+iot
+
+blt _main+124
+?
+blt _main+124
+
+oct 17
+
+halt
+
+iot
+
+blt _main+134
+
+iot
+
+halt
+
+iot
+
+halt
+
+halt
+
+halt
+
+oct 10
+
+halt
+
+iot
+
+halt
+
+oct 54
+
+halt
+
+oct 14
+
+halt
+
+iot
+
+halt
+
+oct 43
+
+halt
+
+oct 20
+&
+crt0.o+20
+^
+crt0.o
+
+crt0.o+20
+
+crt0.o
+
+crt0.o+4
+
+crt0.o
+
+_main+10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+qq
+crt0.o
+_main
+crt0.o
+60566
+_main+142
+62160
+_main+132
+7%2163
+_main+134
+71167
+7
+2151
+_main+117
+71143
+30164
+67456
+crt0.o
+_main+11
+crt0.o
+27155
+_main+131
+crt0.o
+crt0.o
+_main+11
+_main
+60563
+71166
+_main+37
+crt0.o
+_main+16
+savr5
+66537
+64541
+_main+130
+crt0.o
+_main+15
+_main
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+% [A[B
+Arg count
+% db c
+File not found.
+% db a.out
+?
+setd
+
+mov sp,r0
+
+mov (r0),-(sp)
+
+tst (r0)+
+
+mov r0,crt0.o+2(sp)
+
+jsr pc,_main
+
+cmp (sp)+,(sp)+
+
+clr r0
+
+sys exit
+
+br _main+54
+
+jsr pc,*(r5)+
+
+sub *_main+41,*$crt0.o
+
+br 177734
+
+beq _main+4
+
+tst *-(pc)
+
+halt
+
+bit (r0),r0
+
+movof (pc),r2
+
+bis (r1),*51407
+
+movfo r0,(r2)+
+
+sub (r0)+,(r1)+
+
+halt
+
+bge 177660
+
+cmp r0,r4
+
+bit *-(r0),-(r0)
+
+cmp -(r4),*-(r5)
+
+jsr r0,(r0)
+
+jsr r0,(r0)
+
+mov pc,r4
+
+tst -(r4)
+
+sub $crt0.o+11,r4
+
+mov r4,_main+76
+
+mov $crt0.o+1,r0
+
+sys write;crt0.o;crt0.o+11
+:
+_main+74
+/
+104404
+\
+4
+%
+% ls
+a.out
+core
+m.c
+mullender.c
+out
+size.c
+% cat m.c
+/* Portable between VAX11 && PDP11 */
+int main[]
+{
+	277, 04735, -4129, 25, 0, 477, 1019, 3055, 0, 12800,
+	-113, 21119, 21207, -1006, -7151, 0, 1212, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 9,
+	4407, 6, 5568, 1, -30460, 0, 9, 5570, 512, -30419,
+	32386, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 24950, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% db a.out _main
+?
+?
+
+?
+
+?
+/
+?
+\
+?
+q
+?
+%
+% db a.out main
+?
+?
+/
+?
+$%
+sp	0
+ps	0
+pc	0
+r0	0
+r1	0
+r2	0
+r3	0
+r4	0
+r5	0
+fr2	6.84351425E-39
+fr5	2.00357692E-32
+fpsr	242
+%
+% db core
+q?
+d?
+%
+% db core main
+?
+setd
+:
+0
+?
+setd
+
+mov sp,r0
+
+mov (r0),-(sp)
+
+tst (r0)+
+
+mov r0,2(sp)
+
+jsr pc,26
+
+cmp (sp)+,(sp)+
+
+clr r0
+
+sys exit
+
+br 102
+
+jsr pc,*(r5)+
+
+sub *67,*$0
+
+br 177734
+
+beq 32
+
+tst *-(pc)
+
+halt
+
+bit (r0),r0
+
+movof (pc),r2
+
+bis (r1),*51407
+
+movfo r0,(r2)+
+
+sub (r0)+,(r1)+
+
+halt
+
+bge 177660
+
+cmp r0,r4
+
+bit *-(r0),-(r0)
+
+cmp -(r4),*-(r5)
+
+jsr r0,(r0)
+
+jsr r0,(r0)
+:
+100
+?
+jsr r0,(r0)
+
+mov pc,r4
+
+tst -(r4)
+
+sub $11,r4
+
+mov r4,124
+
+mov $1,r0
+
+sys write;71;11
+
+mov $1000,r2
+^
+oct 11
+
+mov $1000,r2
+
+sys 55
+
+sob r2,134
+
+br 102
+
+oct 6
+
+halt
+
+iot
+
+blt 152
+
+oct 17
+?
+oct 17
+
+halt
+
+iot
+
+blt 162
+
+iot
+
+halt
+/
+0
+?
+halt
+
+iot
+
+halt
+?
+halt
+q
+?
+%
+% [A[B[B
+Arg count
+% db core
+& _main+74
+141746
+& _main
+141746
+= & _main
+0
+= _main
+0
+= _main+74
+0
+q
+?
+%
+% db a.out
+.
+170011
+:
+crt0.o
+n
+?
+?
+setd
+
+mov sp,r0
+
+mov (r0),-(sp)
+
+tst (r0)+
+
+mov r0,crt0.o+2(sp)
+
+jsr pc,_main
+
+cmp (sp)+,(sp)+
+
+clr r0
+
+sys exit
+
+br _main+54
+
+jsr pc,*(r5)+
+:
+_main+2
+?
+jsr pc,*(r5)+
+
+sub *_main+41,*$crt0.o
+
+br 177734
+
+beq _main+4
+
+tst *-(pc)
+
+halt
+
+bit (r0),r0
+
+movof (pc),r2
+:
+_main+24
+?
+movof (pc),r2
+
+bis (r1),*51407
+
+movfo r0,(r2)+
+
+sub (r0)+,(r1)+
+:
+_main+34
+?
+sub (r0)+,(r1)+
+
+halt
+/
+0
+:
+_main+36
+/
+0
+:
+_main+36
+/
+0
+:
+_main+36
+?
+halt
+:
+_main+36
+?
+halt
+
+bge 177660
+:
+_main+40
+?
+bge 177660
+
+cmp r0,r4
+
+bit *-(r0),-(r0)
+
+cmp -(r4),*-(r5)
+
+jsr r0,(r0)
+
+jsr r0,(r0)
+
+mov pc,r4
+
+tst -(r4)
+
+sub $crt0.o+11,r4
+
+mov r4,_main+76
+:
+_main+64
+?
+mov r4,_main+76
+
+mov $crt0.o+1,r0
+:
+_main+70
+?
+mov $crt0.o+1,r0
+:
+_main+70
+\
+300
+:
+_main+70
+\
+300
+:
+_main+70
+?
+mov $crt0.o+1,r0
+\
+300
+:
+_main+70
+?
+mov $crt0.o+1,r0
+
+sys write;crt0.o;crt0.o+11
+\
+4
+:
+_main+74
+/
+104404

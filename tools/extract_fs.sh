@@ -39,7 +39,7 @@ while IFS= read -r -d '' src; do
   fi
 done
 
-git -c core.ignorecase=false add -f disk.rk fs
+git -c core.ignorecase=false add -f disk.rk fs logs
 if ! git diff --quiet --staged; then
   GIT_AUTHOR_DATE="$date" GIT_COMMITTER_DATE="$date" \
   git commit -qm "Filesystem snapshot $message_date"

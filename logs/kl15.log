@@ -1021,3 +1021,1831 @@ drwxr-xr-x 2 bin       640 Aug 16 14:08 ken
 % 
 Disconnected from the PDP-11 simulator
 
+
+
+Connected to the PDP-11 simulator DLI device, line 14
+
+root
+# 
+# 
+# ls -al
+total 68
+drwxr-xr-x 9 bin       192 Aug 18 12:23
+ .
+drwxr-xr-x 9 bin       192 Aug 18 12:23 ..
+drwxr-xr-x 2 bin       944 Jun 12 16:54 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 11 21:17 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       176 Aug 18 13:20 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x25 bin       400 Aug 18 13:17 usr
+# # cd us       r
+cd: not found
+# 
+# cd /usr
+cd: not found
+# 
+# chdir userr
+chdir: bad directory
+# 
+# [Achdir usr
+No match
+# 
+# chdir /usr
+# 
+# pwd
+../usr
+# 
+# ls -al
+total 25
+drwxr-xr-x25 bin       400 Aug 18 13:17
+ .
+drwxr-xr-x 9 bin       192 Aug 18 12:23 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      160 Aug 18 13:23 alex
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 12:23 cody
+drwxrwxrwx 2 root       32 Aug 18 13:17 doug
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxrwxrwx 2 root       32 Aug 18 11:15 passwd
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia    128 Aug 18 13:07 thalia
+drwxrwxrwx 2 bin        32 Jun 10 08:37 tmp
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+# # chdir /thalia
+chdir: bad directory
+# 
+# cd [C[C#33#@
+# 
+# chdir thalia
+# 
+# pwd
+../usr/thalia
+# 
+# ls -al
+total 21
+drwxr-xr-x 3 thalia    128 Aug 18 13:07
+ .
+drwxr-xr-x25 bin       400 Aug 18 13:17 ..
+drwxr-xr-x 7 thalia    176 Aug 18 12:23 hints
+-rw-rw-rw- 1 thalia    171 Aug 18 12:54 logo
+-rw-rw-rw- 1 thalia   1383 Aug 18 13:08 lrc2026
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia   5317 Aug 18 10:28 rfc4
+-rw-rw-rw- 1 thalia     25 Aug 18 11:08 thanks
+# # cat mullender.c'
+syntax error
+# 
+# [A
+Arg count
+# 
+# cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main
+[] = {
+        277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+        -113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+        4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+        0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+# # cd ..
+cd: not found
+# 
+# chdir ..
+# 
+# pwd
+../usr
+# 
+# chdir ..
+# 
+# chdir /etc
+# 
+# pwd
+../etc
+# 
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+
+msh
+passwd
+rc
+ttys
+umount
+update
+# # cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/us
+r/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+# # echo "amitb::6:6::/usr/amitb":##:" <<>>##@
+# 
+# echo "amitb::6:6::/usr/amitb:" >> passwd
+# 
+# cat pasas@
+# 
+# cat passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/us
+r/thalia:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+# # cd@
+# 
+# chdir /usr
+# 
+# ls
+adm
+alex
+auberon
+bin
+bx
+c
+cody
+doug
+
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+yang
+# # mkdir amitb
+# 
+# ls
+adm
+alex
+amitb
+auberon
+bin
+bx
+c
+cody
+
+doug
+fort
+games
+justin
+lib
+lpd
+mdec
+ncb
+newt
+passwd
+pub
+sno
+source
+sys
+thalia
+tmp
+yang
+# # exit
+# 
+# amitb
+amitb: not found
+# 
+# logout
+logout: not found
+# 
+# exit
+# 
+# 
+# 
+# 
+# 
+# amitb
+amitb: not found
+# 
+# pwd
+../usr
+# 
+# 
+;login: amitb
+% 
+% 
+% pwd
+../usr/amitb
+% 
+% cp /usr/thalia/mullender.c .
+% 
+% ls -l mullender.c
+-rw-r--r-- 1 amitb     469 Aug 18 13:41 mullender.
+c
+% % cat << 'EOF' > mullender.c
+syntax error
+% 
+% /* Portable between VAX11 && PDP11 */
+254
+No match
+% Command not found
+
+% short main[
+No match
+
+] = {
+
+    277,  04735% % ]: not found
+% ,  -4129,     25,      0% ,    477,  1019, 0xbef,
+277,: not found
+% 
+%       0,  12800,   -113,  21119, 0x52d7,  -1006, -7151,     0,
+0,: not found
+% 
+%   0x4bc, 020004,  14880,  10541,   2056,  04010,  4548,  3044,
+0x4bc,: not found
+% 
+%   -6716,    0x9,   4407,      6,   5568,      1, -30460,    0,
+-6716,: not found
+% 
+%     0x9,   5570,    512, -30419, 0x7e82,   0760,     6,     0,
+0x9,: not found
+% 
+%       4, 02400,     15,      0,      4,   1280,     4,     0,
+4,: not found
+% 
+%       4,      0,      0,      0,    0x8,      0,     4,     0,
+4,: not found
+% 
+%     ',',      0,     12,      0,      4,      0,   '#',     0,
+syntax error
+% 
+%    020,       0,      4,      0,     30,      0,   026,     0,
+020,: not found
+% 
+%  0x6176,    120,  25712,    'p', 072163,    'r', 29303, 29801,
+0x6176,: not found
+% 
+%    'e'
+e: not found
+% 
+% };
+}: not found
+EOF
+% % 
+EOF: not found
+% 
+% cat > mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+short main[
+
+] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019, 0xbef,
+
+      0,  12800,   -113,  21119, 0x52d7,  -1006, -7151,     0,
+
+  0x4bc, 020004,  14880,  10541,   2056,  04010,  4548,  3044,
+
+  -6716,    0x9,   4407,      6,   5568,      1, -30460,    0,
+
+    0x9,   5570,    512, -30419, 0x7e82,   0760,     6,     0,
+
+      4, 02400,     15,      0,      4,   1280,     4,     0,
+
+      4,      0,      0,      0,    0x8,      0,     4,     0,
+
+    ',',      0,     12,      0,      4,      0,   '#',     0,
+
+   020,       0,      4,      0,     30,      0,   026,     0,
+
+ 0x6176,    120,  25712,    'p', 072163,    'r', 29303, 29801,
+
+   'e'
+
+};
+
+% 
+% 
+% cat mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+shor
+t main[
+
+] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019, 0xbef,
+
+      0,  12800,   -113,  21119, 0x52d7,  -1006, -7151,     0,
+
+  0x4bc, 020004,  14880,  10541,   2056,  04010,  4548,  3044,
+
+  -6716,    0x9,   4407,      6,   5568,      1, -30460,    0,
+
+    0x9,   5570,    512, -30419, 0x7e82,   0760,     6,     0,
+
+      4, 02400,     15,      0,      4,   1280,     4,     0,
+
+      4,      0,      0,      0,    0x8,      0,     4,     0,
+
+    ',',      0,     12,      0,      4,      0,   ',     0,
+
+   020,       0,      4,      0,     30,      0,   026,     0,
+
+ 0x6176,    120,  25712,    'p', 072163,    'r', 29303, 29801,
+
+   'e'
+
+};
+
+% % cc mullender.c
+6: Expression syntax
+6: External definition synt
+./a.outax
+8: Expression syntax
+22: Nonterminated string
+22: Long character constant
+30: Statement syntax
+32: Unexpected EOF
+32: Missing '}'
+32: xbef undefined
+32: x6176 undefined
+32: x4bc undefined
+32: x8 undefined
+32: x9 undefined
+32: x52d7 undefined
+32: x7e82 undefined
+% % cat > mullender.c
+./a.outcat: not found
+% 
+% /* Portable between VAX11 && PDP11 */
+310
+No match
+% Command not found
+
+% short main[] = {
+Command not found
+% 
+%    277,  04735,   -4129,     25,      0,    477,  1019,   3055,
+277,: not found
+% 
+%       0,  12800,   -113,  21119,  21207,  -1006, -7151,      0,
+0,: not found
+% 
+%    1212, 020004,  14880,  10541,   2056,  04010,  4548,   3044,
+1212,: not found
+% 
+%   -6716,      9,   4407,      6,   5568,      1, -30460,     0,
+-6716,: not found
+% 
+%       9,   5570,    512, -30419,  32386,   0760,      6,     0,
+9,: not found
+% 
+%       4,  02400,     15,      0,      4,   1280,      4,     0,
+4,: not found
+% 
+%       4,      0,      0,      0,      8,      0,      4,     0,
+4,: not found
+% 
+%     ',',      0,     12,      0,      4,      0,     35,     0,
+,,: not found
+% 
+%    020,       0,      4,      0,     30,      0,    026,     0,
+020,: not found
+% 
+%   24950,    120,  25712,    'p', 072163,    'r',  29303, 29801,
+24950,: not found
+% 
+%     'e'
+e: not found
+% 
+% };
+}: not found
+% 
+% cat > mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+short main[] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019,   3055,
+
+      0,  12800,   -113,  21119,  21207,  -1006, -7151,      0,
+
+   1212, 020004,  14880,  10541,   2056,  04010,  4548,   3044,
+
+  -6716,      9,   4407,      6,   5568,      1, -30460,     0,
+
+      9,   5570,    512, -30419,  32386,   0760,      6,     0,
+
+      4,  02400,     15,      0,      4,   1280,      4,     0,
+
+      4,      0,      0,      0,      8,      0,      4,     0,
+
+    ',',      0,     12,      0,      4,      0,     35,     0,
+
+   020,       0,      4,      0,     30,      0,    026,     0,
+
+  24950,    120,  25712,    'p', 072163,    'r',  29303, 29801,
+
+    'e'
+
+};
+
+% 
+% 
+% cat mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+shor
+t main[] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019,   3055,
+
+      0,  12800,   -113,  21119,  21207,  -1006, -7151,      0,
+
+   1212, 020004,  14880,  10541,   2056,  04010,  4548,   3044,
+
+  -6716,      9,   4407,      6,   5568,      1, -30460,     0,
+
+      9,   5570,    512, -30419,  32386,   0760,      6,     0,
+
+      4,  02400,     15,      0,      4,   1280,      4,     0,
+
+      4,      0,      0,      0,      8,      0,      4,     0,
+
+    ',',      0,     12,      0,      4,      0,     35,     0,
+
+   020,       0,      4,      0,     30,      0,    026,     0,
+
+  24950,    120,  25712,    'p', 072163,    'r',  29303, 29801,
+
+    'e'
+
+};
+
+% % 
+% 
+% cc mullender.c
+4: Expression syntax
+4: External definition synt
+./a.outax
+20: Expression overflow
+% % stty erase '^h'
+./a.outstty: not found
+% 
+% ed mullender.c
+721
+
+?
+#######a
+
+/* Portable between VAX11 && PDP11 */
+
+short main[
+
+] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019, 0xbef,
+
+      0,  12800,   -113,  21119, 0x52d7,  -1006, -7151,     0,
+
+  0x4bc, 020004,  14880,  10541,   2056,  04010,  4548,  3044,
+
+  -6716,    0x9,   4407,      6,   5568,      1, -30460,    0,
+
+    0x9,   5570,    512, -30419, 0x7e82,   0760,     6,     0,
+
+      4, 02400,     15,      0,      4,   1280,     4,     0,
+
+      4,      0,      0,      0,    0x8,      0,     4,     0,
+
+    ',',      0,     12,      0,      4,      0,   '#',     0,
+
+   020,       0,      4,      0,     30,      0,   026,     0,
+
+ 0x6176,    120,  25712,    'p', 072163,    'r', 29303, 29801,
+
+   'e'
+
+};
+
+>#.
+
+?
+w
+1430
+
+?
+q
+% 
+% cat mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+shor
+t main[] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019,   3055,
+
+      0,  12800,   -113,  21119,  21207,  -1006, -7151,      0,
+
+   1212, 020004,  14880,  10541,   2056,  04010,  4548,   3044,
+
+  -6716,      9,   4407,      6,   5568,      1, -30460,     0,
+
+      9,   5570,    512, -30419,  32386,   0760,      6,     0,
+
+      4,  02400,     15,      0,      4,   1280,      4,     0,
+
+      4,      0,      0,      0,      8,      0,      4,     0,
+
+    ',',      0,     12,      0,      4,      0,     35,     0,
+
+   020,       0,      4,      0,     30,      0,    026,     0,
+
+  24950,    120,  25712,    'p', 072163,    'r',  29303, 29801,
+
+    'e'
+
+};
+
+
+/* Portable between VAX11 && PDP11 */
+
+short main[
+
+] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019, 0xbef,
+
+      0,  12800,   -113,  21119, 0x52d7,  -1006, -7151,     0,
+
+  0x4bc, 020004,  14880,  10541,   2056,  04010,  4548,  3044,
+
+  -6716,    0x9,   4407,      6,   5568,      1, -30460,    0,
+
+    0x9,   5570,    512, -30419, 0x7e82,   0760,     6,     0,
+
+      4, 02400,     15,      0,      4,   1280,     4,     0,
+
+      4,      0,      0,      0,    0x8,      0,     4,     0,
+
+    ',',      0,     12,      0,      4,      0,   ',     0,
+
+   020,       0,      4,      0,     30,      0,   026,     0,
+
+ 0x6176,    120,  25712,    'p', 072163,    'r', 29303, 29801,
+
+   'e'
+
+};
+
+% % cc mullender.c
+4: Expression syntax
+4: External definition synt
+./a.outax
+20: Expression overflow
+% % 
+./a.out: not found
+% 
+% 
+% 
+% rm mullender.c
+% 
+% stty erase '^h'
+unknown mode: erase
+unknown mode: ^h
+
+% cat > mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+short main[
+
+] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019, 0xbef,
+
+      0,  12800,   -113,  21119, 0x52d7,  -1006, -7151,     0,
+
+  0x4bc, 020004,  14880,  10541,   2056,  04010,  4548,  3044,
+
+  -6716,    0x9,   4407,      6,   5568,      1, -30460,    0,
+
+    0x9,   5570,    512, -30419, 0x7e82,   0760,     6,     0,
+
+      4, 02400,     15,      0,      4,   1280,     4,     0,
+
+      4,      0,      0,      0,    0x8,      0,     4,     0,
+
+    ',',      0,     12,      0,      4,      0,   '#',     0,
+
+   020,       0,      4,      0,     30,      0,   026,     0,
+
+ 0x6176,    120,  25712,    'p', 072163,    'r', 29303, 29801,
+
+   'e'
+
+};
+
+% cat mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+shor
+t main[
+
+] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019, 0xbef,
+
+      0,  12800,   -113,  21119, 0x52d7,  -1006, -7151,     0,
+
+  0x4bc, 020004,  14880,  10541,   2056,  04010,  4548,  3044,
+
+  -6716,    0x9,   4407,      6,   5568,      1, -30460,    0,
+
+    0x9,   5570,    512, -30419, 0x7e82,   0760,     6,     0,
+
+      4, 02400,     15,      0,      4,   1280,     4,     0,
+
+      4,      0,      0,      0,    0x8,      0,     4,     0,
+
+    ',',      0,     12,      0,      4,      0,   ',     0,
+
+   020,       0,      4,      0,     30,      0,   026,     0,
+
+ 0x6176,    120,  25712,    'p', 072163,    'r', 29303, 29801,
+
+   'e'
+
+};
+
+% % cc mullender.c
+6: Expression syntax
+6: External definition synt
+./a.outax
+8: Expression syntax
+22: Nonterminated string
+22: Long character constant
+30: Statement syntax
+32: Unexpected EOF
+32: Missing '}'
+32: xbef undefined
+32: x6176 undefined
+32: x4bc undefined
+32: x8 undefined
+32: x9 undefined
+32: x52d7 undefined
+32: x7e82 undefined
+% % pwd
+./a.outpwd: not found
+% 
+% 
+% 
+% pwd
+../usr/amitb
+% 
+% ls
+mullender.c
+% 
+% rm -f mullender.c a.out
+a.out: non existent
+% 
+% cat > mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+short main[] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019,   3055,
+
+      0,  12800,   -113,  21119,  21207,  -1006, -7151,      0,
+
+   1212, 020004,  14880,  10541,   2056,  04010,  4548,   3044,
+
+  -6716,      9,   4407,      6,   5568,      1, -30460,     0,
+
+      9,   5570,    512, -30419,  32386,   0760,      6,     0,
+
+      4,  02400,     15,      0,      4,   1280,      4,     0,
+
+      4,      0,      0,      0,      8,      0,      4,     0,
+
+    ',',      0,     12,      0,      4,      0,     35,     0,
+
+   020,       0,      4,      0,     30,      0,    026,     0,
+
+  24950,    120,  25712,    'p', 072163,    'r',  29303, 29801,
+
+    'e'
+
+};
+
+% 
+% 
+% cc mullender.c
+4: Expression syntax
+4: External definition synt
+./a.outax
+20: Expression overflow
+% % cat mullender.c
+./a.outcat: not found
+% 
+% cat mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+shor
+t main[] = {
+
+    277,  04735,  -4129,     25,      0,    477,  1019,   3055,
+
+      0,  12800,   -113,  21119,  21207,  -1006, -7151,      0,
+
+   1212, 020004,  14880,  10541,   2056,  04010,  4548,   3044,
+
+  -6716,      9,   4407,      6,   5568,      1, -30460,     0,
+
+      9,   5570,    512, -30419,  32386,   0760,      6,     0,
+
+      4,  02400,     15,      0,      4,   1280,      4,     0,
+
+      4,      0,      0,      0,      8,      0,      4,     0,
+
+    ',',      0,     12,      0,      4,      0,     35,     0,
+
+   020,       0,      4,      0,     30,      0,    026,     0,
+
+  24950,    120,  25712,    'p', 072163,    'r',  29303, 29801,
+
+    'e'
+
+};
+
+% % rm -f mullender.c a.out
+a.out: non existent
+% 
+% cp /usr/thalia/mullender.c .
+% 
+% cc mullender.c
+2: Expression syntax
+2: External definition synt
+./a.outax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% % 
+./a.out: not found
+% 
+% ed mullender.c
+469
+
+?
+1,$d
+
+?
+a
+
+/* Portable between VAX11 && PDP11 */
+
+short main[] = {
+
+        277, 04735, -4129, 25,
+
+      0, 477, 1019, 0xbef, 0,
+
+    12800,  -113,  21119,  0x52d7,
+
+   -1006,  -7151,      0,   0x4bc,
+
+   020004, 14880,  10541,    2056,
+
+   04010,   4548,   3044,   -6716,
+
+    0x9,    4407,      6,    5568,
+
+      1,  -30460,      0,     0x9,
+
+     5570,   512, -30419,  0x7e82,
+
+     0760,     6,      0,       4,
+
+    02400,    15,      0,       4,
+
+    1280,      4,      0,       4,
+
+      0,       0,      0,     0x8,
+
+      0,       4,      0,     ',',
+
+      0,      12,      0,       4,
+
+      0,     '#',      0,    020,
+
+      0,       4,      0,      30,
+
+      0,    026,       0,  0x6176,
+
+    120,   25712,    'p',  072163,
+
+      'r', 29303,  29801,     'e'
+
+};
+
+.
+
+?
+w
+769
+
+?
+q
+% 
+% 
+% 
+% cc mullender.c
+4: Expression syntax
+4: External definition synt
+./a.outax
+8: Expression syntax
+36: Nonterminated string
+36: Long character constant
+46: Statement syntax
+48: Unexpected EOF
+48: Missing '}'
+48: xbef undefined
+48: x6176 undefined
+48: x4bc undefined
+48: x8 undefined
+48: x9 undefined
+48: x52d7 undefined
+48: x7e82 undefined
+% % stty erase '^h'
+./a.outstty: not found
+% 
+% rm -f mullender.c a.out
+a.out: non existent
+% 
+% cp /usr/thalia/mullender.c .
+% 
+% cc mullender.c
+2: Expression syntax
+2: External definition synt
+./a.outax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% % sed -e 's/, /,/g' -e 's/{ /{\
+syntax error
+% 
+% /' mullender.c > temp.c
+syntax error
+% 
+% rm -f mullender.c a.out
+a.out: non existent
+% 
+% cat > mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+short main[] = {
+
+        277, 04735, -4129, 25, 0,
+
+    477, 1019, 3055, 0, 12800, -113,
+
+  21119, 21207, -1006, -7151, 0, 1212,
+
+ 020004, 14880,               10541,
+
+ 2056, 04010,                 4548,
+
+ 3044, -6716,                 9, 4407,
+
+ 6, 5568,                     1,
+
+ -30460, 0,                   9, 5570,
+
+ 512, -30419,                 32386,
+
+ 0760, 6, 0, 4, 02400, 15, 0, 4, 1280,
+
+  4, 0, 4, 0, 0, 0, 8, 0, 4, 0, 44,
+
+   0, 12, 0, 4, 0, 35, 0, 020, 0, 4,
+
+    0, 30, 0, 026, 0, 24950, 120,
+
+      25712, 112, 072163, 114,
+
+          29303, 29801, 101
+
+};
+
+% 
+% 
+% cat mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+shor
+t main[] = {
+
+        277, 04735, -4129, 25, 0,
+
+    477, 1019, 3055, 0, 12800, -113,
+
+  21119, 21207, -1006, -7151, 0, 1212,
+
+ 020004, 14880,               10541,
+
+ 2056, 04010,                 4548,
+
+ 3044, -6716,                 9, 4407,
+
+ 6, 5568,                     1,
+
+ -30460, 0,                   9, 5570,
+
+ 512, -30419,                 32386,
+
+ 0760, 6, 0, 4, 02400, 15, 0, 4, 1280,
+
+  4, 0, 4, 0, 0, 0, 8, 0, 4, 0, 44,
+
+   0, 12, 0, 4, 0, 35, 0, 020, 0, 4,
+
+    0, 30, 0, 026, 0, 24950, 120,
+
+      25712, 112, 072163, 114,
+
+          29303, 29801, 101
+
+};
+
+% % cc mullender.c
+4: Expression syntax
+4: External definition synt
+./a.outax
+26: Expression overflow
+% % rm -f mullender.c a.out
+./a.outrm: not found
+% 
+% cat > mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+short main[] = {
+
+      277,  04735, -4129,     25,      0,
+
+    477, 1019, 05757, 0, 12800, -113, 21119,
+
+   051327, -1006, -7151,  0, 02274, 020004,
+
+14880,  10541,              2056,  04010,
+
+   4548,   3044,               -6716,     9,
+
+   4407,      6,               5568,      1,
+
+   -30460,    0,               9,      5570,
+
+512,  -30419,  077202, 0760, 6, 0, 4,
+
+    02400, 15, 0, 4, 1280, 4, 0, 4, 0, 0,
+
+     0, 8, 0, 4, 0, 44, 0, 12, 0, 4, 0,
+
+      35, 0, 020, 0, 4, 0, 30, 0, 026,
+
+        0, 060566, 120, 25712, 112,
+
+           072163, 114, 29303,
+
+               29801, 101
+
+};
+
+% 
+% 
+% cat mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+shor
+t main[] = {
+
+      277,  04735, -4129,     25,      0,
+
+    477, 1019, 05757, 0, 12800, -113, 21119,
+
+   051327, -1006, -7151,  0, 02274, 020004,
+
+14880,  10541,              2056,  04010,
+
+   4548,   3044,               -6716,     9,
+
+   4407,      6,               5568,      1,
+
+   -30460,    0,               9,      5570,
+
+512,  -30419,  077202, 0760, 6, 0, 4,
+
+    02400, 15, 0, 4, 1280, 4, 0, 4, 0, 0,
+
+     0, 8, 0, 4, 0, 44, 0, 12, 0, 4, 0,
+
+      35, 0, 020, 0, 4, 0, 30, 0, 026,
+
+        0, 060566, 120, 25712, 112,
+
+           072163, 114, 29303,
+
+               29801, 101
+
+};
+
+% % cc mullender.c
+4: Expression syntax
+4: External definition synt
+./a.outax
+24: Expression overflow
+% % cat mullender.c
+./a.outcat: not found
+% 
+% ls
+mullender.c
+% 
+% cat mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+shor
+t main[] = {
+
+      277,  04735, -4129,     25,      0,
+
+    477, 1019, 05757, 0, 12800, -113, 21119,
+
+   051327, -1006, -7151,  0, 02274, 020004,
+
+14880,  10541,              2056,  04010,
+
+   4548,   3044,               -6716,     9,
+
+   4407,      6,               5568,      1,
+
+   -30460,    0,               9,      5570,
+
+512,  -30419,  077202, 0760, 6, 0, 4,
+
+    02400, 15, 0, 4, 1280, 4, 0, 4, 0, 0,
+
+     0, 8, 0, 4, 0, 44, 0, 12, 0, 4, 0,
+
+      35, 0, 020, 0, 4, 0, 30, 0, 026,
+
+        0, 060566, 120, 25712, 112,
+
+           072163, 114, 29303,
+
+               29801, 101
+
+};
+
+% % 
+% 
+% 
+% 
+% ed mullender.c
+636
+
+?
+a
+
+w
+
+q
+
+
+
+
+
+% 
+% 
+% rm -f mullender.c a.out
+a.out: non existent
+% 
+% cat > mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+short
+
+main[] = {
+
+277,
+
+04735,
+
+-4129,
+
+25,
+
+0,
+
+477,
+
+1019,
+
+05757,
+
+0,
+
+12800,
+
+-113,
+
+21119,
+
+051327,
+
+-1006,
+
+-7151,
+
+0,
+
+02274,
+
+020004,
+
+14880,
+
+10541,
+
+2056,
+
+04010,
+
+4548,
+
+3044,
+
+-6716,
+
+9,
+
+4407,
+
+6,
+
+5568,
+
+1,
+
+-30460,
+
+0,
+
+9,
+
+5570,
+
+512,
+
+-30419,
+
+077202,
+
+0760,
+
+6,
+
+0,
+
+4,
+
+02400,
+
+15,
+
+0,
+
+4,
+
+1280,
+
+4,
+
+0,
+
+4,
+
+0,
+
+0,
+
+0,
+
+8,
+
+0,
+
+4,
+
+0,
+
+44,
+
+0,
+
+12,
+
+0,
+
+4,
+
+0,
+
+35,
+
+0,
+
+020,
+
+0,
+
+4,
+
+0,
+
+30,
+
+0,
+
+026,
+
+0,
+
+060566,
+
+120,
+
+25712,
+
+112,
+
+072163,
+
+114,
+
+29303,
+
+29801,
+
+101
+
+};
+
+% 
+% 
+% cc mullender.c
+6: Expression syntax
+6: External definition synt
+./a.outax
+120: Expression overflow
+% % 
+./a.out: not found
+% 
+% cat mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+shor
+t
+
+main[] = {
+
+277,
+
+04735,
+
+-4129,
+
+25,
+
+0,
+
+477,
+
+1019,
+
+05757,
+
+0,
+
+12800,
+
+-113,
+
+21119,
+
+051327,
+
+-1006,
+
+-7151,
+
+0,
+
+02274,
+
+020004,
+
+14880,
+
+10541,
+
+2056,
+
+04010,
+
+4548,
+
+3044,
+
+-6716,
+
+9,
+
+4407,
+
+6,
+
+5568,
+
+1,
+
+-30460,
+
+0,
+
+9,
+
+5570,
+
+512,
+
+-30419,
+
+077202,
+
+0760,
+
+6,
+
+0,
+
+4,
+
+02400,
+
+15,
+
+0,
+
+4,
+
+1280,
+
+4,
+
+0,
+
+4,
+
+0,
+
+0,
+
+0,
+
+8,
+
+0,
+
+4,
+
+0,
+
+44,
+
+0,
+
+12,
+
+0,
+
+4,
+
+0,
+
+35,
+
+0,
+
+020,
+
+0,
+
+4,
+
+0,
+
+30,
+
+0,
+
+026,
+
+0,
+
+060566,
+
+120,
+
+25712,
+
+112,
+
+072163,
+
+114,
+
+29303,
+
+29801,
+
+101
+
+};
+
+% % cc mullender.c
+6: Expression syntax
+6: External definition synt
+./a.outax
+120: Expression overflow
+% % rm -f mullender.c a.out
+./a.outrm: not found
+% 
+% ls
+mullender.c
+% 
+% cat > mullender.c
+
+main[] = {
+
+        277, 04735, -4129, 25, 0,
+
+    477, 1019, 3055, 0, 12800, -113,
+
+  21119, 21207, -1006, -7151, 0, 1212,
+
+ 020004, 14880,               10541,
+
+ 2056, 04010,                 4548,
+
+ 3044, -6716,                 9, 4407,
+
+ 6, 5568,                     1,
+
+ -30460, 0,                   9, 5570,
+
+ 512, -30419,                 32386,
+
+ 0760, 6, 0, 4, 02400, 15, 0, 4, 1280,
+
+  4, 0, 4, 0, 0, 0, 8, 0, 4, 0, 44,
+
+   0, 12, 0, 4, 0, 35, 0, 020, 0, 4,
+
+    0, 30, 0, 026, 0, 24950, 120,
+
+      25712, 112, 072163, 114,
+
+          29303, 29801, 101
+
+};
+
+% 
+% 
+% cat mullender.c
+
+main[] = {
+
+        277, 04735, -4129, 25, 
+0,
+
+    477, 1019, 3055, 0, 12800, -113,
+
+  21119, 21207, -1006, -7151, 0, 1212,
+
+ 020004, 14880,               10541,
+
+ 2056, 04010,                 4548,
+
+ 3044, -6716,                 9, 4407,
+
+ 6, 5568,                     1,
+
+ -30460, 0,                   9, 5570,
+
+ 512, -30419,                 32386,
+
+ 0760, 6, 0, 4, 02400, 15, 0, 4, 1280,
+
+  4, 0, 4, 0, 0, 0, 8, 0, 4, 0, 44,
+
+   0, 12, 0, 4, 0, 35, 0, 020, 0, 4,
+
+    0, 30, 0, 026, 0, 24950, 120,
+
+      25712, 112, 072163, 114,
+
+          29303, 29801, 101
+
+};
+
+% % cc mullender.c
+2: Expression syntax
+2: External definition synt
+./a.outax
+24: Expression overflow
+% % rm -f mullender.c a.out
+./a.outrm: not found
+% 
+% cat > mullender.c
+
+int main[] = {
+
+        277, 04735, -4129, 25, 0,
+
+    477, 1019, 3055, 0, 12800, -113,
+
+  21119, 21207, -1006, -7151, 0, 1212,
+
+ 020004, 14880,               10541,
+
+ 2056, 04010,                 4548,
+
+ 3044, -6716,                 9, 4407,
+
+ 6, 5568,                     1,
+
+ -30460, 0,                   9, 5570,
+
+ 512, -30419,                 32386,
+
+ 0760, 6, 0, 4, 02400, 15, 0, 4, 1280,
+
+  4, 0, 4, 0, 0, 0, 8, 0, 4, 0, 44,
+
+   0, 12, 0, 4, 0, 35, 0, 020, 0, 4,
+
+    0, 30, 0, 026, 0, 24950, 120,
+
+      25712, 112, 072163, 114,
+
+          29303, 29801, 101
+
+};
+
+% 
+% 
+% cat mullender.c
+
+int main[] = {
+
+        277, 04735, -4129, 
+25, 0,
+
+    477, 1019, 3055, 0, 12800, -113,
+
+  21119, 21207, -1006, -7151, 0, 1212,
+
+ 020004, 14880,               10541,
+
+ 2056, 04010,                 4548,
+
+ 3044, -6716,                 9, 4407,
+
+ 6, 5568,                     1,
+
+ -30460, 0,                   9, 5570,
+
+ 512, -30419,                 32386,
+
+ 0760, 6, 0, 4, 02400, 15, 0, 4, 1280,
+
+  4, 0, 4, 0, 0, 0, 8, 0, 4, 0, 44,
+
+   0, 12, 0, 4, 0, 35, 0, 020, 0, 4,
+
+    0, 30, 0, 026, 0, 24950, 120,
+
+      25712, 112, 072163, 114,
+
+          29303, 29801, 101
+
+};
+
+% % cc mullender.c
+2: Expression syntax
+2: External definition synt
+./a.outax
+24: Expression overflow
+% % rm -f mullender.c a.out
+./a.outrm: not found
+% 
+% cat > mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+int main[81] = {
+
+        277, 04735, -4129, 25, 0,
+
+    477, 1019, 3055, 0, 12800, -113,
+
+  21119, 21207, -1006, -7151, 0, 1212,
+
+ 020004, 14880,               10541,
+
+ 2056, 04010,                 4548,
+
+ 3044, -6716,                 9, 4407,
+
+ 6, 5568,                     1,
+
+ -30460, 0,                   9, 5570,
+
+ 512, -30419,                 32386,
+
+ 0760, 6, 0, 4, 02400, 15, 0, 4, 1280,
+
+  4, 0, 4, 0, 0, 0, 8, 0, 4, 0, 44,
+
+   0, 12, 0, 4, 0, 35, 0, 020, 0, 4,
+
+    0, 30, 0, 026, 0, 24950, 120,
+
+      25712, 112, 072163, 114,
+
+          29303, 29801, 101
+
+};
+
+% 
+% 
+% cc mullender.c
+4: Expression syntax
+4: External definition synt
+./a.outax
+26: Expression overflow
+% % rm -f mullender.c a.out
+./a.outrm: not found
+% 
+% rm -f mullender.c a.out
+a.out: non existent
+% 
+% cat > mullender.c
+
+/* Portable between VAX11 && PDP11 */
+
+int main[] {
+
+        277, 04735, -4129, 25, 0,
+
+    477, 1019, 3055, 0, 12800, -113,
+
+  21119, 21207, -1006, -7151, 0, 1212,
+
+ 020004, 14880,               10541,
+
+ 2056, 04010,                 4548,
+
+ 3044, -6716,                 9, 4407,
+
+ 6, 5568,                     1,
+
+ -30460, 0,                   9, 5570,
+
+ 512, -30419,                 32386,
+
+ 0760, 6, 0, 4, 02400, 15, 0, 4, 1280,
+
+  4, 0, 4, 0, 0, 0, 8, 0, 4, 0, 44,
+
+   0, 12, 0, 4, 0, 35, 0, 020, 0, 4,
+
+    0, 30, 0, 026, 0, 24950, 120,
+
+      25712, 112, 072163, 114,
+
+          29303, 29801, 101
+
+};
+
+% 
+% 
+% 
+% 
+% cc mullender.c
+
+.% % /a.out
+  :-)Bad system call -- Core dumped
+% 
+% cc -N mullender.c
+
+.% % /a.out
+  :-)Bad system call -- Core dumped
+% 
+% cat /etc/motd
+% 
+% uname -a
+uname: not found
+% 
+% strings /unix | head -10
+head: not foundstrings: not fo
+und
+% 
+% 
+% 
+% 
+% 
+% cc mullender.c
+
+.% % /a.out
+  :-)Bad system call -- Core dumped
+% 
+% 

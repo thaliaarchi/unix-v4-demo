@@ -14,7 +14,8 @@ k
 unix
 mem = 64525
 
-;login: hello
+
+;login: hello
 Login incorrect.
 Name: thalia
 % 
@@ -38,7 +39,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % hello
 hello: not found
 % world
@@ -71,7 +73,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % date 08180223
 Sun Aug 18 02:23:00 MDT 1974
 % ls
@@ -1791,7 +1794,8 @@ k
 unix
 mem = 64525
 
-;login: se
+
+;login: se
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> set tc enabled
 sim> set tc disabled
@@ -1894,7 +1898,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % ed rfc4
 ?
 a
@@ -1957,18 +1962,23 @@ Category: Informational                                    24 March 1969
                |   .
                |     .
                |       |            
-       8b1  All of 6
+       8b1  All of 6
+
        8b UTAH has access to UCLAems
 
-   9a  Single user access  From host
+   9a  Single user access
+  From host
 
-         9b1a  A,C to Bb3  Vaor mes   9g  File uivalent
+         9b1a  A,C to B
+b3  Vaor mes   9g  File uivalent
 
 10  Run simple typewriter systems
 
-   10a  Same as 9c - 9gthout local feedba
+   10a  Same as 9c - 9g
+thout local feedba
    14a  Fault detection
-of result
+
+of result
 
        14a3  Comparison wit  14b1  Comm-Imp cb5a  Use dialup Daned messages
 
@@ -2106,9 +2116,11 @@ k
 unix
 mem = 64525
 
-;login: root
+
+;login: root
 # 
-;login: [A
+
+;login: [A
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
@@ -2131,7 +2143,8 @@ k
 unix
 mem = 64525
 
-;login: root
+
+;login: root
 # chdir /dev
 # ls
 kmem
@@ -2367,7 +2380,8 @@ ttyv
 # chdir 
 chdir: arg count
 # 
-;login: tjhalia
+
+;login: tjhalia
 Login incorrect.
 Name: thalia
 % 
@@ -2679,11 +2693,13 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % q
 q: not found
 % 
-;login: root
+
+;login: root
 # 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> at tc1 nroff.tp
@@ -2717,7 +2733,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> att tc1 sys.tp
 TC1: 16b format, buffering file in memory
@@ -2727,9 +2744,11 @@ LOGIN INCORRECT.
 NAME: CHDIR /USR/SYS
 LOGIN INCORRECT.
 NAME: 
-;login: thalia
+
+;login: thalia
 % 
-;login: root
+
+;login: root
 # chdir /usr/sys
 # tp 1t
 Tape read error
@@ -2757,7 +2776,8 @@ k
 unix
 mem = 64530
 
-;login: root
+
+;login: root
 # 
 Simulation stopped, PC: 002040 (MOV (SP)+,177776)
 sim> att tc1 sys.tp
@@ -2792,7 +2812,8 @@ k
 unix
 mem = 64530
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 002040 (MOV (SP)+,177776)
 sim> att tc1 sys.tp
 TC1: 16b format, buffering file in memory
@@ -2824,7 +2845,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % crypt
 crypt: not found
 % /etc/crypt
@@ -2865,7 +2887,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
@@ -2877,7 +2900,8 @@ k
 unix
 mem = 64525
 
-;login: thaliahello world
+
+;login: thaliahello world
 Login incorrect.
 Name: this is nice
 Login incorrect.
@@ -2895,7 +2919,8 @@ k
 unix
 mem = 64525
 
-;login: e
+
+;login: e
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> c
 
@@ -2916,7 +2941,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 Logging to file "logs/kl0.log"
 Logging to file "logs/kl0.log" at Tue Aug 18 02:19:06 2026
@@ -2925,12 +2951,14 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 LOGIN INCORRECT.
 NAME: 
 LOGIN INCORRECT.
 NAME: 
-;login: 
+
+;login: 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 Logging to file "logs/kl0.log"
 Logging to file "logs/kl0.log" at Tue Aug 18 02:23:38 2026
@@ -2939,14 +2967,16 @@ k
 unix
 mem = 64525
 
-;login: Logging to file "logs/kl0.log"
+
+;login: Logging to file "logs/kl0.log"
 Logging to file "logs/kl0.log" at Tue Aug 18 07:20:47 2026
 
 k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 001070 (MOV 177776,-(SP))
 sim> exit
 Goodbye
@@ -2958,14 +2988,16 @@ k
 unix
 mem = 64525
 
-;login: Logging to file "logs/kl0.log"
+
+;login: Logging to file "logs/kl0.log"
 Logging to file "logs/kl0.log" at Tue Aug 18 07:52:09 2026
 
 k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 001070 (MOV 177776,-(SP))
 sim> exit
 Goodbye
@@ -2977,7 +3009,8 @@ k
 unix
 mem = 64525
 
-;login: root
+
+;login: root
 # ls
 bin
 dev
@@ -3008,7 +3041,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % ls
 hints
 mullender.c
@@ -3028,7 +3062,8 @@ w
 ?
 q
 % 
-;login: root
+
+;login: root
 # d /usr/@ed /etc/passwd
 56
 a
@@ -3245,7 +3280,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 Logging to file "logs/kl0.log"
 Logging to file "logs/kl0.log" at Tue Aug 18 10:38:35 2026
@@ -3254,7 +3290,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> c
 
@@ -3264,7 +3301,8 @@ k
 unix
 mem = 64525
 
-;login: rioot
+
+;login: rioot
 Login incorrect.
 Name: root
 # ed /etc/passwd
@@ -3280,9 +3318,11 @@ w
 !
 q
 # 
-;login: michael
+
+;login: michael
 % 
-;login: root
+
+;login: root
 # sync
 # ed /usr/####etc/passwd
 304
@@ -3311,7 +3351,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % /#cata /@cat /etc/passwd
 root::0:1::/:
 bin::3:1::/bin:
@@ -3822,7 +3863,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 001070 (MOV 177776,-(SP))
 sim> examine 1070
 1070:	016746
@@ -4033,3 +4075,55 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 16:05:48 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 16:06:56 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 16:08:02 2026
+
+k
+unix
+mem = 64525
+
+;login: Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Tue Aug 18 16:14:45 2026
+
+k
+unix
+mem = 64525
+
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> examine 12
+12:	000341
+sim> cont
+
+LOGIN INCORRECT.
+NAME: 
+LOGIN INCORRECT.
+NAME: 
+;login: root
+# sync
+# sync
+# 
