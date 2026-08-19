@@ -3384,3 +3384,142 @@ p
 	'p', 072163, 'r', 29303, 29801, 'e' };
 2
 short main[] = {
+hi
+q
+% write root
+Message from root...
+
+hi
+heyyyyyy
+who are you
+idk
+asl?
+si
+wannacyber?
+sure
+EOT
+
+q
+% pwd
+../usr/dominic
+% cd ../thalia/games
+cd: not found
+% chdir ../usr/games;#
+chdir: bad directory
+% chdir ../games
+% ./moo
+MOO
+new game
+? 1111
+bad guess
+? 4321
+1 bulls; 1 cows
+? 4123
+1 bulls; 1 cows
+? 1234
+0 bulls; 2 cows
+? 4231
+1 bulls; 1 cows
+? q
+bad guess
+? 
+% 
+% 
+% cd
+cd: not found
+% 
+;login: bin
+% chdr @chdir /usr/source/s2
+% ls
+mail.c
+mesg.s
+mkdir.s
+mkfs.c
+mknod.c
+mount.c
+msh.s
+mv.c
+nice.c
+nm.c
+nohup.c
+od.c
+passwd.s
+pfe.s
+pr.c
+prof.c
+ps.c
+pwd.c
+restor.c
+rew.s
+rm.c
+rmdir.s
+sa.c
+sh.c
+size.c
+sleep.c
+sort.c
+split.c
+strip.s
+stty.c
+su.c
+sum.s
+sync.c
+tee.c
+time.s
+tp1.s
+tp2.s
+tp3.s
+tp4.s
+tr.c
+tty.s
+typo.c
+umount.c
+uniq.c
+update.s
+wc.c
+who.c
+write.s
+% ed sh.c
+10209
+/chdir/;.+10p
+		if(equal(cp1, "chdir")) {
+			if(t[dcom+1] != 0) {
+				if(chdir(t[dcom+1]) < 0)
+					err("chdir: bad directory");
+			} else
+				err("chdir: arg count");
+			return;
+		}
+		if(equal(cp1, "shift")) {
+			if(dolc < 1) {
+				prs("shift: no args\n");
+!stty -tabs
+!
+/chdir/;.+10p
+                if(equal(cp1, "chdir")) {
+                        if(t[dcom+1] != 0) {
+                                if(chdir(t[dcom+1]) < 0)
+                                        err("chdir: bad directory");
+                        } else
+                                err("chdir: arg count");
+                        return;
+                }
+                if(equal(cp1, "shift")) {
+                        if(dolc < 1) {
+                                prs("shift: no args\n");
+.
+                                prs("shift: no args\n");
+--
+?
+
+                                return;
+-
+?
+.-1
+                                prs("shift: no args\n");
+.-3
+                }
+a
+                if(equal(cp1, "cd")) {
+                        prs("haha\n");
+                        return

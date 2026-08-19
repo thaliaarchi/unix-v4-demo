@@ -58,3 +58,24 @@ Connected to the PDP-11 simulator DCI device, line 6
 ;login: root
 # sync
 # 
+# 
+;login: tjaloa@
+Login incorrect.
+Name: thalia
+% who
+dominic tty0 Aug 18 16:00
+jordan  tty1 Aug 18 16:48
+thalia  tty6 Aug 18 16:50
+root    tty8 Aug 18 16:31
+bx      ttyc Aug 18 14:51
+root    ttyi Aug 18 13:21
+kevin   ttym Aug 18 15:30
+voytillattyu Aug 18 13:49
+amitb   ttyv Aug 18 13:39
+% cat > /dw#ev/tty1
+hello
+how
+are
+you
+% sync
+% 
