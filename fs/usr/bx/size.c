@@ -1,3 +1,4 @@
 main () {
-printf("%d", sizeof(int));
+int i;
+printf("%d", sizeof int);
 }
