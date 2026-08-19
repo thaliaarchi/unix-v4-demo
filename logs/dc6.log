@@ -79,4 +79,27 @@ are
 you
 % sync
 % sync
+% cd
+cd: not found
+% 
+;login: thalia
+% cd
+haha
+% who
+bin     tty0 Aug 18 16:55
+jordan  tty1 Aug 18 16:48
+thalia  tty6 Aug 18 17:11
+root    tty8 Aug 18 16:31
+bx      ttyc Aug 18 14:51
+root    ttyi Aug 18 13:21
+kevin   ttym Aug 18 15:30
+voytillattyu Aug 18 13:49
+amitb   ttyv Aug 18 13:39
+% ls
+hints
+lrc2026
+mullender.c
+rfc4
+thanks
+weirdsh
 % 

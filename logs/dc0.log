@@ -3553,4 +3553,210 @@ a.out
 haha
 % cd abc
 haha
+% % c@cd /usr/thalia
+cd: not found
+% cd@chdir /usr/thalia
+% ls
+hints
+lrc2026
+mullender.c
+rfc4
+thanks
+weirdsh
+% cp weirdsh /usr/alex
+% chdir /usr/alex
+% ls
+a.out
+core
+hello.c
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+rw.c
+weirdsh
+% ed weirdsh
+30
+1,$p
+ed
+e f
+a
+hello world
+.
+w
+q
+cd
+2d
+/w/s@/^w/s//w f/
+1,$p
+ed
+a
+hello world
+.
+w f
+q
+cd
+w
+28
+q
+% sh weirdsh
+12
+haha
+% ls
+a.out
+core
+f
+hello.c
+hint3b
+lrc
+mullender.c
+progs
+rfc4
+rw.c
+weirdsh
+% cat f
+hello world
+% chdir@
+;login: alex
 % 
+% chdir/usr#### /usr/sys
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% grep 
+arg count
+% grep "prs(" *.h
+% ls ken
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% chdir/# /usr/alex
+% whoami
+whoami: not found
+% ls /usr/thalia
+hints
+lrc2026
+mullender.c
+rfc4
+saturnv
+thanks
+weirdsh
+% cat /usr/thala#ia/saturnv
+                                   A
+                                   M
+                                   M
+                                   M
+                                   M
+                                   M
+                                   M
+                                   M
+                                  /M\
+                                 '[V]'
+                                  [A]
+                                 [,-']
+                                 [/"\]
+                                 / _ \
+                                / / | \
+                               / /_O_| \
+                              /______|__\
+                              |=_==_==_=|
+                              |  |   |  |
+                             V|  |.V.|__|V
+                             A|  |'A'| =|A
+                              |__|___|= |
+                              |__|___| =|
+                              |####|####|
+                             |    o|     |
+                             |     |     |
+                             |     |     |
+                            |      |      |
+                            |      |      |
+                            |      |      |
+                           |       |       |
+                           |       |       |
+                           |-------|-------|
+                          |        |        |
+                          |        |        |
+                          |___.____|____.___|
+                         |                   |
+                         |___________________|
+                        /|HH|      |HH][HHHHHI
+                        [|##|      |##][#####I
+                        [|##|      |#########I
+                        [|##|______|#######m#I
+                        [I|||||||||||||||||||I
+                        [I|||||||||||||||||||I
+                        [|                   |
+                        [|    H  H          H|
+                        [|    H  H          H|
+                        [|    \hdF          V|
+                        [|     `'            |
+                        [|    d##b          d|
+                        [|    #hn           #|
+                        [|     ""#          }|
+                        [|    \##/          V|
+                        [|                   |
+                        [|     dh           d|
+                        [|    d/\h          d|
+                        [|    H""H          H|
+                        [|    "  "          "|
+                        [|________.^.________|
+                        [I########[ ]########I
+                        [I###[]###[.]########I
+                        [I###|||||[_]####||||I
+                        [####II####|        n |
+                       /###########|         " \
+                       ############|           |
+                      /############|            \
+                      ######"######|            |
+                     /             |####### #####\
+                     |             |#######.######
+                    /              |##############\
+                    |              |###############
+                   /_______________|###############\
+                   I|||||||||||||||||||||||||||||||I
+                   I|||||||||||||||||||||||||||||||I
+                   I|||||||||||||||||||||||||||||||I
+                   I|||||||||||||||||||||||||||||||I
+                   |                               |
+                   |-------------------------------|
+                   |                               |
+                   | [                  U          |

@@ -1,59 +1,23 @@
-ardware loop test
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
 
-4  Imp installation 9/15/69
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
 
-   4a  from BBN get dimensional, power and cabling specifications
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
 
-   4b  SRI orders and installs a.c. power (coordinate with 2e)
-
-5  Debug host-Imp interface 10/1/69
-
-   5a  Get debug specifiations and procedures from BBN
-
-   5b  Write programs to debug with BBN
-
-       5b1  Transfers of test messages
-
-       5b2  Test procedures for crash and recovery
-
-       5b3  Check message fill and stripping procedures
-
-   5c Try own transfer tests
-
-       5c1  Verify tlco cable lengths
-
-   2c  Need to establish location and drops on voice coordination
-   circuits
-
-   2d  Need circuit information on voice drops for tie to intercom
-   system
-
-   2e  Need to order and install a.c. power (coordinate with 4b)
-
-   2f  See 16
-
-3  Design and construct host-Imp interface 9/1/69
-
-   3a  Need specifications from BBN
-
-   3b  Develop trial design
-
-   3c  Review with system programmers
-
-   3d  Establish final design
-
-   3e  Build and design hardware
-
-   3f  Debug trial software with hNetwork Working Group                                   Elmer B. Shapiro
-Request for Comment: 4                       Stanford Research Institute
-Category: Informational                                    24 March 1969
-
-
-                           Network Timetable
-
-
-1  (n10) network checkout
-
-2  Installation of communcation gear 8/1/69
-
-   2a  From AT&T an
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
