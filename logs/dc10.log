@@ -4467,3 +4467,6 @@ sys write;crt0.o;crt0.o+11
 _main+74
 /
 104404
+
+Disconnected from the PDP-11 simulator
+

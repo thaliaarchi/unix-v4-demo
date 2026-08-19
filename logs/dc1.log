@@ -8249,4 +8249,408 @@ q
 . 		if(equal(cp1, "alias")) {
 . 		}
 % rm sh.bak
+% ls
+mail.c
+mesg.s
+mkdir.s
+mkfs.c
+mknod.c
+mount.c
+msh.s
+mv.c
+nice.c
+nm.c
+nohup.c
+od.c
+passwd.s
+pfe.s
+pr.c
+prof.c
+ps.c
+pwd.c
+restor.c
+rew.s
+rm.c
+rmdir.s
+sa.c
+sh.alias
+sh.c
+size.c
+sleep.c
+sort.c
+split.c
+strip.s
+stty.c
+su.c
+sum.s
+sync.c
+tee.c
+time.s
+tp1.s
+tp2.s
+tp3.s
+tp4.s
+tr.c
+tty.s
+typo.c
+umount.c
+uniq.c
+update.s
+wc.c
+who.c
+write.s
+% chdir /usr/thalia
+% ed beeps.c
+?
+a
+main()
+{
+	PPQQRRchar buf[1024];
+	buf[0] = 7;
+	for (i = 0; i < 1024; i++) {
+		buf[i] = 0;
+	}
+	@.
+3
+	PPQQRRchar buf[1024];
+a
+	int i;
+.
+$
+	}
+a
+	for (i = 0; i < 10; i++) {
+		write(1, buf, n+1);
+	}
+.
+a
+}
+.
+1,23p
+?
+1,$p
+main()
+{
+	PPQQRRchar buf[1024];
+	int i;
+	buf[0] = 7;
+	for (i = 0; i < 1024; i++) {
+		buf[i] = 0;
+	}
+	for (i = 0; i < 10; i++) {
+		write(1, buf, n+1);
+	}
+}
+/int/
+	int i;
+c
+	int i, n = 100;
+.
+w
+?
+w
+?
+w
+?
+!pwd
+../usr/thalia
+!
+!who
+alex    tty0 Aug 18 17:24
+bin     tty1 Aug 18 17:21
+thalia  tty6 Aug 18 17:11
+thalia  tty8 Aug 18 17:18
+bx      ttyc Aug 18 14:51
+root    ttyi Aug 18 13:21
+kevin   ttym Aug 18 15:30
+voytillattyu Aug 18 13:49
+amitb   ttyv Aug 18 13:39
+!
+!ls -al .
+total 41
+drwxr-xr-x 3 thalia    144 Aug 18 17:44 .
+drwxr-xr-x32 bin       512 Aug 18 15:54 ..
+drwxr-xr-x 7 thalia    176 Aug 18 12:23 hints
+-rw-rw-rw- 1 thalia   1383 Aug 18 17:18 lrc2026
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia   5317 Aug 18 10:28 rfc4
+-rw-rw-rw- 1 thalia   9227 Aug 18 17:36 saturnv
+-rw-rw-rw- 1 thalia     25 Aug 18 11:08 thanks
+-rw-rw-rw- 1 thalia     30 Aug 18 17:16 weirdsh
+!
+!rm weirdsh
+weirdsh: not removed
+!
+w
+?
+w x
+?
+!cat lrc2026
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o888  o888o
+             888         888oooo88  888                  888  8  888
+             888      o  888  88o   888o     oo          888o8  o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88     888
+             888         888oooo88  888                        o888 
+             888      o  888  88o   888o     oo             o888   o
+            o888ooooo88 o888o  88o8  888oooo88           o8888oooo88
+
+            ooooo       oooooooooo    oooooooo8            ooooooo  
+             888         888    888 o888     88          o88        
+             888         888oooo88  888                  888888888o 
+             888      o  888  88o   888o     oo          88o    o888
+            o888ooooo88 o888o  88o8  888oooo88             88ooo88  
+!
+q
+% cd
+haha
+% chdir /
+% sl
+sl: not found
+% ls
+a.out
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% rm a.out
+% ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% chdir /usr{#/thalia
+% s#ls
+hints
+lrc2026
+mullender.c
+rfc4
+saturnv
+thanks
+weirdsh
+% rm weirdsh
+weirdsh: not removed
+% rm wei*
+weirdsh: not removed
+% ls -al
+total 41
+drwxr-xr-x 3 thalia    144 Aug 18 17:55 .
+drwxr-xr-x32 bin       512 Aug 18 15:54 ..
+drwxr-xr-x 7 thalia    176 Aug 18 12:23 hints
+-rw-rw-rw- 1 thalia   1383 Aug 18 17:18 lrc2026
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia   5317 Aug 18 10:28 rfc4
+-rw-rw-rw- 1 thalia   9227 Aug 18 17:36 saturnv
+-rw-rw-rw- 1 thalia     25 Aug 18 11:08 thanks
+-rw-rw-rw- 1 thalia     30 Aug 18 17:16 weirdsh
+% who
+alex    tty0 Aug 18 17:24
+bin     tty1 Aug 18 17:21
+thalia  tty6 Aug 18 17:11
+thalia  tty8 Aug 18 17:18
+bx      ttyc Aug 18 14:51
+root    ttyi Aug 18 13:21
+kevin   ttym Aug 18 15:30
+voytillattyu Aug 18 13:49
+amitb   ttyv Aug 18 13:39
 % 
+;login: eoor
+Login incorrect.
+Name: root
+# rm /usr/thalia/weirdsh
+# chdir /usr/thalia
+# ;ls
+hints
+lrc2026
+mullender.c
+rfc4
+saturnv
+t{hanks
+# ls
+{ls: not found
+# cat thanks
+thank_you
+from_darpa_dan
+# write @who
+alex    tty0 Aug 18 17:24
+root    tty1 Aug 18 17:56
+thalia  tty6 Aug 18 17:11
+thalia  tty8 Aug 18 17:18
+bx      ttyc Aug 18 14:51
+root    ttyi Aug 18 13:21
+kevin   ttym Aug 18 15:30
+voytillattyu Aug 18 13:49
+amitb   ttyv Aug 18 13:39
+# write alex
+hi
+how are you?
+GGGGGGG
+# WRITE ALEX
+WRITE: not found
+# write alex
+
+# chdir /usr/thalia
+# ed beeps.c
+?
+a
+main()
+{
+}
+.
+w
+11
+^
+{
+a
+	char buf[10000];
+	buf[0] = 7;
+	buf@	for(i = 0;i < 10000; i++) {
+		buf[i] =09## 0;
+	}
+.
+54
+?
+4
+	buf[0] = 7;
+i
+	int i;
+.
+/for/
+	for(i = 0;i < 10000; i++) {
+/for/s//for/# /p
+	for (i = 0;i < 10000; i++) {
+s/;/& /p
+	for (i = 0; i < 10000; i++) {
+w
+98
+1,$p
+main()
+{
+	char buf[10000];
+	int i;
+	buf[0] = 7;
+	for (i = 0; i < 10000; i++) {
+		buf[i] = 0;
+	}
+}
+^
+	}
+a
+	for(# (i = 0,.##, i##; i < 10; i++ )##) #
+		write(1, buf, 10000);
+.
+^
+	for (i = 0,; i < 10; i++)
+^
+	}
+
+	for (i = 0,; i < 10; i++)
+^
+	}
+^
+		buf[i] = 0;
+
+	}
+
+	for (i = 0,; i < 10; i++)
+s/,//p
+	for (i = 0; i < 10; i++)
+?for?
+	for (i = 0; i < 10000; i++) {
+??
+	for (i = 0; i < 10; i++)
+??
+	for (i = 0; i < 10000; i++) {
+s/0/1/p
+	for (i = 1; i < 10000; i++) {
+w
+148
+q
+# cc beeps./c##.c
+1: Can't find beeps..c
+# cc beps.c@cc beeps.c
+# c@a.out{#
+# a.out;a.out;a.out
+# ed beeps.c
+148
+1,$p
+main()
+{
+	char buf[10000];
+	int i;
+	buf[0] = 7;
+	for (i = 1; i < 10000; i++) {
+		buf[i] = 0;
+	}
+	for (i = 0; i < 10; i++)
+		write(1, buf, 10000);
+}
+3,$-1c
+	for (i  =##= 0; i < 10;l#;# i #++) {
+		write(1, "\007", 1);
+		sleep(1);
+	}
+.
+1,$p
+main()
+{
+	for (i = 0; i < 10; i++) {
+		write(1, "\007", 1);
+		sleep(1);
+	}
+}
+3
+	for (i = 0; i < 10; i++) {
+i
+	inti;## i;
+.
+1,$p
+main()
+{
+	int i;
+	for (i = 0; i < 10; i++) {
+		write(1, "\007", 1);
+		sleep(1);
+	}
+}
+w
+85
+q
+# cc beeps.c
+# a.out
+# ed beeps.c
+85
+/sleep/s/1/2/p
+		sleep(2);
+s@/10/s//100/p
+	for (i = 0; i < 100; i++) {
+w
+86
+q
+# cc beeps.c
+a# .out
+# a.out
+
+# sync
+# shutdown
+shutdown: not found
+# poweroff
+poweroff: not found
+# 

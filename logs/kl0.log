@@ -4449,4 +4449,9 @@ weirdsh
                    |###########|"""""""|###########|
                     """""""""""         """""""""""
 % sync
+% sync
 % 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
