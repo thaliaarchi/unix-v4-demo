@@ -508,6 +508,10 @@ int *t, *pf1, *pf2;
 				err("chdir: arg count");
 			return;
 		}
+		if(equal(cp1, "cd")) {
+			prs("haha\n");
+			return;
+		}
 		if(equal(cp1, "shift")) {
 			if(dolc < 1) {
 				prs("shift: no args\n");

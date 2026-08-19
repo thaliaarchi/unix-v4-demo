@@ -3523,3 +3523,34 @@ a
                 if(equal(cp1, "cd")) {
                         prs("haha\n");
                         return
+                }
+.
+p#.-2,.+1p
+                        prs("haha\n");
+                        return
+                }
+                if(equal(cp1, "shift")) {
+.-1
+                }
+.-1
+                        return
+s/$/;/
+p
+                        return;
+w
+10267
+q
+% pwd
+../usr/source/s2
+% mv /bin/sh /bin/sh.bak
+% cc@m@cp /bin/sh.bak /bin/sh
+% cc sh.c
+% ls a.out
+a.out
+% mv a.out /bin/sh
+% sh
+% cd
+haha
+% cd abc
+haha
+% 
