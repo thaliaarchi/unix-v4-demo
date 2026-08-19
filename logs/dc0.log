@@ -3360,4 +3360,27 @@ short main[] = {
 	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
 	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
 	'p', 072163, 'r', 29303, 29801, 'e' };
-% 
+% ed mullender.c
+469
+
+?
+
+?
+help
+?
+q
+% man m#ed
+man: not found
+% ed e @c @ cp mullender.c mull_back.c
+% ed mullender.c
+469
+e 
+?
+e mullender.c
+469
+f
+mullender.c
+p
+	'p', 072163, 'r', 29303, 29801, 'e' };
+2
+short main[] = {
