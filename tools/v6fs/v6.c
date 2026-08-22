@@ -113,6 +113,12 @@ DInode *diget(uint ino) {
 	return &dinodes[ino];
 }
 
+static int
+isalloc(DInode *ip)
+{
+	return ip->i_mode != 0;
+}
+
 void
 dumpino(uint ino)
 {
@@ -525,6 +531,8 @@ fs_open(uint ino, int flags)
 	ip = diget(ino);
 //printf("	opening ino%d %d\n", ino, ISIZE(ip)) ;
 //dumpino(ino);
+	if(!isalloc(ip))
+		return ENOENT;
 	if((ip->i_mode & IFMT) == IFDIR)
 		return EISDIR;
 //	if((flags & 3) != O_RDONLY)
@@ -537,6 +545,8 @@ fs_stat(uint ino, struct stat *stbuf)
 {
 	DInode *ip;
 	ip = diget(ino);
+	if(!isalloc(ip))
+		return -1;
 
 	stbuf->st_ino = ino;
 	if((ip->i_mode & IFMT) == IFDIR)
@@ -613,6 +623,8 @@ fs_read(uint ino, void *vdst, int offset, int len)
 	uint8 *dst;
 
 	ip = diget(ino);
+	if(!isalloc(ip))
+		return 0;
 	dst = vdst;
 	isize = ISIZE(ip);
 	if(offset + len > isize)
@@ -664,6 +676,8 @@ fs_write(uint ino, void *vsrc, int offset, int len)
 	uint8 *src;
 
 	ip = diget(ino);
+	if(!isalloc(ip))
+		return 0;
 	src = vsrc;
 	size = ISIZE(ip);
 	// TODO: make this better:
@@ -727,7 +741,7 @@ fs_readdir(uint ino)
 	offset = 0;
 	dp = des;
 	while(fs_read(ino, &de, offset, sizeof(Dirent)) == sizeof(Dirent)){
-		if(de.inode){
+		if(de.inode && isalloc(diget(de.inode))){
 			dp->d_ino = de.inode;
 			memcpy(dp->d_name, de.name, 14);
 			dp->d_name[14] = '\0';
