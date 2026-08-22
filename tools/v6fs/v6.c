@@ -553,8 +553,13 @@ fs_stat(uint ino, struct stat *stbuf)
 	if((ip->i_mode & IFMT) == IFCHR ||
 	   (ip->i_mode & IFMT) == IFBLK)
 		stbuf->st_rdev = makedev(ip->i_addr[0]>>8 & 0xFF, ip->i_addr[0]&0xFF);
-	stbuf->st_uid = ip->i_uid;
-	stbuf->st_gid = ip->i_gid;
+	if(fs_no_same_owner){
+		stbuf->st_uid = fs_owner_uid;
+		stbuf->st_gid = fs_owner_gid;
+	} else {
+		stbuf->st_uid = ip->i_uid;
+		stbuf->st_gid = ip->i_gid;
+	}
 	stbuf->st_atime = pdplong(ip->i_atime);
 	stbuf->st_mtime = pdplong(ip->i_mtime);
 

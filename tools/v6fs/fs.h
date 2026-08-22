@@ -34,6 +34,10 @@ typedef unsigned int uint;
 extern uint8 *fsdata;
 extern int fslen;
 
+extern int fs_no_same_owner;
+extern uid_t fs_owner_uid;
+extern gid_t fs_owner_gid;
+
 void panic(char *fmt, ...);
 void *emalloc(int size);
 FILE *mustopen(const char *name, const char *mode);

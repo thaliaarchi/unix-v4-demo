@@ -21,7 +21,7 @@ git rm -qrf --ignore-unmatch fs
 rm -rf fs mnt
 mkdir mnt
 
-tools/v6fs/v6fs -f -r disk.rk.mnt mnt &
+tools/v6fs/v6fs -f -r --no-same-owner disk.rk.mnt mnt &
 sleep 1
 
 mkdir fs

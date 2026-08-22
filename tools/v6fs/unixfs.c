@@ -9,6 +9,10 @@
 uint8 *fsdata;
 int fslen;
 
+int fs_no_same_owner;
+uid_t fs_owner_uid;
+gid_t fs_owner_gid;
+
 void
 panic(char *fmt, ...)
 {
@@ -48,6 +52,7 @@ struct Options
 	int foreground;
 	int debug;
 	int nodefault_subtype;
+	int no_same_owner;
 	char *device;
 	char *mountpoint;
 	int show_version;
@@ -75,6 +80,7 @@ static const struct fuse_opt myopts[] = {
 	OPTION("-f",		foreground),
 	OPTION("-s",		singlethread),
 	OPTION("-r",		readonly),
+	OPTION("--no-same-owner",	no_same_owner),
 	OPTION("clone_fd",	clone_fd),
 	OPTION("max_idle_threads=%u", max_idle_threads),
 	FUSE_OPT_END
@@ -111,6 +117,7 @@ usage(void)
 		"    -d   -o debug          enable debug output (implies -f)\n"
 		"    -f                     foreground operation\n"
 		"    -s                     disable multi-threaded operation\n"
+		"    --no-same-owner        report all files as owned by this user\n"
 		"    -o clone_fd            use separate fuse device fd for each thread\n"
 		"                           (may improve performance)\n"
 		"    -o max_idle_threads    the maximum number of idle worker threads\n"
@@ -171,9 +178,9 @@ vfs_setattr(fuse_req_t req, fuse_ino_t ino, struct stat *attr, int to_set, struc
 		ret = fs_atime(ino, attr->st_atime);
 	if(to_set & FUSE_SET_ATTR_MTIME)
 		ret = fs_mtime(ino, attr->st_mtime);
-	if(to_set & FUSE_SET_ATTR_GID)
+	if(to_set & FUSE_SET_ATTR_GID && !fs_no_same_owner)
 		ret = fs_gid(ino, attr->st_gid);
-	if(to_set & FUSE_SET_ATTR_UID)
+	if(to_set & FUSE_SET_ATTR_UID && !fs_no_same_owner)
 		ret = fs_uid(ino, attr->st_uid);
 
 	if(ret)
@@ -433,6 +440,10 @@ main(int argc, char *argv[])
 
 	printf("device: %s\n", options.device);
 	printf("mountpoint: %s\n", options.mountpoint);
+
+	fs_no_same_owner = options.no_same_owner;
+	fs_owner_uid = getuid();
+	fs_owner_gid = getgid();
 
 	if(options.show_help){
 		usage();
