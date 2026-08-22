@@ -10,6 +10,7 @@ uint8 *fsdata;
 int fslen;
 
 int fs_no_same_owner;
+int fs_regular_dev;
 uid_t fs_owner_uid;
 gid_t fs_owner_gid;
 
@@ -53,6 +54,7 @@ struct Options
 	int debug;
 	int nodefault_subtype;
 	int no_same_owner;
+	int regular_dev;
 	char *device;
 	char *mountpoint;
 	int show_version;
@@ -81,6 +83,7 @@ static const struct fuse_opt myopts[] = {
 	OPTION("-s",		singlethread),
 	OPTION("-r",		readonly),
 	OPTION("--no-same-owner",	no_same_owner),
+	OPTION("--regular-dev",	regular_dev),
 	OPTION("clone_fd",	clone_fd),
 	OPTION("max_idle_threads=%u", max_idle_threads),
 	FUSE_OPT_END
@@ -118,6 +121,7 @@ usage(void)
 		"    -f                     foreground operation\n"
 		"    -s                     disable multi-threaded operation\n"
 		"    --no-same-owner        report all files as owned by this user\n"
+		"    --regular-dev          report devices as empty regular files\n"
 		"    -o clone_fd            use separate fuse device fd for each thread\n"
 		"                           (may improve performance)\n"
 		"    -o max_idle_threads    the maximum number of idle worker threads\n"
@@ -305,6 +309,12 @@ vfs_mknod(fuse_req_t req, fuse_ino_t parent, const char *name, mode_t mode, dev_
 {
 	int ret;
 
+	if(fs_regular_dev && ((mode & S_IFMT) == S_IFCHR ||
+	   (mode & S_IFMT) == S_IFBLK)){
+		mode = (mode & 0777) | S_IFREG;
+		rdev = 0;
+	}
+
 	ret = fs_mknod(parent, name, mode, rdev, nil);
 	if(ret)
 		fuse_reply_err(req, ret);
@@ -442,6 +452,7 @@ main(int argc, char *argv[])
 	printf("mountpoint: %s\n", options.mountpoint);
 
 	fs_no_same_owner = options.no_same_owner;
+	fs_regular_dev = options.regular_dev;
 	fs_owner_uid = getuid();
 	fs_owner_gid = getgid();
 

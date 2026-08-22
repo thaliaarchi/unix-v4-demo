@@ -35,6 +35,7 @@ extern uint8 *fsdata;
 extern int fslen;
 
 extern int fs_no_same_owner;
+extern int fs_regular_dev;
 extern uid_t fs_owner_uid;
 extern gid_t fs_owner_gid;
 

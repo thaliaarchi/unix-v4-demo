@@ -561,8 +561,14 @@ fs_stat(uint ino, struct stat *stbuf)
 	stbuf->st_nlink = ip->i_nlink;
 	stbuf->st_size = ISIZE(ip);
 	if((ip->i_mode & IFMT) == IFCHR ||
-	   (ip->i_mode & IFMT) == IFBLK)
-		stbuf->st_rdev = makedev(ip->i_addr[0]>>8 & 0xFF, ip->i_addr[0]&0xFF);
+	   (ip->i_mode & IFMT) == IFBLK){
+		if(fs_regular_dev){
+			stbuf->st_mode = (ip->i_mode & 0777) | S_IFREG;
+			stbuf->st_size = 0;
+		} else {
+			stbuf->st_rdev = makedev(ip->i_addr[0]>>8 & 0xFF, ip->i_addr[0]&0xFF);
+		}
+	}
 	if(fs_no_same_owner){
 		stbuf->st_uid = fs_owner_uid;
 		stbuf->st_gid = fs_owner_gid;
