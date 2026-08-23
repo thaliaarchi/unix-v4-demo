@@ -11,6 +11,8 @@ same machine.
 This repository reproduces the [disk image](disk.rk) and [terminal logs](logs/)
 from the workshop, as well as my [setup](setup.sh).
 
+<img src="photos/lrc2026.jpg" alt="Heathkit H19 displaying LRC 2026 text art" style="max-height: 512px">
+
 ## Terminals
 
 Before the workshop, I modified the kernel to support up to 32 simultaneous
@@ -143,6 +145,8 @@ haha
                 }
 ```
 
+<img src="photos/sh_cd.jpg" alt="A modification to sh to print &quot;haha&quot; for cd" style="max-height: 512px">
+
 A confusing quirk was that `login` would sometimes use an all-caps mode for
 compatibility with the Teletype Model 33. It cycles between terminal settings
 until one works, so if you can't sign in, it attempts under all-caps mode. This
@@ -164,12 +168,14 @@ CD: NOT FOUND
 
 I brought my TI Silent 700 Model 707/1200 teleprinter to demonstrate computing
 on paper. Before the world transitioned to CRT terminals, teletypes printed your
-session onto paper. The long roll of paper was your monitor and cut/paste was
-done with scissors and tape.
+session onto paper. The paper was your monitor and cut/paste was done with
+scissors and tape.
+
+<img src="photos/silent700_roll.jpg" alt="Thalia holding a roll of paper printed by the Silent 700" style="max-height: 512px">
 
 Alex was particularly fond of the teletype and was usually found sitting behind
-it. Auberon found the long roll so amusing that she will show a photo of me
-holding it to her students to show how computing has progressed.
+it. Auberon found the long roll of paper so amusing that she will show this
+photo of me holding it to her students to show how computing has progressed.
 
 We used up the last bit of paper by printing a meter-long Saturn V rocket ASCII
 art, preceded by a countdown of ten beeps. Streaks of red in the paper warned us
@@ -320,6 +326,8 @@ gave [a talk](https://discuss.systems/@thalia/117123655247685214) on bare m4, a
 single-operation version of the m4 macro processor with only `define`, which is
 nonetheless Turing-complete.
 
+<img src="photos/mcilroy_barem4.jpg" alt="Doug McIlroy explaining bare m4" style="max-height: 512px">
+
 Afterwards, he setup an account, `doug`, for himself on UNIX V4. He was
 accustomed to later versions of ed that allow omitting the closing slashes and
 the later passwd format, but he still had the muscle memory.
@@ -454,3 +462,5 @@ you
 By the end, we had become acquainted with the system, learned `ed`, programmed a
 bit in C, played some games, mailed each other, and used up a whole roll of
 paper. Great success!
+
+<img src="photos/group.jpg" alt="The final group, just before decommissioning UNIX V4" style="max-height: 512px">
