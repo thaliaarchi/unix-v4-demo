@@ -118,11 +118,12 @@ dominic::111:111::/usr/dominic:
 Perhaps the largest adjustment was that everyone instinctively reached for
 backspace to fix typos, but it would instead send a literal ASCII backspace
 character. This happened hundreds of times. Early UNIX was designed for printing
-terminals which cannot clear printed text and it used `#` to erase the last
-character and `@` to erase the current line, borrowed from Multics. One
-participant marveled at how instinctive this was for me. `amitb` found that the
-erase character could be configured to backspace with `stty erase '^h'`, but
-alas that only worked in later versions of UNIX.
+terminals and, of course, text cannot be cleared once it's printed on paper.
+Instead, it used `#` to erase the last character and `@` to erase the current
+line, borrowed from Multics. One participant marveled at how instinctive this
+was for me. `amitb` found that the erase character could be configured to
+backspace with `stty erase '^h'`, but alas that only worked in later versions of
+UNIX.
 
 Another pervasive surface difference was that `cd` was named `chdir` until V7.
 Participants ran into `cd: not found` about 100 times.
@@ -145,9 +146,9 @@ haha
 A confusing quirk was that `login` would sometimes use an all-caps mode for
 compatibility with the Teletype Model 33. It cycles between terminal settings
 until one works, so if you can't sign in, it attempts under all-caps mode. This
-was especially prone to happen for the KL terminal sessions, since that driver
-assumes that the terminal is always connected and doesn't wait for it to be
-ready, so the initial `login:` prompt was always lost. After pressing return, it
+was especially prone to happen for the KL terminal sessions. That driver assumes
+that the terminal is always connected and doesn't wait for it to be ready, so
+the initial `login:` prompt would always be lost. After pressing return, it
 would then cycle to the next setting and present an all-caps prompt, making your
 whole session uppercase. This happened about 14 times.
 
@@ -162,9 +163,9 @@ CD: NOT FOUND
 ## Paper
 
 I brought my TI Silent 700 Model 707/1200 teleprinter to demonstrate computing
-on paper. Before virtual terminals switched the world to CRT monitors, teletypes
-printed your session onto paper. The long roll of paper was your monitor and
-cut/paste was done with scissors and tape.
+on paper. Before the world transitioned to CRT terminals, teletypes printed your
+session onto paper. The long roll of paper was your monitor and cut/paste was
+done with scissors and tape.
 
 Alex was particularly fond of the teletype and was usually found sitting behind
 it. Auberon found the long roll so amusing that she will show a photo of me
@@ -172,7 +173,7 @@ holding it to her students to show how computing has progressed.
 
 We used up the last bit of paper by printing a meter-long Saturn V rocket ASCII
 art, preceded by a countdown of ten beeps. Streaks of red in the paper warned us
-of the impending end, and the rocket ended up bloodied.
+of the impending end, and the rocket looked bloodied.
 
 ## Challenge
 
@@ -219,12 +220,14 @@ p
 q
 ```
 
-The solution involves replacing the bogus system call used for a delay with
-another. In V7, non-existent syscalls are no-ops, but they trap with
-`Bad system call -- Core dumped` in V4. I substituted it with `getuid`, as did
-Alex and Kevin, but Jordan arrived at a different solution and instead used
-`smdate`. This syscall had been removed and stubbed out with `nullsys`, making
-it a no-op, but it still consumes an argument, so it skips the `sob` branch and
+The original uses a non-existent system call to add a delay between prints, but
+this doesn't work in V4, as non-existent syscalls trap with
+`Bad system call -- Core dumped` instead. The solution involves replacing it
+with some other syscall that does not produce an effect. Alex and Kevin matched
+what I did, switching it to `getuid`, but Jordan instead chose `smdate`. This
+syscall originally would set the modified time of a file, but it was removed, as
+it caused issues for tools that observed file times. Its `nullsys` handler has
+no effect, but it still consumes an argument, so it skips the `sob` branch and
 prints extra fast.
 
 ```
@@ -239,9 +242,27 @@ prints extra fast.
 ```
 
 Alex [scripted](fs/usr/alex/hint3b) the hexadecimal syntax fixes by using the
-old behavior of the Thompson shell. Commands that consume stdin would read from
+old behavior of the Thompson shell: Commands that consume stdin would read from
 the script file until they exited, so commands and input were interleaved with
 no quoting like the later heredocs.
+
+```
+% cat /usr/alex/hint3b
+ed mullender.c
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+w
+q
+% sh hint3b
+469
+469
+% 
+```
 
 [`auberon`](fs/usr/auberon/mullender.c), [`bx`](fs/usr/bx/m.c), and [`amitb`](fs/usr/amitb/mullender.c)
 successfully backported the syntax changes and [`cody`](fs/usr/cody/temp.c)
@@ -299,9 +320,9 @@ gave [a talk](https://discuss.systems/@thalia/117123655247685214) on bare m4, a
 single-operation version of the m4 macro processor with only `define`, which is
 nonetheless Turing-complete.
 
-Afterwards, he setup an account, `doug`, for himself on UNIX V4. He was used to
-later versions of ed that allow omitting the closing slashes and the later
-passwd format, but he still had the muscle memory.
+Afterwards, he setup an account, `doug`, for himself on UNIX V4. He was
+accustomed to later versions of ed that allow omitting the closing slashes and
+the later passwd format, but he still had the muscle memory.
 
 We chatted about the early years of UNIX: They used a Teletype Model 33 ASR as
 the console teletype until the end, even though they didn't use it for
@@ -357,6 +378,7 @@ a super user, so he made an account with a uid of 256 and was treated as root.
                 acname = "/usr/adm/su_acct";
         }
 q
+% ^D
 login: hacker
 # 
 ```
