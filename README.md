@@ -70,17 +70,23 @@ V4–V7 later.
 ## Workshop
 
 First, we created user accounts for everyone. UNIX did not gain utilities for
-adding users until later, so we edited `/etc/passwd` ourselves.
+adding users until much later, so we edited `/etc/passwd` ourselves.
 
 ```
 % cat /etc/passwd
 root::0:1::/:
 bin::3:1::/bin:
 thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
 alex::9:9::/usr/alex:
 newt::64:64::/usr/newt:
 auberon::18:18::/usr/auberon:
 ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
 justin::70:70::/usr/justin:
 yang::16::16::/usr/yang:
 doug::8:::/usr/doug:
@@ -100,8 +106,21 @@ doug
 
 ```
 ben::5:5::/usr/ben:
-ben::-1-1::/usr/ben:
+ben::65535:65535::/usr/ben:
+ben::-1:-1::/usr/ben:
 hacker::256:256::/usr/hacker:
+```
+
+```
+% ed /usr/source/s2/sh.c
+10267
+/acname =/;/}/p
+        acname = "/usr/adm/sh_acct";
+        promp = "% ";
+        if(((uid = getuid())&0377) == 0) {
+                promp = "# ";
+                acname = "/usr/adm/su_acct";
+        }
 ```
 
 ```

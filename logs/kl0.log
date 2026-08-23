@@ -4481,3 +4481,244 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% cd
+haha
+% ed /usr/source/s2/sh.c
+10267
+/cd/;/}/p
+                if(equal(cp1, "cd")) {
+                        prs("haha\n");
+                        return;
+                }
+q
+% ls -al /dev
+total 3
+drwxr-xr-x 2 bin       928 Aug 18 10:27 .
+drwxr-xr-x 9 bin       192 Aug 18 18:17 ..
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+crw-rw-rw- 1 root    4,  0 Aug 18 10:27 ptr
+brw-rw-rw- 1 root    1,  0 Aug 11 03:44 rk0
+brw-rw-rw- 1 root    1,  1 Aug 11 03:44 rk1
+brw-rw-rw- 1 root    0,  0 Aug 11 03:44 rp0
+brw-rw-rw- 1 root    0,  1 Aug 11 03:44 rp1
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 root    3,  0 Aug 18 18:16 tty0
+crw--w--w- 1 root    3,  1 Aug 18 18:16 tty1
+crw--w--w- 1 root    3,  2 Aug 18 18:16 tty2
+crw--w--w- 1 root    3,  3 Aug 18 18:16 tty3
+crw--w--w- 1 root    3,  4 Aug 18 18:16 tty4
+crw--w--w- 1 root    3,  5 Aug 18 18:16 tty5
+crw--w--w- 1 root    3,  6 Aug 18 18:16 tty6
+crw--w--w- 1 root    3,  7 Aug 18 18:16 tty7
+crw--w--w- 1 thalia  0,  0 Aug 18 18:16 tty8
+crw--w--w- 1 root    0,  1 Aug 18 18:16 tty9
+crw--w--w- 1 root    3,  8 Aug 18 18:16 ttya
+crw--w--w- 1 root    3,  9 Aug 18 18:16 ttyb
+crw--w--w- 1 root    3, 10 Aug 18 18:16 ttyc
+crw--w--w- 1 root    3, 11 Aug 18 18:16 ttyd
+crw--w--w- 1 root    3, 12 Aug 18 18:16 ttye
+crw--w--w- 1 root    3, 13 Aug 18 18:16 ttyf
+crw--w--w- 1 root    3, 14 Aug 18 18:16 ttyg
+crw--w--w- 1 root    3, 15 Aug 18 18:16 ttyh
+crw--w--w- 1 root    0,  2 Aug 18 18:16 ttyi
+crw--w--w- 1 root    0,  3 Aug 18 18:16 ttyj
+crw--w--w- 1 root    0,  4 Aug 18 18:16 ttyk
+crw--w--w- 1 root    0,  5 Aug 18 18:16 ttyl
+crw--w--w- 1 root    0,  6 Aug 18 18:16 ttym
+crw--w--w- 1 root    0,  7 Aug 18 18:16 ttyn
+crw--w--w- 1 root    0,  8 Aug 18 18:16 ttyo
+crw--w--w- 1 root    0,  9 Aug 18 18:16 ttyp
+crw--w--w- 1 root    0, 10 Aug 18 18:16 ttyq
+crw--w--w- 1 root    0, 11 Aug 18 18:16 ttyr
+crw--w--w- 1 root    0, 12 Aug 18 18:16 ttys
+crw--w--w- 1 root    0, 13 Aug 18 18:16 ttyt
+crw--w--w- 1 root    0, 14 Aug 18 18:16 ttyu
+crw--w--w- 1 root    0, 15 Aug 18 18:16 ttyv
+% ed /usr/source/s2/sh.c
+10267
+/acname =/;/}/p
+        acname = "/usr/adm/sh_acct";
+        promp = "% ";
+        if(((uid = getuid())&0377) == 0) {
+                promp = "# ";
+                acname = "/usr/adm/su_acct";
+        }
+% root
+root: not found
+% 
+;login: root
+# daet @date 082252
+bad conversion
+# 08222152
+08222152: not found
+# ad@date 08222152
+Thu Aug 22 21:52:00 MDT 1974
+# ed /etc/passwd
+448
+4
+alex::9:9::/usr/alex:
+i
+ben::5:5::/usr/ben:
+.
+/ncb/a
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+.
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+w
+596
+q
+# chdir /usr
+# ls -al
+total 32
+drwxr-xr-x32 bin       512 Aug 18 15:54 .
+drwxr-xr-x 9 bin       192 Aug 18 18:17 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      288 Aug 18 18:17 alex
+drwxrwxrwx 2 root      112 Aug 18 18:17 amitb
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxrwxrwx 2 bx        128 Aug 18 18:17 bx
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 12:23 cody
+drwxrwxrwx 2 domini     64 Aug 18 16:50 dominic
+drwxrwxrwx 2 root       32 Aug 18 13:17 doug
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 root       32 Aug 18 14:20 hacker
+drwxrwxrwx 2 jordan    144 Aug 18 16:46 jordan
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxrwxrwx 2 kevin     128 Aug 18 15:29 kevin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 13:55 michael
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia    192 Aug 18 18:16 thalia
+drwxrwxrwx 2 bin        48 Aug 18 13:31 tmp
+drwxrwxrwx 2 root       32 Aug 18 13:49 voytilla
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+# mkdir ben
+# chown ben ben
+# ls ncb
+# ls newt
+m.c
+mullender.c
+# date 08181115
+Sun Aug 18 11:15:00 MDT 1974
+# mkdir joe
+# chown joe joe
+# mkdir hash
+# choiwn@chown hash hash
+# mkdir dnm 
+# chown dnm dnm
+# mkdir ty
+# chown ty ty
+# ls cory
+cory not found
+# ls cody
+mullender.c
+temp.c
+# sync
+# 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% 08222158
+08222158: not found
+% date 08222158
+Thu Aug 22 21:58:00 MDT 1974
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
