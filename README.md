@@ -468,4 +468,11 @@ By the end, we had become acquainted with the system, learned `ed`, programmed a
 bit in C, played some games, mailed each other, and used up a whole roll of
 paper. Great success!
 
+```
+login: thalia
+% cat thanks
+thank_you
+from_darpa_dan
+```
+
 <img src="photos/group.jpg" alt="The final group, just before decommissioning UNIX V4" style="max-height: 512px">
