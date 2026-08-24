@@ -11,7 +11,7 @@ same machine.
 This repository reproduces the [disk image](disk.rk) and [terminal logs](logs/)
 from the workshop, as well as my [setup](setup.sh).
 
-<img src="photos/lrc2026.jpg" alt="Heathkit H19 displaying LRC 2026 text art" style="max-height: 512px">
+<img src="photos/lrc2026.jpg" alt="Heathkit H19 displaying LRC 2026 text art in the o8 font" style="max-height: 512px">
 
 ## Terminals
 
@@ -177,9 +177,14 @@ Alex was particularly fond of the teletype and was usually found sitting behind
 it. Auberon found the long roll of paper so amusing that she will show this
 photo of me holding it to her students to show how computing has progressed.
 
-We used up the last bit of paper by printing a meter-long Saturn V rocket ASCII
-art, preceded by a countdown of ten beeps. Streaks of red in the paper warned us
-of the impending end, and the rocket looked bloodied.
+We used up the last bit of paper by printing a meter-long [Saturn V rocket ASCII
+art](https://ascii.co.uk/art/apollo), preceded by a countdown of ten beeps.
+Streaks of red in the paper warned us of the impending end, and the rocket
+looked bloodied.
+
+A photo of the Heathkit H19 displaying LRC 2026 text art with the [o8 FIGlet
+font](https://www.figlet.org/cgi-bin/fontdb_example.cgi?font=o8.flf) became the
+unofficial icon of the workshop, and it was printed onto stickers.
 
 ## Challenge
 
