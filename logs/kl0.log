@@ -4722,3 +4722,1497 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: root
+# date 08251128
+Sun Aug 25 11:28:00 MDT 1974
+# su
+# # 
+;login: thalia
+% ed /isr###usr/source/s2/pwd.c
+1067
+1,23p
+char dot[] ".";
+char dotdot[] "..";
+char root[] "/";
+char name[512];
+int file, off -1;
+struct statb {int devn, inum, i[18];}x;
+struct entry { int jnum; char name[16];}y;
+
+main() {
+        int n;
+
+loop0:
+        stat(dot, &x);
+        if((file = open(dotdot,0)) < 0) prname();
+loop1:
+        if((n = read(file,&y,16)) < 16) prname();
+        if(y.jnum != x.inum)goto loop1;
+        close(file);
+        if(y.jnum == 1) ckroot();
+        cat();
+        chdir(dotdot);
+        goto loop0;
+}
+.,.+23p
+}
+ckroot() {
+        int i, n;
+
+        if((n = stat(y.name,&x)) < 0) prname();
+        i = x.devn;
+        if((n = chdir(root)) < 0) prname();
+        if((file = open(root,0)) < 0) prname();
+loop:
+        if((n = read(file,&y,16)) < 16) prname();
+        if(y.jnum == 0) goto loop;
+        if((n = stat(y.name,&x)) < 0) prname();
+        if(x.devn != i) goto loop;
+        x.i[0] =& 060000;
+        if(x.i[0] != 040000) goto loop;
+        cat();
+        prname();
+}
+prname() {
+        name[off] = '\n';
+        write(1,name,off+1);
+        exit();
+}
+cat() {
+.,.+23p
+?
+.,$=#p
+cat() {
+        int i, j;
+
+        i = -1;
+        while(y.name[++i] != 0);
+        if((off+i+2) > 511) prname();
+        for(j=off+1; j>=0; --j) name[j+i+1] = name[j];
+        off=i+off+1;
+        name[i] = root[0];
+        for(--i; i>=0; --i) name[i] = y.name[i];
+}
+q
+% ed /usr/source/s2/stty.s
+?
+e /usr/source/s2/stty.c
+1006
+1,23p
+char    *arg;
+int     mode[3];
+
+main(argc, argv)
+char    *argv[];
+{
+        int i;
+
+        gtty(1,mode);
+        while(--argc > 0) {
+
+                arg = *++argv;
+                if(eq("even"))
+                        set(0200);
+                if(eq("-even"))
+                        reset(0200);
+                if(eq("odd"))
+                        set(0100);
+                if(eq("-odd"))
+                        reset(0100);
+                if(eq("raw"))
+                        set(040);
+                if(eq("-raw") || eq("cooked"))
+.,.+23p
+                if(eq("-raw") || eq("cooked"))
+                        reset(040);
+                if(eq("-nl"))
+                        set(020);
+                if(eq("nl"))
+                        reset(020);
+                if(eq("echo"))
+                        set(010);
+                if(eq("-echo"))
+                        reset(010);
+                if(eq("lcase"))
+                        set(04);
+                if(eq("-lcase"))
+                        reset(04);
+                if(eq("-tabs"))
+                        set(02);
+                if(eq("tabs"))
+                        reset(02);
+                if(eq("-delay"))
+                        set(01);
+                if(eq("delay"))
+                        reset(01);
+                if(eq("tdelay"))
+                        reset(010000);
+.,.+23p
+                        reset(010000);
+                if(eq("-tdelay"))
+                        set(010000);
+                if(arg)
+                        printf("unknown mode: %s\n", arg);
+        }
+        stty(1,mode);
+}
+
+eq(string)
+char *string;
+{
+        int i;
+
+        if(!arg)
+                return(0);
+        i = 0;
+loop:
+        if(arg[i] != string[i])
+                return(0);
+        if(arg[i++] != '\0')
+                goto loop;
+        arg = 0;
+        return(1);
+.,.+23p
+?
+.,.+23p
+?
+.,$p
+        return(1);
+}
+
+set(b)
+{
+
+        mode[2] =| b;
+}
+
+reset(b)
+{
+
+        mode[2] =& ~b;
+}
+e /usr/source/s2/getty.c
+?
+e /usr/source/s2/getty.c#s
+?
+q
+% ls /usr/source/s3#2
+mail.c
+mesg.s
+mkdir.s
+mkfs.c
+mknod.c
+mount.c
+msh.s
+mv.c
+nice.c
+nm.c
+nohup.c
+od.c
+passwd.s
+pfe.s
+pr.c
+prof.c
+ps.c
+pwd.c
+restor.c
+rew.s
+rm.c
+rmdir.s
+sa.c
+sh.alias
+sh.c
+size.c
+sleep.c
+sort.c
+split.c
+strip.s
+stty.c
+su.c
+sum.s
+sync.c
+tee.c
+time.s
+tp1.s
+tp2.s
+tp3.s
+tp4.s
+tr.c
+tty.s
+typo.c
+umount.c
+uniq.c
+update.s
+wc.c
+who.c
+write.s
+% ed /usr/source/s1/getty.c
+ed: not found
+% ed /usr/source/s1/getty.c
+?
+e /usr/source/s1/getty.s
+2096
+1,23p
+/ getty --  get name and tty mode
+/ for initialization
+
+/ cycle through speeds and "login:" messages
+/ summarized in itab
+
+stty = 31.
+gtty = 32.
+
+        sys     signal; 3; 1
+        sys     signal; 2; 1
+        clr     r0
+        sys     gtty; name
+        mov     name+4,r0
+        bic     $!26,r0
+        mov     r0,flags        / use xtab,cr,ucase from driver
+        jsr     r5,nextspeed
+1:
+        mov     $name,r5
+2:
+        jsr     r5,getc
+        cmp     r0,$'\n
+        beq     1f
+.,.+23p
+        beq     1f
+        cmp     r0,$'\r
+        beq     4f
+        cmp     r0,$'@
+        beq     1b
+        cmp     r0,$'#
+        bne     3f
+        cmp     r5,$name
+        blos    2b
+        dec     r5
+        br      2b
+3:
+        cmp     r5,$name+30.
+        bhis    2b
+        movb    r0,(r5)+
+        br      2b
+4:
+        bis     $20,flags               /cr bit
+        mov     $'\n,r0
+        jsr     pc,putc
+        br      2f
+1:
+        mov     $'\r,r0
+        jsr     pc,putc
+.,.+23p
+        jsr     pc,putc
+2:
+        clrb    (r5)+
+
+/ determine whether terminal is upper-case only
+
+        mov     $name,r5
+1:
+        movb    (r5)+,r0
+        beq     1f
+        cmp     r0,$'A
+        blo     2f
+        cmp     r0,$'Z
+        bhi     2f
+        add     $40,r0          / map to lc
+        movb    r0,-1(r5)
+        br      1b
+2:
+        cmp     r0,$'a
+        blo     1b
+        cmp     r0,$'z
+        bhi     1b
+        bic     $4,flags
+        br      1b
+.,.+23p
+        br      1b
+1:
+        mov     fstate,r4
+        bis     flags,4(r4)
+        clr     r0
+        sys     0; 9f
+.data
+9:
+        sys     stty; fstate: ..
+.text
+
+go:
+        sys     exec; login; loginp
+        sys     exit
+
+getc:
+        clr     r0
+        sys     read; ch; 1
+        bes     done
+        tst     r0
+        beq     done
+        bic     $!177,ch
+        mov     ch,r2
+        beq     1f
+.,.+23p
+        beq     1f
+getc1:
+        cmp     r2,$174
+        bhis    3f
+        mov     $1,r0
+        movb    ch,r0
+        jsr     pc,putc
+3:
+        mov     r2,r0
+        rts     r5
+1:
+        mov     $name,(sp)
+        jsr     r5,nextspeed
+2:
+        clr     r0              / flush nulls
+        sys     read; ch; 1
+        bes     done
+        tst     r0
+        beq     done
+        movb    ch,r2
+        beq     2b
+        br      getc1
+
+done:
+.,.+23p
+done:
+        sys     exit
+
+nextspeed:
+        mov     itabp,r1
+        mov     (r1)+,0f
+        bne     1f
+        mov     $itab,itabp
+        br      nextspeed
+1:
+        clr     r0
+        sys     0; 9f
+.data
+9:
+        sys     stty; 0:..
+.text
+        bes     go
+        mov     (r1)+,-(sp)
+        mov     (r1)+,fstate
+        mov     r1,itabp
+        mov     (sp)+,r1
+1:
+        movb    (r1)+,r0
+        beq     1f
+.,.+23p
+        beq     1f
+        jsr     pc,putc
+        br      1b
+1:
+        rts     r5
+
+putc:
+        bic     $!177,r0
+        movb    r0,ch
+        mov     $1,r0
+        sys     write; ch; 1
+        rts     pc
+
+itabp:  itab
+loginp: login
+        name
+        0
+
+itab:
+        itn300; tnmes;  tn300
+        itty37; ttymes; tty37
+        0
+
+.data
+.,.+23p
+.data
+itty37:
+        .byte   5, 5
+        0; 340  / any parity, raw
+tty37:
+        .byte   5, 5
+        0; 210  / 37 parity, echo
+itn300:
+        .byte   7, 7
+        0; 340  / any parity, raw, cr
+tn300:
+        .byte   7, 7
+        0; 10310        / any parity, echo, no tab del
+
+ttymes:
+        <\n\r\p:\alogin: \0>
+tnmes:
+        <\n\r\p;login: \0>
+
+login:  </bin/login\0>
+        .even
+
+nl:     <\n>
+cr:     <\r>
+.,.+23p
+?
+.,$p
+cr:     <\r>
+
+.bss
+flags:  .=.+2
+ch:     .=.+2
+name:   .=.+32.
+q
+% chdir /usr/sys/m#dmr
+% ls
+bio.c
+cat.c
+dc.c
+dh.c
+dhdm.c
+dhfdm.c
+dn.c
+dp.c
+dv.c
+kl.c
+lp.c
+malloc.c
+mem.c
+partab.c
+pc.c
+pipe.c
+rf.c
+rk.c
+rp.c
+run
+tc.c
+tm.c
+tty.c
+vs.c
+vt.c
+% ed kl.c
+1610
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+/*
+ *   KL-11 driver
+ */
+#include "../param.h"
+#include "../conf.h"
+#include "../user.h"
+#include "../tty.h"
+#include "../proc.h"
+
+/* base address */
+#define KLADDR  0177560
+#define KLBASE  0176500
+#define NKL11   17
+#define DSRDY   02
+#define RDRENB  01
+
+struct  tty kl11[NKL11];
+
+.,.+23p
+
+struct klregs {
+        int klrcsr;
+        int klrbuf;
+        int kltcsr;
+        int kltbuf;
+}
+
+klopen(dev, flag)
+{
+        register *addr;
+        register struct tty *tp;
+
+        if(dev.d_minor >= NKL11) {
+                u.u_error = ENXIO;
+                return;
+        }
+        tp = &kl11[dev.d_minor];
+        tp->t_quit = 034;               /* ctl shf l */
+        tp->t_intrup = 0177;            /* DEL */
+        if (u.u_procp->p_ttyp == 0)
+                u.u_procp->p_ttyp = tp;
+        addr = KLADDR;
+        if(dev.d_minor)
+.,.+23
+
+.-23,.P#p
+        if(dev.d_minor)
+                addr = KLBASE-8 + 8*dev.d_minor;
+        tp->t_addr = addr;
+        tp->t_flags = XTABS|LCASE|ECHO|CRMOD;
+        tp->t_state = CARR_ON;
+        addr->klrcsr =| IENABLE|DSRDY|RDRENB;
+        addr->kltcsr =| IENABLE;
+}
+
+klclose(dev)
+{
+        wflushtty(&kl11[dev.d_minor]);
+}
+
+klread(dev)
+{
+        ttread(&kl11[dev.d_minor]);
+}
+
+klwrite(dev)
+{
+        ttwrite(&kl11[dev.d_minor]);
+}
+
+.,.+23p
+
+klxint(dev)
+{
+        register struct tty *tp;
+
+        tp = &kl11[dev.d_minor];
+        ttstart(tp);
+        if (tp->t_outq.c_cc == 0 || tp->t_outq.c_cc == TTLOWAT)
+                wakeup(&tp->t_outq);
+}
+
+klrint(dev)
+{
+        register int c, *addr;
+        register struct tty *tp;
+
+        tp = &kl11[dev.d_minor];
+        addr = tp->t_addr;
+        c = addr->klrbuf;
+        addr->klrcsr =| RDRENB;
+        if ((c&0177)==0)
+                addr->kltbuf = c;       /* hardware botch */
+        ttyinput(c, tp);
+}
+.,$p
+}
+
+klsgtty(dev, v)
+int *v;
+{
+        register struct tty *tp;
+
+        tp = &kl11[dev.d_minor];
+        if (v)
+                v[2] = tp->t_flags;
+        else {
+                wflushtty(tp);
+                tp->t_flags = u.u_arg[2];
+        }
+}
+e dc.c
+3526
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+/*
+ *   DC-11 driver
+ */
+#include "../param.h"
+#include "../conf.h"
+#include "../user.h"
+#include "../tty.h"
+#include "../proc.h"
+
+/* base address */
+#define DCADDR  0174000
+#define NDC11   16
+
+/* Control bits */
+#define CDLEAD  01
+#define CARRIER 04
+#define SPEED1  010
+#define STOP1   0400
+.,.+23p
+#define STOP1   0400
+#define RQSEND  01
+#define PARITY  040
+#define ERROR   0100000
+#define CTRANS  040000
+#define RINGIND 020000
+
+
+struct  tty dc11[NDC11];
+
+struct dcregs {
+        int dcrcsr;
+        int dcrbuf;
+        int dctcsr;
+        int dctbuf;
+};
+
+int dcrstab[] {
+        0,              /* 0 baud */
+        0,              /* 50 baud */
+        0,              /* 75 baud */
+        0,              /* 110 baud */
+        01101,          /* 134.5 baud: 7b/ch, speed 0 */
+        0111,           /* 150 baud: 8b/ch, speed 1 */
+.,.+23p
+        0111,           /* 150 baud: 8b/ch, speed 1 */
+        0,              /* 200 baud */
+        0121,           /* 300 baud: 8b/ch, speed 2 */
+        0,              /* 600 baud */
+        0131,           /* 1200 baud */
+        0,              /* 1800 baud */
+        0,              /* 2400 baud */
+        0,              /* 4800 baud */
+        0,              /* 9600 baud */
+        0,              /* X0 */
+        0,              /* X1 */
+};
+
+int dctstab[] {
+        0,              /* 0 baud */
+        0,              /* 50 baud */
+        0,              /* 75 baud */
+        0,              /* 110 baud */
+        0501,           /* 134.5 baud: stop 1 */
+        0511,           /* 150 baud */
+        0,              /* 200 baud */
+        0521,           /* 300 baud */
+        0,              /* 600 baud */
+        0531,           /* 1200 baud */
+.,.+23p
+        0531,           /* 1200 baud */
+        0,              /* 1800 baud */
+        0,              /* 2400 baud */
+        0,              /* 4800 baud */
+        0,              /* 9600 baud */
+        0,              /* X0 */
+        0,              /* X1 */
+};
+
+dcopen(dev, flag)
+{
+        register struct tty *rtp;
+        register *addr;
+
+        if (dev.d_minor >= NDC11) {
+                u.u_error = ENXIO;
+                return;
+        }
+        rtp = &dc11[dev.d_minor];
+        rtp->t_addr = addr = DCADDR + dev.d_minor*8;
+        rtp->t_state =| WOPEN;
+        addr->dcrcsr =| IENABLE|CDLEAD;
+        if ((rtp->t_state&ISOPEN) == 0) {
+                rtp->t_quit = 034;              /* FS */
+.,.+23p
+                rtp->t_quit = 034;              /* FS */
+                rtp->t_intrup = 0177;           /* DEL */
+                addr->dcrcsr = IENABLE|CDLEAD|SPEED1;
+                addr->dctcsr = IENABLE|SPEED1|STOP1|RQSEND;
+                rtp->t_state = ISOPEN | WOPEN;
+                rtp->t_flags = ODDP|EVENP|ECHO;
+        }
+        if (addr->dcrcsr & CARRIER)
+                rtp->t_state =| CARR_ON;
+        while ((rtp->t_state & CARR_ON) == 0)
+                sleep(&rtp->t_rawq, TTIPRI);
+        rtp->t_state =& ~WOPEN;
+        if (u.u_procp->p_ttyp == 0)
+                u.u_procp->p_ttyp = rtp;
+}
+
+dcclose(dev)
+{
+        register struct tty *tp;
+
+        (tp = &dc11[dev.d_minor])->t_state = 0;
+        wflushtty(tp);
+}
+
+.,.+23p
+
+dcread(dev)
+{
+        register struct tty *tp;
+
+        tp = &dc11[dev.d_minor];
+        if ((tp->t_addr->dcrcsr&CARRIER) != 0)
+                ttread(tp);
+}
+
+dcwrite(dev)
+{
+        register struct tty *tp;
+
+        tp = &dc11[dev.d_minor];
+        if ((tp->t_addr->dcrcsr & CARRIER) != 0)
+                ttwrite(tp);
+}
+
+dcxint(dev)
+{
+        register struct tty *tp;
+
+        ttstart(tp = &dc11[dev.d_minor]);
+q
+% ls
+bio.c
+cat.c
+dc.c
+dh.c
+dhdm.c
+dhfdm.c
+dn.c
+dp.c
+dv.c
+kl.c
+lp.c
+malloc.c
+mem.c
+partab.c
+pc.c
+pipe.c
+rf.c
+rk.c
+rp.c
+run
+tc.c
+tm.c
+tty.c
+vs.c
+vt.c
+% chdir ..
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% chdir ken
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% cat fio.c
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../user.h"
+#include "../filsys.h"
+#include "../file.h"
+#include "../conf.h"
+#include "../inode.h"
+#include "../reg.h"
+
+getf(f)
+{
+        register *fp, rf;
+
+        rf = f;
+        if(rf<0 || rf>=NOFILE)
+                goto bad;
+        fp = u.u_ofile[rf];
+        if(fp == NULL) {
+        bad:
+                u.u_error = EBADF;
+                fp = NULL;
+        }
+        return(fp);
+}
+
+closef(fp)
+int *fp;
+{
+        register *rfp, *ip;
+
+        rfp = fp;
+        if(rfp->f_flag&FPIPE) {
+                ip = rfp->f_inode;
+                ip->i_mode =& ~(IREAD|IWRITE);
+                wakeup(ip+1);
+                wakeup(ip+2);
+        }
+        if(rfp->f_count <= 1)
+                closei(rfp->f_inode, rfp->f_flag&FWRITE);
+        rfp->f_count--;
+}
+
+closei(ip, rw)
+int *ip;
+{
+        register *rip;
+        register dev, maj;
+
+        rip = ip;
+        dev = rip->i_addr[0];
+        maj = rip->i_addr[0].d_major;
+        if(rip->i_count <= 1)
+        switch(rip->i_mode&IFMT) {
+
+        case IFCHR:
+                (*cdevsw[maj].d_close)(dev, rw);
+                break;
+
+        case IFBLK:
+                (*bdevsw[maj].d_close)(dev, rw);
+        }
+        iput(rip);
+}
+
+openi(ip, rw)
+int *ip;
+{
+        register *rip;
+        register dev, maj;
+
+        rip = ip;
+        dev = rip->i_addr[0];
+        maj = rip->i_addr[0].d_major;
+        switch(rip->i_mode&IFMT) {
+
+        case IFCHR:
+                if(maj >= nchrdev)
+                        goto bad;
+                (*cdevsw[maj].d_open)(dev, rw);
+                break;
+
+        case IFBLK:
+                if(maj >= nblkdev) {
+                bad:
+                        u.u_error = ENXIO;
+                        return;
+                }
+                (*bdevsw[maj].d_open)(dev, rw);
+        }
+}
+
+access(ip, mode)
+int *ip;
+{
+        register *rip, m;
+
+        rip = ip;
+        m = mode;
+        if(m == IWRITE && getfs(ip->i_dev)->s_ronly != 0) {
+                u.u_error = EROFS;
+                return(1);
+        }
+        if(u.u_uid == 0)
+                return(0);
+        if(u.u_uid != rip->i_uid) {
+                m =>> 3;
+                if(u.u_gid != rip->i_gid)
+                        m =>> 3;
+        }
+        if((rip->i_mode&m) != 0)
+                return(0);
+        u.u_error = EACCES;
+        return(1);
+}
+
+owner(ip)
+int *ip;
+{
+
+        if(u.u_uid == ip->i_uid)
+                return(1);
+        return(suser());
+}
+
+suser()
+{
+
+        if(u.u_uid == 0)
+                return(1);
+        u.u_error = EPERM;
+        return(0);
+}
+
+ufalloc()
+{
+        register i;
+
+        for (i=0; i<NOFILE; i++)
+                if (u.u_ofile[i] == NULL) {
+                        u.u_ar0[R0] = i;
+                        return(i);
+                }
+        u.u_error = EMFILE;
+        return(-1);
+}
+
+struct  file *maxfp;
+
+falloc()
+{
+        register struct file *fp;
+        register i;
+
+        if ((i = ufalloc()) < 0)
+                return(NULL);
+        for (fp = &file[0]; fp < &file[NFILE]; fp++)
+                if (fp->f_count==0) {
+                        u.u_ofile[i] = fp;
+                        fp->f_count++;
+                        fp->f_offset[0] = 0;
+                        fp->f_offset[1] = 0;
+                        if (fp>maxfp)
+                                maxfp = fp;
+                        return(fp);
+                }
+        printf("no file\n");
+        u.u_error = ENFILE;
+        return(NULL);
+}
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% cat text.c
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../proc.h"
+#include "../text.h"
+#include "../inode.h"
+
+xswap(p, ff, os)
+int *p;
+{
+        register *rp, a;
+
+        rp = p;
+        if(os == 0)
+                os = rp->p_size;
+        a = malloc(swapmap, (rp->p_size+7)/8);
+        if(a == NULL)
+                panic("out of swap space");
+        xccdec(rp->p_textp);
+        rp->p_flag =| SLOCK;
+        if(swap(a, rp->p_addr, os, 0))
+                panic("swap error");
+        if(ff)
+                mfree(coremap, os, rp->p_addr);
+        rp->p_addr = a;
+        rp->p_flag =& ~(SLOAD|SLOCK);
+        rp->p_time = 0;
+        if(runout) {
+                runout = 0;
+                wakeup(&runout);
+        }
+}
+
+xfree()
+{
+        register *xp;
+
+        if((xp=u.u_procp->p_textp) != NULL) {
+                u.u_procp->p_textp = NULL;
+                xccdec(xp);
+                if(--xp->x_count == 0) {
+                        mfree(swapmap, (xp->x_size+7)/8, xp->x_daddr);
+                        xp = xp->x_iptr;
+                        xp->i_flag =& ~ITEXT;
+                        iput(xp);
+                }
+        }
+}
+
+xalloc(ip)
+int *ip;
+{
+        register struct text *xp;
+        register *rp, ts;
+
+        if(u.u_arg[1] == 0)
+                return;
+        rp = NULL;
+        for(xp = &text[0]; xp < &text[NTEXT]; xp++)
+                if(xp->x_count == 0) {
+                        if(rp == NULL)
+                                rp = xp;
+                } else
+                        if(xp->x_iptr == ip) {
+                                xp->x_count++;
+                                u.u_procp->p_textp = xp;
+                                goto out;
+                        }
+        if((xp=rp) == NULL)
+                panic("out of text");
+        xp->x_count = 1;
+        xp->x_ccount = 0;
+        xp->x_iptr = ip;
+        ts = ((u.u_arg[1]+63)>>6) & 01777;
+        xp->x_size = ts;
+        if((xp->x_daddr = malloc(swapmap, (ts+7)/8)) == NULL)
+                panic("out of swap space");
+        expand(USIZE);
+        expand(USIZE+ts);
+        estabur(0, ts, 0);
+        u.u_count = u.u_arg[1];
+        u.u_offset[1] = 020;
+        u.u_base = 0;
+        readi(ip);
+        rp = u.u_procp;
+        rp->p_flag =| SLOCK;
+        swap(xp->x_daddr, rp->p_addr+USIZE, ts, 0);
+        rp->p_flag =& ~SLOCK;
+        rp->p_textp = xp;
+        rp = ip;
+        rp->i_flag =| ITEXT;
+        rp->i_count++;
+
+out:
+        if(xp->x_ccount == 0) {
+                savu(u.u_ssav);
+                xswap(u.u_procp, 1, 0);
+                u.u_procp->p_flag =| SSWAP;
+                swtch();
+                /* no return */
+        }
+        xp->x_ccount++;
+}
+
+xccdec(xp)
+int *xp;
+{
+        register *rp;
+
+        if((rp=xp)!=NULL && rp->x_ccount!=0)
+                if(--rp->x_ccount == 0)
+                        mfree(coremap, rp->x_size, rp->x_caddr);
+}
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% ed rdwri.c
+2668
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../inode.h"
+#include "../user.h"
+#include "../buf.h"
+#include "../conf.h"
+#include "../systm.h"
+
+readi(aip)
+struct inode *aip;
+{
+        int *bp;
+        int lbn, bn, on;
+        register dn, n;
+        register struct inode *ip;
+
+        ip = aip;
+        if(u.u_count == 0)
+                return;
+.,.+23p
+                return;
+        ip->i_flag =| IACC;
+        if((ip->i_mode&IFMT) == IFCHR) {
+                (*cdevsw[ip->i_addr[0].d_major].d_read)(ip->i_addr[0]);
+                return;
+        }
+
+        do {
+                lbn = bn = lshift(u.u_offset, -9);
+                on = u.u_offset[1] & 0777;
+                n = min(512-on, u.u_count);
+                if((ip->i_mode&IFMT) != IFBLK) {
+                        dn = dpcmp(ip->i_size0, ip->i_size1,
+                                u.u_offset[0], u.u_offset[1]);
+                        if(dn <= 0)
+                                return;
+                        n = min(n, dn);
+                        if ((bn = bmap(ip, lbn)) == 0)
+                                return;
+                        dn = ip->i_dev;
+                } else {
+                        dn = ip->i_addr[0];
+                        rablock = bn+1;
+                }
+.,.+23p
+                }
+                if (ip->i_lastr+1 == lbn)
+                        bp = breada(dn, bn, rablock);
+                else
+                        bp = bread(dn, bn);
+                ip->i_lastr = lbn;
+                iomove(bp, on, n, B_READ);
+                brelse(bp);
+        } while(u.u_error==0 && u.u_count!=0);
+}
+
+writei(aip)
+struct inode *aip;
+{
+        int *bp;
+        int n, on;
+        register dn, bn;
+        register struct inode *ip;
+
+        ip = aip;
+        ip->i_flag =| IACC|IUPD;
+        if((ip->i_mode&IFMT) == IFCHR) {
+                (*cdevsw[ip->i_addr[0].d_major].d_write)(ip->i_addr[0]);
+                return;
+.,.+23p
+                return;
+        }
+        if (u.u_count == 0)
+                return;
+
+        do {
+                bn = lshift(u.u_offset, -9);
+                on = u.u_offset[1] & 0777;
+                n = min(512-on, u.u_count);
+                if((ip->i_mode&IFMT) != IFBLK) {
+                        if ((bn = bmap(ip, bn)) == 0)
+                                return;
+                        dn = ip->i_dev;
+                } else
+                        dn = ip->i_addr[0];
+                if(n == 512) 
+                        bp = getblk(dn, bn); else
+                        bp = bread(dn, bn);
+                iomove(bp, on, n, B_WRITE);
+                if(u.u_error != 0)
+                        brelse(bp); else
+                if ((u.u_offset[1]&0777)==0)
+                        bawrite(bp); else
+                        bdwrite(bp);
+.,.+23p
+                        bdwrite(bp);
+                if(dpcmp(ip->i_size0, ip->i_size1,
+                  u.u_offset[0], u.u_offset[1]) < 0 &&
+                  (ip->i_mode&(IFBLK&IFCHR)) == 0) {
+                        ip->i_size0 = u.u_offset[0];
+                        ip->i_size1 = u.u_offset[1];
+                }
+                ip->i_flag =| IUPD;
+        } while(u.u_error==0 && u.u_count!=0);
+}
+
+max(a, b)
+char *a, *b;
+{
+
+        if(a > b)
+                return(a);
+        return(b);
+}
+
+min(a, b)
+char *a, *b;
+{
+
+.,.+23p
+
+        if(a < b)
+                return(a);
+        return(b);
+}
+
+iomove(bp, o, an, flag)
+struct buf *bp;
+{
+        register char *cp;
+        register int n, t;
+
+        n = an;
+        cp = bp->b_addr + o;
+        if(u.u_segflg==0 && ((n | cp | u.u_base)&01)==0) {
+                if (flag==B_WRITE)
+                        cp = copyin(u.u_base, cp, n);
+                else
+                        cp = copyout(cp, u.u_base, n);
+                if (cp) {
+                        u.u_error = EFAULT;
+                        return;
+                }
+                u.u_base =+ n;
+.,.+23p
+?
+.,$p
+                u.u_base =+ n;
+                dpadd(u.u_offset, n);
+                u.u_count =- n;
+                return;
+        }
+        if (flag==B_WRITE) {
+                while(n--) {
+                        if ((t = cpass()) < 0)
+                                return;
+                        *cp++ = t;
+                }
+        } else
+                while (n--)
+                        if(passc(*cp++) < 0)
+                                return;
+}
+ql#
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% ed alloc.c
+3368
+/x/
+?
+/e/p
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+g/e/p
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+#include "../param.h"
+#include "../systm.h"
+#include "../filsys.h"
+#include "../buf.h"
+#include "../inode.h"
+#include "../user.h"
+        register *cp, *bp;
+        bp = bread(rootdev, 1);
+        cp = getblk(NODEV);
+        if(u.u_error)
+        brelse(bp);
+        mount[0].m_dev = rootdev;
+        time[0] = cp->s_time[0];
+        time[1] = cp->s_time[1];
+alloc(dev)
+        register *bp, *ip, *fp;
+        fp = getfs(dev);
+        while(fp->s_flock)
+                sleep(&fp->s_flock, PINOD);
+        bno = fp->s_free[--fp->s_nfree];
+                fp->s_nfree++;
+                printf("No space on dev %d\n", dev);
+                u.u_error = ENOSPC;
+                return(NULL);
+        if(fp->s_nfree <= 0) {
+                bp = bread(dev, bno);
+                fp->s_nfree = *ip++;
+                bcopy(ip, fp->s_free, 100);
+                brelse(bp);
+                wakeup(&fp->s_flock);
+        bp = getblk(dev, bno);
+        return(bp);
+free(dev, bno)
+        register *fp, *bp, *ip;
+        fp = getfs(dev);
+        while(fp->s_flock)
+                sleep(&fp->s_flock, PINOD);
+        if(fp->s_nfree >= 100) {
+                bp = getblk(dev, bno);
+                *ip++ = fp->s_nfree;
+                bcopy(fp->s_free, ip, 100);
+                fp->s_nfree = 0;
+                bwrite(bp);
+                wakeup(&fp->s_flock);
+        fp->s_free[fp->s_nfree++] = bno;
+ialloc(dev)
+        register *fp, *bp, *ip;
+        fp = getfs(dev);
+        while(fp->s_ilock)
+                sleep(&fp->s_ilock, PINOD);
+        if(fp->s_ninode > 0) {
+                ino = fp->s_inode[--fp->s_ninode];
+                ip = iget(dev, ino);
+                if(ip->i_mode == 0) {
+                        for(bp = &ip->i_mode; bp < &ip->i_addr[8];)
+                        return(ip);
+        for(i=0; i<fp->s_isize; i++) {
+                bp = bread(dev, i+2);
+                                continue;
+                        if(dev==inode[k].i_dev && ino==inode[k].i_number)
+                        fp->s_inode[fp->s_ninode++] = ino;
+                        if(fp->s_ninode >= 100)
+                                break;
+                brelse(bp);
+                if(fp->s_ninode >= 100)
+                        break;
+        if(fp->s_ninode <= 0)
+                panic("out of inodes");
+        wakeup(&fp->s_ilock);
+ifree(dev, ino)
+        register *fp;
+        fp = getfs(dev);
+                return;
+        if(fp->s_ninode >= 100)
+                return;
+        fp->s_inode[fp->s_ninode++] = ino;
+getfs(dev)
+        register struct mount *p;
+                if(p->m_bufp != NULL && p->m_dev == dev) {
+                        return(p);
+update()
+        register struct inode *ip;
+        register struct mount *mp;
+        register *bp;
+                return;
+                                continue;
+                        bp = getblk(mp->m_dev, 1);
+                        ip->s_time[0] = time[0];
+                        ip->s_time[1] = time[1];
+                        bwrite(bp);
+        for(ip = &inode[0]; ip < &inode[NINODE]; ip++)
+                        prele(ip);
+q
+% pwd
+../usr/sys/ken
+% who
+jackson tty2 Aug 25 11:55
+thalia  tty8 Aug 25 11:55
+% pwd
+../usr/sys/ken
+% chdir /usr/thalia
+% cat hints/@chdir hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% chdir 3semantics
+% ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% cat mullender.das
+000000: 010704                  mov     pc,r4
+000002: 005744                  tst     -(r4)
+000004: 162704 000011           sub     $11,r4
+000010: 010467 000006           mov     r4,22
+000014: 012700 000001           mov     $1,r0
+000020: 104404                  trap    4
+000022: 000000                  0
+000024: 000011                  11
+000026: 012702 001000           mov     $1000,r2
+000032: 104455                  trap    55
+000034: 077202                  sob     r2,32
+000036: 000760                  br      0
+% symc@@sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed

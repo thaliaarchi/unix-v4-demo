@@ -440,3 +440,482 @@ Login incorrect.
 Name: michael
 % ls
 % 
+
+Connected to the PDP-11 simulator DCI device, line 5
+
+
+;login: unix
+Login incorrect.
+Name: Andrwe
+Login incorrect.
+Name: Andrew
+Login incorrect.
+Name: root
+# ed /etc/passwd
+626
+p
+jackson::11:11::/usr/jackson:
+a
+andrew::12:12::/usr/andrew:.?
+.
+jackson::11:11::/usr/jackson:
+s
+?
+a#p
+jackson::11:11::/usr/jackson:
+a
+andrew::12:12::/usr/andrew:
+.
+p
+andrew::12:12::/usr/andrew:
+1,1p
+root::0:1::/:
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+andrew::12:12::/usr/andrew:
+s/12/17#######s/12/17/g
+p
+andrew::17:17::/usr/andrew:
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+andrew::17:17::/usr/andrew:
+/yang/
+yang::16::16::/usr/yang:
+s/16##16::16/16:16
+?
+s/16::16/16:16/
+p
+yang::16:16::/usr/yang:
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16:16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+andrew::17:17::/usr/andrew:
+q
+# ed /etc/passwd
+626
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+/yang
+?
+/yang/
+yang::16::16::/usr/yang:
+s/16::16/16:16/
+w
+625
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16:16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+a
+andrew::17:17::/usr/andrew:
+.
+w
+653
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16:16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+andrew::17:17::/usr/andrew:
+q
+# mkdir /usr/andrew
+# su andrew
+# whoami
+whoami: not found
+# who
+jackson tty2 Aug 25 11:55
+jackson tty3 Aug 25 12:42
+root    tty5 Aug 25 12:33
+thalia  tty8 Aug 25 11:55
+# dir
+dir: not found
+# pwd
+..
+# cd /usr/andrew
+haha
+# chi
+# chdir /usr/andrew
+# # 
+;login: andrew
+% chown /use#r/andrew andrew
+Who?
+% chown andrew /usr/andrew
+/usr/andrew?
+% su
+# chown andrew /usr/andrew
+# % chdir /usr/thalia
+% ls
+a.out
+beeps.c
+hi
+hints
+lrc2026
+mullender.c
+rfc4
+saturnv
+thanks
+% ed mullender.c##########################ed mullender.c
+469
+1
+/* Portable between VAX11 && PDP11 */
+.,.+29p
+?
+q
+% saturnv###########ed saturnv
+9227
+1.,.+29p
+?
+1
+                                   A
+.,.+29p
+                                   A
+                                   M
+                                   M
+                                   M
+                                   M
+                                   M
+                                   M
+                                   M
+                                  /M\
+                                 '[V]'
+                                  [A]
+                                 [,-']
+                                 [/"\]
+                                 / _ \
+                                / / | \
+                               / /_O_| \
+                              /______|__\
+                              |=_==_==_=|
+                              |  |   |  |
+                             V|  |.V.|__|V
+                             A|  |'A'| =|A
+                              |__|___|= |
+                              |__|___| =|
+                              |####|####|
+                             |    o|     |
+                             |     |     |
+                             |     |     |
+                            |      |      |
+                            |      |      |
+                            |      |      |
+.,.+23p
+                            |      |      |
+                           |       |       |
+                           |       |       |
+                           |-------|-------|
+                          |        |        |
+                          |        |        |
+                          |___.____|____.___|
+                         |                   |
+                         |___________________|
+                        /|HH|      |HH][HHHHHI
+                        [|##|      |##][#####I
+                        [|##|      |#########I
+                        [|##|______|#######m#I
+                        [I|||||||||||||||||||I
+                        [I|||||||||||||||||||I
+                        [|                   |
+                        [|    H  H          H|
+                        [|    H  H          H|
+                        [|    \hdF          V|
+                        [|     `'            |
+                        [|    d##b          d|
+                        [|    #hn           #|
+                        [|     ""#          }|
+                        [|    \##/          V|
+.,.+23p
+                        [|    \##/          V|
+                        [|                   |
+                        [|     dh           d|
+                        [|    d/\h          d|
+                        [|    H""H          H|
+                        [|    "  "          "|
+                        [|________.^.________|
+                        [I########[ ]########I
+                        [I###[]###[.]########I
+                        [I###|||||[_]####||||I
+                        [####II####|        n |
+                       /###########|         " \
+                       ############|           |
+                      /############|            \
+                      ######"######|            |
+                     /             |####### #####\
+                     |             |#######.######
+                    /              |##############\
+                    |              |###############
+                   /_______________|###############\
+                   I|||||||||||||||||||||||||||||||I
+                   I|||||||||||||||||||||||||||||||I
+                   I|||||||||||||||||||||||||||||||I
+                   I|||||||||||||||||||||||||||||||I
+.,.+23p
+                   I|||||||||||||||||||||||||||||||I
+                   |                               |
+                   |-------------------------------|
+                   |                               |
+                   | [                  U          |
+                   | [                  N          |
+                   | !                  I          |
+                   | [                  T          |
+                   | [                  E          |
+                   | }                  D          |
+                   |                               |
+                   |                               |
+                   | {                  S          |
+                   | [                  T          |
+                   | :                  A          |
+                   | [                  T          |
+                   | [                  E          |
+                  /| {  /|              S    |\    |
+                 | |   | |                   | |   |
+                 | |   | |                   | |   |
+                 | |   | |                   | |   |
+                 |_|___|_|___________________|_|___|
+                 | |   | |                   | |   |\
+                 | |___| |___________________| |___|]
+.,.+23p
+                 | |___| |___________________| |___|]
+                 | |###| |###################| |###|]
+                 | |###| |###################| |###|]
+                 | |###| |""""""""""#########| |"""|]
+                 | |###| |         |#########| |   |]
+                  \|####\|---------|#########|/----|]
+                   |#####|         |#########|     |/
+                   |#####|         |#########|     |
+                  /]##### |        | ######## |    [\
+                  []##### |        | ######## |    []
+                  []##### |        | ######## |    []
+                  []##### |        | ######## |    []
+                  []##### |        | ######## |    []
+                   |#####|---------|#########|-----|
+                   |#####|         |#########|     |
+                   |#####|         |##H######|     |
+                   |#####|         |##H######|     |
+                   |#####|         |##H######|     |
+                   |#####|_________|##H######|_____|
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+.,.+23p
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+                   |     ####"""""""  H            |
+                   |     ####"""""""  H            |
+                   |     """""""""""  H            |
+                   |     """""""""""  H            |
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+                   |                  H            |
+                   |__________________H____________|
+                   |                  H            |
+                   I||||||||||||||||||H||||||||||||I
+                   I||||||||||||||||||H||||||||||||I
+                   I||||||||||||||||||H||||||||||||I
+                   I||||||||||||||||||H||||||||||||I
+                   I||||||||||||||||||H||||||||||||I
+                   I||||||||||||||||||H||||||||||||I
+                   I||||||||||||||||||H||||||||||||I
+.,.+23p
+                   I||||||||||||||||||H||||||||||||I
+                   I||||||||||||||||||H||||||||||||I
+                   I||||||||||||||||||H||||||||||||I
+                   |#####|         |##H######|     |
+                   |#####|         |##H######|     |
+                   |#####|  H   H  |##H######|   H |
+                   |#####|  H   H  |##H######|   H |
+                   |#####|  H   H  |##H######|   H |
+                   |#####|  \h_dF  |##H######|   Vm|
+                   |#####|   `"'   |##H######|    "|
+                   |#####|         |##H######|     |
+                   |#####|  /###\  |##H######|   /#|
+                   |#####|  #   '  |##H######|   # |
+                   |#####|  \###\  |##H######|   \#|
+                   |#####|  .   #  |##H######|   . |
+                   |#####|  \###/  |##H######|   \#|
+                   |#####|         |##H######|     |
+                   |#####|    H    |##H######|     [
+                   |#####|   dAh   |##H######|    H|
+                   |#####|  dF qL  |##H######|   dF|
+                   |#####|  HhmdH  |##H######|   Hm|
+                   |#####|  H   H  [%]H#apx##|   H |
+                   |#####|         |##H######|     |
+                   |#####A         |##H######A     |
+.,.+23p
+?
+.,.+10p
+                   |#####A         |##H######A     |
+                   |####| |        |##H#####|#|    |
+                   |####| |        |##H#####|#|    |
+                   |###|   |       |##H####|###|   |
+                   |###|   |       |##H####|###|   |
+                   |##|     |      |##H###|#####|  |
+                   |#-|     |      |##H###|#####|-_|
+                _-"==|       |     |##H##|#######|=="-_
+             _-"=[]==|       |     |##H##|#######|==[]="-_
+            |========|_______|_____|##H##|#######|========|
+            !=======|=========|____|##H#|=========|=======!
+.,.+10p
+?
+.,.+5p
+            !=======|=========|____|##H#|=========|=======!
+                    !=========! /#####\ !=========!
+                     /#######\ /#######\ /#######\
+                    d#########V#########V#########h
+                    H#########H#########H#########H
+                   |###########H#######H###########|
+.,.+3p
+?
+.,.+1p
+                   |###########H#######H###########|
+                   |###########|"""""""|###########|
+.,.+1p
+                   |###########|"""""""|###########|
+                    """""""""""         """""""""""
+.,.+1p
+?

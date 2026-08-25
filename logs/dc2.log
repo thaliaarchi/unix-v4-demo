@@ -2333,3 +2333,1947 @@ w	  {
 	@@@ ? * [
 	/etc/glob# 
 ;login: 
+
+Connected to the PDP-11 simulator DCI device, line 2
+
+
+;login: root
+# ls -a
+.
+..
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# man ##@
+# which useradd
+which: not found
+# cd /etc
+haha
+# chdir /etc
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+passwd
+rc
+ttys
+umount
+update
+# which ed
+which: not found
+# e@
+# ls /bin@
+# /ls@
+# ls /usr/bin
+ac
+cal
+comm
+cref
+crpost
+diff
+fed
+find
+form
+grep
+mesg
+nice
+nohup
+passwd
+pfe
+prof
+pwd
+roff
+sa
+sleep
+sno
+split
+tee
+tr
+typo
+upost
+wc
+yacc
+# ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+sh.bak
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# ma ned@
+# man ed
+man: not found
+# ed --help
+?
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+# echo "jackson::111:111::/usr/jackson"
+jackson::111:111::/usr/jackson
+# [A[Bcd @
+# mkdir /usr/jackson
+# cd /usr/jackson
+haha
+# cddir /usr/jackson
+cddir: not found
+# chdir@
+# ed /etc/passwd 
+# [A[Bed /etc/passwd
+No match
+# ed /etc/passwd 
+# ed /etcpass@
+# ed /etc/passwd
+596
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+3p
+thalia::4:4::/usr/thalia:
+$p
+dominic::111:111::/usr/dominic:
+.p
+dominic::111:111::/usr/dominic:
+
+?
+1
+root::0:1::/:
+
+bin::3:1::/bin:
+$
+dominic::111:111::/usr/dominic:
+a
+jackson::11::11::/usr/jackson:
+.
+$p
+jackson::11::11::/usr/jackson:
+wq
+?
+q?
+w
+627
+q
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16::16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11::11::/usr/jackson:
+# 
+;login: jackson
+No shell.
+;login: root
+# ed /etcpa@
+# ed /etc/passwd
+627
+p
+jackson::11::11::/usr/jackson:
+.=
+25
+s/::11/:11/
+p
+jackson:11::11::/usr/jackson:
+c
+jackson::11:11::/usr/jackson:
+.
+p
+jackson::11:11::/usr/jackson:
+.-2,.[#p
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+w
+626
+q
+# 
+;login: jackson
+% cd /usr/jackson
+haha
+% cd##ls -l /usr/jackson
+total 0
+% ls -al /usr/jc#ackson
+total 3
+drwxrwxrwx 2 root       32 Aug 25 11:34 .
+drwxr-xr-x38 bin       608 Aug 25 11:34 ..
+% 
+;login: root
+# ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+sh.bak
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# 
+;login: jackson
+% su
+# chown jackson /usr/jackson
+# ls -al /usr/jackson
+total 3
+drwxrwxrwx 2 jackso     32 Aug 25 11:45 .
+drwxr-xr-x38 bin       608 Aug 25 11:34 ..
+# chmod 755 /usr/jackson
+# cd @
+# cp /@
+# ls /usr/thalia
+a.out
+beeps.c
+hi
+hints
+lrc2026
+mullender.c
+rfc4
+saturnv
+thanks
+# cp mull	@
+# cp mullender.c@
+# cp /usr/thalia/mullender.c .
+# ls
+mullender.c
+# cp /usr/thalia/hints @
+# ls /usr/thalia/hints
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+# cat /usr/thalia@#
+# ls -l /usr/b#thalia/hints
+total 6
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 1compile
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 2syntax
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 3semantics
+drwxr-xr-x 2 thalia    144 Aug 18 03:47 4debug
+drwxr-xr-x 2 thalia     96 Aug 18 03:44 5solution
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 resources
+# ls -l /usr/thalia/hints/1compile
+total 1
+-rw-r--r-- 1 thalia    123 Aug 18 03:43 hint
+# ls @
+# cat /usr/thalia/hints/1compile/hints#
+Hint: Compile mullender.c with
+	cc mullender.c
+or assemble mullender.s with
+	as mullender.s
+The output is placed at a.out.
+# cc mullendar#
+# cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+# ls -l
+total 1
+-rw-r--r-- 1 root      469 Aug 25 11:47 mullender.c
+# cat mul	#@
+# cat mul*
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+# ls -l /usr/thalia/hints
+total 6
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 1compile
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 2syntax
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 3semantics
+drwxr-xr-x 2 thalia    144 Aug 18 03:47 4debug
+drwxr-xr-x 2 thalia     96 Aug 18 03:44 5solution
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 resources
+# ls -l /usr/thalia/hints/2syntax
+total 6
+-rw-r--r-- 1 thalia    237 Aug 18 03:43 hint1
+-rw-r--r-- 1 thalia     88 Aug 18 03:43 hint2
+-rw-r--r-- 1 thalia    444 Aug 18 03:43 hint3a
+-rw-r--r-- 1 thalia    331 Aug 18 03:43 hint3b
+-rw-r--r-- 1 thalia    521 Aug 18 03:43 solution.c
+# ls -l /usr/thalia/hints/2syntax/hint1
+-rw-r--r-- 1 thalia    237 Aug 18 03:43 /usr/thalia/hints/2syntax/hint1
+# cat ls -l /usr/thalia/hints/2syntax#@
+# cat /usr/thalia/hints2#/2syntax
+/2syntax: not found
+# cat /usr/thalia/hints/2syntax
+7.A..hint1hint2hint3a2hint3b!solution.csolution.osolution.oa.out# cat /usr/thalia/hints/2syntax/hint
+# cat /usr/thalia/hints/2syntax/hint1
+Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.
+# [103;6uls
+Arg count
+6uls: not found
+# clear
+
+
+Connected to the PDP-11 simulator DCI device, line 2
+
+
+;login: jackson
+% pwd
+../usr/jackson
+% ls -la
+total 4
+drwxr-xr-x 2 jackso     48 Aug 25 11:55 .
+drwxr-xr-x38 bin       608 Aug 25 11:34 ..
+-rw-r--r-- 1 root      469 Aug 25 11:47 mullender.c
+% ed mullendar.c#@
+% ed mullender.@.c
+.c: not found
+% ed mullender.c
+469
+p
+	'p', 072163, 'r', 29303, 29801, 'e' };
+1p
+/* Portable between VAX11 && PDP11 */
+2p
+short main[] = {
+2/short/int/
+?
+2p
+short main[] = {
+2s/short/int/
+2p
+int main[] = {
+w
+?
+q
+% cat mul@#*I
+Arg count
+% cat mul*
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ed mullendar#
+?
+e?
+#@
+?
+@
+?
+q
+% ed mul*
+469
+2/short/int/
+?
+p
+	'p', 072163, 'r', 29303, 29801, 'e' };
+2p
+short main[] = {
+s#
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+2s/short/int/
+2p
+int main[] = {
+w
+?
+w
+?
+q
+% ls -l 
+total 1
+-rw-r--r-- 1 root      469 Aug 25 11:47 mullender.c
+% chmod #@
+% chown jakcosn #@
+% chown jackson mullendar.c
+mullendar.c?
+% chown jackson mullender.c
+mullender.c?
+% su
+# chown jackson mullender.c
+# exit
+# whoami
+whoami: not found
+# % whoami
+whoami: not found
+% who
+jackson tty2 Aug 25 11:55
+thalia  tty8 Aug 25 11:55
+% ls -l /dev/tty*
+crw--w--w- 1 root    3,  0 Aug 22 21:58 /dev/tty0
+crw--w--w- 1 root    3,  1 Aug 22 21:58 /dev/tty1
+crw--w--w- 1 jackso  3,  2 Aug 25 11:59 /dev/tty2
+crw--w--w- 1 root    3,  3 Aug 22 21:58 /dev/tty3
+crw--w--w- 1 root    3,  4 Aug 25 11:59 /dev/tty4
+crw--w--w- 1 root    3,  5 Aug 22 21:58 /dev/tty5
+crw--w--w- 1 root    3,  6 Aug 22 21:58 /dev/tty6
+crw--w--w- 1 root    3,  7 Aug 22 21:58 /dev/tty7
+crw--w--w- 1 thalia  0,  0 Aug 25 11:59 /dev/tty8
+crw--w--w- 1 root    0,  1 Aug 25 11:59 /dev/tty9
+crw--w--w- 1 root    3,  8 Aug 22 21:58 /dev/ttya
+crw--w--w- 1 root    3,  9 Aug 22 21:58 /dev/ttyb
+crw--w--w- 1 root    3, 10 Aug 22 21:58 /dev/ttyc
+crw--w--w- 1 root    3, 11 Aug 22 21:58 /dev/ttyd
+crw--w--w- 1 root    3, 12 Aug 22 21:58 /dev/ttye
+crw--w--w- 1 root    3, 13 Aug 22 21:58 /dev/ttyf
+crw--w--w- 1 root    3, 14 Aug 22 21:58 /dev/ttyg
+crw--w--w- 1 root    3, 15 Aug 22 21:58 /dev/ttyh
+crw--w--w- 1 root    0,  2 Aug 25 11:59 /dev/ttyi
+crw--w--w- 1 root    0,  3 Aug 25 11:59 /dev/ttyj
+crw--w--w- 1 root    0,  4 Aug 25 11:59 /dev/ttyk
+crw--w--w- 1 root    0,  5 Aug 25 11:59 /dev/ttyl
+crw--w--w- 1 root    0,  6 Aug 25 11:59 /dev/ttym
+crw--w--w- 1 root    0,  7 Aug 25 11:59 /dev/ttyn
+crw--w--w- 1 root    0,  8 Aug 25 11:59 /dev/ttyo
+crw--w--w- 1 root    0,  9 Aug 25 11:59 /dev/ttyp
+crw--w--w- 1 root    0, 10 Aug 25 11:59 /dev/ttyq
+crw--w--w- 1 root    0, 11 Aug 25 11:59 /dev/ttyr
+crw--w--w- 1 root    0, 12 Aug 25 11:59 /dev/ttys
+crw--w--w- 1 root    0, 13 Aug 25 11:59 /dev/ttyt
+crw--w--w- 1 root    0, 14 Aug 25 11:59 /dev/ttyu
+crw--w--w- 1 root    0, 15 Aug 25 11:59 /dev/ttyv
+% ed mullendar##er.c
+469
+2s/short/int/
+2p
+int main[] = {
+q#
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+w
+467
+q
+% e#
+% cat /n#mullender.c
+mullender.c: not found
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ls -l /usr/thalia/hints/2syntax
+total 6
+-rw-r--r-- 1 thalia    237 Aug 18 03:43 hint1
+-rw-r--r-- 1 thalia     88 Aug 18 03:43 hint2
+-rw-r--r-- 1 thalia    444 Aug 18 03:43 hint3a
+-rw-r--r-- 1 thalia    331 Aug 18 03:43 hint3b
+-rw-r--r-- 1 thalia    521 Aug 18 03:43 solution.c
+% /usr/thalia/hints/2syntax@
+% ls -l /usr/thalia/hints/2syntax/hint2
+-rw-r--r-- 1 thalia     88 Aug 18 03:43 /usr/thalia/hints/2syntax/hint2
+% cat /usr/thalia/hints/2syntax
+7.A..hint1hint2hint3a2hint3b!solution.csolution.osolution.oa.out% @
+% cat /usr/thalia/hints/2syntax/hint2
+Hint: Array in C as of UNIX V4 were declared without equals, e.g.,
+
+	int a[] {1, 2, 3};
+% sed #@
+% se#
+s: not found
+% ed mullender.c
+467
+p
+	'p', 072163, 'r', 29303, 29801, 'e' };
+2p
+int main[] = {
+2s/ = //
+2p
+int main[]{
+2s/]{/[ @
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+^
+int main[]{
+2s/]{/] {/
+2p
+int main[] {
+q#w
+465
+q
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% kj#@
+% cc mullender.c
+3: Expression syntax
+3: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ls -l /usr/thalia/hints/2syntax/
+total 6
+-rw-r--r-- 1 thalia    237 Aug 18 03:43 hint1
+-rw-r--r-- 1 thalia     88 Aug 18 03:43 hint2
+-rw-r--r-- 1 thalia    444 Aug 18 03:43 hint3a
+-rw-r--r-- 1 thalia    331 Aug 18 03:43 hint3b
+-rw-r--r-- 1 thalia    521 Aug 18 03:43 solution.c
+% ls -l /usr/thalia/hints/2syntax//#hint3a
+-rw-r--r-- 1 thalia    444 Aug 18 03:43 /usr/thalia/hints/2syntax/hint3a
+% cat /usr/thalia/hints/2y#syntax/hint3a/#
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+Octal was the preferred base for expressing bit patterns, a tradition inherited
+from earlier systems. Despite the 16-bit word size not being divisible by 3 (3
+bits per octal digit), all PDP-11 documentation used octal. Note that the
+switches on the PiDP-11 front panel are colored in groups of three, denoting
+octal digits.
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ced @
+% ed mullender.c
+465
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+s/0xbef/05757/
+?
+s/0x52d7/051327/
+?
+s/0x4bc/02274/
+?
+s/0x9/011/
+?
+s/0x9/011/
+?
+s/0x7e82/077202/
+?
+s/0x8/010/
+?
+s/0x6176/060566/
+?
+q
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% ed mullender.c
+465
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+/0x9/s//011/
+/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+w
+465
+q
+% c@
+% ls /etc/@
+% ls /usr/thalia/hints/
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% ls /usr/thalia/t#hints/2syntax/
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% ls /usr/thalia/hints/2syntax/hint3b
+/usr/thalia/hints/2syntax/hint3b
+% l #@
+% ls -l /usr/thalia/hints/2syntax/hint3b
+-rw-r--r-- 1 thalia    331 Aug 18 03:43 /usr/thalia/hints/2syntax/hint3b
+% cat /usr/thalia/hints/2syntax/hint3b
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+% cat me#@
+% ls
+mullender.c
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% cc mullender.c
+% ls -l
+total 2
+-rwxrwxrwx 1 jackso    248 Aug 25 12:25 a.out
+-rw-r--r-- 1 jackso    465 Aug 25 12:23 mullender.c
+% ./a.out
+  :-)Bad system call -- Core dumped
+% cat /usr/@
+% LS @
+% ls -l /us/r@
+% ls -l /usr/thalia/hints/
+total 6
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 1compile
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 2syntax
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 3semantics
+drwxr-xr-x 2 thalia    144 Aug 18 03:47 4debug
+drwxr-xr-x 2 thalia     96 Aug 18 03:44 5solution
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 resources
+% ls -l /usr/thalia/3semantics/h@#
+% ls -l /usr/thalia/3semantics
+/usr/thalia/3semantics not found
+% ls -l /usr/thalia/hints/3semantics
+total 5
+-rw-r--r-- 1 thalia    154 Aug 18 03:43 hint1
+-rw-r--r-- 1 thalia    375 Aug 18 03:43 hint2
+-rw-r--r-- 1 thalia    315 Aug 18 03:43 hint3
+-rw-r--r-- 1 thalia    327 Aug 18 03:43 mullender.das
+-rw-r--r-- 1 thalia    122 Aug 18 03:43 mullender.s
+% ls -l /usr/thalia/hints/3semantics/hint1
+-rw-r--r-- 1 thalia    154 Aug 18 03:43 /usr/thalia/hints/3semantics/hint1
+% cat /usr/thalia/hints/3semantics/hint1
+Hint: The early C compiler did not check the type of main and the C runtime
+simply jumped to main. This definition is interpreted as PDP-11 machine code.
+% cat /usr/thalia/hints/3semantics/hint2
+Hint: The assembly code corresponding to the PDP-11 portion of the program is at
+mullender.s. A disassembly of it, showing the octal values of the words, is at
+mullender.das.
+
+Numbers in PDP-11 assembly are in octal by default, unless they are
+suffixed with a period (.), making them decimal. Period does not mean floating
+point, although the PDP-11 did have floating point.
+% ls -l
+total 7
+-rwxrwxrwx 1 jackso    248 Aug 25 12:25 a.out
+-rw-rw-rw- 1 jackso   2496 Aug 25 12:25 core
+-rw-r--r-- 1 jackso    465 Aug 25 12:23 mullender.c
+% cp /usr/thalia/hints/3semantics/mullender.das .
+% cat mullender.das
+000000: 010704			mov	pc,r4
+000002: 005744			tst	-(r4)
+000004: 162704 000011		sub	$11,r4
+000010: 010467 000006		mov	r4,22
+000014: 012700 000001		mov	$1,r0
+000020: 104404			trap	4
+000022: 000000			0
+000024: 000011			11
+000026: 012702 001000		mov	$1000,r2
+000032: 104455			trap	55
+000034: 077202			sob	r2,32
+000036: 000760			br	0
+% cat /usr/thalia/hints/3semantics/hint2#3
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+	write(1, "  :-)\b\b\b\b", 9);
+	delay();
+}
+% cd /usr/sys
+haha
+% cddir /usr/sys
+cddir: not found
+% chdir /su@
+% chdir /usr/sys
+% ls -l
+total 213
+-rw-r--r-- 1 bin       628 Jun 10 08:37 buf.h
+drwxr-xr-x 2 bin       224 Aug 16 14:08 conf
+-rw-r--r-- 1 bin       291 Jun 10 08:37 conf.h
+-rw-rw-rw- 1 root      652 Aug 16 14:08 conf.o
+drwxr-xr-x 2 bin       848 Aug 16 14:08 dmr
+-rw-r--r-- 1 bin       157 Jun 10 08:37 file.h
+-rw-r--r-- 1 bin       188 Jun 10 08:37 filsys.h
+-rw-r--r-- 1 bin       561 Jun 10 08:37 inode.h
+drwxr-xr-x 2 bin       640 Aug 16 14:08 ken
+-rw-r--r-- 1 bin        35 Jun 10 08:37 ld
+-rw-rw-rw- 1 root    47398 Aug 16 14:08 lib1
+-rw-rw-rw- 1 root    40142 Aug 16 14:08 lib2
+-rw-rw-rw- 1 root     1356 Aug 16 14:08 low.o
+-rw-rw-rw- 1 root     3720 Aug 16 14:08 mch.o
+-rw-r--r-- 1 bin       941 Jun 10 08:37 param.h
+-rw-r--r-- 1 bin       387 Jun 10 08:37 proc.h
+-rw-r--r-- 1 bin       142 Jun 10 08:37 reg.h
+-rw-rw-rw- 1 bin       251 Jun 12 18:52 run
+-rw-r--r-- 1 bin       228 Jun 10 08:37 seg.h
+-rw-r--r-- 1 bin       410 Jun 10 08:37 systm.h
+-rw-r--r-- 1 bin       115 Jun 10 08:37 text.h
+-rw-r--r-- 1 bin       839 Jun 10 08:37 tty.h
+-rw-r--r-- 1 bin      1199 Jun 10 08:37 user.h
+% ls -l ken
+total 109
+-rw-r--r-- 1 bin      3368 Jun 10 08:37 alloc.c
+-rw-r--r-- 1 bin      2159 Jun 10 08:37 clock.c
+-rw-r--r-- 1 bin      2362 Jun 10 08:37 fio.c
+-rw-r--r-- 1 bin      2928 Jun 10 08:37 iget.c
+-rw-r--r-- 1 bin      2673 Jun 10 08:37 main.c
+-rw-r--r-- 1 bin      2633 Jun 10 08:37 nami.c
+-rw-r--r-- 1 bin      1134 Jun 10 08:37 prf.c
+-rw-r--r-- 1 bin      2668 Jun 10 08:37 rdwri.c
+-rw-rw-rw- 1 bin       361 Jun 12 18:52 run
+-rw-r--r-- 1 bin      1602 Jun 10 08:37 sig.c
+-rw-r--r-- 1 bin      5000 Jun 10 08:37 slp.c
+-rw-r--r-- 1 bin      2098 Jun 10 08:37 subr.c
+-rw-r--r-- 1 bin      5472 Jun 10 08:37 sys1.c
+-rw-r--r-- 1 bin      3442 Jun 10 08:37 sys2.c
+-rw-r--r-- 1 bin      4482 Jun 10 08:37 sys3.c
+-rw-r--r-- 1 bin       988 Jun 10 08:37 sys4.c
+-rw-r--r-- 1 bin      1957 Jun 10 08:37 sysent.c
+-rw-r--r-- 1 bin      2036 Jun 10 08:37 text.c
+-rw-r--r-- 1 bin      2154 Jun 10 08:37 trap.c
+% ls -l ke/#n/run
+-rw-rw-rw- 1 bin       361 Jun 12 18:52 ken/run
+% ls -l dmr
+total 134
+-rw-r--r-- 1 bin      7622 Jun 10 08:37 bio.c
+-rw-r--r-- 1 bin       914 Jun 10 08:37 cat.c
+-rw-r--r-- 1 bin      3526 Aug 11 14:34 dc.c
+-rw-r--r-- 1 bin      3828 Jun 10 08:37 dh.c
+-rw-r--r-- 1 bin      1081 Jun 10 08:37 dhdm.c
+-rw-r--r-- 1 bin       244 Jun 10 08:37 dhfdm.c
+-rw-r--r-- 1 bin      1313 Jun 10 08:37 dn.c
+-rw-r--r-- 1 bin      3215 Jun 10 08:37 dp.c
+-r--r--r-- 1 bin      5280 Jun 12 18:17 dv.c
+-rw-r--r-- 1 bin      1610 Aug 11 21:20 kl.c
+-rw-r--r-- 1 bin      2166 Jun 10 08:37 lp.c
+-rw-r--r-- 1 bin      1119 Jun 10 08:37 malloc.c
+-rw-r--r-- 1 bin      1076 Jun 10 08:37 mem.c
+-rw-r--r-- 1 bin       748 Jun 10 08:37 partab.c
+-rw-r--r-- 1 bin      2309 Jun 10 08:37 pc.c
+-rw-r--r-- 1 bin      1932 Jun 10 08:37 pipe.c
+-rw-r--r-- 1 bin      1382 Jun 10 08:37 rf.c
+-rw-r--r-- 1 bin      2980 Jun 10 08:37 rk.c
+-rw-r--r-- 1 bin      3033 Jun 10 08:37 rp.c
+-rw-rw-rw- 1 bin       469 Jun 12 18:53 run
+-rw-r--r-- 1 bin      2349 Jun 10 08:37 tc.c
+-rw-r--r-- 1 bin      3715 Jun 10 08:37 tm.c
+-rw-r--r-- 1 bin      6474 Jun 10 08:37 tty.c
+-rw-r--r-- 1 bin      1585 Jun 10 08:37 vs.c
+-rw-r--r-- 1 bin       884 Jun 10 08:37 vt.c
+% ls -l ken
+total 109
+-rw-r--r-- 1 bin      3368 Jun 10 08:37 alloc.c
+-rw-r--r-- 1 bin      2159 Jun 10 08:37 clock.c
+-rw-r--r-- 1 bin      2362 Jun 10 08:37 fio.c
+-rw-r--r-- 1 bin      2928 Jun 10 08:37 iget.c
+-rw-r--r-- 1 bin      2673 Jun 10 08:37 main.c
+-rw-r--r-- 1 bin      2633 Jun 10 08:37 nami.c
+-rw-r--r-- 1 bin      1134 Jun 10 08:37 prf.c
+-rw-r--r-- 1 bin      2668 Jun 10 08:37 rdwri.c
+-rw-rw-rw- 1 bin       361 Jun 12 18:52 run
+-rw-r--r-- 1 bin      1602 Jun 10 08:37 sig.c
+-rw-r--r-- 1 bin      5000 Jun 10 08:37 slp.c
+-rw-r--r-- 1 bin      2098 Jun 10 08:37 subr.c
+-rw-r--r-- 1 bin      5472 Jun 10 08:37 sys1.c
+-rw-r--r-- 1 bin      3442 Jun 10 08:37 sys2.c
+-rw-r--r-- 1 bin      4482 Jun 10 08:37 sys3.c
+-rw-r--r-- 1 bin       988 Jun 10 08:37 sys4.c
+-rw-r--r-- 1 bin      1957 Jun 10 08:37 sysent.c
+-rw-r--r-- 1 bin      2036 Jun 10 08:37 text.c
+-rw-r--r-- 1 bin      2154 Jun 10 08:37 trap.c
+% cat tr@
+% cat ken/trap.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../proc.h"
+#include "../reg.h"
+#include "../text.h"
+#include "../seg.h"
+
+#define	CSW	0177570
+#define	EBIT	1
+#define	UMODE	0170000
+#define	SETD	0170011
+struct	{
+	int	count;
+	int	(*call)();
+} sysent[64];
+char	regloc[8]
+{
+	R0, R1, R2, R3, R4, R5, R6, R7
+};
+
+trap(dev, sp, r1, nps, r0, pc, ps)
+char *sp;
+{
+	register i, a;
+
+	savfp();
+	u.u_ar0 = &r0;
+	if(dev == 8) {
+		psignal(u.u_procp, SIGFPT);
+		if((ps&UMODE) == UMODE)
+			goto err;
+		return;
+	}
+	if(dev==1 && fuword(pc-2)==SETD && u.u_signal[SIGINS]==0)
+		return;
+	if((ps&UMODE) != UMODE)
+		goto bad;
+	if(dev==9 && sp<-u.u_ssize*64) {
+		if(backup(&r0) == 0)
+		if(!estabur(u.u_tsize, u.u_dsize, u.u_ssize+SINCR)) {
+			u.u_ssize =+ SINCR;
+			expand(u.u_procp->p_size+SINCR);
+			a = u.u_procp->p_addr + u.u_procp->p_size;
+			for(i=0; i<u.u_ssize; i++) {
+				a--;
+				copyseg(a-SINCR, a);
+			}
+			return;
+		}
+	}
+	u.u_error = 0;
+	switch(dev) {
+
+	case 0:
+		i = SIGBUS;
+		goto def;
+
+	case 1:
+		i = SIGINS;
+		goto def;
+
+	case 2:
+		i = SIGTRC;
+		goto def;
+
+	case 3:
+		i = SIGIOT;
+		goto def;
+
+	case 5:
+		i = SIGEMT;
+		goto def;
+
+	case 9:
+		i = SIGSEG;
+		goto def;
+
+	def:
+		psignal(u.u_procp, i);
+
+	default:
+		u.u_error = dev+100;
+
+	case 6:;
+	}
+	if(u.u_error)
+		goto err;
+	ps =& ~EBIT;
+	dev = fuword(pc-2)&077;
+	if(dev == 0) { /* indirect */
+		a = fuword(pc);
+		pc =+ 2;
+		dev = fuword(a)&077;
+		a =+ 2;
+	} else {
+		a = pc;
+		pc =+ sysent[dev].count*2;
+	}
+	for(i=0; i<sysent[dev].count; i++) {
+		u.u_arg[i] = fuword(a);
+		a =+ 2;
+	}
+	u.u_dirp = u.u_arg[0];
+	trap1(sysent[dev].call);
+	if(u.u_error >= 100)
+		psignal(u.u_procp, SIGSYS);
+err:
+	if(issig())
+		psig();
+	if(u.u_error != 0) {
+		ps =| EBIT;
+		r0 = u.u_error;
+	}
+	u.u_procp->p_pri = PUSER + u.u_nice;
+	if(u.u_dsleep++ > 15) {
+		u.u_dsleep = 0;
+		u.u_procp->p_pri++;
+		swtch();
+	}
+	return;
+
+bad:
+	printf("ka6 = %o\n", KISA->r[6]);
+	printf("aps = %o\n", &ps);
+	for(a = CSW->r[0]; a == CSW->r[0]; )
+		idle();
+	panic("trap");
+}
+
+trap1(f)
+int (*f)();
+{
+
+	savu(u.u_qsav);
+	(*f)();
+}
+
+nosys()
+{
+
+	u.u_error = 100;
+}
+
+nullsys()
+{
+}
+% ls -l ken
+total 109
+-rw-r--r-- 1 bin      3368 Jun 10 08:37 alloc.c
+-rw-r--r-- 1 bin      2159 Jun 10 08:37 clock.c
+-rw-r--r-- 1 bin      2362 Jun 10 08:37 fio.c
+-rw-r--r-- 1 bin      2928 Jun 10 08:37 iget.c
+-rw-r--r-- 1 bin      2673 Jun 10 08:37 main.c
+-rw-r--r-- 1 bin      2633 Jun 10 08:37 nami.c
+-rw-r--r-- 1 bin      1134 Jun 10 08:37 prf.c
+-rw-r--r-- 1 bin      2668 Jun 10 08:37 rdwri.c
+-rw-rw-rw- 1 bin       361 Jun 12 18:52 run
+-rw-r--r-- 1 bin      1602 Jun 10 08:37 sig.c
+-rw-r--r-- 1 bin      5000 Jun 10 08:37 slp.c
+-rw-r--r-- 1 bin      2098 Jun 10 08:37 subr.c
+-rw-r--r-- 1 bin      5472 Jun 10 08:37 sys1.c
+-rw-r--r-- 1 bin      3442 Jun 10 08:37 sys2.c
+-rw-r--r-- 1 bin      4482 Jun 10 08:37 sys3.c
+-rw-r--r-- 1 bin       988 Jun 10 08:37 sys4.c
+-rw-r--r-- 1 bin      1957 Jun 10 08:37 sysent.c
+-rw-r--r-- 1 bin      2036 Jun 10 08:37 text.c
+-rw-r--r-- 1 bin      2154 Jun 10 08:37 trap.c
+% ls -l
+total 213
+-rw-r--r-- 1 bin       628 Jun 10 08:37 buf.h
+drwxr-xr-x 2 bin       224 Aug 16 14:08 conf
+-rw-r--r-- 1 bin       291 Jun 10 08:37 conf.h
+-rw-rw-rw- 1 root      652 Aug 16 14:08 conf.o
+drwxr-xr-x 2 bin       848 Aug 16 14:08 dmr
+-rw-r--r-- 1 bin       157 Jun 10 08:37 file.h
+-rw-r--r-- 1 bin       188 Jun 10 08:37 filsys.h
+-rw-r--r-- 1 bin       561 Jun 10 08:37 inode.h
+drwxr-xr-x 2 bin       640 Aug 16 14:08 ken
+-rw-r--r-- 1 bin        35 Jun 10 08:37 ld
+-rw-rw-rw- 1 root    47398 Aug 16 14:08 lib1
+-rw-rw-rw- 1 root    40142 Aug 16 14:08 lib2
+-rw-rw-rw- 1 root     1356 Aug 16 14:08 low.o
+-rw-rw-rw- 1 root     3720 Aug 16 14:08 mch.o
+-rw-r--r-- 1 bin       941 Jun 10 08:37 param.h
+-rw-r--r-- 1 bin       387 Jun 10 08:37 proc.h
+-rw-r--r-- 1 bin       142 Jun 10 08:37 reg.h
+-rw-rw-rw- 1 bin       251 Jun 12 18:52 run
+-rw-r--r-- 1 bin       228 Jun 10 08:37 seg.h
+-rw-r--r-- 1 bin       410 Jun 10 08:37 systm.h
+-rw-r--r-- 1 bin       115 Jun 10 08:37 text.h
+-rw-r--r-- 1 bin       839 Jun 10 08:37 tty.h
+-rw-r--r-- 1 bin      1199 Jun 10 08:37 user.h
+% cd dmr
+haha
+% ls @
+% chdir dmr
+% ls
+bio.c
+cat.c
+dc.c
+dh.c
+dhdm.c
+dhfdm.c
+dn.c
+dp.c
+dv.c
+kl.c
+lp.c
+malloc.c
+mem.c
+partab.c
+pc.c
+pipe.c
+rf.c
+rk.c
+rp.c
+run
+tc.c
+tm.c
+tty.c
+vs.c
+vt.c
+% cd ../
+haha
+% cd#@
+% cd /usr/
+haha
+% ls @
+% chdir @
+% ls -l
+total 134
+-rw-r--r-- 1 bin      7622 Jun 10 08:37 bio.c
+-rw-r--r-- 1 bin       914 Jun 10 08:37 cat.c
+-rw-r--r-- 1 bin      3526 Aug 11 14:34 dc.c
+-rw-r--r-- 1 bin      3828 Jun 10 08:37 dh.c
+-rw-r--r-- 1 bin      1081 Jun 10 08:37 dhdm.c
+-rw-r--r-- 1 bin       244 Jun 10 08:37 dhfdm.c
+-rw-r--r-- 1 bin      1313 Jun 10 08:37 dn.c
+-rw-r--r-- 1 bin      3215 Jun 10 08:37 dp.c
+-r--r--r-- 1 bin      5280 Jun 12 18:17 dv.c
+-rw-r--r-- 1 bin      1610 Aug 11 21:20 kl.c
+-rw-r--r-- 1 bin      2166 Jun 10 08:37 lp.c
+-rw-r--r-- 1 bin      1119 Jun 10 08:37 malloc.c
+-rw-r--r-- 1 bin      1076 Jun 10 08:37 mem.c
+-rw-r--r-- 1 bin       748 Jun 10 08:37 partab.c
+-rw-r--r-- 1 bin      2309 Jun 10 08:37 pc.c
+-rw-r--r-- 1 bin      1932 Jun 10 08:37 pipe.c
+-rw-r--r-- 1 bin      1382 Jun 10 08:37 rf.c
+-rw-r--r-- 1 bin      2980 Jun 10 08:37 rk.c
+-rw-r--r-- 1 bin      3033 Jun 10 08:37 rp.c
+-rw-rw-rw- 1 bin       469 Jun 12 18:53 run
+-rw-r--r-- 1 bin      2349 Jun 10 08:37 tc.c
+-rw-r--r-- 1 bin      3715 Jun 10 08:37 tm.c
+-rw-r--r-- 1 bin      6474 Jun 10 08:37 tty.c
+-rw-r--r-- 1 bin      1585 Jun 10 08:37 vs.c
+-rw-r--r-- 1 bin       884 Jun 10 08:37 vt.c
+% pwd
+../usr/sys/dmr
+% chdir /usr
+% ls -l
+total 36
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      288 Aug 18 18:17 alex
+drwxrwxrwx 2 root      112 Aug 18 18:17 amitb
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxrwxrwx 2 ben        32 Aug 22 21:53 ben
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxrwxrwx 2 bx        128 Aug 18 18:17 bx
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 12:23 cody
+drwxrwxrwx 2 bin        32 Aug 18 11:15 dnm
+drwxrwxrwx 2 domini     64 Aug 18 16:50 dominic
+drwxrwxrwx 2 root       32 Aug 18 13:17 doug
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 root       32 Aug 18 14:20 hacker
+drwxrwxrwx 2 105        32 Aug 18 11:15 hash
+drwxr-xr-x 2 jackso     96 Aug 25 12:33 jackson
+drwxrwxrwx 2 joe        32 Aug 18 11:15 joe
+drwxrwxrwx 2 jordan    144 Aug 18 16:46 jordan
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxrwxrwx 2 kevin     128 Aug 18 15:29 kevin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 13:55 michael
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia    192 Aug 18 18:16 thalia
+drwxrwxrwx 2 bin        48 Aug 18 13:31 tmp
+drwxrwxrwx 2 198        32 Aug 18 11:15 ty
+drwxrwxrwx 2 root       32 Aug 18 13:49 voytilla
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+% cd c
+haha
+% chdir c
+% ls -l
+total 345
+-rw-r--r-- 1 bin     11616 Jun 10 08:37 c00.c
+-rw-r--r-- 1 bin     14028 Jun 10 08:37 c00.o
+-rw-r--r-- 1 bin      6615 Jun 10 08:37 c01.c
+-rw-r--r-- 1 bin      7912 Jun 10 08:37 c01.o
+-rw-r--r-- 1 bin     11397 Jun 10 08:37 c02.c
+-rw-r--r-- 1 bin     12660 Jun 10 08:37 c02.o
+-rw-r--r-- 1 bin      2353 Jun 10 08:37 c03.c
+-rw-r--r-- 1 bin      3392 Jun 10 08:37 c03.o
+-rw-r--r-- 1 bin      6186 Jun 10 08:37 c04.c
+-rw-r--r-- 1 bin      1500 Jun 10 08:37 c04.o
+-rw-r--r-- 1 bin      3635 Jun 10 08:37 c0h.c
+-rw-r--r-- 1 bin      1704 Jun 10 08:37 c0t.s
+-rw-r--r-- 1 bin     16649 Jun 10 08:37 c10.c
+-rw-r--r-- 1 bin      9124 Jun 10 08:37 c11.c
+-rw-r--r-- 1 bin      2126 Jun 10 08:37 c12.c
+-rw-r--r-- 1 bin      2747 Jun 10 08:37 c1h.c
+-rw-r--r-- 1 bin       776 Jun 10 08:37 c1t.s
+-rw-r--r-- 1 bin     16474 Jun 10 08:37 c20.c
+-rw-r--r-- 1 bin      1217 Jun 10 08:37 cctab.s
+-rwxr-xr-x 1 bin      2438 Jun 10 08:37 cvopt
+-rw-r--r-- 1 bin      3673 Jun 10 08:37 cvopt.c
+-rw-r--r-- 1 bin      1776 Jun 10 08:37 efftab.s
+-rw-r--r-- 1 bin      6655 Jun 10 08:37 regtab.s
+-rw-r--r-- 1 bin      1373 Jun 10 08:37 sptab.s
+-rw-r--r-- 1 bin     15870 Jun 10 08:37 tab.a
+-rw-r--r-- 1 bin        91 Jun 10 08:37 trc
+% ls -l /usr/thalia/hints
+total 6
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 1compile
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 2syntax
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 3semantics
+drwxr-xr-x 2 thalia    144 Aug 18 03:47 4debug
+drwxr-xr-x 2 thalia     96 Aug 18 03:44 5solution
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 resources
+% cd /usr/sys/ken
+haha
+% chdir /usr/sys/ken
+% ls -l
+total 109
+-rw-r--r-- 1 bin      3368 Jun 10 08:37 alloc.c
+-rw-r--r-- 1 bin      2159 Jun 10 08:37 clock.c
+-rw-r--r-- 1 bin      2362 Jun 10 08:37 fio.c
+-rw-r--r-- 1 bin      2928 Jun 10 08:37 iget.c
+-rw-r--r-- 1 bin      2673 Jun 10 08:37 main.c
+-rw-r--r-- 1 bin      2633 Jun 10 08:37 nami.c
+-rw-r--r-- 1 bin      1134 Jun 10 08:37 prf.c
+-rw-r--r-- 1 bin      2668 Jun 10 08:37 rdwri.c
+-rw-rw-rw- 1 bin       361 Jun 12 18:52 run
+-rw-r--r-- 1 bin      1602 Jun 10 08:37 sig.c
+-rw-r--r-- 1 bin      5000 Jun 10 08:37 slp.c
+-rw-r--r-- 1 bin      2098 Jun 10 08:37 subr.c
+-rw-r--r-- 1 bin      5472 Jun 10 08:37 sys1.c
+-rw-r--r-- 1 bin      3442 Jun 10 08:37 sys2.c
+-rw-r--r-- 1 bin      4482 Jun 10 08:37 sys3.c
+-rw-r--r-- 1 bin       988 Jun 10 08:37 sys4.c
+-rw-r--r-- 1 bin      1957 Jun 10 08:37 sysent.c
+-rw-r--r-- 1 bin      2036 Jun 10 08:37 text.c
+-rw-r--r-- 1 bin      2154 Jun 10 08:37 trap.c
+% cat sysent.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/* 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+};
+% who
+jackson tty2 Aug 25 11:55
+jackson tty3 Aug 25 12:42
+andrew  tty5 Aug 25 12:44
+thalia  tty8 Aug 25 11:55
+% cat /usr/thalia/hints/4debug@
+% ls -l /usr/thalia/hints/4debug/
+total 4
+-rw-r--r-- 1 thalia    188 Aug 18 03:41 hint1
+-rw-r--r-- 1 thalia     82 Aug 18 03:41 hint2a
+-rw-r--r-- 1 thalia    257 Aug 18 03:41 hint2b
+-rw-rw-rw- 1 thalia     70 Aug 18 03:46 hint3
+% ls -l /usr/thalia/hints/4debug/hint1
+-rw-r--r-- 1 thalia    188 Aug 18 03:41 /usr/thalia/hints/4debug/hint1
+% cat /usr/thalia/hints/4debug/hint1
+Hint: Now that it compiles, run it. What's broken?
+
+% cc mullender.c
+% a.out
+ Bad system call -- Core dumped
+
+If you want to skip fixing the syntax, you can start with 2syntax/solution.c.
+% cat /usr/thalia/hints/4debug/hint12a
+2a: not found
+% cat cat /usr/thalia/hints/4debug/hint1@
+% cat /usr/sys/ke[D@
+% cat /usr/sys/ken/trap.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../proc.h"
+#include "../reg.h"
+#include "../text.h"
+#include "../seg.h"
+
+#define	CSW	0177570
+#define	EBIT	1
+#define	UMODE	0170000
+#define	SETD	0170011
+struct	{
+	int	count;
+	int	(*call)();
+} sysent[64];
+char	regloc[8]
+{
+	R0, R1, R2, R3, R4, R5, R6, R7
+};
+
+trap(dev, sp, r1, nps, r0, pc, ps)
+char *sp;
+{
+	register i, a;
+
+	savfp();
+	u.u_ar0 = &r0;
+	if(dev == 8) {
+		psignal(u.u_procp, SIGFPT);
+		if((ps&UMODE) == UMODE)
+			goto err;
+		return;
+	}
+	if(dev==1 && fuword(pc-2)==SETD && u.u_signal[SIGINS]==0)
+		return;
+	if((ps&UMODE) != UMODE)
+		goto bad;
+	if(dev==9 && sp<-u.u_ssize*64) {
+		if(backup(&r0) == 0)
+		if(!estabur(u.u_tsize, u.u_dsize, u.u_ssize+SINCR)) {
+			u.u_ssize =+ SINCR;
+			expand(u.u_procp->p_size+SINCR);
+			a = u.u_procp->p_addr + u.u_procp->p_size;
+			for(i=0; i<u.u_ssize; i++) {
+				a--;
+				copyseg(a-SINCR, a);
+			}
+			return;
+		}
+	}
+	u.u_error = 0;
+	switch(dev) {
+
+	case 0:
+		i = SIGBUS;
+		goto def;
+
+	case 1:
+		i = SIGINS;
+		goto def;
+
+	case 2:
+		i = SIGTRC;
+		goto def;
+
+	case 3:
+		i = SIGIOT;
+		goto def;
+
+	case 5:
+		i = SIGEMT;
+		goto def;
+
+	case 9:
+		i = SIGSEG;
+		goto def;
+
+	def:
+		psignal(u.u_procp, i);
+
+	default:
+		u.u_error = dev+100;
+
+	case 6:;
+	}
+	if(u.u_error)
+		goto err;
+	ps =& ~EBIT;
+	dev = fuword(pc-2)&077;
+	if(dev == 0) { /* indirect */
+		a = fuword(pc);
+		pc =+ 2;
+		dev = fuword(a)&077;
+		a =+ 2;
+	} else {
+		a = pc;
+		pc =+ sysent[dev].count*2;
+	}
+	for(i=0; i<sysent[dev].count; i++) {
+		u.u_arg[i] = fuword(a);
+		a =+ 2;
+	}
+	u.u_dirp = u.u_arg[0];
+	trap1(sysent[dev].call);
+	if(u.u_error >= 100)
+		psignal(u.u_procp, SIGSYS);
+err:
+	if(issig())
+		psig();
+	if(u.u_error != 0) {
+		ps =| EBIT;
+		r0 = u.u_error;
+	}
+	u.u_procp->p_pri = PUSER + u.u_nice;
+	if(u.u_dsleep++ > 15) {
+		u.u_dsleep = 0;
+		u.u_procp->p_pri++;
+		swtch();
+	}
+	return;
+
+bad:
+	printf("ka6 = %o\n", KISA->r[6]);
+	printf("aps = %o\n", &ps);
+	for(a = CSW->r[0]; a == CSW->r[0]; )
+		idle();
+	panic("trap");
+}
+
+trap1(f)
+int (*f)();
+{
+
+	savu(u.u_qsav);
+	(*f)();
+}
+
+nosys()
+{
+
+	u.u_error = 100;
+}
+
+nullsys()
+{
+}
+% cat mullender.c
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% cd /usr/jackson
+haha
+% chdir /usr/jackson
+% ls -lah
+total 11
+drwxr-xr-x 2 jackso     96 Aug 25 12:33 .
+drwxr-xr-x39 bin       624 Aug 25 12:42 ..
+-rwxrwxrwx 1 jackso    248 Aug 25 12:25 a.out
+-rw-rw-rw- 1 jackso   2496 Aug 25 12:25 core
+-rw-r--r-- 1 jackso    465 Aug 25 12:23 mullender.c
+-rw-r--r-- 1 jackso    327 Aug 25 12:28 mullender.das
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+int main[] {
+	277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+	-113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+	4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+	077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% [A[Bcat mullender.das
+No match
+% ls
+a.out
+core
+mullender.c
+mullender.das
+% cat mullender.das
+000000: 010704			mov	pc,r4
+000002: 005744			tst	-(r4)
+000004: 162704 000011		sub	$11,r4
+000010: 010467 000006		mov	r4,22
+000014: 012700 000001		mov	$1,r0
+000020: 104404			trap	4
+000022: 000000			0
+000024: 000011			11
+000026: 012702 001000		mov	$1000,r2
+000032: 104455			trap	55
+000034: 077202			sob	r2,32
+000036: 000760			br	0
+% 104455@
+% cd /usr/src/s3
+haha
+% chdir /usr/src/c#@
+% chdir /usr/source/s3
+% ls -lha
+total 99
+drwxr-xr-x 2 bin       544 Jun 12 19:13 .
+drwxr-xr-x 7 bin       112 Jun 10 08:37 ..
+-rw-r--r-- 1 bin      2390 Jun 10 08:37 atan.s
+-rw-r--r-- 1 bin      1162 Jun 10 08:37 atof.s
+-rw-r--r-- 1 bin       294 Jun 10 08:37 atoi.s
+-rw-r--r-- 1 bin       282 Jun 10 08:37 compar.s
+-rw-r--r-- 1 bin      1962 Jun 10 08:37 crypt.s
+-rw-r--r-- 1 bin      3992 Jun 12 19:09 ctime.c
+-rw-r--r-- 1 bin       174 Jun 10 08:37 dpadd.s
+-rw-r--r-- 1 bin      1667 Jun 10 08:37 ecvt.s
+-rw-r--r-- 1 bin      1823 Jun 10 08:37 exp.s
+-rw-r--r-- 1 bin        88 Jun 10 08:37 fakfp.s
+-rw-r--r-- 1 bin      4473 Jun 10 08:37 fp1.s
+-rw-r--r-- 1 bin      1945 Jun 10 08:37 fp2.s
+-rw-r--r-- 1 bin      3385 Jun 10 08:37 fp3.s
+-rw-r--r-- 1 bin       326 Jun 10 08:37 fpx.s
+-rw-r--r-- 1 bin      4130 Jun 10 08:37 gamma.s
+-rw-r--r-- 1 bin      1267 Jun 10 08:37 get.s
+-rw-r--r-- 1 bin       396 Jun 10 08:37 hypot.s
+-rw-r--r-- 1 bin       233 Jun 10 08:37 ldiv.s
+-rw-r--r-- 1 bin      1708 Jun 10 08:37 log.s
+-rw-r--r-- 1 bin       318 Jun 10 08:37 mesg.s
+-rw-r--r-- 1 bin       906 Jun 10 08:37 mon.s
+-rw-r--r-- 1 bin      1223 Jun 10 08:37 nlist.s
+-rw-r--r-- 1 bin       440 Jun 10 08:37 pow.s
+-rw-r--r-- 1 bin      1246 Jun 10 08:37 put.s
+-rw-r--r-- 1 bin      1510 Jun 10 08:37 qsort.s
+-rw-r--r-- 1 bin       229 Jun 10 08:37 rand.s
+-rw-r--r-- 1 bin      1842 Jun 10 08:37 sin.s
+-rw-r--r-- 1 bin       628 Jun 10 08:37 sqrt.s
+-rw-r--r-- 1 bin       508 Jun 10 08:37 switch.s
+-rw-r--r-- 1 bin       531 Jun 10 08:37 ttyn.s
+% cd ../s4
+haha
+% chdir ../s4
+% ls -lh
+total 103
+-rw-r--r-- 1 bin        73 Jun 10 08:37 abort.s
+-rw-r--r-- 1 bin       127 Jun 10 08:37 atan.s
+-rw-r--r-- 1 bin       149 Jun 10 08:37 atan2.s
+-rw-r--r-- 1 bin       331 Jun 10 08:37 atof.s
+-rw-r--r-- 1 bin       204 Jun 10 08:37 chdir.s
+-rw-r--r-- 1 bin       230 Jun 10 08:37 chmod.s
+-rw-r--r-- 1 bin       231 Jun 10 08:37 chown.s
+-rw-r--r-- 1 bin       177 Jun 10 08:37 close.s
+-rw-r--r-- 1 bin       123 Jun 10 08:37 cos.s
+-rw-r--r-- 1 bin       178 Jun 10 08:37 crand.s
+-rw-r--r-- 1 bin       245 Jun 10 08:37 creat.s
+-rw-r--r-- 1 bin       183 Jun 10 08:37 crt0.s
+-rw-r--r-- 1 bin       186 Jun 10 08:37 crypt.s
+-rw-r--r-- 1 bin       182 Jun 10 08:37 dup.s
+-rw-r--r-- 1 bin       314 Jun 10 08:37 ecvt.s
+-rw-r--r-- 1 bin       679 Jun 10 08:37 errlst.c
+-rw-r--r-- 1 bin       218 Jun 10 08:37 execl.s
+-rw-r--r-- 1 bin       266 Jun 10 08:37 execv.s
+-rw-r--r-- 1 bin       139 Jun 10 08:37 exit.s
+-rw-r--r-- 1 bin       123 Jun 10 08:37 exp.s
+-rw-r--r-- 1 bin       117 Jun 10 08:37 ffltpr.s
+-rw-r--r-- 1 bin       276 Jun 10 08:37 floor.s
+-rw-r--r-- 1 bin       884 Jun 10 08:37 fltpr.s
+-rw-r--r-- 1 bin       172 Jun 10 08:37 fmod.s
+-rw-r--r-- 1 bin       223 Jun 10 08:37 fork.s
+-rw-r--r-- 1 bin       283 Jun 10 08:37 fstat.s
+-rw-r--r-- 1 bin       131 Jun 10 08:37 gamma.s
+-rw-r--r-- 1 bin       823 Jun 10 08:37 getc.s
+-rw-r--r-- 1 bin       395 Jun 10 08:37 getchr.s
+-rw-r--r-- 1 bin        83 Jun 10 08:37 getcsw.s
+-rw-r--r-- 1 bin       151 Jun 10 08:37 getgid.s
+-rw-r--r-- 1 bin       620 Jun 10 08:37 getpw.c
+-rw-r--r-- 1 bin       138 Jun 10 08:37 getuid.s
+-rw-r--r-- 1 bin       300 Jun 10 08:37 gtty.s
+-rw-r--r-- 1 bin        57 Jun 10 08:37 hmul.s
+-rw-r--r-- 1 bin       357 Jun 10 08:37 hsw.s
+-rw-r--r-- 1 bin       220 Jun 10 08:37 kill.s
+-rw-r--r-- 1 bin       233 Jun 10 08:37 link.s
+-rw-r--r-- 1 bin       559 Jun 10 08:37 locv.s
+-rw-r--r-- 1 bin       123 Jun 10 08:37 log.s
+-rw-r--r-- 1 bin       153 Jun 10 08:37 ltod.s
+-rw-r--r-- 1 bin       209 Jun 10 08:37 makdir.s
+-rw-r--r-- 1 bin      1148 Jun 10 08:37 mcrt0.s
+-rw-r--r-- 1 bin       218 Jun 10 08:37 mdate.s
+-rw-r--r-- 1 bin       275 Jun 10 08:37 mknod.s
+-rw-r--r-- 1 bin       579 Jun 10 08:37 mon.c
+-rw-r--r-- 1 bin       252 Jun 10 08:37 mount.s
+-rw-r--r-- 1 bin       390 Jun 10 08:37 nargs.s
+-rw-r--r-- 1 bin       172 Jun 10 08:37 nice.s
+-rw-r--r-- 1 bin       285 Jun 10 08:37 nlist.s
+-rw-r--r-- 1 bin       242 Jun 10 08:37 open.s
+-rw-r--r-- 1 bin       218 Jun 10 08:37 perror.c
+-rw-r--r-- 1 bin       210 Jun 10 08:37 pipe.s
+-rw-r--r-- 1 bin       192 Jun 10 08:37 pow.s
+-rw-r--r-- 1 bin      2077 Jun 10 08:37 printf.s
+-rw-r--r-- 1 bin       194 Jun 10 08:37 prof.s
+-rw-r--r-- 1 bin      1027 Jun 10 08:37 putc.s
+-rw-r--r-- 1 bin       585 Jun 10 08:37 putchr.s
+-rw-r--r-- 1 bin      1322 Jun 10 08:37 qsort.c
+-rw-r--r-- 1 bin       287 Jun 10 08:37 read.s
+-rw-r--r-- 1 bin       424 Jun 10 08:37 reset.s
+-rw-r--r-- 1 bin       146 Jun 10 08:37 retrn.s
+-rw-r--r-- 1 bin       207 Jun 10 08:37 rin.c
+-rw-r--r-- 1 bin       283 Jun 10 08:37 rsave.s
+-rw-r--r-- 1 bin       515 Jun 10 08:37 sbrk.s
+-rw-r--r-- 1 bin       244 Jun 10 08:37 seek.s
+-rw-r--r-- 1 bin       193 Jun 10 08:37 setgid.s
+-rw-r--r-- 1 bin       180 Jun 10 08:37 setuid.s
+-rw-r--r-- 1 bin       874 Jun 10 08:37 signal.s
+-rw-r--r-- 1 bin       123 Jun 10 08:37 sin.s
+-rw-r--r-- 1 bin       103 Jun 10 08:37 sleep.s
+-rw-r--r-- 1 bin       127 Jun 10 08:37 sqrt.s
+-rw-r--r-- 1 bin       210 Jun 10 08:37 ssw.s
+-rw-r--r-- 1 bin       286 Jun 10 08:37 stat.s
+-rw-r--r-- 1 bin       157 Jun 10 08:37 stime.s
+-rw-r--r-- 1 bin       300 Jun 10 08:37 stty.s
+-rw-r--r-- 1 bin       162 Jun 10 08:37 switch.s
+-rw-r--r-- 1 bin        85 Jun 10 08:37 sync.s
+-rw-r--r-- 1 bin       225 Jun 10 08:37 time.s
+-rw-r--r-- 1 bin       151 Jun 10 08:37 times.s
+-rw-r--r-- 1 bin       201 Jun 10 08:37 umount.s
+-rw-r--r-- 1 bin       211 Jun 10 08:37 unlink.s
+-rw-r--r-- 1 bin       343 Jun 10 08:37 wait.s
+-rw-r--r-- 1 bin       277 Jun 10 08:37 write.s
+% cat write.s
+/ C library -- write
+
+/ nwritten = write(file, buffer, count);
+/
+/ nwritten == -1 means error
+
+.globl	_write, retrn, cerror
+
+_write:
+	mov	r5,-(sp)
+	mov	sp,r5
+	mov	4(r5),r0
+	mov	6(r5),0f
+	mov	8(r5),0f+2
+	sys	0; 9f
+	bec	1f
+	jmp	cerror
+1:
+	jmp	retrn
+.data
+9:
+	sys	write; 0:..; ..
+% cat /usr/bin/@
+% cd /usr/sys/ken
+haha
+% ls @
+% chdir /usr/sys/ken
+% ls -la
+total 112
+drwxr-xr-x 2 bin       640 Aug 16 14:08 .
+drwxr-xr-x 5 bin       448 Aug 16 14:08 ..
+-rw-r--r-- 1 bin      3368 Jun 10 08:37 alloc.c
+-rw-r--r-- 1 bin      2159 Jun 10 08:37 clock.c
+-rw-r--r-- 1 bin      2362 Jun 10 08:37 fio.c
+-rw-r--r-- 1 bin      2928 Jun 10 08:37 iget.c
+-rw-r--r-- 1 bin      2673 Jun 10 08:37 main.c
+-rw-r--r-- 1 bin      2633 Jun 10 08:37 nami.c
+-rw-r--r-- 1 bin      1134 Jun 10 08:37 prf.c
+-rw-r--r-- 1 bin      2668 Jun 10 08:37 rdwri.c
+-rw-rw-rw- 1 bin       361 Jun 12 18:52 run
+-rw-r--r-- 1 bin      1602 Jun 10 08:37 sig.c
+-rw-r--r-- 1 bin      5000 Jun 10 08:37 slp.c
+-rw-r--r-- 1 bin      2098 Jun 10 08:37 subr.c
+-rw-r--r-- 1 bin      5472 Jun 10 08:37 sys1.c
+-rw-r--r-- 1 bin      3442 Jun 10 08:37 sys2.c
+-rw-r--r-- 1 bin      4482 Jun 10 08:37 sys3.c
+-rw-r--r-- 1 bin       988 Jun 10 08:37 sys4.c
+-rw-r--r-- 1 bin      1957 Jun 10 08:37 sysent.c
+-rw-r--r-- 1 bin      2036 Jun 10 08:37 text.c
+-rw-r--r-- 1 bin      2154 Jun 10 08:37 trap.c
+% cat sysent.c
+#
+/*
+ *	Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int	sysent[]
+{
+	0, &nullsys,			/*  0 = indir */
+	0, &rexit,			/*  1 = exit */
+	0, &fork,			/*  2 = fork */
+	2, &read,			/*  3 = read */
+	2, &write,			/*  4 = write */
+	2, &open,			/*  5 = open */
+	0, &close,			/*  6 = close */
+	0, &wait,			/*  7 = wait */
+	2, &creat,			/*  8 = creat */
+	2, &link,			/*  9 = link */
+	1, &unlink,			/* 10 = unlink */
+	2, &exec,			/* 11 = exec */
+	1, &chdir,			/* 12 = chdir */
+	0, &gtime,			/* 13 = time */
+	3, &mknod,			/* 14 = mknod */
+	2, &chmod,			/* 15 = chmod */
+	2, &chown,			/* 16 = chown */
+	1, &sbreak,			/* 17 = break */
+	2, &stat,			/* 18 = stat */
+	2, &seek,			/* 19 = seek */
+	0, &nosys,			/* 20 = x */
+	3, &smount,			/* 21 = mount */
+	1, &sumount,			/* 22 = umount */
+	0, &setuid,			/* 23 = setuid */
+	0, &getuid,			/* 24 = getuid */
+	0, &stime,			/* 25 = stime */
+	0, &nosys,			/* 26 = x */
+	0, &nosys,			/* 27 = x */
+	1, &fstat,			/* 28 = fstat */
+	0, &nosys,			/* 29 = x */
+	1, &nullsys,			/* 30 = smdate */
+	1, &stty,			/* 31 = stty */
+	1, &gtty,			/* 32 = gtty */
+	0, &nosys,			/* 33 = x */
+	0, &nice,			/* 34 = nice */
+	0, &sslep,			/* 35 = sleep */
+	0, &sync,			/* 36 = sync */
+	1, &kill,			/* 37 = kill */
+	0, &getswit,			/* 38 = switch */
+	0, &nosys,			/* 39 = x */
+	0, &nosys,			/* 40 = x */
+	0, &dup,			/* 41 = dup */
+	0, &pipe,			/* 42 = pipe */
+	1, &times,			/* 43 = times */
+	4, &profil,			/* 44 = prof */
+	0, &nosys,			/* 45 = tiu */
+	0, &setgid,			/* 46 = setgid */
+	0, &getgid,			/* 47 = getgid */
+	2, &ssig,			/* 48 = sig */
+	0, &nosys,			/* 49 = x */
+	0, &nosys,			/* 50 = x */
+	0, &nosys,			/* 51 = x */
+	0, &nosys,			/* 52 = x */
+	0, &nosys,			/* 53 = x */
+	0, &nosys,			/* 54 = x */
+	0, &nosys,			/* 55 = x */
+	0, &nosys,			/* 56 = x */
+	0, &nosys,			/* 57 = x */
+	0, &nosys,			/* 58 = x */
+	0, &nosys,			/* 59 = x */
+	0, &nosys,			/* 60 = x */
+	0, &nosys,			/* 61 = x */
+	0, &nosys,			/* 62 = x */
+	0, &nosys			/* 63 = x */
+};
+% 

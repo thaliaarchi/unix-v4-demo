@@ -218,4 +218,11 @@ tty
 uniq
 who
 write
-# 
+# 
+
+Connected to the PDP-11 simulator DCI device, line 4
+
+
+;login: 
+Disconnected from the PDP-11 simulator
+
