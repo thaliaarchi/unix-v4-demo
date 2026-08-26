@@ -1,3 +1,4 @@
+#
 /* global command --
 
    glob params
@@ -16,6 +17,8 @@
    prepend the command name with "/bin" or "/usr/bin"
    as required.
 */
+
+#include "/usr/sys/errno.h"
 
 char	ab[2000];		/* generated characters */
 char	*ava[200];		/* generated arguments */
@@ -93,15 +96,15 @@ donow:
 	av[ap] = 0;
 	strip(av);
 	execv(av[0], av);
-	if(errno == 7)
+	if(errno == E2BIG)
 		goto toolong;
 	i = cat("/bin/", av[0]);
 	execv(i, av);
-	if(errno == 7)
+	if(errno == E2BIG)
 		goto toolong;
 	i = cat("/usr", i);
 	execv(i, av);
-	if(errno == 2)
+	if(errno == ENOENT)
 		goto per;
 	*av = i;
 	*--av = "/bin/sh";

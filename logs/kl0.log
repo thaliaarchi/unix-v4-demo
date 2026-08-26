@@ -6216,3 +6216,5047 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% chdir /usr/source
+% date 08261528
+Mon Aug 26 15:28:00 MDT 1974
+% chdir s1
+% ls
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% ch@cat lpd.s
+/ lpd -- Line Printer daemon
+
+.globl  fopen, getc
+.globl  fcreat, putc, flush
+.globl  switch
+
+        sys     signal; 1; 1
+        sys     signal; 2; 1
+        sys     signal; 3; 1    / ignore quit,intr,hup
+        sys     stat; lock; buf
+        bec     2f
+        sys     creat; lock; 0
+        bes     2f
+        sys     open; lpd; 0
+        bes     3f
+        mov     r0,r1
+1:
+        mov     r1,r0
+        sys     read; dbuf; 16.
+        bes     3f
+        tst     r0
+        beq     3f
+        tst     dbuf
+        beq     1b
+        cmp     dbuf+2,$"df
+        bne     1b
+        sys     fork
+                br  retry
+        sys     exit
+3:
+        sys     unlink; lock
+2:
+        sys     exit
+
+/ get line printer
+retry:
+        jsr     r5,aclose
+        mov     $lpr,r0
+        jsr     r5,fcreat; print
+        bes     error
+        sys     chdir; lpd
+        bes     error
+        sys     open; lpd; 0
+        bes     error
+        mov     r0,dfi
+        br      loop
+
+done:
+        sys     unlink; lock
+        sys     exit
+
+error:
+        jsr     r5,aclose
+        mov     $10.,r0
+        sys     sleep
+        sys     stat; lock; buf
+        bes     done                    / die if lock is gone
+        br      retry
+
+/ look in directory for work
+loop:
+        mov     dfi,r0
+        sys     seek; 0; 0
+
+1:
+        mov     dfi,r0
+        sys     read; dbuf; 16.
+        bes     error
+        tst     r0
+        beq     done            / only non-error return
+        tst     dbuf
+        beq     1b
+        mov     $dbuf+2,r0
+        cmp     (r0),$"df               / look for daemon file
+        bne     1b
+
+/ found prototype file
+        jsr     r5,fopen; proto
+        bes     1b
+
+/ copy a line into buf
+/ only work is expansion of tabs
+loop1:
+        mov     $buf,r1
+1:
+        jsr     r5,getc; proto
+        bes     eloop1
+        movb    r0,(r1)
+        cmp     r0,$'\t
+        beq     2f
+        cmpb    (r1)+,$'\n
+        bne     1b
+        br      1f
+2:
+        movb    $' ,(r1)+
+        cmp     r1,$buf+8.
+        beq     1b
+        cmp     r1,$buf+16.
+        bhis    1b
+        br      2b
+1:
+        movb    buf,r0
+        jsr     r5,switch; sptab
+
+/ done with a prototype file
+/ look for U's in second pass
+eloop1:
+        mov     proto,r0
+        sys     seek; 0; 0
+        br      2f
+1:
+        jsr     r5,getc; proto
+        bes     1f
+3:
+        cmp     r0,$'\n
+        bne     1b
+2:
+        jsr     r5,getc; proto
+        bes     1f
+        cmp     r0,$'U
+        bne     3b
+        mov     $buf,r1
+3:
+        jsr     r5,getc; proto
+        bes     1f
+        movb    r0,(r1)+
+        cmp     r0,$'\n
+        bne     3b
+        clrb    -(r1)
+        sys     unlink; buf
+        br      2b
+1:
+        mov     proto,r0
+        sys     close
+        sys     unlink; dbuf+2
+        br      loop
+
+/ list of special characters
+/ switchout
+sptab:
+        'L; literal
+        'B; binary
+        'F; form
+        'U; loop1               / unlink on second pass
+         0; 0
+
+
+literal:
+        jmp     loop1
+
+form:
+        clrb    -(r1)
+        mov     $buf+1,r0
+        jsr     r5,fopen; insert
+        bes     loop1
+        mov     $14,r0
+        jsr     r5,putc; print
+        br      1f
+
+binary:
+        clrb    -(r1)
+        mov     $buf+1,r0
+        jsr     r5,fopen; insert
+        bes     loop1
+
+1:
+        jsr     r5,getc; insert
+        bes     1f
+        jsr     r5,putc; print
+        br      1b
+1:
+        jsr     r5,flush; print
+        mov     insert,r0
+        sys     close
+        br      loop1
+
+aclose:
+        mov     $9.,r1
+1:
+        mov     r1,r0
+        sys     close
+        dec     r1
+        bge     1b
+        rts     r5
+
+lpr:
+        </dev/lp\0>
+lock:
+        </usr/lpd/lock\0>
+lpd:
+        </usr/lpd\0>
+        .even
+.bss
+
+ch:     .=.+2
+dfi:    .=.+2
+dbuf:   .=.+18.
+print:  .=.+518.
+proto:  .=.+518.
+insert: .=.+518.
+buf:    .=.+400.
+sleep = 35.
+signal = 48.
+% cat lpr.c
+/*
+ *      lpr -- on line print to Line Printer
+ */
+
+tfname;
+nact;
+tff;
+first;
+
+main(argc, argv)
+int argc;
+char *argv[];
+{
+        char *arg, *remote;
+        int c, f, flag, cflag;
+
+        flag = 0;
+        tfname = ranname("/usr/lpd/tfxxx");
+        if(tfname)
+                tff = creat(tfname, 0666); else
+                tff = -1;
+        if(tff < 0) {
+                printf("Cannot create in /usr/lpd\n");
+                exit();
+        }
+        ident();
+
+        if(argc == 1)
+                copy(0);
+        while(--argc) {
+                arg = *++argv;
+                c = *arg;
+                if(c == '+' || c == '-') {
+                        cflag = c;
+                        if(*++arg == '\0') {
+                                flag = cflag;
+                                continue;
+                        }
+                } else
+                        cflag = flag;
+                if(cflag == '+')
+                        goto cf;
+                if(*arg == '/' && cflag != '-') {
+                        card('F', arg);
+                        nact++;
+                        continue;
+                }
+                f = ranname("/usr/lpd/lfxxx");
+                if(f) {
+                        if(link(arg, f))
+                                goto cf;
+                        card('F', f);
+                        card('U', f);
+                        nact++;
+                        goto df;
+                }
+        cf:
+                f = open(arg, 0);
+                if(f < 0) {
+                        printf("Cannot open %s\n", arg);
+                        continue;
+                }
+                copy(f);
+                close(f);
+        df:
+                if(cflag == '-') {
+                        f = unlink(arg);
+                        if(f < 0)
+                                printf("Cannot remove %s\n", arg);
+                }
+        }
+
+        if(nact) {
+                f = ranname("/usr/lpd/dfxxx");
+                if(f)
+                        link(tfname, f); else
+                        printf("Cannot rename in /usr/lpd\n");
+                unlink(tfname);
+                execl("/etc/lpd", "lpd", 0);
+        }
+        unlink(tfname);
+}
+
+copy(f)
+int f;
+{
+        int fn, ff, i, nr, nc;
+        static int buf[256];
+
+        fn = ranname("/usr/lpd/cfxxx");
+        if(fn)
+                ff = creat(fn, 0666); else
+                ff = -1;
+        if(ff < 0) {
+                printf("Cannot create in /usr/lpd\n");
+                return;
+        }
+        nc = 0;
+        nr = 0;
+        while((i = read(f, buf, 512)) > 0) {
+                write(ff, buf, i);
+                nc =+ i;
+                if(nc >= 512) {
+                        nc =- 512;
+                        nr++;
+                        if(nr > 400) {
+                                printf("Copy file is too large\n");
+                                break;
+                        }
+                }
+        }
+        close(ff);
+        card('F', fn);
+        card('U', fn);
+        nact++;
+}
+
+card(c, s)
+int c;
+char s[];
+{
+        char *p1, *p2;
+        static char buf[512];
+        int col;
+
+        p1 = buf;
+        p2 = s;
+        col = 0;
+        *p1++ = c;
+        while((c = *p2++) != '\0') {
+                *p1++ = c;
+                col++;
+        }
+        *p1++ = '\n';
+        write(tff, buf, col+2);
+}
+
+ident()
+{
+        int c, i, j, n;
+        char *b1p;
+        static char b1[100], b2[100];
+
+        b1p = b1;
+        if(getpw(getuid(), b1)) {
+                b1p = "pdp::::gok:";
+        }
+        j = 0;
+        while(c = "$    ident   "[j])
+                b2[j++] = c;
+        i = 0;
+        n = 5;
+        while(--n) while(b1p[i++] != ':');
+        while((c = b1p[i++]) != ':')
+                b2[j++] = c;
+        b2[j++] = ',';
+        i = 0;
+        while((c = b1p[i++]) != ':')
+                b2[j++] = c;
+        b2[j++] = '\0';
+        card('L', b2);
+}
+
+ranname(s)
+char s[];
+{
+        static int buf[20];
+
+loop:
+        s[11] = ranc();
+        s[12] = ranc();
+        s[13] = ranc();
+        if(stat(s, buf))
+                return(s);
+        goto loop;
+}
+
+ranc()
+{
+        int buf[2], c;
+
+        if(!first) {
+                time(buf);
+                srand(buf[1]);
+                first++;
+        }
+        c = rand();
+        return(((c>>11)%10)+'0');
+}
+% ed grep.c
+?
+q
+% ed grep.s
+5105
+`,$p@1,4#$p
+/ grep -- g/re/p
+/
+/ grep [ -v ] [ -l ] [ -n ] re [ input ] ...
+
+.globl  mesg, putc, flush, fcreat, _end
+
+        sys     signal; 2; 1
+        bit     $1,r0
+        bne     1f
+        sys     signal; 2; out
+1:
+        mov     (sp)+,narg
+        mov     sp,argp
+        jsr     pc,garg
+1:
+        jsr     pc,garg
+        cmpb    (r5),$'-
+        bne     1f
+        cmpb    1(r5),$'v
+        bne     2f
+        inc     vflg
+        br      1b
+2:
+        cmpb    1(r5),$'c
+        bne     2f
+        inc     lflg
+        br      1b
+2:
+        cmpb    1(r5),$'b
+        bne     2f
+        inc     bflg
+        br      1b
+2:
+        cmpb    1(r5),$'n
+        bne     2f
+        inc     nflg
+        inc     lflg
+        br      1b
+2:
+1:
+        jsr     pc,compile
+
+        mov     $1,obuf
+        tst     narg
+        ble     loop
+        jsr     pc,iarg
+        br      loop
+
+out:
+        inc     nflg
+        mov     $2,obuf
+        clr     obuf+2
+        clr     obuf+4
+        clr     obuf+6
+        jsr     pc,nline
+        jsr     pc,nline
+        jsr     pc,pfile
+        mov     line,r0
+        mov     line+2,r1
+        jsr     pc,decml
+        jsr     pc,nline
+        jsr     r5,flush; obuf
+        sys     exit
+
+loop:
+        mov     $lbuf,r1
+        mov     $elbuf-1,r2
+        mov     $'\n,r3
+        mov     gc4,r4
+        mov     gc5,r5
+1:
+        dec     r4
+        bge     2f
+
+fread:
+        mov     gcf,r0
+        sys     read; ibuf; 512.
+        bes     eloop
+        inc     blkno
+        mov     r0,r4
+        beq     eloop
+
+        mov     $ibuf,r5
+        br      1b
+2:
+        movb    (r5)+,r0
+        beq     1b
+        cmp     r0,r3           / nl
+        beq     1f
+        movb    r0,(r1)+
+        cmp     r1,r2           / elbuf
+        blo     1b
+        dec     r1
+        br      1b
+1:
+        mov     r5,gc5
+        mov     r4,gc4
+        add     $1,line+2
+        adc     line
+        clrb    (r1)+
+        jsr     r5,execute
+                br 2f
+        tst     vflg
+        bne     loop
+        br      1f
+2:
+        tst     vflg
+        beq     loop
+1:
+        tst     lflg
+        beq     1f
+        jsr     pc,pfile
+        mov     line,r0
+        mov     line+2,r1
+        jsr     pc,decml
+        mov     $' ,r0
+        jsr     r5,putc; obuf
+1:
+        tst     bflg
+        beq     1f
+        jsr     pc,pfile
+        clr     r0
+        mov     blkno,r1
+        jsr     pc,decml
+        mov     $' ,r0
+        jsr     r5,putc; obuf
+1:
+        mov     $lbuf,r1
+1:
+        movb    (r1)+,r0
+        beq     1f
+        jsr     r5,putc; obuf
+        br      1b
+1:
+        jsr     pc,nline
+        jsr     r5,flush; obuf
+        br      loop
+
+eloop:
+        jsr     r5,flush; obuf
+        tst     narg
+        ble     1f
+        jsr     pc,iarg
+        br      fread
+1:
+        sys     exit
+
+iarg:
+        mov     r5,-(sp)
+        mov     gcf,r0
+        beq     1f
+        sys     close
+1:
+        jsr     pc,garg
+        mov     r5,fname
+        sys     0; 9f
+.data
+9:
+        sys     open; fname: 0; 0
+.text
+        bec     1f
+        mov     fname,r0
+        jsr     pc,diag
+        mov     $9f,r0
+        jsr     pc,diag
+.data
+9:      <: cannot open\n\0>
+        .even
+.text
+        sys     exit
+1:
+        mov     r0,gcf
+        tst     nflg
+        beq     1f
+        clr     line
+        clr     line+2
+1:
+        mov     (sp)+,r5
+        rts     pc
+
+garg:
+        dec     narg
+        blt     1f
+        mov     *argp,r5
+        add     $2,argp
+        rts     pc
+1:
+        mov     $9f,r0
+        jsr     pc,diag
+.data
+9:      <arg count\n\0>
+        .even
+.text
+        sys     exit
+
+compile:
+        mov     $ebuf,r3
+        movb    (r5)+,r1
+        beq     cerr
+        cmp     r1,$'^
+        beq     1f
+        jsr     r5,cop; ecmf
+        dec     r5
+1:
+        cmpb    (r5),$'*
+        beq     cerr
+
+cadv:
+        movb    (r5)+,r1
+        beq     ceof
+        cmp     r1,$'\\
+        beq     cesc
+        cmp     r1,$'.
+        beq     cdot
+        cmp     r1,$'*
+        beq     cast
+        cmp     r1,$'$
+        beq     cdol
+        cmp     r1,$'[
+        beq     cccl
+        jsr     r5,cop; echr
+        mov     r1,(r3)+
+        br      cadv
+
+ceof:
+        jsr     r5,cop; eeof
+        cmp     r3,$eebuf
+        blos    1f
+        mov     $9f,r0
+        jsr     pc,diag
+.data
+9:      <regular expression too long\n\0>
+        .even
+.text
+        sys     exit
+1:
+        rts     pc
+
+cesc:
+        jsr     r5,cop; echr
+        movb    (r5)+,r1
+        mov     r1,(r3)+
+        bne     cadv
+
+cerr:
+        mov     $9f,r0
+        jsr     pc,diag
+.data
+9:      <regular expression syntax\n\0>
+        .even
+.text
+        sys     exit
+
+cdot:
+        jsr     r5,cop; edot
+        br      cadv
+
+cdol:
+        tstb    (r5)
+        beq     1f
+        jsr     r5,cop; echr
+        mov     $'$,(r3)+
+        br      cadv
+1:
+        jsr     r5,cop; edol
+        br      cadv
+
+cccl:
+        mov     ctab,r0
+        add     $32.,r0
+        mov     r0,0f
+        sys     break; 0:..
+        jsr     r5,cop; eccl
+        movb    (r5)+,r1
+        cmp     r1,$'^
+        bne     1f
+        mov     $enccl,*f
+        movb    (r5)+,r1
+1:
+        tst     r1
+        beq     cerr
+        jsr     pc,bitc
+        add     ctab,r1
+        bisb    r0,(r1)
+        movb    (r5)+,r1
+        cmp     r1,$']
+        bne     1b
+        mov     ctab,(r3)+
+        mov     0b,ctab
+        br      cadv
+
+cast:
+        mov     *f,r1
+        mov     -(r1),*f
+        br      cadv
+
+cop:
+        mov     r3,f
+        mov     (r5)+,(r3)+
+        rts     r5
+
+execute:
+        mov     $lbuf,r4
+        mov     $ebuf,r3
+        jmp     *(r3)+
+
+eeof:
+        tst     (r5)+
+efail:
+        rts     r5
+
+ecmf:
+        mov     r3,-(sp)
+        mov     r4,-(sp)
+        jsr     r5,*(r3)+
+                br 1f
+        cmp     (sp)+,(sp)+
+        br      eeof
+1:
+        mov     (sp)+,r4
+        mov     (sp)+,r3
+        tstb    (r4)+
+        bne     ecmf
+        br      efail
+
+        echrs
+echr:
+        movb    (r4)+,r1
+        cmp     r1,(r3)+
+        bne     efail
+        jmp     *(r3)+
+
+        echrs
+echrs:
+        mov     (r3)+,r1
+        mov     r4,-(sp)
+1:
+        cmpb    (r4)+,r1
+        beq     1b
+        br      east
+
+        edots
+edot:
+        tstb    (r4)+
+        beq     efail
+        jmp     *(r3)+
+
+        edots
+edots:
+        mov     r4,-(sp)
+1:
+        tstb    (r4)+
+        bne     1b
+        br      east
+
+        eccls
+eccl:
+        movb    (r4)+,r1
+        beq     efail
+        jsr     pc,bitc
+        add     (r3)+,r1
+        bitb    r0,(r1)
+        beq     efail
+        jmp     *(r3)+
+
+        enccls
+enccl:
+        movb    (r4)+,r1
+        beq     efail
+        jsr     pc,bitc
+        add     (r3)+,r1
+        bitb    r0,(r1)
+        bne     efail
+        jmp     *(r3)+
+
+        eccls
+eccls:
+        mov     r4,-(sp)
+        mov     (r3)+,-(sp)
+2:
+        movb    (r4)+,r1
+        beq     1f
+        jsr     pc,bitc
+        add     (sp),r1
+        bitb    r0,(r1)
+        bne     2b
+1:
+        tst     (sp)+
+        br      east
+
+        enccls
+enccls:
+        mov     r4,-(sp)
+        mov     (r3)+,-(sp)
+2:
+        movb    (r4)+,r1
+        beq     1f
+        jsr     pc,bitc
+        add     (sp),r1
+        bitb    r0,(r1)
+        beq     2b
+1:
+        tst     (sp)+
+        br      east
+
+edol:
+        tstb    (r4)
+        bne     efail
+        jmp     *(r3)+
+
+east:
+        dec     r4
+        mov     r3,-(sp)
+        mov     r4,-(sp)
+        jsr     r5,*(r3)+
+                br 1f
+2:
+        add     $6,sp
+        br      eeof
+1:
+        mov     (sp)+,r4
+        mov     (sp)+,r3
+        cmp     r4,(sp)
+        bhi     east
+        tst     (sp)+
+        br      efail
+
+bitc:
+        mov     $1,r0
+        mov     r1,-(sp)
+        bic     $!7,(sp)
+        ash     (sp)+,r0
+        ash     $-3,r1
+        bic     $!37,r1
+        rts     pc
+
+nline:
+        mov     $'\n,r0
+        jsr     r5,putc; obuf
+        rts     pc
+
+pfile:
+        tst     nflg
+        beq     1f
+        mov     fname,r1
+        beq     1f
+2:
+        movb    (r1)+,r0
+        beq     2f
+        jsr     r5,putc; obuf
+        br      2b
+2:
+        mov     $':,r0
+        jsr     r5,putc; obuf
+1:
+        rts     pc
+
+decml:
+        div     $10.,r0
+        mov     r1,-(sp)
+        mov     r0,r1
+        beq     1f
+        clr     r0
+        jsr     pc,decml
+1:
+        mov     (sp)+,r0
+        add     $'0,r0
+        jsr     r5,putc; obuf
+        rts     pc
+
+diag:
+        mov     r1,-(sp)
+        mov     r0,r1
+1:
+        movb    (r1)+,0f
+        beq     1f
+        mov     $2,r0
+        sys     write; 0f; 1
+        br      1b
+1:
+        mov     (sp)+,r1
+        rts     pc
+
+.data
+0:      0
+.text
+.data
+ctab:   _end
+
+.bss
+narg:   .=.+2
+argp:   .=.+2
+vflg:   .=.+2
+lflg:   .=.+2
+nflg:   .=.+2
+bflg:   .=.+2
+blkno:  .=.+2
+line:   .=.+4
+f:      .=.+2
+ebuf:   .=.+512.; eebuf:
+lbuf:   .=.+512.; elbuf:
+gcf:    .=.+2
+gc4:    .=.+2
+gc5:    .=.+2
+ibuf:   .=.+512.
+obuf:   .=.+518.
+g/flg/-5;.+5p
+?
+g/flg/-3;.+3p
+?
+q
+% grep as##-n as as*
+as11.s:5 / PDP-11 assembler pass 0
+as11.s:9        jsr     pc,assem
+as11.s:44 fpass2:
+as11.s:45       </lib/as2\0>
+as12.s:5 / a2 -- pdp-11 assembler pass 1
+as13.s:5 / a3 -- pdp-11 assembler pass 1
+as13.s:7 assem:
+as13.s:14       blos    assem
+as13.s:20       bne     assem
+as13.s:22       br      assem
+as13.s:41       br      assem
+as13.s:49       br      assem
+as13.s:54       asl     r0
+as13.s:61       br      assem
+as13.s:90       beq     assem1
+as13.s:94       br      assem1
+as13.s:107              br assem1
+as13.s:110 assem1:
+as13.s:111      jmp     assem
+as14.s:5 / a4 -- pdp-11 assembler pass1
+as14.s:27       asl     r0
+as15.s:5 / a5 -- pdp-11 assembler pass 1
+as16.s:5 / a6 -- pdp-11 assembler pass 1
+as16.s:27       asl     r0
+as16.s:122 / < (.ascii)
+as16.s:164      asl     r1
+as16.s:167      asr     r0
+as16.s:195      beq     astar
+as16.s:254 astar:
+as17.s:5 /  a7 -- pdp-11 assembler pass 1
+as17.s:30       asl     r4
+as18.s:5 / a8 -- pdp-11 assembler pass 1
+as19.s:5 / a9 -- pdp-11 assembler pass 1
+as19.s:26 /     17      string (.ascii, "<")
+as19.s:73 <ash\0\0\0\0\0>;      01;177316
+as19.s:192 <asr\0\0\0\0\0>;     15;0006200
+as19.s:193 <asrb\0\0\0\0>;              15;0106200
+as19.s:194 <asl\0\0\0\0\0>;     15;0006300
+as19.s:195 <aslb\0\0\0\0>;              15;0106300
+as19.s:263 <ash\0\0\0\0\0>;     30;072000
+as19.s:264 <ashc\0\0\0\0>;              30;073000
+as19.s:335      asl     r3
+as21.s:5 / a21 -- pdp-11 assembler pass 2 
+as21.s:71 / do pass 1
+as21.s:74       jsr     pc,assem
+as21.s:76 / prepare for pass 2
+as21.s:91       inc     passno
+as21.s:103      mov     r3,datbase      / txtsiz
+as21.s:106      mov     r3,bssbase      / txtsiz+datsiz
+as21.s:108      asl     r3
+as21.s:134      jsr     pc,assem
+as21.s:211      add     bssbase,2(r1)
+as21.s:214      add     datbase,2(r1)
+as22.s:5 / a2 -- pdp-11 assembler pass 2
+as22.s:13       tstb    passno
+as22.s:18       asr     r3              / get relative pc bit
+as22.s:25       asl     r3
+as22.s:51       asl     r3
+as22.s:78       tstb    passno
+as23.s:5 / a3 -- pdp-11 assembler pass 2
+as23.s:7 assem:
+as23.s:32       tstb    passno
+as23.s:35       asl     r0
+as23.s:48       br      assem
+as23.s:50       tstb    passno
+as23.s:67       br      assem
+as23.s:70       beq     assem
+as23.s:72       br      assem
+as23.s:76       asl     r4
+as23.s:82       br      assem
+as23.s:135      jmp     assem
+as23.s:149      asl     r4
+as23.s:164      asr     r4
+as24.s:5 / a4 -- pdp-11 assembler pass 2
+as24.s:101      asr     r0
+as25.s:5 / as25 is empty
+as26.s:5 / a6 -- pdp-11 assembler pass 2
+as26.s:36       asl     r0
+as26.s:115      asr     (sp)
+as26.s:116      asr     (sp)
+as26.s:157      tstb    passno
+as26.s:197      asr     r2
+as26.s:198      asr     r2
+as26.s:202      tstb    passno
+as26.s:215      tstb    passno
+as26.s:225      cmp     r3,dot-2        / same relocation as .
+as26.s:227      asr     r2
+as26.s:278 / < (.ascii)
+as26.s:334      asl     r1
+as26.s:336      tstb    passno
+as26.s:352      asr     r0
+as26.s:385      jmp     astar
+as26.s:474 astar:
+as26.s:535      ash     (sp)+,r0
+as26.s:536      ash     $-3,r1
+as26.s:554      ash     $-3,r1
+as26.s:556      ash     (sp)+,r1
+as27.s:5 /  a7 -- pdp-11 assembler
+as27.s:25       tstb    passno
+as27.s:40       asl     r4
+as27.s:205      tstb    passno
+as28.s:5 / as8 -- PDP-11 assembler pass 2
+as28.s:49 datbase:.=.+2
+as28.s:50 bssbase:.=.+2
+as28.s:74 passno:       .=.+2
+as29.s:5 / as9 -- PDP-11 assembler pass 2
+as29.s:40 01;177316 /ash
+as29.s:159 15;0006200 /asr
+as29.s:160 15;0106200 /asrb
+as29.s:161 15;0006300 /asl
+as29.s:162 15;0106300 /aslb
+as29.s:224 30;072000 /als (ash)
+as29.s:225 30;073000 /alsc (ashc)
+as29.s:230 30;072000 / ash
+as29.s:231 30;073000 /ashc
+% find . -name 'as*'
+% grep \# *
+Command not found
+% chdir /usr/sys
+% grep 'Command not found' *
+% chdir ken
+% grep 'Command not found' *
+% chdir ../dmr
+% grep 'Command not found' *
+% chdir ..
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% chdir /usr/source/s1@2@chdir /usr/source/s2
+% grep 'Command not fuond' @grep 'Command no #t found' *
+        jsr     r5,mesg; <Command not found.\n\0>; .even
+% grep 'Command not found' *@grep -n 'Command not found' *
+time.s:74       jsr     r5,mesg; <Command not found.\n\0>; .even
+% ed time.s
+2126
+/Command/
+        jsr     r5,mesg; <Command terminated abnormally.\n\0>; .even
+.-10,.+10p
+        sys     exit
+2:
+        mov     r0,r2
+        sys     signal; 2; 1
+2:
+        sys     wait
+        cmp     r0,r2
+        bne     2b
+        bit     $377,r1
+        beq     1f
+        jsr     r5,mesg; <Command terminated abnormally.\n\0>; .even
+        clr     r0
+        sys     seek; 0; 2
+1:
+        rts     pc
+
+newproc:
+        tst     (sp)+
+        mov     (sp)+,r0
+        tst     (sp)+
+        mov     $ibuf,r1
+//
+        jsr     r5,mesg; <Command not found.\n\0>; .even
+.-10;.+10p
+        clr     (r1)+
+        sys     exec; end; ibuf
+        mov     $end-10.,r0
+        mov     $"x/,(r0)+
+        mov     $"us,(r0)+
+        mov     $"r/,(r0)+
+        mov     $"bi,(r0)+
+        mov     $"n/,(r0)+
+        sys     exec; end-5; ibuf
+        sys     exec; end-9.; ibuf
+        jsr     r5,mesg; <Command not found.\n\0>; .even
+.-10,.+10p
+        clr     (r1)+
+        sys     exec; end; ibuf
+        mov     $end-10.,r0
+        mov     $"x/,(r0)+
+        mov     $"us,(r0)+
+        mov     $"r/,(r0)+
+        mov     $"bi,(r0)+
+        mov     $"n/,(r0)+
+        sys     exec; end-5; ibuf
+        sys     exec; end-9.; ibuf
+        jsr     r5,mesg; <Command not found.\n\0>; .even
+        clr     r0
+        sys     seek; 0; 2
+        sys     exit
+
+printd:
+        mov     $tbuf+4,r4
+        jsr     r5,tdiv; 10.
+        jsr     r5,tdiv; 10.
+        jsr     r5,tdiv; 10.
+        jsr     r5,tdiv; 10.
+q
+% chdir ..
+% ls
+s1
+s2
+s3
+s4
+s7
+% chdir s3
+% grep 'C##-n 'Command not found' *
+% chdir ./#./s4
+% grep -n 'Command no tounf#@grep -n 'Command not found' *
+Command not found
+% ls
+abort.s
+atan.s
+atan2.s
+atof.s
+chdir.s
+chmod.s
+chown.s
+close.s
+cos.s
+crand.s
+creat.s
+crt0.s
+crypt.s
+dup.s
+ecvt.s
+errlst.c
+execl.s
+execv.s
+exit.s
+exp.s
+ffltpr.s
+floor.s
+fltpr.s
+fmod.s
+fork.s
+fstat.s
+gamma.s
+getc.s
+getchr.s
+getcsw.s
+getgid.s
+getpw.c
+getuid.s
+gtty.s
+hmul.s
+hsw.s
+kill.s
+link.s
+locv.s
+log.s
+ltod.s
+makdir.s
+mcrt0.s
+mdate.s
+mknod.s
+mon.c
+mount.s
+nargs.s
+nice.s
+nlist.s
+open.s
+perror.c
+pipe.s
+pow.s
+printf.s
+prof.s
+putc.s
+putchr.s
+qsort.c
+read.s
+reset.s
+retrn.s
+rin.c
+rsave.s
+sbrk.s
+seek.s
+setgid.s
+setuid.s
+signal.s
+sin.s
+sleep.s
+sqrt.s
+ssw.s
+stat.s
+stime.s
+stty.s
+switch.s
+sync.s
+time.s
+times.s
+umount.s
+unlink.s
+wait.s
+write.s
+% grep '#-n 'Command not found' a* b* c* d* e* f* g* h* i*
+% grep '#-n 'Command not found' j_ k###* k* l* m* n* o* p* q #* r* s*t ## t* u* v* w* x* t#y* z*
+% chdir ..
+% ls
+s1
+s2
+s3
+s4
+s7
+% chdir s7
+% grep -n 'COmmand@grep -n 'Command not found' *
+% chdir ../..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tgmp
+ty
+voytilla
+yang
+% rep '@grep -n 'Command not found' *
+% chdir sys
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% grep - #n 'Command not found' *
+% chdir dmr
+% grep -n 'Command not found' *
+% chdir ../ken
+% grep - #n 'Command not to##found' *
+% chdir ..
+% ls -n#l
+total 213
+-rw-r--r-- 1 bin       628 Jun 10 08:37 buf.h
+drwxr-xr-x 2 bin       224 Aug 16 14:08 conf
+-rw-r--r-- 1 bin       291 Jun 10 08:37 conf.h
+-rw-rw-rw- 1 root      652 Aug 16 14:08 conf.o
+drwxr-xr-x 2 bin       848 Aug 16 14:08 dmr
+-rw-r--r-- 1 bin       157 Jun 10 08:37 file.h
+-rw-r--r-- 1 bin       188 Jun 10 08:37 filsys.h
+-rw-r--r-- 1 bin       561 Jun 10 08:37 inode.h
+drwxr-xr-x 2 bin       640 Aug 16 14:08 ken
+-rw-r--r-- 1 bin        35 Jun 10 08:37 ld
+-rw-rw-rw- 1 root    47398 Aug 16 14:08 lib1
+-rw-rw-rw- 1 root    40142 Aug 16 14:08 lib2
+-rw-rw-rw- 1 root     1356 Aug 16 14:08 low.o
+-rw-rw-rw- 1 root     3720 Aug 16 14:08 mch.o
+-rw-r--r-- 1 bin       941 Jun 10 08:37 param.h
+-rw-r--r-- 1 bin       387 Jun 10 08:37 proc.h
+-rw-r--r-- 1 bin       142 Jun 10 08:37 reg.h
+-rw-rw-rw- 1 bin       251 Jun 12 18:52 run
+-rw-r--r-- 1 bin       228 Jun 10 08:37 seg.h
+-rw-r--r-- 1 bin       410 Jun 10 08:37 systm.h
+-rw-r--r-- 1 bin       115 Jun 10 08:37 text.h
+-rw-r--r-- 1 bin       839 Jun 10 08:37 tty.h
+-rw-r--r-- 1 bin      1199 Jun 10 08:37 user.h
+% chdir conf
+% grep -n 'Command not found' *
+% chdir ../..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+ty
+voytilla
+yang
+% chdir lib
+% ls
+aign
+atab
+cign
+ctab
+salt
+suftab
+w2006
+% ls -l
+total 99
+-rw-r--r-- 1 bin       658 Jun 10 08:37 aign
+-rw-r--r-- 1 bin       768 Jun 10 08:37 atab
+-rw-r--r-- 1 bin       152 Jun 10 08:37 cign
+-rw-r--r-- 1 bin       768 Jun 10 08:37 ctab
+-rw-r--r-- 1 bin     21200 Jun 10 08:37 salt
+-rw-r--r-- 1 bin      2132 Jun 10 08:37 suftab
+-rw-r--r-- 1 bin     21881 Jun 10 08:37 w2006
+% find .
+Insufficient args
+% find . -name '*'
+% grep 'Command not found' *
+% chdir ..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bin
+bx
+c
+cody
+dnm
+dominils c
+doug
+fort
+games
+-lhacker
+hash
+jackson
+
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+ty
+voytilla
+yang
+% total 37
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      288 Aug 18 18:17 alex
+drwxrwxrwx 2 root      112 Aug 18 18:17 amitb
+drwxrwxrwx 2 andrew     32 Aug 25 12:45 andrew
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxrwxrwx 2 ben        32 Aug 22 21:53 ben
+drwxr-xr-x 2 bin       480 Jun 12 16:51 bin
+drwxrwxrwx 2 bx        128 Aug 18 18:17 bx
+drwxr-xr-x 2 bin       448 Jun 10 08:37 c
+drwxrwxrwx 2 root       96 Aug 18 12:23 cody
+drwxrwxrwx 2 bin        32 Aug 18 11:15 dnm
+drwxrwxrwx 2 domini     64 Aug 18 16:50 dominic
+drwxrwxrwx 2 root       32 Aug 18 13:17 doug
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 root       32 Aug 18 14:20 hacker
+drwxrwxrwx 2 105        32 Aug 18 11:15 hash
+drwxr-xr-x 2 jackso    128 Aug 25 14:48 jackson
+drwxrwxrwx 2 joe        32 Aug 18 11:15 joe
+drwxrwxrwx 2 jordan    144 Aug 18 16:46 jordan
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxrwxrwx 2 kevin     128 Aug 18 15:29 kevin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 13:55 michael
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       448 Aug 16 14:08 sys
+drwxr-xr-x 3 thalia    192 Aug 18 18:16 thalia
+drwxrwxrwx 2 bin        48 Aug 18 13:31 tmp
+drwxrwxrwx 2 198        32 Aug 18 11:15 ty
+drwxrwxrwx 2 root       32 Aug 18 13:49 voytilla
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+% ls adm
+% ls @chdir c
+% ls
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+% grep -n 'COmmand @grep -c 'Command not found' *
+% chdir ..
+% chdir lpd
+% ls
+% chdir ..
+% l#chi#dir mdec
+% ls
+dldr.s
+dli.s
+dtf.s
+list.s
+mboot
+mcopy.s
+rkf.s
+tboot
+tboot.s
+uboot.s
+% grep -n 'Command not found' *
+% cat mcopy.s
+/ copy mag tape to disk
+
+        jsr     pc,rew
+2:
+        jsr     pc,4(r5)
+                <'p' for rp; 'k' for rk\n\0>
+                .even
+        jsr     pc,2(r5)
+        cmp     r0,$'k
+        bne     3f
+        mov     $rkblk,r0
+        br      1f
+3:
+        cmp     r0,$'p
+        bne     2b
+        mov     $rpblk,r0
+1:
+        mov     r0,rxblk
+        mov     $'\n,r0
+        jsr     pc,(r5)
+        jsr     pc,4(r5)
+                <disk offset\n\0>
+                .even
+        jsr     pc,numb
+        mov     r0,bno
+        jsr     pc,4(r5)
+                <tape offset\n\0>
+                .even
+        jsr     pc,numb
+        mov     r0,r1
+        beq     2f
+1:
+        jsr     pc,rblk
+        dec     r1
+        bne     1b
+2:
+
+        jsr     pc,4(r5)
+                <count\n\0>
+                .even
+        jsr     pc,numb
+        mov     r0,r1
+1:
+        jsr     pc,rblk
+        jsr     pc,wblk
+        dec     r1
+        bne     1b
+        jsr     pc,rew
+        rts     pc
+
+numb:
+        clr     r1
+1:
+        jsr     pc,2(r5)
+        cmp     r0,$'\n
+        beq     1f
+        sub     $'0,r0
+        cmp     r0,$9
+        bhi     2f
+        mul     $10.,r1
+        add     r0,r1
+        br      1b
+1:
+        mov     r1,r0
+        rts     pc
+2:
+        jsr     pc,4(r5)
+                <illegal digit\n\0>
+                .even
+        tst     (sp)+
+        rts     pc
+
+mts = 172520
+mtc = 172522
+mtbrc = 172524
+mtcma = 172526
+
+rblk:
+        bit     $2,*$mts
+        bne     rblk
+        tstb    *$mtc
+        bge     rblk
+        mov     $-512.,*$mtbrc
+        mov     $buf,*$mtcma
+        mov     $60003,*$mtc
+1:
+        tstb    *$mtc
+        bge     1b
+        tst     *$mtc
+        bge     1f
+        jsr     pc,4(r5)
+                <tape error\n\0>
+                .even
+        mov     $-1,*$mtbrc
+        mov     $60013,*$mtc
+        br      rblk
+1:
+        rts     pc
+
+rew:
+        mov     $60017,*$mtc
+        rts     pc
+
+wblk:
+        mov     bno,r0
+        inc     bno
+        mov     r1,-(sp)
+        mov     r0,r1
+        clr     r0
+        jmp     *rxblk
+
+rpda = 176724
+rpblk:
+        div     $10.,r0
+        mov     r1,-(sp)
+        mov     r0,r1
+        clr     r0
+        div     $20.,r0
+        bisb    r1,1(sp)
+        mov     $rpda,r1
+        mov     (sp)+,(r1)
+        mov     r0,-(r1)
+        br      1f
+
+rkda = 177412
+rkblk:
+        div     $12.,r0
+        ash     $4.,r0
+        bis     r1,r0
+        mov     $rkda,r1
+        mov     r0,(r1)
+
+1:
+        mov     $buf,-(r1)
+        mov     $-256.,-(r1)
+        mov     $3,-(r1)
+1:
+        tstb    (r1)
+        bge     1b
+        tst     (r1)
+        blt     1f
+        mov     (sp)+,r1
+        rts     pc
+1:
+        jsr     pc,4(r5)
+                <disk error\n\0>
+                .even
+        mov     (sp)+,r1
+        dec     bno
+        br      wblk
+
+.bss
+buf:    .=.+512.
+rxblk:  .=.+2
+bno:    .=.+2
+% ls
+dldr.s
+dli.s
+dtf.s
+list.s
+mboot
+mcopy.s
+rkf.s
+tboot
+tboot.s
+uboot.s
+% cat lis.#t.s
+/ list on kl-11 followon ascii file
+
+        mov     $ascii,r1
+1:
+        movb    (r1)+,r0
+        beq     1f
+        jsr     pc,(r5)
+        br      1b
+1:
+        rts     pc
+
+ascii:
+        <dldr\n>
+        <dtf\n>
+        <list\n>
+        <mboot\n>
+        <mcopy\n>
+        <rkf\n>
+        <tboot\n>
+        <uboot\n>
+        <\0>
+% ls
+dldr.s
+dli.s
+dtf.s
+list.s
+mboot
+mcopy.s
+rkf.s
+tboot
+tboot.s
+uboot.s
+% cat tboot.s
+/ tape boot program to load and transfer
+/ to a 'tp' entry
+
+/ entry is made by jsr pc,*$0
+/ so return can be rts pc
+/ jsr pc,(r5) is putc
+/ jsr pc,2(r5) is getc
+/ jsr pc,4(r5) is mesg
+
+core = 24.
+.mt. = 0
+.. = [core*2048.]-512.
+start:
+        mov     $..,sp
+        mov     $name,r4
+        mov     sp,r1
+        cmp     pc,r1
+        bhis    2f
+        clr     r0
+        cmp     (r0),$407
+        bne     1f
+        mov     $20,r0
+1:
+        mov     (r0)+,(r1)+
+        cmp     r1,$end
+        blo     1b
+        jmp     (sp)
+
+2:
+        jsr     pc,rew
+        mov     $tvec,r5
+        mov     $'=,r0
+        jsr     pc,(r5)
+2:
+        mov     r4,r1
+1:
+        jsr     pc,2(r5)
+        cmp     r0,$'\n
+        beq     1f
+        cmp     r0,$'@
+        beq     2b
+        movb    r0,(r1)+
+        cmp     r0,$'#
+        bne     1b
+        sub     $2,r1
+        cmp     r1,r4
+        blo     2b
+        br      1b
+1:
+        clrb    (r1)
+        cmp     r1,r4
+        blos    start
+        mov     $1,tapa
+        mov     $-6144.,wc
+        jsr     pc,taper
+        clr     r1
+1:
+        mov     r1,r2
+        mov     r4,r0
+2:
+        cmpb    (r0)+,(r1)
+        bne     2f
+        tstb    (r1)+
+        bne     2b
+        br      1f
+2:
+        mov     r2,r1
+        add     $64.,r1
+        cmp     r1,$12288.
+        blo     1b
+        jsr     pc,rew
+        br      start
+1:
+        mov     44.(r2),tapa
+        mov     38.(r2),r0
+        inc     r0
+        clc
+        ror     r0
+        neg     r0
+        mov     r0,wc
+        clr     r0
+1:
+        clr     (r0)+
+        cmp     r0,sp
+        blo     1b
+        jsr     pc,taper
+        jsr     pc,rew
+        clr     r0
+        cmp     (r0),$407               / unix a.out?
+        bne     2f
+1:
+        mov     20(r0),(r0)+
+        cmp     r0,sp
+        blo     1b
+2:
+        jsr     pc,*$0
+        br      start
+
+.if .mt.
+mts = 172520
+mtc = 172522
+mtbrc = 172524
+mtcma = 172526
+
+taper:
+        clr     mtma
+        cmp     mtapa,tapa
+        beq     1f
+        bhi     2f
+        jsr     pc,rrec
+        br      taper
+2:
+        jsr     pc,rew
+        br      taper
+1:
+        mov     wc,r1
+1:
+        jsr     pc,rrec
+        add     $256.,r1
+        bmi     1b
+        rts     pc
+
+rrec:
+        bit     $2,*$mts
+        bne     rrec
+        tstb    *$mtc
+        bge     rrec
+        mov     $-512.,*$mtbrc
+        mov     mtma,*$mtcma
+        mov     $60003,*$mtc
+1:
+        tstb    *$mtc
+        bge     1b
+        tst     *$mtc
+        bge     1f
+        mov     $-1,*$mtbrc
+        mov     $60013,*$mtc
+        br      rrec
+1:
+        add     $512.,mtma
+        inc     mtapa
+        rts     pc
+
+rew:
+        mov     $60017,*$mtc
+        clr     mtapa
+        rts     pc
+.endif
+
+.if .mt.-1
+tcdt = 177350
+tccm = 177342
+taper:
+        mov     $tcdt,r0
+        mov     $tccm,r1
+for:
+        mov     $3,(r1)                 / rbn for
+1:
+        tstb    (r1)
+        bge     1b
+        tst     (r1)
+        blt     rev
+        cmp     tapa,(r0)
+        beq     rd
+        bgt     for
+
+rev:
+        mov     $4003,(r1)              / rbn bac
+1:
+        tstb    (r1)
+        bge     1b
+        tst     (r1)
+        blt     for
+        mov     (r0),r2
+        add     $5,r2
+        cmp     tapa,r2
+        blt     rev
+        br      for
+
+rd:
+        clr     -(r0)                           / bus addr
+        mov     wc,-(r0)                        / wc
+        mov     $5,-(r0)                        / read
+1:
+        tstb    (r1)
+        bge     1b
+        tst     (r1)
+        blt     taper
+        rts     pc
+
+rew:
+        mov     $4003,tccm
+        rts     pc
+.endif
+
+tvec:
+        br      putc
+        br      getc
+        br      mesg
+
+tks = 177560
+tkb = 177562
+getc:
+        mov     $tks,r0
+        inc     (r0)
+1:
+        tstb    (r0)
+        bge     1b
+        mov     tkb,r0
+        bic     $!177,r0
+        cmp     r0,$'A
+        blo     1f
+        cmp     r0,$'Z
+        bhi     1f
+        add     $40,r0
+1:
+        cmp     r0,$'\r
+        bne     putc
+        mov     $'\n,r0
+
+tps = 177564
+tpb = 177566
+putc:
+        tstb    tps
+        bge     putc
+        cmp     r0,$'\n
+        bne     1f
+        mov     $'\r,r0
+        jsr     pc,(r5)
+        mov     $'\n+200,r0
+        jsr     pc,(r5)
+        clr     r0
+        jsr     pc,(r5)
+        mov     $'\n,r0
+        rts     pc
+1:
+        mov     r0,tpb
+        rts     pc
+
+mesg:
+        movb    *(sp),r0
+        beq     1f
+        jsr     pc,(r5)
+        inc     (sp)
+        br      mesg
+1:
+        add     $2,(sp)
+        bic     $1,(sp)
+        rts     pc
+
+end:
+tapa:   .=.+2
+mtapa:  .=.+2
+mtma:   .=.+2
+wc:     .=.+2
+name:   .=.+32.
+% l
+l: not found
+% ls
+dldr.s
+dli.s
+dtf.s
+list.s
+mboot
+mcopy.s
+rkf.s
+tboot
+tboot.s
+uboot.s
+% cat uboot.s
+/ disk boot program to load and transfer
+/ to a unix entry
+
+/ entry is made by jsr pc,*$0
+/ so return can be rts pc
+
+core = 24.
+.. = [core*2048.]-512.
+start:
+        mov     $..,sp
+        mov     sp,r1
+        cmp     pc,r1
+        bhis    2f
+        reset
+        clr     r0
+        cmp     (r0),$407
+        bne     1f
+        mov     $20,r0
+1:
+        mov     (r0)+,(r1)+
+        cmp     r1,$end
+        blo     1b
+        jmp     (sp)
+
+2:
+        mov     $inod,r0
+1:
+        clr     (r0)+
+        cmp     r0,sp
+        blo     1b
+        jsr     pc,getc
+        cmp     r0,$'k
+        bne     3f
+        mov     $rkblk,r0
+        br      1f
+3:
+        cmp     r0,$'p
+        bne     2b
+        mov     $rpblk,r0
+1:
+        mov     r0,rxblk
+        mov     $'\n,r0
+        jsr     pc,putc
+        mov     $names,r1
+
+1:
+        mov     r1,r2
+2:
+        jsr     pc,getc
+        cmp     r0,$'\n
+        beq     1f
+        cmp     r0,$'/
+        beq     3f
+        movb    r0,(r2)+
+        br      2b
+3:
+        cmp     r1,r2
+        beq     2b
+        add     $14.,r1
+        br      1b
+1:
+        mov     $names,r1
+        mov     $1,r0
+1:
+        clr     bno
+        jsr     pc,iget
+        tst     (r1)
+        beq     1f
+2:
+        jsr     pc,rmblk
+                br start
+        mov     $buf,r2
+3:
+        mov     r1,r3
+        mov     r2,r4
+        add     $16.,r2
+        tst     (r4)+
+        beq     5f
+4:
+        cmpb    (r3)+,(r4)+
+        bne     5f
+        cmp     r4,r2
+        blo     4b
+        mov     -16.(r2),r0
+        add     $14.,r1
+        br      1b
+5:
+        cmp     r2,$buf+512.
+        blo     3b
+        br      2b
+1:
+        clr     r1
+1:
+        jsr     pc,rmblk
+                br 1f
+        mov     $buf,r2
+2:
+        mov     (r2)+,(r1)+
+        cmp     r2,$buf+512.
+        blo     2b
+        br      1b
+1:
+        clr     r0
+        cmp     (r0),$407
+        bne     2f
+1:
+        mov     20(r0),(r0)+
+        cmp     r0,sp
+        blo     1b
+2:
+        jsr     pc,*$0
+        br      start
+
+iget:
+        add     $31.,r0
+        mov     r0,r5
+        ash     $-4.,r0
+        jsr     pc,rblk
+        bic     $!17,r5
+        ash     $5.,r5
+        add     $buf,r5
+        mov     $inod,r4
+1:
+        mov     (r5)+,(r4)+
+        cmp     r4,$addr+16.
+        blo     1b
+        rts     pc
+
+rmblk:
+        add     $2,(sp)
+        mov     bno,r0
+        inc     bno
+        bit     $LRG,mode
+        bne     1f
+        asl     r0
+        mov     addr(r0),r0
+        bne     rblk
+2:
+        sub     $2,(sp)
+        rts     pc
+1:
+        clr     -(sp)
+        movb    r0,(sp)
+        clrb    r0
+        swab    r0
+        asl     r0
+        mov     addr(r0),r0
+        beq     2b
+        jsr     pc,rblk
+        mov     (sp)+,r0
+        asl     r0
+        mov     buf(r0),r0
+        beq     2b
+
+rblk:
+        mov     r1,-(sp)
+        mov     r0,r1
+        clr     r0
+        jmp     *rxblk
+
+rpda = 176724
+rpblk:
+        div     $10.,r0
+        mov     r1,-(sp)
+        mov     r0,r1
+        clr     r0
+        div     $20.,r0
+        bisb    r1,1(sp)
+        mov     $rpda,r1
+        mov     (sp)+,(r1)
+        br      1f
+
+rkda = 177412
+rkblk:
+        div     $12.,r0
+        ash     $4.,r0
+        bis     r1,r0
+        mov     $rkda+2,r1
+
+1:
+        mov     r0,-(r1)
+        mov     $buf,-(r1)
+        mov     $-256.,-(r1)
+        mov     $5,-(r1)
+1:
+        tstb    (r1)
+        bge     1b
+        mov     (sp)+,r1
+        rts     pc
+
+tks = 177560
+tkb = 177562
+getc:
+        mov     $tks,r0
+        inc     (r0)
+1:
+        tstb    (r0)
+        bge     1b
+        mov     tkb,r0
+        bic     $!177,r0
+        cmp     r0,$'A
+        blo     1f
+        cmp     r0,$'Z
+        bhi     1f
+        add     $40,r0
+1:
+        cmp     r0,$'\r
+        bne     putc
+        mov     $'\n,r0
+
+tps = 177564
+tpb = 177566
+putc:
+        tstb    tps
+        bge     putc
+        cmp     r0,$'\n
+        bne     1f
+        mov     $'\r,r0
+        jsr     pc,putc
+        mov     $'\n+200,r0
+        jsr     pc,putc
+        clr     r0
+        jsr     pc,putc
+        mov     $'\n,r0
+        rts     pc
+1:
+        mov     r0,tpb
+        rts     pc
+
+end:
+inod = ..-1024.
+mode = inod
+addr = inod+8.
+buf = inod+32.
+bno = buf+514.
+rxblk = bno+2
+names = rxblk+2
+LRG = 10000
+reset = 5
+% ls
+dldr.s
+dli.s
+dtf.s
+list.s
+mboot
+mcopy.s
+rkf.s
+tboot
+tboot.s
+uboot.s
+% cat dldr.s
+/ copy and execute DEC loaders
+
+core = 24.
+prs = 177550
+
+        mov     $dldr,r0
+        mov     $[core*2048.]-300,r1
+        mov     r1,r2
+1:
+        mov     (r0)+,(r1)+
+        cmp     r0,$end
+        blo     1b
+        jmp     (r2)
+
+dldr:
+        10706
+        24646
+        10705
+        62705
+        114
+        5001
+        13716
+        177570
+        6016
+        103402
+        5016
+        404
+        241
+        6116
+        1001
+        10116
+        5000
+        4715
+        105303
+        1374
+        4715
+        4767
+        74
+        10402
+        162702
+        4
+        22702
+        2
+        1441
+        4767
+        54
+        61604
+        10401
+        4715
+        2004
+        105700
+        1753
+        0
+        751
+        110321
+        770
+        16703
+        150
+        105213
+        105713
+        100376
+        116303
+        2
+        60300
+        42703
+        177400
+        5302
+        207
+        12667
+        44
+        4715
+        10304
+        4715
+        303
+        50304
+        16707
+        26
+        4767
+        177752
+        4715
+        105700
+        1342
+        6204
+        103002
+        0
+        677
+        6304
+        114
+        0
+
+. = dldr-500+744
+        16701
+        26
+        12702
+        352
+        5211
+        105711
+        100376
+        116162
+        2
+        [core*2048.]-400
+        5267
+        177756
+        765
+        prs
+end:
+% pwd
+../usr/mdec
+% ls
+dldr.s
+dli.s
+dtf.s
+list.s
+mboot
+mcopy.s
+rkf.s
+tboot
+tboot.s
+uboot.s
+% cat dli.s
+/ dli -- DEC format  tape interpreter
+
+.globl  fopen, fcreat, getc, putc, flush, mesg
+
+        mov     (sp)+,r5
+        cmp     r5,$1
+        bne     1f
+        jsr     r5,mesg; <Arg count\n\0>; .even
+        sys     exit
+1:
+        tst     (sp)+
+        mov     (sp)+,r0
+        jsr     r5,fcreat; obuf
+        bec     1f
+        jsr     r5,mesg; <Cannot create\n\0>; .even
+1:
+        mov     $ppt,r0
+        cmp     r5,$3
+        blt     1f
+        mov     (sp)+,r0
+1:
+        jsr     r5,fopen; ibuf
+        bec     1f
+        jsr     r5,mesg; <Cannot open\n\0>; .even
+        sys     exit
+1:
+        jsr     pc,get
+        tst     r0
+        beq     1b
+        cmp     r0,$1
+        bne     err
+        jsr     pc,get
+        jsr     pc,get
+        mov     r0,-(sp)
+        jsr     pc,get
+        swab    r0
+        bis     r0,(sp)
+        jsr     pc,get
+        mov     r0,r1
+        jsr     pc,get
+        swab    r0
+        bis     r0,r1
+        sub     $6,(sp)
+        ble     2f
+        cmp     r1,origin
+        beq     3f
+        mov     r1,origin
+        jsr     r5,flush; obuf
+        mov     obuf,r0
+        sys     seek; origin: 0; 0
+3:
+        jsr     pc,get
+        jsr     pc,put
+        dec     (sp)
+        bgt     3b
+        tst     (sp)+
+        jsr     pc,get
+        br      1b
+2:
+        jsr     r5,flush; obuf
+        sys     exit
+
+put:
+        jsr     r5,putc; obuf
+        inc     origin
+        rts     pc
+
+get:
+        jsr     r5,getc; ibuf
+        bec     1f
+
+err:
+        jsr     r5,flush; obuf
+        mov     icount,r0
+        jsr     pc,decml
+        jsr     r5,mesg; < Input error\n\0>; .even
+        sys     exit
+1:
+        inc     icount
+        rts     pc
+
+decml:
+        mov     r0,r1
+        clr     r0
+        div     $10.,r0
+        mov     r1,-(sp)
+        tst     r0
+        beq     1f
+        jsr     pc,decml
+1:
+        mov     (sp)+,r0
+        add     $'0,r0
+        mov     r0,icount
+        mov     $1,r0
+        sys     write; icount; 1
+        rts     pc
+
+ppt:
+        </dev/ppt\0>
+        .even
+        .bss
+
+count:  .=.+2
+ch:     .=.+2
+icount: .=.+2
+ibuf:   .=.+520.
+obuf:   .=.+520.
+
+% ls
+dldr.s
+dli.s
+dtf.s
+list.s
+mboot
+mcopy.s
+rkf.s
+tboot
+tboot.s
+uboot.s
+% cat dtf.s
+/ unix DEC-tape time/mtrack track formatter
+
+nword = 256.
+nblock = 578.
+endz = 7200.
+
+ps = 177776
+tcst = 177340
+tccm = 177342
+tcwc = 177344
+tcba = 177346
+tcdt = 177350
+
+        mov     r5,savr5
+        mov     sp,savsp
+
+start:
+        mov     savr5,r5
+        mov     savsp,sp
+        jsr     pc,4(r5)
+                <set up to format on drive 0\n\0>
+                .even
+
+        clr     r0
+        mov     $cobtab,r1
+1:
+        jsr     pc,bcomobv
+        mov     r2,(r1)+
+        inc     r0
+        cmp     r0,$512.
+        bne     1b
+
+        mov     $buffer,r0
+1:
+        mov     $-1,(r0)+
+        cmp     r0,$buffer+nword+nword
+        blo     1b
+
+        mov     savr5,r5
+        jsr     pc,2(r5)
+
+        mov     $340,ps
+        mov     $tcdt,r5
+        mov     $13,tccm
+        jsr     pc,flag
+
+/ 8Kch for end zone
+
+        mov     $endz,r4
+1:
+        jsr     r0,mtrack; 101101
+        dec     r4
+        bne     1b
+
+/ foreward guard
+
+        mov     $199.,r4
+1:
+        jsr     r0,mtrack; 10101
+        dec     r4
+        bne     1b
+
+/ blocks
+
+        mov     $nblock,r3
+1:
+        jsr     r0,mtrack; 10101
+        jsr     r0,mtrack; 10110
+        jsr     r0,mtrack; 11010
+        jsr     r0,mtrack; 01000
+        jsr     r0,mtrack; 01000
+        jsr     r0,mtrack; 01000
+        jsr     r0,mtrack; 01000
+        mov     $nword-4,r4
+2:
+        jsr     r0,mtrack; 111000
+        dec     r4
+        bne     2b
+        jsr     r0,mtrack; 111011
+        jsr     r0,mtrack; 111011
+        jsr     r0,mtrack; 111011
+        jsr     r0,mtrack; 111011
+        jsr     r0,mtrack; 101001
+        jsr     r0,mtrack; 100101
+        jsr     r0,mtrack; 10101
+        dec     r3
+        bne     1b
+
+/ rear guard
+
+        mov     $199.,r4
+1:
+        jsr     r0,mtrack; 10101
+        dec     r4
+        bne     1b
+
+/ rear end zone
+
+        mov     $endz,r4
+1:
+        jsr     r0,mtrack; 10010
+        dec     r4
+        bne     1b
+        clr     tccm
+
+/ end of mtrack pass
+/ go back 12 blocks
+
+        mov     $12.,r0
+        mov     $4002,tccm
+1:
+        incb    tccm
+        jsr     pc,flag
+        dec     r0
+        bne     1b
+
+/ put comobv(nblock-1) in everything
+/ up to end zone
+
+        mov     $nblock-1,r0
+        mov     r0,bn
+        jsr     pc,comobv
+        mov     $17,tccm
+        jsr     pc,flag
+1:
+        movb    r1,tcst
+        mov     r0,(r5)
+        jsr     pc,flag1
+                br 1b
+
+/ reverse pass put in
+/ foreward and reverse
+/ block numbers
+
+        mov     $4017,tccm
+        jsr     pc,flag
+1:
+        mov     $nword+3.,r4
+2:
+        clrb    tcst
+        clr     (r5)
+        jsr     pc,flag
+        dec     r4
+        bne     2b
+
+        clrb    tcst
+        clr     (r5)
+        mov     bn,r0
+        jsr     pc,comobv
+        jsr     pc,flag
+        movb    r1,tcst
+        mov     r0,(r5)
+        jsr     pc,flag
+        dec     bn
+        blt     check
+        clrb    tcst
+        clr     (r5)
+        jsr     pc,flag
+        clrb    tcst
+        clr     (r5)
+        jsr     pc,flag
+        clrb    tcst
+        mov     bn,(r5)
+        jsr     pc,flag
+        clrb    tcst
+        clr     (r5)
+        jsr     pc,flag
+        clrb    tcst
+        clr     (r5)
+        jsr     pc,flag
+        br      1b
+
+/ foreward pass
+/ confirm block numbers
+/ write all 1's in data
+
+check:
+        clrb    tcst
+        clr     (r5)
+        jsr     pc,flag1
+                br check
+        clr     r4
+1:
+        mov     $3,tccm
+        jsr     pc,flag
+        cmp     (r5),r4
+        bne     error1
+        mov     $-nword,tcwc
+        mov     $buffer,tcba
+        mov     $15,tccm
+        jsr     pc,flag
+        inc     r4
+        cmp     r4,$nblock
+        bne     1b
+        mov     $3,tccm
+        jsr     pc,flag1
+                br error2
+
+/ reverse pass
+/ confirm block numbers
+/ read data and compare
+/ to all 1's
+
+1:
+        mov     $4003,tccm
+        jsr     pc,flag
+        dec     r4
+        cmp     r4,(r5)
+        bne     error3
+        mov     $-nword,tcwc
+        mov     $buffer,tcba
+        mov     $4005,tccm
+        jsr     pc,compare
+        jsr     pc,flag
+        tst     r4
+        bne     1b
+        mov     $4003,tccm
+        jsr     pc,flag1
+                br error4
+        jsr     pc,compare
+        jmp     start
+
+error1:
+        mov     $1,r0
+        br      1f
+error2:
+        mov     $1,r0
+        br      1f
+error3:
+        mov     $3,r0
+        br      1f
+error4:
+        mov     $4,r0
+        br      1f
+error5:
+        mov     $5,r0
+        br      1f
+error6:
+        mov     $6,r0
+        br      1f
+error7:
+        mov     $7,r0
+1:
+        add     $'0,r0
+        movb    r0,0f
+        mov     tcst,-(sp)
+        mov     tccm,-(sp)
+        mov     $1,tccm
+        mov     savr5,r5
+        jsr     pc,4(r5)
+                <error>
+0:
+                <x\ntcst in r0; tccm in r1\n\0>
+                .even
+        mov     (sp)+,r1
+        mov     (sp)+,r0
+        0
+        rts     pc
+
+compare:
+        mov     r0,-(sp)
+        mov     $buffer,r0
+1:
+        cmp     (r0)+,$-1
+        bne     error5
+        cmp     r0,$buffer+nword+nword
+        blo     1b
+        mov     (sp)+,r0
+        rts     pc
+
+mtrack:
+        mov     (r0)+,(r5)
+        jsr     pc,flag
+        rts     r0
+
+flag:
+        bit     $100200,tccm
+        beq     flag
+        blt     error6
+        rts     pc
+
+flag1:
+        bit     $100200,tccm
+        beq     flag1
+        bge     1f
+        tst     tcst
+        bge     error7
+        add     $2,(sp)
+1:
+        rts     pc
+
+comobv:
+        mov     r0,r4
+        bic     $!777,r0
+        asl     r0
+        mov     cobtab(r0),r0
+        swab    r0
+        clr     r1
+        ror     r0
+        rol     r1
+        asl     r0
+        asl     r0
+        rol     r1
+        swab    r4
+        bic     $177401,r4
+        bis     cobtab(r4),r0
+        rts     pc
+
+bcomobv:
+        mov     r0,r2
+        bic     $!70,r2
+        mov     r0,r3
+        mov     $6.,r4
+1:
+        asr     r3
+        dec     r4
+        bne     1b
+        bic     $!7,r3
+        bis     r3,r2
+        mov     r0,r3
+        mov     $6.,r4
+1:
+        asl     r3
+        dec     r4
+        bne     1b
+        bic     $!700,r3
+        bis     r3,r2
+        com     r2
+        bic     $!777,r2
+        rts     pc
+
+bn:     .=.+2
+savr5:  .=.+2
+savsp:  .=.+2
+cobtab: .=.+1024.
+buffer: .=.+nword+nword
+
+% chdir ..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+ty
+voytilla
+yang
+% chdir pub
+% ls
+ascii
+greek
+kbd
+tabs
+% chdir ../source/s1
+% grep -n 'Command not found' *
+Command not found
+% chdir ../usr/@chdir /usr/sys/ken
+% grep -n exec *
+sys1.c:17 exec()
+sys1.c:28        * for execute permission
+sysent.c:19     2, &exec,                       /* 11 = exec */
+% ed sys1.c
+5472
+/exec/
+exec()
+.;/^}/p
+exec()
+{
+        int ap, na, nc, *bp;
+        int ts, ds;
+        register c, *ip;
+        register char *cp;
+        extern uchar;
+
+        /*
+         * pick up file names
+         * and check various modes
+         * for execute permission
+         */
+
+        ip = namei(&uchar, 0);
+        if(ip == NULL)
+                return;
+        bp = getblk(NODEV);
+        if(access(ip, IEXEC))
+                goto bad;
+
+        /*
+         * pack up arguments into
+         * allocated disk buffer
+         */
+
+        cp = bp->b_addr;
+        na = 0;
+        nc = 0;
+        while(ap = fuword(u.u_arg[1])) {
+                na++;
+                if(ap == -1)
+                        goto bad;
+                u.u_arg[1] =+ 2;
+                for(;;) {
+                        c = fubyte(ap++);
+                        if(c == -1)
+                                goto bad;
+                        *cp++ = c;
+                        nc++;
+                        if(nc > 510) {
+                                u.u_error = E2BIG;
+                                goto bad;
+                        }
+                        if(c == 0)
+                                break;
+                }
+        }
+        if((nc&1) != 0) {
+                *cp++ = 0;
+                nc++;
+        }
+
+        /*
+         * read in first 8 bytes
+         * of file for segment
+         * sizes:
+         * w0 = 407/410 (410 implies RO text)
+         * w1 = text size
+         * w2 = data size
+         * w3 = bss size
+         */
+
+        u.u_base = &u.u_arg[0];
+        u.u_count = 8;
+        u.u_offset[1] = 0;
+        u.u_offset[0] = 0;
+        u.u_segflg = 1;
+        readi(ip);
+        u.u_segflg = 0;
+        if(u.u_error)
+                goto bad;
+        if(u.u_arg[0] == 0407) {
+                u.u_arg[2] =+ u.u_arg[1];
+                u.u_arg[1] = 0;
+        } else
+        if(u.u_arg[0] != 0410) {
+                u.u_error = ENOEXEC;
+                goto bad;
+        }
+        if(u.u_arg[1]!=0 && (ip->i_flag&ITEXT)==0 && ip->i_count!=1) {
+                u.u_error = ETXTBSY;
+                goto bad;
+        }
+
+        /*
+         * find text and data sizes
+         * try them out for possible
+         * exceed of max sizes
+         */
+
+        ts = ((u.u_arg[1]+63)>>6) & 01777;
+        ds = ((u.u_arg[2]+u.u_arg[3]+63)>>6) & 01777;
+        if(estabur(ts, ds, SSIZE))
+                goto bad;
+
+        /*
+         * allocate and clear core
+         * at this point, committed
+         * to the new image
+         */
+
+        u.u_prof[3] = 0;
+        xfree();
+        xalloc(ip);
+        c = USIZE+ds+SSIZE;
+        expand(USIZE);
+        expand(c);
+        while(--c >= USIZE)
+                clearseg(u.u_procp->p_addr+c);
+
+        /*
+         * read in data segment
+         */
+
+        estabur(0, ds, 0);
+        u.u_base = 0;
+        u.u_offset[1] = 020+u.u_arg[1];
+        u.u_count = u.u_arg[2];
+        readi(ip);
+
+        /*
+         * initialize stack segment
+         */
+
+        u.u_tsize = ts;
+        u.u_dsize = ds;
+        u.u_ssize = SSIZE;
+        estabur(u.u_tsize, u.u_dsize, u.u_ssize);
+        cp = bp->b_addr;
+        ap = -nc - na*2 - 4;
+        u.u_ar0[R6] = ap;
+        suword(ap, na);
+        c = -nc;
+        while(na--) {
+                suword(ap=+2, c);
+                do
+                        subyte(c++, *cp);
+                while(*cp++);
+        }
+        suword(ap+2, -1);
+
+        /*
+         * set SUID/SGID protections
+         */
+
+        if(ip->i_mode&ISUID)
+                if(u.u_uid != 0)
+                        u.u_uid = ip->i_uid;
+        if(ip->i_mode&ISGID)
+                u.u_gid = ip->i_gid;
+
+        /*
+         * clear sigs, regs and return
+         */
+
+        c = ip;
+        for(ip = &u.u_signal[0]; ip < &u.u_signal[NSIG]; ip++)
+                if((*ip & 1) == 0)
+                        *ip = 0;
+        for(cp = &regloc[0]; cp < &regloc[6];)
+                u.u_ar0[*cp++] = 0;
+        u.u_ar0[R7] = 0;
+        for(ip = &u.u_fsav[0]; ip < &u.u_fsav[25];)
+                *ip++ = 0;
+        ip = c;
+
+bad:
+        iput(ip);
+        brelse(bp);
+}
+q
+% grep E2BIG *
+                                u.u_error = E2BIG;
+% chdir ..
+% grep E2BIG *
+#define E2BIG   7
+% chdir ken
+% ed sys.#1.c
+5472
+1,/s#exec/-1d
+/^]#]#}/+1;$d
+1,$p
+exec()
+{
+        int ap, na, nc, *bp;
+        int ts, ds;
+        register c, *ip;
+        register char *cp;
+        extern uchar;
+
+        /*
+         * pick up file names
+         * and check various modes
+         * for execute permission
+         */
+
+        ip = namei(&uchar, 0);
+        if(ip == NULL)
+                return;
+        bp = getblk(NODEV);
+        if(access(ip, IEXEC))
+                goto bad;
+
+        /*
+         * pack up arguments into
+         * allocated disk buffer
+         */
+
+        cp = bp->b_addr;
+        na = 0;
+        nc = 0;
+        while(ap = fuword(u.u_arg[1])) {
+                na++;
+                if(ap == -1)
+                        goto bad;
+                u.u_arg[1] =+ 2;
+                for(;;) {
+                        c = fubyte(ap++);
+                        if(c == -1)
+                                goto bad;
+                        *cp++ = c;
+                        nc++;
+                        if(nc > 510) {
+                                u.u_error = E2BIG;
+                                goto bad;
+                        }
+                        if(c == 0)
+                                break;
+                }
+        }
+        if((nc&1) != 0) {
+                *cp++ = 0;
+                nc++;
+        }
+
+        /*
+         * read in first 8 bytes
+         * of file for segment
+         * sizes:
+         * w0 = 407/410 (410 implies RO text)
+         * w1 = text size
+         * w2 = data size
+         * w3 = bss size
+         */
+
+        u.u_base = &u.u_arg[0];
+        u.u_count = 8;
+        u.u_offset[1] = 0;
+        u.u_offset[0] = 0;
+        u.u_segflg = 1;
+        readi(ip);
+        u.u_segflg = 0;
+        if(u.u_error)
+                goto bad;
+        if(u.u_arg[0] == 0407) {
+                u.u_arg[2] =+ u.u_arg[1];
+                u.u_arg[1] = 0;
+        } else
+        if(u.u_arg[0] != 0410) {
+                u.u_error = ENOEXEC;
+                goto bad;
+        }
+        if(u.u_arg[1]!=0 && (ip->i_flag&ITEXT)==0 && ip->i_count!=1) {
+                u.u_error = ETXTBSY;
+                goto bad;
+        }
+
+        /*
+         * find text and data sizes
+         * try them out for possible
+         * exceed of max sizes
+         */
+
+        ts = ((u.u_arg[1]+63)>>6) & 01777;
+        ds = ((u.u_arg[2]+u.u_arg[3]+63)>>6) & 01777;
+        if(estabur(ts, ds, SSIZE))
+                goto bad;
+
+        /*
+         * allocate and clear core
+         * at this point, committed
+         * to the new image
+         */
+
+        u.u_prof[3] = 0;
+        xfree();
+        xalloc(ip);
+        c = USIZE+ds+SSIZE;
+        expand(USIZE);
+        expand(c);
+        while(--c >= USIZE)
+                clearseg(u.u_procp->p_addr+c);
+
+        /*
+         * read in data segment
+         */
+
+        estabur(0, ds, 0);
+        u.u_base = 0;
+        u.u_offset[1] = 020+u.u_arg[1];
+        u.u_count = u.u_arg[2];
+        readi(ip);
+
+        /*
+         * initialize stack segment
+         */
+
+        u.u_tsize = ts;
+        u.u_dsize = ds;
+        u.u_ssize = SSIZE;
+        estabur(u.u_tsize, u.u_dsize, u.u_ssize);
+        cp = bp->b_addr;
+        ap = -nc - na*2 - 4;
+        u.u_ar0[R6] = ap;
+        suword(ap, na);
+        c = -nc;
+        while(na--) {
+                suword(ap=+2, c);
+                do
+                        subyte(c++, *cp);
+                while(*cp++);
+        }
+        suword(ap+2, -1);
+
+        /*
+         * set SUID/SGID protections
+         */
+
+        if(ip->i_mode&ISUID)
+                if(u.u_uid != 0)
+                        u.u_uid = ip->i_uid;
+        if(ip->i_mode&ISGID)
+                u.u_gid = ip->i_gid;
+
+        /*
+         * clear sigs, regs and return
+         */
+
+        c = ip;
+        for(ip = &u.u_signal[0]; ip < &u.u_signal[NSIG]; ip++)
+                if((*ip & 1) == 0)
+                        *ip = 0;
+        for(cp = &regloc[0]; cp < &regloc[6];)
+                u.u_ar0[*cp++] = 0;
+        u.u_ar0[R7] = 0;
+        for(ip = &u.u_fsav[0]; ip < &u.u_fsav[25];)
+                *ip++ = 0;
+        ip = c;
+
+bad:
+        iput(ip);
+        brelse(bp);
+}
+/bp@g/bp/p
+        int ap, na, nc, *bp;
+        bp = getblk(NODEV);
+        cp = bp->b_addr;
+        cp = bp->b_addr;
+        brelse(bp);
+g/cp/p
+        register char *cp;
+        cp = bp->b_addr;
+                        *cp++ = c;
+                *cp++ = 0;
+                clearseg(u.u_procp->p_addr+c);
+        cp = bp->b_addr;
+                        subyte(c++, *cp);
+                while(*cp++);
+        for(cp = &regloc[0]; cp < &regloc[6];)
+                u.u_ar0[*cp++] = 0;
+!cp @
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% chdir /usr/source/s2
+% ed sh.c
+10267
+/COmman@/Command no/
+?
+/Command/
+?
+/exec/
+                        execute(t);
+//
+execute(t, pf1, pf2)
+//
+                                execv("/bin/login", t+dcom);
+//
+                        prs("login: cannot execute\n");
+//
+                        execute(t1);
+//
+                        execv(t[dspr], t+dspr);
+//
+                        prs("glob: cannot execute\n");
+//
+                execv(t[dcom], t+dcom);
+//
+                execv(linep+4, t+dcom);
+//
+                execv(linep, t+dcom);
+//
+                        execv(t[dspr], t+dspr);
+//
+                execute(t1, pf1, pv);
+//
+                execute(t1, pv, pf2);
+//
+                execute(t1);
+//
+                execute(t1);
+//
+                        execute(t);
+//
+execute(t, pf1, pf2)
+//
+                                execv("/bin/login", t+dcom);
+/^execute/;/^]#}/P#p
+execute(t, pf1, pf2)
+int *t, *pf1, *pf2;
+{
+        int i, f, pv[2];
+        register *t1;
+        register char *cp1, *cp2;
+
+        if(t != 0)
+        switch(t[dtyp]) {
+
+        case tcom:
+                cp1 = t[dcom];
+                if(equal(cp1, "chdir")) {
+                        if(t[dcom+1] != 0) {
+                                if(chdir(t[dcom+1]) < 0)
+                                        err("chdir: bad directory");
+                        } else
+                                err("chdir: arg count");
+                        return;
+                }
+                if(equal(cp1, "cd")) {
+                        prs("haha\n");
+                        return;
+                }
+                if(equal(cp1, "shift")) {
+                        if(dolc < 1) {
+                                prs("shift: no args\n");
+                                return;
+                        }
+                        dolv[1] = dolv[0];
+                        dolv++;
+                        dolc--;
+                        return;
+                }
+                if(equal(cp1, "login")) {
+                        if(promp != 0) {
+                                close(acctf);
+                                execv("/bin/login", t+dcom);
+                        }
+                        prs("login: cannot execute\n");
+                        return;
+                }
+                if(equal(cp1, "wait")) {
+                        pwait(-1, 0);
+                        return;
+                }
+                if(equal(cp1, ":"))
+                        return;
+
+        case tpar:
+                f = t[dflg];
+                i = 0;
+                if((f&fpar) == 0)
+                        i = fork();
+                if(i == -1) {
+                        err("try again");
+                        return;
+                }
+                if(i != 0) {
+                        if((f&fpin) != 0) {
+                                close(pf1[0]);
+                                close(pf1[1]);
+                        }
+                        if((f&fand) != 0) {
+                                prn(i);
+                                prs("\n");
+                                return;
+                        }
+                        if((f&fpou) == 0)
+                                pwait(i, t);
+                        return;
+                }
+                if(t[dlef] != 0) {
+                        close(0);
+                        i = open(t[dlef], 0);
+                        if(i < 0) {
+                                prs(t[dlef]);
+                                err(": cannot open");
+                                exit();
+                        }
+                }
+                if(t[drit] != 0) {
+                        if((f&fcat) != 0) {
+                                i = open(t[drit], 1);
+                                if(i >= 0) {
+                                        seek(i, 0, 2);
+                                        goto f1;
+                                }
+                        }
+                        i = creat(t[drit], 0666);
+                        if(i < 0) {
+                                prs(t[drit]);
+                                err(": cannot create");
+                                exit();
+                        }
+                f1:
+                        close(1);
+                        dup(i);
+                        close(i);
+                }
+                if((f&fpin) != 0) {
+                        close(0);
+                        dup(pf1[0]);
+                        close(pf1[0]);
+                        close(pf1[1]);
+                }
+                if((f&fpou) != 0) {
+                        close(1);
+                        dup(pf2[1]);
+                        close(pf2[0]);
+                        close(pf2[1]);
+                }
+                if((f&fint)!=0 && t[dlef]==0 && (f&fpin)==0) {
+                        close(0);
+                        open("/dev/null", 0);
+                }
+                if((f&fint) == 0 && setintr) {
+                        signal(intr, 0);
+                        signal(quit, 0);
+                }
+                if(t[dtyp] == tpar) {
+                        if(t1 = t[dspr])
+                                t1[dflg] =| f&fint;
+                        execute(t1);
+                        exit();
+                }
+                close(acctf);
+                gflg = 0;
+                scan(t, &tglob);
+                if(gflg) {
+                        t[dspr] = "/etc/glob";
+                        execv(t[dspr], t+dspr);
+                        prs("glob: cannot execute\n");
+                        exit();
+                }
+                scan(t, &trim);
+                execv(t[dcom], t+dcom);
+                cp1 = linep;
+                cp2 = "/usr/bin/";
+                while(*cp1 = *cp2++)
+                        cp1++;
+                cp2 = t[dcom];
+                while(*cp1++ = *cp2++);
+                execv(linep+4, t+dcom);
+                execv(linep, t+dcom);
+                if(runcom()) {
+                        t[dspr] = "/bin/sh";
+                        t[dcom] = linep;
+                        execv(t[dspr], t+dspr);
+                }
+                prs(t[dcom]);
+                err(": not found");
+                exit();
+
+        case tfil:
+                f = t[dflg];
+                pipe(pv);
+                t1 = t[dlef];
+                t1[dflg] =| fpou | (f&(fpin|fint));
+                execute(t1, pf1, pv);
+                t1 = t[drit];
+                t1[dflg] =| fpin | (f&(fpou|fint|fand));
+                execute(t1, pv, pf2);
+                return;
+
+        case tlst:
+                f = t[dflg]&fint;
+                if(t1 = t[dlef])
+                        t1[dflg] =| f;
+                execute(t1);
+                if(t1 = t[drit])
+                        t1[dflg] =| f;
+                execute(t1);
+                return;
+
+        }
+}
+!QP8P=P4 !QP8P=
+?
+!
+Q
+?
+Q
+?
+P4
+?
+Q
+?
+P/P/
+?
+
+?
+QP/P/P/P/
+?
+?
+
+
+
+err(s)
+
+char *s;
+Q
+?
+q
+% find . -nae #@find . -print
+./mail.c
+./mesg.s
+./mkdir.s
+./mkfs.c
+./mknod.c
+./mount.c
+./msh.s
+./mv.c
+./nice.c
+./nm.c
+./nohup.c
+./od.c
+./passwd.s
+./pfe.s
+./pr.c
+./prof.c
+./ps.c
+./pwd.c
+./restor.c
+./rew.s
+./rm.c
+./rmdir.s
+./sa.c
+./sh.c
+./size.c
+./sleep.c
+./sort.c
+./split.c
+./strip.s
+./stty.c
+./su.c
+./sum.s
+./sync.c
+./tee.c
+./time.s
+./tp1.s
+./tp2.s
+./tp3.s
+./tp4.s
+./tr.c
+./tty.s
+./typo.c
+./umount.c
+./uniq.c
+./update.s
+./wc.c
+./who.c
+./write.s
+./sh.alias
+% ed ../s1/find.c
+8752
+/ok/
+        int exeq(), ok(), glob(),  mtime(), atime(), user(),
+//
+        else if (compstr(a,"-ok")==0) {
+.,.+23p
+        else if (compstr(a,"-ok")==0) {
+                i = ap - 1;
+                while(compstr(nxtarg(),";")!=0);
+                return(mk(&ok,i,0));
+        }
+        err: printf("Error <%s / %s>\n",a,b);
+        exit(9);
+}
+struct anode *mk(f,l,r) struct anode *l,*r; { /*make an expression node*/
+        node[nn].F = f;
+        node[nn].L = l;
+        node[nn].R = r;
+        return(&(node[nn++]));
+}
+
+nxtarg() { /* get next arg from command line */
+        if(ap>ac) return(0 * ap++);
+        return(av[ap++]);
+}
+
+find(exlist,fullname) /* execute predicat list with current file */
+struct anode *exlist;
+char *fullname;
+{
+q
+% pwd
+../usr/source/s2
+% ed ../s1/glob.c
+3256
+/Cmomand@/Command not/
+        write(2, "Command not found\n", 18);
+.-10,.p
+                goto toolong;
+        i = cat("/usr", i);
+        execv(i, av);
+        if(errno == 2)
+                goto per;
+        *av = i;
+        *--av = "/bin/sh";
+        execv(av[0], av);
+
+per:
+        write(2, "Command not found\n", 18);
+1,$p
+/* global command --
+
+   glob params
+
+   "*" in params matches r.e ".*"
+   "?" in params matches r.e. "."
+   "[...]" in params matches character class
+   "[...a-z...]" in params matches a through z.
+
+   perform command with argument list
+  constructed as follows:
+     if param does not contain "*", "[", or "?", use it as is
+     if it does, find all files in current directory
+     which match the param, sort them, and use them
+
+   prepend the command name with "/bin" or "/usr/bin"
+   as required.
+*/
+
+char    ab[2000];               /* generated characters */
+char    *ava[200];              /* generated arguments */
+char    **av ava;
+char    *string ab;
+int     errno;
+
+main(argc, argv)
+char *argv[];
+{
+        int i, j, c;
+        int inode, dirf, ap;
+        int fb[8], sb[20];
+        char *cp, *cpo;
+
+        if (argc < 3) {
+                write(2, "Arg count\n", 10);
+                return;
+        }
+        ap = 0;
+        av++;
+        fb[7] = 0;
+loop:
+        cpo = cp = *++argv;
+        while(c = *cp++) if (c=='*' || c=='?' || c=='[') goto compl;
+        av[ap++] = copy(cpo);
+        if (--argc>=2) goto loop;
+        goto donow;
+
+compl:
+        if(*--cp == '/') {
+                *cp = '\0';
+                if((dirf=open(cp==cpo? "/" : cpo, 0))<0)
+                        goto oper;
+                *cp++ = '/';
+                goto compl1;
+        }
+        if(cp != cpo) goto compl;
+        if((dirf=open(".",0)) >= 0) goto compl1;
+oper:
+        write(2, "No directory\n", 13);
+        return;
+compl1:
+        j = ap;
+l2:
+        while (read(dirf, &inode, 2)>0) {
+                read(dirf, fb, 14);
+                if (inode==0) goto l2;
+                if (match(fb, cp)) {
+                        c = *cp;
+                        *cp = '\0';
+                        av[ap++] = cat(cpo, fb);
+                        *cp = c;
+                }
+        }
+        close(dirf);
+        i = j;
+        while(i<ap-1) {
+                j = i;
+                while(++j<ap) {
+                        if (compar(av[i],av[j])) {
+                                c = av[i];
+                                av[i] = av[j];
+                                av[j] = c;
+                        }
+                }
+                i++;
+        }
+        if (--argc>=2) goto loop;
+donow:
+        if (ap<=1) {
+                write(2, "No match\n", 9);
+                return;
+        }
+        av[ap] = 0;
+        strip(av);
+        execv(av[0], av);
+        if(errno == 7)
+                goto toolong;
+        i = cat("/bin/", av[0]);
+        execv(i, av);
+        if(errno == 7)
+                goto toolong;
+        i = cat("/usr", i);
+        execv(i, av);
+        if(errno == 2)
+                goto per;
+        *av = i;
+        *--av = "/bin/sh";
+        execv(av[0], av);
+
+per:
+        write(2, "Command not found\n", 18);
+        return;
+toolong:
+        write(2, "Arg list too long\n", 18);
+}
+
+match(s, p)
+char *s, *p; {
+        if (*s=='.' && *p!='.') return(0);
+        return(amatch(s, p));
+}
+
+amatch(s, p)
+char *s, *p;
+{
+        int c, cc, ok, lc, scc;
+
+        scc = *s;
+        lc = 077777;
+        switch (c = *p) {
+
+        case '[':
+                ok = 0;
+                while (cc = *++p) {
+                        switch (cc) {
+
+                        case ']':
+                                if (ok)
+                                        return(amatch(++s, ++p));
+                                else
+                                        return(0);
+
+                        case '-':
+                                ok =| lc <= scc & scc <= (cc=p[1]);
+                        }
+                        if (scc==(lc=cc)) ok++;
+                }
+                return(0);
+
+        case '?':
+        caseq:
+                if(scc) return(amatch(++s, ++p));
+                return(0);
+        case '*':
+                return(umatch(s, ++p));
+        case 0:
+                return(!scc);
+        }
+        if (c==scc) goto caseq;
+        return(0);
+}
+
+umatch(s, p)
+char *s, *p;
+{
+        if(*p==0) return(1);
+        while(*s)
+                if (amatch(s++,p)) return(1);
+        return(0);
+}
+
+compar(s1,s2)
+char *s1, *s2;
+{
+        int c1,c2;
+
+loop:
+        if ((c1 = *s1++)==0) return(0);
+        if ((c2 = *s2++)==0) return(1);
+        if (c1==c2) goto loop;
+        return(c1>c2);
+}
+
+copy(s1)
+char *s1;
+{
+        char *ts;
+
+        ts = string;
+        while(*string++ = *s1++);
+        return(ts);
+}
+
+cat(s1, s2)
+char *s1, *s2;
+{
+        char *ts;
+
+        ts = string;
+        while(*string++ = *s1++);
+        string--;
+        while(*string++ = *s2++);
+        return(ts);
+}
+
+strip(v)
+char **v;
+{
+        register char **p, *cp;
+
+        for(p = v; cp = *p++;)
+                while(*cp)
+                        *cp++ =& 0177;
+}
+/goto per/
+                goto per;
+/goto donow/
+        goto donow;
+.-10;.+10p
+                return;
+        }
+        ap = 0;
+        av++;
+        fb[7] = 0;
+loop:
+        cpo = cp = *++argv;
+        while(c = *cp++) if (c=='*' || c=='?' || c=='[') goto compl;
+        av[ap++] = copy(cpo);
+        if (--argc>=2) goto loop;
+        goto donow;
+ch@!q@q
+% chdir ..
+% ls
+s1
+s2
+s3
+s4
+s7
+% chdir ../sys
+% grep -n E2BIG *
+user.h:49 #define       E2BIG   7
+% cat user.h
+struct user {
+        int     u_rsav[2];              /* must be first */
+        int     u_fsav[25];             /* must be second */
+        char    u_segflg;
+        char    u_error;
+        char    u_uid;
+        char    u_gid;
+        char    u_ruid;
+        char    u_rgid;
+        int     u_procp;
+        char    *u_base;
+        char    *u_count;
+        char    *u_offset[2];
+        int     *u_cdir;
+        char    u_dbuf[DIRSIZ];
+        char    *u_dirp;
+        struct  {
+                int     u_ino;
+                char    u_name[DIRSIZ];
+        } u_dent;
+        int     *u_pdir;
+        int     u_uisa[8];
+        int     u_uisd[8];
+        int     u_ofile[NOFILE];
+        int     u_arg[5];
+        int     u_tsize;
+        int     u_dsize;
+        int     u_ssize;
+        int     u_qsav[2];
+        int     u_ssav[2];
+        int     u_signal[NSIG];
+        int     u_utime;
+        int     u_stime;
+        int     u_cutime[2];
+        int     u_cstime[2];
+        int     *u_ar0;
+        int     u_prof[4];
+        char    u_nice;
+        char    u_dsleep;
+} u;    /* u = 140000 */
+
+/* u_error codes */
+#define EFAULT  106
+#define EPERM   1
+#define ENOENT  2
+#define ESRCH   3
+#define EIO     5
+#define ENXIO   6
+#define E2BIG   7
+#define ENOEXEC 8
+#define EBADF   9
+#define ECHILD  10
+#define EAGAIN  11
+#define ENOMEM  12
+#define EACCES  13
+#define ENOTBLK 15
+#define EBUSY   16
+#define EEXIST  17
+#define EXDEV   18
+#define ENODEV  19
+#define ENOTDIR 20
+#define EISDIR  21
+#define EINVAL  22
+#define ENFILE  23
+#define EMFILE  24
+#define ENOTTY  25
+#define ETXTBSY 26
+#define EFBIG   27
+#define ENOSPC  28
+#define ESPIPE  29
+#define EROFS   30
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% ls -l user.h
+-rw-r--r-- 1 bin      1199 Jun 10 08:37 user.h
+% 
+;login: bin
+% chdir /usr/sys
+% ed user.h
+1199
+!date 08261707
+Mon Aug 26 17:07:00 MDT 1974
+!
+/code/
+/* u_error codes */
+1,.-1d
+.#1
+/* u_error codes */
+$
+#define EROFS   30
+w errno.h
+527
+e user.h
+1199
+$
+#define EROFS   30
+1
+struct user {
+/}/
+        } u_dent;
+//
+} u;    /* u = 140000 */
+/
+?
+
+
+
+/* u_error codes */
+.,$d
+
+?
+^
+} u;    /* u = 140000 */
+
+
+d
+1,$p
+struct user {
+        int     u_rsav[2];              /* must be first */
+        int     u_fsav[25];             /* must be second */
+        char    u_segflg;
+        char    u_error;
+        char    u_uid;
+        char    u_gid;
+        char    u_ruid;
+        char    u_rgid;
+        int     u_procp;
+        char    *u_base;
+        char    *u_count;
+        char    *u_offset[2];
+        int     *u_cdir;
+        char    u_dbuf[DIRSIZ];
+        char    *u_dirp;
+        struct  {
+                int     u_ino;
+                char    u_name[DIRSIZ];
+        } u_dent;
+        int     *u_pdir;
+        int     u_uisa[8];
+        int     u_uisd[8];
+        int     u_ofile[NOFILE];
+        int     u_arg[5];
+        int     u_tsize;
+        int     u_dsize;
+        int     u_ssize;
+        int     u_qsav[2];
+        int     u_ssav[2];
+        int     u_signal[NSIG];
+        int     u_utime;
+        int     u_stime;
+        int     u_cutime[2];
+        int     u_cstime[2];
+        int     *u_ar0;
+        int     u_prof[4];
+        char    u_nice;
+        char    u_dsleep;
+} u;    /* u = 140000 */
+1
+struct user {
+i
+#\#include "errnoh'##.h"
+
+..#
+1,3p
+#include "errno.h"
+
+struct user {
+w
+691
+q
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% ed /usr/source@ls 0l##-l /usr/source/s1
+total 679
+-rw-r--r-- 1 bin      4159 Jun 10 08:37 ac.c
+-rw-r--r-- 1 bin      5782 Jun 10 08:37 ar.s
+-rw-r--r-- 1 bin      1025 Jun 10 08:37 as11.s
+-rw-r--r-- 1 bin       868 Jun 10 08:37 as12.s
+-rw-r--r-- 1 bin      1473 Jun 10 08:37 as13.s
+-rw-r--r-- 1 bin      2403 Jun 10 08:37 as14.s
+-rw-r--r-- 1 bin      1606 Jun 10 08:37 as15.s
+-rw-r--r-- 1 bin      2925 Jun 10 08:37 as16.s
+-rw-r--r-- 1 bin      2238 Jun 10 08:37 as17.s
+-rw-r--r-- 1 bin      1304 Jun 10 08:37 as18.s
+-rw-r--r-- 1 bin      6779 Jun 10 08:37 as19.s
+-rw-r--r-- 1 bin      3131 Jun 10 08:37 as21.s
+-rw-r--r-- 1 bin      1589 Jun 10 08:37 as22.s
+-rw-r--r-- 1 bin      1805 Jun 10 08:37 as23.s
+-rw-r--r-- 1 bin      1467 Jun 10 08:37 as24.s
+-rw-r--r-- 1 bin        71 Jun 10 08:37 as25.s
+-rw-r--r-- 1 bin      6035 Jun 10 08:37 as26.s
+-rw-r--r-- 1 bin      3178 Jun 10 08:37 as27.s
+-rw-r--r-- 1 bin      1006 Jun 10 08:37 as28.s
+-rw-r--r-- 1 bin      3964 Jun 10 08:37 as29.s
+-rw-r--r-- 1 bin      4002 Jun 10 08:37 bas0.s
+-\rw-r--r-- 1 bin      3310 Jun 10 08:37 bas1.s
+-rw-r--r-- 1 bin      2661 Jun 10 08:37 bas2.s
+-rw-r--r-- 1 bin      4585 Jun 10 08:37 bas3.s
+-rw-r--r-- 1 bin      2046 Jun 10 08:37 bas4.s
+-rw-r--r-- 1 bin      2689 Jun 10 08:37 bas5.s
+-rw-r--r-- 1 bin       783 Jun 10 08:37 basx.s
+-rw-r--r-- 1 bin      2604 Jun 10 08:37 cal.c
+-rw-r--r-- 1 bin       647 Jun 10 08:37 cat.sQuit -- Core dumped
+% rm core
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% chdir /usr/source/s1
+% /#ed glob.c
+3256
+1
+/* global command --
+i
+#\#
+.#
+.
+1,3p
+#
+
+/* global command --
+2d
+
+
+
+   glob params
+1,3p
+#
+/* global command --
+
+
+   glob params
+
+
+
+   "*" in params matches r.e ".*"
+
+   "?" in params matches r.e. "."
+1,10p
+#
+/* global command --
+
+   glob params
+
+   "*" in params matches r.e ".*"
+   "?" in params matches r.e. "."
+   "[...]" in params matches character class
+   "[...a-z...]" in params matches a through z.
+
+
+   perform command with argument list
+
+  constructed as follows:
+
+     if param does not contain "*", "[", or "?", use it as is
+
+     if it does, find all files in current directory
+
+     which match the param, sort them, and use them
+
+
+
+   prepend the command name with "/bin" or "/usr/bin"
+
+   as required.
+
+*/
+
+
+
+char    ab[2000];               /* generated characters */
+
+char    *ava[200];              /* generated arguments */
+
+char    **av ava;
+^
+char    *ava[200];              /* generated arguments */
+^
+char    ab[2000];               /* generated characters */
+^
+
+^
+*/
+
+
+a
+\#include "/usr/sys/errno.h"
+
+.
+.-3,.+3p
+*/
+
+#include "/usr/sys/errno.h"
+
+char    ab[2000];               /* generated characters */
+char    *ava[200];              /* generated arguments */
+char    **av ava;
+/errno/p
+int     errno;
+//
+        if(errno == 7)
+s/7/E2BIG/
+//
+        if(errno == 7)
+s/7/E2BIG/
+//
+        lc = 077777;
+//
+                        *cp++ =& 0177;
+/errno/
+#include "/usr/sys/errno.h"
+//
+int     errno;
+//
+        if(errno == E2BIG)
+//
+        if(errno == E2BIG)
+//
+        if(errno == 2)
+s/2/ENOENT/
+/errno/
+#include "/usr/sys/errno.h"
+//
+int     errno;
+//
+        if(errno == E2BIG)
+//
+        if(errno == E2BIG)
+//
+        if(errno == ENOENT)
+//
+#include "/usr/sys/errno.h"
+w
+3300
+q
+% cc glob.c
+% ls -l /bin/glob
+/bin/glob not found
+% ls -l /usr/bin/glob
+/usr/bin/glob not found
+% ls -l /etc/
+total 43
+-rwxr--r-- 1 bin       446 Jun 10 08:37 getty
+-rwxr-xr-x 1 bin      2236 Jun 10 08:37 glob
+-rwxrwxrwx 1 bin      2738 Aug 11 21:17 init
+-rwxr-xr-x 1 bin       814 Jun 12 16:55 lpd
+-rwxr--r-- 1 bin      4136 Jun 10 08:37 mkfs
+-rwxr--r-- 1 bin      1800 Jun 10 08:37 mknod
+-rwsr-xr-x 1 root     2078 Jun 10 08:37 mount
+-rwxr-xr-x 1 bin       220 Jun 10 08:37 msh
+-rw-r--r-- 1 bin       653 Aug 25 12:42 passwd
+-rw-r--r-- 1 bin        70 Jun 10 08:37 rc
+-rw-r--r-- 1 bin       128 Aug 11 21:16 ttys
+-rwsr-xr-x 1 root     1990 Jun 10 08:37 umount
+-rwxr-xr-x 1 bin        32 Jun 10 08:37 update
+% mv a.out /etc/glob
+% grep errno@grep -n errno *
+Command not found
+% chdir /usr/li##c
+% ls
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+% grep -n errno *
+% chdir ..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+pub
+sno
+source
+sys
+thalia
+tmp
+ty
+voytilla
+yang
+% chdir source/s3
+% ls
+atan.s
+atof.s
+atoi.s
+compar.s
+crypt.s
+ctime.c
+dpadd.s
+ecvt.s
+exp.s
+fakfp.s
+fp1.s
+fp2.s
+fp3.s
+fpx.s
+gamma.s
+get.s
+hypot.s
+ldiv.s
+log.s
+mesg.s
+mon.s
+nlist.s
+pow.s
+put.s
+qsort.s
+rand.s
+sin.s
+sqrt.s
+switch.s
+ttyn.s
+% chdir ../s4
+% ls
+abort.s
+atan.s
+atan2.s
+atof.s
+chdir.s
+chmod.s
+chown.s
+close.s
+cos.s
+crand.s
+creat.s
+crt0.s
+crypt.s
+dup.s
+ecvt.s
+errlst.c
+execl.s
+execv.s
+exit.s
+exp.s
+ffltpr.s
+floor.s
+fltpr.s
+fmod.s
+fork.s
+fstat.s
+gamma.s
+getc.s
+getchr.s
+getcsw.s
+getgid.s
+getpw.c
+getuid.s
+gtty.s
+hmul.s
+hsw.s
+kill.s
+link.s
+locv.s
+log.s
+ltod.s
+makdir.s
+mcrt0.s
+mdate.s
+mknod.s
+mon.c
+mount.s
+nargs.s
+nice.s
+nlist.s
+open.s
+perror.c
+pipe.s
+pow.s
+printf.s
+prof.s
+putc.s
+putchr.s
+qsort.c
+gread.s
+reset.s
+retrn.s
+reprin.c
+rsave.s
+sbrk.s
+ -seek.s
+setgid.s
+setuid.s
+nsignal.s
+sin.s
+sleep.s
+ sqrt.s
+ssw.s
+stat.s
+stime.s
+stty.s
+switch.s
+sync.s
+time.s
+times.s
+umount.s
+unlink.s
+wait.s
+write.s
+% errno *
+Command not found
+% grep-# -n errno *
+Command not found
+% grep -n ern#rno a* b* c* d* e*f# f* g* h*
+getc.s:8 .comm  _errno,2
+getc.s:27       clr     _errno
+getchr.s:4 .comm        _errno,2
+getchr.s:28     mov     r0,_errno
+% grep -n errno i* j( k###* k* l* m* n* o* p& ##* q* r* s* t* u*
+perror.c:1 int  errno;
+perror.c:10     if(errno < sys_nerr)
+perror.c:11             c = sys_errlist[errno];
+putc.s:5        .comm   _errno,2
+putc.s:85       clr     _errno
+retrn.s:3 .globl retrn, cerror, _errno
+retrn.s:6       mov     r0,_errno
+retrn.s:14 _errno:      .=.+2
+umount.s:4 .comm        _errno,2
+umount.s:16     mov     r0,_errno
+% grep -n errno v* w*
+% cat perror.c
+int     errno;
+int     sys_nerr;
+char    *sys_errlist[];
+perror(s)
+char *s;
+{
+        char *c;
+
+        c = "Unknown error";
+        if(errno < sys_nerr)
+                c = sys_errlist[errno];
+        if(*s == '\0')
+                printf("%s", c); else
+                printf("%s: %s\n", s, c);
+}
+% ed perror.c
+218
+/==/
+        if(*s == '\0')
+s/(/(s == NULL || /p
+        if(s == NULL || *s == '\0')
+w
+231
+q
+% cc perror.c
+15: NULL undefined
+% ed perror.c
+231
+/NULL/
+        if(s == NULL || *s == '\0')
+s/s == NULL/!s/p
+        if(!s || *s == '\0')
+w
+224
+q
+% cc perror.c
+un: _main
+% ls
+a.out
+abort.s
+atan.s
+atan2.s
+atof.s
+chdir.s
+chmod.s
+chown.s
+close.s
+cos.s
+crand.s
+crrmeat.s
+crt0.s
+crypt.s
+dup.s
+ecvt.s
+errlst.c
+execl.s
+execv.s
+exit.s
+exp.s
+ffltpr.s
+fl aoor.s
+fltpr.s
+fmod.s
+.ofork.s
+fstat.s
+gamma.s
+utgetc.s
+getchr.s
+getcsw.s
+getgid.s
+getpw.c
+getuid.s
+gtty.s
+hmul.s
+hsw.s
+kill.s
+link.s
+locv.s
+log.s
+ltod.s
+makdir.s
+mcrt0.s
+mdate.s
+mknod.s
+mon.c
+mount.s
+nargs.s
+nice.s
+nlist.s
+open.s
+perror.c
+pipe.s
+pow.s
+printf.s
+prof.s
+putc.s
+putchr.s
+qsort.c
+read.s
+reset.s
+retrn.s
+rin.c
+rsave.s
+sbrk.s
+seek.s
+setgid.s
+setuid.s
+signal.s
+sin.s
+sleep.s
+sqrt.s
+ssw.s
+stat.s
+stime.s
+stty.s
+switch.s
+sync.s
+time.s
+times.s
+umount.s
+
+unlink.s
+wait.s
+write.s
+% % ls a.out
+a.out not found
+% chdir /usr/sys
+% grep -n errno *
+user.h:1 #include "errno.h"
+% chdir klen###ken###en
+% grep -n errno *
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% grep -n u_error *
+alloc.c:19      if(u.u_error)
+alloc.c:45              u.u_error = ENOSPC;
+fio.c:24                u.u_error = EBADF;
+fio.c:89                        u.u_error = ENXIO;
+fio.c:104               u.u_error = EROFS;
+fio.c:116       u.u_error = EACCES;
+fio.c:134       u.u_error = EPERM;
+fio.c:147       u.u_error = EMFILE;
+fio.c:171       u.u_error = ENFILE;
+main.c:137              u.u_error = ENOMEM;
+nami.c:51       if(u.u_error)
+nami.c:63               u.u_error = ENOTDIR;
+nami.c:76       while(c!='/' && c!='\0' && u.u_error==0) {
+nami.c:85       if(u.u_error)
+nami.c:112              u.u_error = ENOENT;
+nami.c:163              u.u_error = EFAULT;
+rdwri.c:54      } while(u.u_error==0 && u.u_count!=0);
+rdwri.c:88              if(u.u_error != 0)
+rdwri.c:100     } while(u.u_error==0 && u.u_count!=0);
+rdwri.c:135                     u.u_error = EFAULT;
+sig.c:58                u.u_error = 0;
+sig.c:88        u.u_error = 0;
+sig.c:92                if(u.u_error)
+sig.c:112       return(u.u_error==0);
+subr.c:23               u.u_error = EFBIG;
+subr.c:99                       u.u_error = EFAULT;
+subr.c:118                      u.u_error = EFAULT;
+subr.c:131      u.u_error = ENODEV;
+sys1.c:58                               u.u_error = E2BIG;
+sys1.c:87       if(u.u_error)
+sys1.c:94               u.u_error = ENOEXEC;
+sys1.c:98               u.u_error = ETXTBSY;
+sys1.c:273      u.u_error = ECHILD;
+sys1.c:284      u.u_error = EAGAIN;
+sys2.c:32               u.u_error = EBADF;
+sys2.c:72               if(u.u_error)
+sys2.c:94                               u.u_error = EISDIR;
+sys2.c:97       if(u.u_error)
+sys2.c:103      if(u.u_error)
+sys2.c:135              u.u_error = ESPIPE;
+sys2.c:187              u.u_error = EEXIST;
+sys2.c:190      if(u.u_error)
+sys2.c:194              u.u_error = EXDEV;
+sys2.c:213                      u.u_error = EEXIST;
+sys2.c:217      if(u.u_error)
+sys3.c:135              u.u_error = ENOTDIR;
+sys3.c:243      if(u.u_error)
+sys3.c:263      if(u.u_error) {
+sys3.c:281      u.u_error = EBUSY;
+sys3.c:294      if(u.u_error)
+sys3.c:299      u.u_error = EINVAL;
+sys3.c:305                      u.u_error = EBUSY;
+sys3.c:325              u.u_error = ENOTBLK;
+sys3.c:328              u.u_error = ENXIO;
+sys4.c:17               u.u_error = EINVAL;
+sys4.c:34       u.u_error = ESRCH;
+trap.c:57       u.u_error = 0;
+trap.c:88               u.u_error = dev+100;
+trap.c:92       if(u.u_error)
+trap.c:111      if(u.u_error >= 100)
+trap.c:116      if(u.u_error != 0) {
+trap.c:118              r0 = u.u_error;
+trap.c:147      u.u_error = 100;
+% ed ../errno.c
+?
+q
+% ed ../errno.h
+527
+p
+#define EROFS   30
+q
+% ed trap.c
+2154
+/100/
+                u.u_error = dev+100;
+//
+        if(u.u_error >= 100)
+//
+        u.u_error = 100;
+//
+                u.u_error = dev+100;
+//
+        if(u.u_error >= 100)
+.,.+23p
+        if(u.u_error >= 100)
+                psignal(u.u_procp, SIGSYS);
+err:
+        if(issig())
+                psig();
+        if(u.u_error != 0) {
+                ps =| EBIT;
+                r0 = u.u_error;
+        }
+        u.u_procp->p_pri = PUSER + u.u_nice;
+        if(u.u_dsleep++ > 15) {
+                u.u_dsleep = 0;
+                u.u_procp->p_pri++;
+                swtch();
+        }
+        return;
+
+bad:
+        printf("ka6 = %o\n", KISA->r[6]);
+        printf("aps = %o\n", &ps);
+        for(a = CSW->r[0]; a == CSW->r[0]; )
+                idle();
+        panic("trap");
+}
+//
+        u.u_error = 100;
+/@.-10,.+10p
+?
+.-10,$p
+int (*f)();
+{
+
+        savu(u.u_qsav);
+        (*f)();
+}
+
+nosys()
+{
+
+        u.u_error = 100;
+}
+
+nullsys()
+{
+}
+/100/
+                u.u_error = dev+100;
+//
+        if(u.u_error >= 100)
+.-23,.p
+                u.u_error = dev+100;
+
+        case 6:;
+        }
+        if(u.u_error)
+                goto err;
+        ps =& ~EBIT;
+        dev = fuword(pc-2)&077;
+        if(dev == 0) { /* indirect */
+                a = fuword(pc);
+                pc =+ 2;
+                dev = fuword(a)&077;
+                a =+ 2;
+        } else {
+                a = pc;
+                pc =+ sysent[dev].count*2;
+        }
+        for(i=0; i<sysent[dev].count; i++) {
+                u.u_arg[i] = fuword(a);
+                a =+ 2;
+        }
+        u.u_dirp = u.u_arg[0];
+        trap1(sysent[dev].call);
+        if(u.u_error >= 100)
+?^{/%$###?
+{
+^
+char *sp;
+^
+trap(dev, sp, r1, nps, r0, pc, ps)
+.,/^}/p
+trap(dev, sp, r1, nps, r0, pc, ps)
+char *sp;
+{
+        register i, a;
+
+        savfp();
+        u.u_ar0 = &r0;
+        if(dev == 8) {
+                psignal(u.u_procp, SIGFPT);
+                if((ps&UMODE) == UMODE)
+                        goto err;
+                return;
+        }
+        if(dev==1 && fuword(pc-2)==SETD && u.u_signal[SIGINS]==0)
+                return;
+        if((ps&UMODE) != UMODE)
+                goto bad;
+        if(dev==9 && sp<-u.u_ssize*64) {
+                if(backup(&r0) == 0)
+                if(!estabur(u.u_tsize, u.u_dsize, u.u_ssize+SINCR)) {
+                        u.u_ssize =+ SINCR;
+                        expand(u.u_procp->p_size+SINCR);
+                        a = u.u_procp->p_addr + u.u_procp->p_size;
+                        for(i=0; i<u.u_ssize; i++) {
+                                a--;
+                                copyseg(a-SINCR, a);
+                        }
+                        return;
+                }
+        }
+        u.u_error = 0;
+        switch(dev) {
+
+        case 0:
+                i = SIGBUS;
+                goto def;
+
+        case 1:
+                i = SIGINS;
+                goto def;
+
+        case 2:
+                i = SIGTRC;
+                goto def;
+
+        case 3:
+                i = SIGIOT;
+                goto def;
+
+        case 5:
+                i = SIGEMT;
+                goto def;
+
+        case 9:
+                i = SIGSEG;
+                goto def;
+
+        def:
+                psignal(u.u_procp, i);
+
+        default:
+                u.u_error = dev+100;
+
+        case 6:;
+        }
+        if(u.u_error)
+                goto err;
+        ps =& ~EBIT;
+        dev = fuword(pc-2)&077;
+        if(dev == 0) { /* indirect */
+                a = fuword(pc);
+                pc =+ 2;
+                dev = fuword(a)&077;
+                a =+ 2;
+        } else {
+                a = pc;
+                pc =+ sysent[dev].count*2;
+        }
+        for(i=0; i<sysent[dev].count; i++) {
+                u.u_arg[i] = fuword(a);
+                a =+ 2;
+        }
+        u.u_dirp = u.u_arg[0];
+        trap1(sysent[dev].call);
+        if(u.u_error >= 100)
+                psignal(u.u_procp, SIGSYS);
+err:
+        if(issig())
+                psig();
+        if(u.u_error != 0) {
+                ps =| EBIT;
+                r0 = u.u_error;
+        }
+        u.u_procp->p_pri = PUSER + u.u_nice;
+        if(u.u_dsleep++ > 15) {
+                u.u_dsleep = 0;
+                u.u_procp->p_pri++;
+                swtch();
+        }
+        return;
+
+bad:
+        printf("ka6 = %o\n", KISA->r[6]);
+        printf("aps = %o\n", &ps);
+        for(a = CSW->r[0]; a == CSW->r[0]; )
+                idle();
+        panic("trap");
+}
+f
+trap.c
+q
+% symc
+symc: not found
+% ssync
+ssync: not found
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
