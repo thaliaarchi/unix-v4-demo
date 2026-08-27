@@ -9,6 +9,7 @@
 #include "../buf.h"
 #include "../inode.h"
 #include "../user.h"
+#include "../errno.h"
 
 iinit()
 {

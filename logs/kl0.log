@@ -13630,4 +13630,1464 @@ w
 q
 % cc @
 % sync
+% cc getty@s#as getty.s
+% mv a.out /@ls /etc/getty
+/etc/getty
+% mv a.out /etc/getty
+% sync
+% chdir /usr/sys
+% sh run
+alloc.c:
+6: Nested 'include'
+6: Missing file errno.h
+clock.c:
+6: Nested 'include'
+6: Missing file errno.h
+fio.c:
+6: Nested 'include'
+6: Missing file errno.h
+iget.c:
+6: Nested 'include'
+6: Missing file errno.h
+main.c:
+6: Nested 'include'
+6: Missing file errno.h
+nami.c:
+6: Nested 'include'
+6: Missing file errno.h
+prf.c:
+rdwri.c:
+6: Nested 'include'
+6: Missing file errno.h
+sig.c:
+6: Nested 'include'
+6: Missing file errno.h
+slp.c:
+6: Nested 'include'
+6: Missing file errno.h
+subr.c:
+6: Nested 'include'
+6: Missing file errno.h
+sys1.c:
+6: Nested 'include'
+6: Missing file errno.h
+sys2.c:
+6: Nested 'include'
+6: Missing file errno.h
+sys3.c:
+6: Nested 'include'
+6: Missing file errno.h
+sys4.c:
+6: Nested 'include'
+6: Missing file errno.h
+sysent.c:
+text.c:
+6: Nested 'include'
+6: Missing file errno.h
+trap.c:
+6: Nested 'include'
+6: Missing file errno.h
+main.o -- cannot open
+alloc.o -- cannot open
+iget.o -- cannot open
+rdwri.o -- cannot open
+slp.o -- cannot open
+subr.o -- cannot open
+text.o -- cannot open
+trap.o -- cannot open
+sig.o -- cannot open
+sys1.o -- cannot open
+sys2.o -- cannot open
+sys3.o -- cannot open
+sys4.o -- cannot open
+nami.o -- cannot open
+fio.o -- cannot open
+clock.o -- cannot open
+bio.c:
+6: Nested 'include'
+6: Missing file errno.h
+cat.c:
+10: Nested 'include'
+10: Missing file errno.h
+dc.c:
+9: Nested 'include'
+9: Missing file errno.h
+dh.c:
+14: Nested 'include'
+14: Missing file errno.h
+dhdm.c:
+dhfdm.c:
+dn.c:
+10: Nested 'include'
+10: Missing file errno.h
+dp.c:
+10: Nested 'include'
+10: Missing file errno.h
+dv.c:
+10: Nested 'include'
+10: Missing file errno.h
+kl.c:
+9: Nested 'include'
+9: Missing file errno.h
+lp.c:
+10: Nested 'include'
+10: Missing file errno.h
+malloc.c:
+mem.c:
+13: Nested 'include'
+13: Missing file errno.h
+partab.c:
+pc.c:
+10: Nested 'include'
+10: Missing file errno.h
+pipe.c:
+6: Nested 'include'
+6: Missing file errno.h
+rf.c:
+10: Nested 'include'
+10: Missing file errno.h
+rk.c:
+10: Nested 'include'
+10: Missing file errno.h
+rp.c:
+10: Nested 'include'
+10: Missing file errno.h
+tc.c:
+10: Nested 'include'
+10: Missing file errno.h
+tm.c:
+10: Nested 'include'
+10: Missing file errno.h
+tty.c:
+9: Nested 'include'
+9: Missing file errno.h
+vs.c:
+vt.c:
+10: Nested 'include'
+10: Missing file errno.h
+bio.o -- cannot open
+tty.o -- cannot open
+pipe.o -- cannot open
+cat.o -- cannot open
+dc.o -- cannot open
+dn.o -- cannot open
+dc.o -- cannot open
+dn.o -- cannot open
+dp.o -- cannot open
+kl.o -- cannot open
+mem.o -- cannot open
+pc.o -- cannot open
+rf.o -- cannot open
+rk.o -- cannot open
+tc.o -- cannot open
+tm.o -- cannot open
+vt.o -- cannot open
+rp.o -- cannot open
+lp.o -- cannot open
+dh.o -- cannot open
+un: _klrint
+un: _klxint
+un: _pcrint
+un: _pcpint
+un: _clock
+un: _tcintr
+un: _rkintr
+un: _tmintr
+un: _dcrint
+un: _dcxint
+un: _trap
+un: _runrun
+un: _swtch
+un: _cfreeli
+un: _regloc
+un: _end
+un: _edata
+un: _main
+un: _nulldev
+un: _rkstrat
+un: _rktab
+un: _tcclose
+un: _tcstrat
+un: _tctab
+un: _tmopen
+un: _tmclose
+un: _tmstrat
+un: _tmtab
+un: _klopen
+un: _klclose
+un: _klread
+un: _klwrite
+un: _klsgtty
+un: _rkread
+un: _rkwrite
+un: _nodev
+un: _tmread
+un: _tmwrite
+un: _dcopen
+un: _dcclose
+un: _dcread
+un: _dcwrite
+un: _dcsgtty
+un: _pcopen
+un: _pcclose
+un: _pcread
+un: _pcwrite
+un: _mmread
+un: _mmwrite
+% grep -n 'errno'*# *
+user.h:1 #include "errno.h"
+% ed user.h
+691
+/errno/
+#include "errno.h"
+1,3p
+#include "errno.h"
+
+struct user {
+1,2d
+w
+671
+q
+% sh run
+alloc.c:
+62: ENOSPC undefined
+clock.c:
+fio.c:
+28: EBADF undefined
+94: ENXIO undefined
+118: EROFS undefined
+118: EACCES undefined
+136: EPERM undefined
+149: EMFILE undefined
+173: ENFILE undefined
+iget.c:
+main.c:
+183: ENOMEM undefined
+nami.c:
+149: ENOENT undefined
+149: ENOTDIR undefined
+165: EFAULT undefined
+prf.c:
+rdwri.c:
+153: EFAULT undefined
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+90: EFBIG undefined
+107: EFAULT undefined
+126: EFAULT undefined
+132: ENODEV undefined
+sys1.c:
+187: ETXTBSY undefined
+187: ENOEXEC undefined
+187: E2BIG undefined
+274: ECHILD undefined
+302: EAGAIN undefined
+sys2.c:
+51: EBADF undefined
+113: EISDIR undefined
+166: ESPIPE undefined
+203: EEXIST undefined
+203: EXDEV undefined
+224: EEXIST undefined
+sys3.c:
+145: ENOTDIR undefined
+284: EBUSY undefined
+314: EINVAL undefined
+314: EBUSY undefined
+331: ENXIO undefined
+331: ENOTBLK undefined
+sys4.c:
+25: EINVAL undefined
+42: ESRCH undefined
+sysent.c:
+text.c:
+trap.c:
+main.o -- cannot open
+alloc.o -- cannot open
+rdwri.o -- cannot open
+subr.o -- cannot open
+sys1.o -- cannot open
+sys2.o -- cannot open
+sys3.o -- cannot open
+sys4.o -- cannot open
+nami.o -- cannot open
+fio.o -- cannot open
+bio.c:
+418: EFAULT undefined
+429: EIO undefined
+cat.c:
+36: ENXIO undefined
+dc.c:
+108: ENXIO undefined
+dh.c:
+79: ENXIO undefined
+dhdm.c:
+dhfdm.c:
+dn.c:
+49: ENXIO undefined
+85: EIO undefined
+dp.c:
+77: ENXIO undefined
+144: EIO undefined
+dv.c:
+289: ENXIO undefined
+kl.c:
+55: ENXIO undefined
+106: Unknown keyword
+106: Statement syntax
+lp.c:
+56: EIO undefined
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+70: ENXIO undefined
+157: EIO undefined
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+180: ENXIO undefined
+tc.c:
+tm.c:
+64: ENXIO undefined
+tty.c:
+96: ENOTTY undefined
+vs.c:
+vt.c:
+32: ENXIO undefined
+bio.o -- cannot open
+tty.o -- cannot open
+cat.o -- cannot open
+dc.o -- cannot open
+dn.o -- cannot open
+dc.o -- cannot open
+dn.o -- cannot open
+dp.o -- cannot open
+kl.o -- cannot open
+pc.o -- cannot open
+tm.o -- cannot open
+vt.o -- cannot open
+rp.o -- cannot open
+lp.o -- cannot open
+dh.o -- cannot open
+un: _klrint
+un: _klxint
+un: _pcrint
+un: _pcpint
+un: _tmintr
+un: _dcrint
+un: _dcxint
+un: _cfreeli
+un: _end
+un: _edata
+un: _main
+un: _nulldev
+un: _tmopen
+un: _tmclose
+un: _tmstrat
+un: _tmtab
+un: _klopen
+un: _klclose
+un: _klread
+un: _klwrite
+un: _klsgtty
+un: _nodev
+un: _tmread
+un: _tmwrite
+un: _dcopen
+un: _dcclose
+un: _dcread
+un: _dcwrite
+un: _dcsgtty
+un: _pcopen
+un: _pcclose
+un: _pcread
+un: _pcwrite
+un: _swap
+un: _panic
+un: _sureg
+un: _iput
+un: _estabur
+un: _readiQuit -- Core dumped
+% rm core
+% ed alo#loc.c
+?
+q
+% chdir ken
+% ed alloc.c
+3368
+1,10p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../filsys.h"
+#include "../buf.h"
+#include "../inode.h"
+
+#include "../user.h"
+
+
+?user?a
+\#include "../errno.h"
+w
+q
+.
+^
+w
+^
+#include "../errno.h"
+
+w
+d
+d
+
+iinit()
+1,10p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../filsys.h"
+#include "../buf.h"
+#include "../inode.h"
+,#.,.+5p
+#include "../inode.h"
+#include "../user.h"
+#include "../errno.h"
+
+iinit()
+{
+w
+3390
+q
+% ed fio.c
+2362
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../user.h"
+#include "../filsys.h"
+#include "../file.h"
+#include "../conf.h"
+#include "../inode.h"
+#include "../reg.h"
+
+getf(f)
+{
+        register *fp, rf;
+
+        rf = f;
+        if(rf<0 || rf>=NOFILE)
+                goto bad;
+        fp = u.u_ofile[rf];
+        if(fp == NULL) {
+        bad:
+?user.h?a
+\#inlud@\#include "../errno.h"
+.
+w
+2384
+q
+% ed iget.c@ed main.c
+2673
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../user.h"
+#include "../systm.h"
+#include "../proc.h"
+#include "../text.h"
+#include "../inode.h"
+#include "../seg.h"
+
+int     lksp[]
+{
+        0177546,
+        0172540,
+        0
+};
+int     icode[]
+{
+        0104413,
+        0000014,
+?user?a
+\#include "../erno##rno.h"
+.
+.
+#include "../errno.h"
+w
+2695
+q
+% ed nami.c
+2633
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../inode.h"
+#include "../user.h"
+#include "../systm.h"
+#include "../buf.h"
+
+namei(func, flag)
+int (*func)();
+int flag;
+
+/*
+ * func = function called to get name
+ *      &uchar if name is in user space
+ *      &schar if name is in system space
+ * flag = 0 if name is saught
+ *      1 if name is to be created
+ *      2 if name is to be deleted
+ * return is incremented locked inode.
+?user?a
+\#include :#"../errno.h"
+.
+w
+2655
+q
+% ed rdwri.c
+2668
+1,10p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../inode.h"
+#include "../user.h"
+#include "../buf.h"
+#include "../conf.h"
+?user?a
+\#incldue "@\@\@\#@@\#indleu@\#include "../errno.h"
+.
+w
+2690
+q
+% ed subr.c
+2098
+1,20p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../conf.h"
+#include "../inode.h"
+#include "../user.h"
+#include "../buf.h"
+#include "../systm.h"
+
+bmap(ip, bn)
+struct inode *ip;
+int bn;
+{
+        register *bp, *bap, nb;
+        int *nbp, d, i;
+
+        d = ip->i_dev;
+?user?a
+\#include "../errno.h"
+.
+w
+2120
+q
+% ed sys1.c
+5472
+1,20p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../proc.h"
+#include "../text.h"
+#include "../buf.h"
+#include "../reg.h"
+#include "../inode.h"
+
+char regloc[8];
+
+exec()
+{
+        int ap, na, nc, *bp;
+        int ts, ds;
+?user?a
+\#include "../errno.h"
+.
+w
+5494
+q
+% ed sys2.c
+3442
+/user/a
+\#include "../errno.h"
+.
+w
+3464
+q
+% ed sys3.c
+4482
+/user/a
+\#include "../errnoh.##.h"
+.
+w
+4504
+q
+% sh run
+main.o -- cannot open
+alloc.o -- cannot open
+iget.o -- cannot open
+prf.o -- cannot open
+rdwri.o -- cannot open
+slp.o -- cannot open
+subr.o -- cannot open
+text.o -- cannot open
+trap.o -- cannot open
+sig.o -- cannot open
+sysent.o -- cannot open
+sys1.o -- cannot open
+sys2.o -- cannot open
+sys3.o -- cannot open
+sys4.o -- cannot open
+nami.o -- cannot open
+fio.o -- cannot open
+clock.o -- cannot open
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+150: ENOENT undefined
+150: ENOTDIR undefined
+166: EFAULT undefined
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+25: EINVAL undefined
+42: ESRCH undefined
+sysent.c:
+text.c:
+trap.c:
+sys4.o -- cannot open
+nami.o -- cannot open
+bio.c:
+418: EFAULT undefined
+429: EIO undefined
+cat.c:
+36: ENXIO undefined
+dc.c:
+108: ENXIO undefined
+dh.c:
+79: ENXIO undefined
+dhdm.c:
+dhfdm.c:
+dn.c:
+49: ENXIO undefined
+85: EIO undefined
+dp.c:
+77: ENXIO undefined
+144: EIO undefined
+dv.c:
+289: ENXIO undefined
+kl.c:
+55: ENXIO undefined
+106: Unknown keyword
+106: Statement syntax
+lp.c:
+56: EIO undefined
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+70: ENXIO undefined
+157: EIO undefined
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+180: ENXIO undefined
+tc.c:
+tm.c:
+64: ENXIO undefined
+tty.c:
+96: ENOTTY undefined
+vs.c:
+vt.c:
+32: ENXIO undefined
+bio.o -- cannot open
+tty.o -- cannot open
+cat.o -- cannot open
+dc.o -- cannot open
+dn.o -- cannot open
+dc.o -- cannot open
+dn.o -- cannot open
+dp.o -- cannot open
+kl.o -- cannot open
+pc.o -- cannot open
+tm.o -- cannot open
+vt.o -- cannot open
+rp.o -- cannot open
+lp.o -- cannot open
+dh.o -- cannot open
+un: _klrint
+un: _klxint
+un: _pcrint
+un: _pcpint
+un: _tmintr
+un: _dcrint
+un: _dcxint
+un: _cfreeli
+un: _end
+un: _edata
+un: _tmopen
+un: _tmclose
+un: _tmstrat
+un: _tmtab
+un: _klopen
+un: _klclose
+un: _klread
+un: _klwrite
+un: _klsgtty
+un: _tmread
+un: _tmwrite
+un: _dcopen
+un: _dcclose
+un: _dcread
+un: _dcwrite
+un: _dcsgtty
+un: _pcopen
+un: _pcclose
+un: _pcread
+un: _pcwrite
+un: _cinit
+un: _binit
+un: _bread
+un: _getblk
+un: _brelse
+un: _clrbuf
+un: _bwrite
+un: _bflush
+un: _breada
+un: _bawrite
+un: _bdwrite
+un: _swap
+un: _schar
+un: _namei
+un: _stty
+un: _gtty
+un: _kill
+un: _times
+un: _profil
+un: _ssig
+un: _uchar
+un: _iodone
+un: _devstar
+un: _physio
+% J@pwd
+../usr/sys
+% ls
+a.out
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% chdir ken
+% ed nami.c
+2655
+/user/a
+\#include "../errno.h'#"
+.
+.-3,.+3p
+#include "../param.h"
+#include "../inode.h"
+#include "../user.h"
+#include "../errno.h"
+#include "../systm.h"
+#include "../buf.h"
+
+w
+2677
+q
+% ed sig.c
+1602
+q
+% ed sys4.c
+988
+/user/
+#include "../user.h"
+
+#include "../reg.h"
+?user?a
+\#include "../errno.h"
+.
+w
+1010
+q
+% ../@ls bio.c
+bio.c not found
+% chdir ../dmr
+% ls bio.c
+bio.c
+% ed bio.c
+7622
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../user.h"
+#include "../buf.h"
+#include "../conf.h"
+#include "../systm.h"
+#include "../proc.h"
+#include "../seg.h"
+
+char    buffers[NBUF][514];
+struct  buf     swbuf;
+
+struct  { int int;};
+#define PS      0177776
+int     tmtab;
+int     raflag  1;
+
+bread(dev, blkno)
+{
+?user?a
+\#include "../errno.h"
+.
+w
+7644
+q
+% ed cat.c
+914
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+/*
+ * GP DR11C driver used for C/A/T
+ */
+
+#include "../param.h"
+#include "../user.h"
+#include "../tty.h"
+
+#define CATADDR 0167750
+#define PCAT    9
+#define CATHIWAT        60
+#define CATLOWAT        15
+
+struct {
+        int     catlock;
+        struct  clist   oq;
+} cat;
+
+?user?
+#include "../user.h"
+a
+\#include "../errnoh#.h"
+.
+w
+936
+q
+% ed dc.c
+3683
+/user/a
+\#include "../errnoh#.h".#
+.
+w
+3705
+q
+% ed dh.c
+3982
+/user/a
+\#include "../errnoh#.h"
+.
+w
+4004
+q
+% .
+.: not found
+% ed dn.h#c
+1313
+/user/a
+a#\#include "../errnoh#.h"
+.
+w
+1335
+q
+% ed dp.c
+3215
+/user/a
+\#include "../errnoh#.jh##h"
+.
+w
+3237
+q
+% ed dv.c
+5280
+/user/a
+\#include "../errno.h'#".#
+.
+w
+?
+q
+% date
+Mon Aug 26 21:38:29 MDT 1974
+% ed kl.c
+1780
+/user/a
+\#include "../errno.h"
+.
+w
+1802
+q
+% ed lp.c
+2166
+/user/a
+\#include "../errno.h":
+.
+.
+#include "../errno.h":
+s/://p
+#include "../errno.h"
+w
+2188
+q
+% ed pc.c
+2309
+/user/a
+\#include "../errno.h"
+.
+w
+2331
+q
+% ed rp.c
+3033
+/user/a
+\#include "../errno.h:
+.
+s/"#:/"/p
+#include "../errno.h"
+w
+3055
+q
+% ed tm.c
+3715
+/user/a
+\#include "../errno.h"
+.
+w
+3737
+q
+% ed tty.c
+6484
+/user/a
+\#include "../errno.h"
+..
+.
+.
+..
+d
+w
+6506
+q
+% ed vt #.c
+884
+/user/a
+\#include "../errno.h".#
+.
+w
+906
+q
+% sync
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+289: ENXIO undefined
+kl.c:
+107: Unknown keyword
+107: Statement syntax
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+kl.o -- cannot open
+un: _klrint
+un: _klxint
+un: _end
+un: _edata
+un: _klopen
+un: _klclose
+un: _klread
+un: _klwrite
+un: _klsgtty
+% chdir dmr.#
+% ed kl.c
+1802
+107
+        else {
+.-10;#,.+10p
+?
+.-10,.p
+klsgtty(dev, v)
+int *v;
+{
+        register struct tty *tp;
+
+        tp = &kl11[dev.d_minor];
+        if (v)
+                v[1].lobyte = tp->t_erase;
+                v[1].hibyte = tp->t_kill;
+                v[2] = tp->t_flags;
+        else {
+
+                wflushtty(tp);
+
+                tp->t_erase = u.u_arg[1].lobyte;
+
+                tp->t_kill = u.u_arg[1].hibyte;
+
+                tp->t_flags = u.u_arg[2];
+
+        }
+
+}
+?if?
+        if (v)
+s/$/ {/p
+        if (v) {
+
+                v[1].lobyte = tp->t_erase;
+
+                v[1].hibyte = tp->t_kill;
+
+                v[2] = tp->t_flags;
+
+        else {
+s/else/} &/p
+        } else {
+w
+1806
+q
+% chdir @
+% ed dv.c
+5280
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+/*
+ * DV disk driver
+ */
+
+#include "../param.h"
+#include "../buf.h"
+#include "../conf.h"
+#include "../user.h"
+
+struct {
+        int     dvcsr;
+        int     dvdbr;
+        int     dvmar;
+        int     dvwcr;
+        int     dvcbr;
+        int     dvssr;
+        int     dvair;
+        int     dvusr;
+?user?a
+\#include "../errno.h"
+.
+w
+?
+q
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+289: ENXIO undefined
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% chdir dmr
+% 3d#ed dv@ed dv.c
+5280
+/user/
+#include "../user.h"
+
+
+?user?a
+\#include "../errno.h:"##"
+.
+w
+?
+q
+% who
+bin     tty8 Aug 26 21:05
+% ls -l dv.c
+-r--r--r-- 1 bin      5280 Jun 12 18:17 dv.c
+% ls -0l##l
+total 135
+-rw-r--r-- 1 bin      7644 Aug 26 21:36 bio.c
+-rw-r--r-- 1 bin       936 Aug 26 21:37 cat.c
+-rw-r--r-- 1 bin      3705 Aug 26 21:37 dc.c
+-rw-r--r-- 1 bin      4004 Aug 26 21:37 dh.c
+-rw-r--r-- 1 bin      1081 Jun 10 08:37 dhdm.c
+-rw-r--r-- 1 bin       244 Jun 10 08:37 dhfdm.c
+-rw-r--r-- 1 bin      1335 Aug 26 21:37 dn.c
+-rw-r--r-- 1 bin      3237 Aug 26 21:38 dp.c
+-r--r--r-- 1 bin      5280 Jun 12 18:17 dv.c
+-rw-r--r-- 1 bin      1806 Aug 26 21:42 kl.c
+-rw-r--r-- 1 bin      2188 Aug 26 21:39 lp.c
+-rw-r--r-- 1 bin      1119 Jun 10 08:37 malloc.c
+-rw-r--r-- 1 bin      1076 Jun 10 08:37 mem.c
+-rw-r--r-- 1 bin       748 Jun 10 08:37 partab.c
+-rw-r--r-- 1 bin      2331 Aug 26 21:39 pc.c
+-rw-r--r-- 1 bin      1932 Jun 10 08:37 pipe.c
+-rw-r--r-- 1 bin      1382 Jun 10 08:37 rf.c
+-rw-r--r-- 1 bin      2980 Jun 10 08:37 rk.c
+-rw-r--r-- 1 bin      3055 Aug 26 21:39 rp.c
+-rw-rw-rw- 1 bin       469 Jun 12 18:53 run
+-rw-r--r-- 1 bin      2349 Jun 10 08:37 tc.c
+-rw-r--r-- 1 bin      3737 Aug 26 21:40 tm.c
+-rw-r--r-- 1 bin      6506 Aug 26 21:40 tty.c
+-rw-r--r-- 1 bin      1585 Jun 10 08:37 vs.c
+-rw-r--r-- 1 bin       906 Aug 26 21:40 vt.c
+% chmod 644 dv.c
+% ls -l dv.c
+-rw-r--r-- 1 bin      5280 Aug 26 21:44 dv.c
+% chmod 744 run
+% ls -l
+total 135
+-rw-r--r-- 1 bin      7644 Aug 26 21:36 bio.c
+-rw-r--r-- 1 bin       936 Aug 26 21:37 cat.c
+-rw-r--r-- 1 bin      3705 Aug 26 21:37 dc.c
+-rw-r--r-- 1 bin      4004 Aug 26 21:37 dh.c
+-rw-r--r-- 1 bin      1081 Jun 10 08:37 dhdm.c
+-rw-r--r-- 1 bin       244 Jun 10 08:37 dhfdm.c
+-rw-r--r-- 1 bin      1335 Aug 26 21:37 dn.c
+-rw-r--r-- 1 bin      3237 Aug 26 21:38 dp.c
+-rw-r--r-- 1 bin      5280 Aug 26 21:44 dv.c
+-rw-r--r-- 1 bin      1806 Aug 26 21:42 kl.c
+-rw-r--r-- 1 bin      2188 Aug 26 21:39 lp.c
+-rw-r--r-- 1 bin      1119 Jun 10 08:37 malloc.c
+-rw-r--r-- 1 bin      1076 Jun 10 08:37 mem.c
+-rw-r--r-- 1 bin       748 Jun 10 08:37 partab.c
+-rw-r--r-- 1 bin      2331 Aug 26 21:39 pc.c
+-rw-r--r-- 1 bin      1932 Jun 10 08:37 pipe.c
+-rw-r--r-- 1 bin      1382 Jun 10 08:37 rf.c
+-rw-r--r-- 1 bin      2980 Jun 10 08:37 rk.c
+-rw-r--r-- 1 bin      3055 Aug 26 21:39 rp.c
+-rwxr--r-- 1 bin       469 Aug 26 21:45 run
+-rw-r--r-- 1 bin      2349 Jun 10 08:37 tc.c
+-rw-r--r-- 1 bin      3737 Aug 26 21:40 tm.c
+-rw-r--r-- 1 bin      6506 Aug 26 21:40 tty.c
+-rw-r--r-- 1 bin      1585 Jun 10 08:37 vs.c
+-rw-r--r-- 1 bin       906 Aug 26 21:40 vt.c
+% chdir ..
+% chmod 6#744 run
+% ed dmr/dv.c
+5280
+/user/a
+\#include "../errno.h"
+.
+w
+5302
+q
+% rn#un
+run: not found
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+ls -l%  run
+-rwxr--r-- 1 bin       251 Aug 26 21:45 run
+% chmod 644 run
+% chdir dmr
+% chmod 644 run
+% chdir ../ken
+% ls -l run
+-rw-rw-rw- 1 bin       361 Jun 12 18:52 run
+% chmod 644 run
+% chdir ..
+% ls
+a.out
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% sync
+% chdir ken
+% ed nami.c
+2677
+/errno/
+#include "../errno.h"
+//
+#include "../errno.h"
+.=
+20
+.-3,.+3p
+/*
+ * func = function called to get name
+ *      &uchar if name is in user space
+#include "../errno.h"
+ *      &schar if name is in system space
+ * flag = 0 if name is saught
+ *      1 if name is to be created
+?errno?d
+w
+2655
+q
+% sync
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% sync
 % 

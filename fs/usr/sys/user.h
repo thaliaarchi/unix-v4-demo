@@ -1,5 +1,3 @@
-#include "errno.h"
-
 struct user {
 	int	u_rsav[2];		/* must be first */
 	int	u_fsav[25];		/* must be second */

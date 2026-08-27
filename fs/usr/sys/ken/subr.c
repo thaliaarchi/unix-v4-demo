@@ -7,6 +7,7 @@
 #include "../conf.h"
 #include "../inode.h"
 #include "../user.h"
+#include "../errno.h"
 #include "../buf.h"
 #include "../systm.h"
 

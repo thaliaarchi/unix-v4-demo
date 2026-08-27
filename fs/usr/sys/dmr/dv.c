@@ -11,6 +11,7 @@
 #include "../buf.h"
 #include "../conf.h"
 #include "../user.h"
+#include "../errno.h"
 
 struct {
 	int	dvcsr;

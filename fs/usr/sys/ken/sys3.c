@@ -9,6 +9,7 @@
 #include "../buf.h"
 #include "../filsys.h"
 #include "../user.h"
+#include "../errno.h"
 #include "../inode.h"
 #include "../file.h"
 #include "../conf.h"

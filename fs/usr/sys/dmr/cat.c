@@ -9,6 +9,7 @@
 
 #include "../param.h"
 #include "../user.h"
+#include "../errno.h"
 #include "../tty.h"
 
 #define	CATADDR	0167750

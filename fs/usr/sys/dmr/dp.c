@@ -10,6 +10,7 @@
 #include "../param.h"
 #include "../conf.h"
 #include "../user.h"
+#include "../errno.h"
 #include "../buf.h"
 
 /* control info */

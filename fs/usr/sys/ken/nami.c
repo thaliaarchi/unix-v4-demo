@@ -6,6 +6,7 @@
 #include "../param.h"
 #include "../inode.h"
 #include "../user.h"
+#include "../errno.h"
 #include "../systm.h"
 #include "../buf.h"
 

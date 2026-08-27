@@ -9,6 +9,7 @@
 
 #include "../param.h"
 #include "../user.h"
+#include "../errno.h"
 
 int	vtflag;
 

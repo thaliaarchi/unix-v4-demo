@@ -10,6 +10,7 @@
 #include "../param.h"
 #include "../conf.h"
 #include "../user.h"
+#include "../errno.h"
 
 struct dn {
 	struct {

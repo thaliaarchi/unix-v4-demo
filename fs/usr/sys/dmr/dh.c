@@ -14,6 +14,7 @@
 #include "../param.h"
 #include "../conf.h"
 #include "../user.h"
+#include "../errno.h"
 #include "../tty.h"
 #include "../proc.h"
 

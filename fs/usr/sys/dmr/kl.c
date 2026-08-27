@@ -9,6 +9,7 @@
 #include "../param.h"
 #include "../conf.h"
 #include "../user.h"
+#include "../errno.h"
 #include "../tty.h"
 #include "../proc.h"
 
@@ -99,11 +100,11 @@ int *v;
 	register struct tty *tp;
 
 	tp = &kl11[dev.d_minor];
-	if (v)
+	if (v) {
 		v[1].lobyte = tp->t_erase;
 		v[1].hibyte = tp->t_kill;
 		v[2] = tp->t_flags;
-	else {
+	} else {
 		wflushtty(tp);
 		tp->t_erase = u.u_arg[1].lobyte;
 		tp->t_kill = u.u_arg[1].hibyte;

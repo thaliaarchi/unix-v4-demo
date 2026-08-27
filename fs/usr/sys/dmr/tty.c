@@ -9,6 +9,7 @@
 #include "../param.h"
 #include "../systm.h"
 #include "../user.h"
+#include "../errno.h"
 #include "../tty.h"
 #include "../proc.h"
 #include "../inode.h"

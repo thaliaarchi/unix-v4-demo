@@ -5,6 +5,7 @@
 
 #include "../param.h"
 #include "../user.h"
+#include "../errno.h"
 #include "../systm.h"
 #include "../proc.h"
 #include "../text.h"
