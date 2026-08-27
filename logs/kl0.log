@@ -16129,3 +16129,1197 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-23> attach dci line=2,4002
+%SIM-ERROR: Can't open network port: 4002
+boot.ini-24> attach dci line=3,4003
+%SIM-ERROR: Can't open network port: 4003
+boot.ini-25> attach dci line=4,4004
+%SIM-ERROR: Can't open network port: 4004
+boot.ini-26> attach dci line=5,4005
+%SIM-ERROR: Can't open network port: 4005
+boot.ini-27> attach dci line=6,4006
+%SIM-ERROR: Can't open network port: 4006
+boot.ini-28> attach dci line=7,4007
+%SIM-ERROR: Can't open network port: 4007
+boot.ini-29> attach dci line=8,4008
+%SIM-ERROR: Can't open network port: 4008
+boot.ini-30> attach dci line=9,4009
+%SIM-ERROR: Can't open network port: 4009
+boot.ini-31> attach dci line=10,4010
+%SIM-ERROR: Can't open network port: 4010
+boot.ini-32> attach dci line=11,4011
+%SIM-ERROR: Can't open network port: 4011
+boot.ini-33> attach dci line=12,4012
+%SIM-ERROR: Can't open network port: 4012
+boot.ini-34> attach dci line=13,4013
+%SIM-ERROR: Can't open network port: 4013
+boot.ini-35> attach dci line=14,4014
+%SIM-ERROR: Can't open network port: 4014
+boot.ini-36> attach dci line=15,4015
+%SIM-ERROR: Can't open network port: 4015
+boot.ini-57> attach dli line=0,4016
+%SIM-ERROR: Can't open network port: 4016
+boot.ini-58> attach dli line=1,4017
+%SIM-ERROR: Can't open network port: 4017
+boot.ini-59> attach dli line=2,4018
+%SIM-ERROR: Can't open network port: 4018
+boot.ini-60> attach dli line=3,4019
+%SIM-ERROR: Can't open network port: 4019
+boot.ini-61> attach dli line=4,4020
+%SIM-ERROR: Can't open network port: 4020
+boot.ini-62> attach dli line=5,4021
+%SIM-ERROR: Can't open network port: 4021
+boot.ini-63> attach dli line=6,4022
+%SIM-ERROR: Can't open network port: 4022
+boot.ini-64> attach dli line=7,4023
+%SIM-ERROR: Can't open network port: 4023
+boot.ini-65> attach dli line=8,4024
+%SIM-ERROR: Can't open network port: 4024
+boot.ini-66> attach dli line=9,4025
+%SIM-ERROR: Can't open network port: 4025
+boot.ini-67> attach dli line=10,4026
+%SIM-ERROR: Can't open network port: 4026
+boot.ini-68> attach dli line=11,4027
+%SIM-ERROR: Can't open network port: 4027
+boot.ini-69> attach dli line=12,4028
+%SIM-ERROR: Can't open network port: 4028
+boot.ini-70> attach dli line=13,4029
+%SIM-ERROR: Can't open network port: 4029
+boot.ini-71> attach dli line=14,4030
+%SIM-ERROR: Can't open network port: 4030
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: bin
+% ed /usr/source/@ed /usr/sys/dmr/tty.c
+6592
+/\\b'#/
+                if (c==tp->t_erase && c=='\b') {
+s/(/((t_flags&RAW)==0 && /p
+                if ((t_flags(RAW)==0 (( c==tp->t_erase && c=='\b') {
+w/@s/((/\&\*#&/p
+                if &&t_flags(RAW)==0 (( c==tp->t_erase && c=='\b') {
+s/((/\&\&/p
+                if &&t_flags(RAW)==0 && c==tp->t_erase && c=='\b') {
+]s/@s/\&\&/((/p
+                if ((t_flags(RAW)==0 && c==tp->t_erase && c=='\b') {
+s/(RAW/\&RAW/p
+                if ((t_flags&RAW)==0 && c==tp->t_erase && c=='\b') {
+w
+6612
+q
+% chdir /iusr@chdir /usr/sys/
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% mv a.out /nunix
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+nunix
+k
+nunix
+mem = 64524
+
+;login: thalia
+% stty erase bs
+% cat 
+
+% ed @
+% ls
+TODO
+a.out
+beeps.c
+hi
+hints
+lrc2026
+mullender.c
+rfc4
+saturnv
+thanks
+% ed @rm ao#.out
+ao#.out: non existent
+% ed@@stty ek
+% ed @rm a.out
+% ed @cat TODO
+TODO:
+- Implement char class ranges in ed
+- Make date Y2K compliant
+% ed TODO
+68
+a
+-
+- Report non-existend#t files in cat
+.
+^
+-
+d
+w
+103
+1,$p
+TODO:
+- Implement char class ranges in ed
+- Make date Y2K compliant
+- Report non-existent files in cat
+q
+% ed echo.c
+?
+a
+main()
+{
+        int tty[3];
+        getty@  gtty(tty);
+        printf("%d %d %d", tty[0], tty[1], tty[2]);
+}
+.
+w
+81
+q
+% cc echo.c
+% a.out
+0 0 0% ed echo.c
+81
+/ge#tty/
+        gtty(tty);
+c
+        gtty(0, tty);
+.
+w
+84
+q
+% cc echo.c
+% a.out
+6 16419 4314% ed echo.c
+84
+/printf/s/",/\n",/p
+        printf("%d %d %dn", tty[0], tty[1], tty[2]);
+s/n/\\n/p
+        pri\ntf("%d %d %dn", tty[0], tty[1], tty[2]);
+s/\\//
+s/dn/d\\n/p
+        printf("%d %d %d\n", tty[0], tty[1], tty[2]);
+1i
+struct sgtty@struct {
+        int speed;@     int     t_speeds;
+        int###char      t_erase;
+        char    t_kill;
+        int     t_flags;
+} ttyb;
+
+.
+/gtty/
+        gtty(0, tty);
+s/tty/ttyb/p
+        gttyb(0, tty);
+s/gttyb/gtty/
+/)/@s/)/b)/p
+        gtty(0, ttyb);
+
+        printf("%d %d %d\n", tty[0], tty[1], tty[2]);
+c
+        printf("%d %c %c %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+.
+w
+198
+q
+% cc echo.c
+11: Illegal structure
+% ed echo.c
+198
+11
+        gtty(0, ttyb);
+s/ttyb/&ttyb/
+w
+202
+!cc echo.c
+13: ttybttyb undefined
+!
+.
+        gtty(0, ttybttyb);
+s/ttybttyb/ttyb/p
+        gtty(0, ttyb);
+s/ttyb/\&ttyb/p
+        gtty(0, &ttyb);
+w
+199
+!cc echo.c
+!
+!a.out
+6 # @ 4314
+!
+/printf
+?
+/printf/
+        printf("%d %c %c %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+!ed !@q
+% 
+;login: thalia
+% ed TODO
+103
+a-#
+- Allow omitting closing / in ed
+.
+w
+136
+q
+% 
+;login: bin
+% chdir /usr/@
+;login: thalia
+% ed echo.c
+199
+/printf/
+        printf("%d %c %c %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+c
+        prnt##intf("speeds = %d\nerase  = %c\nkill   = %c\n #flags  = %d\n", ttyb.t_speeds, ttyb_#.t_erase, ttyb.t_kill, ttyb.t_flags);
+.
+.
+        printf("speeds = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+w
+238
+q
+% cc er#cho.c
+% a.out
+speeds = 6
+erase  = #
+kill   = @
+flags  = 4314
+% ed echo.c
+238
+2
+        int     t_speeds;
+c
+        char    t_ispeed, t_ospeed;
+
+.
+^
+        char    t_ispeed, t_ospeed;
+
+
+d
+
+        char    t_kill;
+c
+        char    t_kill, @       char    t_erase, t_kill;
+.
+^
+        char    t_erase;
+d
+1,5p
+struct {
+        char    t_ispeed, t_ospeed;
+        char    t_erase, t_kill;
+        int     t_flags;
+} ttyb;
+
+
+
+main()
+
+{
+
+        int tty[3];
+
+        gtty(0, &ttyb);
+
+        printf("speeds = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+
+}
+^
+        printf("speeds = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+s/speeds/ispeed/
+s/ispeed/ospeed/
+s/"/"ispeed = %d\n/p
+        printf("ispeed = %dnospeed = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+s/no/\no/p
+        printf("ispeed = %dnospeed = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+s/no/\\no/p
+        printf("ispeed = %d\nospeed = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+s/tt#_speeds, @s/t_speeds/ispeed@s/speeds/ispeed, ttyb.t_ospeed/p
+        printf("ispeed = %d\nospeed = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_ispeed, ttyb.t_ospeed, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+w
+271
+q
+% cc echo.c
+% a.out
+ispeed = 6
+ospeed = 0
+erase  = #
+kill   = @
+flags  = 4314
+% ed echo.c
+271
+/ttyb/
+} ttyb;
+c
+} ttyb, rawb;
+.
+/gtty
+?
+/ge#tty/
+        gtty(0, &ttyb);
+
+        printf("ispeed = %d\nospeed = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_ispeed, ttyb.t_ospeed, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+a
+        rawb[#.ise#peed = ttyb.ispeed;
+        rawb.ospeed = ttyb.ospeed;
+        rawb.t_erase = ttyb.t_erase;
+        t#rawb.t_kill = ttyb.t_kill;
+        rawb.t_flags = tty.#b.t_flags;
+.
+^-3
+        rawb.ispeed = ttyb.ispeed;
+s/@g/isp@@s/ispeed/t_ispeed/p
+        rawb.t_ispeed = ttyb.ispeed;
+s//t_ispeed/p
+        rawb.t_t_ispeed = ttyb.ispeed;
+s/t_//p
+        rawb.t_ispeed = ttyb.ispeed;
+s/ttyb./ttyb.t_/p
+        rawb.t_ispeed = ttyb.t_ispeed;
+
+        rawb.ospeed = ttyb.ospeed;
+c
+        rawb.t_ospeed = ttyb.t_ospeed;
+.
+1,$p
+struct {
+        char    t_ispeed, t_ospeed;
+        char    t_erase, t_kill;
+        int     t_flags;
+} ttyb, rawb;
+
+main()
+{
+        int tty[3];
+        gtty(0, &ttyb);
+        printf("ispeed = %d\nospeed = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_ispeed, ttyb.t_ospeed, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+        rawb.t_ispeed = ttyb.t_ispeed;
+        rawb.t_ospeed = ttyb.t_ospeed;
+        rawb.t_erase = ttyb.t_erase;
+        rawb.t_kill = ttyb.t_kill;
+        rawb.t_flags = ttyb.t_flags;
+}
+^
+        rawb.t_flags = ttyb.t_flags;
+s/;/ | RAW/p
+        rawb.t_flags = ttyb.t_flags | RAW
+s/$/;/p
+        rawb.t_flags = ttyb.t_flags | RAW;
+1
+struct {
+i
+\#include "/isr###usr/sys/tty.h"
+
+.
+/printf/
+        printf("ispeed = %d\nospeed = %d\nerase  = %c\nkill   = %c\nflags  = %d\n", ttyb.t_ispeed, ttyb.t_ospeed, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
+c
+        printf("ispeed = %d\\#n", ttyb.t_iso#peed);
+        printf("ospeed = %d\n", ttyb.t_ospeed);
+        printf("erase  +#= %c\n", tty.#b.er##t_erase);
+        printf("kill  =# = %c\n", ttyb.t_kill);
+        printf("flags  = "#");
+        if(ttyb.t_flags*NODELAT)##Y) printf(" NODELAY");
+        if(ttyb.t_flags&XTABS) printf(" XTABS");
+        if(ttyb.t_flags&LCASE) printf(" LCASE");
+        if(ttyb.t_flags #&ECHO) printf(" ECHO");
+        if(Tty###ttyb.t_flags&CRMOD) printf(" CRMOD(#"):
+        if(ttyn#b.t_flags&RAW) printf(" RAW");
+        if(ttyb.t_flags&ODDP) pin##rintg#f(" ODDP)#");
+        p#if(ttyb.t_flags&EVENP) printf(" EVENP"0)#))###);
+        if(ttyb.t_flags&M2741) printf(" M2741");
+        if(ttyb&OCORR) P#printf(" OCORR)#");
+        if(ttyb&ICORR) printf(" ICORR"):#:#;
+        if(ttyb.t_l#flags&NTDELAY) printf(" NTFE##DELAY");
+        printf("\n");
+.
+1,$p
+#include "/usr/sys/tty.h"
+
+struct {
+        char    t_ispeed, t_ospeed;
+        char    t_erase, t_kill;
+        int     t_flags;
+} ttyb, rawb;
+
+main()
+{
+        int tty[3];
+        gtty(0, &ttyb);
+        printf("ispeed = %d\#n", ttyb.t_ispeed);
+        printf("ospeed = %d\n", ttyb.t_ospeed);
+        printf("erase  = %c\n", ttyb.t_erase);
+        printf("kill   = %c\n", ttyb.t_kill);
+        printf("flags  = ");
+        if(ttyb.t_flags*NODELAY) printf(" NODELAY");
+        if(ttyb.t_flags&XTABS) printf(" XTABS");
+        if(ttyb.t_flags&LCASE) printf(" LCASE");
+        if(ttyb.t_flags&ECHO) printf(" ECHO");
+        if(ttyb.t_flags&CRMOD) printf(" CRMOD"):
+        if(ttyb.t_flags&RAW) printf(" RAW");
+        if(ttyb.t_flags&ODDP) printf(" ODDP");
+        if(ttyb.t_flags&EVENP) printf(" EVENP");
+        if(ttyb.t_flags&M2741) printf(" M2741");
+        if(ttyb&OCORR) printf(" OCORR");
+        if(ttyb&ICORR) printf(" ICORR");
+        if(ttyb.t_flags&NTDELAY) printf(" NTDELAY");
+        printf("\n");
+        rawb.t_ispeed = ttyb.t_ispeed;
+        rawb.t_ospeed = ttyb.t_ospeed;
+        rawb.t_erase = ttyb.t_erase;
+        rawb.t_kill = ttyb.t_kill;
+        rawb.t_flags = ttyb.t_flags | RAW;
+}
+?OCORR?
+        if(ttyb&OCORR) printf(" OCORR");
+s/ttybn/##b/ttyb.t_flags/p
+?
+s/ttyb/ttyb.t_flags/p
+        if(ttyb.t_flags&OCORR) printf(" OCORR");
+
+        if(ttyb&ICORR) printf(" ICORR");
+s/ttyb/ttyb.t_flags/p
+        if(ttyb.t_flags&ICORR) printf(" ICORR");
+1,$p
+#include "/usr/sys/tty.h"
+
+struct {
+        char    t_ispeed, t_ospeed;
+        char    t_erase, t_kill;
+        int     t_flags;
+} ttyb, rawb;
+
+main()
+{
+        int tty[3];
+        gtty(0, &ttyb);
+        printf("ispeed = %d\#n", ttyb.t_ispeed);
+        printf("ospeed = %d\n", ttyb.t_ospeed);
+        printf("erase  = %c\n", ttyb.t_erase);
+        printf("kill   = %c\n", ttyb.t_kill);
+        printf("flags  = ");
+        if(ttyb.t_flags*NODELAY) printf(" NODELAY");
+        if(ttyb.t_flags&XTABS) printf(" XTABS");
+        if(ttyb.t_flags&LCASE) printf(" LCASE");
+        if(ttyb.t_flags&ECHO) printf(" ECHO");
+        if(ttyb.t_flags&CRMOD) printf(" CRMOD"):
+        if(ttyb.t_flags&RAW) printf(" RAW");
+        if(ttyb.t_flags&ODDP) printf(" ODDP");
+        if(ttyb.t_flags&EVENP) printf(" EVENP");
+        if(ttyb.t_flags&M2741) printf(" M2741");
+        if(ttyb.t_flags&OCORR) printf(" OCORR");
+        if(ttyb.t_flags&ICORR) printf(" ICORR");
+        if(ttyb.t_flags&NTDELAY) printf(" NTDELAY");
+        printf("\n");
+        rawb.t_ispeed = ttyb.t_ispeed;
+        rawb.t_ospeed = ttyb.t_ospeed;
+        rawb.t_erase = ttyb.t_erase;
+        rawb.t_kill = ttyb.t_kill;
+        rawb.t_flags = ttyb.t_flags | RAW;
+}
+/NODELAY/s\*##/\*/\&/p
+?
+/NODELAY/
+        if(ttyb.t_flags*NODELAY) printf(" NODELAY");
+s/\*/\&/p
+        if(ttyb.t_flags&NODELAY) printf(" NODELAY");
+w
+1016
+q
+% cc echo.c
+5: .t_erase redeclared
+5: .t_kill redeclared
+6: .t_flags redeclared
+23: Expression syntax
+36: t_flags undefined
+% mv echo.c sgttydbg.c
+% mv sgttydbg styy@mv sg* ttyinfo.c
+% cc ttyinfo.c
+5: .t_erase redeclared
+5: .t_kill redeclared
+6: .t_flags redeclared
+23: Expression syntax
+36: t_flags undefined
+% ed tty.#info.c
+1016
+5
+        char    t_erase, t_kill;
+1,10p
+#include "/usr/sys/tty.h"
+
+struct {
+        char    t_ispeed, t_ospeed;
+        char    t_erase, t_kill;
+        int     t_flags;
+} ttyb, rawb;
+
+main()
+{
+g/t_/s///p
+        char    ispeed, t_ospeed;
+        char    erase, t_kill;
+        int     flags;
+        printf("ispeed = %d\#n", ttyb.ispeed);
+        printf("ospeed = %d\n", ttyb.ospeed);
+        printf("erase  = %c\n", ttyb.erase);
+        printf("kill   = %c\n", ttyb.kill);
+        if(ttyb.flags&NODELAY) printf(" NODELAY");
+        if(ttyb.flags&XTABS) printf(" XTABS");
+        if(ttyb.flags&LCASE) printf(" LCASE");
+        if(ttyb.flags&ECHO) printf(" ECHO");
+        if(ttyb.flags&CRMOD) printf(" CRMOD"):
+        if(ttyb.flags&RAW) printf(" RAW");
+        if(ttyb.flags&ODDP) printf(" ODDP");
+        if(ttyb.flags&EVENP) printf(" EVENP");
+        if(ttyb.flags&M2741) printf(" M2741");
+        if(ttyb.flags&OCORR) printf(" OCORR");
+        if(ttyb.flags&ICORR) printf(" ICORR");
+        if(ttyb.flags&NTDELAY) printf(" NTDELAY");
+        rawb.ispeed = ttyb.t_ispeed;
+        rawb.ospeed = ttyb.t_ospeed;
+        rawb.erase = ttyb.t_erase;
+        rawb.kill = ttyb.t_kill;
+        rawb.flags = ttyb.t_flags | RAW;
+g/t_/s///p
+        char    ispeed, ospeed;
+        char    erase, kill;
+        rawb.ispeed = ttyb.ispeed;
+        rawb.ospeed = ttyb.ospeed;
+        rawb.erase = ttyb.erase;
+        rawb.kill = ttyb.kill;
+        rawb.flags = ttyb.flags | RAW;
+w
+954
+q
+% cc ttyinfo.c
+23: Expression syntax
+36: flags undefined
+% ed ttyinfo.c
+954
+23
+        if(ttyb.flags&RAW) printf(" RAW");
+l
+>-if(ttyb.flags&RAW) printf(" RAW");
+!ed TODO
+136
+a
+- Make ed listing (l) escape non-printable characters
+.
+w
+190
+q
+!
+36
+}
+1,10o#p
+#include "/usr/sys/tty.h"
+
+struct {
+        char    ispeed, ospeed;
+        char    erase, kill;
+        int     flags;
+} ttyb, rawb;
+
+main()
+{
+1,23p
+#include "/usr/sys/tty.h"
+
+struct {
+        char    ispeed, ospeed;
+        char    erase, kill;
+        int     flags;
+} ttyb, rawb;
+
+main()
+{
+        int tty[3];
+        gtty(0, &ttyb);
+        printf("ispeed = %d\#n", ttyb.ispeed);
+        printf("ospeed = %d\n", ttyb.ospeed);
+        printf("erase  = %c\n", ttyb.erase);
+        printf("kill   = %c\n", ttyb.kill);
+        printf("flags  = ");
+        if(ttyb.flags&NODELAY) printf(" NODELAY");
+        if(ttyb.flags&XTABS) printf(" XTABS");
+        if(ttyb.flags&LCASE) printf(" LCASE");
+        if(ttyb.flags&ECHO) printf(" ECHO");
+        if(ttyb.flags&CRMOD) printf(" CRMOD"):
+        if(ttyb.flags&RAW) printf(" RAW");
+.,$p
+        if(ttyb.flags&RAW) printf(" RAW");
+        if(ttyb.flags&ODDP) printf(" ODDP");
+        if(ttyb.flags&EVENP) printf(" EVENP");
+        if(ttyb.flags&M2741) printf(" M2741");
+        if(ttyb.flags&OCORR) printf(" OCORR");
+        if(ttyb.flags&ICORR) printf(" ICORR");
+        if(ttyb.flags&NTDELAY) printf(" NTDELAY");
+        printf("\n");
+        rawb.ispeed = ttyb.ispeed;
+        rawb.ospeed = ttyb.ospeed;
+        rawb.erase = ttyb.erase;
+        rawb.kill = ttyb.kill;
+        rawb.flags = ttyb.flags | RAW;
+}
+w
+954
+!cc ttyinfo.c
+23: Expression syntax
+36: flags undefined
+!
+23
+        if(ttyb.flags&RAW) printf(" RAW");
+36
+}
+21
+        if(ttyb.flags&ECHO) printf(" ECHO");
+l
+>-if(ttyb.flags&ECHO) printf(" ECHO");
+1,$p
+#include "/usr/sys/tty.h"
+
+struct {
+        char    ispeed, ospeed;
+        char    erase, kill;
+        int     flags;
+} ttyb, rawb;
+
+main()
+{
+        int tty[3];
+        gtty(0, &ttyb);
+        printf("ispeed = %d\#n", ttyb.ispeed);
+        printf("ospeed = %d\n", ttyb.ospeed);
+        printf("erase  = %c\n", ttyb.erase);
+        printf("kill   = %c\n", ttyb.kill);
+        printf("flags  = ");
+        if(ttyb.flags&NODELAY) printf(" NODELAY");
+        if(ttyb.flags&XTABS) printf(" XTABS");
+        if(ttyb.flags&LCASE) printf(" LCASE");
+        if(ttyb.flags&ECHO) printf(" ECHO");
+        if(ttyb.flags&CRMOD) printf(" CRMOD"):
+        if(ttyb.flags&RAW) printf(" RAW");
+        if(ttyb.flags&ODDP) printf(" ODDP");
+        if(ttyb.flags&EVENP) printf(" EVENP");
+        if(ttyb.flags&M2741) printf(" M2741");
+        if(ttyb.flags&OCORR) printf(" OCORR");
+        if(ttyb.flags&ICORR) printf(" ICORR");
+        if(ttyb.flags&NTDELAY) printf(" NTDELAY");
+        printf("\n");
+        rawb.ispeed = ttyb.ispeed;
+        rawb.ospeed = ttyb.ospeed;
+        rawb.erase = ttyb.erase;
+        rawb.kill = ttyb.kill;
+        rawb.flags = ttyb.flags | RAW;
+}
+!cc ttyinfo.c
+23: Expression syntax
+36: flags undefined
+!
+/int /
+        int tty[3];
+d
+w
+941
+/CRMOD/
+        if(ttyb.flags&CRMOD) printf(" CRMOD"):
+s/:/;/p
+        if(ttyb.flags&CRMOD) printf(" CRMOD");
+/ispeed/
+        rawb.ispeed = ttyb.ispeed;
+//
+        char    ispeed, ospeed;
+//
+        printf("ispeed = %d\#n", ttyb.ispeed);
+s/\#//p
+        printf("ispeed = %d\n", ttyb.ispeed);
+w
+940
+!cc ttyinfo.c
+!
+q
+% a.out
+ispeed = 6
+ospeed = 0
+erase  = #
+kill   = @
+flags  =  XTABS ECHO CRMOD ODDP EVENP NTDELAY
+% ed ttyinfo.c
+940
+/flags =## =/
+        rawb.flags = ttyb.flags | RAW;
+//
+        rawb.flags = ttyb.flags | RAW;
+//
+        rawb.flags = ttyb.flags | RAW;
+s@/flags  /
+        printf("flags  = ");
+s/ "/"/p
+        printf("flags  =");
+w
+939
+q
+% cc ttyinfo.c
+% a.out
+ispeed = 6
+ospeed = 0
+erase  = #
+kill   = @
+flags  = XTABS ECHO CRMOD ODDP EVENP NTDELAY
+% ed ttyinfo.c
+939
+/printf/i
+        printf("gtty:\n");
+.
+.+1
+        printf("ispeed = %d\n", ttyb.ispeed);
+$
+}
+i
+        stty(1, &ttyb####rawb);
+
+        stty(0, &ttyb);
+.
+.-2
+        stty(1, &rawb);
+s/0#1/0/p
+        stty(0, &rawb);
+
+
+c
+        for #(;;) {
+                c = getchar();
+                if #(f#c == 0 || c == 004)
+                        brak##eak;
+                printf("'%c' = %d\n", c, c);
+        }
+.
+/main/
+main()
+
+{
+
+        gtty(0, &ttyb);
+i
+        char c;
+
+.
+/break/
+                        break;
+
+                printf("'%c' = %d\n", c, c);
+.m.-2
+.-5,.+5p
+?
+.-5,$P
+?
+.-5,$p
+        rawb.flags = ttyb.flags | RAW;
+        stty(0, &rawb);
+        for(;;) {
+                c = getchar();
+                if(c == 0 || c == 004)
+                printf("'%c' = %d\n", c, c);
+                        break;
+        }
+        stty(0, &ttyb);
+}
+?printf?
+                printf("'%c' = %d\n", c, c);
+.m.-2p
+                printf("'%c' = %d\n", c, c);
+.-3,$p
+        stty(0, &rawb);
+        for(;;) {
+                c = getchar();
+                printf("'%c' = %d\n", c, c);
+                if(c == 0 || c == 004)
+                        break;
+        }
+        stty(0, &ttyb);
+}
+w
+1100
+q
+% cc ttyinfo.c
+% a.out
+gtty:
+ispeed = 6
+ospeed = 0
+erase  = #
+kill   = @
+flags  = XTABS ECHO CRMOD ODDP EVENP NTDELAY
+h'h' = 104
+e'e' = 101
+l'l' = 108
+l'l' = 108
+o'o' = 111
+ ' ' = 32
+w'w' = 119
+o'o' = 111
+l'l' = 108
+d'd' = 100
+
+'
+' = 10
+'' = 4
+% ed ttyinfo.c
+1100
+/RAW?#/
+        if(ttyb.flags&RAW) printf(" RAW");
+//
+        rawb.flags = ttyb.flags | RAW;
+s/| /| ECHO####@
+        stty(0, &rawb);
+^
+        rawb.flags = ttyb.flags | RAW;
+c
+        rawb.flags =& ~RAW####~ECHO;
+        rawb.flags =| RAW;
+.
+w
+1110
+!cc ttyinfo.c
+!
+q
+% a.out
+gtty:
+ispeed = 6
+ospeed = 0
+erase  = #
+kill   = @
+flags  = XTABS ECHO CRMOD ODDP EVENP NTDELAY
+'h' = 104
+'e' = 101
+'l' = 108
+'l' = 108
+'o' = 111
+'w' = 119
+'o' = 111
+'l' = 108
+'d' = 100
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+'' = 4
+% ed ttyinfo.c
+1110
+?printf?
+                printf("'%c' = %d\n", c, c);
+s/\\n/\\r\\n/p
+                printf("'%c' = %d\r\n", c, c);
+w
+1112
+q
+% cc ttyinfo.c
+% a.out
+gtty:
+ispeed = 6
+ospeed = 0
+erase  = #
+kill   = @
+flags  = XTABS ECHO CRMOD ODDP EVENP NTDELAY
+'h' = 104
+'e' = 101
+'l' = 108
+'l' = 108
+'o' = 111
+'' = 4
+% mv a.out ttyinfo
+% sync
+% ttyinfo
+gtty:
+ispeed = 8
+ospeed = 0
+% ttyinfo
+gtty:
+ispeed = 8
+ospeed = 0
+erase  = #
+kill   = @
+flags  = XTABS ECHO CRMOD ODDP EVENP NTDELAY
+'' = 8
+'' = 8
+'' = 8
+'' = 8
+'' = 8
+'' = 8
+'' = 8
+'' = 8
+'' = 127
+'' = 8
+'' = 127
+'' = 8
+'' = 127
+'' = 8
+'' = 127
+'' = 8
+'' = 127
+'' = 127
+'' = 127
+'' = 8
+'' = 4
+% ttyinfo
+gtty:
+ispeed = 8
+ospeed = 0
+erase  = #
+kill   = @
+flags  = XTABS ECHO CRMOD ODDP EVENP NTDELAY
+'' = 8
+'' = 4
+% echo hi
+hi
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+un##nunix
+k
+nunix
+mem = 64524
+
+;login: thalia
+% stty erase bs
+% echo hi                                                                               hello world
+hello: not found
+% ls    
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-23> attach dci line=2,4002
+%SIM-ERROR: Can't open network port: 4002
+boot.ini-24> attach dci line=3,4003
+%SIM-ERROR: Can't open network port: 4003
+boot.ini-25> attach dci line=4,4004
+%SIM-ERROR: Can't open network port: 4004
+boot.ini-26> attach dci line=5,4005
+%SIM-ERROR: Can't open network port: 4005
+boot.ini-27> attach dci line=6,4006
+%SIM-ERROR: Can't open network port: 4006
+boot.ini-28> attach dci line=7,4007
+%SIM-ERROR: Can't open network port: 4007
+boot.ini-29> attach dci line=8,4008
+%SIM-ERROR: Can't open network port: 4008
+boot.ini-30> attach dci line=9,4009
+%SIM-ERROR: Can't open network port: 4009
+boot.ini-31> attach dci line=10,4010
+%SIM-ERROR: Can't open network port: 4010
+boot.ini-32> attach dci line=11,4011
+%SIM-ERROR: Can't open network port: 4011
+boot.ini-33> attach dci line=12,4012
+%SIM-ERROR: Can't open network port: 4012
+boot.ini-34> attach dci line=13,4013
+%SIM-ERROR: Can't open network port: 4013
+boot.ini-35> attach dci line=14,4014
+%SIM-ERROR: Can't open network port: 4014
+boot.ini-36> attach dci line=15,4015
+%SIM-ERROR: Can't open network port: 4015
+boot.ini-57> attach dli line=0,4016
+%SIM-ERROR: Can't open network port: 4016
+boot.ini-58> attach dli line=1,4017
+%SIM-ERROR: Can't open network port: 4017
+boot.ini-59> attach dli line=2,4018
+%SIM-ERROR: Can't open network port: 4018
+boot.ini-60> attach dli line=3,4019
+%SIM-ERROR: Can't open network port: 4019
+boot.ini-61> attach dli line=4,4020
+%SIM-ERROR: Can't open network port: 4020
+boot.ini-62> attach dli line=5,4021
+%SIM-ERROR: Can't open network port: 4021
+boot.ini-63> attach dli line=6,4022
+%SIM-ERROR: Can't open network port: 4022
+boot.ini-64> attach dli line=7,4023
+%SIM-ERROR: Can't open network port: 4023
+boot.ini-65> attach dli line=8,4024
+%SIM-ERROR: Can't open network port: 4024
+boot.ini-66> attach dli line=9,4025
+%SIM-ERROR: Can't open network port: 4025
+boot.ini-67> attach dli line=10,4026
+%SIM-ERROR: Can't open network port: 4026
+boot.ini-68> attach dli line=11,4027
+%SIM-ERROR: Can't open network port: 4027
+boot.ini-69> attach dli line=12,4028
+%SIM-ERROR: Can't open network port: 4028
+boot.ini-70> attach dli line=13,4029
+%SIM-ERROR: Can't open network port: 4029
+boot.ini-71> attach dli line=14,4030
+%SIM-ERROR: Can't open network port: 4030
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia@root
+Login incorrect.
+Name: bin
+% ls -l
+total 337
+-rwxr-xr-x 1 bin      1514 Jun 10 08:37 ar
+-rwxr-xr-x 1 bin      5720 Jun 10 08:37 as
+-rwxr-xr-x 1 bin      5846 Jun 10 08:37 bas
+-rwxr-xr-x 1 bin       152 Jun 10 08:37 cat
+-rwxr-xr-x 1 bin      5104 Jun 10 08:37 cc
+-rwxr-xr-x 1 bin      4550 Jun 10 08:37 cdb
+-rwxr-xr-x 1 bin      7112 Jun 10 08:37 check
+-rwxr-xr-x 1 bin      1546 Jun 10 08:37 chmod
+-rwxr-xr-x 1 bin       484 Jun 10 08:37 chown
+-rwxr--r-- 1 bin       190 Jun 10 08:37 clri
+-rwxr-xr-x 1 bin       418 Jun 10 08:37 cmp
+-rwxr-xr-x 1 bin      1200 Jun 10 08:37 cp
+-rwsr-xr-x 1 root     2120 Jun 12 19:13 date
+-rwxr-xr-x 1 bin      4980 Jun 10 08:37 db
+-rwxr-xr-x 1 bin      6528 Jun 10 08:37 dc
+-rwxr-xr-x 1 bin      4246 Jun 10 08:37 dd
+-rwxr-xr-x 1 bin      1592 Jun 10 08:37 df
+-rwxr-xr-x 1 bin       262 Jun 10 08:37 dsw
+-rwxr-xr-x 1 bin       654 Jun 10 08:37 du
+-rwxr-xr-x 1 bin      4174 Jun 12 19:13 dump
+-rwxr-xr-x 1 bin       894 Jun 10 08:37 echo
+-rwxr-xr-x 1 bin      4292 Jun 10 08:37 ed
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 exit
+-rwxr-xr-x 1 bin      4642 Jun 10 08:37 fc
+-rwxr-xr-x 1 bin       942 Jun 10 08:37 goto
+-rwxr-xr-x 1 bin      1552 Jun 10 08:37 if
+-rwxr-xr-x 1 bin       192 Jun 10 08:37 kill
+-rwxr-xr-x 1 bin      3272 Jun 10 08:37 ld
+-rwxr-xr-x 1 bin       480 Jun 10 08:37 ln
+-rwsr-xr-x 1 root     2488 Jun 10 08:37 login
+-rwxr-xr-x 1 bin      3112 Jun 12 16:54 lpr
+-rwxr-xr-x 1 bin      5056 Jun 12 19:13 ls
+-rwxr-xr-x 1 bin      4608 Jun 12 19:13 mail
+-rwsr-xr-x 1 root      240 Jun 10 08:37 mkdir
+-rwsr-xr-x 1 root     2330 Jun 10 08:37 mv
+-rwxr-xr-x 1 bin      2518 Jun 10 08:37 nm
+-rwxr-xr-x 1 bin      4710 Jun 10 08:37 od
+-rwxr-xr-x 1 bin      3630 Jun 12 19:13 pr
+-rwsr-xr-x 1 bin      2286 Jun 10 08:37 ps
+-rwxr-xr-x 1 bin      4996 Jun 10 08:37 restor
+-rwxr-xr-x 1 bin       114 Jun 10 08:37 rew
+-rwxr-xr-x 1 bin      1602 Jun 10 08:37 rm
+-rwsr-xr-x 1 root      292 Jun 10 08:37 rmdir
+-rwxrwxrwx 1 bin      6712 Aug 18 17:09 sh
+-rwxr-xr-x 1 bin      5572 Aug 18 18:17 sh.bak
+-rwxr-xr-x 1 bin      1218 Jun 10 08:37 size
+-rwxr-xr-x 1 bin      4322 Jun 10 08:37 sort
+-rwxr-xr-x 1 bin       496 Jun 10 08:37 strip
+-rwxrwxrwx 1 bin      2252 Aug 26 22:49 stty
+-rwxrwxrwx 1 bin      2246 Aug 26 22:49 stty.bak
+-rwsr-xr-x 1 root     1944 Jun 10 08:37 su
+-rwxr-xr-x 1 bin       198 Jun 10 08:37 sum
+-rwxr-xr-x 1 bin       144 Jun 10 08:37 sync
+-rwxr-xr-x 1 bin       556 Jun 10 08:37 time
+-rwxr-xr-x 1 bin      4482 Jun 12 19:13 tp
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 tty
+Quit -- Core dumped
+% rm core
+% chdir /
+% ls -l
+total 124
+drwxr-xr-x 2 bin       992 Aug 26 23:42 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 26 21:29 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+-rwxrwxrwx 1 bin     28404 Aug 26 23:03 nunix
+drwxrwxrwx 2 bin       208 Aug 26 23:41 tmp
+-rwxrwxrwx 1 root    28282 Aug 16 14:11 unix
+drwxr-xr-x39 bin       624 Aug 25 12:42 usr
+% mv nunix unix
+% chown root unix
+% ls -l
+total 67
+drwxr-xr-x 2 bin       992 Aug 26 23:42 bin
+drwxr-xr-x 2 bin       928 Aug 18 10:27 dev
+drwxr-xr-x 2 bin       256 Aug 26 21:29 etc
+drwxr-xr-x 2 bin       256 Jun 12 17:04 lib
+drwxr-xr-x 2 bin        32 Jun 10 08:37 mnt
+drwxrwxrwx 2 bin       208 Aug 26 23:41 tmp
+-rwxrwxrwx 1 root    28404 Aug 26 23:42 unix
+drwxr-xr-x39 bin       624 Aug 25 12:42 usr
+% 
+;login: root
+# sync
+# 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed

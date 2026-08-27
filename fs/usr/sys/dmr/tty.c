@@ -238,7 +238,7 @@ struct tty *atp;
 			tp->t_delct++;
 	}
 	if (t_flags&ECHO) {
-		if (c==tp->t_erase && c=='\b') {
+		if ((t_flags&RAW)==0 && c==tp->t_erase && c=='\b') {
 			ttyoutput('\b', tp);
 			ttyoutput(' ', tp);
 		}

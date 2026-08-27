@@ -1,3 +1,6 @@
 TODO:
 - Implement char class ranges in ed
 - Make date Y2K compliant
+- Report non-existent files in cat
+- Allow omitting closing / in ed
+- Make ed listing (l) escape non-printable characters
