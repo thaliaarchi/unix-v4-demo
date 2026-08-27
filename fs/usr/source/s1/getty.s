@@ -10,8 +10,8 @@ gtty = 32.
 	sys	signal; 3; 1
 	sys	signal; 2; 1
 	clr	r0
-	sys	gtty; name
-	mov	name+4,r0
+	sys	gtty; imode
+	mov	imode+4,r0
 	bic	$!26,r0
 	mov	r0,flags	/ use xtab,cr,ucase from driver
 	jsr	r5,nextspeed
@@ -23,9 +23,9 @@ gtty = 32.
 	beq	1f
 	cmp	r0,$'\r
 	beq	4f
-	cmp	r0,$'@
+	cmpb	r0,imode+3
 	beq	1b
-	cmp	r0,$'#
+	cmpb	r0,imode+2
 	bne	3f
 	cmp	r5,$name
 	blos	2b
@@ -69,6 +69,7 @@ gtty = 32.
 	br	1b
 1:
 	mov	fstate,r4
+	mov	imode+2,2(r4)
 	bis	flags,4(r4)
 	clr	r0
 	sys	0; 9f
@@ -186,4 +187,5 @@ cr:	<\r>
 .bss
 flags:	.=.+2
 ch:	.=.+2
+imode:	.=.+6
 name:	.=.+32.
