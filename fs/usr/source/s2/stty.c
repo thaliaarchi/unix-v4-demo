@@ -6,8 +6,6 @@ int	mode[3];
 main(argc, argv)
 char	*argv[];
 {
-	int i;
-
 	gtty(1,mode);
 	while(--argc > 0) {
 
@@ -15,8 +13,9 @@ char	*argv[];
 		if(eq("ek"))
 			mode[1] = '#@';
 		else if(eq("erase")) {
-			mode[1].lobyte = **++argv;
+			arg = *++argv;
 			argc--;
+			mode[1].lobyte = eq("bs") ? '\b' : *arg;
 		} else if(eq("kill")) {
 			mode[1].hibyte = **++argv;
 			argc--;
@@ -56,7 +55,7 @@ char	*argv[];
 			reset(010000);
 		else if(eq("-tdelay"))
 			set(010000);
-		else if(arg)
+		else
 			printf("unknown mode: %s\n", arg);
 	}
 	stty(1,mode);
@@ -67,15 +66,12 @@ char *string;
 {
 	int i;
 
-	if(!arg)
-		return(0);
 	i = 0;
 loop:
 	if(arg[i] != string[i])
 		return(0);
 	if(arg[i++] != '\0')
 		goto loop;
-	arg = 0;
 	return(1);
 }
 

@@ -238,6 +238,10 @@ struct tty *atp;
 			tp->t_delct++;
 	}
 	if (t_flags&ECHO) {
+		if (c==tp->t_erase && c=='\b') {
+			ttyoutput('\b', tp);
+			ttyoutput(' ', tp);
+		}
 		ttyoutput(c, tp);
 		ttstart(tp);
 	}

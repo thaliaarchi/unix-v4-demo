@@ -15091,3 +15091,1041 @@ vs.c:
 vt.c:
 % sync
 % 
+;login: ed#thali@thalia
+Login incorrect.
+Name: thalia
+% ed TODO
+42
+a
+-
+- Make date Y2K compliant
+.
+2
+- Implement char class ranges in ed
+
+-
+d
+w
+68
+q
+% 
+;login: bin
+% chdir /usr/sys
+% mv a.out /ns#unix
+% chdir /usr/@ls -l /bin/gett####stty
+-rwxrwxrwx 1 bin      2246 Aug 26 21:19 /bin/stty
+% ls -l /usr/@@ls -l /etc/stty
+/etc/stty not found
+% ls -l /etc/getty
+-rwxrwxrwx 1 bin      1164 Aug 26 21:29 /etc/getty
+% ls -l /usr/source/s1/getty.s /usr/source.#/s2/setty.c
+/usr/source/s2/setty.c not found
+-rw-r--r-- 1 bin      2140 Aug 26 21:26 /usr/source/s1/getty.s
+% ls -l /usr/source/s2/stty.c
+-rw-r--r-- 1 bin      1299 Aug 26 21:17 /usr/source/s2/stty.c
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64524
+
+;login: thalia
+% stty erase x
+% helloxxx
+he: not found
+% echo hello worldxxxxxx!
+hello!
+% stty ea#rase 
+% hello
+% echo hi
+% echo hello world!
+!: not found
+% echo hix
+h
+% stty erase ''
+syntax error
+% gtty
+gtty: not found
+% getty
+getty: not found
+% 
+;login: tjail@thalia
+% stty ers#ase 
+% asdlkhjasd
+% echo hello world!/
+!/: not found
+% 
+;login: tal@thalia
+% ed /usr/source/s2/sh.c
+10267
+s@/'\\'/
+        case '\'':
+/'\\/
+                        if(c == '\n') {
+//
+        case '\n':
+//
+                *linep++ = '\0';
+//
+                if(any(c, " '\"\t;&<>()|^\n")) {
+//
+                        *linep++ = '\0';
+//
+                while((c=getc()) != '\n');
+//
+                while((c=getc()) != '\n');
+/
+?
+//
+?
+//
+?
+//
+?
+/'\\'#/[#
+                if(c != '\0')
+//
+        if(c == '\\') {
+//
+                if(c == '\n')
+//
+        case '\n':
+//
+                if(*s2++ == '\0')
+//
+                while (*s != '\0' && *s != '/')
+//
+        } while (*s++ != '\0');
+//
+        } while(*cp != '\n');
+//
+        case '\t':
+//
+        case '\'':
+//
+                        if(c == '\n') {
+//
+        case '\n':
+//
+                *linep++ = '\0';
+//
+                if(any(c, " '\"\t;&<>()|^\n")) {
+//
+                        *linep++ = '\0';
+//
+                while((c=getc()) != '\n');
+//
+                while((c=getc()) != '\n');
+//
+                if(c != '\0')
+//
+        if(c == '\\') {
+//
+                if(c == '\n')
+//
+        case '\n':
+//
+                if(*s2++ == '\0')
+//
+                while (*s != '\0' && *s != '/')
+//
+        } while (*s++ != '\0');
+//
+        } while(*cp != '\n');
+//
+        case '\t':
+//
+        case '\'':
+//
+                        if(c == '\n') {
+//
+        case '\n':
+//
+                *linep++ = '\0';
+//
+                if(any(c, " '\"\t;&<>()|^\n")) {
+//
+                        *linep++ = '\0';
+??
+                if(any(c, " '\"\t;&<>()|^\n")) {
+.-10,.+10p\
+?
+.-10,.+10p
+                *linep++ = c;
+                *linep++ = '\0';
+                return;
+        }
+
+        peekc = c;
+
+pack:
+        for(;;) {
+                c = getc();
+                if(any(c, " '\"\t;&<>()|^\n")) {
+                        peekc = c;
+                        if(any(c, "\"'"))
+                                goto loop;
+                        *linep++ = '\0';
+                        return;
+                }
+                *linep++ = c;
+        }
+}
+
+//
+                while((c=getc()) != '\n');
+//
+                while((c=getc()) != '\n');
+//
+                if(c != '\0')
+//
+        if(c == '\\') {
+//
+                if(c == '\n')
+??
+        if(c == '\\') {
+.,.+23p
+        if(c == '\\') {
+                c = readc();
+                if(c == '\n')
+                        return(' ');
+                return(c|quote);
+        }
+        if(c == '$') {
+                c = getc();
+                if(c>='0' && c<='9') {
+                        if(c-'0' < dolc)
+                                dolp = dolv[c-'0'];
+                        goto getd;
+                }
+        }
+        return(c&0177);
+}
+
+readc()
+{
+        int c;
+
+        if(read(0, &c, 1) != 1)
+                exit();
+        return(c&0377);
+q
+% echo  | od
+0000000 005010
+0000002 
+% printf
+printf: not found
+% stty erase 
+% echo hello world!
+!: not found
+% pwd
+../usr/thalia
+% 
+;login: bin
+% chdir /usr/ss#ys/dmr
+% ed tty.c
+6506
+/tty/#output/;/^}/p
+                ttyoutput(c, tp);
+                ttstart(tp);
+        }
+}
+/ttyp@/^ttyo/;/^}/p
+ttyoutput(ac, tp)
+struct tty *tp;
+{
+        register int c;
+        register struct tty *rtp;
+        register char *colp;
+        int ctype;
+
+        rtp = tp;
+        c = ac&0177;
+        if (c==004 && (rtp->t_flags&RAW)==0)
+                return;
+        if (c=='\t' && rtp->t_flags&XTABS) {
+                do
+                        ttyoutput(' ', rtp);
+                while (rtp->t_col&07);
+                return;
+        }
+        if (rtp->t_flags&LCASE) {
+                switch (c) {
+
+                case '{':
+                        c = '(';
+                        goto esc;
+
+                case '}':
+                        c = ')';
+                        goto esc;
+
+                case '|':
+                        c = '!';
+                        goto esc;
+
+                case '~':
+                        c = '^';
+                        goto esc;
+
+                case '`':
+                        c = '\'';
+
+                esc:
+                        ttyoutput('\\', rtp);
+                }
+                if ('a'<=c && c<='z')
+                        c =+ 'A' - 'a';
+        }
+        if (c=='\n' && rtp->t_flags&CRMOD)
+                ttyoutput('\r', rtp);
+        if (putc(c, &rtp->t_outq))
+                return;
+        colp = &rtp->t_col;
+        ctype = partab[c];
+        c = 0;
+        switch (ctype&077) {
+
+        /* ordinary */
+        case 0:
+                (*colp)++;
+
+        /* non-printing */
+        case 1:
+                break;
+
+        /* backspace */
+        case 2:
+                if (*colp)
+                        (*colp)--;
+                break;
+
+        /* newline */
+        case 3:
+                if (*colp)
+                        c = max((*colp>>4) + 3, 6);
+                *colp = 0;
+                break;
+
+        /* tab */
+        case 4:
+                if ((rtp->t_flags&NTDELAY)==0)
+                        c = 1 - (*colp | ~07);
+                *colp =| 07;
+                (*colp)++;
+                break;
+
+        /* vertical motion */
+        case 5:
+                c = 0177;
+                break;
+
+        /* carriage return */
+        case 6:
+                c = 6;
+                *colp = 0;
+        }
+        if (c && (rtp->t_flags&NODELAY)==0)
+                putc(c|0200, &rtp->t_outq);
+}
+?back?
+        /* backspace */
+
+        case 2:
+
+                if (*colp)
+s/^/\/*/p
+/*              if (*colp)
+
+                        (*colp)--;
+s/$/*\//[#p
+                        (*colp)--;*/
+w
+6510
+q
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% mv tty.c@mv a.out /nunix
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+sn@sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64525
+
+;login: th
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64524
+
+;login: thalia
+% echo 
+
+% stty erase 
+% chdir
+chd: not found
+% chdirmod
+arg count
+% 
+;login: bin
+% ed /usr/sys/dmr/tty/#.c
+6510
+/backspace/
+        /* backspace */
+
+        case 2:
+
+/*              if (*colp)
+s/\/\*/s#//p
+?
+s/\/\*//p
+                if (*colp)
+
+                        (*colp)--;*/
+s/\*\///p
+                        (*colp)--;
+^
+                if (*colp)
+s/$/ {/p
+                if (*colp) {
+
+                        (*colp)--;
+a
+                }
+.
+^
+                        (*colp)--;
+!date 0828#62220
+Mon Aug 26 22:20:00 MDT 1974
+!
+
+                }
+.-5,.p
+
+        /* backspace */
+        case 2:
+                if (*colp) {
+                        (*colp)--;
+                }
+d
+^
+                        (*colp)--;
+^
+                if (*colp) {
+s/ {//p
+                if (*colp)
+/^ttyinput/;/^}/p
+ttyinput(ac, atp)
+struct tty *atp;
+{
+        register int t_flags, c;
+        register struct tty *tp;
+
+        tp = atp;
+        c = ac;
+        t_flags = tp->t_flags;
+        if ((c =& 0177) == '\r' && t_flags&CRMOD)
+                c = '\n';
+        if ((t_flags&RAW)==0 && (c==tp->t_quit || c==tp->t_intrup)) {
+                signal(tp, c==tp->t_intrup? SIGINT:SIGQIT);
+                flushtty(tp);
+                return;
+        }
+        if (tp->t_rawq.c_cc>=TTYHOG) {
+                flushtty(tp);
+                return;
+        }
+        if (t_flags&LCASE && c>='A' && c<='Z')
+                c =+ 'a'-'A';
+        putc(c, &tp->t_rawq);
+        if (t_flags&RAW || c=='\n' || c==004) {
+                wakeup(&tp->t_rawq);
+                if (putc(0377, &tp->t_rawq)==0)
+                        tp->t_delct++;
+        }
+        if (t_flags&ECHO) {
+                ttyoutput(c, tp);
+                ttstart(tp);
+        }
+}
+?ttyoutput?
+                ttyoutput(c, tp);
+c
+                if(# (tt#@              if (c==tp->t_erase && tp->t_erase@              if(# (c =##==tp->t_erase && c=='#008) {
+                        ttyoutput(008, tp);
+                        ttyoutput(' ', tp);
+                        ttyoutput('#008, tp);
+                }
+.
+.-5,.p
+        if (t_flags&ECHO) {
+                if (c==tp->t_erase && c==008) {
+                        ttyoutput(008, tp);
+                        ttyoutput(' ', tp);
+                        ttyoutput(008, tp);
+                }
+^
+                        ttyoutput(008, tp);
+d
+
+                ttstart(tp);
+i
+                ttyoutput(008, tp);
+.
+w tty2.c
+6592
+!diff tty.c tty2.c
+can't open input
+!
+!l#pw
+?
+!
+!pwf#d
+../bin
+!
+!ls *.c
+tty2.c
+!
+!rm !@!diff /usr/sys/dmr/tty.c tty2.c
+241c241,245
+*               ttyoutput(c, tp);
+---
+.               if (c==tp->t_erase && c==008) {
+.                       ttyoutput(008, tp);
+.                       ttyoutput(' ', tp);
+.               }
+.               ttyoutput(008, tp);
+315,316c319,320
+* /*            if (*colp)
+*                       (*colp)--;*/
+---
+.               if (*colp)
+.                       (*colp)--;
+!
+.
+                ttyoutput(008, tp);
+c#s/008/c/p
+                ttyoutput(c, tp);
+w
+6590
+f
+/usr/sys/dmr/tty.c
+!rm tty2.c
+!
+q
+% cd#@chdir /usr/sys
+% cc ###sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% mv a,.o@mv a.out /nunix
+% ed /usr/source@chdir /usr/source/s2
+% ed stty.c
+1299
+/erase/
+                else if(eq("erase")) {
+
+                        mode[1].lobyte = **++argv;
+
+                        argc--;
+^
+                        mode[1].lobyte = **++argv;
+s/^/    /p
+                                mode[1].lobyte = **++argv;
+i
+                        @.
+.-23,.p
+?
+.-23,.p
+?
+1,$p
+#include "/usr/sys/param.h"
+
+char    *arg;
+int     mode[3];
+
+main(argc, argv)
+char    *argv[];
+{
+        int i;
+
+        gtty(1,mode);
+        while(--argc > 0) {
+
+                arg = *++argv;
+                if(eq("ek"))
+                        mode[1] = '#@';
+                else if(eq("erase")) {
+                                mode[1].lobyte = **++argv;
+                        argc--;
+                } else if(eq("kill")) {
+                        mode[1].hibyte = **++argv;
+                        argc--;
+                } else if(eq("even"))
+                        set(0200);
+                else if(eq("-even"))
+                        reset(0200);
+                else if(eq("odd"))
+                        set(0100);
+                else if(eq("-odd"))
+                        reset(0100);
+                else if(eq("raw"))
+                        set(040);
+                else if(eq("-raw") || eq("cooked"))
+                        reset(040);
+                else if(eq("-nl"))
+                        set(020);
+                else if(eq("nl"))
+                        reset(020);
+                else if(eq("echo"))
+                        set(010);
+                else if(eq("-echo"))
+                        reset(010);
+                else if(eq("lcase"))
+                        set(04);
+                else if(eq("-lcase"))
+                        reset(04);
+                else if(eq("-tabs"))
+                        set(02);
+                else if(eq("tabs"))
+                        reset(02);
+                else if(eq("-delay"))
+                        set(01);
+                else if(eq("delay"))
+                        reset(01);
+                else if(eq("tdelay"))
+                        reset(010000);
+                else if(eq("-tdelay"))
+                        set(010000);
+                else if(arg)
+                        printf("unknown mode: %s\n", arg);
+        }
+        stty(1,mode);
+}
+
+eq(string)
+char *string;
+{
+        int i;
+
+        if(!arg)
+                return(0);
+        i = 0;
+loop:
+        if(arg[i] != string[i])
+                return(0);
+        if(arg[i++] != '\0')
+                goto loop;
+        arg = 0;
+        return(1);
+}
+
+set(b)
+{
+
+        mode[2] =| b;
+}
+
+reset(b)
+{
+
+        mode[2] =& ~b;
+}
+?eq?
+?
+?eq?
+eq(string)
+
+char *string;
+
+{
+
+        int i;
+
+
+
+        if(!arg)
+.,.+1d
+
+loop:
+
+        if(arg[i] != string[i])
+
+                return(0);
+
+        if(arg[i++] != '\0')
+
+                goto loop;
+
+        arg = 0;
+
+        return(1);
+^d
+?ar@?eq?;/^}/p
+eq(string)
+char *string;
+{
+        int i;
+
+        i = 0;
+loop:
+        if(arg[i] != string[i])
+                return(0);
+        if(arg[i++] != '\0')
+                goto loop;
+        return(1);
+}
+/eise @/sl##else if (arg)/
+?
+/else if/#(arg)/
+                else if(arg)
+c
+                else
+.
+/main/
+main(argc, argv)
+/inti# i/
+        int i;
+.,.+1d
+/erase/
+                else if(eq("erase")) {
+a
+                        arg = arg###*++argv;
+                        argc--;
+                        if(eq("bs"))
+                                @                       mode[1].lobyte = eq(b#"bs") ? 008 : *arg;
+.
+^
+                        if(eq("bs"))
+d
+.-12,.+5p
+main(argc, argv)
+char    *argv[];
+{
+        gtty(1,mode);
+        while(--argc > 0) {
+
+                arg = *++argv;
+                if(eq("ek"))
+                        mode[1] = '#@';
+                else if(eq("erase")) {
+                        arg = *++argv;
+                        argc--;
+                        mode[1].lobyte = eq("bs") ? 008 : *arg;
+                                mode[1].lobyte = **++argv;
+                        argc--;
+                } else if(eq("kill")) {
+                        mode[1].hibyte = **++argv;
+                        argc--;
+?lobyte?d
+
+                } else if(eq("kill")) {
+^
+                        argc--;
+d
+!pwd
+../usr/source/s2
+!
+!@w stty3#2.c
+1280
+!diff stty.c stty2.c
+9,10d8
+*       int i;
+* 
+18c16
+*                       mode[1].lobyte = **++argv;
+---
+.                       arg = *++argv;
+19a18
+.                       mode[1].lobyte = eq("bs") ? 008 : *arg;
+59c58
+*               else if(arg)
+---
+.               else
+70,71d68
+*       if(!arg)
+*               return(0);
+78d74
+*       arg = 0;
+!
+!mv stty.c stty.c.bak
+!
+!@f
+stty.c
+w
+1280
+!rm stty2.c
+!
+q
+% cc stty.c
+% mv @ls /@mv /bin/stty /bin/stty.bak
+% mv a.out /bin/stty
+% sync
+% stty erase bs
+% echo hello
+% echo world
+wor
+% rm stty.c.bak
+% ls
+mail.c
+mesg.s
+mkdir.s
+mkfs.c
+mknod.c
+mount.c
+msh.s
+mv.c
+nice.c
+nm.c
+nohup.c
+od.c
+passwd.s
+pfe.s
+pr.c
+prof.c
+ps.c
+pwd.c
+restor.c
+rew.s
+rm.c
+rmdir.s
+sa.c
+sh.alias
+sh.c
+size.c
+sleep.c
+sort.c
+split.c
+strip.s
+stty.c
+su.c
+sum.s
+sync.c
+tee.c
+time.s
+tp1.s
+tp2.s
+tp3.s
+tp4.s
+tr.c
+tty.s
+typo.c
+umount.c
+uniq.c
+update.s
+wc.c
+who.c
+write.s
+% sync
+% chdir /usr/sys
+% cc @sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% mv a.out /nunix
+% sync
+% stty b@
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+u#nunix
+k
+nunix
+mem = 64524
+
+;login: thalia
+% stty bs##erase bs
+% helloworld
+% ls hello
+% asc@
+;login: bin
+% ls hi
+% ls hi
+hi not found
+% pwd
+../bin
+% 
+;login: in@@@bin
+% chdir /usr/sys/dmr
+% date 08262300
+Mon Aug 26 23:00:00 MDT 1974
+% ed tty.c
+6590
+g/008/s//'\b'/p
+                if (c==tp->t_erase && c=='b') {
+                        ttyoutput('b', tp);
+g/'b'/s//'\\b'/p
+                if (c==tp->t_erase && c=='\b') {
+                        ttyoutput('\b', tp);
+w
+6592
+q
+% ed /usr/source/s2/stty.c
+1280
+/008/
+                        mode[1].lobyte = eq("bs") ? 008 : *arg;
+s//'\\b'/p
+                        mode[1].lobyte = eq("bs") ? '\b' : *arg;
+w
+1281
+q
+% sync
+% cat
+
+% 
+;login: bin
+% cat 
+
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> k unix
+Unknown command
+sim> b rk
+k
+unix
+mem = 64525
+
+;login: bin
+% bin
+bin: not found
+% cat
+
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
