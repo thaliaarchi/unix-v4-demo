@@ -104,11 +104,15 @@ donow:
 		goto toolong;
 	i = cat("/usr", i);
 	execv(i, av);
+	if(errno == E2BIG)
+		goto toolong;
 	if(errno == ENOENT)
 		goto per;
 	*av = i;
 	*--av = "/bin/sh";
 	execv(av[0], av);
+	if(errno == E2BIG)
+		goto toolong;
 
 per:
 	write(2, "Command not found\n", 18);

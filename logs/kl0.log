@@ -11260,3 +11260,555 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: thalia
+% cdi##hdir /usr/source/s1
+% grep x *
+Command not found
+% ls | wc -c
+      0 
+% ls
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% echo | wc -c
+      0 
+% wc
+asd
+asd
+      2       2 
+% ls | cw\###wc
+cwc: not found
+% ls | wc
+     86      86 
+% ed /usr/source/s2/wc.c
+2294
+1,$P
+?
+1,$p
+#define NUL 1
+#define SPC 2
+#define PUN 4
+#define ALP 8
+#define NEW 16
+
+int linect[2];
+int alphct[2];
+int punct[2];
+int wordct[2];
+int ctlct[2];
+
+int roffflg 0;
+int codeflg 0;
+
+char *code "-lw";
+
+char class[128] {
+        NUL,NUL,NUL,NUL,NUL,NUL,NUL,NUL,
+        NUL,SPC,NEW,NUL,NUL,NUL,NUL,NUL,
+        NUL,NUL,NUL,NUL,NUL,NUL,NUL,NUL,
+        NUL,NUL,NUL,NUL,NUL,NUL,NUL,NUL,
+        SPC,PUN,PUN,PUN,PUN,PUN,PUN,PUN,
+        PUN,PUN,PUN,PUN,PUN,PUN,PUN,PUN,
+        ALP,ALP,ALP,ALP,ALP,ALP,ALP,ALP,
+        ALP,ALP,PUN,PUN,PUN,PUN,PUN,PUN,
+        PUN,ALP,ALP,ALP,ALP,ALP,ALP,ALP,
+        ALP,ALP,ALP,ALP,ALP,ALP,ALP,ALP,
+        ALP,ALP,ALP,ALP,ALP,ALP,ALP,ALP,
+        ALP,ALP,ALP,PUN,PUN,PUN,PUN,ALP,
+        PUN,ALP,ALP,ALP,ALP,ALP,ALP,ALP,
+        ALP,ALP,ALP,ALP,ALP,ALP,ALP,ALP,
+        ALP,ALP,ALP,ALP,ALP,ALP,ALP,ALP,
+        ALP,ALP,ALP,PUN,PUN,PUN,PUN,NUL
+};
+char buf[518];
+
+main(argc,argv)
+char **argv;
+{
+        int i, j;
+        register int c;
+        if(--argc>=1 & **++argv=='-') { /* `&' is intentional */
+                for(i=1;c=argv[0][i];i++)
+                        if(c=='r') roffflg = 1;
+                        else codeflg = 1;
+                if(codeflg) code = argv[0];
+                argc--;
+                argv++;
+        }
+        i = 0;
+        do {
+                if(argc<=0) buf[0] = 0;
+                else if(fopen(argv[i],buf)<0) {
+                        printf("%s: cannot open\n", argv[i]);
+                        continue;
+                }
+                count();
+                for(j=1;code[j];j++) {
+                        switch(code[j]) {
+                        case 'l':
+                                putd(linect);
+                                break;
+                        case 'a':
+                                putd(alphct);
+                                break;
+                        case 'p':
+                                putd(punct);
+                                break;
+                        case 'w':
+                                putd(wordct);
+                                break;
+                        case 'c':
+                                putd(ctlct);
+                                break;
+                        }
+                }
+                printf("%s\n", argc<=0?"":argv[i]);
+        } while(++i<argc);
+}
+
+count()
+{
+        register newline, token, c;
+        newline = 1;
+        token = 0;
+        clear(linect);
+        clear(alphct);
+        clear(punct);
+        clear(wordct);
+        clear(ctlct);
+        while((c=getc(buf))>=0) {
+                c =& 0177;
+                if(newline) {
+                        if(roffflg&&(c=='.'||c=='\'')) {
+                                inc(ctlct);
+                                while(((c=getc(buf)>=0))&&c!='\n');
+                                continue;
+                        }
+                        else {
+                                newline = 0;
+                                inc(linect);
+                        }
+                }
+                if(c<0) continue;
+                c = class[c];
+                if(c&NUL) continue;
+                if(c&(ALP|PUN)) {
+                        if(token==c) continue;
+                        if(token==0) inc(wordct);
+                        token = c;
+                        if(c&ALP) inc(alphct);
+                        else inc(punct);
+                        continue;
+                }
+                if(c&(SPC|NEW)) {
+                        token = 0;
+                        if(c&NEW) newline = 1;
+                }
+        }
+}
+
+clear(ct)
+int ct[2];
+{
+        ct[0] = ct[1] = 0;
+}
+
+inc(ct)
+int ct[2];
+{
+        ct[0]++;
+        if(ct[0]==0) ct[1]++;
+}
+
+putd(ct)
+int ct[2];
+{
+        printf("%7s ",locv(ct[1],ct[0]));
+}
+q
+% chdir /usr/thalia
+% ls /usr/source/s1 > s1.ls
+% ed s1.ls
+571
+q
+% r #m s1.ls
+% 
+;login: bin
+% ed /@ls -l /usr/source/s1/glob.c
+-rw-r--r-- 1 bin      3300 Aug 26 17:11 /usr/source/s1/glob.c
+% ed /uisr/sou@ed /usrs#/source/s1/glob.s#c
+3300
+/execv/
+        execv(av[0], av);
+a
+        printf("execv1"#\n");
+.
+//
+        execv(i, av);
+a
+        printf("execv1\n"_#);
+.
+//
+        execv(i, av);
+a
+        printf("execv1\n###3\n");
+.
+//
+        execv(av[0], av);
+
+
+
+per:
+^
+
+^
+        execv(av[0], av);
+a
+        printf("execv4\n");
+.
+//
+        execv(av[0], av);
+
+        printf("execv1\n");
+//
+        execv(i, av);
+
+        printf("execv1\n");
+s/1/2/p
+        printf("execv2\n");
+g/execv/p
+        execv(av[0], av);
+        printf("execv1\n");
+        execv(i, av);
+        printf("execv2\n");
+        execv(i, av);
+        printf("execv13\n");
+        execv(av[0], av);
+        printf("execv4\n");
+/13/
+        write(2, "No directory\n", 13);
+/
+?
+//
+?
+//
+?
+/13/
+        printf("execv13\n");
+s/1//p
+        printf("execv3\n");
+w
+3384
+q
+% cc glob.c
+1: Can't find glob.c
+% chdir /usr/source/s1
+% mv##cc glob.c
+% mv a.out /etc/glob
+% ls *
+execv1
+execv2
+Arg list too long
+% grep x *
+execv1
+execv2
+execv3
+execv4
+Command not found
+% /ex@ed grep.c
+?
+/execq
+?
+pwd@!pwd
+../usr/source/s1
+!
+q
+% ed grep.c
+?
+q
+% ed glob.c
+3384
+/execv4/
+        printf("execv4\n");
+s/4/@ %d/p
+?
+.
+        printf("execv4\n");
+c
+        printf("execv4 %d\n", errno);
+.
+?errno?
+        if(errno == ENOENT)
+ 
+                goto per;
+
+        *av = i;
+
+        *--av = "/bin/sh";
+??
+        if(errno == ENOENT)
+??
+        if(errno == E2BIG)
+w
+3394
+q
+% cc glob.c
+% mv a.out /etc/glob
+% grep x *
+execv1
+execv2
+execv3
+execv4 7
+Command not found
+% ed glob.c
+3394
+/execv1/
+        printf("execv1\n");
+c
+        printf("execv1 %d\n", errno);
+.
+/execv2/
+        printf("execv2\n");
+c
+        printf("execvw#2 %d\n", errno);
+.
+/errno@/execv3/p
+        printf("execv3\n");
+c
+        printf("execv3 %d\n", errno);\.##.#
+.
+.
+        printf("execv3 %d\n", errno);#
+s/\#//p
+        printf("execv3 %d\n", errno);
+w
+3424
+q
+% cc glob.c
+% mv a.out /etc/glob
+% grep x *
+execv1 2
+execv2 2
+execv3 7
+execv4 7
+Command not found
+% ls@pwd
+../usr/source/s1
+% ls > /usr/source/@ls /usr/t@ls > /usr/thalia/s1.ls
+/usr/thalia/s1.ls: cannot create
+% 
+;login: thalia
+% ls /usr/source/s1 > s1.ls
+% ed s1.ls
+571
+q
+% cat /usr/source#####sys/errno.c#h
+% cat /usr/sys/errno.
+% cat /usr/sys/errno.h
+/* u_error codes */
+#define EFAULT  106
+#define EPERM   1
+#define ENOENT  2
+#define ESRCH   3
+#define EIO     5
+#define ENXIO   6
+#define E2BIG   7
+#define ENOEXEC 8
+#define EBADF   9
+#define ECHILD  10
+#define EAGAIN  11
+#define ENOMEM  12
+#define EACCES  13
+#define ENOTBLK 15
+#define EBUSY   16
+#define EEXIST  17
+#define EXDEV   18
+#define ENODEV  19
+#define ENOTDIR 20
+#define EISDIR  21
+#define EINVAL  22
+#define ENFILE  23
+#define EMFILE  24
+#define ENOTTY  25
+#define ETXTBSY 26
+#define EFBIG   27
+#define ENOSPC  28
+#define ESPIPE  29
+#define EROFS   30
+% ed @pwd
+../usr/thalia
+% ch@who
+thalia  tty8 Aug 26 18:13
+% 
+;login: bin
+% chdir /usr/source/s1
+% ed glob.c
+3424
+/printf/
+        printf("execv1 %d\n", errno);
+g/printf/p
+        printf("execv1 %d\n", errno);
+        printf("execv2 %d\n", errno);
+        printf("execv3 %d\n", errno);
+        printf("execv4 %d\n", errno);
+g/printf/d
+/execv/
+        execv(av[0], av);
+
+        if(errno == E2BIG)
+//
+        execv(i, av);
+
+        if(errno == E2BIG)
+//
+        execv(i, av);
+
+        if(errno == ENOENT)
+i
+        if(errno = #= E2BIG)
+                goto toolong;
+.
+
+        if(errno == ENOENT)
+
+                goto per;
+
+        *av = i;
+
+        *--av = "/bin/sh";
+
+        execv(av[0], av);
+
+
+
+per:
+^
+
+^
+        execv(av[0], av);
+a
+        if(errno == E2BIG)
+                goto toolong;
+.
+w
+3372
+q
+% cc glob.c
+da% te
+Mon Aug 26 18:25:32 MDT 1974
+% date 08261830
+Mon Aug 26 18:30:00 MDT 1974
+% mv a.out /etc/glob
+% ls *
+Arg list too long
+% grep x *
+Arg list too long
+% sync
+% rm /usr/rh##thalia/s1.ls
+/usr/thalia/s1.ls: not removed
+% 
+;login: thalia
+% rm s1.ls
+% sync
+% 
