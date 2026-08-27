@@ -17323,3 +17323,366 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-23> attach dci line=2,4002
+%SIM-ERROR: Can't open network port: 4002
+boot.ini-24> attach dci line=3,4003
+%SIM-ERROR: Can't open network port: 4003
+boot.ini-25> attach dci line=4,4004
+%SIM-ERROR: Can't open network port: 4004
+boot.ini-26> attach dci line=5,4005
+%SIM-ERROR: Can't open network port: 4005
+boot.ini-27> attach dci line=6,4006
+%SIM-ERROR: Can't open network port: 4006
+boot.ini-28> attach dci line=7,4007
+%SIM-ERROR: Can't open network port: 4007
+boot.ini-29> attach dci line=8,4008
+%SIM-ERROR: Can't open network port: 4008
+boot.ini-30> attach dci line=9,4009
+%SIM-ERROR: Can't open network port: 4009
+boot.ini-31> attach dci line=10,4010
+%SIM-ERROR: Can't open network port: 4010
+boot.ini-32> attach dci line=11,4011
+%SIM-ERROR: Can't open network port: 4011
+boot.ini-33> attach dci line=12,4012
+%SIM-ERROR: Can't open network port: 4012
+boot.ini-34> attach dci line=13,4013
+%SIM-ERROR: Can't open network port: 4013
+boot.ini-35> attach dci line=14,4014
+%SIM-ERROR: Can't open network port: 4014
+boot.ini-36> attach dci line=15,4015
+%SIM-ERROR: Can't open network port: 4015
+boot.ini-57> attach dli line=0,4016
+%SIM-ERROR: Can't open network port: 4016
+boot.ini-58> attach dli line=1,4017
+%SIM-ERROR: Can't open network port: 4017
+boot.ini-59> attach dli line=2,4018
+%SIM-ERROR: Can't open network port: 4018
+boot.ini-60> attach dli line=3,4019
+%SIM-ERROR: Can't open network port: 4019
+boot.ini-61> attach dli line=4,4020
+%SIM-ERROR: Can't open network port: 4020
+boot.ini-62> attach dli line=5,4021
+%SIM-ERROR: Can't open network port: 4021
+boot.ini-63> attach dli line=6,4022
+%SIM-ERROR: Can't open network port: 4022
+boot.ini-64> attach dli line=7,4023
+%SIM-ERROR: Can't open network port: 4023
+boot.ini-65> attach dli line=8,4024
+%SIM-ERROR: Can't open network port: 4024
+boot.ini-66> attach dli line=9,4025
+%SIM-ERROR: Can't open network port: 4025
+boot.ini-67> attach dli line=10,4026
+%SIM-ERROR: Can't open network port: 4026
+boot.ini-68> attach dli line=11,4027
+%SIM-ERROR: Can't open network port: 4027
+boot.ini-69> attach dli line=12,4028
+%SIM-ERROR: Can't open network port: 4028
+boot.ini-70> attach dli line=13,4029
+%SIM-ERROR: Can't open network port: 4029
+boot.ini-71> attach dli line=14,4030
+%SIM-ERROR: Can't open network port: 4030
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64524
+
+;login: thalia
+% ed ps.s
+?
+a
+.globl  _PS
+_PS = 1777776
+.
+w
+25
+e ps.c
+?
+f
+ps.c
+a
+main()
+{
+        extern int PS;
+        PS;
+}
+.
+w
+32
+q
+% cc ps.c
+un: _PS
+% cc ps.s p@cc -c ps.c
+% as ps.s
+% mv a.out ps.o
+% ld ps.o ps@cc -c ps.c
+% as ps.c#s
+% mv a.out psdev#f.o
+% ld psdef.o ls.o
+File not found: ls.o
+% ld psdef.o ps.o
+un: rsave
+un: rretrn
+% cc psdef.o ps.c
+% a.out
+% cc -S psdef.o ps.c
+% cat ps.s
+.globl  _main
+.text
+_main:
+jsr     r5,rsave; 2
+mov     _PS,r0
+L1:jmp  rretrn
+% ls ps* a.out
+a.out
+ps.c
+ps.o
+ps.s
+psdef.o
+% rm ps* a.out
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-23> attach dci line=2,4002
+%SIM-ERROR: Can't open network port: 4002
+boot.ini-24> attach dci line=3,4003
+%SIM-ERROR: Can't open network port: 4003
+boot.ini-25> attach dci line=4,4004
+%SIM-ERROR: Can't open network port: 4004
+boot.ini-26> attach dci line=5,4005
+%SIM-ERROR: Can't open network port: 4005
+boot.ini-27> attach dci line=6,4006
+%SIM-ERROR: Can't open network port: 4006
+boot.ini-28> attach dci line=7,4007
+%SIM-ERROR: Can't open network port: 4007
+boot.ini-29> attach dci line=8,4008
+%SIM-ERROR: Can't open network port: 4008
+boot.ini-30> attach dci line=9,4009
+%SIM-ERROR: Can't open network port: 4009
+boot.ini-31> attach dci line=10,4010
+%SIM-ERROR: Can't open network port: 4010
+boot.ini-32> attach dci line=11,4011
+%SIM-ERROR: Can't open network port: 4011
+boot.ini-33> attach dci line=12,4012
+%SIM-ERROR: Can't open network port: 4012
+boot.ini-34> attach dci line=13,4013
+%SIM-ERROR: Can't open network port: 4013
+boot.ini-35> attach dci line=14,4014
+%SIM-ERROR: Can't open network port: 4014
+boot.ini-36> attach dci line=15,4015
+%SIM-ERROR: Can't open network port: 4015
+boot.ini-57> attach dli line=0,4016
+%SIM-ERROR: Can't open network port: 4016
+boot.ini-58> attach dli line=1,4017
+%SIM-ERROR: Can't open network port: 4017
+boot.ini-59> attach dli line=2,4018
+%SIM-ERROR: Can't open network port: 4018
+boot.ini-60> attach dli line=3,4019
+%SIM-ERROR: Can't open network port: 4019
+boot.ini-61> attach dli line=4,4020
+%SIM-ERROR: Can't open network port: 4020
+boot.ini-62> attach dli line=5,4021
+%SIM-ERROR: Can't open network port: 4021
+boot.ini-63> attach dli line=6,4022
+%SIM-ERROR: Can't open network port: 4022
+boot.ini-64> attach dli line=7,4023
+%SIM-ERROR: Can't open network port: 4023
+boot.ini-65> attach dli line=8,4024
+%SIM-ERROR: Can't open network port: 4024
+boot.ini-66> attach dli line=9,4025
+%SIM-ERROR: Can't open network port: 4025
+boot.ini-67> attach dli line=10,4026
+%SIM-ERROR: Can't open network port: 4026
+boot.ini-68> attach dli line=11,4027
+%SIM-ERROR: Can't open network port: 4027
+boot.ini-69> attach dli line=12,4028
+%SIM-ERROR: Can't open network port: 4028
+boot.ini-70> attach dli line=13,4029
+%SIM-ERROR: Can't open network port: 4029
+boot.ini-71> attach dli line=14,4030
+%SIM-ERROR: Can't open network port: 4030
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64524
+
+;login: thalia
+% ed ps.#def.s
+?
+a
+l#.globl _O#PS
+PS = @_PS = 0#1777776
+.
+w
+25
+f ps.c
+ps.c
+a
+main()
+{
+        extern PS;
+        PS##printf("%d\n", PS);
+}
+.
+w
+69
+!cc ###as psdef.s
+!
+!mv ps##a.out psdef.o
+!
+!cc psdef.o psd#.c
+1: External definition syntax
+5: Unknown keyword
+5: Statement syntax
+7: main undefined
+7: _PS undefined
+7: globl undefined
+7: PS undefined
+8: main undefined
+8: _PS undefined
+8: globl undefined
+8: PS undefined
+!
+f
+ps.c
+1,$PO
+?
+1,$p
+.globl _PS
+_PS = 1777776
+main()
+{
+        extern PS;
+        printf("%d\n", PS);
+}
+1,2d
+w
+44
+e TODO
+190
+1,$P
+?
+1,$p
+TODO:
+- Implement char class ranges in ed
+- Make date Y2K compliant
+- Report non-existent files in cat
+- Allow omitting closing / in ed
+- Make ed listing (l) escape non-printable characters
+!cc psdef.o ps.c
+!
+!a.out
+116
+!
+/extern/m0
+?
+/extern/m1
+?
+1
+TODO:
+e ps.c
+44
+/extern/m0
+1
+        extern PS;
+s/      //p
+extern PS;
+w
+43
+q
+% cc psdef.o ps.c
+% a.out
+116
+% cat ps.c
+extern PS;
+main()
+{
+        printf("%d\n", PS);
+}
+% cc -S psdef.o psd#.d#c
+% cat ps.s
+.globl  _PS
+.comm   _PS,02
+.globl  _main
+.text
+_main:
+jsr     r5,rsave; 2
+.data
+L2:.byte 045,0144,012,0
+.even
+.text
+mov     _PS,(sp)
+mov     $L2,-(sp)
+jsr     pc,*$_printf
+tst     (sp)+
+L1:jmp  rretrn
+% ed ps.c
+43
+/printf/c
+        prinrf@ printf("%o %# = @#      printf("0%o = %d\n", &PS, PS);
+.
+w
+54
+q
+% cc psdef.o ps.c
+% a.out
+0177776 = 116
+% ls -l
+total 56
+-rw-rw-rw- 1 thalia    190 Aug 26 23:31 TODO
+-rwxrwxrwx 1 thalia   1196 Aug 26 23:50 a.out
+-rw-rw-rw- 1 root       86 Aug 18 18:08 beeps.c
+-rw-rw-rw- 1 thalia      3 Aug 18 18:16 hi
+drwxr-xr-x 7 thalia    176 Aug 18 12:23 hints
+-rw-rw-rw- 1 thalia   1383 Aug 18 17:18 lrc2026
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia     54 Aug 26 23:50 ps.c
+-rw-rw-rw- 1 thalia    176 Aug 26 23:50 ps.o
+-rw-rw-rw- 1 thalia    176 Aug 26 23:49 ps.s
+-rwxrwxrwx 1 thalia     28 Aug 26 23:47 psdef.o
+-rw-rw-rw- 1 thalia     25 Aug 26 23:46 psdef.s
+-rw-rw-rw- 1 thalia   5317 Aug 18 10:28 rfc4
+-rw-rw-rw- 1 thalia   9227 Aug 18 17:36 saturnv
+-rw-rw-rw- 1 thalia     25 Aug 18 11:08 thanks
+-rwxrwxrwx 1 thalia   2040 Aug 26 23:41 ttyinfo
+-rw-rw-rw- 1 thalia   1112 Aug 26 23:41 ttyinfo.c
+% strip a.out
+% ll a.out
+ll: not found
+% ls -l a.out
+-rwxrwxrwx 1 thalia    920 Aug 26 23:51 a.out
+% rm a.out ps*
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
