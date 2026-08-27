@@ -239,16 +239,10 @@ struct tty *atp;
 	}
 	if (t_flags&ECHO) {
 		if ((t_flags&RAW)==0 && c==tp->t_erase && c=='\b') {
-			if (tp->t_col>tp->t_ocol) {
-				ttyoutput('\b', tp, 0);
-				ttyoutput(' ', tp, 0);
-				ttyoutput('\b', tp, 0);
-			} else {
-				ttyoutput('^', tp, 0);
-				ttyoutput('H', tp, 0);
-			}
-		} else
-			ttyoutput(c, tp, 0);
+			ttyoutput('\b', tp);
+			ttyoutput(' ', tp);
+		}
+		ttyoutput(c, tp);
 		ttstart(tp);
 	}
 }
@@ -257,7 +251,7 @@ struct tty *atp;
  * put character on TTY output queue, adding delays,
  * expanding tabs, and handling the CR/NL bit.
  */
-ttyoutput(ac, tp, out)
+ttyoutput(ac, tp)
 struct tty *tp;
 {
 	register int c;
@@ -271,7 +265,7 @@ struct tty *tp;
 		return;
 	if (c=='\t' && rtp->t_flags&XTABS) {
 		do
-			ttyoutput(' ', rtp, out);
+			ttyoutput(' ', rtp);
 		while (rtp->t_col&07);
 		return;
 	}
@@ -298,13 +292,13 @@ struct tty *tp;
 			c = '\'';
 
 		esc:
-			ttyoutput('\\', rtp, out);
+			ttyoutput('\\', rtp);
 		}
 		if ('a'<=c && c<='z')
 			c =+ 'A' - 'a';
 	}
 	if (c=='\n' && rtp->t_flags&CRMOD)
-		ttyoutput('\r', rtp, out);
+		ttyoutput('\r', rtp);
 	if (putc(c, &rtp->t_outq))
 		return;
 	colp = &rtp->t_col;
@@ -351,8 +345,6 @@ struct tty *tp;
 		c = 6;
 		*colp = 0;
 	}
-	if (out)
-		rtp->t_ocol = *colp;
 	if (c && (rtp->t_flags&NODELAY)==0)
 		putc(c|0200, &rtp->t_outq);
 }
@@ -415,7 +407,7 @@ struct tty *atp;
 			sleep(&tp->t_outq, TTOPRI);
 		}
 		spl0();
-		ttyoutput(c, tp, 1);
+		ttyoutput(c, tp);
 	}
 	ttstart(tp);
 }
