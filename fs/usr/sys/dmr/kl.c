@@ -38,6 +38,8 @@ klopen(dev, flag)
 		return;
 	}
 	tp = &kl11[dev.d_minor];
+	tp->t_erase = CERASE;
+	tp->t_kill = CKILL;
 	tp->t_quit = 034;		/* ctl shf l */
 	tp->t_intrup = 0177;		/* DEL */
 	if (u.u_procp->p_ttyp == 0)
@@ -98,9 +100,13 @@ int *v;
 
 	tp = &kl11[dev.d_minor];
 	if (v)
+		v[1].lobyte = tp->t_erase;
+		v[1].hibyte = tp->t_kill;
 		v[2] = tp->t_flags;
 	else {
 		wflushtty(tp);
+		tp->t_erase = u.u_arg[1].lobyte;
+		tp->t_kill = u.u_arg[1].hibyte;
 		tp->t_flags = u.u_arg[2];
 	}
 }

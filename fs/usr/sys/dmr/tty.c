@@ -175,12 +175,12 @@ loop:
 		}
 		if ((tp->t_flags&RAW)==0) {
 			if (bp[-1]!='\\') {
-				if (c==CERASE) {
+				if (c==tp->t_erase) {
 					if (bp > &canonb[2])
 						bp--;
 					continue;
 				}
-				if (c==CKILL)
+				if (c==tp->t_kill)
 					goto loop;
 				if (c==CEOT)
 					continue;

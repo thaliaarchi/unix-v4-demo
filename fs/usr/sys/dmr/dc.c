@@ -89,6 +89,8 @@ dcopen(dev, flag)
 	rtp->t_state =| WOPEN;
 	addr->dcrcsr =| IENABLE|CDLEAD;
 	if ((rtp->t_state&ISOPEN) == 0) {
+		rtp->t_erase = CERASE;
+		rtp->t_kill = CKILL;
 		rtp->t_quit = 034;		/* FS */
 		rtp->t_intrup = 0177;		/* DEL */
 		addr->dcrcsr = IENABLE|CDLEAD|SPEED1;
@@ -179,12 +181,15 @@ int *av;
 	v = av;
 	if (v) {
 		*v++ = tp->t_speeds;
-		*v++ = 0;
-		*v++ = tp->t_flags;
+		v->lobyte = tp->t_erase;
+		v->hibyte = tp->t_kill;
+		v[1] = tp->t_flags;
 		return;
 	}
 	wflushtty(tp);
 	tp->t_speeds = u.u_arg[0];
+	tp->t_erase = u.u_arg[1].lobyte;
+	tp->t_flags = u.u_arg[1].hibyte;
 	tp->t_flags = u.u_arg[2];
 	if (r = dcrstab[tp->t_speeds.lobyte&017])
 		tp->t_addr->dcrcsr = r;

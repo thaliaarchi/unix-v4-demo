@@ -63,6 +63,8 @@ dhopen(dev, flag)
 	DHADDR->dhcsr =| IENABLE;
 	tp->t_state =| WOPEN|SSTART;
 	if ((tp->t_state&ISOPEN) == 0) {
+		tp->t_erase = CERASE;
+		tp->t_kill = CKILL;
 		tp->t_quit = 034;		/* FS */
 		tp->t_intrup = 0177;		/* DEL */
 		tp->t_speeds = SSPEED | (SSPEED<<8);
@@ -132,12 +134,15 @@ int *av;
 	v = av;
 	if (v) {
 		*v++ = tp->t_speeds;
-		*v++ = 0;
-		*v++ = tp->t_flags;
+		v->lobyte = tp->t_erase;
+		v->hibyte = tp->t_kill;
+		v[1] = tp->t_flags;
 		return;
 	}
 	wflushtty(tp);
 	tp->t_speeds = u.u_arg[0];
+	tp->t_erase = u.u_arg[1].lobyte;
+	tp->t_kill = u.u_arg[1].hibyte;
 	tp->t_flags = u.u_arg[2];
 	dhparam(tp);
 }

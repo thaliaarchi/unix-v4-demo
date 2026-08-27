@@ -11811,4 +11811,1094 @@ Arg list too long
 ;login: thalia
 % rm s1.ls
 % sync
+% Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-23> attach dci line=2,4002
+%SIM-ERROR: Can't open network port: 4002
+boot.ini-24> attach dci line=3,4003
+%SIM-ERROR: Can't open network port: 4003
+boot.ini-25> attach dci line=4,4004
+%SIM-ERROR: Can't open network port: 4004
+boot.ini-26> attach dci line=5,4005
+%SIM-ERROR: Can't open network port: 4005
+boot.ini-27> attach dci line=6,4006
+%SIM-ERROR: Can't open network port: 4006
+boot.ini-28> attach dci line=7,4007
+%SIM-ERROR: Can't open network port: 4007
+boot.ini-29> attach dci line=8,4008
+%SIM-ERROR: Can't open network port: 4008
+boot.ini-30> attach dci line=9,4009
+%SIM-ERROR: Can't open network port: 4009
+boot.ini-31> attach dci line=10,4010
+%SIM-ERROR: Can't open network port: 4010
+boot.ini-32> attach dci line=11,4011
+%SIM-ERROR: Can't open network port: 4011
+boot.ini-33> attach dci line=12,4012
+%SIM-ERROR: Can't open network port: 4012
+boot.ini-34> attach dci line=13,4013
+%SIM-ERROR: Can't open network port: 4013
+boot.ini-35> attach dci line=14,4014
+%SIM-ERROR: Can't open network port: 4014
+boot.ini-36> attach dci line=15,4015
+%SIM-ERROR: Can't open network port: 4015
+boot.ini-57> attach dli line=0,4016
+%SIM-ERROR: Can't open network port: 4016
+boot.ini-58> attach dli line=1,4017
+%SIM-ERROR: Can't open network port: 4017
+boot.ini-59> attach dli line=2,4018
+%SIM-ERROR: Can't open network port: 4018
+boot.ini-60> attach dli line=3,4019
+%SIM-ERROR: Can't open network port: 4019
+boot.ini-61> attach dli line=4,4020
+%SIM-ERROR: Can't open network port: 4020
+boot.ini-62> attach dli line=5,4021
+%SIM-ERROR: Can't open network port: 4021
+boot.ini-63> attach dli line=6,4022
+%SIM-ERROR: Can't open network port: 4022
+boot.ini-64> attach dli line=7,4023
+%SIM-ERROR: Can't open network port: 4023
+boot.ini-65> attach dli line=8,4024
+%SIM-ERROR: Can't open network port: 4024
+boot.ini-66> attach dli line=9,4025
+%SIM-ERROR: Can't open network port: 4025
+boot.ini-67> attach dli line=10,4026
+%SIM-ERROR: Can't open network port: 4026
+boot.ini-68> attach dli line=11,4027
+%SIM-ERROR: Can't open network port: 4027
+boot.ini-69> attach dli line=12,4028
+%SIM-ERROR: Can't open network port: 4028
+boot.ini-70> attach dli line=13,4029
+%SIM-ERROR: Can't open network port: 4029
+boot.ini-71> attach dli line=14,4030
+%SIM-ERROR: Can't open network port: 4030
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64525
+
+;login: bin
+% chdir /usr/sys/ken
+% date 08262030
+Mon Aug 26 20:30:00 MDT 1974
+% grep -n '^stty' *
+% grep stty
+% grep stty *
+        1, &stty,                       /* 31 = stty */
+% grep ^stty *
+arg count
+unknown mode: alloc.c
+unknown mode: clock.c
+unknown mode: fio.c
+unknown mode: iget.c
+unknown mode: main.c
+unknown mode: nami.c
+unknown mode: prf.c
+unknown mode: rdwri.c
+unknown mode: run
+unknown mode: sig.c
+unknown mode: slp.c
+unknown mode: subr.c
+unknown mode: sys1.c
+unknown mode: sys2.c
+unknown mode: sys3.c
+unknown mode: sys4.c
+unknown mode: sysent.c
+unknown mode: text.c
+unknown mode: trap.c
+% who
+bin     tty8 Aug 26 18:30
+% ls -l
+total 109
+-rw-r--r-- 1 bin      3368 Jun 10 08:37 alloc.c
+-rw-r--r-- 1 bin      2159 Jun 10 08:37 clock.c
+-rw-r--r-- 1 bin      2362 Jun 10 08:37 fio.c
+-rw-r--r-- 1 bin      2928 Jun 10 08:37 iget.c
+-rw-r--r-- 1 bin      2673 Jun 10 08:37 main.c
+-rw-r--r-- 1 bin      2633 Jun 10 08:37 nami.c
+-rw-r--r-- 1 bin      1134 Jun 10 08:37 prf.c
+-rw-r--r-- 1 bin      2668 Jun 10 08:37 rdwri.c
+-rw-rw-rw- 1 bin       361 Jun 12 18:52 run
+-rw-r--r-- 1 bin      1602 Jun 10 08:37 sig.c
+-rw-r--r-- 1 bin      5000 Jun 10 08:37 slp.c
+-rw-r--r-- 1 bin      2098 Jun 10 08:37 subr.c
+-rw-r--r-- 1 bin      5472 Jun 10 08:37 sys1.c
+-rw-r--r-- 1 bin      3442 Jun 10 08:37 sys2.c
+-rw-r--r-- 1 bin      4482 Jun 10 08:37 sys3.c
+-rw-r--r-- 1 bin       988 Jun 10 08:37 sys4.c
+-rw-r--r-- 1 bin      1957 Jun 10 08:37 sysent.c
+-rw-r--r-- 1 bin      2036 Jun 10 08:37 text.c
+-rw-r--r-- 1 bin      2154 Jun 10 08:37 trap.c
+% grep '^stty* ##' *
+% ed sys1.c
+5472
+/stty/
+?
+e sys2.c
+3442
+/stty/
+?
+e sys3.c
+4482
+/stty/
+?
+e sys4.c
+988
+/stty/
+?
+e sysent.c
+1957
+/stty/
+        1, &stty,                       /* 31 = stty */
+q
+% grep stty *
+        1, &stty,                       /* 31 = stty */
+% chdir ..
+% grep stty *
+_nchrdev _maptab#R_cfree  _cfreeli _gtty"rsave _sgtty"L1D_suword rretrn _stty"H_fuword L2~_getf L3FL4._wflusht"J_spl5 L6XL7p_sleep _flushtt"B_spl0 L5z_cinit"~L9L10(L11"L12.L13:L144L8>L16L_getc L17\L18\L19l_wakeup L20L21L15_canon"L23*L24JL25<L22pL26NL27RL28BL29hL308L31L32L33L348L358L10000*L366L37RL38j_putc _ttyinpu"tL40L41NL10001.L10002:L10003>_signal L39>L42\L43rL10004L44(L45(L46>_ttyoutp"B_tt
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% chdir dmr
+% grep stty *
+stty()
+% grep -n stty
+% grep -n stty *
+tty.c:72 stty()
+% ed tty.c
+6474
+/stty/
+stty()
+.,/}#^}/p
+stty()
+{
+        register int *up;
+
+        up = u.u_arg[0];
+        u.u_arg[0] = fuword(up);
+        u.u_arg[1] = fuword(++up);
+        u.u_arg[2] = fuword(++up);
+        sgtty(0);
+}
+/getty/
+?
+/gett@/ge#tty/
+sgtty(v)
+//
+        (*cdevsw[ip->i_addr[0].d_major].d_sgtty)(ip->i_addr[0], v);
+//
+gtty()
+.,/^}/p
+gtty()
+{
+        int v[3];
+        register *up, *vp;
+
+        vp = v;
+        sgtty(vp);
+        if (u.u_error)
+                return;
+        up = u.u_arg[0];
+        suword(up, *vp++);
+        suword(++up, *vp++);
+        suword(++up, *vp++);
+}
+/s#^sgtty/;^}/###/%#^}/p
+sgtty(v)
+{
+        register struct file *fp;
+        register struct inode *ip;
+
+        if ((fp = getf(u.u_ar0[R0])) == NULL)
+                return;
+        ip = fp->f_inode;
+        if ((ip->i_mode&IFMT) != IFCHR) {
+                u.u_error = ENOTTY;
+                return;
+        }
+        (*cdevsw[ip->i_addr[0].d_major].d_sgtty)(ip->i_addr[0], v);
+}
+q
+% grep -n d_sgtty *
+tty.c:95        (*cdevsw[ip->i_addr[0].d_major].d_sgtty)(ip->i_addr[0], v);
+% chdi@grep -n d_sgtty ../*
+../conf.h:22    int     (*d_sgtty)();
+% cat ../confi.##.h
+struct
+{
+        char    d_minor;
+        char    d_major;
+};
+
+struct  bdevsw
+{
+        int     (*d_open)();
+        int     (*d_close)();
+        int     (*d_strategy)();
+        int     *d_tab;
+} bdevsw[];
+int     nblkdev;
+
+struct  cdevsw
+{
+        int     (*d_open)();
+        int     (*d_close)();
+        int     (*d_read)();
+        int     (*d_write)();
+        int     (*d_sgtty)();
+} cdevsw[];
+int     nchrdev;
+% chdir ..
+% grep 'struct cdef#vsq#w' *
+% grep cdevs #w *
+struct  cdevsw
+} cdevsw[];
+`< h(8HXhx(HXhx(8xHX8hx(8HXh8x8_bdevsw#_nulldev _rkstrat _rktab _tcclose _tcstrat _tctab _tmopen _tmclose _tmstrat _tmtab _cdevsw#_klopen _klclose _klread _klwrite _klsgtty _rkread _rkwrite _nodev _tmread _tmwrite _dcopen _dcclose _dcread _dcwrite _dcsgtty _pcopen _pcclose _pcread _pcwrite _mmread _mmwrite _rootdev#X_swapdev#Z_swplo#\_nswap#^H..R.Sbio.cTcat.cUdc.cVdh.cWdhdm.cXdhfdm.cYdn.cZdp.cLkl.c\lp.c]malloc.c^mem.c_partab.c`pc.capipe.cbrf.ccrk
+_       wz|w    v|@7B}DZCHW VT{w}w}wX}N*}_      N"}_    $w2|no imtno inodesyhhXHHYY8HXyhy88HXYYYY(yH88yYxYYyYXXXYYXYYHY_canonb _coremap H_swapmap H_rootdir _lbolt _time _tout _callout x_mount _mpid _runin _runout _runrun _maxmem _lks _rootdev _swapdev _swplo _nswap _updlock _rablock _u r_inode _bdevsw _nblkdev _cdevsw 
+_       @sw|ih(XhII8Xih(h8XhXiiiHhY_inode Quit -- Core dumped
+% rm core
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% chdir conf
+% grep cdevsw *
+int     (*cdevsw[])()
+        "int\t(*cdevsw[])()",
+% gre #p -n cdevsw *
+conf.c:13 int   (*cdevsw[])()
+mkconf.c:280    "int\t(*cdevsw[])()",
+% ed conf.c
+653
+/cdevsw/-10;.+20p
+ */
+
+int     (*bdevsw[])()
+{
+        &nulldev,       &nulldev,       &rkstrategy,    &rktab,
+        &nulldev,       &tcclose,       &tcstrategy,    &tctab,
+        &tmopen,        &tmclose,       &tmstrategy,    &tmtab,
+        0
+};
+
+int     (*cdevsw[])()
+{
+        &klopen,   &klclose,   &klread,   &klwrite,   &klsgtty,
+        &nulldev,  &nulldev,   &rkread,   &rkwrite,   &nodev,
+        &tmopen,   &tmclose,   &tmread,   &tmwrite,   &nodev,
+        &dcopen,   &dcclose,   &dcread,   &dcwrite,   &dcsgtty,
+        &pcopen,   &pcclose,   &pcread,   &pcwrite,   &nodev,
+        &nulldev,  &nulldev,   &mmread,   &mmwrite,   &nodev,
+        0
+};
+
+q
+% chdir ../dmr
+% grep -n sgtty() *
+syntax error
+% grep -n 'sgtty()#' *
+dc.c:171 dcsgtty(dev, av)
+dh.c:124 dhsgtty(dev, av)
+kl.c:94 klsgtty(dev, v)
+tty.c:63        sgtty(vp);
+tty.c:80        sgtty(0);
+tty.c:83 sgtty(v)
+% ed dc.c
+3526
+/dcsgtty/;/^}/p
+dcsgtty(dev, av)
+int *av;
+{
+        register struct tty *tp;
+        register r;
+        register int *v;
+
+        tp = &dc11[dev.d_minor];
+        v = av;
+        if (v) {
+                *v++ = tp->t_speeds;
+                *v++ = 0;
+                *v++ = tp->t_flags;
+                return;
+        }
+        wflushtty(tp);
+        tp->t_speeds = u.u_arg[0];
+        tp->t_flags = u.u_arg[2];
+        if (r = dcrstab[tp->t_speeds.lobyte&017])
+                tp->t_addr->dcrcsr = r;
+        if (r = dctstab[tp->t_speeds.hibyte&017])
+                tp->t_addr->dctcsr = r;
+}
+q
+% pwd
+../usr/sys/dmr
+% chdir ..
+% ed tty.h
+839
+.=
+57
+1,$P
+?
+1,$p
+struct clist {
+        int     c_cc;
+        int     c_cf;
+        int     c_cl;
+};
+
+struct tty {
+        struct  clist t_rawq;
+        struct  clist t_canq;
+        struct  clist t_outq;
+        int     t_flags;
+        int     *t_addr;
+        char    t_delct;
+        char    t_col;
+        char    t_intrup;
+        char    t_quit;
+        char    t_state;
+        char    t_char;
+        int     t_speeds;
+};
+
+char partab[];
+
+#define TTIPRI  10
+#define TTOPRI  20
+#define CERASE  '#'
+#define CEOT    004
+#define CKILL   '@'
+
+/* limits */
+#define TTHIWAT 50
+#define TTLOWAT 30
+#define TTYHOG  256
+
+/* modes */
+#define NODELAY 01
+#define XTABS   02
+#define LCASE   04
+#define ECHO    010
+#define CRMOD   020
+#define RAW     040
+#define ODDP    0100
+#define EVENP   0200
+#define M2741   0400
+#define OCORR   02000
+#define ICORR   04000
+#define NTDELAY 010000
+
+/* Bits */
+#define DONE    0200
+#define IENABLE 0100
+#define TIMEOUT 01
+#define WOPEN   02
+#define ISOPEN  04
+#define SSTART  010
+#define CARR_ON 020
+#define BUSY    040
+/intrup/
+        char    t_intrup;
+i
+        char    t_erase;
+        char    t_kill;
+.
+w
+868
+q
+% sync
+% ls -l /etc/getty
+-rwxr--r-- 1 bin       446 Jun 10 08:37 /etc/getty
+% chdir dmr
+% ed @chdir ..
+% grep hibyte *
+        char    hibyte;
+% grep -n hibyte *
+param.h:68      char    hibyte;
+% c#wc param.h
+     69     160 param.h
+% cat param.h
+/*
+ * variables
+ */
+
+#define NBUF    15
+#define NINODE  100
+#define NFILE   100
+#define NMOUNT  5
+#define MAXMEM  (32*32)
+#define SSIZE   20
+#define SINCR   20
+#define NOFILE  15
+#define CANBSIZ 256
+#define CMAPSIZ 100
+#define SMAPSIZ 100
+#define NCALL   20
+#define NPROC   50
+#define NTEXT   20
+#define NCLIST  100
+
+/*
+ * priorities
+ * probably should not be
+ * altered too much
+ */
+
+#define PSWP    -100
+#define PINOD   -90
+#define PRIBIO  -50
+#define PPIPE   1
+#define PWAIT   40
+#define PSLEP   90
+#define PUSER   100
+
+/*
+ * signals
+ * dont change
+ */
+
+#define NSIG    13
+#define         SIGHUP  1
+#define         SIGINT  2
+#define         SIGQIT  3
+#define         SIGINS  4
+#define         SIGTRC  5
+#define         SIGIOT  6
+#define         SIGEMT  7
+#define         SIGFPT  8
+#define         SIGKIL  9
+#define         SIGBUS  10
+#define         SIGSEG  11
+#define         SIGSYS  12
+
+/*
+ * fundamental constants
+ * cannot be changed
+ */
+
+#define USIZE   16
+#define NULL    0
+#define NODEV   (-1)
+#define ROOTINO 1
+#define DIRSIZ  14
+
+struct
+{
+        char    lobyte;
+        char    hibyte;
+};
+% pwd
+../usr/sys
+% chdir dmr
+% ed dc.c
+3526
+/stty/
+?
+/tty/
+#include "../tty.h"
+//
+struct  tty dc11[NDC11];
+//
+        register struct tty *rtp;
+//
+        if (u.u_procp->p_ttyp == 0)
+//
+                u.u_procp->p_ttyp = rtp;
+//
+        register struct tty *tp;
+//
+        wflushtty(tp);
+//
+        register struct tty *tp;
+//
+        register struct tty *tp;
+//
+        register struct tty *tp;
+//
+        register struct tty *tp;
+//
+                        flushtty(tp);
+//
+                ttyinput(c, tp);
+//
+dcsgtty(dev, av)
+//
+        register struct tty *tp;
+?ge#tty?
+dcsgtty(dev, av)
+.,/^}/p
+dcsgtty(dev, av)
+int *av;
+{
+        register struct tty *tp;
+        register r;
+        register int *v;
+
+        tp = &dc11[dev.d_minor];
+        v = av;
+        if (v) {
+                *v++ = tp->t_speeds;
+                *v++ = 0;
+                *v++ = tp->t_flags;
+                return;
+        }
+        wflushtty(tp);
+        tp->t_speeds = u.u_arg[0];
+        tp->t_flags = u.u_arg[2];
+        if (r = dcrstab[tp->t_speeds.lobyte&017])
+                tp->t_addr->dcrcsr = r;
+        if (r = dctstab[tp->t_speeds.hibyte&017])
+                tp->t_addr->dctcsr = r;
+}
+?0?
+        if (r = dctstab[tp->t_speeds.hibyte&017])
+/#??
+        if (r = dcrstab[tp->t_speeds.lobyte&017])
+??
+        tp->t_speeds = u.u_arg[0];
+??
+                *v++ = 0;
+c
+                v->lobyte = tp->t_erase;
+                v->hibyte = tp->t_kill;
+                v++;
+                v[##*v@         v[1] = tp->t_flags;
+.
+^
+                v++;
+d
+
+                *v++ = tp->t_flags;
+
+                return;
+^
+                *v++ = tp->t_flags;
+^
+                v[1] = tp->t_flags;
+
+                *v++ = tp->t_flags;
+d
+/speeds/
+        tp->t_speeds = u.u_arg[0];
+.+1
+        tp->t_flags = u.u_arg[2];
+.
+        tp->t_flags = u.u_arg[2];
+^
+        tp->t_speeds = u.u_arg[0];
+        @a
+        tp->t_erase = v->lobyte;
+                @tp->t_kill = v_#->hibt#$#yte;
+.
+c
+        tp->t_flags = v[1];
+.
+w dc@f
+dc.c
+w e#dc2.c
+3614
+!diff dc.c dc2.c
+182,183c182,184
+*               *v++ = 0;
+*               *v++ = tp->t_flags;
+---
+.               v->lobyte = tp->t_erase;
+.               v->hibyte = tp->t_kill;
+.               v[1] = tp->t_flags;
+187a189,190
+.       tp->t_erase = v->lobyte;
+.       tp->t_flags = v[1];
+!
+
+        tp->t_flags = u.u_arg[2];
+
+        if (r = dcrstab[tp->t_speeds.lobyte&017])
+^
+        tp->t_flags = u.u_arg[2];
+^
+        tp->t_flags = v[1];
+^
+        tp->t_erase = v->lobyte;
+^
+        tp->t_speeds = u.u_arg[0];
+^
+        wflushtty(tp);
+
+        tp->t_speeds = u.u_arg[0];
+^
+        wflushtty(tp);
+
+        tp->t_speeds = u.u_arg[0];
+
+        tp->t_erase = v->lobyte;
+s/v/u._u##u_arg[1]->##.lobyte;#/@s/v/@s/v->/u.u_arg[1]./p
+        tp->t_erase = u.u_arg[1].lobyte;
+
+        tp->t_flags = v[1];
+s/v/u_#.u_arg[1].hb#ibyte/p
+        tp->t_flags = u.u_arg[1].hibyte[1];
+
+        tp->t_flags = u.u_arg[2];
+
+        if (r = dcrstab[tp->t_speeds.lobyte&017])
+?gtty?;/^}/p
+dcsgtty(dev, av)
+int *av;
+{
+        register struct tty *tp;
+        register r;
+        register int *v;
+
+        tp = &dc11[dev.d_minor];
+        v = av;
+        if (v) {
+                *v++ = tp->t_speeds;
+                v->lobyte = tp->t_erase;
+                v->hibyte = tp->t_kill;
+                v[1] = tp->t_flags;
+                return;
+        }
+        wflushtty(tp);
+        tp->t_speeds = u.u_arg[0];
+        tp->t_erase = u.u_arg[1].lobyte;
+        tp->t_flags = u.u_arg[1].hibyte[1];
+        tp->t_flags = u.u_arg[2];
+        if (r = dcrstab[tp->t_speeds.lobyte&017])
+                tp->t_addr->dcrcsr = r;
+        if (r = dctstab[tp->t_speeds.hibyte&017])
+                tp->t_addr->dctcsr = r;
+}
+?hibyte?
+        if (r = dctstab[tp->t_speeds.hibyte&017])
+??
+        tp->t_flags = u.u_arg[1].hibyte[1];
+s/[1];/;/p
+?
+s/\[1]/#;/;/p
+        tp->t_flags = u.u_arg[1].hibyte;
+w dc2.c
+3635
+!df#iff dc.c dc2.c
+182,183c182,184
+*               *v++ = 0;
+*               *v++ = tp->t_flags;
+---
+.               v->lobyte = tp->t_erase;
+.               v->hibyte = tp->t_kill;
+.               v[1] = tp->t_flags;
+187a189,190
+.       tp->t_erase = u.u_arg[1].lobyte;
+.       tp->t_flags = u.u_arg[1].hibyte;
+!
+?open?
+dcopen(dev, flag)
+.;/^}/p
+dcopen(dev, flag)
+{
+        register struct tty *rtp;
+        register *addr;
+
+        if (dev.d_minor >= NDC11) {
+                u.u_error = ENXIO;
+                return;
+        }
+        rtp = &dc11[dev.d_minor];
+        rtp->t_addr = addr = DCADDR + dev.d_minor*8;
+        rtp->t_state =| WOPEN;
+        addr->dcrcsr =| IENABLE|CDLEAD;
+        if ((rtp->t_state&ISOPEN) == 0) {
+                rtp->t_quit = 034;              /* FS */
+                rtp->t_intrup = 0177;           /* DEL */
+                addr->dcrcsr = IENABLE|CDLEAD|SPEED1;
+                addr->dctcsr = IENABLE|SPEED1|STOP1|RQSEND;
+                rtp->t_state = ISOPEN | WOPEN;
+                rtp->t_flags = ODDP|EVENP|ECHO;
+        }
+        if (addr->dcrcsr & CARRIER)
+                rtp->t_state =| CARR_ON;
+        while ((rtp->t_state & CARR_ON) == 0)
+                sleep(&rtp->t_rawq, TTIPRI);
+        rtp->t_state =& ~WOPEN;
+        if (u.u_procp->p_ttyp == 0)
+                u.u_procp->p_ttyp = rtp;
+}
+?quit?i@?quit?
+                rtp->t_quit = 034;              /* FS */
+i
+                rtp->t_erase = CERASE;
+                rtp->t_kill = CKILL;
+.
+w
+3683
+q
+% rm dc2.c
+% ed dj#h.c
+3828
+/open/;/^}/p
+dhopen(dev, flag)
+{
+        register struct tty *tp;
+        extern dhstart();
+
+        if (dev.d_minor >= NDH11) {
+                u.u_error = ENXIO;
+                return;
+        }
+        tp = &dh11[dev.d_minor];
+        tp->t_addr = dhstart;
+        DHADDR->dhcsr =| IENABLE;
+        tp->t_state =| WOPEN|SSTART;
+        if ((tp->t_state&ISOPEN) == 0) {
+                tp->t_quit = 034;               /* FS */
+                tp->t_intrup = 0177;            /* DEL */
+                tp->t_speeds = SSPEED | (SSPEED<<8);
+                tp->t_flags = ODDP|EVENP|ECHO;
+                dhparam(tp);
+        }
+        dmopen(dev);
+        tp->t_state =& ~WOPEN;
+        tp->t_state =| ISOPEN;
+        if (u.u_procp->p_ttyp == 0)
+                u.u_procp->p_ttyp = tp;
+}
+?quit?
+                tp->t_quit = 034;               /* FS */
+i
+                tp->t_erase = CERASE;
+                p#tp->t_kill = CKILL;
+.
+/sgtty/
+dhsgtty(dev, av)
+.;/^}/p
+dhsgtty(dev, av)
+int *av;
+{
+        register struct tty *tp;
+        register r;
+        register int *v;
+
+        tp = &dh11[dev.d_minor];
+        v = av;
+        if (v) {
+                *v++ = tp->t_speeds;
+                *v++ = 0;
+                *v++ = tp->t_flags;
+                return;
+        }
+        wflushtty(tp);
+        tp->t_speeds = u.u_arg[0];
+        tp->t_flags = u.u_arg[2];
+        dhparam(tp);
+}
+/#?if?
+        if (v) {
+
+                *v++ = tp->t_speeds;
+
+                *v++ = 0;
+c
+                v->lobyte = tp->t_erase;
+                v->hibyte = tp_#->t_kill;
+.
+
+                *v++ = tp->t_flags;
+s/\*v++/v[1]/p
+                v[1] = tp->t_flags;
+/speeds/
+        tp->t_speeds = u.u_arg[0];
+
+        tp->t_flags = u.u_arg[2];
+i
+        tp->t_erase = u.u_arg[1].lobyte;
+        tp->t_kill = u.u_arg[1].hibyte;
+.
+w
+3982
+q
+% grep -n sgtty'(' *
+dc.c:173 dcsgtty(dev, av)
+dh.c:126 dhsgtty(dev, av)
+kl.c:94 klsgtty(dev, v)
+tty.c:63        sgtty(vp);
+tty.c:80        sgtty(0);
+tty.c:83 sgtty(v)
+% ed kl.c
+1610
+/open/
+klopen(dev, flag)
+.;/^}/p
+klopen(dev, flag)
+{
+        register *addr;
+        register struct tty *tp;
+
+        if(dev.d_minor >= NKL11) {
+                u.u_error = ENXIO;
+                return;
+        }
+        tp = &kl11[dev.d_minor];
+        tp->t_quit = 034;               /* ctl shf l */
+        tp->t_intrup = 0177;            /* DEL */
+        if (u.u_procp->p_ttyp == 0)
+                u.u_procp->p_ttyp = tp;
+        addr = KLADDR;
+        if(dev.d_minor)
+                addr = KLBASE-8 + 8*dev.d_minor;
+        tp->t_addr = addr;
+        tp->t_flags = XTABS|LCASE|ECHO|CRMOD;
+        tp->t_state = CARR_ON;
+        addr->klrcsr =| IENABLE|DSRDY|RDRENB;
+        addr->kltcsr =| IENABLE;
+}
+?quit?
+        tp->t_quit = 034;               /* ctl shf l */
+i
+        tp->t_erase = CERASE;
+        tp->t_kill = CKILL;
+.
+/sgtty/
+klsgtty(dev, v)
+.;/^]/p###}/p
+klsgtty(dev, v)
+int *v;
+{
+        register struct tty *tp;
+
+        tp = &kl11[dev.d_minor];
+        if (v)
+                v[2] = tp->t_flags;
+        else {
+                wflushtty(tp);
+                tp->t_flags = u.u_arg[2];
+        }
+}
+?flags?
+                tp->t_flags = u.u_arg[2];
+??
+                v[2] = tp->t_flags;
+i
+                v[1].lobyte = t-#p->t_erase;
+                v[1].jo##hibyte = tp->tk#-#_kill;
+.
+/flags/
+                v[2] = tp->t_flags;
+//
+                tp->t_flags = u.u_arg[2];
+i
+                tp->t_erase = u.u_arg[1].lobyte;
+                tp->t_kill = u.u_arg[1].hibyte;
+.
+w@?sgtty?;/^}/p
+klsgtty(dev, v)
+int *v;
+{
+        register struct tty *tp;
+
+        tp = &kl11[dev.d_minor];
+        if (v)
+                v[1].lobyte = tp->t_erase;
+                v[1].hibyte = tp->t_kill;
+                v[2] = tp->t_flags;
+        else {
+                wflushtty(tp);
+                tp->t_erase = u.u_arg[1].lobyte;
+                tp->t_kill = u.u_arg[1].hibyte;
+                tp->t_flags = u.u_arg[2];
+        }
+}
+w
+1780
+q
+% ed tty.c
+6474
+/erase/
+?
+/sgtty/
+        sgtty(vp);
+//
+        sgtty(0);
+//
+sgtty(v)
+/?
+.;/^}/p
+sgtty(v)
+{
+        register struct file *fp;
+        register struct inode *ip;
+
+        if ((fp = getf(u.u_ar0[R0])) == NULL)
+                return;
+        ip = fp->f_inode;
+        if ((ip->i_mode&IFMT) != IFCHR) {
+                u.u_error = ENOTTY;
+                return;
+        }
+        (*cdevsw[ip->i_addr[0].d_major].d_sgtty)(ip->i_addr[0], v);
+}
+q
+% sync
+% pwd
+../usr/sys/dmr
+% ed tty.c
+6474
+/CERASE/
+                                if (c==CERASE) {
+/struct tty/
+struct tty *atp;
+//
+        register struct tty *tp;
+//
+struct tty *tp;
+//
+        register struct tty *rtp;
+//
+        register struct tty *tp;
+/CERASE/
+                                if (c==CERASE) {
+?^[a-z]?;/^}/p
+?
+?^[a=#-z]?;/^}/p
+?
+?^[a-z]?
+?
+!echo 'TODO: Implement char class ranges in ed' > /usr/thalia/TODO
+'TODO: Implement char class ranges in ed' > /usr/thalia/TODO
+!
+q
+% 
+;login: thalia
+% ed TODO
+?
+TOD@a
+TODO:
+- Implement char class ranges in ed
+.
+w
+42
+q
+% 
+;login: bin
+% chdir /usr/sys/dmr
+% ed /#tty.c
+6474
+/CERASE?#/
+                                if (c==CERASE) {
+?^{?-1
+struct tty *atp;
+^
+canon(atp)
+/#.;/^{#}/p
+canon(atp)
+struct tty *atp;
+{
+        register char *bp;
+        char *bp1;
+        register struct tty *tp;
+        register int c;
+
+        tp = atp;
+        spl5();
+        while (tp->t_delct==0) {
+                if ((tp->t_state&CARR_ON)==0)
+                        return(0);
+                sleep(&tp->t_rawq, TTIPRI);
+        }
+        spl0();
+loop:
+        bp = &canonb[2];
+        while ((c=getc(&tp->t_rawq)) >= 0) {
+                if (c==0377) {
+                        tp->t_delct--;
+                        break;
+                }
+                if ((tp->t_flags&RAW)==0) {
+                        if (bp[-1]!='\\') {
+                                if (c==CERASE) {
+                                        if (bp > &canonb[2])
+                                                bp--;
+                                        continue;
+                                }
+                                if (c==CKILL)
+                                        goto loop;
+                                if (c==CEOT)
+                                        continue;
+                        } else
+                        if (maptab[c] && (maptab[c]==c || (tp->t_flags&LCASE))) {
+                                if (bp[-2] != '\\')
+                                        c = maptab[c];
+                                bp--;
+                        }
+                }
+                *bp++ = c;
+                if (bp>=canonb+CANBSIZ)
+                        break;
+        }
+        bp1 = bp;
+        bp = &canonb[2];
+        c = &tp->t_canq;
+        while (bp<bp1)
+                putc(*bp++, c);
+        return(1);
+}
+?CERASE?s//t-#p-?#>t_erase/p
+                                if (c==tp->t_erase) {
+/CKILL/s//tp->t_killp#/p
+                                if (c==tp->t_kill)
+w
+6484
+q
+% sync
 % 

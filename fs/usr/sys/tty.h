@@ -12,6 +12,8 @@ struct tty {
 	int	*t_addr;
 	char	t_delct;
 	char	t_col;
+	char	t_erase;
+	char	t_kill;
 	char	t_intrup;
 	char	t_quit;
 	char	t_state;
