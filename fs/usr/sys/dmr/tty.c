@@ -244,8 +244,8 @@ struct tty *atp;
 				ttyoutput(' ', tp, 0);
 				ttyoutput('\b', tp, 0);
 			} else {
-				ttyoutput('^', tp, 0);
-				ttyoutput('H', tp, 0);
+				ttyoutput('^', tp, 1);
+				ttyoutput('H', tp, 1);
 			}
 		} else
 			ttyoutput(c, tp, 0);

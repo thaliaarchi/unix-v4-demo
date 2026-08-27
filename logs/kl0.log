@@ -18197,3 +18197,109 @@ vt.c:
 % m #v a.out /nunix
 % sync
 % 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64523
+
+;login: thalia
+% hello
+hello: not found
+% stty erase bs
+% hello     ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H
+% chdir /usr@
+;login: bin
+% chdir /usr/sys/dmr
+% ed tty.c
+6815
+/'H'/
+        'H','I','J','K','L','M','N','O',
+//
+                                ttyoutput('H', tp, 0);
+^
+                                ttyoutput('^', tp, 0);
+.,.+1s/0/1/p
+                                ttyoutput('H', tp, 1);
+.,.+1p
+                                ttyoutput('H', tp, 1);
+                        }
+.-2
+                                ttyoutput('^', tp, 1);
+w
+6815
+q
+% cc t@cdirt @chdir ..
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% mv a.out /nunix
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64523
+
+;login: thalia
+% stty eraes ###b#se bs
+% echo hello          ^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[3;5~hello
+Arg count
+5~hello: not found
+% echo hello         
+e: not found
+% echo hi       ^H^H^H^H^Hhi
+hi: not found
+% echo hi       ^H^H^H^H^H^H^H^H
+% 
+;login: root
+# mv /nunix /unix
+# sync
+# 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
