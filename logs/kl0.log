@@ -12901,4 +12901,393 @@ w
 6484
 q
 % sync
+% pwd
+../usr/sys/dmr
+% chdir /usr/source/s1/##2
+% ed stty.c
+1006
+.=
+82
+1,$p
+char    *arg;
+int     mode[3];
+
+main(argc, argv)
+char    *argv[];
+{
+        int i;
+
+        gtty(1,mode);
+        while(--argc > 0) {
+
+                arg = *++argv;
+                if(eq("even"))
+                        set(0200);
+                if(eq("-even"))
+                        reset(0200);
+                if(eq("odd"))
+                        set(0100);
+                if(eq("-odd"))
+                        reset(0100);
+                if(eq("raw"))
+                        set(040);
+                if(eq("-raw") || eq("cooked"))
+                        reset(040);
+                if(eq("-nl"))
+                        set(020);
+                if(eq("nl"))
+                        reset(020);
+                if(eq("echo"))
+                        set(010);
+                if(eq("-echo"))
+                        reset(010);
+                if(eq("lcase"))
+                        set(04);
+                if(eq("-lcase"))
+                        reset(04);
+                if(eq("-tabs"))
+                        set(02);
+                if(eq("tabs"))
+                        reset(02);
+                if(eq("-delay"))
+                        set(01);
+                if(eq("delay"))
+                        reset(01);
+                if(eq("tdelay"))
+                        reset(010000);
+                if(eq("-tdelay"))
+                        set(010000);
+                if(arg)
+                        printf("unknown mode: %s\n", arg);
+        }
+        stty(1,mode);
+}
+
+eq(string)
+char *string;
+{
+        int i;
+
+        if(!arg)
+                return(0);
+        i = 0;
+loop:
+        if(arg[i] != string[i])
+                return(0);
+        if(arg[i++] != '\0')
+                goto loop;
+        arg = 0;
+        return(1);
+}
+
+set(b)
+{
+
+        mode[2] =| b;
+}
+
+reset(b)
+{
+
+        mode[2] =& ~b;
+}
+/while?#/
+        while(--argc > 0) {
+
+
+
+                arg = *++argv;
+
+                if(eq("even"))
+i
+                if(eq("ek"))
+                        mode[1] = '#@';
+.
+.
+';
+
+                if(eq("even"))
+^
+';
+^
+                if(eq("ek"))
+
+';
+^
+                if(eq("ek"))
+
+';
+c
+                        mode[1] = '\#\@';
+.
+
+                if(eq("even"))
+.,/}/s/if/e;#lse if/p
+                else if(arg)
+/while/;/}/p
+        while(--argc > 0) {
+
+                arg = *++argv;
+                if(eq("ek"))
+                        mode[1] = '#@';
+                else if(eq("even"))
+                        set(0200);
+                else if(eq("-even"))
+                        reset(0200);
+                else if(eq("odd"))
+                        set(0100);
+                else if(eq("-odd"))
+                        reset(0100);
+                else if(eq("raw"))
+                        set(040);
+                else if(eq("-raw") || eq("cooked"))
+                        reset(040);
+                else if(eq("-nl"))
+                        set(020);
+                else if(eq("nl"))
+                        reset(020);
+                else if(eq("echo"))
+                        set(010);
+                else if(eq("-echo"))
+                        reset(010);
+                else if(eq("lcase"))
+                        set(04);
+                else if(eq("-lcase"))
+                        reset(04);
+                else if(eq("-tabs"))
+                        set(02);
+                else if(eq("tabs"))
+                        reset(02);
+                else if(eq("-delay"))
+                        set(01);
+                else if(eq("delay"))
+                        reset(01);
+                else if(eq("tdelay"))
+                        reset(010000);
+                else if(eq("-tdelay"))
+                        set(010000);
+                else if(arg)
+                        printf("unknown mode: %s\n", arg);
+        }
+?ek?
+                if(eq("ek"))
+
+                        mode[1] = '#@';
+a
+                if(eq"#("erase"))
+                        moe#de[1].lobyte = **++argv;
+                        argc--;
+                }
+                if(eq("kill")) {
+                        mode[1].hibyte = **++argv;
+                        argc--;
+                }
+.
+
+                else if(eq("even"))
+s/else/} #/p@s/else/} @@s/else/} &/p
+                } else if(eq("even"))
+^
+                }
+d
+^
+                        argc--;
+^
+                        mode[1].hibyte = **++argv;
+^
+                if(eq("kill")) {
+s/if/} else if/p
+                } else if(eq("kill")) {
+^
+                }
+^
+                        argc--;
+
+                }
+d
+^
+                        argc--;
+^
+                        mode[1].lobyte = **++argv;
+^
+                if(eq("erase"))
+s/$/ {/[#p
+                if(eq("erase")) {
+?while?;/}/p
+        while(--argc > 0) {
+
+                arg = *++argv;
+                if(eq("ek"))
+                        mode[1] = '#@';
+                if(eq("erase")) {
+                        mode[1].lobyte = **++argv;
+                        argc--;
+                } else if(eq("kill")) {
+?erse?@?erase?
+                if(eq("erase")) {
+s/if/else if/p
+                else if(eq("erase")) {
+?while?;/^      }/[#p
+        while(--argc > 0) {
+
+                arg = *++argv;
+                if(eq("ek"))
+                        mode[1] = '#@';
+                else if(eq("erase")) {
+                        mode[1].lobyte = **++argv;
+                        argc--;
+                } else if(eq("kill")) {
+                        mode[1].hibyte = **++argv;
+                        argc--;
+                } else if(eq("even"))
+                        set(0200);
+                else if(eq("-even"))
+                        reset(0200);
+                else if(eq("odd"))
+                        set(0100);
+                else if(eq("-odd"))
+                        reset(0100);
+                else if(eq("raw"))
+                        set(040);
+                else if(eq("-raw") || eq("cooked"))
+                        reset(040);
+                else if(eq("-nl"))
+                        set(020);
+                else if(eq("nl"))
+                        reset(020);
+                else if(eq("echo"))
+                        set(010);
+                else if(eq("-echo"))
+                        reset(010);
+                else if(eq("lcase"))
+                        set(04);
+                else if(eq("-lcase"))
+                        reset(04);
+                else if(eq("-tabs"))
+                        set(02);
+                else if(eq("tabs"))
+                        reset(02);
+                else if(eq("-delay"))
+                        set(01);
+                else if(eq("delay"))
+                        reset(01);
+                else if(eq("tdelay"))
+                        reset(010000);
+                else if(eq("-tdelay"))
+                        set(010000);
+                else if(arg)
+                        printf("unknown mode: %s\n", arg);
+        }
+w
+1270
+q
+% cc stty.c@cc stty.c
+16: Illegal structure ref
+19: Illegal structure ref
+61: .hibyte undefined
+61: .lobyte undefined
+% ed stty.c
+1270
+16
+                        mode[1].lobyte = **++argv;
+1
+char    *arg;
+
+int     mode[3];
+1,23p
+char    *arg;
+int     mode[3];
+
+main(argc, argv)
+char    *argv[];
+{
+        int i;
+
+        gtty(1,mode);
+        while(--argc > 0) {
+
+                arg = *++argv;
+                if(eq("ek"))
+                        mode[1] = '#@';
+                else if(eq("erase")) {
+                        mode[1].lobyte = **++argv;
+                        argc--;
+                } else if(eq("kill")) {
+                        mode[1].hibyte = **++argv;
+                        argc--;
+                } else if(eq("even"))
+                        set(0200);
+                else if(eq("-even"))
+1a
+#\#include "/usr/sys/param.h"
+
+.
+w
+1299
+q
+% cc sgtt#@s@cc stty.c
+2: Unknown character
+4: External definition syntax
+4: mode undefined
+18: Illegal structure ref
+21: Illegal structure ref
+63: mode undefined
+63: .hibyte undefined
+63: .lobyte undefined
+86: mode undefined
+92: mode undefined
+% ed stty.c
+1299
+2
+#include "/usr/sys/param.h"
+1
+char    *arg;
+2m1
+
+
+1
+char    *arg;
+
+#include "/usr/sys/param.h"
+2m0
+1
+#include "/usr/sys/param.h"
+
+char    *arg;
+
+
+
+int     mode[3];
+3
+
+3d
+1a
+
+.
+1,5p
+#include "/usr/sys/param.h"
+
+char    *arg;
+int     mode[3];
+
+
+main(argc, argv)
+w
+1299
+1,6p
+#include "/usr/sys/param.h"
+
+char    *arg;
+int     mode[3];
+
+main(argc, argv)
+q
+% cc stty.c
+% m@
+% rm l.out
+l.out: non existent
+% ls *.out
+a.out
+% rm a.out
+% sync
 % 

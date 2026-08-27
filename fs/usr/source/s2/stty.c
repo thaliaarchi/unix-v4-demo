@@ -1,3 +1,5 @@
+#include "/usr/sys/param.h"
+
 char	*arg;
 int	mode[3];
 
@@ -10,43 +12,51 @@ char	*argv[];
 	while(--argc > 0) {
 
 		arg = *++argv;
-		if(eq("even"))
+		if(eq("ek"))
+			mode[1] = '#@';
+		else if(eq("erase")) {
+			mode[1].lobyte = **++argv;
+			argc--;
+		} else if(eq("kill")) {
+			mode[1].hibyte = **++argv;
+			argc--;
+		} else if(eq("even"))
 			set(0200);
-		if(eq("-even"))
+		else if(eq("-even"))
 			reset(0200);
-		if(eq("odd"))
+		else if(eq("odd"))
 			set(0100);
-		if(eq("-odd"))
+		else if(eq("-odd"))
 			reset(0100);
-		if(eq("raw"))
+		else if(eq("raw"))
 			set(040);
-		if(eq("-raw") || eq("cooked"))
+		else if(eq("-raw") || eq("cooked"))
 			reset(040);
-		if(eq("-nl"))
+		else if(eq("-nl"))
 			set(020);
-		if(eq("nl"))
+		else if(eq("nl"))
 			reset(020);
-		if(eq("echo"))
+		else if(eq("echo"))
 			set(010);
-		if(eq("-echo"))
+		else if(eq("-echo"))
 			reset(010);
-		if(eq("lcase"))
+		else if(eq("lcase"))
 			set(04);
-		if(eq("-lcase"))
+		else if(eq("-lcase"))
 			reset(04);
-		if(eq("-tabs"))
+		else if(eq("-tabs"))
 			set(02);
-		if(eq("tabs"))
+		else if(eq("tabs"))
 			reset(02);
-		if(eq("-delay"))
+		else if(eq("-delay"))
 			set(01);
-		if(eq("delay"))
+		else if(eq("delay"))
 			reset(01);
-		if(eq("tdelay"))
+		else if(eq("tdelay"))
 			reset(010000);
-		if(eq("-tdelay"))
+		else if(eq("-tdelay"))
 			set(010000);
-		if(arg)
+		else if(arg)
 			printf("unknown mode: %s\n", arg);
 	}
 	stty(1,mode);
