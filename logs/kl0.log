@@ -3961,7 +3961,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 001070 (MOV 177776,-(SP))
 sim> exit
 Goodbye
@@ -3973,7 +3974,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> att ptr lrc_2026.txt
 sim> c
@@ -3982,7 +3984,8 @@ LOGIN INCORRECT.
 NAME: 
 LOGIN INCORRECT.
 NAME: 
-;login: thalia
+
+;login: thalia
 % ls
 hints
 logo
@@ -4036,7 +4039,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> attach ptr lrc_2026.txt
 sim> c
@@ -4082,7 +4086,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 001070 (MOV 177776,-(SP))
 sim> exit
 Goodbye
@@ -4094,7 +4099,8 @@ k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 001070 (MOV 177776,-(SP))
 sim> exit
 Goodbye
@@ -4106,14 +4112,16 @@ k
 unix
 mem = 64525
 
-;login: Logging to file "logs/kl0.log"
+
+;login: Logging to file "logs/kl0.log"
 Logging to file "logs/kl0.log" at Tue Aug 18 16:14:45 2026
 
 k
 unix
 mem = 64525
 
-;login: 
+
+;login: 
 Simulation stopped, PC: 001070 (MOV 177776,-(SP))
 sim> examine 12
 12:	000341
@@ -4123,7 +4131,8 @@ LOGIN INCORRECT.
 NAME: 
 LOGIN INCORRECT.
 NAME: 
-;login: root
+
+;login: root
 # sync
 # sync
 # 
@@ -4142,7 +4151,8 @@ tmp
 unix
 usr
 # 
-;login: thalia
+
+;login: thalia
 % ls
 hints
 lrc2026
@@ -4473,7 +4483,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % echo hi>hi
 % sync
 % 
@@ -4499,7 +4510,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % cd
 haha
 % ed /usr/source/s2/sh.c
@@ -4582,7 +4594,8 @@ crw--w--w- 1 root    0, 15 Aug 18 18:16 ttyv
 % root
 root: not found
 % 
-;login: root
+
+;login: root
 # daet @date 082252
 bad conversion
 # 08222152
@@ -4711,7 +4724,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % 08222158
 08222158: not found
 % date 08222158
@@ -4740,12 +4754,14 @@ k
 unix
 mem = 64525
 
-;login: root
+
+;login: root
 # date 08251128
 Sun Aug 25 11:28:00 MDT 1974
 # su
 # # 
-;login: thalia
+
+;login: thalia
 % ed /isr###usr/source/s2/pwd.c
 1067
 1,23p
@@ -6234,7 +6250,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % chdir /usr/source
 % date 08261528
 Mon Aug 26 15:28:00 MDT 1974
@@ -9598,7 +9615,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % chdir /usr/source/s2
 % ed sh.c
 10267
@@ -10288,7 +10306,8 @@ user.h
 % ls -l user.h
 -rw-r--r-- 1 bin      1199 Jun 10 08:37 user.h
 % 
-;login: bin
+
+;login: bin
 % chdir /usr/sys
 % ed user.h
 1199
@@ -10437,7 +10456,8 @@ total 679
 -rw-r--r-- 1 bin      2689 Jun 10 08:37 bas5.s
 -rw-r--r-- 1 bin       783 Jun 10 08:37 basx.s
 -rw-r--r-- 1 bin      2604 Jun 10 08:37 cal.c
--rw-r--r-- 1 bin       647 Jun 10 08:37 cat.sQuit -- Core dumped
+-rw-r--r-- 1 bin       647 Jun 10 08:37 cat.s
+Quit -- Core dumped
 % rm core
 % ls
 buf.h
@@ -11278,7 +11298,8 @@ k
 unix
 mem = 64525
 
-;login: thalia
+
+;login: thalia
 % cdi##hdir /usr/source/s1
 % grep x *
 Command not found
@@ -11534,7 +11555,8 @@ q
 q
 % r #m s1.ls
 % 
-;login: bin
+
+;login: bin
 % ed /@ls -l /usr/source/s1/glob.c
 -rw-r--r-- 1 bin      3300 Aug 26 17:11 /usr/source/s1/glob.c
 % ed /uisr/sou@ed /usrs#/source/s1/glob.s#c
@@ -11698,7 +11720,8 @@ Command not found
 % ls > /usr/source/@ls /usr/t@ls > /usr/thalia/s1.ls
 /usr/thalia/s1.ls: cannot create
 % 
-;login: thalia
+
+;login: thalia
 % ls /usr/source/s1 > s1.ls
 % ed s1.ls
 571
@@ -11741,7 +11764,8 @@ q
 % ch@who
 thalia  tty8 Aug 26 18:13
 % 
-;login: bin
+
+;login: bin
 % chdir /usr/source/s1
 % ed glob.c
 3424
@@ -11808,7 +11832,8 @@ Arg list too long
 % rm /usr/rh##thalia/s1.ls
 /usr/thalia/s1.ls: not removed
 % 
-;login: thalia
+
+;login: thalia
 % rm s1.ls
 % sync
 % Logging to file "logs/kl0.log"
@@ -11887,7 +11912,8 @@ k
 unix
 mem = 64525
 
-;login: bin
+
+;login: bin
 % chdir /usr/sys/ken
 % date 08262030
 Mon Aug 26 20:30:00 MDT 1974
@@ -12819,7 +12845,8 @@ struct tty *tp;
 !
 q
 % 
-;login: thalia
+
+;login: thalia
 % ed TODO
 ?
 TOD@a
@@ -12830,7 +12857,8 @@ w
 42
 q
 % 
-;login: bin
+
+;login: bin
 % chdir /usr/sys/dmr
 % ed /#tty.c
 6474
@@ -13306,7 +13334,8 @@ null
 ptr
 rk0
 rk1
-rp0Quit -- Core dumped
+rp0
+Quit -- Core dumped
 % rm core
 % ls /bin/stty
 /bin/stty
@@ -14012,7 +14041,8 @@ un: _panic
 un: _sureg
 un: _iput
 un: _estabur
-un: _readiQuit -- Core dumped
+un: _readi
+Quit -- Core dumped
 % rm core
 % ed alo#loc.c
 ?
@@ -15091,7 +15121,8 @@ vs.c:
 vt.c:
 % sync
 % 
-;login: ed#thali@thalia
+
+;login: ed#thali@thalia
 Login incorrect.
 Name: thalia
 % ed TODO
@@ -15109,7 +15140,8 @@ w
 68
 q
 % 
-;login: bin
+
+;login: bin
 % chdir /usr/sys
 % mv a.out /ns#unix
 % chdir /usr/@ls -l /bin/gett####stty
@@ -15130,7 +15162,8 @@ k
 nunix
 mem = 64524
 
-;login: thalia
+
+;login: thalia
 % stty erase x
 % helloxxx
 he: not found
@@ -15150,13 +15183,15 @@ gtty: not found
 % getty
 getty: not found
 % 
-;login: tjail@thalia
+
+;login: tjail@thalia
 % stty ers#ase 
 % asdlkhjasd
 % echo hello world!/
 !/: not found
 % 
-;login: tal@thalia
+
+;login: tal@thalia
 % ed /usr/source/s2/sh.c
 10267
 s@/'\\'/
@@ -15322,7 +15357,8 @@ printf: not found
 % pwd
 ../usr/thalia
 % 
-;login: bin
+
+;login: bin
 % chdir /usr/ss#ys/dmr
 % ed tty.c
 6506
@@ -15502,14 +15538,16 @@ k
 unix
 mem = 64525
 
-;login: th
+
+;login: th
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> b rk
 k
 nunix
 mem = 64524
 
-;login: thalia
+
+;login: thalia
 % echo 
 
 % stty erase 
@@ -15518,7 +15556,8 @@ chd: not found
 % chdirmod
 arg count
 % 
-;login: bin
+
+;login: bin
 % ed /usr/sys/dmr/tty/#.c
 6510
 /backspace/
@@ -16066,19 +16105,22 @@ k
 nunix
 mem = 64524
 
-;login: thalia
+
+;login: thalia
 % stty bs##erase bs
 % helloworld
 % ls hello
 % asc@
-;login: bin
+
+;login: bin
 % ls hi
 % ls hi
 hi not found
 % pwd
 ../bin
 % 
-;login: in@@@bin
+
+;login: in@@@bin
 % chdir /usr/sys/dmr
 % date 08262300
 Mon Aug 26 23:00:00 MDT 1974
@@ -16106,7 +16148,8 @@ q
 % cat
 
 % 
-;login: bin
+
+;login: bin
 % cat 
 
 % 
@@ -16118,7 +16161,8 @@ k
 unix
 mem = 64525
 
-;login: bin
+
+;login: bin
 % bin
 bin: not found
 % cat
@@ -16205,7 +16249,8 @@ k
 unix
 mem = 64525
 
-;login: bin
+
+;login: bin
 % ed /usr/source/@ed /usr/sys/dmr/tty.c
 6592
 /\\b'#/
@@ -16279,7 +16324,8 @@ k
 nunix
 mem = 64524
 
-;login: thalia
+
+;login: thalia
 % stty erase bs
 % cat 
 
@@ -16411,7 +16457,8 @@ w
         printf("%d %c %c %d\n", ttyb.t_speeds, ttyb.t_erase, ttyb.t_kill, ttyb.t_flags);
 !ed !@q
 % 
-;login: thalia
+
+;login: thalia
 % ed TODO
 103
 a-#
@@ -16421,9 +16468,11 @@ w
 136
 q
 % 
-;login: bin
+
+;login: bin
 % chdir /usr/@
-;login: thalia
+
+;login: thalia
 % ed echo.c
 199
 /printf/
@@ -17089,7 +17138,8 @@ flags  = XTABS ECHO CRMOD ODDP EVENP NTDELAY
 % ttyinfo
 gtty:
 ispeed = 8
-ospeed = 0
+ospeed = 0
+
 % ttyinfo
 gtty:
 ispeed = 8
@@ -17138,7 +17188,8 @@ k
 nunix
 mem = 64524
 
-;login: thalia
+
+;login: thalia
 % stty erase bs
 % echo hi                                                                               hello world
 hello: not found
@@ -17225,7 +17276,8 @@ k
 unix
 mem = 64525
 
-;login: thalia@root
+
+;login: thalia@root
 Login incorrect.
 Name: bin
 % ls -l
@@ -17313,7 +17365,8 @@ drwxrwxrwx 2 bin       208 Aug 26 23:41 tmp
 -rwxrwxrwx 1 root    28404 Aug 26 23:42 unix
 drwxr-xr-x39 bin       624 Aug 25 12:42 usr
 % 
-;login: root
+
+;login: root
 # sync
 # 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
@@ -17399,7 +17452,8 @@ k
 unix
 mem = 64524
 
-;login: thalia
+
+;login: thalia
 % ed ps.s
 ?
 a
@@ -17534,7 +17588,8 @@ k
 unix
 mem = 64524
 
-;login: thalia
+
+;login: thalia
 % ed ps.#def.s
 ?
 a
@@ -17704,9 +17759,11 @@ k
 unix
 mem = 64524
 
-;login: thalia
+
+;login: thalia
 % 
-;login: bin
+
+;login: bin
 % cdir @chdir /usr/sys/tty.h
 chdir: bad directory
 % ed /usr/sys/tty@chdir /usr/sys
@@ -17954,13 +18011,15 @@ k
 nunix
 mem = 64523
 
-;login: thalia
+
+;login: thalia
 % helloworld
 % stty erase bs
 % hello[3~^H^H^H^H^H^H^H^H
 h: not found
 % 
-;login: bin
+
+;login: bin
 % chdir /usr/sys/dmr
 % ed tty.c
 6763
@@ -18203,13 +18262,15 @@ k
 nunix
 mem = 64523
 
-;login: thalia
+
+;login: thalia
 % hello
 hello: not found
 % stty erase bs
 % hello     ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H  ^H
 % chdir /usr@
-;login: bin
+
+;login: bin
 % chdir /usr/sys/dmr
 % ed tty.c
 6815
@@ -18284,7 +18345,8 @@ k
 nunix
 mem = 64523
 
-;login: thalia
+
+;login: thalia
 % stty eraes ###b#se bs
 % echo hello          ^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[3;5~hello
 Arg count
@@ -18295,7 +18357,8 @@ e: not found
 hi: not found
 % echo hi       ^H^H^H^H^H^H^H^H
 % 
-;login: root
+
+;login: root
 # mv /nunix /unix
 # sync
 # 
@@ -18321,7 +18384,8 @@ k
 unix
 mem = 64523
 
-;login: bin
+
+;login: bin
 % date 08271416
 Tue Aug 27 14:16:00 MDT 1974
 % chdir /usr/source/s1
@@ -19306,7 +19370,8 @@ k
 unix
 mem = 64523
 
-;login: bin
+
+;login: bin
 % ed @chdir /usr/siource@chi#dir /usr/source/s1
 % ed find.c
 8770
@@ -19390,7 +19455,8 @@ k
 unix
 mem = 64523
 
-;login: thalia
+
+;login: thalia
 % ed TODO
 190
 1,$p
@@ -19710,7 +19776,8 @@ k
 unix
 mem = 64523
 
-;login: thalia
+
+;login: thalia
 % ed TODO
 281
 .
@@ -20007,3 +20074,1333 @@ q
 % sync
 % 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+
+% date 08281028
+Wed Aug 28 10:28:00 MDT 1974
+% ed brktest.c
+?
+a
+main()
+{
+        char *a, *b;
+        a = sbrk(0);
+        b = sbrk(1);
+        printf("%d\n", b-a);
+}
+.
+w
+?
+q
+% pwd
+../usr/sys/ken
+% chdir /usr/sour####thalia
+% ed brktest.c
+?
+a
+main()
+{P#
+        char *a, *b;
+        a = sbrk(0);
+        b = sbrk(1)p#;
+        printf("%d\n", b-a);
+}
+.
+w
+75
+q
+% cc brktesdt.c
+1: Can't find brktesdt.c
+% cc brktest.c
+% a.out
+0
+% ed brktest.c
+75
+/b =
+?
+/b = /
+        b = sbrk(1);
+c@a
+         #c = b#sbrk(1);
+.
+
+        printf("%d\n", b-a);
+c/@a
+        printf("%d\n", c-a);
+.
+w
+111
+q
+% cc brktest.c
+6: Lvalue required
+8: Illegal conversion
+9: c undefined
+% a.@c#ed brk.#test.c
+111
+6
+        c = sbrk(1);
+3
+        char *a, *b;
+s/;/, *c/#;/p
+        char *a, *b, *c;
+w
+115
+!cc brktest.c
+!
+q
+% a.out
+0
+1
+% a@ed /usr/sys/k#user.h
+671
+/USIZE/
+?
+q
+% cg#hdir /usr/sys
+% grep -n USIZE *
+param.h:59 #define      USIZE   16
+% ed param.h
+941
+/USIZE/
+#define USIZE   16
+.-5,.+5p
+/*
+ * fundamental constants
+ * cannot be changed
+ */
+
+#define USIZE   16
+#define NULL    0
+#define NODEV   (-1)
+#define ROOTINO 1
+#define DIRSIZ  14
+
+q
+% ed user.c
+?
+q
+% ed user.h
+671
+1,$p
+struct user {
+        int     u_rsav[2];              /* must be first */
+        int     u_fsav[25];             /* must be second */
+        char    u_segflg;
+        char    u_error;
+        char    u_uid;
+        char    u_gid;
+        char    u_ruid;
+        char    u_rgid;
+        int     u_procp;
+        char    *u_base;
+        char    *u_count;
+        char    *u_offset[2];
+        int     *u_cdir;
+        char    u_dbuf[DIRSIZ];
+        char    *u_dirp;
+        struct  {
+                int     u_ino;
+                char    u_name[DIRSIZ];
+        } u_dent;
+        int     *u_pdir;
+        int     u_uisa[8];
+        int     u_uisd[8];
+        int     u_ofile[NOFILE];
+        int     u_arg[5];
+        int     u_tsize;
+        int     u_dsize;
+        int     u_ssize;
+        int     u_qsav[2];
+        int     u_ssav[2];
+        int     u_signal[NSIG];
+        int     u_utime;
+        int     u_stime;
+        int     u_cutime[2];
+        int     u_cstime[2];
+        int     *u_ar0;
+        int     u_prof[4];
+        char    u_nice;
+        char    u_dsleep;
+} u;    /* u = 140000 */
+q
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: thalia
+% ed /usr/soure#@ed .usr@chdir /usr/sys/ken
+% ed sys1.c
+5494
+/^expand/
+?
+q
+% grep -n e'##'^expand' (#*
+slp.c:304 expand(newsize)
+% ed slp.c
+5000
+/^expand/
+expand(newsize)
+.;/^}/p
+expand(newsize)
+{
+        int i, n;
+        register *p, a1, a2;
+
+        p = u.u_procp;
+        n = p->p_size;
+        p->p_size = newsize;
+        a1 = p->p_addr;
+        if(n >= newsize) {
+                mfree(coremap, n-newsize, a1+newsize);
+                return;
+        }
+        savu(u.u_rsav);
+        a2 = malloc(coremap, newsize);
+        if(a2 == NULL) {
+                savu(u.u_ssav);
+                xswap(p, 1, n);
+                p->p_flag =| SSWAP;
+                swtch();
+                /* no return */
+        }
+        p->p_addr = a2;
+        for(i=0; i<n; i++)
+                copyseg(a1+i, a2++);
+        mfree(coremap, n, a1);
+        retu(p->p_addr);
+        sureg();
+}
+q
+% greo 0n ###-n '^copyseg' *
+Command not found
+% grep -n '^copyseg' *
+% chdi@pwd
+../usr/sys/ken
+% chdir ..
+% ed @gre p-#@grep -n '^copyseg' *
+% grep -n copyseg *
+lib1:125 trap9IYYh(YYXYYYxYYYYYHYYhYY((((XYYYYh    )YYYYYYYYYxx9Xi9Xxi9Yi9i_canonb _coremap H_swapmap H_rootdir _lbolt _time _tout _callout x_mount _mpid _runin _runout _runrun _maxmem _lks _rootdev _swapdev _swplo _nswap _updlock _rablock _u r_proc h_text H_sysent _regloc#V_trap"rsave _savfp L2@_psignal L3L1"L10000d_fuword L4jL5_backup L6_estabur L7_expand L8bL9|_copyseg L10xL12HL13
+lib1:193 L63F_newproc L64@L58R_sbreak"V_nseg L66L650L67pL68NL69f_copyseg L70L71L72L730sys2.oo@kD60Nw      |N_     $wnw    jN_     $w\w    XCN4_   D>L0w   q8w\pwXl7
+^L5W _  _       7J7BW _ _       NNm &Ne_        V
+% chh
+chh: not found
+% ls core
+core not found
+% chdir ken
+% grep -n copyseg *
+slp.c:298                       copyseg(a1++, a2++);
+slp.c:328               copyseg(a1+i, a2++);
+sys1.c:330              copyseg(a-d, a);
+sys1.c:342              copyseg(a-d, a);
+trap.c:52                               copyseg(a-SINCR, a);
+% chdir ../dmr
+% grep -n '^co@grep -n copyseg *
+% chh#dir ..
+% grep @chdir conf
+% grep -n copyseg *
+mch.s:729 .globl        _copyseg
+mch.s:730 _copyseg:
+% ed mch.s
+11046
+/_copyseg/
+.globl  _copyseg
+.,.+23p
+.globl  _copyseg
+_copyseg:
+        mov     PS,-(sp)
+.if .45
+        mov     4(sp),SISA0
+        mov     6(sp),SISA1
+        mov     $10340,PS
+.endif
+.if .45-1
+        mov     UISA0,-(sp)
+        mov     UISA1,-(sp)
+        mov     $30340,PS
+        mov     10(sp),UISA0
+        mov     12(sp),UISA1
+        mov     UISD0,-(sp)
+        mov     UISD1,-(sp)
+        mov     $6,UISD0
+        mov     $6,UISD1
+.endif
+        mov     r2,-(sp)
+        clr     r0
+        mov     $8192.,r1
+        mov     $32.,r2
+1:
+.,.+23p
+1:
+        mfpi    (r0)+
+        mtpi    (r1)+
+        sob     r2,1b
+        mov     (sp)+,r2
+.if .45-1
+        mov     (sp)+,UISD1
+        mov     (sp)+,UISD0
+        mov     (sp)+,UISA1
+        mov     (sp)+,UISA0
+.endif
+        mov     (sp)+,PS
+        rts     pc
+
+.globl  _clearseg
+_clearseg:
+        mov     PS,-(sp)
+.if .45
+        mov     4(sp),SISA0
+        mov     $10340,PS
+.endif
+.if .45-1
+        mov     UISA0,-(sp)
+        mov     $30340,PS
+q
+% grep -n SISA0
+q
+
+
+1
+% grep -n I#SISA *
+mch.s:733       mov     4(sp),SISA0
+mch.s:734       mov     6(sp),SISA1
+mch.s:770       mov     4(sp),SISA0
+mch.s:949 SISA0 = 172240
+mch.s:950 SISA1 = 172242
+% pwd
+../usr/sys/conf
+% chdir /usr/thalia/ws
+% ed z.c
+684
+2#1,$p
+#
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ */
+
+#define NULL 0
+
+/* Header for an arbitrary-precision integer.
+ * The limbs directly follow it, inline. */
+struct zhdr {
+        /* The absolute value is the number of limbs representing this number.
+         * If negative, this is a negative number. */
+        int z_len;
+        /* The number of allocated limbs. */
+        int z_cap;
+        /* The count of references to this number. */
+        int z_refs;
+};
+
+struct freehdr {
+        struct freehdr *next;   /* Next block on free list */
+        int     size;           /* Size of this block */
+};
+
+struct freehdr *freep NULL;
+
+struct zhdr *
+zalloc(size)
+{
+        register struct freehdr *p;
+
+        for (p = freep; ; p = p->next) {
+!date
+Wed Aug 28 11:07:23 MDT 1974
+!
+!date 08281126
+Wed Aug 28 11:26:00 MDT 1974
+!
+/define/a
+\#define BLKSIZ 512
+.
+i
+/* Shh#ould @/* The number of bytes@/* The multiple of bytes to allocate at once.
+ * Should be a multiple of 64. */
+.
+.
+ * Should be a multiple of 64. */
+/a multiple of/@s/a multiple of/divisible by/
+.
+ * Should be divisible by 64. */
+$
+        for (p = freep; ; p = p->next) {
+c
+        p = r#freep;
+        for (;;) {
+                ?
+.-3,.p
+        register struct freehdr *p;
+
+        p = freep;
+        for (;;) {
+.-1,.c
+        for (p = freep; ; p = p->next); {####) {
+                if (p == NULL) {
+                } else if  #(p ->###->f_size >= size) {
+                }
+        }
+.
+?struct freehr#?
+        register struct freehdr *p;
+//
+struct freehdr {
+
+        struct freehdr *next;   /* Next block on free list */
+s/next/f_next/
+
+        int     size;           /* Size of this block */
+s/size/f_size/p
+        int     f_size;         /* Size of this block */
+/next@g/next/p
+        struct freehdr *f_next; /* Next block on free list */
+        for (p = freep; ; p = p->next) {
+.
+        for (p = freep; ; p = p->next) {
+s/next/f_next/
+
+                if (p == NULL) {
+
+                } else if (p->f_size >= size) {
+?for?
+        for (p = freep; ; p = p->f_next) {
+^
+
+a
+        size =+ sizeof zhdr;
+.
+$
+        }
+a
+}
+.
+w
+872
+!cc z.c
+42: zhdr undefined
+!
+?zhdr?
+        size =+ sizeof zhdr;
+??
+struct zhdr *
+??
+struct zhdr {
+??
+        size =+ sizeof zhdr;
+s/zhdr/struct zhdr/
+w
+879
+!cc z.c
+36: Expression syntax
+42: zhdr undefined
+!
+p
+        size =+ sizeof struct zhdr;
+s/sizeof @c
+        size =+ sizeof(struct zhdr);
+.
+w
+880
+!cc z.c
+36: Expression syntax
+42: zhdr undefined
+!
+c
+        size =+ sizeof &zhdr;
+.
+w
+873
+!cc z.c
+42: zhdr undefined
+!
+s/&//p
+        size =+ sizeof zhdr;
+w
+872
+q
+% chdir /usr/source/@chdir /usr/c
+% ls
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+% grep -n 'sizeof' *
+c00.c:42        "sizeof",       SIZEOF,
+c00.o:1 t4intcharfloatdoublestructautoexternstaticregistergotoreturnifwhileelseswitchcasebreakcontinuedodefaultforsizeofw       hjW-NZ_  N_      
+c04.c:46        034200, /* sizeof */
+c20.c:251                       p = alloc(sizeof first);
+c20.c:267                       p = alloc(sizeof first);
+c20.c:278                       p = alloc(sizeof first);
+c20.c:559               p3 = alloc(sizeof first);
+% grep SIZEOF *
+        "sizeof",       SIZEOF,
+                        if (csym->htype==SIZEOF)
+                                return(SIZEOF);
+        case SIZEOF:
+        if (op==SIZEOF) {
+#define SIZEOF  29
+% ed /usr/thalia/TODO
+291
+$a
+- Make i#sizeof operate on types ?
+- Make sizoe#f operate on tyes##pes, not values.
+?
+a
+- Make sizoef ####eof operate on types, not values.
+.
+1,$p
+TODO:
+- Implement char class ranges in ed
+- Make date Y2K compliant
+- Report non-existent files in cat
+- Allow omitting closing / in ed
+- Make ed listing (l) escape non-printable characters
+- Memory allocator:
+  - Assume exclusive ownership of sbrk
+  - Align to int
+- Add a symbol for indir
+- Make sizeof operate on types, not values.
+s/\.///#o#p
+- Make sizeof operate on types, not values
+w
+334
+q
+% grep -m#n SIZEOF *
+c00.c:42        "sizeof",       SIZEOF,
+c00.c:255                       if (csym->htype==SIZEOF)
+c00.c:256                               return(SIZEOF);
+c00.c:457       case SIZEOF:
+c01.c:27        if (op==SIZEOF) {
+c0h.c:138 #define       SIZEOF  29
+% ed c00.c
+11616
+/SIZOEF@/SIZEOF/
+        "sizeof",       SIZEOF,
+//
+                        if (csym->htype==SIZEOF)
+.-5,.P23p
+?
+.-5,.+20p
+                while(sp<symbuf+ncps)
+                        *sp++ = '\0';
+                peekc = c;
+                csym = lookup();
+                if (csym->hclass==KEYWC) {
+                        if (csym->htype==SIZEOF)
+                                return(SIZEOF);
+                        cval = csym->htype;
+                        return(KEYW);
+                }
+                return(NAME);
+
+        case AND:
+                return(subseq('&', AND, LOGAND));
+
+        case OR:
+                return(subseq('|', OR, LOGOR));
+
+        case UNKN:
+                error("Unknown character");
+                c = getchar();
+                goto loop;
+
+        }
+        return(ctab[c]);
+}
+?^{?;#,.[#p
+{
+        int ihash;
+        register struct hshtab *rp;
+        register char *sp, *np;
+
+        ihash = 0;
+        for (sp=symbuf; sp<symbuf+ncps;)
+                ihash =+ *sp++ & 0177;
+        rp = &hshtab[ihash%hshsiz];
+        while (*(np = rp->name)) {
+                for (sp=symbuf; sp<symbuf+ncps;)
+                        if ((*np++&0177) != *sp++)
+                                goto no;
+                return(rp);
+        no:
+                if (++rp >= &hshtab[hshsiz])
+                        rp = hshtab;
+        }
+        if(++hshused >= hshsiz) {
+                error("Symbol table overflow");
+                exit(1);
+        }
+        rp->hclass = 0;
+        rp->htype = 0;
+        rp->hoffset = 0;
+        rp->dimp = 0;
+        sp = symbuf;
+        if (xdflg)
+                *sp =| 0200;
+        for (np=rp->name; sp<symbuf+ncps;)
+                *np++ = *sp++;
+        return(rp);
+}
+
+symbol() {
+        register c;
+        register char *sp;
+
+        if (peeksym>=0) {
+                c = peeksym;
+                peeksym = -1;
+                if (c==NAME)
+                        mosflg = 0;
+                return(c);
+        }
+        if (peekc) {
+                c = peekc;
+                peekc = 0;
+        } else
+                if (eof)
+                        return(EOF);
+                else
+                        c = getchar();
+loop:
+        switch(ctab[c]) {
+
+        case INSERT:            /* ignore newlines */
+                inhdr = 1;
+                c = getchar();
+                goto loop;
+
+        case NEWLN:
+                if (!inhdr)
+                        line++;
+                inhdr = 0;
+
+        case SPACE:
+                c = getchar();
+                goto loop;
+
+        case EOF:
+                eof++;
+                return(0);
+
+        case PLUS:
+                return(subseq(c,PLUS,INCBEF));
+
+        case MINUS:
+                return(subseq(c,subseq('>',MINUS,ARROW),DECBEF));
+
+        case ASSIGN:
+                if (subseq(' ',0,1)) return(ASSIGN);
+                c = symbol();
+                if (c>=PLUS && c<=EXOR) {
+                        if (peekc==0)
+                                peekc = getchar();
+                        if (ctab[peekc] != SPACE 
+                         && (c==MINUS || c==AND || c==TIMES)) {
+                                error("Warning: assignment understood");
+                                nerror--;
+                        }
+                        return(c+30);
+                }
+                if (c==ASSIGN)
+                        return(EQUAL);
+                peeksym = c;
+                return(ASSIGN);
+
+        case LESS:
+                if (subseq(c,0,1)) return(LSHIFT);
+                return(subseq('=',LESS,LESSEQ));
+
+        case GREAT:
+                if (subseq(c,0,1)) return(RSHIFT);
+                return(subseq('=',GREAT,GREATEQ));
+
+        case EXCLA:
+                return(subseq('=',EXCLA,NEQUAL));
+
+        case DIVIDE:
+                if (subseq('*',1,0))
+                        return(DIVIDE);
+com:
+                c = getchar();
+com1:
+                switch(c) {
+                case '\0':
+                        eof++;
+                        error("Nonterminated comment");
+                        return(0);
+                case '\n':
+                        if (!inhdr)
+                                line++;
+                        inhdr = 0;
+                        goto com;
+                case 001:               /* SOH, insert marker */
+                        inhdr++;
+                default:
+                        goto com;
+                case '*':
+                        c = getchar();
+                        if (c!='/')
+                                goto com1;
+                }
+                c = getchar();
+                goto loop;
+
+        case PERIOD:
+        case DIGIT:
+                peekc = c;
+                if ((c=getnum(c=='0'?8:10)) == FCON)
+                        cval = isn++;
+                return(c);
+
+        case DQUOTE:
+                return(getstr());
+
+        case SQUOTE:
+                return(getcc());
+
+        case LETTER:
+                sp = symbuf;
+                if (mosflg) {
+                        *sp++ = '.';
+                        mosflg = 0;
+                }
+                while(ctab[c]==LETTER || ctab[c]==DIGIT) {
+                        if (sp<symbuf+ncps) *sp++ = c;
+                        c = getchar();
+                }
+                while(sp<symbuf+ncps)
+                        *sp++ = '\0';
+                peekc = c;
+                csym = lookup();
+                if (csym->hclass==KEYWC) {
+                        if (csym->htype==SIZEOF)
+                                return(SIZEOF);
+                        cval = csym->htype;
+                        return(KEYW);
+                }
+                return(NAME);
+
+        case AND:
+                return(subseq('&', AND, LOGAND));
+
+        case OR:
+                return(subseq('|', OR, LOGOR));
+
+        case UNKN:
+                error("Unknown character");
+                c = getchar();
+                goto loop;
+
+        }
+        return(ctab[c]);
+}
+g/[^##^[a-z]/p
+advanc:
+g/^[a-z]/p
+advanc:
+//
+advanc:
+//
+advanc:
+.=
+395
+f
+c00.c
+g/^[^{} /#]/p
+#
+/* C compiler
+Copyright 1972 Bell Telephone Laboratories, Inc. 
+*/
+#include "c0h.c"
+int     isn 1;
+int     peeksym -1;
+int     line 1;
+int     debug 0;
+int     dimp    0;
+struct kwtab {
+main(argc, argv)
+char *argv[];
+struct hshtab *lookup()
+symbol() {
+loop:
+com:
+com1:
+subseq(c,a,b) {
+getstr() {
+getcc()
+mapch(ac)
+loop:
+tree()
+#define SEOF    200
+#define SSIZE   20
+advanc:
+tand:
+oponst:
+opon1:
+fbuild:
+syntax:
+declare(askw, tkw, offset, elsize)
+decl1(askw, tkw, offset, elsize)
+syntax:
+getype()
+syntax:
+decsyn(o)
+redec()
+/^symbol/
+symbol() {
+c
+symbol()
+{
+.
+/^getstr()@
+        register c;
+q
+% su
+# ed c00.c
+11616
+/symbol/
+symbol() {
+c
+symbol()
+{
+.
+/subseq/
+                return(subseq(c,PLUS,INCBEF));
+//
+                return(subseq(c,subseq('>',MINUS,ARROW),DECBEF));
+/^ub##subseq/
+subseq(c,a,b) {
+c
+subseq(c, a, b)
+{
+.
+/^getstr/
+getstr() {
+c
+getstr()
+P
+{
+.
+^
+P
+d
+w
+11618
+q
+# cc c00.c
+un: _error
+un: _extdef
+un: _blkend
+un: _getnum
+un: _nextcha
+un: _block
+un: _pblock
+un: _build
+un: _errflus
+un: _chkdim
+un: _length
+un: _rlength
+un: _conexp
+# rm a.out
+# % ws #@ed cc0@ed c00.c
+11618
+g/SIZEOF/-5;.+5p
+?
+f/@g/SIZEOF/
+        0,              0,
+                                return(SIZEOF);
+                        cval = csym->htype;
+                if (andflg)
+g/SIZEOF/p
+        "sizeof",       SIZEOF,
+                        if (csym->htype==SIZEOF)
+                                return(SIZEOF);
+        case SIZEOF:
+//
+        "sizeof",       SIZEOF,
+//
+                        if (csym->htype==SIZEOF)
+?^{?-1;/^}/p
+symbol()
+{
+        register c;
+        register char *sp;
+
+        if (peeksym>=0) {
+                c = peeksym;
+                peeksym = -1;
+                if (c==NAME)
+                        mosflg = 0;
+                return(c);
+        }
+        if (peekc) {
+                c = peekc;
+                peekc = 0;
+        } else
+                if (eof)
+                        return(EOF);
+                else
+                        c = getchar();
+loop:
+        switch(ctab[c]) {
+
+        case INSERT:            /* ignore newlines */
+                inhdr = 1;
+                c = getchar();
+                goto loop;
+
+        case NEWLN:
+                if (!inhdr)
+                        line++;
+                inhdr = 0;
+
+        case SPACE:
+                c = getchar();
+                goto loop;
+
+        case EOF:
+                eof++;
+                return(0);
+
+        case PLUS:
+                return(subseq(c,PLUS,INCBEF));
+
+        case MINUS:
+                return(subseq(c,subseq('>',MINUS,ARROW),DECBEF));
+
+        case ASSIGN:
+                if (subseq(' ',0,1)) return(ASSIGN);
+                c = symbol();
+                if (c>=PLUS && c<=EXOR) {
+                        if (peekc==0)
+                                peekc = getchar();
+                        if (ctab[peekc] != SPACE 
+                         && (c==MINUS || c==AND || c==TIMES)) {
+                                error("Warning: assignment understood");
+                                nerror--;
+                        }
+                        return(c+30);
+                }
+                if (c==ASSIGN)
+                        return(EQUAL);
+                peeksym = c;
+                return(ASSIGN);
+
+        case LESS:
+                if (subseq(c,0,1)) return(LSHIFT);
+                return(subseq('=',LESS,LESSEQ));
+
+        case GREAT:
+                if (subseq(c,0,1)) return(RSHIFT);
+                return(subseq('=',GREAT,GREATEQ));
+
+        case EXCLA:
+                return(subseq('=',EXCLA,NEQUAL));
+
+        case DIVIDE:
+                if (subseq('*',1,0))
+                        return(DIVIDE);
+com:
+                c = getchar();
+com1:
+                switch(c) {
+                case '\0':
+                        eof++;
+                        error("Nonterminated comment");
+                        return(0);
+                case '\n':
+                        if (!inhdr)
+                                line++;
+                        inhdr = 0;
+                        goto com;
+                case 001:               /* SOH, insert marker */
+                        inhdr++;
+                default:
+                        goto com;
+                case '*':
+                        c = getchar();
+                        if (c!='/')
+                                goto com1;
+                }
+                c = getchar();
+                goto loop;
+
+        case PERIOD:
+        case DIGIT:
+                peekc = c;
+                if ((c=getnum(c=='0'?8:10)) == FCON)
+                        cval = isn++;
+                return(c);
+
+        case DQUOTE:
+                return(getstr());
+
+        case SQUOTE:
+                return(getcc());
+
+        case LETTER:
+                sp = symbuf;
+                if (mosflg) {
+                        *sp++ = '.';
+                        mosflg = 0;
+                }
+                while(ctab[c]==LETTER || ctab[c]==DIGIT) {
+                        if (sp<symbuf+ncps) *sp++ = c;
+                        c = getchar();
+                }
+                while(sp<symbuf+ncps)
+                        *sp++ = '\0';
+                peekc = c;
+                csym = lookup();
+                if (csym->hclass==KEYWC) {
+                        if (csym->htype==SIZEOF)
+                                return(SIZEOF);
+                        cval = csym->htype;
+                        return(KEYW);
+                }
+                return(NAME);
+
+        case AND:
+                return(subseq('&', AND, LOGAND));
+
+        case OR:
+                return(subseq('|', OR, LOGOR));
+
+        case UNKN:
+                error("Unknown character");
+                c = getchar();
+                goto loop;
+
+        }
+        return(ctab[c]);
+}
+/SIZEOF/
+        case SIZEOF:
+?^{?-1;/^}/p
+tree()
+{
+#define SEOF    200
+#define SSIZE   20
+        int *op, opst[SSIZE], *pp, prst[SSIZE];
+        register int andflg, o;
+        register struct hshtab *cs;
+        int p, ps, os, *np;
+
+        osleft = ossiz;
+        space = treebase;
+        op = opst;
+        pp = prst;
+        cp = cmst;
+        *op = SEOF;
+        *pp = 06;
+        andflg = 0;
+
+advanc:
+        switch (o=symbol()) {
+
+        case NAME:
+                cs = csym;
+                if (cs->hclass==0 && cs->htype==0)
+                        if(nextchar()=='(') {
+                                /* set function */
+                                cs->hclass = EXTERN;
+                                cs->htype = FUNC;
+                        } else if (initflg)
+                                cs->hclass = EXTERN;
+                        else {
+                                /* set label */
+                                cs->htype = ARRAY;
+                                if (cs->hoffset==0)
+                                        cs->hoffset = isn++;
+                        }
+                *cp++ = block(2,NAME,cs->htype,cs->hdimp,
+                    cs->hclass,0);
+                if (cs->hclass==EXTERN) {
+                        np = cs->name;
+                        for (o=0; o<4; o++) {
+                                pblock(*np);
+                                if (((*np++)&~0177) == 0)
+                                        break;
+                        }
+                } else
+                        pblock(cs->hoffset);
+                goto tand;
+
+        case FCON:
+                if (!initflg)
+                        printf(".data\nL%d:0%o;0%o;0%o;0%o\n.text\n",cval,fcval);
+
+        case CON:
+        case SFCON:
+                *cp++ = block(1,o,(o==CON?INT:DOUBLE),0,cval);
+                goto tand;
+
+        /* fake a static char array */
+        case STRING:
+                *cp++ = block(3, NAME, ARRAY+CHAR,0,STATIC,0,cval);
+
+tand:
+                if(cp>=cmst+cmsiz) {
+                        error("Expression overflow");
+                        exit(1);
+                }
+                if (andflg)
+                        goto syntax;
+                andflg = 1;
+                goto advanc;
+
+        case INCBEF:
+        case DECBEF:
+                if (andflg)
+                        o =+ 2;
+                goto oponst;
+
+        case COMPL:
+        case EXCLA:
+        case SIZEOF:
+                if (andflg)
+                        goto syntax;
+                goto oponst;
+
+        case MINUS:
+                if (!andflg)  {
+                        if ((peeksym=symbol())==FCON) {
+                                fcval = - fcval;
+                                goto advanc;
+                        }
+                        if (peeksym==SFCON) {
+                                fcval = - fcval;
+                                cval =^ 0100000;
+                                goto advanc;
+                        }
+                        o = NEG;
+                }
+                andflg = 0;
+                goto oponst;
+
+        case AND:
+        case TIMES:
+                if (andflg)
+                        andflg = 0; else
+                        if(o==AND)
+                                o = AMPER;
+                        else
+                                o = STAR;
+                goto oponst;
+
+        case LPARN:
+                if (andflg) {
+                        o = symbol();
+                        if (o==RPARN)
+                                o = MCALL;
+                        else {
+                                peeksym = o;
+                                o = CALL;
+                                andflg = 0;
+                        }
+                }
+                goto oponst;
+
+        case RBRACK:
+        case RPARN:
+                if (!andflg)
+                        goto syntax;
+                goto oponst;
+
+        case DOT:
+        case ARROW:
+                mosflg++;
+                break;
+
+        }
+        /* binaries */
+        if (!andflg)
+                goto syntax;
+        andflg = 0;
+
+oponst:
+        p = (opdope[o]>>9) & 077;
+        if ((o==COMMA || o==COLON) && initflg)
+                p = 05;
+opon1:
+        ps = *pp;
+        if (p>ps || p==ps && (opdope[o]&RASSOC)!=0) {
+                switch (o) {
+
+                case INCAFT:
+                case DECAFT:
+                        p = 37;
+                        break;
+                case LPARN:
+                case LBRACK:
+                case CALL:
+                        p = 04;
+                }
+                if(op>=opst+SSIZE) {
+                        error("expression overflow");
+                        exit(1);
+                }
+                *++op = o;
+                *++pp = p;
+                goto advanc;
+        }
+        --pp;
+        switch (os = *op--) {
+
+        case SEOF:
+                peeksym = o;
+                build(0);               /* flush conversions */
+                return(*--cp);
+
+        case CALL:
+                if (o!=RPARN)
+                        goto syntax;
+                build(os);
+                goto advanc;
+
+        case MCALL:
+                *cp++ = block(0,0,0,0); /* 0 arg call */
+                os = CALL;
+                goto fbuild;
+
+        case LPARN:
+                if (o!=RPARN)
+                        goto syntax;
+                goto advanc;
+
+        case LBRACK:
+                if (o!=RBRACK)
+                        goto syntax;
+                build(LBRACK);
+                goto advanc;
+        }
+fbuild:
+        build(os);
+        goto opon1;
+
+syntax:
+        error("Expression syntax");
+        errflush(o);
+        return(0);
+}
+/SIZEOF/
+        "sizeof",       SIZEOF,
+//
+                        if (csym->htype==SIZEOF)
+//
+                                return(SIZEOF);
+//
+        case SIZEOF:
+//
+        "sizeof",       SIZEOF,
+q
+% gre #p -n SIZEOF
+% grep -n SIZEOF *
+c00.c:42        "sizeof",       SIZEOF,
+c00.c:256                       if (csym->htype==SIZEOF)
+c00.c:257                               return(SIZEOF);
+c00.c:460       case SIZEOF:
+c01.c:27        if (op==SIZEOF) {
+c0h.c:138 #define       SIZEOF  29
+% ed c01.c
+6615
+/SIZOE#F?#/
+?
+/SIZEOF/
+        if (op==SIZEOF) {
+?^{?-1;@?^{?-1;/^}/p
+conexp()
+{
+        register struct tnode *t;
+
+        initflg++;
+        if (t = tree())
+                if (t->op != CON)
+                        error("Constant required");
+        initflg--;
+        return(t->value);
+}
+/SIZEOF/
+        if (op==SIZEOF) {
+?^{?-1,/^}/p
+?
+?q
+?
+q
+% sync
+% pwd
+../usr/c
+% chdir /usr/thalia
+% ed@chdir ws
+% ed z.c
+872
+/struct/
+struct zhdr {
+
+        /* The absolute value is the number of limbs representing this number.
+
+         * If negative, this is a negative number. */
+
+        int z_len;
+
+        /* The number of allocated limbs. */
+
+        int z_cap;
+
+        /* The count of references to this number. */
+
+        int z_refs;
+
+};
+a
+/* sizeof zhdr. TODO: Replace with sizeof. */
+# @\#define ZSIZE 6
+.
+/for/
+        for (p = freep; ; p = p->f_next) {
+^
+        size =+ sizeof zhdr;
+c
+        size =+ ZSIZE;
+.
+w
+928
+q
+% cc z.c
+un: _main
+% sync
+% chdir @su
+# chi#dir /usr/c
+# cc -c c00.c
+# chdir @% sync
+% 

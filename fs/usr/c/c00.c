@@ -121,7 +121,8 @@ struct hshtab *lookup()
 	return(rp);
 }
 
-symbol() {
+symbol()
+{
 	register c;
 	register char *sp;
 
@@ -274,7 +275,8 @@ com1:
 	return(ctab[c]);
 }
 
-subseq(c,a,b) {
+subseq(c, a, b)
+{
 	if (!peekc)
 		peekc = getchar();
 	if (peekc != c)
@@ -283,7 +285,8 @@ subseq(c,a,b) {
 	return(b);
 }
 
-getstr() {
+getstr()
+{
 	register int c;
 	register char *t, *d;
 

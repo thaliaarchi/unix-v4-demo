@@ -5,6 +5,9 @@
  */
 
 #define NULL 0
+/* The multiple of bytes to allocate at once.
+ * Should be divisible by 64. */
+#define BLKSIZ 512
 
 /* Header for an arbitrary-precision integer.
  * The limbs directly follow it, inline. */
@@ -17,10 +20,12 @@ struct zhdr {
 	/* The count of references to this number. */
 	int z_refs;
 };
+/* sizeof zhdr. TODO: Replace with sizeof. */
+#define ZSIZE 6
 
 struct freehdr {
-	struct freehdr *next;	/* Next block on free list */
-	int	size;		/* Size of this block */
+	struct freehdr *f_next;	/* Next block on free list */
+	int	f_size;		/* Size of this block */
 };
 
 struct freehdr *freep NULL;
@@ -30,4 +35,10 @@ zalloc(size)
 {
 	register struct freehdr *p;
 
-	for (p = freep; ; p = p->next) {
+	size =+ ZSIZE;
+	for (p = freep; ; p = p->f_next) {
+		if (p == NULL) {
+		} else if (p->f_size >= size) {
+		}
+	}
+}
