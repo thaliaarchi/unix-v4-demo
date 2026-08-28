@@ -8,4 +8,4 @@ TODO:
   - Assume exclusive ownership of sbrk
   - Align to int
 - Add a symbol for indir
-- Make sizeof operate on types, not values
+- Make struct fields scoped to the type

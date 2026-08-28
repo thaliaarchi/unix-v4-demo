@@ -2,6 +2,8 @@
 /*
  * Arbitrary-precision integers for Whitespace
  * by Thalia Archibald, 2026
+ *
+ * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
  */
 
 #define NULL 0
@@ -20,25 +22,49 @@ struct zhdr {
 	/* The count of references to this number. */
 	int z_refs;
 };
-/* sizeof zhdr. TODO: Replace with sizeof. */
-#define ZSIZE 6
 
 struct freehdr {
 	struct freehdr *f_next;	/* Next block on free list */
 	int	f_size;		/* Size of this block */
 };
 
-struct freehdr *freep NULL;
+struct freehdr *base { base, 0 };	/* Initial empty list */
+struct freehdr *freep base;
+
+struct zhdr *zgrow();
 
 struct zhdr *
-zalloc(size)
+zalloc(limbs)
 {
-	register struct freehdr *p;
+	register nbytes;
+	register char *p, *prevp;
 
-	size =+ ZSIZE;
-	for (p = freep; ; p = p->f_next) {
-		if (p == NULL) {
-		} else if (p->f_size >= size) {
+	nbytes = sizeof *p + limbs * 2;
+	for (prevp = p = freep; ; prevp = p, p = p->f_next) {
+		if (p->f_size >= nbytes) {	/* Large enough */
+			if (p->f_size == nbytes)	/* Fits exactly */
+				prevp->f_next = p->f_next;
+			else {	/* Allocate tail */
+				p->f_size =- nbytes;
+				p =+ p->f_size;
+				p->f_size = nbytes;
+			}
+			freep = prevp;
+			return p;
 		}
+		/* Wrapped around the free list */
+		if (p == freep) {
+			p = zgrow(nbytes);
+			if (p == NULL) {
+				write(2, "ws: Out of memory\n", 18);
+				exit(1);
+			}
+		}
+
 	}
+}
+
+struct zhdr *
+zgrow(nbytes)
+{
 }

@@ -21404,3 +21404,746 @@ un: _main
 # cc -c c00.c
 # chdir @% sync
 % 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+
+% date 08281205
+Wed Aug 28 12:05:00 MDT 1974
+% chdir /usr/c
+% ls
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+% cat trc
+cvopt $1.s $1.i
+rm a.out
+as $1.i
+if -r a.out rm $1.i
+mv a.out $1.o
+ar r tab.a $1.o
+rm $1.o
+% sh
+% strip c00.o
+% sync
+% cc -c c00.c
+a.out?
+move failed: c00.o
+% su
+# cc -c c00.o
+# ls -l
+total 327
+-rw-r--r-- 1 bin     11618 Aug 28 11:43 c00.c
+-rw-rw-rw- 1 root     4782 Aug 28 12:05 c00.o
+-rw-r--r-- 1 bin      6615 Jun 10 08:37 c01.c
+-rw-r--r-- 1 bin      7912 Jun 10 08:37 c01.o
+-rw-r--r-- 1 bin     11397 Jun 10 08:37 c02.c
+-rw-r--r-- 1 bin     12660 Jun 10 08:37 c02.o
+-rw-r--r-- 1 bin      2353 Jun 10 08:37 c03.c
+-rw-r--r-- 1 bin      3392 Jun 10 08:37 c03.o
+-rw-r--r-- 1 bin      6186 Jun 10 08:37 c04.c
+-rw-r--r-- 1 bin      1500 Jun 10 08:37 c04.o
+-rw-r--r-- 1 bin      3635 Jun 10 08:37 c0h.c
+-rw-r--r-- 1 bin      1704 Jun 10 08:37 c0t.s
+-rw-r--r-- 1 bin     16649 Jun 10 08:37 c10.c
+-rw-r--r-- 1 bin      9124 Jun 10 08:37 c11.c
+-rw-r--r-- 1 bin      2126 Jun 10 08:37 c12.c
+-rw-r--r-- 1 bin      2747 Jun 10 08:37 c1h.c
+-rw-r--r-- 1 bin       776 Jun 10 08:37 c1t.s
+-rw-r--r-- 1 bin     16474 Jun 10 08:37 c20.c
+-rw-r--r-- 1 bin      1217 Jun 10 08:37 cctab.s
+-rwxr-xr-x 1 bin      2438 Jun 10 08:37 cvopt
+-rw-r--r-- 1 bin      3673 Jun 10 08:37 cvopt.c
+-rw-r--r-- 1 bin      1776 Jun 10 08:37 efftab.s
+-rw-r--r-- 1 bin      6655 Jun 10 08:37 regtab.s
+-rw-r--r-- 1 bin      1373 Jun 10 08:37 sptab.s
+-rw-r--r-- 1 bin     15870 Jun 10 08:37 tab.a
+-rw-r--r-- 1 bin        91 Jun 10 08:37 trc
+# chown@chmod 644 c00.o
+# chown bin c00.o
+# ls -l
+total 327
+-rw-r--r-- 1 bin     11618 Aug 28 11:43 c00.c
+-rw-r--r-- 1 bin      4782 Aug 28 12:07 c00.o
+-rw-r--r-- 1 bin      6615 Jun 10 08:37 c01.c
+-rw-r--r-- 1 bin      7912 Jun 10 08:37 c01.o
+-rw-r--r-- 1 bin     11397 Jun 10 08:37 c02.c
+-rw-r--r-- 1 bin     12660 Jun 10 08:37 c02.o
+-rw-r--r-- 1 bin      2353 Jun 10 08:37 c03.c
+-rw-r--r-- 1 bin      3392 Jun 10 08:37 c03.o
+-rw-r--r-- 1 bin      6186 Jun 10 08:37 c04.c
+-rw-r--r-- 1 bin      1500 Jun 10 08:37 c04.o
+-rw-r--r-- 1 bin      3635 Jun 10 08:37 c0h.c
+-rw-r--r-- 1 bin      1704 Jun 10 08:37 c0t.s
+-rw-r--r-- 1 bin     16649 Jun 10 08:37 c10.c
+-rw-r--r-- 1 bin      9124 Jun 10 08:37 c11.c
+-rw-r--r-- 1 bin      2126 Jun 10 08:37 c12.c
+-rw-r--r-- 1 bin      2747 Jun 10 08:37 c1h.c
+-rw-r--r-- 1 bin       776 Jun 10 08:37 c1t.s
+-rw-r--r-- 1 bin     16474 Jun 10 08:37 c20.c
+-rw-r--r-- 1 bin      1217 Jun 10 08:37 cctab.s
+-rwxr-xr-x 1 bin      2438 Jun 10 08:37 cvopt
+% 
+# 
+% ls core
+core not found
+# pwd
+../usr/c
+% chdir /usr/thalia
+# sync
+% chdi #r ws
+chdir: bad directory
+% cdir @chdir ws
+# cc -c z.c
+1: Can't find z.c
+% pwd
+../usr/thalia/ws
+# ls
+c00.c
+c00.o
+c01.c
+c01.o
+c02.c
+c02.o
+c03.c
+c03.o
+c04.c
+c04.o
+c0h.c
+c0t.s
+c10.c
+c11.c
+c12.c
+c1h.c
+c1t.s
+c20.c
+cctab.s
+cvopt
+cvopt.c
+efftab.s
+regtab.s
+sptab.s
+tab.a
+trc
+% 
+% pwd
+../usr/c
+% chdir /usr/thalia/ws
+% ls
+a.out
+z.c
+% chdir @cc -c z.c
+% ed c01.c
+?
+/q
+?
+q
+% chdir /usr/c
+% ed /case StR##TAR/
+?
+q
+% ed c01.c
+6615
+/CASE?@/C#case STAR/
+        case STAR:
+
+                if (p1->op==AMPER || p1->op==AMPERA) {
+q
+% pwd
+../usr/c
+% chdir /usr/thalia
+% ed TODO
+334
+$
+- Make sizeof operate on types, not values
+d
+w
+291
+q
+% chdir ws
+% ed z.c
+928
+/sizeof
+?
+/sizeof/
+/* sizeof zhdr. TODO: Replace with sizeof. */
+d
+
+
+
+struct freehdr {
+^
+
+^
+#define ZSIZE 6
+d
+/ZSL#/
+        size =+ ZSIZE;
+c#s/ZSIZE/sizeof x/
+^
+
+^
+        register struct freehdr *p;
+
+
+
+        size =+ sizeof x;
+s/x/*p/p
+        size =+ sizeof *p;
+w
+870
+q
+% cc z.c
+un: _main
+% ls
+a.out
+z.c
+% ed z.c
+870
+?^{?-1;$p
+zalloc(size)
+{
+        register struct freehdr *p;
+
+        size =+ sizeof *p;
+        for (p = freep; ; p = p->f_next) {
+                if (p == NULL) {
+                } else if (p->f_size >= size) {
+                }
+        }
+}
+/reg/
+        register struct freehdr *p;
+s/;/, *prevp/
+/for/
+        for (p = freep; ; p = p->f_next) {
+c
+        for (p = freep; ; prevp = p, p = p->f_next) {
+.
+!ed /usr/thalia/TODO
+291
+a
+- Make struct fields non-uniu#que
+.
+c
+- Make struct fields scoped to the type
+.
+w
+331
+q
+!
+/else/a
+                        if (p->f_size >= size#######== size)
+                                prevp->f_next = p->f_next;
+                        else {
+                                p->f_size =- size;
+                                p =+ p->f_size;
+                                p->f_size = size;
+                        }
+                        freep = pref#vp;
+                        return p;
+.
+?alloc?;$p
+zalloc(size)
+{
+        register struct freehdr *p, *prevp
+
+        size =+ sizeof *p;
+        for (p = freep; ; prevp = p, p = p->f_next) {
+                if (p == NULL) {
+                } else if (p->f_size >= size) {
+                        if (p->f_size == size)
+                                prevp->f_next = p->f_next;
+                        else {
+                                p->f_size =- size;
+                                p =+ p->f_size;
+                                p->f_size = size;
+                        }
+                        freep = prevp;
+                        return p;
+                }
+        }
+}
+?NULL?
+                if (p == NULL) {
+d
+
+                        if (p->f_size == size)
+^
+                } else if (p->f_size >= size) {
+s/} else /p#/p
+                if (p->f_size >= size) {
+/ret/+1
+                }
+a
+                if (*#p == freep) {
+                        p = more####grow(size);
+                        if (p == NULL)
+                                return NULL@
+.
+c@s/$@.
+
+^
+                        if (p == NULL)
+$
+}
+^
+        }
+%@^
+
+.,$p
+
+        }
+}
+.-5,#p@.-5,$p
+                if (p == freep) {
+                        p = grow(size);
+                        if (p == NULL)
+
+        }
+}
+?grow?
+                        p = grow(size);
+
+                        if (p == NULL)
+s/ #s/@@@s/$/ {/
+a
+                                write(2, "ws: Out of memory\n", 18);
+                                exit(1);
+                        }
+.
+?if?
+                        if (p == NULL) {
+?
+?
+??
+?
+??
+?
+?if?
+                if (p == freep) {
+i
+                /* Wrapped around the free list */
+.
+/#?-@?==?
+                        if (p->f_size == size)
+i
+                        /* Fits exactly */
+,#.
+
+                        if (p->f_size == size)
+
+                                prevp->f_next = p->f_next;
+
+                        else {
+
+                                p->f_size =- size;
+^
+                        else {
+s/$/    /* Allocate tail */
+?
+s/$/    \/* Allocate tail *\//p
+                        else {  /* Allocate tail */
+?if?
+                        if (p->f_size == size)
+s/$/    \/* Fix#ts exactly *\//p
+                        if (p->f_size == size)  /* Fits exactly */
+?d
+?
+^d
+^
+                if (p->f_size >= size) {
+s/$/    \?#/* Large enough *\//p
+                if (p->f_size >= size) {        /* Large enough */
+^
+        for (p = freep; ; prevp = p, p = p->f_next) {
+^
+        size =+ sizeof *p;
+w
+1244
+!date
+Wed Aug 28 13:41:14 MDT 1974
+!
+!cc -c z.c
+36: Declaration syntax
+59: Unexpected EOF
+59: Missing '}'
+!
+36
+        size =+ sizeof *p;
+59
+?
+1,$p
+#
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ */
+
+#define NULL 0
+/* The multiple of bytes to allocate at once.
+ * Should be divisible by 64. */
+#define BLKSIZ 512
+
+/* Header for an arbitrary-precision integer.
+ * The limbs directly follow it, inline. */
+struct zhdr {
+        /* The absolute value is the number of limbs representing this number.
+         * If negative, this is a negative number. */
+        int z_len;
+        /* The number of allocated limbs. */
+        int z_cap;
+        /* The count of references to this number. */
+        int z_refs;
+};
+
+struct freehdr {
+        struct freehdr *f_next; /* Next block on free list */
+        int     f_size;         /* Size of this block */
+};
+
+struct freehdr *freep NULL;
+
+struct zhdr *
+zalloc(size)
+{
+        register struct freehdr *p, *prevp
+
+        size =+ sizeof *p;
+        for (p = freep; ; prevp = p, p = p->f_next) {
+                if (p->f_size >= size) {        /* Large enough */
+                        if (p->f_size == size)  /* Fits exactly */
+                                prevp->f_next = p->f_next;
+                        else {  /* Allocate tail */
+                                p->f_size =- size;
+                                p =+ p->f_size;
+                                p->f_size = size;
+                        }
+                        freep = prevp;
+                        return p;
+                }
+                /* Wrapped around the free list */
+                if (p == freep) {
+                        p = grow(size);
+                        if (p == NULL) {
+                                write(2, "ws: Out of memory\n", 18);
+                                exit(1);
+                        }
+
+        }
+}
+?exit?+1a
+                }
+.
+w
+1248
+!cc -c z.c
+36: Declaration syntax
+!
+36
+        size =+ sizeof *p;
+?reg?s/$/;/p
+        register struct freehdr *p, *prevp;
+w
+1249
+!cc -c z.c
+!
+/reg/
+        register struct freehdr *p, *prevp;
+
+
+a
+        @.
+
+        size =+ sizeof *p;
+a
+        prevp = freep;
+.
+?freep?
+struct freehdr *freep NULL;
+s/NULL/end/p
+struct freehdr *freep end;
+w
+1264
+q
+% cc -c z.c
+% ed z.c
+1264
+?end?
+struct freehdr *freep end;
+s/end/base/
+a
+struct r#freehdr *base; /* Initial empty list */
+.
+w
+1312
+!cc c#-c z.c
+30: base redeclared
+!
+30
+struct freehdr *base;   /* Initial empty list */
+//b#!g/base/o
+?
+g/base/p
+struct freehdr *freep base;
+struct freehdr *base;   /* Initial empty list */
+p
+struct freehdr *base;   /* Initial empty list */
+c-1@c.-1
+?
+m.-q
+?
+m.-1
+.-3,.+3p
+};
+
+struct freehdr *freep base;
+struct freehdr *base;   /* Initial empty list */
+
+struct zhdr *
+zalloc(size)
+?base?
+struct freehdr *base;   /* Initial empty list */
+m.-2
+.-2,.+2p
+};
+
+struct freehdr *base;   /* Initial empty list */
+struct freehdr *freep base;
+
+w
+1312
+!cc -c z.c
+!
+?base;/@.?/base/
+?
+//
+?
+/base/
+struct freehdr *base;   /* Initial empty list */
+?struct f?
+        struct freehdr *f_next; /* Next block on free list */
+??
+struct freehdr {
+.,/}/p
+struct freehdr {
+        struct freehdr *f_next; /* Next block on free list */
+        int     f_size;         /* Size of this block */
+};
+/base/
+struct freehdr *base;   /* Initial empty list */
+s/;/ { bas,#,#e, 0 }/p
+struct freehdr *base { base, 0 }        /* Initial empty list */
+w@s/}/};/p
+struct freehdr *base { base, 0 };       /* Initial empty list */
+w
+1324
+!cc -c z.c
+!
+/grow/
+                        p = grow(size);
+s//zgrow/
+?alloc?
+zalloc(size)
+^
+struct zhdr *
+i
+struct zhdr *zgrow();
+
+.
+$a
+
+struct zhdr *
+zgrow(nunits)
+{
+}
+.
+?malloc@?alloc?,$p
+zalloc(size)
+{
+        register struct freehdr *p, *prevp;
+
+        size =+ sizeof *p;
+        prevp = freep;
+        for (p = freep; ; prevp = p, p = p->f_next) {
+                if (p->f_size >= size) {        /* Large enough */
+                        if (p->f_size == size)  /* Fits exactly */
+                                prevp->f_next = p->f_next;
+                        else {  /* Allocate tail */
+                                p->f_size =- size;
+                                p =+ p->f_size;
+                                p->f_size = size;
+                        }
+                        freep = prevp;
+                        return p;
+                }
+                /* Wrapped around the free list */
+                if (p == freep) {
+                        p = zgrow(size);
+                        if (p == NULL) {
+                                write(2, "ws: Out of memory\n", 18);
+                                exit(1);
+                        }
+                }
+
+        }
+}
+
+struct zhdr *
+zgrow(nunits)
+{
+}
+?for?
+        for (p = freep; ; prevp = p, p = p->f_next) {
+^d
+
+                if (p->f_size >= size) {        /* Large enough */
+^
+        for (p = freep; ; prevp = p, p = p->f_next) {
+s/p/prevp = p/p
+        for (prevp = p = freep; ; prevp = p, p = p->f_next) {
+w
+1373
+3
+ * Arbitrary-precision integers for Whitespace
+1
+#
+
+/*
+
+ * Arbitrary-precision integers for Whitespace
+
+ * by Thalia Archibald, 2026
+a
+ *
+ * Adapted r#from K&R C, Second Edition, Chapt#####8.7 A Storage C#Allocator
+.
+.
+ * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
+w
+1439
+$
+}
+?alloc?
+zalloc(size)
+s/size/limbs/
+
+{
+
+        register struct freehdr *p, *prevp;
+
+
+
+        size =+ sizeof *p;
+?reg?i
+        register nbytes;
+.
+
+        register struct freehdr *p, *prevp;
+
+
+
+        size =+ sizeof *p;
+w@@c
+        nbyte #s = sizeof *p + limbs * 2;
+.
+w
+1471
+g/nunits/
+{
+g/size/
+};
+        for (prevp = p = freep; ; prevp = p, p = p->f_next) {
+                        if (p->f_size == size)  /* Fits exactly */
+                                prevp->f_next = p->f_next;
+                                p =+ p->f_size;
+                                p->f_size = size;
+                        }
+                        if (p == NULL) {
+?reg?
+        register struct freehdr *p, *prevp;
+s/struct freehdr/char/p
+        register char *p, *prevp;
+
+
+
+        nbytes = sizeof *p + limbs * 2;
+/size/
+                if (p->f_size >= size) {        /* Large enough */
+/ size/@s/ size/ nbh#ytes/
+//
+                        if (p->f_size == size)  /* Fits exactly */
+s/ size/ nbytes/
+//
+                                p->f_size =- size;
+s/ size/ nbytes/
+//
+                                p->f_size = size;
+s/ size/ nbytes/
+//
+        nbytes = sizeof *p + limbs * 2;
+w
+1469
+!cc -c z.c
+65: size undefined
+!
+65
+}
+^
+        }
+^
+
+^
+                }
+/size@g/size/p
+        int     f_size;         /* Size of this block */
+        nbytes = sizeof *p + limbs * 2;
+                if (p->f_size >= nbytes) {      /* Large enough */
+                        if (p->f_size == nbytes)        /* Fits exactly */
+                                p->f_size =- nbytes;
+                                p =+ p->f_size;
+                                p->f_size = nbytes;
+                        p = zgrow(size);
+/zgrow/
+zgrow(nunits)
+s/nunits/nbytes/
+?zgrow/
+?
+?zgrow?
+                        p = zgrow(size);
+s/size/nbytes/
+w
+1471
+!cc - #c z.c
+!
+w
+1471
+q
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
