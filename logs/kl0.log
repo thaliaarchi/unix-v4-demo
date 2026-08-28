@@ -22147,3 +22147,2089 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: date
+Login incorrect.
+Name: thalia
+% date 08282215
+Wed Aug 28 22:15:00 MDT 1974
+% chdir ws
+% ls
+z.c
+z.o
+% rm z.o
+% rm ../@chdir ..
+% ed brkts#4#est.c
+115
+1,$p
+main()
+{
+        char *a, *b, *c;
+        a = sbrk(0);
+        b = sbrk(1);
+        c = sbrk(1);
+        printf("%d\n", b-a);
+        printf("%d\n", c-a);
+}
+3,$-1c
+        char *a, *b;
+        a = sbrk(0);
+        for (0#i = 0 #; i<# < 10; i++) {
+                b = sbrk(1);
+                a = b;
+        }
+}
+.
+d
+?char?
+        char *a, *b;
+a
+        int i;
+.
+
+        a = sbrk(0);
+/sb/
+                b = sbrk(1);
+a
+                printf("%d\n", b-a);
+.
+w
+125
+!cc brktest.c
+!
+!a.out
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+!
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+q
+% rm brktest.c a.out
+% ls
+TODO
+beeps.c
+hi
+hints
+lrc2026
+mullender.c
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% cat hi
+hi
+% ls -l hi
+-rw-rw-rw- 1 thalia      3 Aug 18 18:16 hi
+% rm hi
+% chdir ws
+% ls
+z.c
+% ed z.c
+1471
+1,$p
+#
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ *
+ * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
+ */
+
+#define NULL 0
+/* The multiple of bytes to allocate at once.
+ * Should be divisible by 64. */
+#define BLKSIZ 512
+
+/* Header for an arbitrary-precision integer.
+ * The limbs directly follow it, inline. */
+struct zhdr {
+        /* The absolute value is the number of limbs representing this number.
+         * If negative, this is a negative number. */
+        int z_len;
+        /* The number of allocated limbs. */
+        int z_cap;
+        /* The count of references to this number. */
+        int z_refs;
+};
+
+struct freehdr {
+        struct freehdr *f_next; /* Next block on free list */
+        int     f_size;         /* Size of this block */
+};
+
+struct freehdr *base { base, 0 };       /* Initial empty list */
+struct freehdr *freep base;
+
+struct zhdr *zgrow();
+
+struct zhdr *
+zalloc(limbs)
+{
+        register nbytes;
+        register char *p, *prevp;
+
+        nbytes = sizeof *p + limbs * 2;
+        for (prevp = p = freep; ; prevp = p, p = p->f_next) {
+                if (p->f_size >= nbytes) {      /* Large enough */
+                        if (p->f_size == nbytes)        /* Fits exactly */
+                                prevp->f_next = p->f_next;
+                        else {  /* Allocate tail */
+                                p->f_size =- nbytes;
+                                p =+ p->f_size;
+                                p->f_size = nbytes;
+                        }
+                        freep = prevp;
+                        return p;
+                }
+                /* Wrapped around the free list */
+                if (p == freep) {
+                        p = zgrow(nbytes);
+                        if (p == NULL) {
+                                write(2, "ws: Out of memory\n", 18);
+                                exit(1);
+                        }
+                }
+
+        }
+}
+
+struct zhdr *
+zgrow(nbytes)
+{
+}
+!sync
+!
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+/sizeof/
+        nbytes = sizeof *p + limbs * 2;
+s/sizeof.../ZSIZE/p
+        nbytes = ZSIZE + limbs * 2;
+/struct@?/^struc/
+?
+/^stru/
+struct zhdr *
+
+zgrow(nbytes)
+
+{
+//
+struct zhdr {
+
+        /* The absolute value is the number of limbs representing this number.
+
+         * If negative, this is a negative number. */
+
+        int z_len;
+
+        /* The number of allocated limbs. */
+
+        int z_cap;
+
+        /* The count of references to this number. */
+
+        int z_refs;
+
+};
+
+
+^
+};
+a
+\#define ZSIZE 6
+.
+i
+/* Size of zhdr @/*The @/* The size of zhdr */###. */
+.
+.
+/* The size of zhdr. */
+?zakki@?zalloc?-1i
+static
+.
+w
+1514
+!cc -c z.c
+38: External definition syntax
+42: Unknown keyword
+42: Statement syntax
+43: Unknown keyword
+43: Statement syntax
+45: Lvalue required
+46: Lvalue required
+46: Lvalue required
+46: Lvalue required
+46: Lvalue required
+51: Illegal conversion
+52: Lvalue required
+60: Lvalue required
+68: zhdr undefined
+68: zalloc undefined
+68: nbytes undefined
+68: p undefined
+68: limbs undefined
+68: prevp undefined
+73: zhdr undefined
+73: zalloc undefined
+73: p undefined
+73: limbs undefined
+73: prevp undefined
+74: zhdr undefined
+74: zalloc undefined
+74: p undefined
+74: limbs undefined
+74: prevp undefined
+!
+^
+
+
+static
+d
+w
+1507
+!cc -c .#z.c
+!
+.=
+38
+$
+}
+.-3,$p
+struct zhdr *
+zgrow(nbytes)
+{
+}
+i
+        if (nbytes < NALLOC)
+                nbytes = NALLOC;
+        @.
+1
+#
+10
+/* The multiple of bytes to allocate at once.
+/NAL@g/NALLOC/@g/BLKSIZ/NALLOC/p
+?
+g/BLKSIZ/NALLOC/o#p
+?
+/BLK/
+#define BLKSIZ 512
+s/GLKSIZ@s/BLKSIZ/B#NALLOC?#/
+p
+#define NALLOC 512
+//
+?
+$i
+        @.?
+w
+1548
+e /usr/sys/ken/sys1.c
+5494
+/sbreak
+?
+/sbreak/
+sbreak()
+.,/%#^}/p
+sbreak()
+{
+        register a, n, d;
+        int i;
+
+        /*
+         * set n to new data size
+         * set d to new-old
+         * set n to new total size
+         */
+
+        n = (((u.u_arg[0]+63)>>6) & 01777) - nseg(u.u_tsize)*128;
+        if(n < 0)
+                n = 0;
+        d = n - u.u_dsize;
+        n =+ USIZE+u.u_ssize;
+        if(estabur(u.u_tsize, u.u_dsize+d, u.u_ssize))
+                return;
+        u.u_dsize =+ d;
+        if(d > 0)
+                goto bigger;
+        a = u.u_procp->p_addr + n - u.u_ssize;
+        i = n;
+        n = u.u_ssize;
+        while(n--) {
+                copyseg(a-d, a);
+                a++;
+        }
+        expand(i);
+        return;
+
+bigger:
+        expand(n);
+        a = u.u_procp->p_addr + n;
+        n = u.u_ssize;
+        while(n--) {
+                a--;
+                copyseg(a-d, a);
+        }
+        while(d--)
+                clearseg(--a);
+}
+e /usr/source/s3/sbrk.s
+?
+e /usr/source/s4/sbrk.s
+515
+1,$P
+?
+1,$p
+/old = sbrk(increment);
+/
+/sbrk gets increment more core, and returns a pointer
+/       to the beginning of the new core area
+/
+.globl  _sbrk,_end, retrn, cerror
+
+_sbrk:
+        mov     r5,-(sp)
+        mov     sp,r5
+        mov     nd,0f
+        add     4(r5),0f
+        sys     0; 9f
+        bec     1f
+        jmp     cerror
+1:
+        mov     nd,r0
+        add     4(r5),nd
+        jmp     retrn
+
+.globl  _brk
+/ brk(value)
+/ as described in man2.
+/ returns 0 for ok, -1 for error.
+
+_brk:
+        mov     r5,-(sp)
+        mov     sp,r5
+        mov     4(r5),0f
+        sys     0; 9f
+        bec     1f
+        jmp     cerror
+1:
+        mov     4(r5),nd
+        clr     r0
+        jmp     retrn
+.data
+9:
+        sys     break; 0:..
+nd:     _end
+!ls /usr/source/s3/c*
+/usr/source/s3/compar.s
+/usr/source/s3/crypt.s
+/usr/source/s3/ctime.c
+!
+!ls /usr/o#our###source/s4/c*
+/usr/source/s4/chmod.s
+/usr/source/s4/chown.s
+/usr/source/s4/close.s
+/usr/source/s4/chdir.s
+/usr/source/s4/cos.s
+/usr/source/s4/crypt.s
+/usr/source/s4/crand.s
+/usr/source/s4/creat.s
+/usr/source/s4/crt0.s
+!
+!grep -n /usr/source/s3/@!grep -n '^cerror' /usr/source/s3 /usr/source/s4
+!
+!grep -n /#'^cerror' /usr/source/s3*#/*
+Arg list too long
+!
+g!@!grep -n /usr/sour#@!grep -n '^cerror' /usr/source/s4/*
+Arg list too long
+!
+q
+% chdir /us/s##rs#/source/s3
+% ks
+ks: not found
+% ls
+atan.s
+atof.s
+atoi.s
+compar.s
+crypt.s
+ctime.c
+dpadd.s
+ecvt.s
+exp.s
+fakfp.s
+fp1.s
+fp2.s
+fp3.s
+fpx.s
+gamma.s
+get.s
+hypot.s
+ldiv.s
+log.s
+mesg.s
+mon.s
+nlist.s
+pow.s
+put.s
+qsort.s
+rand.s
+sin.s
+sqrt.s
+switch.s
+ttyn.s
+% ttyn
+ttyn: not found
+% cat ttyn.s
+/ return name of current tty
+
+.globl  ttyn, _ttyn
+
+_ttyn:
+        mov     2(sp),r0
+        br      1f
+ttyn:
+        clr     r0
+1:
+        mov     $'x,name
+        tst     -(sp)
+        sys     fstat; buf
+        bes     er1
+        mov     buf+2,(sp)
+        sys     open; dev; 0
+        bes     er1
+        mov     r0,r1
+1:
+        mov     r1,r0
+        sys     read; buf; 16.
+        bes     er
+        cmp     r0,$16.
+        bne     er
+        mov     $buf,r0
+        cmp     (r0)+,(sp)
+        bne     1b
+        cmp     (r0)+,$"tt
+        bne     1b
+        cmpb    (r0)+,$'y
+        bne     1b
+        tstb    (r0)+
+        beq     1b
+        cmpb    (r0),$'\0
+        bne     1b
+        movb    -(r0),name
+
+er:
+        mov     r1,r0
+        sys     close
+
+er1:
+        tst     (sp)+
+        movb    name,r0
+        rts     pc
+
+.data
+dev:    </dev\0>
+.even
+.bss
+buf:    .=.+40.
+name:   .=.+2
+% chdir ../s4
+% ls
+abort.s
+atan.s
+atan2.s
+atof.s
+chdir.s
+chmod.s
+chown.s
+close.s
+cos.s
+crand.s
+creat.s
+crt0.s
+crypt.s
+dup.s
+ecvt.s
+errlst.c
+execl.s
+execv.s
+exit.s
+exp.s
+ffltpr.s
+floor.s
+fltpr.s
+fmod.s
+fork.s
+fstat.s
+gamma.s
+getc.s
+getchr.s
+getcsw.s
+getgid.s
+getpw.c
+getuid.s
+gtty.s
+hmul.s
+hsw.s
+kill.s
+link.s
+locv.s
+log.s
+ltod.s
+makdir.s
+mcrt0.s
+mdate.s
+mknod.s
+mon.c
+mount.s
+nargs.s
+nice.s
+nlist.s
+open.s
+perror.c
+pipe.s
+pow.s
+printf.s
+prof.s
+putc.s
+putchr.s
+qsort.c
+read.s
+reset.s
+retrn.s
+rin.c
+rsave.s
+sbrk.s
+seek.s
+setgid.s
+setuid.s
+signal.s
+sin.s
+sleep.s
+sqrt.s
+ssw.s
+stat.s
+stime.s
+stty.s
+switch.s
+sync.s
+time.s
+times.s
+umount.s
+unlink.s
+wait.s
+write.s
+% cat rsave,s
+% cat rsave.s
+/ C register save and restore
+
+.globl  rsave
+.globl  mrsave
+.globl  rretrn
+
+mrsave:
+        tst     (r5)+
+
+rsave:
+        mov     r5,r0
+        mov     sp,r5
+        mov     r4,-(sp)
+        mov     r3,-(sp)
+        mov     r2,-(sp)
+        sub     (r0)+,sp
+        jmp     (r0)
+
+rretrn:
+        sub     $6,r5
+        mov     r5,sp
+        mov     (sp)+,r2
+        mov     (sp)+,r3
+        mov     (sp)+,r4
+        mov     (sp)+,r5
+        rts     pc
+% grep -n '^cerror' *
+Arg list too long
+% cat mcrt0.s
+/ C runtime startoff including monitoring
+
+cbufs   = 150.
+
+.globl  _monitor
+.globl  _sbrk
+.globl  _main
+.globl  _exit
+.globl  _etext
+
+.comm   savr5,2
+
+start:
+        setd
+        mov     sp,r0
+        mov     (r0),-(sp)
+        tst     (r0)+
+        mov     r0,2(sp)
+
+        mov     $_etext,r1
+        sub     $eprol,r1
+        add     $7,r1
+        ash     $-3,r1
+        bic     $!17777,r1
+        mov     $cbufs,-(sp)
+        add     $3*[cbufs+1],r1
+        mov     r1,-(sp)
+        asl     r1
+        mov     r1,-(sp)
+        jsr     pc,_sbrk
+        tst     (sp)+
+        cmp     r0,$-1
+        beq     9f
+        mov     r0,-(sp)
+        add     $6,r0
+        mov     r0,countbase
+        mov     $_etext,-(sp)
+        mov     $eprol,-(sp)
+        jsr     pc,_monitor
+        add     $10.,sp
+        jsr     pc,_main
+        cmp     (sp)+,(sp)+
+        jsr     pc,_exit
+
+9:
+        mov     $1,r0
+        sys     write; 8f; 9f-8f
+
+.data; 8: <No space for monitor buffer\n>; 9:.even; .text
+
+_exit:
+        mov     r5,-(sp)
+        mov     sp,r5
+        clr     -(sp)
+        jsr     pc,_monitor
+        tst     (sp)+
+        mov     4(r5),r0
+        sys     exit
+
+.globl  mrsave
+.globl  rsave
+.globl  rretrn
+
+mrsave:
+        mov     *(r5)+,r1
+        bne     1f
+        mov     countbase,r1
+        add     $6,countbase
+        mov     r5,(r1)+
+        mov     r1,*-2(r5)
+1:
+        inc     2(r1)
+        bne     rsave
+        inc     (r1)
+
+rsave:
+        mov     r5,r0
+        mov     sp,r5
+        mov     r4,-(sp)
+        mov     r3,-(sp)
+        mov     r2,-(sp)
+        sub     (r0)+,sp
+        jmp     (r0)
+
+rretrn:
+        sub     $6,r5
+        mov     r5,sp
+        mov     (sp)+,r2
+        mov     (sp)+,r3
+        mov     (sp)+,r4
+        mov     (sp)+,r5
+        rts     pc
+
+.bss
+countbase:      .=.+2
+.text
+
+eprol:
+% grep -n '^cerror' a* b* c* d* e* f* g* h* i* j*
+% grep -n '^cerror' k* l* m* n* o* p* q* r* s* t* u* v* w* x* y* z*
+retrn.s:5 cerror:
+% cat retrn.s
+/ C return sequence
+
+.globl retrn, cerror, _errno
+
+cerror:
+        mov     r0,_errno
+        mov     $-1,r0
+
+retrn:
+        mov     r5,sp
+        mov     (sp)+,r5
+        rts     pc
+.bss
+_errno: .=.+2
+% pwd
+../usr/source/s4
+% chdir /usr/thalia/ws
+% ls
+z.c
+z.o
+% ed z.c
+1548
+/^zg/,$p
+zgrow(nbytes)
+{
+        if (nbytes < NALLOC)
+                nbytes = NALLOC;
+}
+^-1
+        if (nbytes < NALLOC)
+i
+        char *p;
+
+.
+
+        if (nbytes < NALLOC)
+
+                nbytes = NALLOC;
+a
+        p = sbrk(nbytes);
+        if (p == -1) {
+        }
+.
+^
+        if (p == -1) {
+.=
+77
+/p#write/
+                                write(2, "ws: Out of memory\n", 18);
+.-3,.+2p
+                if (p == freep) {
+                        p = zgrow(nbytes);
+                        if (p == NULL) {
+                                write(2, "ws: Out of memory\n", 18);
+                                exit(1);
+                        }
+//@/write/;.+1m77
+.
+                                exit(1);
+.?
+
+        }
+
+}
+^
+        }
+^
+                                exit(1);
+^
+                                write(2, "ws: Out of memory\n", 18);
+^
+        if (p == -1) {
+^
+        p = sbrk(nbytes);
+
+        if (p == -1) {
+
+                                write(2, "ws: Out of memory\n", 18);
+
+                                exit(1);
+
+        }
+^
+                                exit(1);
+^
+                                write(2, "ws: Out of memory\n", 18);
+.,.+1s/                 //p
+        exit(1);
+^
+        write(2, "ws: Out of memory\n", 18);
+.,.+1s/^/       /p
+                exit(1);
+^
+                write(2, "ws: Out of memory\n", 18);
+^
+        if (p == -1) {
+/#?nu##NULL?
+                        if (p == NULL) {
+^
+                        p = zgrow(nbytes);
+
+                        if (p == NULL) {
+d
+
+                }
+^
+                        }
+d
+.-5,.+5p
+                        return p;
+                }
+                /* Wrapped around the free list */
+                if (p == freep) {
+                        p = zgrow(nbytes);
+                }
+
+        }
+}
+
+struct zhdr *
+/grow/
+zgrow(nbytes)
+.,.$##$p
+zgrow(nbytes)
+{
+        char *p;
+
+        if (nbytes < NALLOC)
+                nbytes = NALLOC;
+        p = sbrk(nbytes);
+        if (p == -1) {
+                write(2, "ws: Out of memory\n", 18);
+                exit(1);
+        }
+}
+?car@?car@?char?s/      /       register        # /p
+        register char *p;
+$i
+        p->f_size = nbytes;
+        /* free */
+        @.
+w
+1610
+$a
+
+zfree(z)
+struct zhdr *z
+{
+        register zhdr *p;
+
+        p = f@  for (p = freep; ; p = p-:>##>f_next) {
+                if (p < z && z < p->f_next)
+                        v#break;
+                if (p >= p->f_next && (k#p < z || b#z < p->f_next)      /* Freed bloa#ck at start or end of arena */
+                        break;  /* Freed block at start or end of arn#ena */
+.
+?if?s/\?##      \?#/.*//p
+?
+?if?s/  \/.*//p
+                if (p >= p->f_next && (p < z || z < p->f_next)
+w
+1835
+?zfree?,$p
+zfree(z)
+struct zhdr *z
+{
+        register zhdr *p;
+
+        for (p = freep; ; p = p->f_next) {
+                if (p < z && z < p->f_next)
+                        break;
+                if (p >= p->f_next && (p < z || z < p->f_next)
+                        break;  /* Freed block at start or end of arena */
+a
+        }
+
+        if (z + z->@.
+?zfree?+1s/zhdr/freehdr/p
+struct freehdr *z
+/zhdr/s//freehdr/p
+        register freehdr *p;
+w
+1845
+/struct/
+struct zhdr {
+.,.+23p
+struct zhdr {
+        /* The absolute value is the number of limbs representing this number.
+         * If negative, this is a negative number. */
+        int z_len;
+        /* The number of allocated limbs. */
+        int z_cap;
+        /* The count of references to this number. */
+        int z_refs;
+};
+/* The size of zhdr. */
+#define ZSIZE 6
+
+struct freehdr {
+        struct freehdr *f_next; /* Next block on free list */
+        int     f_size;         /* Size of this block */
+};
+
+struct freehdr *base { base, 0 };       /* Initial empty list */
+struct freehdr *freep base;
+
+struct zhdr *zgrow();
+
+struct zhdr *
+zalloc(limbs)
+?int?
+        int     f_size;         /* Size of this block */
+?
+?
+?@^
+        struct freehdr *f_next; /* Next block on free list */
+.,.+1c
+        /* Next block on free list #. */
+        struct freehdr *f_next;
+        /* Size of this block. */
+        int     f_size;
+.
+?Size?s/\. #/. Keep at the same offset as z_cap./p
+        /* Size of this block. Keep at the same offset as z_cap. */
+?z_cap?
+        int z_cap;
+^
+        /* The number of allocated limbs. */
+s/\./. Keep at the same offset as f_size. */##/p
+        /* The number of allocated limbs. Keep at the same offset as f_size.  */
+s/  / /p
+        /* The number of allocated limbs. Keep at the same offset as f_size. */
+g/f_size_@g/s@gs@@gs/f_size/f_alloc/p
+/f_size/
+        int     f_size;
+//
+                if (p->f_size >= nbytes) {      /* Large enough */
+//
+                        if (p->f_size == nbytes)        /* Fits exactly */
+//
+                                p->f_size =- nbytes;
+f?@/f_alloc/
+?
+g/f_size/s//f_alloc/gp
+        /* The number of allocated limbs. Keep at the same offset as f_alloc. */
+        int     f_alloc;
+                if (p->f_alloc >= nbytes) {     /* Large enough */
+                        if (p->f_alloc == nbytes)       /* Fits exactly */
+                                p->f_alloc =- nbytes;
+                                p =+ p->f_alloc;
+                                p->f_alloc = nbytes;
+        p->f_alloc = nbytes;
+g/z_cap/s//z_alloc/gp
+        int z_alloc;
+        /* Size of this block. Keep at the same offset as z_alloc. */
+w
+1929
+/^zd#f/
+zfree(z)
+
+struct freehdr *z
+s/freehdr/zhdr/
+.-1,$p
+zfree(z)
+struct zhdr *z
+{
+        register freehdr *p;
+
+        for (p = freep; ; p = p->f_next) {
+                if (p < z && z < p->f_next)
+                        break;
+                if (p >= p->f_next && (p < z || z < p->f_next)
+                        break;  /* Freed block at start or end of arena */
+        }
+
+w
+1926
+!ed /usr/thalia/TODO
+331
+a
+- Make timezone configurat#ble without recon#mpilation.
+.
+/date/
+- Make date Y2K compliant
+$m.
+1,$p
+TODO:
+- Implement char class ranges in ed
+- Make date Y2K compliant
+- Make timezone configurable without recompilation.
+- Report non-existent files in cat
+- Allow omitting closing / in ed
+- Make ed listing (l) escape non-printable characters
+- Memory allocator:
+  - Assume exclusive ownership of sbrk
+  - Align to int
+- Add a symbol for indir
+- Make struct fields scoped to the type
+w
+383
+q
+!
+!date
+Wed Aug 28 23:21:41 MDT 1974
+!
+!date 08290003
+Thu Aug 29 00:03:00 MDT 1974
+!
+$a
+        if (z + z->z_alloc == p->f_next) {
+                z->f_siz###alloc =+ p->f_me##next->f_i#size;
+                z->f->##_next = p->f_next->f_next;      #
+        } else
+                bp->f_next = p_#->f_next;\#
+        if (p + p->f_size == z) {       /* Join below */
+.
+?if?
+        if (z + z->z_alloc == p->f_next) {
+??@s/$/ /* Join @s/$/   \/ #* Join above *\//p
+        if (z + z->z_alloc == p->f_next) {      /* Join above */
+$
+        if (p + p->f_size == z) {       /* Join below */
+a
+                p->f_alloc =#=+ z->f_siz###alloc;
+                p->f_next = z->f_next; /( ##* assigned ######### #already assigned */
+        } else
+                p->f_next = z;
+        freep -#= p;
+        [Z@}
+.
+w
+2241
+?zfree?,$p
+zfree(z)
+struct zhdr *z
+{
+        register freehdr *p;
+
+        for (p = freep; ; p = p->f_next) {
+                if (p < z && z < p->f_next)
+                        break;
+                if (p >= p->f_next && (p < z || z < p->f_next)
+                        break;  /* Freed block at start or end of arena */
+        }
+
+        if (z + z->z_alloc == p->f_next) {      /* Join above */
+                z->f_alloc =+ p->f_next->f_size;
+                z->f_next = p->f_next->f_next;
+        } else
+                bp->f_next = p->f_next;#
+        if (p + p->f_size == z) {       /* Join below */
+                p->f_alloc =+ z->f_alloc;
+                p->f_next = z->f_next; /* already assigned */
+        } else
+                p->f_next = z;
+        freep = p;
+}
+?zfree?+1s/$/;/p
+struct zhdr *z;
+w
+2242
+//break@/break/
+                        break;
+s/$/    \/* Bete#ween free blocks */
+.
+                        break;  /* Between free blocks *
+s/$/\//p
+                        break;  /* Between free blocks */
+/break/
+                        break;  /* Freed block at start or end of arena */
+s/Freed block at s/S/p
+                        break;  /* Start or end of arena */
+s/S/At s/p
+                        break;  /* At start or end of arena */
+w
+2256
+/already.#/s/a/z->f_next a/p
+                p->f_next = z->f_next; /* z->f_next already assigned */
+w
+2266
+!cc z.c
+86: Declaration syntax
+88: Lvalue required
+88: Lvalue required
+92: Statement syntax
+96: Illegal structure ref
+96: Illegal conversion
+99: Unknown character
+100: Illegal structure ref
+100: Illegal conversion
+106: bp undefined
+106: .f_size undefined
+106: p undefined
+!
+86
+        register freehdr *p;
+/@s/ / struct /p
+        register struct freehdr *p;
+w
+2273
+!cc z.c
+92: Statement syntax
+96: Illegal structure ref
+96: Illegal conversion
+99: Unknown character
+100: Illegal structure ref
+100: Illegal conversion
+106: bp undefined
+106: .f_size undefined
+!
+92
+                        break;  /* At start or end of arena */
+l
+>->->-break;>-/* At start or end of arena */
+.-3,.+3p
+                if (p < z && z < p->f_next)
+                        break;  /* Between free blocks */
+                if (p >= p->f_next && (p < z || z < p->f_next)
+                        break;  /* At start or end of arena */
+        }
+
+        if (z + z->z_alloc == p->f_next) {      /* Join above */
+?break?-1s/$/)/p
+                if (p >= p->f_next && (p < z || z < p->f_next))
+w
+2274
+!cc z.c
+96: Illegal structure ref
+96: Illegal conversion
+99: Unknown character
+100: Illegal structure ref
+100: Illegal conversion
+106: bp undefined
+106: .f_size undefined
+!
+96
+                z->f_alloc =+ p->f_next->f_size;
+c
+                z0<@            z)@             z->f_alloc
+=+
+p->f_next
+->f_size
+;
+.
+w
+2276
+!cc zc#.c
+100: Illegal structure ref
+100: Illegal conversion
+103: Unknown character
+104: Illegal structure ref
+104: Illegal conversion
+110: bp undefined
+110: .f_size undefined
+!
+100
+;
+^-3
+                z->f_alloc
+
+=+
+^
+                z->f_alloc
+.;/;/c
+                z->f_alloc =+ p->f_next->f_size;
+.
+w
+2274
+q
+% chdir /usr/source/s@chdir /usr/c
+% grep -n 'Illegal structure ref' *
+c01.c:112                       error("Illegal structure ref");
+c01.o:46 vwvIllegal conditionalCall of non-functionIllegal indirectionIllegal lvalueIllegal structure ref`      j       r       |       
+c11.c:70                        error("Illegal structure reference");
+% ed c01.c
+6615
+/Illegal strcut@/Illegal structure ref/
+                        error("Illegal structure ref");
+.-23,.p
+                        *cp++ = block(1,op,incref(t1),p1->dimp,p1);
+                        return;
+                }
+                error("Illegal lvalue");
+                break;
+
+        case INCBEF:
+        case DECBEF:
+        case INCAFT:
+        case DECAFT:
+                chklval(p1);
+                *cp++ = block(2,op,t1,p1->dimp,p1,plength(p1));
+                return;
+
+        case ARROW:
+                *cp++ = p1;
+                chkw(p1);
+                p1->type = PTR+STRUCT;
+                build(STAR);
+                p1 = *--cp;
+
+        case DOT:
+                if (p2->op!=NAME || p2->class!=MOS)
+                        error("Illegal structure ref");
+q
+% cdef @grep -n 'define MOS' *
+% grep -n 'define*MOS' *
+% grep -n MOS *
+c00.c:595               if (xdflg && skw!=MOS)
+c00.c:611       mosflg = skw==MOS;
+c00.c:625               if (skw==MOS && dsym->hclass==MOS && dsym->htype==type)
+c00.c:647       if (skw==MOS) {
+c01.c:111               if (p2->op!=NAME || p2->class!=MOS)
+c01.c:284       /* check array & not MOS */
+c01.c:285       if (((t = p->type)&030)!=ARRAY || p->op==NAME&&p->class==MOS)
+c02.c:597               elsize = strdec(&o, skw==MOS);
+c02.c:666               elsize = declist(MOS);
+c0h.c:218 #define       MOS     4
+c1h.c:183 #define       MOS     4
+% ed c02.c
+11397
+/#666
+                elsize = declist(MOS);
+.-10,.+10p
+                if (ssym->hclass!=STRTAG)
+                        error("Bad structure name");
+                if ((elsize = dimtab[ssym->lenp&0377])==0) {
+                        *tkwp = RSTRUCT;
+                        elsize = ssym;
+                }
+                peeksym = o;
+        } else {
+                ds = defsym;
+                mosflg = 0;
+                elsize = declist(MOS);
+                if (elsize&01)
+                        elsize++;
+                defsym = ds;
+                if ((o = symbol()) != RBRACE)
+                        goto syntax;
+                if (ssym) {
+                        if (dimtab[ssym->lenp&0377])
+                                error("%.8s redeclared", ssym->name);
+                        dimtab[ssym->lenp&0377] = elsize;
+                }
+.-40,.+10p
+        if ((o=symbol())==NAME) {
+                ssym = csym;
+                if (ssym->hclass==0) {
+                        ssym->hclass = STRTAG;
+                        ssym->lenp = dimp;
+                        chkdim();
+                        dimtab[dimp++] = 0;
+                }
+                if (ssym->hclass != STRTAG)
+                        redec();
+                mosflg = mosf;
+                o = symbol();
+        }
+        mosflg = 0;
+        if (o != LBRACE) {
+                if (ssym==0) {
+                syntax:
+                        decsyn(o);
+                        return(0);
+                }
+                if (ssym->hclass!=STRTAG)
+                        error("Bad structure name");
+                if ((elsize = dimtab[ssym->lenp&0377])==0) {
+                        *tkwp = RSTRUCT;
+                        elsize = ssym;
+                }
+                peeksym = o;
+        } else {
+                ds = defsym;
+                mosflg = 0;
+                elsize = declist(MOS);
+                if (elsize&01)
+                        elsize++;
+                defsym = ds;
+                if ((o = symbol()) != RBRACE)
+                        goto syntax;
+                if (ssym) {
+                        if (dimtab[ssym->lenp&0377])
+                                error("%.8s redeclared", ssym->name);
+                        dimtab[ssym->lenp&0377] = elsize;
+                }
+        }
+        return(elsize);
+}
+
+chkdim()
+{
+        if (dimp >= dimsiz) {
+                error("Dimension/struct table overflow");
+                exit(1);
+        }
+?^{?
+{
+??
+{
+^
+int *tkwp;
+^
+strdec(tkwp, mosf)
+.,/^}/p
+strdec(tkwp, mosf)
+int *tkwp;
+{
+        register elsize, o;
+        register struct hshtab *ssym;
+        struct hshtab *ds;
+
+        mosflg = 1;
+        ssym = 0;
+        if ((o=symbol())==NAME) {
+                ssym = csym;
+                if (ssym->hclass==0) {
+                        ssym->hclass = STRTAG;
+                        ssym->lenp = dimp;
+                        chkdim();
+                        dimtab[dimp++] = 0;
+                }
+                if (ssym->hclass != STRTAG)
+                        redec();
+                mosflg = mosf;
+                o = symbol();
+        }
+        mosflg = 0;
+        if (o != LBRACE) {
+                if (ssym==0) {
+                syntax:
+                        decsyn(o);
+                        return(0);
+                }
+                if (ssym->hclass!=STRTAG)
+                        error("Bad structure name");
+                if ((elsize = dimtab[ssym->lenp&0377])==0) {
+                        *tkwp = RSTRUCT;
+                        elsize = ssym;
+                }
+                peeksym = o;
+        } else {
+                ds = defsym;
+                mosflg = 0;
+                elsize = declist(MOS);
+                if (elsize&01)
+                        elsize++;
+                defsym = ds;
+                if ((o = symbol()) != RBRACE)
+                        goto syntax;
+                if (ssym) {
+                        if (dimtab[ssym->lenp&0377])
+                                error("%.8s redeclared", ssym->name);
+                        dimtab[ssym->lenp&0377] = elsize;
+                }
+        }
+        return(elsize);
+}
+1@q
+% grep '^@grep -n '^declist' *
+c02.c:571 declist(skwd)
+% ed c02.c
+11397
+/^declist/
+declist(skwd)
+.,/^}/p
+declist(skwd)
+{
+        int o, elsize, ndec;
+        register offset, tkw, skw;
+
+        offset = 0;
+loop:
+        ndec = 0;
+        tkw = -1;
+        skw = skwd;
+        elsize = 0;
+        while ((o=symbol())==KEYW) switch (cval) {
+        case AUTO:
+        case STATIC:
+        case EXTERN:
+        case REG:
+                if (skw)
+                        error("Conflict in storage class");
+                skw = cval;
+                ndec++;
+                if (tkw<0)
+                        continue;
+                goto list;
+
+        case STRUCT:
+                o = cval;
+                elsize = strdec(&o, skw==MOS);
+                cval = o;
+        case INT:
+        case CHAR:
+        case FLOAT:
+        case DOUBLE:
+                ndec++;
+                if (tkw>=0)
+                        error("Type clash");
+                tkw = cval;
+                if (skw==0)
+                        continue;
+                goto list;
+
+        default:
+                goto brk1;
+        }
+  brk1:
+        peeksym = o;
+        if (ndec==0)
+                return(offset);
+list:
+        if (tkw<0)
+                tkw = INT;
+        if (skw==0)
+                skw = AUTO;
+        offset = declare(skw, tkw, offset, elsize);
+        goto loop;
+}
+q
+% ed z.c
+?
+q
+% pwd
+../usr/c
+% chdir /usr/thalia/ws
+% ed ../TODO
+383
+a
+- Fix ../###pwd printing ../ for root
+.
+w
+415
+q
+% ed z.c
+2274
+!cc z.c
+96: Illegal structure ref
+96: Illegal conversion
+99: Unknown character
+100: Illegal structure ref
+100: Illegal conversion
+106: bp undefined
+106: .f_size undefined
+!
+96
+                z->f_alloc =+ p->f_next->f_size;
+/^struct/
+struct zhdr {
+//
+struct freehdr {
+.,/}/p
+struct freehdr {
+        /* Next block on free list. */
+        struct freehdr *f_next;
+        /* Size of this block. Keep at the same offset as z_alloc. */
+        int     f_alloc;
+};
+96
+                z->f_alloc =+ p->f_next->f_size;
+s/->f_size//p
+                z->f_alloc =+ p->f_next;
+w
+2266
+!cc z.c.
+File not found: z.c.
+un: _main
+!
+!cc z.c
+96: Illegal conversion
+99: Unknown character
+100: Illegal structure ref
+100: Illegal conversion
+106: bp undefined
+106: .f_size undefined
+!
+96
+                z->f_alloc =+ p->f_next;
+s/;/->f_size;/p
+                z->f_alloc =+ p->f_next->f_size;
+?^zf?
+zfree(z)
+
+struct zhdr *z;
+s/zhdr/freehdr/p
+struct freehdr *z;
+w
+2277
+!cc z.h#c
+96: Illegal structure ref
+96: Illegal conversion
+99: Unknown character
+100: Illegal structure ref
+100: Illegal conversion
+106: bp undefined
+106: .f_size undefined
+!
+96
+                z->f_alloc =+ p->f_next->f_size;
+?^{?,$p
+{
+        register struct freehdr *p;
+
+        for (p = freep; ; p = p->f_next) {
+                if (p < z && z < p->f_next)
+                        break;  /* Between free blocks */
+                if (p >= p->f_next && (p < z || z < p->f_next))
+                        break;  /* At start or end of arena */
+        }
+
+        if (z + z->z_alloc == p->f_next) {      /* Join above */
+                z->f_alloc =+ p->f_next->f_size;
+                z->f_next = p->f_next->f_next;
+        } else
+                bp->f_next = p->f_next;#
+        if (p + p->f_size == z) {       /* Join below */
+                p->f_alloc =+ z->f_alloc;
+                p->f_next = z->f_next; /* z->f_next already assigned */
+        } else
+                p->f_next = z;
+        freep = p;
+}
+w
+2277
+q
+% cat z.c
+#
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ *
+ * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
+ */
+
+#define NULL 0
+/* The multiple of bytes to allocate at once.
+ * Should be divisible by 64. */
+#define NALLOC 512
+
+/* Header for an arbitrary-precision integer.
+ * The limbs directly follow it, inline. */
+struct zhdr {
+        /* The absolute value is the number of limbs representing this number.
+         * If negative, this is a negative number. */
+        int z_len;
+        /* The number of allocated limbs. Keep at the same offset as f_alloc. */
+        int z_alloc;
+        /* The count of references to this number. */
+        int z_refs;
+};
+/* The size of zhdr. */
+#define ZSIZE 6
+
+struct freehdr {
+        /* Next block on free list. */
+        struct freehdr *f_next;
+        /* Size of this block. Keep at the same offset as z_alloc. */
+        int     f_alloc;
+};
+
+struct freehdr *base { base, 0 };       /* Initial empty list */
+struct freehdr *freep base;
+
+struct zhdr *zgrow();
+
+struct zhdr *
+zalloc(limbs)
+{
+        register nbytes;
+        register char *p, *prevp;
+
+        nbytes = ZSIZE + limbs * 2;
+        for (prevp = p = freep; ; prevp = p, p = p->f_next) {
+                if (p->f_alloc >= nbytes) {     /* Large enough */
+                        if (p->f_alloc == nbytes)       /* Fits exactly */
+                                prevp->f_next = p->f_next;
+                        else {  /* Allocate tail */
+                                p->f_alloc =- nbytes;
+                                p =+ p->f_alloc;
+                                p->f_alloc = nbytes;
+                        }
+                        freep = prevp;
+                        return p;
+                }
+                /* Wrapped around the free list */
+                if (p == freep) {
+                        p = zgrow(nbytes);
+                }
+
+        }
+}
+
+struct zhdr *
+zgrow(nbytes)
+{
+        register char *p;
+
+        if (nbytes < NALLOC)
+                nbytes = NALLOC;
+        p = sbrk(nbytes);
+        if (p == -1) {
+                write(2, "ws: Out of memory\n", 18);
+                exit(1);
+        }
+        p->f_alloc = nbytes;
+        /* free */
+}
+
+zfree(z)
+struct freehdr *z;
+{
+        register struct freehdr *p;
+
+        for (p = freep; ; p = p->f_next) {
+                if (p < z && z < p->f_next)
+                        break;  /* Between free blocks */
+                if (p >= p->f_next && (p < z || z < p->f_next))
+                        break;  /* At start or end of arena */
+        }
+
+        if (z + z->z_alloc == p->f_next) {      /* Join above */
+                z->f_alloc =+ p->f_next->f_size;
+                z->f_next = p->f_next->f_next;
+        } else
+                bp->f_next = p->f_next;#
+        if (p + p->f_size == z) {       /* Join below */
+                p->f_alloc =+ z->f_alloc;
+                p->f_next = z->f_next; /* z->f_next already assigned */
+        } else
+                p->f_next = z;
+        freep = p;
+}
+% cc z.c
+96: Illegal structure ref
+96: Illegal conversion
+99: Unknown character
+100: Illegal structure ref
+100: Illegal conversion
+106: bp undefined
+106: .f_size undefined
+% /zgre@ed z.c
+2277
+/zgrow/
+struct zhdr *zgrow();
+s/zhdr/freehdr/
+//
+struct zhdr *
+.+1p
+zalloc(limbs)
+//
+struct zhdr *
+.+1p
+zgrow(nbytes)
+s/zhdr/freehdr/p
+?
+.-1s/zhdr/freehdr/p
+struct freehdr *
+w
+2283
+/%#^zgrow/
+zgrow(nbytes)
+
+{
+
+        register char *p;
+.,/^}/p
+        register char *p;
+
+        if (nbytes < NALLOC)
+                nbytes = NALLOC;
+        p = sbrk(nbytes);
+        if (p == -1) {
+                write(2, "ws: Out of memory\n", 18);
+                exit(1);
+        }
+        p->f_alloc = nbytes;
+        /* free */
+}
+?register?s/char/struct freehdr/p
+        register struct freehdr *p;
+/free/
+        /* free */
+c
+        zfree(p)
+        return freep;
+.
+w
+2306
+/^zf/
+zfree(z)
+.,$p
+zfree(z)
+struct freehdr *z;
+{
+        register struct freehdr *p;
+
+        for (p = freep; ; p = p->f_next) {
+                if (p < z && z < p->f_next)
+                        break;  /* Between free blocks */
+                if (p >= p->f_next && (p < z || z < p->f_next))
+                        break;  /* At start or end of arena */
+        }
+
+        if (z + z->z_alloc == p->f_next) {      /* Join above */
+                z->f_alloc =+ p->f_next->f_size;
+                z->f_next = p->f_next->f_next;
+        } else
+                bp->f_next = p->f_next;#
+        if (p + p->f_size == z) {       /* Join below */
+                p->f_alloc =+ z->f_alloc;
+                p->f_next = z->f_next; /* z->f_next already assigned */
+        } else
+                p->f_next = z;
+        freep = p;
+}
+?else@?\#?s///p
+                bp->f_next = p->f_next;
+w
+2305
+!cc z.c
+81: Statement syntax
+97: Illegal structure ref
+97: Illegal conversion
+101: Illegal structure ref
+101: Illegal conversion
+107: bp undefined
+107: .f_size undefined
+!
+81
+        return freep;
+^
+        zfree(p)
+s/$/;/p
+        zfree(p);
+w
+2306
+!cc z.c
+97: Illegal structure ref
+97: Illegal conversion
+101: Illegal structure ref
+101: Illegal conversion
+107: bp undefined
+107: .f_size undefined
+!
+97
+                z->f_alloc =+ p->f_next->f_size;
+10
+/* The multiple of bytes to allocate at once.
+107
+}
+^
+        freep = p;
+/bp
+?
+/bp/
+                bp->f_next = p->f_next;
+s/bp/z/p
+                z->f_next = p->f_next;
+/f_size/s//f_alloc/p
+        if (p + p->f_alloc == z) {      /* Join below */
+w
+2306
+!cc z.c
+97: Illegal structure ref
+97: Illegal conversion
+107: .f_size undefined
+!
+//
+                z->f_alloc =+ p->f_next->f_size;
+s//z_alloc/p
+                z->f_alloc =+ p->f_next->z_alloc;
+w@s/z_alloc/f_alloc/p
+                z->f_alloc =+ p->f_next->f_alloc;
+w
+2307
+!cc z.c
+un: _main
+un: _end
+!
+!cc -c a#z.c
+!
+?^zf?,$p
+zfree(z)
+struct freehdr *z;
+{
+        register struct freehdr *p;
+
+        for (p = freep; ; p = p->f_next) {
+                if (p < z && z < p->f_next)
+                        break;  /* Between free blocks */
+                if (p >= p->f_next && (p < z || z < p->f_next))
+                        break;  /* At start or end of arena */
+        }
+
+        if (z + z->z_alloc == p->f_next) {      /* Join above */
+                z->f_alloc =+ p->f_next->f_alloc;
+                z->f_next = p->f_next->f_next;
+        } else
+                z->f_next = p->f_next;
+        if (p + p->f_alloc == z) {      /* Join below */
+                p->f_alloc =+ z->f_alloc;
+                p->f_next = z->f_next; /* z->f_next already assigned */
+        } else
+                p->f_next = z;
+        freep = p;
+}
+?reg?
+        register struct freehdr *p;
+s/p/zp, fp/p
+        register struct freehdr *zp, fp;
+
+
+
+        for (p = freep; ; p = p->f_next) {
+s/p/fp/p
+        for (fp = freep; ; p = p->f_next) {
+s/p/fp/gp
+        for (ffp = freefp; ; fp = fp->f_next) {
+s/gg##ffp/fp/p
+        for (fp = freefp; ; fp = fp->f_next) {
+s/freefp/freep/p
+        for (fp = freep; ; fp = fp->f_next) {
+
+                if (p < z && z < p->f_next)
+.,$s/p/fp/gp
+        freefp = fp;
+g/freefp/s//freep/gp
+        freep = fp;
+/^free@/^zf/.#,$p
+zfree(z)
+struct freehdr *z;
+{
+        register struct freehdr *zp, fp;
+
+        for (fp = freep; ; fp = fp->f_next) {
+                if (fp < z && z < fp->f_next)
+                        break;  /* Between free blocks */
+                if (fp >= fp->f_next && (fp < z || z < fp->f_next))
+                        break;  /* At start or end of arena */
+        }
+
+        if (z + z->z_alloc == fp->f_next) {     /* Join above */
+                z->f_alloc =+ fp->f_next->f_alloc;
+                z->f_next = fp->f_next->f_next;
+        } else
+                z->f_next = fp->f_next;
+        if (fp + fp->f_alloc == z) {    /* Join below */
+                fp->f_alloc =+ z->f_alloc;
+                fp->f_next = z->f_next; /* z->f_next already assigned */
+        } else
+                fp->f_next = z;
+        freep = fp;
+}
+?^zf?
+zfree(z)
+
+struct freehdr *z;
+
+{
+,.@.,$s/z/zp/gp
+                fp->f_next = zp;
+?fr?
+                        break;  /* Between free blocks */
+??
+        for (fp = freep; ; fp = fp->f_next) {
+??
+        register struct freehdr *zpp, fp;
+?#
+
+gp#@g/zpp/s//zp/p
+        register struct freehdr *zp, fp;
+
+
+
+        for (fp = freep; ; fp = fp->f_next) {
+i
+        zp = z;
+.
+?reg?
+        register struct freehdr *zp, fp;
+s/struct freehdr/char/p
+        register char *zp, fp;
+w
+2345
+!cc z.c
+97: Illegal structure ref
+97: Illegal conversion
+108: .zp_allo undefined
+!
+/97/
+?
+97
+        if (zp + zp->zp_alloc == fp->f_next) {  /* Join above */
+g/zp_/s//z_/gp
+        if (zp + zp->z_alloc == fp->f_next) {   /* Join above */
+w
+2344
+!cc z.c
+un: _main
+un: _end
+!
+!cc -c z.c
+!
+/em#nd/
+                        break;  /* At start or end of arena */
+//
+                        break;  /* At start or end of arena */
+//
+                        break;  /* At start or end of arena */
+w
+2344
+q
+% cat z.c
+#
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ *
+ * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
+ */
+
+#define NULL 0
+/* The multiple of bytes to allocate at once.
+ * Should be divisible by 64. */
+#define NALLOC 512
+
+/* Header for an arbitrary-precision integer.
+ * The limbs directly follow it, inline. */
+struct zhdr {
+        /* The absolute value is the number of limbs representing this number.
+         * If negative, this is a negative number. */
+        int z_len;
+        /* The number of allocated limbs. Keep at the same offset as f_alloc. */
+        int z_alloc;
+        /* The count of references to this number. */
+        int z_refs;
+};
+/* The size of zhdr. */
+#define ZSIZE 6
+
+struct freehdr {
+        /* Next block on free list. */
+        struct freehdr *f_next;
+        /* Size of this block. Keep at the same offset as z_alloc. */
+        int     f_alloc;
+};
+
+struct freehdr *base { base, 0 };       /* Initial empty list */
+struct freehdr *freep base;
+
+struct freehdr *zgrow();
+
+struct zhdr *
+zalloc(limbs)
+{
+        register nbytes;
+        register char *p, *prevp;
+
+        nbytes = ZSIZE + limbs * 2;
+        for (prevp = p = freep; ; prevp = p, p = p->f_next) {
+                if (p->f_alloc >= nbytes) {     /* Large enough */
+                        if (p->f_alloc == nbytes)       /* Fits exactly */
+                                prevp->f_next = p->f_next;
+                        else {  /* Allocate tail */
+                                p->f_alloc =- nbytes;
+                                p =+ p->f_alloc;
+                                p->f_alloc = nbytes;
+                        }
+                        freep = prevp;
+                        return p;
+                }
+                /* Wrapped around the free list */
+                if (p == freep) {
+                        p = zgrow(nbytes);
+                }
+
+        }
+}
+
+struct freehdr *
+zgrow(nbytes)
+{
+        register struct freehdr *p;
+
+        if (nbytes < NALLOC)
+                nbytes = NALLOC;
+        p = sbrk(nbytes);
+        if (p == -1) {
+                write(2, "ws: Out of memory\n", 18);
+                exit(1);
+        }
+        p->f_alloc = nbytes;
+        zfree(p);
+        return freep;
+}
+
+zfree(z)
+struct freehdr *z;
+{
+        register char *zp, fp;
+
+        zp = z;
+        for (fp = freep; ; fp = fp->f_next) {
+                if (fp < zp && zp < fp->f_next)
+                        break;  /* Between free blocks */
+                if (fp >= fp->f_next && (fp < zp || zp < fp->f_next))
+                        break;  /* At start or end of arena */
+        }
+
+        if (zp + zp->z_alloc == fp->f_next) {   /* Join above */
+                zp->f_alloc =+ fp->f_next->f_alloc;
+                zp->f_next = fp->f_next->f_next;
+        } else
+                zp->f_next = fp->f_next;
+        if (fp + fp->f_alloc == zp) {   /* Join below */
+                fp->f_alloc =+ zp->f_alloc;
+                fp->f_next = zp->f_next; /* zp->f_next already assigned */
+        } else
+                fp->f_next = zp;
+        freep = fp;
+}
+% ?z@ed z.c
+2344
+?z_alloc?
+        if (zp + zp->z_alloc == fp->f_next) {   /* Join above */
+s/z_alloc?#/f_alloc/
+p
+        if (zp + zp->f_alloc == fp->f_next) {   /* Join above */
+?reg?
+        register char *zp, fp;
+s/fp/*fp/p
+        register char *zp, *fp;
+w
+2345
+q
+% sync
+% ed TODO@ed ../TODO
+415
+/\./
+- Make timezone configurable without recompilation.
+s///p
+- Make timezone configurable without recompilation
+w
+414
+q
+% ed z.c
+2345
+/zgrow/
+struct freehdr *zgrow();
+//
+                        p = zgrow(nbytes);
+//
+zgrow(nbytes)
+.-3
+}
+^
+        }
+^
+
+d
+w
+2344
+q
+% sync
+% 

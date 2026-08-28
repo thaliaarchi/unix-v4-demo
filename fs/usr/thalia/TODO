@@ -1,6 +1,7 @@
 TODO:
 - Implement char class ranges in ed
 - Make date Y2K compliant
+- Make timezone configurable without recompilation
 - Report non-existent files in cat
 - Allow omitting closing / in ed
 - Make ed listing (l) escape non-printable characters
@@ -9,3 +10,4 @@ TODO:
   - Align to int
 - Add a symbol for indir
 - Make struct fields scoped to the type
+- Fix pwd printing ../ for root
