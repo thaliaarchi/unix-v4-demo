@@ -19372,3 +19372,323 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64523
+
+;login: thalia
+% ed TODO
+190
+1,$p
+TODO:
+- Implement char class ranges in ed
+- Make date Y2K compliant
+- Report non-existent files in cat
+- Allow omitting closing / in ed
+- Make ed listing (l) escape non-printable characters
+a
+- Memory allocator:
+  - Assume excluse#ive use fo?
+  - Assume exclude##sive use of sbrk
+?
+  
+?
+a
+?
+
+?
+.
+- Memory allocator:
+
+?
+$
+- Memory allocator:
+a
+  - Assume exclusive use###ownership of sbrk
+  - Align to int
+!date 08272222
+.
+w
+281
+q
+% mkdir ws
+% chdir ws
+% ed z.c
+?
+a
+struct z {
+        int len;        /* The number of limbs representing this number.
+.
+s/.*    //p
+/* The number of limbs representing this number.
+s/^/    /p
+        /* The number of limbs representing this number.
+a
+         * If negative, this is a negative number. &#*/
+        int z_len;
+        /* The number of allocated limbs. */
+        int z_cap;
+.
+^-2
+         * If negative, this is a negative number. */
+^@$a
+        /* The number @ /* The count of referene#ces to this number. */
+        int z_refs;
+};
+.
+1i
+/* #
+ * Arbitrary-precision integers for Whitespace.
+ * by Thalia Archibald, 2026.#
+ */
+
+.
+2s/.//p
+* Arbitrary-precision integers for Whitespace.
+s/^/ /p
+ * Arbitrary-precision integers for Whitespace.
+2/\.//p
+?
+2
+ * Arbitrary-precision integers for Whitespace.
+s/\.//p
+ * Arbitrary-precision integers for Whitespace
+1,4p
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ */
+$a
+
+union free_#hdr {
+        strut#ct freehdr *e#next;
+        int size@       int     i#size; /* Size of this block */
+{l###};.#.#
+.
+.-2
+        struct freehdr *next;
+c
+        struct freehdr  *next;  ?#/* Next block on free list */
+.
+
+        int     size;   /* Size of this block */
+c/\//   &/p
+?
+s/\//   &/p
+        int     size;           /* Size of this block */
+.-3,$p
+
+union freehdr {
+        struct freehdr  *next;  /* Next block on free list */
+        int     size;           /* Size of this block */
+};
+^s/int  /int            /p
+        int             size;           /* Size of this block */
+s/;     /;/p
+        int             size;   /* Size of this block */
+s/int   /int/
+^
+        struct freehdr  *next;  /* Next block on free list */
+s/      \*/ */p
+        struct freehdr *next;   /* Next block on free list */
+
+        int     size;   /* Size of this block */
+s/; #   /;              /p
+        int     size;           /* Size of this block */
+
+};
+?union?s//struct/
+w
+428
+/struct z/s/z/zhr#dr/p
+struct zhdr {
+i
+struct z {};
+
+/* Header for an arbitrary-precision integer.
+ * The limbs directly follow it, inline. */
+.
+$
+};
+a
+
+static freehdr *freep NULL;
+.
+3
+ * by Thalia Archibald, 2026
+
+ */
+
+
+
+struct z {};
+i
+
+#\#inclu@\#define NULL 0
+
+.
+5
+
+d
+w
+580
+!cc z.c
+6: Unknown character
+6: Expression syntax
+8: External definition syntax
+8: z undefined
+27: External definition syntax
+27: freep undefined
+27: freehdr undefined
+28: freep undefined
+28: freehdr undefined
+!
+6
+#define NULL 0
+1i
+\#
+.
+w
+582
+!cc z.c
+9: Undefined structure: .z
+21: Undefined structure: .z
+26: Undefined structure: .z
+28: External definition syntax
+28: freep undefined
+28: freehdr undefined
+29: freep undefined
+29: freehdr undefined
+!
+9
+struct z {};
+21
+};
+26
+};
+9
+struct z {};
+d
+d
+w
+568
+!cc z.c
+26: External definition syntax
+26: freep undefined
+26: freehdr undefined
+27: freep undefined
+27: freehdr undefined
+!
+26
+static freehdr *freep NULL;
+s/static //p
+freehdr *freep NULL;
+w
+561
+!cc @s/^statu#ic struct /p
+?
+s/^/static struct /p
+static struct freehdr *freep NULL;
+w
+575
+!cc z.c
+26: External definition syntax
+26: freep undefined
+26: freehdr undefined
+27: freep undefined
+27: freehdr undefined
+!
+/freehdr/
+struct freehdr {
+//
+        struct freehdr *next;   /* Next block on free list */
+//
+static struct freehdr *freep NULL;
+s/static //p
+struct freehdr *freep NULL;
+w
+568
+!cc z.c
+un: _main
+!
+5
+ */
+
+
+
+#define NULL 0
+
+
+
+/* Header for an arbitrary-precision integer.
+i
+struct z {};
+
+.
+w
+582
+!cc z.c
+9: Undefined structure: .z
+21: Undefined structure: .z
+26: Undefined structure: .z
+28: Undefined structure: .z
+!
+^-2
+#define NULL 0
+
+
+
+struct z {};
+d
+d
+w
+568
+$a
+
+struct zhdr (#*
+zalloc(len)
+{
+.
+6
+
+
+#define NULL 0
+
+
+
+/* Header for an arbitrary-precision integer.
+
+ * The limbs directly follow it, inline. */
+
+struct zhdr {
+
+        /* The number of limbs representing this number.
+s/The/The absolute value is the/p
+        /* The absolute value is the number of limbs representing this number.
+
+         * If negative, this is a negative number. */
+$
+{
+w
+619
+q
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed

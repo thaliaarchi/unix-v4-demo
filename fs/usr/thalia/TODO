@@ -4,3 +4,7 @@ TODO:
 - Report non-existent files in cat
 - Allow omitting closing / in ed
 - Make ed listing (l) escape non-printable characters
+- Memory allocator:
+  - Assume exclusive ownership of sbrk
+  - Align to int
+!date 08272222
