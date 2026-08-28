@@ -26,5 +26,8 @@ struct freehdr {
 struct freehdr *freep NULL;
 
 struct zhdr *
-zalloc(len)
+zalloc(size)
 {
+	register struct freehdr *p;
+
+	for (p = freep; ; p = p->next) {

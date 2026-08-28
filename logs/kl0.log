@@ -19692,3 +19692,318 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64523
+
+;login: thalia
+% ed TODO
+281
+.
+!date 08272222
+d
+w
+266
+q
+% date 0412@date 08280412
+Wed Aug 28 04:12:00 MDT 1974
+% ed @cd @chdir ws
+% ed z.c
+619
+.-3m#@.-3,$p
+
+struct zhdr *
+zalloc(len)
+{
+?len?s//suze/####ize/p
+zalloc(size)
+$
+{
+        register struct freehdr *p;
+?
+
+?
+        p
+{
+a
+                #register struct freehdr *p;
+        p = freep;
+.
+i
+
+.
+a
+        for (p = freep; ; p = p->next) {
+.^
+^
+.
+^
+.^
+^
+        for (p = freep; ; p = p->next) {
+
+.^
+.,$d
+^
+
+^
+        register struct freehdr *p;
+
+
+
+        for (p = freep; ; p = p->next) {
+^
+
+^
+        register struct freehdr *p;
+^
+{
+.,$p
+{
+        register struct freehdr *p;
+
+        for (p = freep; ; p = p->next) {
+?^struct?
+struct zhdr *
+??
+struct freehdr *freep NULL;
+??
+struct freehdr {
+.,/^}/p
+struct freehdr {
+        struct freehdr *next;   /* Next block on free list */
+        int     size;           /* Size of this block */
+};
+$
+        for (p = freep; ; p = p->next) {
+w
+684
+
+?
+q
+% chdir /usr/sys/ken
+% grep -n '^@ed sysent.c
+1957
+/brk/
+?
+/break/
+        1, &sbreak,                     /* 17 = break */
+q
+% grep -n ^sbreak *
+arg count
+Command not found
+% grep -n ^sbreak sys*
+arg count
+Command not found
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% grep -n '^sbreak' *
+sys1.c:305 sbreak()
+% ed sys1.c
+5494
+/sbreak/
+sbreak()
+.,/^]#}/p
+sbreak()
+{
+        register a, n, d;
+        int i;
+
+        /*
+         * set n to new data size
+         * set d to new-old
+         * set n to new total size
+         */
+
+        n = (((u.u_arg[0]+63)>>6) & 01777) - nseg(u.u_tsize)*128;
+        if(n < 0)
+                n = 0;
+        d = n - u.u_dsize;
+        n =+ USIZE+u.u_ssize;
+        if(estabur(u.u_tsize, u.u_dsize+d, u.u_ssize))
+                return;
+        u.u_dsize =+ d;
+        if(d > 0)
+                goto bigger;
+        a = u.u_procp->p_addr + n - u.u_ssize;
+        i = n;
+        n = u.u_ssize;
+        while(n--) {
+                copyseg(a-d, a);
+                a++;
+        }
+        expand(i);
+        return;
+
+bigger:
+        expand(n);
+        a = u.u_procp->p_addr + n;
+        n = u.u_ssize;
+        while(n--) {
+                a--;
+                copyseg(a-d, a);
+        }
+        while(d--)
+                clearseg(--a);
+}
+/^nseg/
+?
+q
+% grep -n '^nseg' *
+main.c:186 nseg(n)
+% ed main.c
+2695
+/^nseg/;/^}/p
+nseg(n)
+{
+
+        return((n+127)>>7);
+}
+q
+% ed ../user.h
+671
+1,$p
+struct user {
+        int     u_rsav[2];              /* must be first */
+        int     u_fsav[25];             /* must be second */
+        char    u_segflg;
+        char    u_error;
+        char    u_uid;
+        char    u_gid;
+        char    u_ruid;
+        char    u_rgid;
+        int     u_procp;
+        char    *u_base;
+        char    *u_count;
+        char    *u_offset[2];
+        int     *u_cdir;
+        char    u_dbuf[DIRSIZ];
+        char    *u_dirp;
+        struct  {
+                int     u_ino;
+                char    u_name[DIRSIZ];
+        } u_dent;
+        int     *u_pdir;
+        int     u_uisa[8];
+        int     u_uisd[8];
+        int     u_ofile[NOFILE];
+        int     u_arg[5];
+        int     u_tsize;
+        int     u_dsize;
+        int     u_ssize;
+        int     u_qsav[2];
+        int     u_ssav[2];
+        int     u_signal[NSIG];
+        int     u_utime;
+        int     u_stime;
+        int     u_cutime[2];
+        int     u_cstime[2];
+        int     *u_ar0;
+        int     u_prof[4];
+        char    u_nice;
+        char    u_dsleep;
+} u;    /* u = 140000 */
+q
+% ed /usr/source/s3@ls /usr/source/s3/s*
+/usr/source/s3/sin.s
+/usr/source/s3/sqrt.s
+/usr/source/s3/switch.s
+% ls /usr/source/s3#4/s*
+/usr/source/s4/seek.s
+/usr/source/s4/setgid.s
+/usr/source/s4/setuid.s
+/usr/source/s4/signal.s
+/usr/source/s4/sin.s
+/usr/source/s4/sleep.s
+/usr/source/s4/sbrk.s
+/usr/source/s4/sqrt.s
+/usr/source/s4/sync.s
+/usr/source/s4/ssw.s
+/usr/source/s4/stat.s
+/usr/source/s4/stime.s
+/usr/source/s4/stty.s
+/usr/source/s4/switch.s
+% cat /usr/source/s4/sbrk.s
+/old = sbrk(increment);
+/
+/sbrk gets increment more core, and returns a pointer
+/       to the beginning of the new core area
+/
+.globl  _sbrk,_end, retrn, cerror
+
+_sbrk:
+        mov     r5,-(sp)
+        mov     sp,r5
+        mov     nd,0f
+        add     4(r5),0f
+        sys     0; 9f
+        bec     1f
+        jmp     cerror
+1:
+        mov     nd,r0
+        add     4(r5),nd
+        jmp     retrn
+
+.globl  _brk
+/ brk(value)
+/ as described in man2.
+/ returns 0 for ok, -1 for error.
+
+_brk:
+        mov     r5,-(sp)
+        mov     sp,r5
+        mov     4(r5),0f
+        sys     0; 9f
+        bec     1f
+        jmp     cerror
+1:
+        mov     4(r5),nd
+        clr     r0
+        jmp     retrn
+.data
+9:
+        sys     break; 0:..
+nd:     _end
+% ed /usr/thalia/TODO
+266
+a
+- Add a symbol for indir
+.
+w
+291
+q
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)

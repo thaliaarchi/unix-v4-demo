@@ -7,4 +7,4 @@ TODO:
 - Memory allocator:
   - Assume exclusive ownership of sbrk
   - Align to int
-!date 08272222
+- Add a symbol for indir
