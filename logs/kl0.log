@@ -24232,4 +24232,351 @@ w
 2344
 q
 % sync
+% Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: thalia
+% chdir ws
+% date 08290837
+Thu Aug 29 08:37:00 MDT 1974
+% ed z.c
+2344
+/zgrw#ow/
+struct freehdr *zgrow();
+//
+                        p = zgrow(nbytes);
+//
+zgrow(nbytes)
+.,/^}/p
+zgrow(nbytes)
+{
+        register struct freehdr *p;
+
+        if (nbytes < NALLOC)
+                nbytes = NALLOC;
+        p = sbrk(nbytes);
+        if (p == -1) {
+                write(2, "ws: Out of memory\n", 18);
+                exit(1);
+        }
+        p->f_alloc = nbytes;
+        zfree(p);
+        return freep;
+}
+.-3
+        p->f_alloc = nbytes;
+i
+        if (p + nbytes = freeend        @       if (p == freetop) {
+                ?
+c
+        if (freetop + freetop->f_next == p) {
+                freelast########lastfree @              topfree = ###->f_len###alloc =#=+ nbytes;
+                return topfree;
+        }
+c
+q
+q#.
+e
+?
+e
+?
+q
+% e z.c
+e: not found
+% pwd
+../usr/thalia/ws
+% s#ls
+z.c
+z.o
+% ed z.c
+2344
+!cp z.c za..lo@!cp z.c zalloc.c
+!
+/NALLOC/
+#define NALLOC 512
+^
+ * Should be divisible by 64. */
+^
+/* The multiple of bytes to allocate at once.
+.,/NALLOC/d
+/struct fre/
+struct freehdr {
+.,$d
+1,$p
+#
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ *
+ * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
+ */
+
+#define NULL 0
+
+/* Header for an arbitrary-precision integer.
+ * The limbs directly follow it, inline. */
+struct zhdr {
+        /* The absolute value is the number of limbs representing this number.
+         * If negative, this is a negative number. */
+        int z_len;
+        /* The number of allocated limbs. Keep at the same offset as f_alloc. */
+        int z_alloc;
+        /* The count of references to this number. */
+        int z_refs;
+};
+/* The size of zhdr. */
+#define ZSIZE 6
+
+d
+/Aa#dapted/,#;.-1d
+?
+/Adapted/;.-1d
+?
+/Adapted/
+ * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
+.-1,.d
+
+
+1,$p
+#
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ */
+
+#define NULL 0
+
+/* Header for an arbitrary-precision integer.
+ * The limbs directly follow it, inline. */
+struct zhdr {
+        /* The absolute value is the number of limbs representing this number.
+         * If negative, this is a negative number. */
+        int z_len;
+        /* The number of allocated limbs. Keep at the same offset as f_alloc. */
+        int z_alloc;
+        /* The count of references to this number. */
+        int z_refs;
+};
+/* The size of zhdr. */
+#define ZSIZE 6
+w
+528
+q
+% mv z.c zh#.h
+% ed zalloc.c
+2344
+/NULL/d
+/zhdr/
+struct zhdr {
+^
+ * The limbs directly follow it, inline. */
+^
+/* Header for an arbitrary-precision integer.
+.,/}/d
+.
+/* The size of zhdr. */
+.,.+1d
+1,$p
+#
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ *
+ * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
+ */
+
+/* The multiple of bytes to allocate at once.
+ * Should be divisible by 64. */
+#define NALLOC 512
+
+
+struct freehdr {
+        /* Next block on free list. */
+        struct freehdr *f_next;
+        /* Size of this block. Keep at the same offset as z_alloc. */
+        int     f_alloc;
+};
+
+struct freehdr *base { base, 0 };       /* Initial empty list */
+struct freehdr *freep base;
+
+struct freehdr *zgrow();
+
+struct zhdr *
+zalloc(limbs)
+{
+        register nbytes;
+        register char *p, *prevp;
+
+        nbytes = ZSIZE + limbs * 2;
+        for (prevp = p = freep; ; prevp = p, p = p->f_next) {
+                if (p->f_alloc >= nbytes) {     /* Large enough */
+                        if (p->f_alloc == nbytes)       /* Fits exactly */
+                                prevp->f_next = p->f_next;
+                        else {  /* Allocate tail */
+                                p->f_alloc =- nbytes;
+                                p =+ p->f_alloc;
+                                p->f_alloc = nbytes;
+                        }
+                        freep = prevp;
+                        return p;
+                }
+                /* Wrapped around the free list */
+                if (p == freep) {
+                        p = zgrow(nbytes);
+                }
+        }
+}
+
+struct freehdr *
+zgrow(nbytes)
+{
+        register struct freehdr *p;
+
+        if (nbytes < NALLOC)
+                nbytes = NALLOC;
+        p = sbrk(nbytes);
+        if (p == -1) {
+                write(2, "ws: Out of memory\n", 18);
+                exit(1);
+        }
+        p->f_alloc = nbytes;
+        zfree(p);
+        return freep;
+}
+
+zfree(z)
+struct freehdr *z;
+{
+        register char *zp, *fp;
+
+        zp = z;
+        for (fp = freep; ; fp = fp->f_next) {
+                if (fp < zp && zp < fp->f_next)
+                        break;  /* Between free blocks */
+                if (fp >= fp->f_next && (fp < zp || zp < fp->f_next))
+                        break;  /* At start or end of arena */
+        }
+
+        if (zp + zp->f_alloc == fp->f_next) {   /* Join above */
+                zp->f_alloc =+ fp->f_next->f_alloc;
+                zp->f_next = fp->f_next->f_next;
+        } else
+                zp->f_next = fp->f_next;
+        if (fp + fp->f_alloc == zp) {   /* Join below */
+                fp->f_alloc =+ zp->f_alloc;
+                fp->f_next = zp->f_next; /* zp->f_next already assigned */
+        } else
+                fp->f_next = zp;
+        freep = fp;
+}
+/struct fre/
+struct freehdr {
+.-1d
+1
+#
+
+/*
+
+ * Arbitrary-precision integers for Whitespace
+
+ * by Thalia Archibald, 2026
+
+ *
+
+ * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
+
+ */
+
+
+
+/* The multiple of bytes to allocate at once.
+i
+\#include "z.h"
+
+.
+w
+1918
+q
+% cc -c zc#alloc.c
+% rm *.o
+% ed zarith.c
+?
+q
+% ed z.h
+528
+1;/\*\.#/#@//@/^$/;$d
+1,$p
+#
+/*
+ * Arbitrary-precision integers for Whitespace
+ * by Thalia Archibald, 2026
+ */
+w zarith.c
+85
+e zarith.c
+85
+f
+zarith.c
+a#$#$a
+
+\#include "z.c"
+
+.
+.-1s/\.c/.h/p
+#include "z.h"
+$a
+?
+e zalloc.c
+1918
+a
+
+zdefref@zdecref(z)
+stry#uct zhdr *z;
+{
+        if (z->f_refs == 0)
+                zfree(z);
+}
+.
+?if?s/z/--z/p
+        if (--z->f_refs == 0)
+w
+1985
+e zarith.c
+85
+$
+ */
+a
+
+\#define abs(x) ((x) >= 0 ? )#(x) : -(x))
+.
+.#s/abs/ABS/p
+#define ABS(x) ((x) >= 0 ? (x) : -(x))
+a
+
+zadd(x, y)
+struct zhdr *x, *y;
+{
+}
+/#.
+w
+161
+q
+% sync
 % 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+date 08282020
+Wed Aug 28 20:20:00 MDT 1974
+% pwd
+../usr/thalia/ws
+% ed z.c
+?
+q
+% ed zalloc.c
+1985
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)

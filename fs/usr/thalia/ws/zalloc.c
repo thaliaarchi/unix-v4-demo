@@ -6,24 +6,11 @@
  * Adapted from K&R C, Second Edition, 8.7 A Storage Allocator
  */
 
-#define NULL 0
+#include "z.h"
+
 /* The multiple of bytes to allocate at once.
  * Should be divisible by 64. */
 #define NALLOC 512
-
-/* Header for an arbitrary-precision integer.
- * The limbs directly follow it, inline. */
-struct zhdr {
-	/* The absolute value is the number of limbs representing this number.
-	 * If negative, this is a negative number. */
-	int z_len;
-	/* The number of allocated limbs. Keep at the same offset as f_alloc. */
-	int z_alloc;
-	/* The count of references to this number. */
-	int z_refs;
-};
-/* The size of zhdr. */
-#define ZSIZE 6
 
 struct freehdr {
 	/* Next block on free list. */
@@ -104,4 +91,11 @@ struct freehdr *z;
 	} else
 		fp->f_next = zp;
 	freep = fp;
+}
+
+zdecref(z)
+struct zhdr *z;
+{
+	if (--z->f_refs == 0)
+		zfree(z);
 }
