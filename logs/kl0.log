@@ -24580,3 +24580,1025 @@ q
 1985
 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+Logging to file "logs/kl0.log"
+boot.ini-19> attach dci line=0,connect=/dev/ttyUSB0;1200-7E1
+%SIM-ERROR: Unexpected specifier: 1200-7E1
+boot.ini-20> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+%SIM-ERROR: Unexpected specifier: 9600-8N1
+boot.ini-89> set realcons host=localhost
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-90> set realcons panel=11/70
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-91> set realcons interval=1
+%SIM-ERROR: Non-existent device: REALCONS
+boot.ini-92> set realcons connect
+%SIM-ERROR: Non-existent device: REALCONS
+
+k
+unix
+mem = 64523
+
+;login: root
+# cat etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16:16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+andrew::17:17::/usr/andrew:
+# echo nick::242:242::/usr/nick:D#
+# echo nick::242:242::/usr/nick: >> etc/passwd
+# cd etc
+haha
+# ls##
+# chdir etc
+# ls -l
+total 45
+-rwxrwxrwx 1 bin      1164 Aug 26 21:29 getty
+-rwxrwxrwx 1 bin      2208 Aug 26 18:30 glob
+-rwxrwxrwx 1 bin      2738 Aug 11 21:17 init
+-rwxr-xr-x 1 bin       814 Jun 12 16:55 lpd
+-rwxr--r-- 1 bin      4136 Jun 10 08:37 mkfs
+-rwxr--r-- 1 bin      1800 Jun 10 08:37 mknod
+-rwsr-xr-x 1 root     2078 Jun 10 08:37 mount
+-rwxr-xr-x 1 bin       220 Jun 10 08:37 msh
+-rw-r--r-- 1 bin       679 Aug 29 09:14 passwd
+-rw-r--r-- 1 bin        70 Jun 10 08:37 rc
+-rw-r--r-- 1 bin       128 Aug 11 21:16 ttys
+-rwsr-xr-x 1 root     1990 Jun 10 08:37 umount
+-rwxr-xr-x 1 bin        32 Jun 10 08:37 update
+# login
+Name: nick
+No directory
+Name: root
+# mkdir /usr/nick
+# chown nick /usr/nick
+# exit
+# login
+Name: nick
+% ls
+% pwd
+../usr/nick
+% cd /usr/th    #alia
+haha
+% cdir###hdir /usr
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+nick
+pub
+sno
+source
+sys
+thalia
+tmp
+ty
+voytilla
+yang
+% ls thalia
+TODO
+beeps.c
+hints
+lrc2026
+mullender.c
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% cp thalia/mullender.c nick/mullender.c
+% cp thalia/in##hints nick/
+hints: not found
+% cp ###chdir thalia/hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% cat 1*
+Z.A..1hint% la `
+% ls 1*
+hint
+% cat 2*##1*/hint
+No match
+% cat 1*/hint
+No match
+% chdir 1*
+chdir: bad directory
+% pwd
+../usr/thalia/hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% chdir 1compile
+% pwd
+../usr/thalia/hints/1compile
+% cat hint
+Hint: Compile mullender.c with
+        cc mullender.c
+or assemble mullender.s with
+        as mullender.s
+The output is placed at a.out.
+% chdir ..
+% cat 2*/*
+No match
+% chdir 2*
+chdir: bad directory
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% ls -l
+total 6
+drwxr-xr-x 2 thalia     48 Aug 18 03:42 1compile
+drwxr-xr-x 2 thalia    160 Aug 18 03:42 2syntax
+drwxr-xr-x 2 thalia    112 Aug 18 03:42 3semantics
+drwxr-xr-x 2 thalia    144 Aug 18 03:47 4debug
+drwxr-xr-x 2 thalia     96 Aug 18 03:44 5solution
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 resources
+% cd 2syntax
+haha
+% chdir 2syntax
+% ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% cat hint1
+Hint: UNIX V7 introduced the short type as it was ported to more systems.
+Before, UNIX only ran on the PDP-11 with int (16-bit) and char (8-bit) integer
+types. On the VAX, int became 32-bit, so short filled the gap between char and
+int.
+% cd
+% chdir /usr/nick
+% ls
+mullender.c
+% cat mull*
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+        277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+        -113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+        4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+        0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% cat mullender.s
+% ls
+mullender.c
+% ed mullender.c
+469
+1,$p
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+        277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+        -113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+        4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+        0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+.=
+10
+2
+short main[] = {
+3s/short/int
+?
+2
+short main[] = {
+2s/short/int/
+2
+int main[] = {
+w
+467
+!cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+!
+q
+% chdir /usr/thalia/hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% ls 1compile
+hint
+% chdir 2syntax
+% ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+% cat hint2
+Hint: Array in C as of UNIX V4 were declared without equals, e.g.,
+
+        int a[] {1, 2, 3};
+% chdir
+chdir: arg count
+% chdir @chdir /usr/nick
+% pwd
+../usr/nick
+% ed mullender.c
+467
+2
+int main[] = {
+2s/=//
+2
+int main[]  {
+!cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+!
+!cat /usr/than#lia/hints/2syntax/hint3a
+Hint: 0x hexadecimal literals were introduced in UNIX V7. Before then, only
+decimal and octal literals were supported.
+
+Octal was the preferred base for expressing bit patterns, a tradition inherited
+from earlier systems. Despite the 16-bit word size not being divisible by 3 (3
+bits per octal digit), all PDP-11 documentation used octal. Note that the
+switches on the PiDP-11 front panel are colored in groups of three, denoting
+octal digits.
+!
+1,#,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+        277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+        -113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+        4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+        0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+!cat /usr/thalia/hints/2syntax/3b
+!
+!cat /usr/thalia/hints/2syntax/hint3b
+Hint: The hexadecimal values can be replaced with octal or decimal (your choice)
+using ed as follows:
+
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+
+/0xbef/s//3055/
+/0x52d7/s//21207/
+/0x4bc/s//1212/
+g/0x9/s//9/
+/0x7e82/s//32386/
+/0x8/s//8/
+/0x6176/s//24950/
+!
+/0xbef/s//05757/
+/0x52d7/s//051327/
+/0x4bc/s//02274/
+g/0x9/s//011/
+/0x7e82/s//077202/
+/0x8/s//010/
+/0x6176/s//060566/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+        277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+        -113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+        4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+        077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+!cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+!
+w
+466
+!w m?
+?
+!cc mullender.c
+!
+q
+% ls
+a.out
+mullender.c
+% ./a   @a.out
+  :-)Bad system call -- Core dumped
+% cc -S mullender.c
+% ls
+a.out
+core
+mullender.c
+mullender.s
+% cat mullender.s
+.globl  _main
+.data
+_main=.
+277.
+2525.
+-4129.
+25.
+0.
+477.
+1019.
+3055.
+0.
+12800.
+-113.
+21119.
+21207.
+-1006.
+-7151.
+0.
+1212.
+8196.
+14880.
+10541.
+2056.
+2056.
+4548.
+3044.
+-6716.
+9.
+4407.
+6.
+5568.
+1.
+-30460.
+0.
+9.
+5570.
+512.
+-30419.
+32386.
+496.
+6.
+0.
+4.
+1280.
+15.
+0.
+4.
+1280.
+4.
+0.
+4.
+0.
+0.
+0.
+8.
+0.
+4.
+0.
+44.
+0.
+12.
+0.
+4.
+0.
+35.
+0.
+16.
+0.
+4.
+0.
+30.
+0.
+22.
+0.
+24950.
+120.
+25712.
+112.
+29811.
+114.
+29303.
+29801.
+101.
+% cd /usr/thalia/hints
+haha
+% chdir /sur/@chdir /usr/thalia.hin####/hints
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% chdir 3semantics
+% ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% cat hint1
+Hint: The early C compiler did not check the type of main and the C runtime
+simply jumped to main. This definition is interpreted as PDP-11 machine code.
+% cat hint2
+Hint: The assembly code corresponding to the PDP-11 portion of the program is at
+mullender.s. A disassembly of it, showing the octal values of the words, is at
+mullender.das.
+
+Numbers in PDP-11 assembly are in octal by default, unless they are
+suffixed with a period (.), making them decimal. Period does not mean floating
+point, although the PDP-11 did have floating point.
+% cat mullender.s
+pdp:
+        mov     pc,r4
+        tst     -(r4)
+        sub     $9,r4
+        mov     r4,0f
+        mov     $1, r0
+        sys     4; 0:0; 9
+        mov     $1000, r2
+1:
+        sys     55
+        sob     r2, 1b
+        br      pdp
+% cat hinrt3###t3
+Hint: The algorithm implemented by both the PDP-11 and VAX versions prints
+smiley faces repeatedly, scrolling across the screen. It prints 5 characters,
+followed by four backspaces, making the next smiley face be printed over the
+previous, one character over.
+
+for (;;) {
+        write(1, "  :-)\b\b\b\b", 9);
+        delay();
+}
+% la
+la: not found
+% ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+% cat @chdir ..
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+% chi#dir 4debug
+dir: not found
+% chdir 4debug
+% ls
+hint1
+hint2a
+hint2b
+hint3
+% cat hint1
+Hint: Now that it compiles, run it. What's broken?
+
+% cc mullender.c
+% a.out
+ Bad system call -- Core dumped
+
+If you want to skip fixing the syntax, you can start with 2syntax/solution.c.
+% cat hint2a
+Hint: The space before "Bad system call" is suspicious. Is it from another
+print?
+% cat 2b
+% cat hint2b
+Hint: You can isolate the text printed by the program from the error by
+redirecting to a file. Note that the prompt overlaps with the text, since it
+backspaces and does not end with a line feed.
+
+% a.out > out
+Bad system call -- Core dumped
+% cat out
+ % -)
+% chd@cat hint3
+Hint: You'll want to read kernel source code. Ask me for pointers :).
+% chdir
+chdir: arg count
+% d#ls
+hint1
+hint2a
+hint2b
+hint3
+% a.out > ttt
+ttt: cannot create
+% pwd
+../usr/thalia/hints/4debug
+% chdir
+chdir: arg count
+% chdir /usr/nick
+% a.out > ttt
+Bad system call -- Core dumped
+% cat ttt
+  :-)% od ttt
+0000000 020040 026472 004051 004010 000010
+0000011 
+% cd@hdir /usr
+hdir: not found
+% chdir /usr
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+nick
+pub
+sno
+source
+sys
+thalia
+tmp
+ty
+voytilla
+yang
+% chdir sys
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+tty.h.bak
+user.h
+% chdir ken
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% cat syst@ent.c
+ent.c: not found
+% cat sysent.c
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int     sysent[]
+{
+        0, &nullsys,                    /*  0 = indir */
+        0, &rexit,                      /*  1 = exit */
+        0, &fork,                       /*  2 = fork */
+        2, &read,                       /*  3 = read */
+        2, &write,                      /*  4 = write */
+        2, &open,                       /*  5 = open */
+        0, &close,                      /*  6 = close */
+        0, &wait,                       /*  7 = wait */
+        2, &creat,                      /*  8 = creat */
+        2, &link,                       /*  9 = link */
+        1, &unlink,                     /* 10 = unlink */
+        2, &exec,                       /* 11 = exec */
+        1, &chdir,                      /* 12 = chdir */
+        0, &gtime,                      /* 13 = time */
+        3, &mknod,                      /* 14 = mknod */
+        2, &chmod,                      /* 15 = chmod */
+        2, &chown,                      /* 16 = chown */
+        1, &sbreak,                     /* 17 = break */
+        2, &stat,                       /* 18 = stat */
+        2, &seek,                       /* 19 = seek */
+        0, &nosys,                      /* 20 = x */
+        3, &smount,                     /* 21 = mount */
+        1, &sumount,                    /* 22 = umount */
+        0, &setuid,                     /* 23 = setuid */
+        0, &getuid,                     /* 24 = getuid */
+        0, &stime,                      /* 25 = stime */
+        0, &nosys,                      /* 26 = x */
+        0, &nosys,                      /* 27 = x */
+        1, &fstat,                      /* 28 = fstat */
+        0, &nosys,                      /* 29 = x */
+        1, &nullsys,                    /* 30 = smdate */
+        1, &stty,                       /* 31 = stty */
+        1, &gtty,                       /* 32 = gtty */
+        0, &nosys,                      /* 33 = x */
+        0, &nice,                       /* 34 = nice */
+        0, &sslep,                      /* 35 = sleep */
+        0, &sync,                       /* 36 = sync */
+        1, &kill,                       /* 37 = kill */
+        0, &getswit,                    /* 38 = switch */
+        0, &nosys,                      /* 39 = x */
+        0, &nosys,                      /* 40 = x */
+        0, &dup,                        /* 41 = dup */
+        0, &pipe,                       /* 42 = pipe */
+        1, &times,                      /* 43 = times */
+        4, &profil,                     /* 44 = prof */
+        0, &nosys,                      /* 45 = tiu */
+        0, &setgid,                     /* 46 = setgid */
+        0, &getgid,                     /* 47 = getgid */
+        2, &ssig,                       /* 48 = sig */
+        0, &nosys,                      /* 49 = x */
+        0, &nosys,                      /* 50 = x */
+        0, &nosys,                      /* 51 = x */
+        0, &nosys,                      /* 52 = x */
+        0, &nosys,                      /* 53 = x */
+        0, &nosys,                      /* 54 = x */
+        0, &nosys,                      /* 55 = x */
+        0, &nosys,                      /* 56 = x */
+        0, &nosys,                      /* 57 = x */
+        0, &nosys,                      /* 58 = x */
+        0, &nosys,                      /* 59 = x */
+        0, &nosys,                      /* 60 = x */
+        0, &nosys,                      /* 61 = x */
+        0, &nosys,                      /* 62 = x */
+        0, &nosys                       /* 63 = x */
+};
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% cat trap.c
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+#include "../param.h"
+#include "../systm.h"
+#include "../user.h"
+#include "../proc.h"
+#include "../reg.h"
+#include "../text.h"
+#include "../seg.h"
+
+#define CSW     0177570
+#define EBIT    1
+#define UMODE   0170000
+#define SETD    0170011
+struct  {
+        int     count;
+        int     (*call)();
+} sysent[64];
+char    regloc[8]
+{
+        R0, R1, R2, R3, R4, R5, R6, R7
+};
+
+trap(dev, sp, r1, nps, r0, pc, ps)
+char *sp;
+{
+        register i, a;
+
+        savfp();
+        u.u_ar0 = &r0;
+        if(dev == 8) {
+                psignal(u.u_procp, SIGFPT);
+                if((ps&UMODE) == UMODE)
+                        goto err;
+                return;
+        }
+        if(dev==1 && fuword(pc-2)==SETD && u.u_signal[SIGINS]==0)
+                return;
+        if((ps&UMODE) != UMODE)
+                goto bad;
+        if(dev==9 && sp<-u.u_ssize*64) {
+                if(backup(&r0) == 0)
+                if(!estabur(u.u_tsize, u.u_dsize, u.u_ssize+SINCR)) {
+                        u.u_ssize =+ SINCR;
+                        expand(u.u_procp->p_size+SINCR);
+                        a = u.u_procp->p_addr + u.u_procp->p_size;
+                        for(i=0; i<u.u_ssize; i++) {
+                                a--;
+                                copyseg(a-SINCR, a);
+                        }
+                        return;
+                }
+        }
+        u.u_error = 0;
+        switch(dev) {
+
+        case 0:
+                i = SIGBUS;
+                goto def;
+
+        case 1:
+                i = SIGINS;
+                goto def;
+
+        case 2:
+                i = SIGTRC;
+                goto def;
+
+        case 3:
+                i = SIGIOT;
+                goto def;
+
+        case 5:
+                i = SIGEMT;
+                goto def;
+
+        case 9:
+                i = SIGSEG;
+                goto def;
+
+        def:
+                psignal(u.u_procp, i);
+
+        default:
+                u.u_error = dev+100;
+
+        case 6:;
+        }
+        if(u.u_error)
+                goto err;
+        ps =& ~EBIT;
+        dev = fuword(pc-2)&077;
+        if(dev == 0) { /* indirect */
+                a = fuword(pc);
+                pc =+ 2;
+                dev = fuword(a)&077;
+                a =+ 2;
+        } else {
+                a = pc;
+                pc =+ sysent[dev].count*2;
+        }
+        for(i=0; i<sysent[dev].count; i++) {
+                u.u_arg[i] = fuword(a);
+                a =+ 2;
+        }
+        u.u_dirp = u.u_arg[0];
+        trap1(sysent[dev].call);
+        if(u.u_error >= 100)
+                psignal(u.u_procp, SIGSYS);
+err:
+        if(issig())
+                psig();
+        if(u.u_error != 0) {
+                ps =| EBIT;
+                r0 = u.u_error;
+        }
+        u.u_procp->p_pri = PUSER + u.u_nice;
+        if(u.u_dsleep++ > 15) {
+                u.u_dsleep = 0;
+                u.u_procp->p_pri++;
+                swtch();
+        }
+        return;
+
+bad:
+        printf("ka6 = %o\n", KISA->r[6]);
+        printf("aps = %o\n", &ps);
+        for(a = CSW->r[0]; a == CSW->r[0]; )
+                idle();
+        panic("trap");
+}
+
+trap1(f)
+int (*f)();
+{
+
+        savu(u.u_qsav);
+        (*f)();
+}
+
+nosys()
+{
+
+        u.u_error = 100;
+}
+
+nullsys()
+{
+}
+% chdir /usr/bic###nick
+% pwd
+../usr/nick
+% ed mullender.c
+466
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+        277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+        -113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+        4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, -30419,
+        077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+!cat /usr/thalia/hints/3semantics/mullender.das
+000000: 010704                  mov     pc,r4
+000002: 005744                  tst     -(r4)
+000004: 162704 000011           sub     $11,r4
+000010: 010467 000006           mov     r4,22
+000014: 012700 000001           mov     $1,r0
+000020: 104404                  trap    4
+000022: 000000                  0
+000024: 000011                  11
+000026: 012702 001000           mov     $1000,r2
+000032: 104455                  trap    55
+000034: 077202                  sob     r2,32
+000036: 000760                  br      0
+!
+/-34#0419/s/-3##/36/###0104400 + 36/
+1,$p
+/* Portable between VAX11 && PDP11 */
+int main[]  {
+        277, 04735, -4129, 25, 0, 477, 1019, 05757, 0, 12800,
+        -113, 21119, 051327, -1006, -7151, 0, 02274, 020004,
+        14880, 10541, 2056, 04010, 4548, 3044, -6716, 011,
+        4407, 6, 5568, 1, -30460, 0, 011, 5570, 512, 0104400 + 36,
+        077202, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+        4, 0, 0, 0, 010, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+        0, 020, 0, 4, 0, 30, 0, 026, 0, 060566, 120, 25712,
+        'p', 072163, 'r', 29303, 29801, 'e' };
+w
+472
+!cc mullender.c
+!
+!a.out
+  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)  :-)!
+?
+q
+
+?
+q
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
