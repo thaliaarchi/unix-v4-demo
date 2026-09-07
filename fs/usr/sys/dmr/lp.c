@@ -77,33 +77,34 @@ lpcanon(c)
 	c1 = c;
 	if(lp11.flag&CAP) {
 		if(c1>='a' && c1<='z')
-			c1 =+ 'A'-'a'; else
-		switch(c1) {
+			c1 =+ 'A'-'a';
+		else
+			switch(c1) {
 
-		case '{':
-			c2 = '(';
-			goto esc;
+			case '{':
+				c2 = '(';
+				goto esc;
 
-		case '}':
-			c2 = ')';
-			goto esc;
+			case '}':
+				c2 = ')';
+				goto esc;
 
-		case '`':
-			c2 = '\'';
-			goto esc;
+			case '`':
+				c2 = '\'';
+				goto esc;
 
-		case '|':
-			c2 = '!';
-			goto esc;
+			case '|':
+				c2 = '!';
+				goto esc;
 
-		case '~':
-			c2 = '^';
+			case '~':
+				c2 = '^';
 
-		esc:
-			lpcanon(c2);
-			lp11.ccc--;
-			c1 = '-';
-		}
+			esc:
+				lpcanon(c2);
+				lp11.ccc--;
+				c1 = '-';
+			}
 	}
 
 	switch(c1) {

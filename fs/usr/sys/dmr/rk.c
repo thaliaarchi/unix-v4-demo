@@ -63,7 +63,8 @@ struct buf *abp;
 	bp->av_forw = 0;
 	bp->b_flags =& ~B_SEEK;
 	if(bp->b_dev.d_minor < 8)
-		d = bp->b_dev.d_minor; else
+		d = bp->b_dev.d_minor;
+	else
 		d = lrem(bp->b_blkno, d);
 	spl5();
 	if ((ql = *(qc = &rk_q[d])) == NULL) {

@@ -95,11 +95,11 @@ char c;
 {
 
 	if(u.u_segflg)
-		*u.u_base = c; else
-		if(subyte(u.u_base, c) < 0) {
-			u.u_error = EFAULT;
-			return(-1);
-		}
+		*u.u_base = c;
+	else if(subyte(u.u_base, c) < 0) {
+		u.u_error = EFAULT;
+		return(-1);
+	}
 	u.u_count--;
 	if(++u.u_offset[1] == 0)
 		u.u_offset[0]++;
@@ -114,11 +114,11 @@ cpass()
 	if(u.u_count == 0)
 		return(-1);
 	if(u.u_segflg)
-		c = *u.u_base; else
-		if((c=fubyte(u.u_base)) < 0) {
-			u.u_error = EFAULT;
-			return(-1);
-		}
+		c = *u.u_base;
+	else if((c=fubyte(u.u_base)) < 0) {
+		u.u_error = EFAULT;
+		return(-1);
+	}
 	u.u_count--;
 	if(++u.u_offset[1] == 0)
 		u.u_offset[0]++;

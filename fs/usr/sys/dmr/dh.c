@@ -159,12 +159,14 @@ struct tty *atp;
 	DHADDR->dhcsr.lobyte = (tp - dh11) | IENABLE;
 	lpr = (tp->t_speeds.hibyte<<10) | (tp->t_speeds.lobyte<<6);
 	if (tp->t_speeds.lobyte == 4)		/* 134.5 baud */
-		lpr =| BITS6|PENABLE|HDUPLX; else
-		if (tp->t_flags&EVENP)
-			if (tp->t_flags&ODDP)
-				lpr =| BITS8; else
-				lpr =| BITS7|PENABLE; else
-			lpr =| BITS7|OPAR|PENABLE;
+		lpr =| BITS6|PENABLE|HDUPLX;
+	else if (tp->t_flags&EVENP)
+		if (tp->t_flags&ODDP)
+			lpr =| BITS8;
+		else
+			lpr =| BITS7|PENABLE;
+	else
+		lpr =| BITS7|OPAR|PENABLE;
 	DHADDR->dhlpr = lpr;
 	spl0();
 }

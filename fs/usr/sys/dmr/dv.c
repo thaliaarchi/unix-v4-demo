@@ -154,7 +154,8 @@ dvexec()
 	}
 	DVADDR->dvcbr = HTBCOM | dv_head;	/* select head */
 	if(dv_count <= -512)
-		DVADDR->dvwcr = -512; else
+		DVADDR->dvwcr = -512;
+	else
 		DVADDR->dvwcr = dv_count;
 	dvhdr.hd1 = (dv_head<<8)+dv_cyl;	/* set up header */
 	dvhdr.hd2 = 0170000|dv_sctr;

@@ -83,13 +83,15 @@ struct inode *aip;
 		} else
 			dn = ip->i_addr[0];
 		if(n == 512) 
-			bp = getblk(dn, bn); else
+			bp = getblk(dn, bn);
+		else
 			bp = bread(dn, bn);
 		iomove(bp, on, n, B_WRITE);
 		if(u.u_error != 0)
-			brelse(bp); else
-		if ((u.u_offset[1]&0777)==0)
-			bawrite(bp); else
+			brelse(bp);
+		else if ((u.u_offset[1]&0777)==0)
+			bawrite(bp);
+		else
 			bdwrite(bp);
 		if(dpcmp(ip->i_size0, ip->i_size1,
 		  u.u_offset[0], u.u_offset[1]) < 0 &&

@@ -254,8 +254,7 @@ smount()
 		if(mp->m_bufp != NULL) {
 			if(d == mp->m_dev)
 				goto out;
-		} else
-		if(smp == NULL)
+		} else if(smp == NULL)
 			smp = mp;
 	}
 	if(smp == NULL)

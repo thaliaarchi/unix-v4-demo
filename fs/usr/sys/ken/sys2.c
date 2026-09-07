@@ -38,13 +38,15 @@ rdwr(mode)
 	u.u_segflg = 0;
 	if(fp->f_flag&FPIPE) {
 		if(m==FREAD)
-			readp(fp); else
+			readp(fp);
+		else
 			writep(fp);
 	} else {
 		u.u_offset[1] = fp->f_offset[1];
 		u.u_offset[0] = fp->f_offset[0];
 		if(m==FREAD)
-			readi(fp->f_inode); else
+			readi(fp->f_inode);
+		else
 			writei(fp->f_inode);
 		dpadd(fp->f_offset, u.u_arg[1]-u.u_count);
 	}

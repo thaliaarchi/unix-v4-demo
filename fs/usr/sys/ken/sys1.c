@@ -90,8 +90,7 @@ exec()
 	if(u.u_arg[0] == 0407) {
 		u.u_arg[2] =+ u.u_arg[1];
 		u.u_arg[1] = 0;
-	} else
-	if(u.u_arg[0] != 0410) {
+	} else if(u.u_arg[0] != 0410) {
 		u.u_error = ENOEXEC;
 		goto bad;
 	}

@@ -25602,3 +25602,1030 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: thalia
+% date 09071716
+Sat Sep  7 17:16:00 MDT 1974
+% date
+Sat Sep  7 17:16:01 MDT 1974
+% chdir /usr/sys/ken
+% grep else$ *
+        brelse(bp);
+                brelse(bp);
+                brelse(bp);
+         * else update first non-zero time
+        } else
+        brelse(ip);
+                } else
+                        brelse(bp);
+                        brelse(bp);
+                                u.u_offset[1] = eo-DIRSIZ-2; else
+                        brelse(bp);
+                brelse(bp);
+                } else {
+                else
+                brelse(bp);
+                } else
+                        bp = getblk(dn, bn); else
+                        brelse(bp); else
+                        bawrite(bp); else
+                else
+        } else
+        } else {
+        } else {
+                else
+        } else
+        } else
+                gbrelse(bp);
+                *u.u_base = c; else
+                c = *u.u_base; else
+        } else
+        brelse(bp);
+                        brelse(bp);
+                        readp(fp); else
+        } else {
+                        readi(fp->f_inode); else
+        } else
+        } else {
+        brelse(bp);
+                } else
+                brelse(mp);
+        brelse(mp);
+        brelse(ip);
+                } else
+        } else {
+% 
+g: not found
+% grep 'else$' *
+        } else
+                } else
+                                u.u_offset[1] = eo-DIRSIZ-2; else
+                else
+                } else
+                        bp = getblk(dn, bn); else
+                        brelse(bp); else
+                        bawrite(bp); else
+                else
+        } else
+                else
+        } else
+        } else
+                *u.u_base = c; else
+                c = *u.u_base; else
+        } else
+                        readp(fp); else
+                        readi(fp->f_inode); else
+        } else
+                } else
+                } else
+% gpr##rep -n 'else$' *
+clock.c:85      } else
+iget.c:109              } else
+nami.c:109                              u.u_offset[1] = eo-DIRSIZ-2; else
+rdwri.c:50              else
+rdwri.c:83              } else
+rdwri.c:86                      bp = getblk(dn, bn); else
+rdwri.c:90                      brelse(bp); else
+rdwri.c:92                      bawrite(bp); else
+rdwri.c:133             else
+rdwri.c:150     } else
+subr.c:61               else
+subr.c:78       } else
+subr.c:87       } else
+subr.c:98               *u.u_base = c; else
+subr.c:117              c = *u.u_base; else
+sys1.c:93       } else
+sys2.c:41                       readp(fp); else
+sys2.c:47                       readi(fp->f_inode); else
+sys2.c:77       } else
+sys3.c:257              } else
+text.c:68               } else
+% ed clock.c
+2159
+/s#else$/p
+        } else
+.,.+5p
+        } else
+                u.u_stime++;
+        if(++lbolt >= 60) {
+                if((ps&0340) != 0)
+                        return;
+                lbolt =- 60;
+q
+% ed iget.c
+2928
+/else$/;.+10p###5p
+                } else
+                        ip1 =+ 2;
+                if(rp->i_flag&IUPD) {
+                        *ip1++ = time[0];
+                        *ip1++ = time[1];
+                }
+q
+% ed nami.c
+2655
+/else$/;.+10p###5p
+                                u.u_offset[1] = eo-DIRSIZ-2; else
+                                dp->i_flag =| IUPD;
+                        return(NULL);
+                }
+                u.u_error = ENOENT;
+                goto out;
+?else?-5;.+5
+                                u.u_offset[1] = eo-DIRSIZ-2; else
+.-5,.+2p
+                if(flag==1 && c=='\0') {
+                        if(access(dp, IWRITE))
+                                goto out;
+                        u.u_pdir = dp;
+                        if(eo)
+                                u.u_offset[1] = eo-DIRSIZ-2; else
+                                dp->i_flag =| IUPD;
+                        return(NULL);
+?else?
+                                u.u_offset[1] = eo-DIRSIZ-2; else
+s/ else//
+a
+else@                   else
+.
+.-3,.+2p
+                        u.u_pdir = dp;
+                        if(eo)
+                                u.u_offset[1] = eo-DIRSIZ-2;
+                        else
+                                dp->i_flag =| IUPD;
+                        return(NULL);
+w
+?
+q
+% ls -l nami.c
+-rw-r--r-- 1 bin      2655 Aug 26 21:47 nami.c
+% b#
+;login: bin
+% chdit /@chdir /usr/sys/ken
+% ed nami.c
+2655
+/else$/s/ else//
+a
+                        else
+.
+.-2,.+3p
+                        if(eo)
+                                u.u_offset[1] = eo-DIRSIZ-2;
+                        else
+                                dp->i_flag =| IUPD;
+                        return(NULL);
+                }
+w
+2658
+q
+% ed rdwri.c
+2690
+/else$/-2;.+5
+                iomove(bp, on, n, B_READ);
+/else$/
+                } else
+.-3,.+3p
+                        if ((bn = bmap(ip, bn)) == 0)
+                                return;
+                        dn = ip->i_dev;
+                } else
+                        dn = ip->i_addr[0];
+                if(n == 512) 
+                        bp = getblk(dn, bn); else
+//
+                        brelse(bp); else
+.-3,.+3p
+                        bp = bread(dn, bn);
+                iomove(bp, on, n, B_WRITE);
+                if(u.u_error != 0)
+                        brelse(bp); else
+                if ((u.u_offset[1]&0777)==0)
+                        bawrite(bp); else
+                        bdwrite(bp);
+?else?
+                        bawrite(bp); else
+s/ l#else//
+a
+                else
+.
+?else?
+                        brelse(bp); else
+?@s/ else//
+a
+                else
+.
+.-10,.+15p
+                                return;
+                        dn = ip->i_dev;
+                } else
+                        dn = ip->i_addr[0];
+                if(n == 512) 
+                        bp = getblk(dn, bn); else
+                        bp = bread(dn, bn);
+                iomove(bp, on, n, B_WRITE);
+                if(u.u_error != 0)
+                        brelse(bp);
+                else
+                if ((u.u_offset[1]&0777)==0)
+                        bawrite(bp);
+                else
+                        bdwrite(bp);
+                if(dpcmp(ip->i_size0, ip->i_size1,
+                  u.u_offset[0], u.u_offset[1]) < 0 &&
+                  (ip->i_mode&(IFBLK&IFCHR)) == 0) {
+                        ip->i_size0 = u.u_offset[0];
+                        ip->i_size1 = u.u_offset[1];
+                }
+                ip->i_flag =| IUPD;
+        } while(u.u_error==0 && u.u_count!=0);
+}
+
+max(a, b)
+?else?
+                else
+
+                        bdwrite(bp);
+??
+                else
+??
+                else
+
+                if ((u.u_offset[1]&0777)==0)
+s/i/ele i###se i/p
+                else if ((u.u_offset[1]&0777)==0)
+^d
+?else$?
+                        bp = getblk(dn, bn); else
+.-2,.p
+                        dn = ip->i_addr[0];
+                if(n == 512) 
+                        bp = getblk(dn, bn); else
+s/ else//
+a
+                else
+.
+/else$/
+                else
+.-3,.+2p
+                        brelse(bp);
+                else if ((u.u_offset[1]&0777)==0)
+                        bawrite(bp);
+                else
+                        bdwrite(bp);
+                if(dpcmp(ip->i_size0, ip->i_size1,
+/else$/
+                else
+.-2,.+1p
+                if (flag==B_WRITE)
+                        cp = copyin(u.u_base, cp, n);
+                else
+                        cp = copyout(cp, u.u_base, n);
+/else$/
+        } else
+.+2#1
+                while (n--)
+/else$/
+                else
+.-2,.+1p
+                if (ip->i_lastr+1 == lbn)
+                        bp = breada(dn, bn, rablock);
+                else
+                        bp = bread(dn, bn);
+w
+2694
+q
+% ed subr.c
+2120
+/else$/
+                else
+.-3,.+1p
+                }
+                if (bn<7)
+                        rablock = ip->i_addr[bn+1];
+                else
+                        rablock = 0;
+/else$/
+        } else
+.+1
+                bp = bread(d, nb);
+
+        bap = bp->b_addr;
+/else$/
+        } else
+
+                brelse(bp);
+/else$/
+                *u.u_base = c; else
+.-2,.P1p###+1p
+
+        if(u.u_segflg)
+                *u.u_base = c; else
+                if(subyte(u.u_base, c) < 0) {
+
+                        u.u_error = EFAULT;
+.-10,.+5p
+        return(nb);
+}
+
+passc(c)
+char c;
+{
+
+        if(u.u_segflg)
+                *u.u_base = c; else
+                if(subyte(u.u_base, c) < 0) {
+                        u.u_error = EFAULT;
+                        return(-1);
+                }
+        u.u_count--;
+        if(++u.u_offset[1] == 0)
+                u.u_offset[0]++;
+?else?
+                *u.u_base = c; else
+s/ else//
+
+                if(subyte(u.u_base, c) < 0) {
+s/i/else i/
+.,.+3s/^        //p
+        }
+.-6,.+1p
+
+        if(u.u_segflg)
+                *u.u_base = c;
+        else if(subyte(u.u_base, c) < 0) {
+                u.u_error = EFAULT;
+                return(-1);
+        }
+        u.u_count--;
+/ele$/@/else$/
+                c = *u.u_base; else
+.-3,.+5p
+        if(u.u_count == 0)
+                return(-1);
+        if(u.u_segflg)
+                c = *u.u_base; else
+                if((c=fubyte(u.u_base)) < 0) {
+                        u.u_error = EFAULT;
+                        return(-1);
+                }
+        u.u_count--;
+?else?s/ else//
+
+                if((c=fubyte(u.u_base)) < 0) {
+s/i/else i/
+.,.+3s/ //
+.-8,.+1p
+
+        if(u.u_count == 0)
+                return(-1);
+        if(u.u_segflg)
+                c = *u.u_base;
+        else if((c=fubyte(u.u_base)) < 0) {
+                u.u_error = EFAULT;
+                return(-1);
+        }
+        u.u_count--;
+/else$/
+                else
+.-2,.+1p
+                if (bn<7)
+                        rablock = ip->i_addr[bn+1];
+                else
+                        rablock = 0;
+/else$/
+        } else
+.-2,.+1p
+                nb = bp->b_blkno;
+                ip->i_addr[i] = nb;
+        } else
+                bp = bread(d, nb);
+/ele$##se$/
+        } else
+/else$/
+                else
+.-2,.+1p
+                if (bn<7)
+                        rablock = ip->i_addr[bn+1];
+                else
+                        rablock = 0;
+w
+2112
+q
+% ed sys1.c
+5494
+/else$/
+        } else
+.#
+        if(u.u_arg[0] != 0410) {
+.-5,.+1p
+                goto bad;
+        if(u.u_arg[0] == 0407) {
+                u.u_arg[2] =+ u.u_arg[1];
+                u.u_arg[1] = 0;
+        } else
+        if(u.u_arg[0] != 0410) {
+                u.u_error = ENOEXEC;
+^s/i/} else i/p
+        } else if(u.u_arg[0] != 0410) {
+^
+        } else
+d
+/else$/p
+?
+/else$/
+?
+w
+5493
+q
+% ed sys2.c
+3464
+/else$/
+                        readp(fp); else
+.-2,.+1p
+        if(fp->f_flag&FPIPE) {
+                if(m==FREAD)
+                        readp(fp); else
+                        writep(fp);
+?else@? else?s///
+
+                        writep(fp);
+i
+                else
+.
+?ele?##e$/@/else$/p
+                        readi(fp->f_inode); else
+s @s/ else//
+a
+                else
+.
+.-3,.+1
+                        writei(fp->f_inode);
+.-4,.p
+                u.u_offset[0] = fp->f_offset[0];
+                if(m==FREAD)
+                        readi(fp->f_inode);
+                else
+                        writei(fp->f_inode);
+/else$/
+        } else
+.-2,.+1p
+                ip = maknode(u.u_arg[1]&07777);
+                open1(ip, FWRITE, 2);
+        } else
+                open1(ip, FWRITE, 1);
+/else$/p#
+                else
+.-2,.+1p
+                if(m==FREAD)
+                        readp(fp);
+                else
+                        writep(fp);
+w
+3468
+q
+% ed sys3.c
+4504
+/else$/
+                } else
+.-2,.+1p
+                        if(d == mp->m_dev)
+                                goto out;
+                } else
+                if(smp == NULL)
+s
+?
+s/i/} else i/
+^d
+.-5,.+2p
+        smp = NULL;
+        for(mp = &mount[0]; mp < &mount[NMOUNT]; mp++) {
+                if(mp->m_bufp != NULL) {
+                        if(d == mp->m_dev)
+                                goto out;
+                } else if(smp == NULL)
+                        smp = mp;
+        }
+w
+4502
+/else$/
+?
+q
+% ed test##xt.c
+2036
+/else$/
+                } else
+.-2,.+1p
+                        if(rp == NULL)
+                                rp = xp;
+                } else
+                        if(xp->x_iptr == ip) {
+.-10,.+4p##2p
+        register *rp, ts;
+
+        if(u.u_arg[1] == 0)
+                return;
+        rp = NULL;
+        for(xp = &text[0]; xp < &text[NTEXT]; xp++)
+                if(xp->x_count == 0) {
+                        if(rp == NULL)
+                                rp = xp;
+                } else
+                        if(xp->x_iptr == ip) {
+                                xp->x_count++;
+                                u.u_procp->p_textp = xp;
+.-4,.+5p
+                                rp = xp;
+                } else
+                        if(xp->x_iptr == ip) {
+                                xp->x_count++;
+                                u.u_procp->p_textp = xp;
+                                goto out;
+                        }
+        if((xp=rp) == NULL)
+                panic("out of text");
+        xp->x_count = 1;
+?else?d
+p
+                        if(xp->x_iptr == ip) {
+s/i/} else i/
+.,.+4s/ //
+.-5,.p
+                                rp = xp;
+                } else if(xp->x_iptr == ip) {
+                        xp->x_count++;
+                        u.u_procp->p_textp = xp;
+                        goto out;
+                }
+w
+2029
+q
+% sync
+% chdir ../dmr
+% grep -n 'else$' *
+bio.c:314       else
+cat.c:35        } else
+dh.c:162                lpr =| BITS6|PENABLE|HDUPLX; else
+dh.c:165                                lpr =| BITS8; else
+dh.c:166                                lpr =| BITS7|PENABLE; else
+dhdm.c:60                       } else
+dv.c:157                DVADDR->dvwcr = -512; else
+dv.c:247        } else
+lp.c:80                         c1 =+ 'A'-'a'; else
+pc.c:81         } else
+rf.c:49         else
+rk.c:66                 d = bp->b_dev.d_minor; else
+rk.c:105                        } else
+rk.c:142        } else
+tc.c:65         else
+tc.c:127                else
+tm.c:113        else
+tm.c:180                } else
+tm.c:193        } else
+tty.c:188                       } else
+tty.c:250               } else
+tty.c.bak:188                   } else
+vt.c:31         else
+% ed bio.c
+7644
+/else$/-2;.+5p
+        if (rbp->b_flags&B_READ)        /* command + x-mem */
+                com =| RCOM;
+        else
+                com =| WCOM;
+        *--dp = com;
+}
+q
+% ed cat.c
+936
+/else$/-2;.+5p
+                cat.catlock++;
+                CATADDR->catcsr =| IENABLE;
+        } else
+                u.u_error = ENXIO;
+}
+
+q
+% ed dh.c
+4004
+/else/#$/
+                lpr =| BITS6|PENABLE|HDUPLX; else
+.#
+                if (tp->t_flags&EVENP)
+^
+                lpr =| BITS6|PENABLE|HDUPLX; else
+s/ else/
+?
+
+                if (tp->t_flags&EVENP)
+s/i/else i/
+.,.+5p
+                else if (tp->t_flags&EVENP)
+                        if (tp->t_flags&ODDP)
+                                lpr =| BITS8; else
+                                lpr =| BITS7|PENABLE; else
+                        lpr =| BITS7|OPAR|PENABLE;
+        DHADDR->dhlpr = lpr;
+?else if?
+                else if (tp->t_flags&EVENP)
+.,.+4s/ //
+
+        DHADDR->dhlpr = lpr;
+
+        spl0();
+?else?
+                        lpr =| BITS7|PENABLE; else
+??
+                        lpr =| BITS8; else
+s/ else//
+a
+                else
+.
+
+                        lpr =| BITS7|PENABLE; else
+s/else#### else//
+a
+                else
+.
+.-10,.+1p
+        spl5();
+        DHADDR->dhcsr.lobyte = (tp - dh11) | IENABLE;
+        lpr = (tp->t_speeds.hibyte<<10) | (tp->t_speeds.lobyte<<6);
+        if (tp->t_speeds.lobyte == 4)           /* 134.5 baud */
+                lpr =| BITS6|PENABLE|HDUPLX; else
+        else if (tp->t_flags&EVENP)
+                if (tp->t_flags&ODDP)
+                        lpr =| BITS8;
+                else
+                        lpr =| BITS7|PENABLE;
+                else
+                lpr =| BITS7|OPAR|PENABLE;
+?else?s/        //
+.
+        else
+.+1
+                lpr =| BITS7|OPAR|PENABLE;
+w
+4007
+q
+% ed dhdm.c
+1081
+/else$/
+                        } else
+.-2,.+1p
+                                }
+                                tp->t_state =& ~CARR_ON;
+                        } else
+                                tp->t_state =| CARR_ON;
+q
+% ed dv.c
+5302
+/ else$/
+                DVADDR->dvwcr = -512; else
+s///
+.#a
+                @e!@    else
+.
+.
+        else
+
+                DVADDR->dvwcr = dv_count;
+.-5,.+1p
+        }
+        DVADDR->dvcbr = HTBCOM | dv_head;       /* select head */
+        if(dv_count <= -512)
+                DVADDR->dvwcr = -512;
+        else
+                DVADDR->dvwcr = dv_count;
+        dvhdr.hd1 = (dv_head<<8)+dv_cyl;        /* set up header */
+/else$/
+        } else
+.-1,.+1p
+                return(1);
+        } else
+                return(0);
+w
+5303
+q
+% ed lp.c
+2188
+/else$/
+                        c1 =+ 'A'-'a'; else
+.-2,.+1p
+        if(lp11.flag&CAP) {
+                if(c1>='a' && c1<='z')
+                        c1 =+ 'A'-'a'; else
+                switch(c1) {
+.,.+10p
+                switch(c1) {
+
+                case '{':
+                        c2 = '(';
+                        goto esc;
+
+                case '}':
+                        c2 = ')';
+                        goto esc;
+
+                case '`':
+/       }/
+                }
+?switch?,.s/^/  /
+?else?s/ else?#//p
+                        c1 =+ 'A'-'a';
+a
+                else
+.
+.-2,.+20p
+                if(c1>='a' && c1<='z')
+                        c1 =+ 'A'-'a';
+                else
+                        switch(c1) {
+        
+                        case '{':
+                                c2 = '(';
+                                goto esc;
+        
+                        case '}':
+                                c2 = ')';
+                                goto esc;
+        
+                        case '`':
+                                c2 = '\'';
+                                goto esc;
+        
+                        case '|':
+                                c2 = '!';
+                                goto esc;
+        
+                        case '~':
+                                c2 = '^';
+w
+2216
+q
+% ed pc.c
+2331
+/else$/-2,.+1p
+?
+/else$/
+        } else
+.-2,.+1p
+                pc11.pcstate = CLOSED;
+                spl0();
+        } else
+                pcleader();
+q
+% ed rf.c
+1382
+/else$/
+        else
+.-2,.+1p
+        if (rftab.d_actf==0)
+                rftab.d_actf = bp;
+        else
+                rftab.d_actl->av_forw = bp;
+/else$/
+        else
+.-2,.+1p
+        if (rftab.d_actf==0)
+                rftab.d_actf = bp;
+        else
+                rftab.d_actl->av_forw = bp;
+q
+% ed rk.c
+2980
+/ else$/
+                d = bp->b_dev.d_minor; else
+s///
+a
+                #else
+.
+.-4,.+1p
+        bp->av_forw = 0;
+        bp->b_flags =& ~B_SEEK;
+        if(bp->b_dev.d_minor < 8)
+                d = bp->b_dev.d_minor;
+        else
+                d = lrem(bp->b_blkno, d);
+/ele#se#e$/p
+                        } else
+.-1,.+1p
+                                rkerror();
+                        } else
+                                bp->b_flags =| B_SEEK;
+/else#e$/
+        } else
+.-1,.+1p
+                devstart(*rk_ap, &RKADDR->rkda, rkaddr(*rk_ap), 0);
+        } else
+                rkpost(0);
+w
+2981
+q
+% ed tc.c
+2349
+/else$/
+        else
+.-2,.+1p
+        if (tctab.d_actf==0)
+                tctab.d_actf = bp;
+        else
+                tctab.d_actl->av_forw = bp;
+//
+                else
+.-2,.+1p
+                if (tctab.d_actf = bp->av_forw)
+                        tcstart();
+                else
+                        TCADDR->tccm.lobyte = SAT|GO;
+//
+        else
+q
+% ed tm.c
+3737
+/else$/
+        else
+.-2,.+1p
+        if (tmtab.d_actf==0)
+                tmtab.d_actf = bp;
+        else
+                tmtab.d_actl->av_forw = bp;
+//
+                } else
+.-2,.+1p
+                                return;
+                        }
+                } else
+                        if(bp != &rtmbuf && (TMADDR->tmer&EOF)==0)
+s/i/else@s/i/} l#else i/p
+                        } else if(bp != &rtmbuf && (TMADDR->tmer&EOF)==0)
+^D#d
+.,.+10p
+                        } else if(bp != &rtmbuf && (TMADDR->tmer&EOF)==0)
+                                t_openf[unit] = -1;
+                bp->b_flags =| B_ERROR;
+                tmtab.d_active = SIO;
+        }
+        if (tmtab.d_active == SIO) {
+                tmtab.d_errcnt = 0;
+                t_blkno[unit]++;
+                tmtab.d_actf = bp->av_forw;
+                tmtab.d_active = 0;
+                iodone(bp);
+?else?
+                        } else if(bp != &rtmbuf && (TMADDR->tmer&EOF)==0)
+.,>#.+1s/^      //
+/else$/
+        } else
+.-2,.+1p
+                iodone(bp);
+                bp->b_resid = TMADDR->tmbc;
+        } else
+                t_blkno[unit] = bp->b_blkno;
+w
+3733
+q
+% ed tty.c
+6815
+/else$/
+                        } else
+.-2,.+1p
+                                if (c==CEOT)
+                                        continue;
+                        } else
+                        if (maptab[c] && (maptab[c]==c || (tp->t_flags&LCASE))) {
+s/i/} else i/
+^d
+.,.+1p#0p
+                        } else if (maptab[c] && (maptab[c]==c || (tp->t_flags&LCASE))) {
+                                if (bp[-2] != '\\')
+                                        c = maptab[c];
+                                bp--;
+                        }
+                }
+                *bp++ = c;
+                if (bp>=canonb+CANBSIZ)
+                        break;
+        }
+        bp1 = bp;
+/else$/
+                } else
+.=
+249
+.-1,.+@.-2,.+1p
+                                ttyoutput('H', tp, 1);
+                        }
+                } else
+                        ttyoutput(c, tp, 0);
+w
+6812
+q
+% rm tty.c.bak
+% ed vt.c
+906
+/else$/
+        else
+.-2,.+1p
+        if (!flag)
+                u.u_error = ENXIO;
+        else
+                VTADDR->csr = BIENABL;
+q
+% sync
+sync: not found
+% ed dh.c
+4007
+/else$/
+                lpr =| BITS6|PENABLE|HDUPLX; else
+.-2,.+10p
+        lpr = (tp->t_speeds.hibyte<<10) | (tp->t_speeds.lobyte<<6);
+        if (tp->t_speeds.lobyte == 4)           /* 134.5 baud */
+                lpr =| BITS6|PENABLE|HDUPLX; else
+        else if (tp->t_flags&EVENP)
+                if (tp->t_flags&ODDP)
+                        lpr =| BITS8;
+                else
+                        lpr =| BITS7|PENABLE;
+        else
+                lpr =| BITS7|OPAR|PENABLE;
+        DHADDR->dhlpr = lpr;
+        spl0();
+}
+?el@?; else/#?
+                lpr =| BITS6|PENABLE|HDUPLX; else
+s/ else//
+w
+4002
+q
+% sync
+% ed lpc#.c
+2216
+/@g/            *$/s///p
+
+
+
+
+
+
+w
+2210
+q
+% sync
+% chdir ..
+% grep -n 'else$' *
+% chdir conf
+% grep -n 'else$' *
+mkconf.c:331            } else
+% d#ed mkconf.c
+7031
+/else$/-2,.+1p
+?
+/else$/-2;.+4p
+                        }
+                        ev =+ p->address - 300;
+                } else
+                        printf("\n. = %d^.\n", p->address);
+                n = p->count;
+q
+% chdir ..
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+tty.h.bak
+user.h
+% diff tty.h tty.h.bak
+15d14
+*       char    t_ocol;
+% rm tty.h.bak
+% find . -name '*.bak' -print
+Missing conjunction
+% find / -name '*.bak' -a -print
+Missing conjunction
+% sync
+% 

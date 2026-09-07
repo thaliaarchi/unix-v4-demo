@@ -106,7 +106,8 @@ eloop:
 				goto out;
 			u.u_pdir = dp;
 			if(eo)
-				u.u_offset[1] = eo-DIRSIZ-2; else
+				u.u_offset[1] = eo-DIRSIZ-2;
+			else
 				dp->i_flag =| IUPD;
 			return(NULL);
 		}

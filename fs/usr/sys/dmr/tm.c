@@ -177,9 +177,8 @@ tmintr()
 				tmstart();
 				return;
 			}
-		} else
-			if(bp != &rtmbuf && (TMADDR->tmer&EOF)==0)
-				t_openf[unit] = -1;
+		} else if(bp != &rtmbuf && (TMADDR->tmer&EOF)==0)
+			t_openf[unit] = -1;
 		bp->b_flags =| B_ERROR;
 		tmtab.d_active = SIO;
 	}

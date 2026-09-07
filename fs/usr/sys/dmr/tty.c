@@ -185,8 +185,7 @@ loop:
 					goto loop;
 				if (c==CEOT)
 					continue;
-			} else
-			if (maptab[c] && (maptab[c]==c || (tp->t_flags&LCASE))) {
+			} else if (maptab[c] && (maptab[c]==c || (tp->t_flags&LCASE))) {
 				if (bp[-2] != '\\')
 					c = maptab[c];
 				bp--;

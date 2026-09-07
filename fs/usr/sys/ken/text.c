@@ -65,12 +65,11 @@ int *ip;
 		if(xp->x_count == 0) {
 			if(rp == NULL)
 				rp = xp;
-		} else
-			if(xp->x_iptr == ip) {
-				xp->x_count++;
-				u.u_procp->p_textp = xp;
-				goto out;
-			}
+		} else if(xp->x_iptr == ip) {
+			xp->x_count++;
+			u.u_procp->p_textp = xp;
+			goto out;
+		}
 	if((xp=rp) == NULL)
 		panic("out of text");
 	xp->x_count = 1;
