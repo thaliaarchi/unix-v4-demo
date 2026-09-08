@@ -4277,3 +4277,23 @@ int	sysent[]
 	0, &nosys			/* 63 = x */
 };
 % 
+
+Connected to the PDP-11 simulator DCI device, line 2
+
+
+;login: thalia
+Login incorrect.
+Name: 
+;login: 
+
+Connected to the PDP-11 simulator DCI device, line 2
+
+
+;login: SH-2.0-PuTTY_Release_0.81
+Login incorrect.
+Name: 
+
+Connected to the PDP-11 simulator DCI device, line 2
+
+
+;login: 

@@ -1223,3 +1223,187 @@ kevin::10:10::/usr/kevin:
 michael::30:30::/usr/michael:
 bx::42:42::/usr/bx:
 # /usr/adm/su_acct
+
+Connected to the PDP-11 simulator DCI device, line 9
+
+
+;login: thalia
+% logout
+logout: not found
+% shut down
+shut: not found
+% exit
+% [A[B^
+: not found
+% ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% who am i
+% cd hone
+haha
+% [A[Bcd home
+No match
+% cd /
+haha
+% cd 
+% chdir home
+chdir: bad directory
+% 
+
+Connected to the PDP-11 simulator DCI device, line 9
+
+
+;login: rushi
+% list
+list: not found
+% ls
+% chdir home
+chdir: bad directory
+% chdir /4
+chdir: bad directory
+% [A[Bclear
+Arg count
+% clear al
+% [A[Bls /
+No match
+% ls /user
+% ls
+% clear\
+
+% chdir /..
+..: not found
+% chdir ..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bhargav
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+nick
+pub
+puzzle
+reyes
+rushi
+ryan
+sno
+source
+sys
+tanner
+thalia
+tmp
+ty
+vincent
+voytilla
+yang
+% chdir puzzle
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% chdir 1compile
+% ls
+1.txt
+% cd
+% chdir ..
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ed mullender.c
+469
+[BQ#q
+?
+q
+% ed
+e mullender.c
+469
+r
+469
+q
+% r mullender.c
+r: not found
+% cc$$$####
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% stty rease bs
+% [A[Bstty erase bs
+Command not found
+% hello
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% cd 
+% chdir 5solutiomn
+chdir: bad directory
+% [A[Bchdir 5solution
+No match
+% [3~[3~[3~[3~dexitg
+Arg count
+% [3~[3~[3~[3~

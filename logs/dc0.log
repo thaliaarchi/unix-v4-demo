@@ -5056,3 +5056,147 @@ q
                    |                  H            |
                    |             
 % x~`xx
+;login: thalia
+% pwd
+../usr/thalia
+% ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% mksies[D[C[D [D[D [D[D [D[Ddir
+No match
+% 
+;login: cem
+% cd ..
+haha
+% chdir ..
+% pwd
+../usr
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bhargav
+bin
+bx
+c
+cem
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+nick
+pub
+puzzle
+reyes
+rushi
+ryan
+sno
+source
+sys
+tanner
+thalia
+tmp
+ty
+vincent
+voytilla
+yang
+% cd puzle
+haha
+% chi#dir puzze#l3#e
+dir: not found
+% chdir /puzzle
+chdir: bad directory
+% chdir puzzle
+% pwd
+../usr/puzzle
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% cp mullender.c /usr/cem/
+% chdir /usr/cem
+% ls
+mullender.c
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ed mullender.c
+469
+1
+/* Portable between VAX11 && PDP11 */
+2
+short main[] = {
+int main[] {/p
+?
+!int main[] [#{/p
+Command not found
+!
+[4~[4~[4~[4~[4~?
+[4~
+[4~[4~[4~[4~[4~[4~[4~D?
+% cat
+ssss% stty erase bs
+% ca
+% stty erase bs
+% 
+;login: cem
+% stty erase bs
+% dfs[4~[4~[4~[D[4~[4~[4~
+% dfsf
+dfsf: not found
+% cat mullener.c
+% ls
+mullender.c
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% 
+;login: 

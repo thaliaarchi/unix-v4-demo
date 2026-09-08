@@ -1,0 +1,681 @@
+
+
+Connected to the PDP-11 simulator DCI device, line 15
+
+ÿþÿþ ÿþÿþ'
+ÿþ$;login: thalia
+% 
+% ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% cat TODO
+TODO:
+- Implement char class ranges in ed
+- Make date Y2K compliant
+- Make timezone configurable without recompilation
+- Report non-existent files in cat
+- Allow omitting closing / in ed
+- Make ed listing (l) escape non-printable characters
+- Memory allocator:
+  - Assume exclusive ownership of sbrk
+  - Align to int
+- Add a symbol for indir
+- Make struct fields scoped to the type
+- Fix pwd printing ../ for root
+% 
+% 
+% 
+% 
+% 
+% cat TODO
+TODO:
+- Implement char class ranges in ed
+- Make date Y2K compliant
+- Make timezone configurable without recompilation
+- Report non-existent files in cat
+- Allow omitting closing / in ed
+- Make ed listing (l) escape non-printable characters
+- Memory allocator:
+  - Assume exclusive ownership of sbrk
+  - Align to int
+- Add a symbol for indir
+- Make struct fields scoped to the type
+- Fix pwd printing ../ for root
+% ed
+
+?
+
+?
+
+?
+
+?
+
+?
+
+?
+q
+% 
+% 
+% ed /etc/passwd
+679
+1,$
+nick::242:242::/usr/nick:
+a
+q?
+q
+% cd
+haha
+% chdi####
+% ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% cat thanks
+thank_you
+from_darpa_dan
+% cat###
+% cat beeps.c
+main()
+{
+	int i;
+	for (i = 0; i < 100; i++) {
+		write(1, "\007", 1);
+		sleep(2);
+	}
+}
+% cat ttyinfo
+nVR$	p&P6w	%
+	w	4NF&
+_	VNn_	.@fvPuTTY_	.V@f_	.V
+@tf_	.V@ef _	.VPuTTYPuTTYPuTTYN._	.w5LN8PuTTYPuTTY_	.w5<NB_	.w5PuTTYPuTTY,NJ_	.w5NR_	.w5NX_	.w5 |N`_	.w5@lNf_	.PuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYw5\Nl_	.w5LNt_	.w5<N|_	.w5,N_	.w5N_	.N_	.ww}wx|wswwErwU lNL&
+_PuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuT	 Vw	L5x@x@x&f_	.%uxW-xiNF&TYPuTTYPuTTY
+_	 Vw.w	w"DDe@	7
+ %_	PPuTTYtw7
+~7
+^W/t-7
+l7
+jw"Z7
+b .wBAB^ |J>doxDfNelczsJlS-w	C
+r
+fw	p@e0PuTTYC
+1C
+/AD
+R
+D~'B$B(
+w	f
+vw	vL@e0 9@eBw	zBw	p`&f DCmpwn_	PC~D_	PCN PuTTYPuTTYPuTTYPuTTYPuTTY_	PC~Vw&~7
+B
+@87
+4@e0 	7
+*WPuTTYPuTTYp
+`q@e0[DePuTTYPS?f@w	,@PuTTYP7
+zw
+tw	@fw	@X
+@eh7@FuTTYPuTTYPuT
+	,wh<w4W-.TYPuTTw&fwj7
+f7p
+7
+Vf@w$	2wPuTTYPuTTYPuTTY$
+w&f@w
+	6w
+w7&@FPuTTYPuTTYPuU@&f&dHEeTTYF7
+$w&pWpPuTTY&xfxfAj
+
+7
+@qp%Pu7
+x@qs@Aqp&x@xC
+7sTTYPuTTYx@xtL>s B@{@e0#
+@qppAj
+QPuTW 
+|u
+	B
+s BAqpzTY
+w	w	|W 
+Nes B@{@e0@j
+@m&wt` j
+CeH"9
+H0 j
+ 
+vH1
+AB@nw<`0
+j
+PuTTYPuTTY@j
+VuuVpgtty:
+iPuTTYPuTTYspeed = %d
+ospeed = %d
+erase  = %c
+kill   = %c
+flags  = NODELAY XTABS LCASE ECHO CRMOD RAW ODDP EVENP M2741 OCORR ICORR NTDELAY
+'%c' = %d
+|p}x	h 		L>LLLLML
+crt0.ottyinfo.printf.o.ffltpr.oFputchr.oPgetchr.o@gtty.ostty.o retrn.o>rsave.oLecvt.olsavr5$X_main"_partab$D_ttyb$F_rawb$Lrsave"N_gtty"_printf"._stty" _getchar"@rretrn"\_ndigit#Bpfloat"Fpscien"F_putchar"P_flush"~_fout$b_errno$h
+_fin$Rretrn"Fcerror">mrsave"Lecvt"rfcvt"l% 
+PuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTY: not found
+% 
+% 
+% 
+% 
+% ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% cat ttyinfo.c
+#include "/usr/sys/tty.h"
+
+struct {
+	char	ispeed, ospeed;
+	char	erase, kill;
+	int	flags;
+} ttyb, rawb;
+
+main()
+{
+	char c;
+
+	gtty(0, &ttyb);
+	printf("gtty:\n");
+	printf("ispeed = %d\n", ttyb.ispeed);
+	printf("ospeed = %d\n", ttyb.ospeed);
+	printf("erase  = %c\n", ttyb.erase);
+	printf("kill   = %c\n", ttyb.kill);
+	printf("flags  =");
+	if(ttyb.flags&NODELAY) printf(" NODELAY");
+	if(ttyb.flags&XTABS) printf(" XTABS");
+	if(ttyb.flags&LCASE) printf(" LCASE");
+	if(ttyb.flags&ECHO) printf(" ECHO");
+	if(ttyb.flags&CRMOD) printf(" CRMOD");
+	if(ttyb.flags&RAW) printf(" RAW");
+	if(ttyb.flags&ODDP) printf(" ODDP");
+	if(ttyb.flags&EVENP) printf(" EVENP");
+	if(ttyb.flags&M2741) printf(" M2741");
+	if(ttyb.flags&OCORR) printf(" OCORR");
+	if(ttyb.flags&ICORR) printf(" ICORR");
+	if(ttyb.flags&NTDELAY) printf(" NTDELAY");
+	printf("\n");
+	rawb.ispeed = ttyb.ispeed;
+	rawb.ospeed = ttyb.ospeed;
+	rawb.erase = ttyb.erase;
+	rawb.kill = ttyb.kill;
+	rawb.flags =& ~ECHO;
+	rawb.flags =| RAW;
+	stty(0, &rawb);
+	for(;;) {
+		c = getchar();
+		printf("'%c' = %d\r\n", c, c);
+		if(c == 0 || c == 004)
+			break;
+	}
+	stty(0, &ttyb);
+}
+% chdir ..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bhargav
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+nick
+pub
+puzzle
+reyes
+rushi
+ryan
+sno
+source
+sys
+tanner
+thalia
+tmp
+ty
+vincent
+voytilla
+yang
+% chdir vincent
+% ls
+% 
+
+Connected to the PDP-11 simulator DCI device, line 15
+
+ÿþÿþ ÿþÿþ'
+ÿþ$;login: vincent
+% ls
+% ed
+a
+The Quick?
+?
+?
+?
+######
+?
+e
+?
+a
+The quick brown fox jumps over the lazy dog.
+.
+q
+% ls
+% ed
+a
+The quick brown fox jumps over the lazy dog.
+.
+w quickbrownfox.txt
+45
+q
+% cat q	#uickbrownfox.txt
+uickbrownfox.txt: not found
+% cat quickbrownfox.txt
+The quick brown fox jumps over the lazy dog.
+% cd 
+% chdir ..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bhargav
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+nick
+pub
+puzzle
+reyes
+rushi
+ryan
+sno
+source
+sys
+tanner
+thalia
+tmp
+ty
+cdvincent
+voytilla
+yang
+ pu% zzle
+haha
+% cdh##hdir puzzle
+hdir: not found
+% chdir puzzle
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% cat mullender.c
+/* Portable between VAX11 && PDP11 */
+short main[] = {
+	277, 04735, -4129, 25, 0, 477, 1019, 0xbef, 0, 12800,
+	-113, 21119, 0x52d7, -1006, -7151, 0, 0x4bc, 020004,
+	14880, 10541, 2056, 04010, 4548, 3044, -6716, 0x9,
+	4407, 6, 5568, 1, -30460, 0, 0x9, 5570, 512, -30419,
+	0x7e82, 0760, 6, 0, 4, 02400, 15, 0, 4, 1280, 4, 0,
+	4, 0, 0, 0, 0x8, 0, 4, 0, ',', 0, 12, 0, 4, 0, '#',
+	0, 020, 0, 4, 0, 30, 0, 026, 0, 0x6176, 120, 25712,
+	'p', 072163, 'r', 29303, 29801, 'e' };
+% mullender#############
+% cat sites.txt
+Useful resources for mullender.c:
+	https://www.ioccc.org/1984/mullender/
+	https://lainsystems.com/posts/exploring-mullender-dot-c/
+	https://lainsystems.com/mullender-excerpt.pdf
+%  https://www.ioccc.org/1984/mullender/
+https://www.ioccc.org/1984/mullender/: not found
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% cat 1compile
+.+..11.txt% 
+% cat 2syntax
+@.+..1.txt2.txt!solution.c3a.txt23b.txt% 
+% cat 5slution
+% 1compile
+1compile: not found
+% ./c#1compile
+1compile: not found
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% ./2syntax
+./2syntax: not found
+% 2syntax
+2syntax: not found
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% cat 5solution
+..+..&a.out,mullv4.c% 
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% cat sites.txt
+Useful resources for mullender.c:
+	https://www.ioccc.org/1984/mullender/
+	https://lainsystems.com/posts/exploring-mullender-dot-c/
+	https://lainsystems.com/mullender-excerpt.pdf
+% https://lainsystems.com/posts/exploring-mullender-dot-c/
+https://lainsystems.com/posts/exploring-mullender-dot-c/: not found
+% cc mullender.c
+2: Expression syntax
+2: External definition syntax
+3: Expression syntax
+10: Statement syntax
+11: Unexpected EOF
+11: Missing '}'
+11: xbef undefined
+11: x6176 undefined
+11: x4bc undefined
+11: x8 undefined
+11: x9 undefined
+11: x52d7 undefined
+11: x7e82 undefined
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% cd#hdir ..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+axel
+ben
+bhargav
+bin
+bruno
+bx
+c
+cem
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jorchdan
+justin
+kevin
+dirlib
+lpd
+mdec
+michael
+n vcb
+newt
+nick
+pub
+incepuzzle
+reyes
+rushi
+rnt
+yan
+sno
+source
+sys
+tanner
+thalia
+tmp
+ty
+vincent
+voytilla
+yang
+% % ls
+quickbrownfox.
+% ls
+quickbrownfox.
+% cat quickbrownfox.txt
+The quick brown fox jumps over the lazy dog.
+% cat quickbrownfox.
+The quick brown fox jumps over the lazy dog.
+% cd#dir ..
+dir: not found
+% chdir ..
+% chdir puzzle
+% chdir ..
+% cp puzzle vincent/puzzle
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+axel
+ben
+bhargav
+bin
+brian
+bruno
+bx
+c
+cem
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+jchdustin
+kevin
+lib
+ir lpd
+mdec
+michael
+vinncb
+newt
+nick
+pcenub
+puzzle
+reyes
+rtushi
+ryan
+sno
+source
+sys
+tanner
+thalia
+tmp
+ty
+vincent
+voytilla
+yang
+% 
+% chdir vincent
+chdir: bad directory
+% ls
+puzzle
+quickbrownfox.
+% chdir puzzle
+chdir: bad directory
+% rm puzzle
+% ls
+quickbrownfox.
+% cd 
+% chdir ..
+% chdir 
+chdir: arg count
+% cp puzzle vincent/puzzle/
+% chdir vincent
+% chdir puzzle
+chdir: bad directory
+% ls
+puzzle
+quickbrownfox.
+% rm puzzle
+% mkdir puzzle
+% chdir ..
+% cp puzzle vincent/puzzle
+% cd
+% chdir vincent
+% chdir puzzle
+% ls
+puzzle
+% chdir puzzle
+chdir: bad directory
+% rm puzzle
+% chdir ..
+% chdir ..
+% chdir puzzle
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% cp * ../vincent/puzzle
+Usage: cp oldfile newfile
+% cp * ../vincent/puzzle/*
+Usage: cp oldfile newfile
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% ls /usr/puzzle/2syntax
+1.txt
+2.txt
+3a.txt
+3b.txt
+solution.c
+% cp##
+% 
+% cp 1compile ../vincent/puzzle/
+% cd
+haha
+% chdir ..
+% chdir vincent
+% ls
+puzzle
+quickbrownfox.
+% chdir puzzle
+% ls
+1compile
+% chdir 1compile
+chdir: bad directory
+% rm 1compile
+% man cp
+man: not found
+% chdir ..
+% stty erase bs
+% dasdf
+% asdf
+% ^H^H
+% ^H^H^H^H
+% 
+;login: 

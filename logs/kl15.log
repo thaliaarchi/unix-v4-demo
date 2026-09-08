@@ -2849,3 +2849,340 @@ und
   :-)Bad system call -- Core dumped
 % 
 % 
+
+Connected to the PDP-11 simulator DLI device, line 14
+
+ls
+Login incorrect.
+Name:  Tanner
+Login incorrect.
+Name:  UConn
+Login incorrect.
+Name:  ed
+Login incorrect.
+Name:  root
+# hl
+l: not found
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# /
+# c
+c: not found
+# ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+sh.bak
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# ed
+main() { printf("hello world"); }
+?
+s
+?
+x
+?
+q
+?
+e
+?
+:w?
+q
+# :
+# ed
+:q
+?
+q
+#  
+# ed /etc/passwd
+679
+$1?
+1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:4::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16:16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+andrew::17:17::/usr/andrew:
+nick::242:242::/usr/nick:
+q
+?
+q
+# exit
+# [A[Blogin tanner
+No match
+# login
+Name:  tanner
+% ls
+% ls 
+% pwd
+../usr/tanner
+% cd
+haha
+% ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+sh.bak
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+% cd /usr/tanner
+usr/tanner: not found
+% ls
+% pwd
+../usr/tanner
+% ed
+maint()?
+?
+:q?
+?
+q
+q
+% [A[Bed
+Arg count
+% ed
+main() { printf("Tanner was here"); printf("\n"); }
+?
+/s
+?
+q
+% ls
+% ed write tanner.c
+?
+main() {print[D[D[D[D[D printf("Tanner was here");[D[D[D\n"); }[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dwm?
+w:q
+?
+qq
+?
+q
+% ls
+% [A[A[B[Bed
+Arg count
+% ed tanner.c
+?
+w main { printf("Tanner was here\n"); }
+?
+q
+% ls
+% [A[Bman ed
+No match
+% ed
+w tanner.c
+?
+q
+% q
+q: not found
+% ls
+% ed
+main {print[D[D[D[D[D printf("Tanner was here\n"); }
+?
+w tanner.c
+?
+q
+% ls
+% ls /
+bhargav
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% ed
+a
+main { p?
+?
+q
+% ed
+a
+main() { printf("Tanner was here!\n"); }
+.
+w tanner.c
+41
+q
+% ls
+tanner.c
+% cc tanner.c
+% ls
+a.out
+tanner.c
+% ./a   [D[D[D.out
+Arg count
+% ./a.out
+Tanner was here!
+% cp ./a.out /bin/tanner
+Cannot creat new file.
+% [A[Bmv ./at.
+% mv .
+% ls
+a.out
+tanner.c
+% mv a.out tanner
+% ./tanner
+Tanner was here!
+% mv tanner /bin
+Cannot creat new file.
+% su
+# q
+# login
+Name:  tanner
+% ls
+tanner
+tanner.c
+% ./tan [Dner
+Arg count
+% ./tanner
+Tanner was here!
+% cp /bin/ls .
+% ls
+ls
+tanner
+tanner.c
+% ls
+ls
+tanner
+tanner.c
+% ./ls
+ls
+tanner
+tanner.c
+% rm ls
+% e[D[Ctanner
+Arg count
+% ./a[Dtanner[C
+% ./tanner
+Tanner was here!
+% 

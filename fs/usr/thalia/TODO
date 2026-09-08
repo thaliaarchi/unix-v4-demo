@@ -11,3 +11,4 @@ TODO:
 - Add a symbol for indir
 - Make struct fields scoped to the type
 - Fix pwd printing ../ for root
+- Mitch was here

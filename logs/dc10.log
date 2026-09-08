@@ -4470,3 +4470,374 @@ _main+74
 
 Disconnected from the PDP-11 simulator
 
+
+
+Connected to the PDP-11 simulator DCI device, line 10
+
+
+;login: thalia
+% ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% cat TODO
+TODO:
+- Implement char class ranges in ed
+- Make date Y2K compliant
+- Make timezone configurable without recompilation
+- Report non-existent files in cat
+- Allow omitting closing / in ed
+- Make ed listing (l) escape non-printable characters
+- Memory allocator:
+  - Assume exclusive ownership of sbrk
+  - Align to int
+- Add a symbol for indir
+- Make struct fields scoped to the type
+- Fix pwd printing ../ for root
+% 1,$
+1,: not found
+% ed TODO
+414
+1,$
+- Fix pwd printing ../ for root
+
+?
+[B[B[C?
+?
+
+
+Connected to the PDP-11 simulator DCI device, line 10
+
+
+;login: kk[3\[D[D[C[C[D[D[D[D[D[D[D[D[C[C[C[C[C[D[C[C[C[C[D[D[D[3[3[3#[D[D[D[D[D[D#####[D[D[D[D[D[D      [D[D[D[D[D[D brick
+Login incorrect.
+Name: brick
+Login incorrect.
+Name: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# clear
+clear: not found
+# help
+help: not found
+# man
+man: not found
+# man 	[D[D[D[D[D[D[D[D[C[Ced 
+Arg count
+# brian[D[D[D[D[D     [D[D[D[D[Dlogout
+Arg count
+# q
+;login: brian
+Login incorrect.
+Name: bryan
+Login incorrect.
+Name: brian
+% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[D[D[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[BB[B[B[B[B[B[B[B[B[B[B[B[C[C[C[C[C[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[B[B[A[Basdfasdfasdf[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D               [B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[AA[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[Bls
+Arg count
+% ls
+% ls
+% ls
+% ed mullender.c[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[C[C               [D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[C[Cmued [D[D[D[D[D  [C[C[Cmul[D[Dain.c
+Arg count
+% ed mainc..c[D[D[D[D    [D[D[D[D.c
+No match
+% ls
+% ls -la
+total 3
+drwxrwxrwx 2 brian      32 Sep  8 11:51 .
+drwxr-xr-x51 bin       816 Sep  8 11:51 ..
+% touch
+touch: not found
+% t[D [D!cc
+No match
+% !help
+!help: not found
+% ![D [D[Dgdb
+No match
+% !gdb
+!gdb: not found
+% ed [D[D[D    [D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[C[C[C[D[D[Ccat [D[D[D[D   [D[D[Decho "hello" > main.c
+No match
+% cat				[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D
+Arg count
+% .
+.: not found
+% ./	
+./: not found
+% ls -la
+total 3
+drwxrwxrwx 2 brian      48 Sep  8 11:55 .
+drwxr-xr-x51 bin       816 Sep  8 11:51 ..
+-rw-rw-rw- 1 brian       0 Sep  8 11:54 main.c
+% ls [D[D[D  [D[Ded main.c
+No match
+% ed ./mainc.c[D[D[D [D.c 
+No match
+% ls
+main.c
+% ed [D[D[D  [D[Dss[Dtty erase bs
+Command not found
+% stty erase v[Dbs
+Arg count
+% stty erase bs
+% asd[3~[D[D[D[C[C[C[C[D[C
+Arg count
+% stty erase bs
+% asdasd[D[D[D[D[D[D[D         [D[D[D[D[D[D[D[D[D[D[C[Ced main.c
+No match
+% sed main
+sed: not found
+% ;ksdlafjjklafd;sssa;lskdjffjkl;asdf;lkjasd;flkj
+ksdlafjjklafd: not found
+sssa: not found
+lskdjffjkl: not found
+asdf: not found
+lkjasd: not found
+flkj: not found
+% ed
+e main.c
+0
+l
+?
+a int mian?
+?
+?
+a in?
+??
+l
+?
+a int main() {
+?
+a
+int main() { reutrn?
+?
+?
+?
+?
+?
+?
+int main() { return 0; }
+?
+a
+int main() [?
+int?
+?
+a
+ main
+asdjklasdjl
+qijppi
+q
+% ed
+e main.c
+0
+l
+?
+l
+?
+ls
+?
+p
+?
+p
+?
+q
+% cat main	
+% cat main.c
+% ed
+e main.c
+0
+a hel?
+a
+hello
+.
+w
+6
+q
+% cat main.c
+hello
+% d,p[D[D[D[D    ed
+No match
+% ed
+e main.c
+6
+p
+hello
+,p
+?
+p
+hello
+p 1
+?
+p 2
+?
+p
+hello
+ls /
+?
+ls
+?
+q
+% ls /
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% cat /un	[D[D[D[D[D[D[Dix/
+Arg count
+% ls /unix/
+/unix/
+% ls /unix
+/unix
+% ls /tmp
+etma
+etmb
+etmc
+utmp
+% ls /usr
+adm
+alex
+amitb
+andrew
+auberon
+axel
+ben
+bhargav
+bin
+brian
+bruno
+bx
+c
+cem
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+nick
+pub
+puzzle
+reyes
+rushi
+ryan
+sno
+source
+sys
+tanner
+thalia
+tmp
+ty
+vincent
+voytilla
+yang
+% ls
+main.c
+% ls /
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+% ls /bin
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+sh.bak
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+% date
+Sun Sep  8 12:03:06 MDT 1974
+% grep
+rep: not found
+% grep
+arg count
+% 
+;login: q
+Login incorrect.
+Name: q
+;login: 
