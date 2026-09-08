@@ -225,7 +225,7 @@ int *ip;
 {
 	register i, *bp, *cp;
 
-	iupdat(ip);
+	iupdat(ip, time);
 	bp = bread(ip->i_dev, ldiv(ip->i_number+31, 16));
 	cp = bp->b_addr + 32*lrem(ip->i_number+31, 16) + 24;
 	ip = &(ip->i_dev);

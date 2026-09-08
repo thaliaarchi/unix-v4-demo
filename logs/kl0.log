@@ -33144,3 +33144,594 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: bin
+% chdir /usr/source/s1
+% ed cp.c
+1583
+q#!date 0908#72305
+Sat Sep  7 23:05:00 MDT 1974
+!
+/while/
+        while(argc > 1 && argv[1][0] == '-' && argv[1][2] == 0) {
+//
+                        while(*bp++ = *p2++);
+//
+                        while(*bp = *p1++)
+//
+        while(n = read(fold, buf, 512)) {
+.,$p
+        while(n = read(fold, buf, 512)) {
+                if(n < 0) {
+                        write(1, "Read error\n", 11);
+                        exit(1);
+                } else if(write(fnew, buf, n) != n) {
+                        write(1, "Write error.\n", 13);
+                        exit(1);
+                }
+                ct++;
+        }
+        if(preserve)
+                mdate(argv[2], statb.st_mtime);
+        if(tell) {
+                conf(ct, 6, buf);
+                buf[3] = '\n';
+                write(1, buf, 7);
+        }
+        exit(0);
+}
+
+conf(n,width,buf) 
+        char    *buf;
+{
+        auto    i,a;
+
+        i = width;
+        while(i--)      buf[i] = ' ';
+
+        buf[(a = n/10)?conf(a,--width,buf):--width] = n%10 + '0';
+
+        return(++width);
+}
+?while?
+        while(i--)      buf[i] = ' ';
+c
+        while(i--(#)
+                buf[i] = ' ';
+.
+??
+        while(i--)
+??
+        while(n = read(fold, buf, 512)) {
+i
+        ct = 0;
+.
+/write/
+                        write(1, "Read error\n", 11);
+c
+                        write(2, "Read error.\n", 12);
+.
+g/write(1/s//write(2/p
+                write(2, "Usage: cp oldfile newfile\n", 26);
+                write(2, "Cannot open old file.\n", 22);
+                                write(2, "Cannot creat new file.\n", 23);
+                        write(2, "Cannot creat new file.\n", 23);
+                        write(2, "Write error.\n", 13);
+                write(2, buf, 7);
+.-3,.p
+        if(tell) {
+                conf(ct, 6, buf);
+                buf[3] = '\n';
+                write(2, buf, 7);
+s/2/1p
+?
+s/2/1/p
+                write(1, buf, 7);
+?preserve?
+        if(preserve)
+,..+1c
+?
+.,.+1c
+        if(ore###preserve **##&&mdate(buf, statb.st_mtime) < 0) {
+                write(2 ,##, "Cannot preserve date.\n", 22);
+                w#exit(2#1);
+        }
+.
+.-2#3,.p
+        if(preserve &&mdate(buf, statb.st_mtime) < 0) {
+                write(2, "Cannot preserve date.\n", 22);
+                exit(1);
+        }
+?mdate?
+        if(preserve &&mdate(buf, statb.st_mtime) < 0) {
+s// &/p
+        if(preserve && mdate(buf, statb.st_mtime) < 0) {
+w
+1654
+!cc cp.c
+!
+q
+% a.out -p as11.c x
+Cannot open old file.
+% a.out -p as11.s x
+Cannot preserve date.
+% chdir /usr/sys/ken
+% ed sys3.c
+4879
+/mdate/;/}/p
+smdate()
+{
+        register *ip;
+        int tbuf[2];
+        extern uchar;
+
+        ip = namei(&uchar, 0);
+        if(ip == NULL)
+                return;
+        if(owner(ip)) {
+                ip->i_flag =| IUPD;
+                tbuf[0] = u.u_ar0[R0];
+                tbuf[1] = u.u_ar0[R1];
+                iupdat(ip, tbuf);
+                ip->i_flag =& ~IUPD;
+        }
+.,.+2p
+        }
+        iput(ip);
+}
+q
+% greo 0n ###-i#n '^ip#updat' *
+Command not found
+% grep -n '^iupdat' *
+iget.c:90 iupdat(p)
+% ed iget.c
+2928
+/iupdat/,#;/^}/p
+                iupdat(rp);
+                prele(rp);
+                rp->i_flag = 0;
+                rp->i_number = 0;
+        }
+        rp->i_count--;
+        prele(rp);
+}
+/^iupdat/;/^}/p
+iupdat(p)
+int *p;
+{
+        register *ip1, *ip2, *rp;
+        int *bp, i;
+
+        rp = p;
+        if((rp->i_flag&(IUPD|IACC)) != 0) {
+                if(getfs(rp->i_dev)->s_ronly)
+                        return;
+                i = rp->i_number+31;
+                bp = bread(rp->i_dev, ldiv(i,16));
+                ip1 = bp->b_addr + 32*lrem(i, 16);
+                ip2 = &rp->i_mode;
+                while(ip2 < &rp->i_addr[8])
+                        *ip1++ = *ip2++;
+                if(rp->i_flag&IACC) {
+                        *ip1++ = time[0];
+                        *ip1++ = time[1];
+                } else
+                        ip1 =+ 2;
+                if(rp->i_flag&IUPD) {
+                        *ip1++ = time[0];
+                        *ip1++ = time[1];
+                }
+                bwrite(bp);
+        }
+}
+?^i?
+int *p;
+s/;/, *tm;/p
+int *p, *tm;
+^
+iupdat(p)
+s/)/, tm)/p
+iupdat(p, tm)
+g/time/p
+                        *ip1++ = time[0];
+                        *ip1++ = time[1];
+                        *ip1++ = time[0];
+                        *ip1++ = time[1];
+/UPD?#/
+        rp->i_flag =| IUPD;
+//
+        ip->i_flag =| IACC|IUPD;
+//
+        if((rp->i_flag&(IUPD|IACC)) != 0) {
+//
+                if(rp->i_flag&IUPD) {
+
+                        *ip1++ = time[0];
+.,.+1s/time/tm/p
+                        *ip1++ = tm[1];
+w
+2933
+q
+% chdir ..
+% shru## run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+Quit -- Core dumped
+% rm core
+core: non existent
+% chdir ken
+% rm ko##core
+% grep -n iupdat *
+a.out: cannot open
+% ls
+a.out
+alloc.c
+alloc.o
+clock.c
+clock.o
+fio.c
+fio.o
+iget.c
+iget.o
+main.c
+main.o
+nami.c
+nami.o
+prf.c
+prf.o
+rdwri.c
+rdwri.o
+run
+sig.c
+sig.o
+slp.c
+slp.o
+subr.c
+subr.o
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% ls -l a,out####.out
+---------- 1 bin         0 Sep  7 23:12 a.out
+% rm a.out
+a.out: 100000 mode y
+% ls -l a.out
+a.out not found
+% grep -n '^iupdat' *
+iget.c:90 iupdat(p, tm)
+% chdir ../dmr
+% grep -n '^iupdat' *
+% grep -n iupdat *
+% chdirt --##../@chdir ../ken
+% grep -n iupdat *
+alloc.c:188                     iupdat(ip);
+iget.c:81               iupdat(rp);
+iget.c:90 iupdat(p, tm)
+iget.o:9 _nchrdev _buf J_bfreeli _maxip _iget"rsave L2L3L4L6vL7:_sleep L8jL9DL10bL12\L11\L13R_panic L1 L14L5L15L16ZL17_ldiv _bread _lrem L18~L19_brelse rretrn _iput"$L21jL22X_itrunc"$_ifree _iupdat"x_prele L20tL24 _getfs L23 L25dL26rL27L28L29_bwrite L30BL31@L320L34(L35L36nL37L39
+_free L38
+L33(_maknode"F_ialloc _wdir"
+sys3.c:195              iupdat(ip, tbuf);
+sys3.c:228      iupdat(ip);
+% ed alloc.c
+3390
+/iupdat/
+                        iupdat(ip);
+c
+                        iupdat(ip, time);
+.
+w
+3396
+q
+% ed iget.c
+2933
+g/iupdat/p
+                iupdat(rp);
+iupdat(p, tm)
+^#??
+                iupdat(rp);
+c
+                iupdat(rp, time);
+.
+w
+2939
+q
+% ed sys3.c
+4879
+/iupdat/
+                iupdat(ip, tbuf);
+//
+        iupdat(ip);
+c
+        iuodat@ iupdat(ip, time);
+.
+w
+4885
+q
+% chdir ..
+% sync
+% pwd
+../usr/sys
+% sh run
+low.o: non existent
+mch.o: non existent
+conf.o: non existent
+lib1: non existent
+lib2: non existent
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+m% v a.out /nunix
+% chdit /@cd@chdir /usr/source/s1
+% cc c.#p.c
+% chmod 755 a.out
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64523
+
+;login: thalia
+% ls -l
+total 48
+-rw-rw-rw- 1 thalia    414 Aug 29 00:53 TODO
+-rw-rw-rw- 1 root       86 Aug 18 18:08 beeps.c
+drwxr-xr-x 7 thalia    176 Aug 18 12:23 hints
+-rw-rw-rw- 1 thalia   1383 Aug 18 17:18 lrc2026
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia   5317 Aug 18 10:28 rfc4
+-rw-rw-rw- 1 thalia   9227 Aug 18 17:36 saturnv
+-rw-rw-rw- 1 thalia     25 Aug 18 11:08 thanks
+-rwxrwxrwx 1 thalia   2040 Aug 26 23:41 ttyinfo
+-rw-rw-rw- 1 thalia   1112 Aug 26 23:41 ttyinfo.c
+drwxrwxrwx 2 thalia    112 Aug 28 20:20 ws
+% 
+;login: bin
+% chdirt /@chdir /usr/source/s2#1
+% cp -p as11.s x
+% ls -l as11.s x
+-rw-r--r-- 1 bin      1025 Jun 10 08:37 as11.s
+-rw-r--r-- 1 bin      1025 Sep  7 23:18 x
+% a.out -p as11.s x
+Cannot preserve date.
+% ls -l @
+% sync
+% ed cp.c
+1654
+/statb/
+        struct stat statb;
+a
+        cjha@   char name[100];
+.
+/creat/
+        if((fnew = creat(argv[2], statb.st_mode)) < 0){
+/while/
+                        while(*bp++ = *p2++);
+?bp?
+                        bp = buf;
+s/buf/name/
+/buf/
+                        if((fnew = creat(buf, statb.st_mode)) < 0) {
+s//name/p
+                        if((fnew = creat(name, statb.st_mode)) < 0) {
+/mdate/
+        if(preserve && mdate(buf, statb.st_mtime) < 0) {
+s/buf/name/
+w
+1674
+q
+% cc cp.c
+% cm@chmod 755 a.out
+% a.out -p as11.s x
+% ls 0-##-l as11.s x
+-rw-r--r-- 1 bin      1025 Jun 10 08:37 as11.s
+-rw-r--r-- 1 bin      1025 Sep  7 23:30 x
+% rm x
+% a.out -p as11.s x
+% ls -l x
+-rw-r--r-- 1 bin      1025 Sep  7 23:30 x
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64523
+
+;login: bin
+% chdir /usr/source/s1
+% cc cp.c
+% a.out -p as11.s x
+% ls -l as11.s x
+-rw-r--r-- 1 bin      1025 Jun 10 08:37 as11.s
+-rw-r--r-- 1 bin      1025 Sep  7 23:30 x
+% sync
+% ed cp.c
+1674
+/creat/
+        if((fnew = creat(argv[2], statb.st_mode)) < 0){
+^i
+        whi@    bp = name;
+        while(*bp++ = *p2++);
+.
+/while/
+                        while(*bp++ = *p2++);
+d
+^
+                        bp = name;
+d
+w
+1670
+!cc cpc.##.c
+!
+q
+% a.out -p as11.s x
+Cannot preserve date.
+% sync
+% ed cp.c
+1670
+/p2 =/
+                        p2 = argv[2];
+d
+?while?
+        while(*bp++ = *p2++);
+^i
+        p2 = argv[2];
+.
+w
+1668
+q
+% cc cp.c
+% a.out -p as11.s x
+% ls -l x
+-rw-r--r-- 1 bin      1025 Jun 10 08:37 x
+% ls -l as11.s x
+-rw-r--r-- 1 bin      1025 Jun 10 08:37 as11.s
+-rw-r--r-- 1 bin      1025 Jun 10 08:37 x
+% sync
+% chmod 755 a.out
+% mv a.out @ls -l /bin/cp
+-rwxr-xr-x 1 bin      1228 Sep  7 21:07 /bin/cp
+% mv a.out /bin/cp
+% rm x
+% chdir /usr/sys
+% ls -l
+total 217
+-rw-r--r-- 1 bin       628 Jun 10 08:37 buf.h
+drwxr-xr-x 2 bin       224 Sep  7 23:18 conf
+-rw-r--r-- 1 bin       291 Jun 10 08:37 conf.h
+-rw-rw-rw- 1 bin       652 Sep  7 23:18 conf.o
+drwxr-xr-x 2 bin       848 Sep  7 23:18 dmr
+-rw-rw-rw- 1 bin       527 Aug 26 17:07 errno.h
+-rw-r--r-- 1 bin       157 Jun 10 08:37 file.h
+-rw-r--r-- 1 bin       188 Jun 10 08:37 filsys.h
+-rw-r--r-- 1 bin       561 Jun 10 08:37 inode.h
+drwxr-xr-x 2 bin       640 Sep  7 23:17 ken
+-rw-r--r-- 1 bin        35 Jun 10 08:37 ld
+-rw-rw-rw- 1 bin     47658 Sep  7 23:17 lib1
+-rw-rw-rw- 1 bin     40702 Sep  7 23:18 lib2
+-rw-rw-rw- 1 bin      1356 Sep  7 23:18 low.o
+-rw-rw-rw- 1 bin      3720 Sep  7 23:18 mch.o
+-rw-r--r-- 1 bin       941 Jun 10 08:37 param.h
+-rw-r--r-- 1 bin       387 Jun 10 08:37 proc.h
+-rw-r--r-- 1 bin       142 Jun 10 08:37 reg.h
+-rw-r--r-- 1 bin       251 Aug 26 21:45 run
+-rw-r--r-- 1 bin       228 Jun 10 08:37 seg.h
+-rw-rw-rw- 1 bin       501 Sep  7 20:14 stat.h
+-rw-r--r-- 1 bin       410 Jun 10 08:37 systm.h
+-rw-r--r-- 1 bin       115 Jun 10 08:37 text.h
+-rw-r--r-- 1 bin       882 Aug 27 10:45 tty.h
+-rw-r--r-- 1 bin       671 Aug 26 21:30 user.h
+% mv /nunix /unix
+% sync
+% strip /bin/cp
+% stn##ync
+% 

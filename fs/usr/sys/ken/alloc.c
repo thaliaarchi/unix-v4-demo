@@ -185,7 +185,7 @@ update()
 	for(ip = &inode[0]; ip < &inode[NINODE]; ip++)
 		if((ip->i_flag&ILOCK) == 0) {
 			ip->i_flag =| ILOCK;
-			iupdat(ip);
+			iupdat(ip, time);
 			prele(ip);
 		}
 	updlock = 0;

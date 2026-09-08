@@ -78,7 +78,7 @@ struct inode *p;
 			rp->i_mode = 0;
 			ifree(rp->i_dev, rp->i_number);
 		}
-		iupdat(rp);
+		iupdat(rp, time);
 		prele(rp);
 		rp->i_flag = 0;
 		rp->i_number = 0;
@@ -87,8 +87,8 @@ struct inode *p;
 	prele(rp);
 }
 
-iupdat(p)
-int *p;
+iupdat(p, tm)
+int *p, *tm;
 {
 	register *ip1, *ip2, *rp;
 	int *bp, i;
@@ -109,8 +109,8 @@ int *p;
 		} else
 			ip1 =+ 2;
 		if(rp->i_flag&IUPD) {
-			*ip1++ = time[0];
-			*ip1++ = time[1];
+			*ip1++ = tm[0];
+			*ip1++ = tm[1];
 		}
 		bwrite(bp);
 	}
