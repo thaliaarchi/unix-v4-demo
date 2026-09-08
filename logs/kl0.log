@@ -27545,3 +27545,136 @@ w
 !
 !sync
 !
+g/write(1,/s//write(2,/p
+                write(2,"Usage: mv name1 name2\n",22);
+                write(2,"Source file non-existent\n",25);
+                        write(2,"Directory target exists.\n",25);
+                                write(2,"???\n",4);
+                                write(2,"Directory rename only\n",22);
+                                write(2,"Directory rename only\n",22);
+                        write(2,"values of B will give rise to dom!\n",37);
+                                        write(2,"Files are identical.\n",21);
+                                        write(2,"Cannot remove target file.\n",27);
+                        write(2,"Try again.\n",11);
+                        write(2, "no cp\n", 6);
+                        write(2,"?\n", 2);
+                write(2,"Cannot unlink source file.\n",26);
+        write(2, &c, 1);
+/putchar/
+putchar(c)
+.=#+2
+        write(2, &c, 1);
+s/2/1/p
+        write(1, &c, 1);
+>=##+2
+mv [-d] file1 file2
+/else$/p
+                                        b = 0200; else
+/#g/else$/p
+                                        b = 0200; else
+                                        b = 020; else
+.-10,.+5p
+                                argp4 = strbuf;
+                        }
+                        if(stat(argp4, &stbuf[2]) >= 0) {
+                                if((stbuf[0]==stbuf[2]) && (stbuf[1]==stbuf[3])) {
+                                        write(2,"Files are identical.\n",21);
+                                        exit();
+                                }
+                                if(getuid() == stbuf[2].uid)
+                                        b = 0200; else
+                                if(getgid() == stbuf[2].gid)
+                                        b = 020; else
+                                        b = 02;
+                                if((stbuf[2].imode & b) == 0) {
+                                        printf("%s: %o mode ", argp4,
+                                                stbuf[2].imode & 07777);
+                                        i = b = getchar();
+?else?
+                                        b = 020; else
+s/ else//
+a
+                                else
+.
+.-2
+                                if(getgid() == stbuf[2].gid)
+-
+?
+.-1
+                                        b = 0200; else
+s/ else//
+
+                                if(getgid() == stbuf[2].gid)
+s/i/else i/p
+                                else if(getgid() == stbuf[2].gid)
+.-2,.+4p
+                                if(getuid() == stbuf[2].uid)
+                                        b = 0200;
+                                else if(getgid() == stbuf[2].gid)
+                                        b = 020;
+                                else
+                                        b = 02;
+                                if((stbuf[2].imode & b) == 0) {
+w
+3175
+g/.#exit()/p
+                exit();
+                exit();
+                        exit();
+                                exit();
+                                exit();
+                                exit();
+                        exit();
+                                        exit();
+                                                exit();
+                                        exit();
+                        exit();
+                        exit();
+                        exit();
+                exit();
+g/exit()/s//exit(1)/
+w
+3189
+q
+% who
+bin     tty8 Sep  7 18:14
+% chdir /usr/sys/e#ken
+% ed sys3.c
+4780
+/smdate/;/^}/p
+smdate()
+{
+        register struct inode *ip;
+        register int *tp;
+        int tbuf[2];
+
+        if ((ip = owner()) == NULL)
+                return;
+        ip->i_flag =| IUPD;
+        tp = &tbuf[2];
+        *--tp = u.u_ar0[R1];
+        *--tp = u.u_ar0[R0];
+        iupdat(ip, tp);
+        ip->i_flag =& ~IUPD;
+        iput(ip);
+}
+q
+% grep -n '^owner' *
+fio.c:121 owner(ip)
+% ed fio.c
+2384
+/owner/;/^}/p
+owner(ip)
+int *ip;
+{
+
+        if(u.u_uid == ip->i_uid)
+                return(1);
+        return(suser());
+}
+q
+% ed y#sys.c
+?
+q
+% sync
+% 
