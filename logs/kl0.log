@@ -35129,3 +35129,155 @@ crw--w--w- 1 root    0, 15 Sep  8 11:07 ttyv
 /etc/mknod rmt7 c 2 7# # # # # 
 # sync
 # 
+;login: bin
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> det tc1
+sim> at tc1 nroff.tp
+TC1: 16b format, buffering file in memory
+sim> c
+
+% chdir /usr/source/s7
+% ls #
+roff1.s
+roff2.s
+roff3.s
+roff4.s
+roff5.s
+roff7.s
+roff8.s
+suftab.s
+% tp 1t
+nroff1.s
+nroff2.s
+nroff3.s
+nroff4.s
+nroff5.s
+nroff8.s
+   6 entries
+ 113 used
+ 440 free
+ 137 last
+END
+% ls -l
+total 99
+-rw-r--r-- 1 bin      6518 Jun 10 08:37 roff1.s
+-rw-r--r-- 1 bin      3990 Jun 10 08:37 roff2.s
+-rw-r--r-- 1 bin      4813 Jun 10 08:37 roff3.s
+-rw-r--r-- 1 bin      5149 Jun 10 08:37 roff4.s
+-rw-r--r-- 1 bin      2990 Jun 10 08:37 roff5.s
+-rw-r--r-- 1 bin      6207 Jun 10 08:37 roff7.s
+-rw-r--r-- 1 bin      1436 Jun 10 08:37 roff8.s
+-rw-r--r-- 1 bin     15113 Jun 10 08:37 suftab.s
+% tp 1x@
+% ro@
+% 
+;login: root
+# chdir /usr/source/s2#7
+# tp 1t
+nroff1.s
+nroff2.s
+nroff3.s
+nroff4.s
+nroff5.s
+nroff8.s
+   6 entries
+ 113 used
+ 440 free
+ 137 last
+END
+# ls -l
+total 99
+-rw-r--r-- 1 bin      6518 Jun 10 08:37 roff1.s
+-rw-r--r-- 1 bin      3990 Jun 10 08:37 roff2.s
+-rw-r--r-- 1 bin      4813 Jun 10 08:37 roff3.s
+-rw-r--r-- 1 bin      5149 Jun 10 08:37 roff4.s
+-rw-r--r-- 1 bin      2990 Jun 10 08:37 roff5.s
+-rw-r--r-- 1 bin      6207 Jun 10 08:37 roff7.s
+-rw-r--r-- 1 bin      1436 Jun 10 08:37 roff8.s
+-rw-r--r-- 1 bin     15113 Jun 10 08:37 suftab.s
+# tp 1vx@
+# 
+;login: bin
+% tp@chdir /usr/source/s7
+% tp 1vx
+x nroff1.s
+x nroff2.s
+x nroff3.s
+x nroff4.s
+x nroff5.s
+x nroff8.s
+END
+% ls -l
+total 217
+-rw-r--r-- 1 root    14834 Sep  8 11:15 nroff1.s
+-rw-r--r-- 1 root    12466 Sep  8 11:15 nroff2.s
+-rw-r--r-- 1 root    12643 Sep  8 11:15 nroff3.s
+-rw-r--r-- 1 root     9454 Sep  8 11:15 nroff4.s
+-rw-r--r-- 1 root     4470 Sep  8 11:15 nroff5.s
+-rw-r--r-- 1 root     3021 Sep  8 11:15 nroff8.s
+-rw-r--r-- 1 bin      6518 Jun 10 08:37 roff1.s
+-rw-r--r-- 1 bin      3990 Jun 10 08:37 roff2.s
+-rw-r--r-- 1 bin      4813 Jun 10 08:37 roff3.s
+-rw-r--r-- 1 bin      5149 Jun 10 08:37 roff4.s
+-rw-r--r-- 1 bin      2990 Jun 10 08:37 roff5.s
+-rw-r--r-- 1 bin      6207 Jun 10 08:37 roff7.s
+-rw-r--r-- 1 bin      1436 Jun 10 08:37 roff8.s
+-rw-r--r-- 1 bin     15113 Jun 10 08:37 suftab.s
+% chown n#bin n*
+nroff1.s?
+nroff2.s?
+nroff3.s?
+nroff4.s?
+nroff5.s?
+nroff8.s?
+% 
+;login: root
+# chdir /usr/source/s7
+# chown in##bin n*
+# 
+;login: bin
+% chdir /usr/source/s7
+% su
+# chown bin n*
+# % 
+% as nroff[1-5].s roff7.s nroff8.s
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+% sync
+% 

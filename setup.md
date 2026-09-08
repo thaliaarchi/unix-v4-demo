@@ -1526,12 +1526,10 @@ sim> c
 
 Patch SIMH to not buffer logs and view `tail -f logs/kl0.log` with `vt52`.
 
-## Install aap manuals
+## Fix devices in /dev
 
-Following aap's [nroff and the manual](http://squoze.net/UNIX/v4/README)
-instructions.
-
-I have devices configured incorrectly:
+Trying to install manuals from DECtape shows that I have devices configured
+incorrectly:
 
 ```
 login: bin
@@ -1771,4 +1769,112 @@ q
 /NRP/
 #define NRP     8
 q
+```
+
+## Install aap manuals
+
+Following aap's [nroff and the manual](http://squoze.net/UNIX/v4/README)
+instructions. Note that `tp 1vx` is used for extraction, not `tp 1t`.
+
+```
+login: bin
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> at tc1 nroff.tp
+TC1: 16b format, buffering file in memory
+sim> c
+
+% chdir /usr/source/s7
+% ls
+roff1.s
+roff2.s
+roff3.s
+roff4.s
+roff5.s
+roff7.s
+roff8.s
+suftab.s
+% tp 1t
+nroff1.s
+nroff2.s
+nroff3.s
+nroff4.s
+nroff5.s
+nroff8.s
+   6 entries
+ 113 used
+ 440 free
+ 137 last
+END
+% tp 1vx
+x nroff1.s
+x nroff2.s
+x nroff3.s
+x nroff4.s
+x nroff5.s
+x nroff8.s
+END
+% ls -l
+total 217
+-rw-r--r-- 1 root    14834 Sep  8 11:15 nroff1.s
+-rw-r--r-- 1 root    12466 Sep  8 11:15 nroff2.s
+-rw-r--r-- 1 root    12643 Sep  8 11:15 nroff3.s
+-rw-r--r-- 1 root     9454 Sep  8 11:15 nroff4.s
+-rw-r--r-- 1 root     4470 Sep  8 11:15 nroff5.s
+-rw-r--r-- 1 root     3021 Sep  8 11:15 nroff8.s
+-rw-r--r-- 1 bin      6518 Jun 10 08:37 roff1.s
+-rw-r--r-- 1 bin      3990 Jun 10 08:37 roff2.s
+-rw-r--r-- 1 bin      4813 Jun 10 08:37 roff3.s
+-rw-r--r-- 1 bin      5149 Jun 10 08:37 roff4.s
+-rw-r--r-- 1 bin      2990 Jun 10 08:37 roff5.s
+-rw-r--r-- 1 bin      6207 Jun 10 08:37 roff7.s
+-rw-r--r-- 1 bin      1436 Jun 10 08:37 roff8.s
+-rw-r--r-- 1 bin     15113 Jun 10 08:37 suftab.s
+% su
+# chown bin n*
+# % 
+```
+
+Attempt to build nroff:
+
+```
+% as nroff[1-5].s roff7.s nroff8.s
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+No space on dev 0
+% 
 ```
