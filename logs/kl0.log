@@ -35281,3 +35281,641 @@ No space on dev 0
 No space on dev 0
 % sync
 % 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att tm0 src.tap
+%SIM-INFO: TM0: creating new file
+%SIM-INFO: TM0: Tape Image 'src.tap' scanned as SIMH format
+sim> att rk1 src.rk
+%SIM-INFO: RK1: Creating new file: src.rk
+sim> c
+
+% 
+;login: rot#ot
+# /etc/mkfs /dev/rk1 4872
+isize = 103
+# /etc/mount /dev/rk1 /mnt
+# chdir /usr/source
+# tp mr *
+ 264 entries
+1393 used
+1455 last
+END
+# tp mt
+s1/ac.c
+s1/ar.s
+s1/as11.s
+s1/as12.s
+s1/as13.s
+s1/as14.s
+s1/as15.s
+s1/as16.s
+s1/as17.s
+s1/as18.s
+s1/as19.s
+s1/as21.s
+s1/as22.s
+s1/as23.s
+s1/as24.s
+s1/as25.s
+s1/as26.s
+s1/as27.s
+s1/as28.s
+s1/as29.s
+s1/bas0.s
+s1/bas1.s
+s1/bas2.s
+s1/bas3.s
+s1/bas4.s
+s1/bas5.s
+s1/basx.s
+s1/cal.c
+s1/cat.s
+s1/cc.c
+s1/cdb.c
+s1/check.c
+s1/chmod.c
+s1/chown.s
+s1/clri.s
+s1/cmp.s
+s1/comm.c
+s1/cp.c
+s1/date.c
+s1/db1.s
+s1/db2.s
+s1/db3.s
+s1/db4.s
+s1/dc1.s
+s1/dc2.s
+s1/dc3.s
+s1/dc4.s
+s1/dc5.s
+s1/dd.c
+s1/df.c
+s1/diff1.c
+s1/diff2.s
+s1/dsw.s
+s1/du.s
+s1/dump.c
+s1/echo.c
+s1/ed1.s
+s1/ed2.s
+s1/ed3.s
+s1/exit.c
+s1/fc.c
+s1/fed1.s
+s1/fed2.s
+s1/fed3.s
+s1/find.c
+s1/form1.s
+s1/form2.s
+s1/form3.s
+s1/form4.s
+s1/form5.s
+s1/form6.s
+s1/getty.s
+s1/glob.c
+s1/goto.c
+s1/grep.s
+s1/if.c
+s1/init.c
+s1/kill.s
+s1/ld1.s
+s1/ld2.s
+s1/ldx.s
+s1/ln.c
+s1/login.c
+s1/lpd.s
+s1/lpr.c
+s1/ls.c
+s2/mail.c
+s2/mesg.s
+s2/mkdir.s
+s2/mkfs.c
+s2/mknod.c
+s2/mount.c
+s2/msh.s
+s2/mv.c
+s2/nice.c
+s2/nm.c
+s2/nohup.c
+s2/od.c
+s2/passwd.s
+s2/pfe.s
+s2/pr.c
+s2/prof.c
+s2/ps.c
+s2/pwd.c
+s2/restor.c
+s2/rew.s
+s2/rm.c
+s2/rmdir.s
+s2/sa.c
+s2/sh.c
+s2/size.c
+s2/sleep.c
+s2/sort.c
+s2/split.c
+s2/strip.s
+s2/stty.c
+s2/su.c
+s2/sum.s
+s2/sync.c
+s2/tee.c
+s2/time.s
+s2/tp1.s
+s2/tp2.s
+s2/tp3.s
+s2/tp4.s
+s2/tr.c
+s2/tty.s
+s2/typo.c
+s2/umount.c
+s2/uniq.c
+s2/update.s
+s2/wc.c
+s2/who.c
+s2/write.s
+s2/sh.alias
+s3/atan.s
+s3/atof.s
+s3/atoi.s
+s3/compar.s
+s3/crypt.s
+s3/ctime.c
+s3/dpadd.s
+s3/ecvt.s
+s3/exp.s
+s3/fakfp.s
+s3/fp1.s
+s3/fp2.s
+s3/fp3.s
+s3/fpx.s
+s3/gamma.s
+s3/get.s
+s3/hypot.s
+s3/ldiv.s
+s3/log.s
+s3/mesg.s
+s3/mon.s
+s3/nlist.s
+s3/pow.s
+s3/put.s
+s3/qsort.s
+s3/rand.s
+s3/sin.s
+s3/sqrt.s
+s3/switch.s
+s3/ttyn.s
+s4/abort.s
+s4/atan.s
+s4/atan2.s
+s4/atof.s
+s4/chdir.s
+s4/chmod.s
+s4/chown.s
+s4/close.s
+s4/cos.s
+s4/crand.s
+s4/creat.s
+s4/crt0.s
+s4/crypt.s
+s4/dup.s
+s4/ecvt.s
+s4/errlst.c
+s4/execl.s
+s4/execv.s
+s4/exit.s
+s4/exp.s
+s4/ffltpr.s
+s4/floor.s
+s4/fltpr.s
+s4/fmod.s
+s4/fork.s
+s4/fstat.s
+s4/gamma.s
+s4/getc.s
+s4/getchr.s
+s4/getcsw.s
+s4/getgid.s
+s4/getpw.c
+s4/getuid.s
+s4/gtty.s
+s4/hmul.s
+s4/hsw.s
+s4/kill.s
+s4/link.s
+s4/locv.s
+s4/log.s
+s4/ltod.s
+s4/makdir.s
+s4/mcrt0.s
+s4/mdate.s
+s4/mknod.s
+s4/mon.c
+s4/mount.s
+s4/nargs.s
+s4/nice.s
+s4/nlist.s
+s4/open.s
+s4/perror.c
+s4/pipe.s
+s4/pow.s
+s4/printf.s
+s4/prof.s
+s4/putc.s
+s4/putchr.s
+s4/qsort.c
+s4/read.s
+s4/reset.s
+s4/retrn.s
+s4/rin.c
+s4/rsave.s
+s4/sbrk.s
+s4/seek.s
+s4/setgid.s
+s4/setuid.s
+s4/signal.s
+s4/sin.s
+s4/sleep.s
+s4/sqrt.s
+s4/ssw.s
+s4/stat.s
+s4/stime.s
+s4/stty.s
+s4/switch.s
+s4/sync.s
+s4/time.s
+s4/times.s
+s4/umount.s
+s4/unlink.s
+s4/wait.s
+s4/write.s
+s7/roff1.s
+s7/roff2.s
+s7/roff3.s
+s7/roff4.s
+s7/roff5.s
+s7/roff7.s
+s7/roff8.s
+s7/suftab.s
+s7/nroff1.s
+s7/nroff2.s
+s7/nroff3.s
+s7/nroff4.s
+s7/nroff5.s
+s7/nroff8.s
+s7/a.out
+ 264 entries
+1393 used
+1455 last
+END
+# cdi##hdir /mnt
+# mkdir s1 s2 s3 4 ##s4 s7
+# ls
+s1
+s2
+s3
+s4
+s7
+# chown bin *
+# chmod 755 *
+# tp mx
+END
+# chdir /usr/source/s1
+# rm [a-f]*
+ac.c: 110644 mode 
+# rm [a@rm -f [a-f]*
+# rm -f *
+# chdir ../s2
+# r #m -f *
+# chdir ../s3
+# rm -f *
+# chdir ../s4
+# rm -f *
+Arg list too long
+# rm -f [a-f]*
+# rm -f *
+# chdir ../s7
+# rm -f *
+# chdir ..
+# rmdir *
+# chdir /
+# ls src
+src not found
+# ls /usr/src
+/usr/src not found
+# ls /usr/soruce
+/usr/soruce not found
+# ls /usr/source
+# /etc/umount /etv/rk1@et@/etc/umount /dev/rk12#
+# /etc/mount /dev/rk1 /usr/source
+# chdir /usr/source
+# ls
+s1
+s2
+s3
+s4
+s7
+# ls -l
+total 10
+drwxr-xr-x 2 bin      1408 Sep  8 11:24 s1
+drwxr-xr-x 2 bin       816 Sep  8 11:24 s2
+drwxr-xr-x 2 bin       512 Sep  8 11:24 s3
+drwxr-xr-x 2 bin      1376 Sep  8 11:24 s4
+drwxr-xr-x 2 bin       272 Sep  8 11:24 s7
+# ls s7
+a.out
+nroff1.s
+nroff2.s
+nroff3.s
+nroff4.s
+nroff5.s
+nroff8.s
+roff1.s
+roff2.s
+roff3.s
+roff4.s
+roff5.s
+roff7.s
+roff8.s
+suftab.s
+# ed /etc/rc@ls -al /#s7
+total 283
+drwxr-xr-x 2 bin       272 Sep  8 11:24 .
+drwxrwxrwx 7 root      112 Sep  8 11:24 ..
+-rwxrwxrwx 1 bin     32256 Sep  8 11:17 a.out
+-rw-r--r-- 1 bin     14834 Sep  8 11:17 nroff1.s
+-rw-r--r-- 1 bin     12466 Sep  8 11:17 nroff2.s
+-rw-r--r-- 1 bin     12643 Sep  8 11:17 nroff3.s
+-rw-r--r-- 1 bin      9454 Sep  8 11:17 nroff4.s
+-rw-r--r-- 1 bin      4470 Sep  8 11:17 nroff5.s
+-rw-r--r-- 1 bin      3021 Sep  8 11:17 nroff8.s
+-rw-r--r-- 1 bin      6518 Jun 10 08:37 roff1.s
+-rw-r--r-- 1 bin      3990 Jun 10 08:37 roff2.s
+-rw-r--r-- 1 bin      4813 Jun 10 08:37 roff3.s
+-rw-r--r-- 1 bin      5149 Jun 10 08:37 roff4.s
+-rw-r--r-- 1 bin      2990 Jun 10 08:37 roff5.s
+-rw-r--r-- 1 bin      6207 Jun 10 08:37 roff7.s
+-rw-r--r-- 1 bin      1436 Jun 10 08:37 roff8.s
+-rw-r--r-- 1 bin     15113 Jun 10 08:37 suftab.s
+# ls
+s1
+s2
+s3
+s4
+s7
+# chown bin *
+# ls -al
+total 12
+drwxrwxrwx 7 root      112 Sep  8 11:24 .
+drwxrwxrwx 7 root      112 Sep  8 11:24 ..
+drwxr-xr-x 2 bin      1408 Sep  8 11:27 s1
+drwxr-xr-x 2 bin       816 Sep  8 11:27 s2
+drwxr-xr-x 2 bin       512 Sep  8 11:27 s3
+drwxr-xr-x 2 bin      1376 Sep  8 11:27 s4
+drwxr-xr-x 2 bin       272 Sep  8 11:27 s7
+# chdir ..
+# ls
+s1
+s2
+s3
+s4
+s7
+# chdir ..
+# ls
+s1
+s2
+s3
+s4
+s7
+# chdir /@chdir ..
+# ls
+s1
+s2
+s3
+s4
+s7
+# chdir /usr
+# ls -al
+total 42
+drwxr-xr-x41 bin       656 Sep  8 00:36 .
+drwxr-xr-x 9 bin       192 Sep  8 00:08 ..
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      288 Aug 18 18:17 alex
+drwxrwxrwx 2 root      112 Aug 18 18:17 amitb
+drwxrwxrwx 2 andrew     32 Aug 25 12:45 andrew
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxrwxrwx 2 ben        32 Aug 22 21:53 ben
+drwxr-xr-x 2 bin       480 Sep  7 21:04 bin
+drwxrwxrwx 2 bx        128 Aug 18 18:17 bx
+drwxr-xr-x 2 bin       480 Aug 28 11:55 c
+drwxrwxrwx 2 root       96 Aug 18 12:23 cody
+drwxrwxrwx 2 bin        32 Aug 18 11:15 dnm
+drwxrwxrwx 2 domini     64 Aug 18 16:50 dominic
+drwxrwxrwx 2 root       32 Aug 18 13:17 doug
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 root       32 Aug 18 14:20 hacker
+drwxrwxrwx 2 105        32 Aug 18 11:15 hash
+drwxr-xr-x 2 jackso    128 Aug 25 14:48 jackson
+drwxrwxrwx 2 joe        32 Aug 18 11:15 joe
+drwxrwxrwx 2 jordan    144 Aug 18 16:46 jordan
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxrwxrwx 2 kevin     128 Aug 18 15:29 kevin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 13:55 michael
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxrwxrwx 2 nick      144 Aug 29 09:40 nick
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 7 thalia    208 Sep  8 00:43 puzzle
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxrwxrwx 7 root      112 Sep  8 11:24 source
+drwxr-xr-x 5 bin       464 Sep  7 23:18 sys
+drwxr-xr-x 3 thalia    320 Sep  8 00:48 thalia
+drwxrwxrwx 2 bin        48 Aug 18 13:31 tmp
+drwxrwxrwx 2 198        32 Aug 18 11:15 ty
+drwxrwxrwx 2 root       32 Aug 18 13:49 voytilla
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+# ed /etc/rc
+70
+1,$p
+rm -f /etc/mtab
+chdir /tmp
+rm -f [a-t]* [x-z]* v*
+chdir /
+/etc/update
+i
+/etc/mount /dev/rk1 /usr/source
+.
+w
+102
+q
+# 
+;login: root
+# sync
+# 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64523
+
+;login: thai#lia
+% ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% chdir ..
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+nick
+pub
+puzzle
+sno
+source
+sys
+thalia
+tmp
+ty
+voytilla
+yang
+% chdir source
+% ls
+s1
+s2
+s3
+s4
+s7
+% pwd
+% chi#dir s1
+% pwd
+s1
+% chdir ..
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> det rm0###tm0
+%SIM-ERROR: Non-existent device: RM0###TM0
+sim> det tm0
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: thalia
+% chdir /usr/source
+chdir: bad directory
+% ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% chdir /usr
+% ls
+adm
+alex
+amitb
+andrew
+auberon
+ben
+bin
+bx
+c
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+mdec
+michael
+ncb
+newt
+nick
+pub
+puzzle
+sno
+source
+sys
+thalia
+tmp
+ty
+voytilla
+yang
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: thalia
+% ls /usr/source
+s1
+s2
+s3
+s4
+s7
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed

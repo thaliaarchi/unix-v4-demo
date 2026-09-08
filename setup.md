@@ -1773,14 +1773,14 @@ q
 
 ## Install aap manuals
 
-Following aap's [nroff and the manual](http://squoze.net/UNIX/v4/README)
+Follow aap's [Nroff and the manual](http://squoze.net/UNIX/v4/README)
 instructions. Note that `tp 1vx` is used for extraction, not `tp 1t`.
 
 ```
 login: bin
 % 
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
-sim> at tc1 nroff.tp
+sim> attach tc1 nroff.tp
 TC1: 16b format, buffering file in memory
 sim> c
 
@@ -1835,7 +1835,7 @@ total 217
 # % 
 ```
 
-Attempt to build nroff:
+Attempt to build nroff shows we need more disk space:
 
 ```
 % as nroff[1-5].s roff7.s nroff8.s
@@ -1877,4 +1877,141 @@ No space on dev 0
 No space on dev 0
 No space on dev 0
 % 
+```
+
+## Move /usr/source to another disk
+
+Follow aap's [Dumping the source code to a second disk](http://squoze.net/UNIX/v4/README)
+instructions.
+
+```
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> attach tm0 source.tap
+%SIM-INFO: TM0: creating new file
+%SIM-INFO: TM0: Tape Image 'source.tap' scanned as SIMH format
+sim> attach rk1 source.rk
+%SIM-INFO: RK1: Creating new file: source.rk
+sim> c
+
+% 
+login: root
+# /etc/mkfs /dev/rk1 4872
+isize = 103
+# /etc/mount /dev/rk1 /mnt
+# chdir /usr/source
+# tp mr *
+ 264 entries
+1393 used
+1455 last
+END
+# tp mt
+s1/ac.c
+s1/ar.s
+s1/as11.s
+s1/as12.s
+s1/as13.s
+s1/as14.s
+s1/as15.s
+[...]
+ 264 entries
+1393 used
+1455 last
+END
+# chdir /mnt
+# mkdir s1 s2 s3 s4 s7
+# chown bin *
+# chmod 755 *
+# tp mx
+END
+# chdir /usr/source/s1
+# rm -f [a-f]*
+# rm -f *
+# chdir ../s2
+# rm -f *
+# chdir ../s3
+# rm -f *
+# chdir ../s4
+# rm -f [a-f]*
+# rm -f *
+# chdir ../s7
+# rm -f *
+# chdir ..
+# rmdir *
+# chdir /
+# /etc/umount /dev/rk1
+# /etc/mount /dev/rk1 /usr/source
+# chdir /usr/source
+# ls
+s1
+s2
+s3
+s4
+s7
+# ls s7
+a.out
+nroff1.s
+nroff2.s
+nroff3.s
+nroff4.s
+nroff5.s
+nroff8.s
+roff1.s
+roff2.s
+roff3.s
+roff4.s
+roff5.s
+roff7.s
+roff8.s
+suftab.s
+```
+
+It has some strange issues now with `..`:
+
+```
+# chdir ..
+# ls
+s1
+s2
+s3
+s4
+s7
+# chdir ..
+# ls
+s1
+s2
+s3
+s4
+s7
+% pwd
+% chdir s1
+% pwd
+s1
+```
+
+```
+# ed /etc/rc
+70
+1,$p
+rm -f /etc/mtab
+chdir /tmp
+rm -f [a-t]* [x-z]* v*
+chdir /
+/etc/update
+i
+/etc/mount /dev/rk1 /usr/source
+.
+w
+102
+q
+# 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> detach tm0
+```
+
+Add it to boot.ini:
+
+```
+attach rk0 disk.rk
+attach rk1 source.rk
 ```
