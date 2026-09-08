@@ -3,6 +3,8 @@
  * copyright 1973 bell telephone laboratories inc.
  */
 
+#include "/usr/sys/stat.h"
+
 #define	intr	2
 #define	quit	3
 #define linesiz 1000
@@ -804,11 +806,11 @@ char *s;
 
 runcom()
 {
-	int buf[40];
+	struct stat buf;
 
-	if(stat(linep, buf) < 0)
+	if(stat(linep, &buf) < 0)
 		return(0);
-	if((buf[2]&060111) != 0)
+	if((buf.st_mode&060111) != 0)
 		return(0);
 	return(1);
 }

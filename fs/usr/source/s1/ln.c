@@ -3,17 +3,7 @@
  * ln target [ new name ]
  */
 
-struct ibuf {
-	int	inum;
-	int	iflags;
-	char	inl;
-	char	iuid;
-	int	isize;
-	int	iaddr[8];
-	char	*ictime[2];
-	char	*imtime[2];
-	int	fill;
-};
+#include "/usr/sys/stat.h"
 
 #define	DIR	040000
 #define	FMT	060000
@@ -21,7 +11,7 @@ struct ibuf {
 main(argc, argv)
 char **argv;
 {
-	static struct ibuf statb;
+	static struct stat statb;
 	register char *np;
 
 	if (argc<2) {
@@ -36,7 +26,7 @@ char **argv;
 		argv[2] = np;
 	}
 	stat(argv[1], &statb);
-	if ((statb.iflags&FMT) == DIR) {
+	if ((statb.st_mode&FMT) == DIR) {
 		write(1, "No directory link\n", 18);
 		exit(1);
 	}

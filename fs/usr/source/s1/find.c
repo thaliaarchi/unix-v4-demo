@@ -1,3 +1,4 @@
+#
 /* find -- find files in a pathname.
 	Use of find is documented in /usr/man/man1/find.1 .
 
@@ -5,6 +6,9 @@
 	causes each file name to be printed along with a period
 	if the predicates succeed.
  */
+
+#include "/usr/sys/stat.h"
+
 int randlast;
 char *pathname;
 int verbose;
@@ -17,20 +21,7 @@ char *fname, *path;
 int now[2];
 int ap, ac;
 char **av;
-
-struct ibuf {
-	int	idev;
-	int	inum;
-	int	iflags;
-	char	inl;
-	char	iuid;
-	char	igid;
-	char	isize0;
-	int	isize;
-	int	iaddr[8];
-	int	iatime[2];
-	int	imtime[2];
-} statb;
+struct stat statb;
 
 main(argc, argv)
 char *argv[];
@@ -234,34 +225,34 @@ print()
 mtime(p)
 struct { int f, t, s; } *p;
 {
-	return(scomp((now[0]-statb.imtime[0])*3/4,p->t,p->s));
+	return(scomp((now[0]-statb.st_mtime[0])*3/4,p->t,p->s));
 }
 atime(p)
 struct { int f, t, s; } *p;
 {
-	return(scomp((now[0]-statb.iatime[0])*3/4,p->t,p->s));
+	return(scomp((now[0]-statb.st_atime[0])*3/4,p->t,p->s));
 }
 user(p)
 struct { int f, u, s; } *p;
 {
-	return(scomp(statb.iuid,p->u,p->s));
+	return(scomp(statb.st_uid,p->u,p->s));
 }
 group(p)
 struct { int f, u; } *p;
 {
-	return(p->u == statb.igid);
+	return(p->u == statb.st_gid);
 }
 links(p)
 struct { int f, link, s; } *p;
 {
-	return(scomp(statb.inl,p->link,p->s));
+	return(scomp(statb.st_nlink,p->link,p->s));
 }
 size(p)
 struct { int f, sz, s; } *p;
 {
 	register int i;
-	i = statb.isize0 << 7;
-	i=| (statb.isize >> 9) & 0777;
+	i = statb.st_siz0 << 7;
+	i=| (statb.st_siz >> 9) & 0777;
 	return(scomp(i,p->sz,p->s));
 }
 perm(p)
@@ -269,7 +260,7 @@ struct { int f, per, s; } *p;
 {
 	int i;
 	i = (p->s=='-') ? p->per : 03777; /* '-' means only arg bits */
-	return((statb.iflags & i) == p->per);
+	return((statb.st_mode & i) == p->per);
 }
 exeq(p)
 struct { int f, com; } *p;
@@ -394,14 +385,14 @@ char *name, goal;
 		printf("--bad status %s\n",name);
 		return(0);
 	}
-	if((statb.iflags&060000)!=040000){ /*not a directory*/
+	if((statb.st_mode&060000)!=040000){ /*not a directory*/
 		if(goal=='f'||goal=='b') /* search goal for files */
 			(*func)(arg,name);
 		return(1);
 	} else  if(goal=='d' || goal=='b') /* search goal is directories */
 			(*func)(arg,name);
 
-	top = statb.isize;
+	top = statb.st_siz;
 	for(offset=0 ; offset < top ; offset =+ 512) { /* each block */
 		dsize = 512<(top-offset) ? 512 : (top-offset);
 		if((dir=open(name,0))<0) {

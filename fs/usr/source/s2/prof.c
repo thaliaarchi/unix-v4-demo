@@ -1,6 +1,9 @@
+#
 /*
  *  Print execution profile
  */
+
+#include "/usr/sys/stat.h"
 
 struct nl {
 	char name[8];
@@ -21,21 +24,6 @@ struct cnt {
 	int	cvalue;
 	int	cncall[2];
 } cbuf[200];
-
-struct inode {
-	int	idev;
-	int inum;
-	int flags;
-	char nlink;
-	char uid;
-	char	gid;
-	char	size0;
-	int size;
-	int ptr[8];
-	int ctime[2];
-	int mtime[2];
-	int fill;
-};
 
 int	buf[17];
 int	i;
@@ -112,7 +100,7 @@ char **argv;
 	read(pf, &lowpc, 2);
 	read(pf, &highpc, 2);
 	read(pf, &ncount, 2);
-	bufs = buf->size/2 - 3*(ncount+1);
+	bufs = buf->st_siz/2 - 3*(ncount+1);
 	read(pf, cbuf, ncount*6);
 	lowpc = (lowpc>>1) & 077777;
 	highpc = (highpc>>1) & 077777;

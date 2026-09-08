@@ -1,3 +1,5 @@
+#include "/usr/sys/stat.h"
+
 int open[9] { 1 };
 int n 1;
 int t 0;
@@ -10,13 +12,13 @@ main(argc,argv)
 char **argv;
 {
 	int register r,w,p;
-	struct { int x1[2], type, x2[15]; } buf;
+	struct stat buf;
 	fstat(1,&buf);
-	t = (buf.type&060000)==020000;
+	t = (buf.st_mode&060000)==020000;
 	while(argc-->1) {
 		open[n++] = creat(argv[1],0666);
 		if(stat(argv[1],&buf)>=0)
-			if((buf.type&060000)==020000)
+			if((buf.st_mode&060000)==020000)
 				t++;
 		argv++;
 	}

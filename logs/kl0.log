@@ -28154,4 +28154,3672 @@ int *p;
 }
 q
 % sync
+% pwd
+../usr/sys/ken
+% chdirt ## /usr/source/s1/
+% cat cp.c#@d@ed cp.c
+1332
+.=
+82
+1,$P
+?
+1,$p
+/*
+ * cp oldfile newfile
+ */
+
+main(argc,argv)
+char **argv;
+{
+        int buf[256];
+        int fold, fnew, n, ct, tell;
+        char *p1, *p2, *bp;
+        int mode;
+
+        tell = 0;
+        if(argc == 4 && argv[1][0] == '-' && argv[1][1] == 't') {
+                argc--;
+                argv++;
+                tell = 1;
+        }
+        if(argc != 3) {
+                write(1, "Usage: cp oldfile newfile\n", 26);
+                exit(1);
+        }
+        if((fold = open(argv[1], 0)) < 0) {
+                write(1, "Cannot open old file.\n", 22);
+                exit(1);
+        }
+        fstat(fold, buf);
+        mode = buf[2];
+        if((fnew = creat(argv[2], mode)) < 0){
+                stat(argv[2],  buf);
+                if((buf[2] & 060000) == 040000) {
+                        p1 = argv[1];
+                        p2 = argv[2];
+                        bp = buf;
+                        while(*bp++ = *p2++);
+                        bp[-1] = '/';
+                        p2 = bp;
+                        while(*bp = *p1++)
+                                if(*bp++ == '/')
+                                        bp = p2;
+                        if((fnew = creat(buf, mode)) < 0) {
+                                write(1, "Cannot creat new file.\n", 23);
+                                exit(1);
+                        }
+                } else {
+                        write(1, "Cannot creat new file.\n", 23);
+                        exit(1);
+                }
+        }
+        while(n = read(fold,  buf,  512)) {
+        if(n < 0) {
+                write(1, "Read error\n", 11);
+                exit(1);
+        } else
+                if(write(fnew, buf, n) != n){
+                        write(1, "Write error.\n", 13);
+                        exit(1);
+                }
+                ct++;
+        }
+        if(tell) {
+                conf(ct, 6, buf);
+                buf[3] = '\n';
+                write(1, buf, 7);
+        }
+        exit(0);
+}
+
+conf(n,width,buf) 
+        char    *buf;
+{
+        auto    i,a;
+
+        i = width;
+        while(i--)      buf[i] = ' ';
+
+        buf[(a = n/10)?conf(a,--width,buf):--width] = n%10 + '0';
+
+        return(++width);
+}
+
+
+.-3,$
+
+?}?
+}
+
+
+
+
+
+?
+
+?
+d
+p
+
+d
+p
+}
+/int/#.*tell/
+        int fold, fnew, n, ct, tell;
+s/;/, preserve/#;p#/p
+        int fold, fnew, n, ct, tell, preserve;
+/tel;#l/
+        tell = 0;
+s/ / = preserve /p
+        tell = preserve = 0;
+
+        if(argc == 4 && argv[1][0] == '-' && argv[1][1] == 't') {
+.,/}/p
+        if(argc == 4 && argv[1][0] == '-' && argv[1][1] == 't') {
+                argc--;
+                argv++;
+                tell = 1;
+        }
+?if?,.c
+        while(argc > 1) {
+                @       while(argc > 1 && argv[1][0] == '-' && argv[1][2] == 0) {
+                switch(argv[1][1]) {
+                case 't':
+                        tell = 1;
+                        goto bump;
+
+                case 'p':
+                        preserve = 1;
+bump:
+                        argc--;
+                        argv++;
+                        continue;
+                default:
+                        break;
+                }
+                break;
+        }
+.
+?while?
+        while(argc > 1 && argv[1][0] == '-' && argv[1][2] == 0) {
+^
+        while(argc > 1) {
+d
+/go/
+                        goto bump;
+
+
+d
+?while?;.+15p
+        while(argc > 1 && argv[1][0] == '-' && argv[1][2] == 0) {
+                switch(argv[1][1]) {
+                case 't':
+                        tell = 1;
+                        goto bump;
+                case 'p':
+                        preserve = 1;
+bump:
+                        argc--;
+                        argv++;
+                        continue;
+                default:
+                        break;
+                }
+                break;
+        }
+g/buf/p
+        int buf[256];
+        fstat(fold, buf);
+        mode = buf[2];
+                stat(argv[2],  buf);
+                if((buf[2] & 060000) == 040000) {
+                        bp = buf;
+                        if((fnew = creat(buf, mode)) < 0) {
+        while(n = read(fold,  buf,  512)) {
+                if(write(fnew, buf, n) != n){
+                conf(ct, 6, buf);
+                buf[3] = '\n';
+                write(1, buf, 7);
+conf(n,width,buf) 
+        char    *buf;
+        while(i--)      buf[i] = ' ';
+        buf[(a = n/10)?conf(a,--width,buf):--width] = n%10 + '0';
+!grep -n /usr/source/s3/#@!grep -n '^fstat' /usr/source/s1#3/*
+Arg list too long
+!
+q#w
+1485
+q
+% chdir /usr;s##/source/s3
+% grep -n '^fstat' *
+% chdir ../s4
+% grep -n '^fstat'* ## *
+Arg list too long
+% ls
+abort.s
+atan.s
+atan2.s
+atof.s
+chdir.s
+chmod.s
+chown.s
+close.s
+cos.s
+crand.s
+creat.s
+crt0.s
+crypt.s
+dup.s
+ecvt.s
+errlst.c
+execl.s
+execv.s
+exit.s
+exp.s
+ffltpr.s
+floor.s
+fltpr.s
+fmod.s
+fork.s
+fstat.s
+gamma.s
+getc.s
+getchr.s
+getcsw.s
+getgid.s
+getpw.c
+getuid.s
+gtty.s
+hmul.s
+hsw.s
+kill.s
+link.s
+locv.s
+log.s
+ltod.s
+makdir.s
+mcrt0.s
+mdate.s
+mknod.s
+mon.c
+mount.s
+nargs.s
+nice.s
+nlist.s
+open.s
+perror.c
+pipe.s
+pow.s
+printf.s
+prof.s
+putc.s
+putchr.s
+qsort.c
+cread.s
+reset.s
+retrn.s
+rin.c
+rsave.s
+sbrka.s
+seek.s
+setgid.s
+set tuid.s
+signal.s
+sin.s
+fsleep.s
+sqrt.s
+ssw.s
+stastt.s
+stime.s
+stty.s
+swiat.stch.s
+sync.s
+time.s
+
+times.s
+umount.s
+unlink.s
+wait.s
+write.s
+% / C library -- fstat
+
+/ error = fstat(file, statbuf);
+
+/ int statbuf[17] or
+/ char statbuf[34]
+/ as appropriate
+
+.globl  _fstat, retrn, cerror
+
+_fstat:
+        mov     r5,-(sp)
+        mov     sp,r5
+        mov     4(r5),r0
+        mov     6(r5),0f
+        sys     0; 9f
+        bec     1f
+        jmp     cerror
+1:
+        clr     r0
+        jmp     retrn
+.data
+9:
+        sys     fstat; 0:..
+% chdir /usr/sys/ken
+% grep -n '^fstat' *
+sys3.c:201 fstat()
+% ed sys3.c
+4789
+/fstat/;/^}p#/p
+fstat()
+{
+        register *fp;
+
+        fp = getf(u.u_ar0[R0]);
+        if(fp == NULL)
+                return;
+        stat1(fp->f_inode, u.u_arg[0]);
+}
+q
+% grep -n '^stat1' *
+sys3.c:223 stat1(ip, ub)
+% ed sys3.c
+4789
+/sy#tat1/
+        stat1(fp->f_inode, u.u_arg[0]);
+//
+        stat1(ip, u.u_arg[1]);
+//
+stat1(ip, ub)
+.,/^}/p
+stat1(ip, ub)
+int *ip;
+{
+        register i, *bp, *cp;
+
+        iupdat(ip);
+        bp = bread(ip->i_dev, ldiv(ip->i_number+31, 16));
+        cp = bp->b_addr + 32*lrem(ip->i_number+31, 16) + 24;
+        ip = &(ip->i_dev);
+        for(i=0; i<14; i++) {
+                suword(ub, *ip++);
+                ub =+ 2;
+        }
+        for(i=0; i<4; i++) {
+                suword(ub, *cp++);
+                ub =+ 2;
+        }
+        brelse(bp);
+}
+q
+% chdir /usr/source/s3@2#chdir /usr/source/s2
+% ed cp.c
+?
+q
+% ../###chdir ../s1
+% ed cp.c
+1485
+1,$p
+/*
+ * cp oldfile newfile
+ */
+
+main(argc,argv)
+char **argv;
+{
+        int buf[256];
+        int fold, fnew, n, ct, tell, preserve;
+        char *p1, *p2, *bp;
+        int mode;
+
+        tell = preserve = 0;
+        while(argc > 1 && argv[1][0] == '-' && argv[1][2] == 0) {
+                switch(argv[1][1]) {
+                case 't':
+                        tell = 1;
+                        goto bump;
+                case 'p':
+                        preserve = 1;
+bump:
+                        argc--;
+                        argv++;
+                        continue;
+                default:
+                        break;
+                }
+                break;
+        }
+        if(argc != 3) {
+                write(1, "Usage: cp oldfile newfile\n", 26);
+                exit(1);
+        }
+        if((fold = open(argv[1], 0)) < 0) {
+                write(1, "Cannot open old file.\n", 22);
+                exit(1);
+        }
+        fstat(fold, buf);
+        mode = buf[2];
+        if((fnew = creat(argv[2], mode)) < 0){
+                stat(argv[2],  buf);
+                if((buf[2] & 060000) == 040000) {
+                        p1 = argv[1];
+                        p2 = argv[2];
+                        bp = buf;
+                        while(*bp++ = *p2++);
+                        bp[-1] = '/';
+                        p2 = bp;
+                        while(*bp = *p1++)
+                                if(*bp++ == '/')
+                                        bp = p2;
+                        if((fnew = creat(buf, mode)) < 0) {
+                                write(1, "Cannot creat new file.\n", 23);
+                                exit(1);
+                        }
+                } else {
+                        write(1, "Cannot creat new file.\n", 23);
+                        exit(1);
+                }
+        }
+        while(n = read(fold,  buf,  512)) {
+        if(n < 0) {
+                write(1, "Read error\n", 11);
+                exit(1);
+        } else
+                if(write(fnew, buf, n) != n){
+                        write(1, "Write error.\n", 13);
+                        exit(1);
+                }
+                ct++;
+        }
+        if(tell) {
+                conf(ct, 6, buf);
+                buf[3] = '\n';
+                write(1, buf, 7);
+        }
+        exit(0);
+}
+
+conf(n,width,buf) 
+        char    *buf;
+{
+        auto    i,a;
+
+        i = width;
+        while(i--)      buf[i] = ' ';
+
+        buf[(a = n/10)?conf(a,--width,buf):--width] = n%10 + '0';
+
+        return(++width);
+}
+q
+% chdir /usr/sys
+% ls
+a.out
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% grep -n stat *
+buf.h:1 #_trap1","_psig"f#_nosys"B"_nullsys"R"_signal"\"_core"$$_exit"t'_schar"@8_namei"~5_access"\9_rexit"Z'_fork"P)_read"+_write"$+_open"N+_close"j,_wait"j(_creat"|+_link"d-_unlink"h0_exec"^$_chdir"n0_gtime"p/_mknod"v._chmod"H1_chown"
+1_sbreak"4*_stat"F2_seek"-_smount"V3_sumount"F4_setuid"4/_getuid"X/_stime"
+/_fstat" 2_smdate"L1_stty"D_gtty"ND_nice">0_sslep"@._sync"00_kill"Z5_getswit"`/_dup"*3_pipe"
+K_times"&5_profil"N5_setgid"r/_getgid"0_ssig"5_uchar"Z8_closef"28_rdwr"6+_getf"8_readp"L_writep"
+L_open1"P
+lib1:218 _nchrdev _getswit"rsave L1rretrn _gtime"L2&_stime"*_suser L4P_wakeup L3P_setuid"TL10000lL6tL5t_getuid"xL7_setgid"L10001*L92L82_getgid"6L10L_sync"P_update L11Z_nice"^L13rL14L12_unlink"_uchar _namei L15
+_prele _iget L16DL170_panic L10002ZL18~_writei _iput _chdir"L19dL20BL21:_access _chmod"hL22&_owner L23 _chown"*L24hL25bL26^_smdate"lL27<L286_iupdat _fstat"@_getf L29b_stat1"_stat"fL30_ldiv _bread _lrem L32|L33"_suword L34L35$L36@
+proc.h:2        char    p_stat;
+proc.h:17 /* stat codes */
+tty.h:20        char    t_state;
+% grep -n mak *###j *
+conf.h:4        char    d_major;
+% ed conf.h
+291
+1,23p
+struct
+{
+        char    d_minor;
+        char    d_major;
+};
+
+struct  bdevsw
+{
+        int     (*d_open)();
+        int     (*d_close)();
+        int     (*d_strategy)();
+        int     *d_tab;
+} bdevsw[];
+int     nblkdev;
+
+struct  cdevsw
+{
+        int     (*d_open)();
+        int     (*d_close)();
+        int     (*d_read)();
+        int     (*d_write)();
+        int     (*d_sgtty)();
+} cdevsw[];
+q
+% ls
+a.out
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% cat user.h
+struct user {
+        int     u_rsav[2];              /* must be first */
+        int     u_fsav[25];             /* must be second */
+        char    u_segflg;
+        char    u_error;
+        char    u_uid;
+        char    u_gid;
+        char    u_ruid;
+        char    u_rgid;
+        int     u_procp;
+        char    *u_base;
+        char    *u_count;
+        char    *u_offset[2];
+        int     *u_cdir;
+        char    u_dbuf[DIRSIZ];
+        char    *u_dirp;
+        struct  {
+                int     u_ino;
+                char    u_name[DIRSIZ];
+        } u_dent;
+        int     *u_pdir;
+        int     u_uisa[8];
+        int     u_uisd[8];
+        int     u_ofile[NOFILE];
+        int     u_arg[5];
+        int     u_tsize;
+        int     u_dsize;
+        int     u_ssize;
+        int     u_qsav[2];
+        int     u_ssav[2];
+        int     u_signal[NSIG];
+        int     u_utime;
+        int     u_stime;
+        int     u_cutime[2];
+        int     u_cstime[2];
+        int     *u_ar0;
+        int     u_prof[4];
+        char    u_nice;
+        char    u_dsleep;
+} u;    /* u = 140000 */
+% ls
+a.out
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% cat buf.h
+struct buf {
+        int     b_flags;
+        struct  buf *b_forw;
+        struct  buf *b_back;
+        struct  buf *av_forw;
+        struct  buf *av_back;
+        int     b_dev;
+        int     b_wcount;
+        char    *b_addr;
+        char    *b_blkno;
+        char    b_error;
+        char    *b_resid;
+} buf[NBUF];
+
+/*
+ * forw and back are shared with "buf" struct.
+ */
+struct devtab {
+        char    d_active;
+        char    d_errcnt;
+        struct  buf *b_forw;
+        struct  buf *b_back;
+        struct  buf *d_actf;
+        struct  buf *d_actl;
+};
+
+struct  buf bfreelist;
+
+#define B_WRITE 0
+#define B_READ  01
+#define B_DONE  02
+#define B_ERROR 04
+#define B_BUSY  010
+#define B_XMEM  060
+#define B_WANTED 0100
+#define B_RELOC 0200
+#define B_ASYNC 0400
+#define B_DELWRI 01000
+% cat file.h
+struct file {
+        char    f_flag;
+        char    f_count;
+        int     f_inode;
+        char    *f_offset[2];
+} file[NFILE];
+
+/* flags */
+#define FREAD   01
+#define FWRITE  02
+#define FPIPE   04
+% cat inode.h
+struct inode {
+        char    i_flag;
+        char    i_count;
+        int     i_dev;
+        int     i_number;
+        int     i_mode;
+        char    i_nlink;
+        char    i_uid;
+        char    i_gid;
+        char    i_size0;
+        char    *i_size1;
+        int     i_addr[8];
+        int     i_lastr;
+} inode[NINODE];
+
+/* flags */
+#define ILOCK   01
+#define IUPD    02
+#define IACC    04
+#define IMOUNT  010
+#define IWANT   020
+#define ITEXT   040
+
+/* modes */
+#define IALLOC  0100000
+#define IFMT    060000
+#define         IFDIR   040000
+#define         IFCHR   020000
+#define         IFBLK   060000
+#define ILARG   010000
+#define ISUID   04000
+#define ISGID   02000
+#define IREAD   0400
+#define IWRITE  0200
+#define IEXEC   0100
+% ed s#ken/sys3.c
+4789
+/^stat1/;/^}/p
+stat1(ip, ub)
+int *ip;
+{
+        register i, *bp, *cp;
+
+        iupdat(ip);
+        bp = bread(ip->i_dev, ldiv(ip->i_number+31, 16));
+        cp = bp->b_addr + 32*lrem(ip->i_number+31, 16) + 24;
+        ip = &(ip->i_dev);
+        for(i=0; i<14; i++) {
+                suword(ub, *ip++);
+                ub =+ 2;
+        }
+        for(i=0; i<4; i++) {
+                suword(ub, *cp++);
+                ub =+ 2;
+        }
+        brelse(bp);
+}
+?for?i
+        /* @    /* copy the modified time from the directory entry */
+.
+?for?
+        for(i=0; i<14; i++) {
+i
+        /* copy i_dev through i_addr from struct inode */
+.
+/for/-1
+        /* copy i_dev through i_addr from struct inode */
+//
+        for(i=0; i<14; i++) {
+.#^
+        /* copy i_dev through i_addr from struct inode */
+//
+        for(i=0; i<14; i++) {
+//
+        for(i=0; i<4; i++) {
+^
+        /* copy the modified time from the directory entry */
+c
+        /* copy the time #s from the disk inode */
+.
+.-3
+                suword(ub, *ip++);
+
+                ub =+ 2;
+
+        }
+
+        /* copy the times from the disk inode */
+.-4
+        for(i=0; i<14; i++) {
+^
+        /* copy i_dev through i_addr from struct inode */
+s/struct/the/
+w
+4879
+q
+% ls
+a.out
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+systm.h
+text.h
+tty.h
+user.h
+% ed stat.h
+?
+a
+struct stat {
+        int     st_dev;
+        int     st_ino;
+.
+s/$/    /* inode */
+?
+s/$/    \?#/* inode *\//p
+        int     st_ino; /* inode */
+^
+        int     st_dev;
+s/$/    \?#/* device major and minor */
+.
+        int     st_dev; /* device major and minor *
+
+        int     st_ino; /* inode */
+%#^@3@2
+        int     st_dev; /* device major and minor *
+s/$/\//p
+        int     st_dev; /* device major and minor */
+$a
+        int     st_mode;        /* mode flags */
+        int     st_nlink;       /* numbero# of links to file */
+        @.
+s/int/char/
+a
+        char    st_uid; /#      /* user ID of owner */
+        char    st_gd#id;               /(#* owner ID of###########us##group ID of owner */
+        char    st_size0;       /* high byte of 25#3-bit size */
+        int     st_size;        /* low word of 24-bit size */
+        int     st_addr[8];     /* block numbers or device number */
+        /*unsigned*/int st_atime[2];    /* time of last access */
+        /*unsogne####igned*/int st_mtime[2];    /* time of last modification */
+};
+.
+`,@1,$p
+struct stat {
+        int     st_dev; /* device major and minor */
+        int     st_ino; /* inode */
+        int     st_mode;        /* mode flags */
+        char    st_nlink;       /* number of links to file */
+        char    st_uid;         /* user ID of owner */
+        char    st_gid;         /* group ID of owner */
+        char    st_size0;       /* high byte of 23-bit size */
+        int     st_size;        /* low word of 24-bit size */
+        int     st_addr[8];     /* block numbers or device number */
+        /*unsigned*/int st_atime[2];    /* time of last access */
+        /*unsigned*/int st_mtime[2];    /* time of last modification */
+};
+2,3s/\//        /p
+        int     st_ino;         * inode */
+s/@2,3s/\*/\/*/p
+        int     st_ino;         /* inode */
+1,$#p!@1,$p
+struct stat {
+        int     st_dev;         /* device major and minor */
+        int     st_ino;         /* inode */
+        int     st_mode;        /* mode flags */
+        char    st_nlink;       /* number of links to file */
+        char    st_uid;         /* user ID of owner */
+        char    st_gid;         /* group ID of owner */
+        char    st_size0;       /* high byte of 23-bit size */
+        int     st_size;        /* low word of 24-bit size */
+        int     st_addr[8];     /* block numbers or device number */
+        /*unsigned*/int st_atime[2];    /* time of last access */
+        /*unsigned*/int st_mtime[2];    /* time of last modification */
+};
+w
+503
+q
+% pwd
+../usr/sys
+% chdir /usr/source/s1
+% ed ls.c
+7070
+/struct/
+struct {
+//
+struct ibuf {
+.,/^}/p
+struct ibuf {
+        int     idev;
+        int     inum;
+        int     iflags;
+        char    inl;
+        char    iuid;
+        char    igid;
+        char    isize0;
+        int     isize;
+        int     iaddr[8];
+        char    *iatime[2];
+        char    *imtime[2];
+};
+g/idev/s//st_dev/p
+        int     st_dev;
+                rlastp.st_dev =+ 512;
+g/inum/s//st_ino/g#p
+        int     st_ino;
+                        statb.st_ino = -1;
+                rep->lnum = statb.st_ino;
+g/iflags/s//st_mode/gp
+        int     st_mode;
+                        statb.st_mode = 0;
+                statb.st_mode =& ~(ISARG |  DIR);
+                if ((statb.st_mode&IFMT) == 060000) {
+                        statb.st_mode =& ~020000;
+                } else if ((statb.st_mode&IFMT)==040000) {
+                        statb.st_mode =& ~IFMT;
+                        statb.st_mode =| DIR;
+                rep->lflags = statb.st_mode;
+g/inl/s//st_nlink/gp
+        char    st_nlink;
+                rep->lnl = statb.st_nlink;
+g/lnl/s//l_nlink/gp
+        char    l_nlink;
+                printf("%2d ", p->l_nlink);
+                rep->l_nlink = statb.st_nlink;
+g/lflags/g#s//l_mode/gp
+        int     l_mode;
+                ep->l_mode =| ISARG;
+                if (ep->l_mode&DIR && dflg==0 || fflg) {
+                pmode(p->l_mode);
+                if (p->l_mode & (BLK|CHR))
+        if (p->l_mode&ISARG)
+        rep->l_mode = 0;
+                rep->l_mode = statb.st_mode;
+                if (rep->l_mode & (BLK|CHR) && lflg)
+                if ((p1->l_mode&(DIR|ISARG)) == (DIR|ISARG)) {
+                        if ((p2->l_mode&(DIR|ISARG)) != (DIR|ISARG))
+                        if ((p2->l_mode&(DIR|ISARG)) == (DIR|ISARG))
+        if (p1->l_mode&ISARG)
+        if (p2->l_mode&ISARG)
+/struct/
+struct {
+//
+struct ibuf {
+.,/^}/p
+struct ibuf {
+        int     st_dev;
+        int     st_ino;
+        int     st_mode;
+        char    st_nlink;
+        char    iuid;
+        char    igid;
+        char    isize0;
+        int     isize;
+        int     iaddr[8];
+        char    *iatime[2];
+        char    *imtime[2];
+};
+g/iuid/s//st_uid/p#gp
+        char    st_uid;
+                rep->luid = statb.st_uid;
+g/igid/s//st_gid/gp
+        char    st_gid;
+                rep->lgid = statb.st_gid;
+g/luid/s//st##l_uid/p#gp
+        char    l_uid;
+                if (getname(p->l_uid&0377, tbuf)==0)
+                        printf("%-6d", p->l_uid&0377);
+                rep->l_uid = statb.st_uid;
+g/lgid/s//l_gid/gp
+        char    l_gid;
+                rep->l_gid = statb.st_gid;
+g/isize0/s//st_size0/gp
+        char    st_size0;
+                        statb.st_size0 = 0;
+                rep->lsize0 = statb.st_size0;
+                tblocks =+ nblock(statb.st_size0, statb.isize);
+g/isize/s//st_size/gp
+        int     st_size;
+                        statb.st_size = 0;
+                rep->lsize = statb.st_size;
+                tblocks =+ nblock(statb.st_size0, statb.st_size);
+g/lsize0/s//st_s####l_size0/gp
+        char    l_size0;
+                        printf("%7s", locv(p->l_size0, p->lsize));
+                printf("%4d ", nblock(p->l_size0, p->lsize));
+                rep->l_size0 = statb.st_size0;
+g/lsize/s//l_size/gp
+        int     l_size;
+                        printf("%3d,%3d", p->l_size.dmajor&0377,
+                            p->l_size.dminor&0377);
+                        printf("%7s", locv(p->l_size0, p->l_size));
+                printf("%4d ", nblock(p->l_size0, p->l_size));
+                rep->l_size = statb.st_size;
+                        rep->l_size = statb.iaddr[0];
+g/iaddr/s//st_addr/gp
+        int     st_addr[8];
+                        rep->l_size = statb.st_addr[0];
+g/iamtime@g/iatime/s//st_atime/gp
+        char    *st_atime[2];
+                        rep->lmtime[0] = statb.st_atime[0];
+                        rep->lmtime[1] = statb.st_atime[1];
+g/lmtime/s//l_mtime/gp
+        char    *l_mtime[2];
+                printf(" %-12.12s ", ctime(p->l_mtime)+4);
+                rep->l_mtime[0] = statb.imtime[0];
+                rep->l_mtime[1] = statb.imtime[1];
+                        rep->l_mtime[0] = statb.st_atime[0];
+                        rep->l_mtime[1] = statb.st_atime[1];
+                if (p2->l_mtime[0] > p1->l_mtime[0])
+                else if (p2->l_mtime[0] < p1->l_mtime[0])
+                else if (p2->l_mtime[1] > p1->l_mtime[1])
+                else if (p2->l_mtime[1] < p1->l_mtime[1])
+g/imtime/s//l_mtime/gp
+        char    *l_mtime[2];
+                rep->l_mtime[0] = statb.l_mtime[0];
+                rep->l_mtime[1] = statb.l_mtime[1];
+/struct/
+struct lbuf *ap1, *ap2;
+//
+        register struct lbuf *p1, *p2;
+/^struct/
+struct {
+.,/^}/p
+struct {
+        int     fdes;
+        int     nleft;
+        char    *nextc;
+        char    buff[512];
+} inf;
+//
+};
+//
+};
+//
+};
+/^strut/
+?
+/^str/
+struct  lbuf    *lastp  &end;
+//
+struct  lbuf    *rlastp &end;
+//
+struct lbuf *ap;
+/^struct/
+struct lbuf *ap1, *ap2;
+//
+struct {
+.,/}/p
+struct {
+        int     fdes;
+        int     nleft;
+        char    *nextc;
+        char    buff[512];
+} inf;
+
+
+
+struct ibuf {
+.,/^}/p
+struct ibuf {
+        int     st_dev;
+        int     st_ino;
+        int     st_mode;
+        char    st_nlink;
+        char    st_uid;
+        char    st_gid;
+        char    st_size0;
+        int     st_size;
+        int     st_addr[8];
+        char    *st_atime[2];
+        char    *l_mtime[2];
+};
+
+
+
+struct lbuf {
+.,/^}/p
+struct lbuf {
+        char    lname[14];
+        int     lnum;
+        int     l_mode;
+        char    l_nlink;
+        char    l_uid;
+        char    l_gid;
+        char    l_size0;
+        int     l_size;
+        char    *l_mtime[2];
+};
+q
+% ed ls.c
+7070
+1,/^main/p
+#
+/*
+ * list file or directory
+ */
+
+struct {
+        int     fdes;
+        int     nleft;
+        char    *nextc;
+        char    buff[512];
+} inf;
+
+struct ibuf {
+        int     idev;
+        int     inum;
+        int     iflags;
+        char    inl;
+        char    iuid;
+        char    igid;
+        char    isize0;
+        int     isize;
+        int     iaddr[8];
+        char    *iatime[2];
+        char    *imtime[2];
+};
+
+struct lbuf {
+        char    lname[14];
+        int     lnum;
+        int     lflags;
+        char    lnl;
+        char    luid;
+        char    lgid;
+        char    lsize0;
+        int     lsize;
+        char    *lmtime[2];
+};
+
+struct lbufx {
+        char    *namep;
+};
+
+int     aflg, dflg, lflg, sflg, tflg, uflg, iflg, fflg;
+int     fout;
+int     rflg    1;
+int     flags;
+int     uidfil  -1;
+int     tblocks;
+int     statreq;
+struct  lbuf    *lastp  &end;
+struct  lbuf    *rlastp &end;
+char    *dotp   ".";
+
+#define IFMT    060000
+#define DIR     0100000
+#define CHR     020000
+#define BLK     040000
+#define ISARG   01000
+#define LARGE   010000
+#define SUID    04000
+#define SGID    02000
+#define ROWN    0400
+#define WOWN    0200
+#define XOWN    0100
+#define RGRP    040
+#define WGRP    020
+#define XGRP    010
+#define ROTH    04
+#define WOTH    02
+#define XOTH    01
+
+main(argc, argv)
+g/idev/s//st_dev/gp
+g/inu   int     st_dev;
+  m             rlastp.s/s//st_ino/gpt_dev =+ 512;
+m/s//l_ino/gp
+g/lfl?
+ags/s//l_mode/gp
+g/lnl   /s//l_nlink/gp
+g/luid/s//l_uid/gp
+g/lgid/s//l_gid/gp
+g/lsize0/s//l_size0/gp
+g/lsize/s//l_size/gp
+g/lmtime/s//l_mtime/gpint       l_mode;
+                ep->l_mode =| ISARG;
+                if (ep->l_mode&DIR && dflg==0 || fflg) {
+                pmode(p->l_mode);
+                if (p->l_mode & (BLK|CHR))
+        if (p->l_mode&ISARG)
+        rep->l_mode = 0;
+                rep->l_mode = statb.iflags;
+                if (rep->l_mode & (BLK|CHR) && lflg)
+                if ((p1->l_mode&(DIR|ISARG)) == (DIR|ISARG)) {
+                        if ((p2->l_mode&(DIR|ISARG)) != (DIR|ISARG))
+                        if ((p2->l_mode&(DIR|ISARG)) == (DIR|ISARG))
+        if (p1->l_mode&ISARG)
+        if (p2->l_mode&ISARG)
+        char    l_nlink;
+                printf("%2d ", p->l_nlink);
+                rep->l_nlink = statb.inl;
+        char    l_uid;
+                if (getname(p->l_uid&0377, tbuf)==0)
+                        printf("%-6d", p->l_uid&0377);
+                rep->l_uid = statb.iuid;
+        char    l_gid;
+                rep->l_gid = statb.igid;
+        char    l_size0;
+                        printf("%7s", locv(p->l_size0, p->lsize));
+                printf("%4d ", nblock(p->l_size0, p->lsize));
+                rep->l_size0 = statb.isize0;
+        int     l_size;
+                        printf("%3d,%3d", p->l_size.dmajor&0377,
+                            p->l_size.dminor&0377);
+                        printf("%7s", locv(p->l_size0, p->l_size));
+                printf("%4d ", nblock(p->l_size0, p->l_size));
+                rep->l_size = statb.isize;
+                        rep->l_size = statb.iaddr[0];
+q
+?
+q
+% ed sta###ls.c
+7070
+
+?
+g/idev/s//st_dev/g
+g/inum/s//st_ino/g
+g/iflags/s//st_mode/g
+g/inl/s//st_nlink/g
+g/iuid/s//st_uid/g
+g/igid/s//st_gid/g
+g/isize0/s//st_size0/g
+g/isize/s//st_size/g
+g/iaddr/s//st_addr/g
+g/iatime/s//st_atime/g
+g/imtime/s//st_mtime/g
+g/lname/s//l_name/g
+g/lnum/s//l_ino/g
+g/lflags/s//l_mode/g
+g/lnl/s//l_nlink/g
+g/luid/s//l_uid/g
+g/lgid/s//l_gid/g
+g/lsize0/s//l_size0/g
+g/lsize/s//l_size/g
+g/lmtime/s//l_mtime/g
+w ls2.c
+7194
+!diff ls.c ls2.c
+14,24c14,24
+*       int     idev;
+*       int     inum;
+*       int     iflags;
+*       char    inl;
+*       char    iuid;
+*       char    igid;
+*       char    isize0;
+*       int     isize;
+*       int     iaddr[8];
+*       char    *iatime[2];
+*       char    *imtime[2];
+---
+.       int     st_dev;
+.       int     st_ino;
+.       int     st_mode;
+.       char    st_nlink;
+.       char    st_uid;
+.       char    st_gid;
+.       char    st_size0;
+.       int     st_size;
+.       int     st_addr[8];
+.       char    *st_atime[2];
+.       char    *st_mtime[2];
+28,36c28,36
+*       char    lname[14];
+*       int     lnum;
+*       int     lflags;
+*       char    lnl;
+*       char    luid;
+*       char    lgid;
+*       char    lsize0;
+*       int     lsize;
+*       char    *lmtime[2];
+---
+.       char    l_name[14];
+.       int     l_ino;
+.       int     l_mode;
+.       char    l_nlink;
+.       char    l_uid;
+.       char    l_gid;
+.       char    l_size0;
+.       int     l_size;
+.       char    *l_mtime[2];
+146c146
+*               ep->lflags =| ISARG;
+---
+.               ep->l_mode =| ISARG;
+151c151
+*               if (ep->lflags&DIR && dflg==0 || fflg) {
+---
+.               if (ep->l_mode&DIR && dflg==0 || fflg) {
+176c176
+*       if (p->lnum == -1)
+---
+.       if (p->l_ino == -1)
+179c179
+*               printf("%5d ", p->lnum);
+---
+.               printf("%5d ", p->l_ino);
+181,183c181,183
+*               pmode(p->lflags);
+*               printf("%2d ", p->lnl);
+*               if (getname(p->luid&0377, tbuf)==0)
+---
+.               pmode(p->l_mode);
+.               printf("%2d ", p->l_nlink);
+.               if (getname(p->l_uid&0377, tbuf)==0)
+186,189c186,189
+*                       printf("%-6d", p->luid&0377);
+*               if (p->lflags & (BLK|CHR))
+*                       printf("%3d,%3d", p->lsize.dmajor&0377,
+*                           p->lsize.dminor&0377);
+---
+.                       printf("%-6d", p->l_uid&0377);
+.               if (p->l_mode & (BLK|CHR))
+.                       printf("%3d,%3d", p->l_size.dmajor&0377,
+.                           p->l_size.dminor&0377);
+191,192c191,192
+*                       printf("%7s", locv(p->lsize0, p->lsize));
+*               printf(" %-12.12s ", ctime(p->lmtime)+4);
+---
+.                       printf("%7s", locv(p->l_size0, p->l_size));
+.               printf(" %-12.12s ", ctime(p->l_mtime)+4);
+194,195c194,195
+*               printf("%4d ", nblock(p->lsize0, p->lsize));
+*       if (p->lflags&ISARG)
+---
+.               printf("%4d ", nblock(p->l_size0, p->l_size));
+.       if (p->l_mode&ISARG)
+198c198
+*               printf("%.14s\n", p->lname);
+---
+.               printf("%.14s\n", p->l_name);
+323,324c323,324
+*               if (ep->lnum != -1)
+*                       ep->lnum = dentry.dinode;
+---
+.               if (ep->l_ino != -1)
+.                       ep->l_ino = dentry.dinode;
+326c326
+*                       ep->lname[j] = dentry.dname[j];
+---
+.                       ep->l_name[j] = dentry.dname[j];
+339c339
+*               rlastp.idev =+ 512;
+---
+.               rlastp.st_dev =+ 512;
+343,344c343,344
+*       rep->lflags = 0;
+*       rep->lnum = 0;
+---
+.       rep->l_mode = 0;
+.       rep->l_ino = 0;
+348,351c348,351
+*                       statb.inum = -1;
+*                       statb.isize0 = 0;
+*                       statb.isize = 0;
+*                       statb.iflags = 0;
+---
+.                       statb.st_ino = -1;
+.                       statb.st_size0 = 0;
+.                       statb.st_size = 0;
+.                       statb.st_mode = 0;
+357,363c357,363
+*               rep->lnum = statb.inum;
+*               statb.iflags =& ~(ISARG |  DIR);
+*               if ((statb.iflags&IFMT) == 060000) {
+*                       statb.iflags =& ~020000;
+*               } else if ((statb.iflags&IFMT)==040000) {
+*                       statb.iflags =& ~IFMT;
+*                       statb.iflags =| DIR;
+---
+.               rep->l_ino = statb.st_ino;
+.               statb.st_mode =& ~(ISARG |  DIR);
+.               if ((statb.st_mode&IFMT) == 060000) {
+.                       statb.st_mode =& ~020000;
+.               } else if ((statb.st_mode&IFMT)==040000) {
+.                       statb.st_mode =& ~IFMT;
+.                       statb.st_mode =| DIR;
+365,374c365,374
+*               rep->lflags = statb.iflags;
+*               rep->luid = statb.iuid;
+*               rep->lgid = statb.igid;
+*               rep->lnl = statb.inl;
+*               rep->lsize0 = statb.isize0;
+*               rep->lsize = statb.isize;
+*               if (rep->lflags & (BLK|CHR) && lflg)
+*                       rep->lsize = statb.iaddr[0];
+*               rep->lmtime[0] = statb.imtime[0];
+*               rep->lmtime[1] = statb.imtime[1];
+---
+.               rep->l_mode = statb.st_mode;
+.               rep->l_uid = statb.st_uid;
+.               rep->l_gid = statb.st_gid;
+.               rep->l_nlink = statb.st_nlink;
+.               rep->l_size0 = statb.st_size0;
+.               rep->l_size = statb.st_size;
+.               if (rep->l_mode & (BLK|CHR) && lflg)
+.                       rep->l_size = statb.st_addr[0];
+.               rep->l_mtime[0] = statb.st_mtime[0];
+.               rep->l_mtime[1] = statb.st_mtime[1];
+376,377c376,377
+*                       rep->lmtime[0] = statb.iatime[0];
+*                       rep->lmtime[1] = statb.iatime[1];
+---
+.                       rep->l_mtime[0] = statb.st_atime[0];
+.                       rep->l_mtime[1] = statb.st_atime[1];
+379c379
+*               tblocks =+ nblock(statb.isize0, statb.isize);
+---
+.               tblocks =+ nblock(statb.st_size0, statb.st_size);
+395,396c395,396
+*               if ((p1->lflags&(DIR|ISARG)) == (DIR|ISARG)) {
+*                       if ((p2->lflags&(DIR|ISARG)) != (DIR|ISARG))
+---
+.               if ((p1->l_mode&(DIR|ISARG)) == (DIR|ISARG)) {
+.                       if ((p2->l_mode&(DIR|ISARG)) != (DIR|ISARG))
+399c399
+*                       if ((p2->lflags&(DIR|ISARG)) == (DIR|ISARG))
+---
+.                       if ((p2->l_mode&(DIR|ISARG)) == (DIR|ISARG))
+405c405
+*               if (p2->lmtime[0] > p1->lmtime[0])
+---
+.               if (p2->l_mtime[0] > p1->l_mtime[0])
+407c407
+*               else if (p2->lmtime[0] < p1->lmtime[0])
+---
+.               else if (p2->l_mtime[0] < p1->l_mtime[0])
+409c409
+*               else if (p2->lmtime[1] > p1->lmtime[1])
+---
+.               else if (p2->l_mtime[1] > p1->l_mtime[1])
+411c411
+*               else if (p2->lmtime[1] < p1->lmtime[1])
+---
+.               else if (p2->l_mtime[1] < p1->l_mtime[1])
+415c415
+*       if (p1->lflags&ISARG)
+---
+.       if (p1->l_mode&ISARG)
+418,419c418,419
+*               p1 = p1->lname;
+*       if (p2->lflags&ISARG)
+---
+.               p1 = p1->l_name;
+.       if (p2->l_mode&ISARG)
+422c422
+*               p2 = p2->lname;
+---
+.               p2 = p2->l_name;
+!
+q
+% mv ls2.c ls.c
+% ls
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+
+% cc ls.c
+21: .st_size redeclared
+% ed ls.c
+7194
+1
+#
+1,23p
+#
+/*
+ * list file or directory
+ */
+
+struct {
+        int     fdes;
+        int     nleft;
+        char    *nextc;
+        char    buff[512];
+} inf;
+
+struct ibuf {
+        int     st_dev;
+        int     st_ino;
+        int     st_mode;
+        char    st_nlink;
+        char    st_uid;
+        char    st_gid;
+        char    st_size0;
+        int     st_size;
+        int     st_addr[8];
+        char    *st_atime[2];
+3a
+
+\#include "/usr/sys/stat.h"
+.
+w
+7222
+1,10p
+#
+/*
+ * list file or directory
+
+#include "/usr/sys/stat.h"
+ */
+
+struct {
+        int     fdes;
+        int     nleft;
+3?
+5
+#include "/usr/sys/stat.h"
+
+ */
+d
+3
+ * list file or directory
+a
+ */
+.
+1,5p
+#
+/*
+ * list file or directory
+ */
+
+
+#include "/usr/sys/stat.h"
+
+
+
+struct {
+w
+7222
+q
+% cc ls.c
+6: .st_size redeclared
+23: .st_size redeclared
+25: .st_atim redeclared
+26: .st_mtim redeclared
+% ed ls.c
+7222
+6
+#include "/usr/sys/stat.h"
+23
+        int     st_size;
+5
+
+
+#include "/usr/sys/stat.h"
+
+
+
+struct {
+/struct/
+struct ibuf {
+/#.,/}/+1d
+w
+7033
+q
+% cc ls.c
+6: .st_size redeclared
+322: Bad structure
+325: Undefined structure: .ibuf
+% ed ls.c
+7033
+g/ibuf/s//stat/gp
+        struct stat statb;
+w
+7033
+q
+% cc ls.c
+6: .st_size redeclared
+% ed ls.c@
+% ed /usr/source/s@ed /usr/sys/stat.h
+503
+6
+        char    st_uid;         /* user ID of owner */
+1,$p
+struct stat {
+        int     st_dev;         /* device major and minor */
+        int     st_ino;         /* inode */
+        int     st_mode;        /* mode flags */
+        char    st_nlink;       /* number of links to file */
+        char    st_uid;         /* user ID of owner */
+        char    st_gid;         /* group ID of owner */
+        char    st_size0;       /* high byte of 23-bit size */
+        int     st_size;        /* low word of 24-bit size */
+        int     st_addr[8];     /* block numbers or device number */
+        /*unsigned*/int st_atime[2];    /* time of last access */
+        /*unsigned*/int st_mtime[2];    /* time of last modification */
+};
+q
+% ed s#ls.c
+7033
+g/st_size/gp
+?
+/#g/st_size/p
+                        statb.st_size0 = 0;
+                        statb.st_size = 0;
+                rep->l_size0 = statb.st_size0;
+                rep->l_size = statb.st_size;
+                tblocks =+ nblock(statb.st_size0, statb.st_size);
+g/st_size0/s//st_siz0/p
+                        statb.st_siz0 = 0;
+                rep->l_size0 = statb.st_siz0;
+                tblocks =+ nblock(statb.st_siz0, statb.st_size);
+g/st_size/s//st_siz/p
+                        statb.st_siz = 0;
+                rep->l_size = statb.st_siz;
+                tblocks =+ nblock(statb.st_siz0, statb.st_siz);
+g/l_size/s//l_siz/p
+        char    l_siz0;
+        int     l_siz;
+                        printf("%3d,%3d", p->l_siz.dmajor&0377,
+                            p->l_siz.dminor&0377);
+                        printf("%7s", locv(p->l_siz0, p->l_size));
+                printf("%4d ", nblock(p->l_siz0, p->l_size));
+                rep->l_siz0 = statb.st_siz0;
+                rep->l_siz = statb.st_siz;
+                        rep->l_siz = statb.st_addr[0];
+w
+7018
+q
+% ed /usr/source/stat.h
+?
+q
+% ed /usr/sys/stath.
+?
+q
+% ed /s#usr/sys/stat.h
+503
+s/_siz/@g/_size/s//_siz/gp
+        char    st_siz0;        /* high byte of 23-bit size */
+        int     st_siz; /* low word of 24-bit size */
+w
+501
+q
+% cc ls.c
+179: Illegal structure ref
+182: Illegal structure ref
+187: .l_size undefined
+% ed .#ls.c
+7018
+g/l_size/s//l_size#/p#gp
+                        printf("%7s", locv(p->l_siz0, p->l_siz));
+                printf("%4d ", nblock(p->l_siz0, p->l_siz));
+w
+7016
+q
+% cc ls.c
+% a.out
+a.out
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% mv a.out /bin/ls
+% sync
+% ed /usr/s@chdir /usr/source/s1
+% ed find.c
+8769
+g/idev/s//st_dev/g
+g/inum/s//st_ino/g
+g/iflags/s//st_mode/g
+g/inl/s//st_nlink/g
+g/iuid/s//st_uid/g
+g/igid/s//st_gid/g
+g/isize0/s//st_size0/g
+g/isize/s//st_size/g
+g/iaddr/s//st_addr/g
+g/iatime/s//st_atime/g
+g/imtime/s//st_mtime/g
+1,23p
+/* find -- find files in a pathname.
+        Use of find is documented in /usr/man/man1/find.1 .
+
+        In addition, find has a secret first arg "+" which
+        causes each file name to be printed along with a period
+        if the predicates succeed.
+ */
+int randlast;
+char *pathname;
+int verbose;
+struct anode {
+        int (*F)();
+        struct anode *L, *R;
+} node[100];
+int nn;  /* number of nodes */
+char *fname, *path;
+int now[2];
+int ap, ac;
+char **av;
+
+struct ibuf {
+        int     st_dev;
+        int     st_ino;
+?struct?,/}/d
+.-3,.+1p
+int ap, ac;
+char **av;
+
+
+main(argc, argv)
+^
+
+d
+7
+ */
+a
+
+\#include "/usr/sys/stat.h"
+.
+w
+8651
+q
+% cc find.c
+9: Unknown character
+10: External definition syntax
+10: randlast undefined
+63: Lvalue required
+68: randlast undefined
+77: Lvalue required
+82: randlast undefined
+92: Lvalue required
+97: randlast undefined
+109: Lvalue required
+161: randlast undefined
+225: Illegal structure ref
+225: Illegal lvalue
+225: Lvalue required
+225: Illegal indirection
+226: .st_mtim undefined
+226: statb undefined
+230: Illegal structure ref
+230: Illegal lvalue
+230: Lvalue required
+230: Illegal indirection
+231: statb undefined
+231: .st_atim undefined
+235: Illegal structure ref
+235: Illegal lvalue
+235: Lvalue required
+236: .st_uid undefined
+236: statb undefined
+240: Illegal structure ref
+240: Illegal lvalue
+240: Lvalue required
+241: .st_gid undefined
+241: statb undefined
+245: Illegal structure ref
+245: Illegal lvalue
+245: Lvalue required
+246: .st_nlin undefined
+246: statb undefined
+251: Illegal structure ref
+251: Illegal lvalue
+251: Lvalue required
+252: Illegal structure ref
+252: Illegal lvalue
+252: Lvalue required
+254: .st_size undefined
+254: statb undefined
+260: Illegal structure ref
+260: Illegal lvalue
+260: Lvalue required
+261: statb undefined
+261: .st_mode undefined
+385: Illegal structure ref
+385: Illegal lvalue
+385: Lvalue required
+392: Illegal structure ref
+392: Illegal lvalue
+392: Lvalue required
+419: .st_size undefined
+419: statb undefined
+419: .st_mode undefined
+% ed find.c
+ed: not found
+% ed find.c
+8651
+g/st_size?#/s//st_siz/gp
+        i = statb.st_siz0 << 7;
+        i=| (statb.st_siz >> 9) & 0777;
+        top = statb.st_siz;
+g/ibuf/s//stat/gp
+
+        for(offset=0 ; offset < top ; offset =+ 512) { /* each block */
+1
+/* find -- find files in a pathname.
+/av/\#
+?
+/av/
+char **av;
+a
+struct stat statb;
+.
+w
+8667
+q
+% cc find.c
+9: Unknown character
+10: External definition syntax
+10: randlast undefined
+22: Undefined structure: .stat
+22: Bad structure
+30: Undefined structure: .stat
+57: Undefined structure: .stat
+62: Undefined structure: .stat
+64: Lvalue required
+69: randlast undefined
+71: Undefined structure: .stat
+76: Undefined structure: .stat
+78: Lvalue required
+83: randlast undefined
+85: Undefined structure: .stat
+89: Undefined structure: .stat
+93: Lvalue required
+98: randlast undefined
+101: Undefined structure: .stat
+108: Undefined structure: .stat
+110: Lvalue required
+162: randlast undefined
+164: Undefined structure: .stat
+168: Undefined structure: .stat
+177: Undefined structure: .stat
+187: Undefined structure: .stat
+201: Undefined structure: .stat
+206: Undefined structure: .stat
+211: Undefined structure: .stat
+216: Undefined structure: .stat
+220: Undefined structure: .stat
+226: Undefined structure: .stat
+226: Illegal structure ref
+227: .st_mtim undefined
+231: Undefined structure: .stat
+231: Illegal structure ref
+232: .st_atim undefined
+236: Undefined structure: .stat
+236: Illegal structure ref
+237: .st_uid undefined
+241: Undefined structure: .stat
+241: Illegal structure ref
+242: .st_gid undefined
+246: Undefined structure: .stat
+246: Illegal structure ref
+247: .st_nlin undefined
+252: Undefined structure: .stat
+252: Illegal structure ref
+253: Illegal structure ref
+253: Illegal conversion
+255: .st_siz undefined
+255: .st_siz0 undefined
+260: Undefined structure: .stat
+261: Illegal structure ref
+262: .st_mode undefined
+266: Undefined structure: .stat
+272: Undefined structure: .stat
+285: Undefined structure: .stat
+297: Undefined structure: .stat
+330: Undefined structure: .stat
+360: Undefined structure: .stat
+382: Undefined structure: .stat
+386: Illegal structure ref
+393: Illegal structure ref
+420: .st_siz undefined
+420: .st_mode undefined
+426: Undefined structure: .stat
+436: Undefined structure: .stat
+474: Undefined structure: .stat
+% ed find.c
+8667
+9
+#include "/usr/sys/stat.h"
+l
+#include "/usr/sys/stat.h"
+1i
+\#
+.
+w
+8669
+!cc find.c
+!
+q
+% find@a.out
+Insufficient args
+% a.out . -print
+./ac.c
+./ar.s
+./as11.s
+./as12.s
+./as13.s
+./as14.s
+./as15.s
+./as16.s
+./as17.s
+./as18.s
+./as19.s
+./as21.s
+./as22.s
+./as23.s
+./as24.s
+./as25.s
+./as26.s
+./as27.s
+./as28.s
+./as29.s
+./bas0.s
+./bas1.s
+./bas2.s
+./bas3.s
+./bas4.s
+./bas5.s
+./basx.s
+./cal.c
+./cat.s
+./cc.c
+./cdb.c
+./check.c
+./chmod.c
+% mv a.out /@ls /bin/find
+/bin/find not found
+% ls /etc/bin/find
+/etc/bin/find not found
+% ls /usr/bin
+ac
+cal
+comm
+cref
+crpost
+diff
+fed
+find
+form
+grep
+mesg
+nice
+nohup
+passwd
+pfe
+prof
+pwd
+roff
+sa
+sleep
+snoQuit -- Core dumped
+% mf a.out /usr/bin/find
+mf: not found
+% rm core
+% mv a.out /usr/bin/find
+% ed ln.s#c
+686
+g/iflags/st_mode/gp
+?
+g/iflags/s/st##/st_mode/gp
+        int     st_mode;
+        if ((statb.st_mode&FMT) == DIR) {
+/struct ibuf/;/}/c
+\#include "/usr/sys/stat.h"
+.
+w
+576
+!cc ln.c
+14: Bad structure
+17: Undefined structure: .ibuf
+!
+14
+        static struct ibuf statb;
+g/ibuf/s//stat/gp
+        static struct stat statb;
+w
+576
+!cc ln.s
+File not found: ln.s
+un: _main
+!
+!cc ln.c
+!
+q
+% mv @ls /usr/@ls /bin/ln
+/bin/ln
+% mv a.out /bin/ln
+% chdir ../s2
+% ed pwd.c
+1067
+/stat/
+struct statb {int devn, inum, i[18];}x;
+c
+struct stat x;
+.
+1i
+\#include "u#/usr/sys/t#stat.h"
+
+.
+g/devn/s//st_dev/gp
+        i = x.st_dev;
+        if(x.st_dev != i) goto loop;
+g/inum/s//st_ino/gp
+        if(y.jnum != x.st_ino)goto loop1;
+g/i[/p
+?
+g/i[#\[/p
+        x.i[0] =& 060000;
+        if(x.i[0] != 040000) goto loop;
+g/i\[0\]/s//st_mode/gp
+        x.st_mode =& 060000;
+        if(x.st_mode != 040000) goto loop;
+w
+1082
+!cc pwd.c
+!
+q
+% ls /bin/pwd
+/bin/pwd not found
+% ls /etc/###usr/bin/pwd
+/eusr/bin/pwd not found
+% ls /usr/bin/pwd
+/usr/bin/pwd
+% mv a.out /usr/bin/pwd
+% pwd
+../usr/source/s2
+% ed pr.c
+4673
+/struct/
+struct inode {
+g/inode/p
+struct inode {
+        struct inode sbuf;
+        struct inode sbuf;
+g/inode/s//stat/
+1,23p
+/*
+ *   print file with headings
+ *  2+head+2+page[56]+5
+ */
+
+int     ncol    1;
+char    *header;
+int     col;
+int     icol;
+int     file;
+char    *bufp;
+int     bufs    5120;
+char    buffer[5120];
+int     line;
+char    *colp[72];
+int     peekc;
+int     fpage;
+int     page;
+int     colw;
+int     nspace;
+int     width   72;
+int     length  66;
+int     ntflg;
+4a
+
+\#include "/usrt/##/u#sys/stat.h"
+.
+/struct/
+struct stat {
+,#.,/}/p
+struct stat {
+        int dev;
+        int inum;
+        int flags;
+        char nlink;
+        char uid;
+        char gid;
+        char siz0;
+        int size;
+        int ptr[8];
+        int atime[2];
+        int mtime[2];
+};
+g/dev/s//st_dev/g
+g/inum/s//st_ino/g
+g/flags/s//st_mode/g
+g/nlink/s//st_nlink/g
+g/uid/s//st_uid/g
+g/gid/s//st_gid/g
+g/siz0/s//st_size0/g
+g/size/s//st_size/g
+g/ptr/s//st_addr/g
+g/atime/s//st_atime/g
+g/mtime/s//st_mtime/g
+/struct@?struct?
+        struct stat sbuf;
+??
+        struct stat sbuf;
+??
+struct stat {
+.,/}/d
+
+main(argc, argv)
+^
+
+^
+
+^
+int     mode;
+
+
+d
+1,23p
+/*
+ *   print file with headings
+ *  2+head+2+page[56]+5
+ */
+
+#include "/usr/sys/stat.h"
+
+int     ncol    1;
+char    *header;
+int     col;
+int     icol;
+int     file;
+char    *bufp;
+int     bufs    5120;
+char    buffer[5120];
+int     line;
+char    *colp[72];
+int     peekc;
+int     fpage;
+int     page;
+int     colw;
+int     nspace;
+int     width   72;
+.,.+23p
+int     width   72;
+int     length  66;
+int     ntflg;
+char    *tty;
+int     mode;
+
+main(argc, argv)
+char **argv;
+{
+        int nfdone;
+        int onintr();
+        extern fout;
+
+        tty = "/st_dev/ttyx";
+        fout = dup(1);
+        close(1);
+        if ((signal(2, 1) & 01) == 0)
+                signal(2, onintr);
+        fixtty();
+        for (nfdone=0; argc>1; argc--) {
+                argv++;
+                if (**argv == '-') {
+                        switch (*++*argv) {
+                        case 'h':
+w
+4557
+!cc pr.c
+6: Unknown character
+8: External definition syntax
+8: ncol undefined
+66: Lvalue required
+80: ncol undefined
+91: Bad structure
+94: Undefined structure: .stat
+96: Illegal structure ref
+98: .st_mode undefined
+103: Bad structure
+108: Undefined structure: .stat
+119: Lvalue required
+120: Lvalue required
+128: Illegal structure ref
+132: Illegal structure ref
+136: Illegal conversion
+136: Illegal indirection
+139: Illegal conversion
+139: Illegal indirection
+140: Illegal conversion
+140: Illegal indirection
+141: Illegal conversion
+141: Illegal indirection
+159: Lvalue required
+161: .st_mtim undefined
+161: ncol undefined
+177: Illegal conversion
+177: Illegal indirection
+200: ncol undefined
+!
+1i
+\#
+.
+w
+4559
+!cc pr.c
+!
+q
+% pr@@a.out
+asdasd
+asd
+
+
+Sep  7 20:33   Page 1
+
+
+asdasd
+asd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ls /bin/pr
+/bin/pr
+% mv a.out /bin/pr
+% ed prof.c
+5060
+/struct inode/;/}/p
+struct inode {
+        int     idev;
+        int inum;
+        int flags;
+        char nlink;
+        char uid;
+        char    gid;
+        char    size0;
+        int size;
+        int ptr[8];
+        int ctime[2];
+        int mtime[2];
+        int fill;
+};
+g/dev/s//st_dev/g
+g/inum/s//st_ino/g
+g/flags/s//st_mode/g
+g/nlink/s//st_nlink/g
+g/uid/s//st_uid/g
+g/gid/s//st_gid/g
+g/size0/s//st_size0/g
+g/size/s//st_size/g
+g/ptr/s//st_addr/g
+g/ctime/s//st_atime/g
+g/mtime/s//st_mtime/g
+/struct inode/gp
+?
+g/struct inode/gp
+?
+g/stt#ruct inode/
+        int     ist_dev;
+
+        int st_ino;
+^
+        int     ist_dev;
+1,23p
+/*
+ *  Print execution profile
+ */
+
+struct nl {
+        char name[8];
+        int value;
+        float time;
+        int ncall[2];
+};
+
+struct nl nl[600];
+
+struct fnl {
+        char fname[8];
+        int flag;
+        int fvalue;
+};
+
+struct cnt {
+        int     cvalue;
+        int     cncall[2];
+} cbuf[200];
+.,.+23p
+} cbuf[200];
+
+struct inode {
+        int     ist_dev;
+        int st_ino;
+        int st_mode;
+        char st_nlink;
+        char st_uid;
+        char    st_gid;
+        char    st_st_size0;
+        int st_size;
+        int st_addr[8];
+        int st_atime[2];
+        int st_mtime[2];
+        int fill;
+};
+
+int     buf[17];
+int     i;
+int     j;
+int     highpc;
+int     lowpc;
+int     ccnt;
+int     pcl;
+g/ist_dev@q
+% ed prof.c
+5060
+g/dev/s//st_dev/g
+g/inum/s//st_ino/g
+g/flags/s//st_mode/g
+g/nlink/s//st_nlink/g
+g/uid/s//st_uid/g
+g/gid/s//st_gid/g
+g/size/s//st_siz/g
+g/size0/s//st_siz0/g
+g/ptr/s//st_addr/g
+g/ctime/s//st_atime/g
+g/mtime/s//st_mtime/g
+/struct inode/
+struct inode {
+.,/^}/+1d
+1i
+\#
+.
+1,5p
+#
+/*
+ *  Print execution profile
+ */
+
+4a
+
+\#include "/usr/sys/stat.h"
+.
+w
+4929
+!cc prof.c
+!
+q
+% prof
+No mon.out
+% a.out
+No mon.out
+% ls /bin/prof
+/bin/prof not found
+% ls /usr/bin/prof
+/usr/bin/prof
+% mv a.out /usr/bin/prof
+% sync
+% ed ../@chdir ../s1
+% ed find.c
+8669
+/inc/
+#include "/usr/sys/stat.h"
+a
+
+.
+w
+8670
+q
+% cc find.c
+% ls /iusr####usr/bin/find
+/usr/bin/find
+% mv a.out /usr/bin/find
+% ed ..@chdir ../s2
+% ed /#prof.c
+4929
+/dev@g/dev/p
+        vf = open("/st_dev/vt0", 1);
+s/st_//p
+        vf = open("/dev/vt0", 1);
+w
+4926
+q
+% cc prof.c
+% a.out
+No mon.out
+% mv a.@ls /usr/bin/prof
+/usr/bin/prof
+% mv a.out /usr/bin/prof
+% ed @chdir ../s2
+% ed rm.c
+1456
+/struct/
+struct stbuf    {
+.,/}/p
+struct stbuf    {
+        int dev;
+        int inum;
+        int mode;
+        char nlink;
+        char uid;
+        char gid;
+        char siz0;
+        char siz1;
+        int addr[8];
+        int adate[2];
+        int mdate[2];
+        };
+g/dev/s//st_dev/g
+g/inum/s//st_ino/g
+g/mode/s//st_mode/g
+g/nlink/s//st_nlink/g
+g/uid/s//st_uid/g
+g/gid/s//st_gid/g
+g/siz1/s//st_siz/g
+g/siz0/s//st_siz0/g
+g/addr/s//st_addr/g
+g/adate/s//st_atime/g
+g/mdate/s//st_mtime/g
+g/stbuf/p
+struct stbuf    {
+.,/}/+1d
+1
+main(argc, argv)
+i
+\#
+
+.
+1c
+\#include "/usr/sys/stat.h"
+.
+w
+1350
+!cc rm.c
+un: _getst_u
+un: _ust_nli
+!
+/getst_u
+?
+/getst_
+?
+/getst_/p
+                if(getst_uid() == buf->st_uid)
+g/get_#st_uid/s//getuid/gp
+                if(getuid() == buf->st_uid)
+s/@g/ust_nli/s//n#unli/gp
+        if(unlink(arg))
+w
+1344
+!cc rm.c
+!
+q
+% ls /bin/rm
+/bin/rm
+% mv a.out /bin/rm
+% ed mv.c
+3189
+1,$p
+/*
+mv [-d] file1 file2
+
+unlink file2
+link file1 file2
+unlink file1
+*/
+int stbuf[42];
+struct sbuf {
+        int dev;
+        int inum;
+        int imode;
+        char nlink;
+        char uid;
+        char gid;
+        char siz0;
+        char siz1;
+        int addr[8];
+        int adate[2];
+        int mdate[2];
+};
+char strbuf[70];
+
+main(argc,argv)
+int argc;
+char *argv[];
+{
+        char **argp;
+        char *argp1, *argp2, *argp3, *argp4;
+        char *p, *p1, *p2;
+        char place[100];
+        int i;
+        int status;
+        int b;
+        argp = argv;
+        /*
+                check for correct number
+                of arguments
+        */
+        if(argc != 3) {
+                write(2,"Usage: mv name1 name2\n",22);
+                exit(1);
+        }
+        /*
+                is there anything to do?
+        */
+        argp3 = argp[1];
+        argp4 = argp[2];
+        if(stat(argp[1], stbuf) < 0) {
+                write(2,"Source file non-existent\n",25);
+                exit(1);
+        }
+        /*
+                yes, there is a source.
+                check whether file or directory
+        */
+        if((stbuf[0].imode & 060000) == 040000) {
+        /*
+                The source is a directory, so
+                we do lots of checking and
+                messing around so as not to get
+                into trouble.  This patch of
+                code contains administrative
+                policies rather than system
+                restrictions.
+        */
+                if(stat(argp[2], stbuf) >= 0) {
+                        write(2,"Directory target exists.\n",25);
+                        exit(1);
+                }
+                argp1 = argp[1];
+                argp2 = argp[2];
+                while(*argp1 == *argp2) {
+                        argp1++;
+                        if(*argp2++ == 0) {
+                                write(2,"???\n",4);
+                                exit(1);
+                        }
+                }
+                while(*argp1)
+                        if(*argp1++ == '/') {
+                                write(2,"Directory rename only\n",22);
+                                exit(1);
+                        }
+                while(*argp2)
+                        if(*argp2++ == '/') {
+                                write(2,"Directory rename only\n",22);
+                                exit(1);
+                        }
+                if(*--argp1 == '.') {
+                        write(2,"values of B will give rise to dom!\n",37);
+                        exit(1);
+                }
+        } else {
+        /*
+                the source is a file.
+        */
+                setuid(getuid());
+                if(stat(argp4, &stbuf[2]) >= 0) {
+                        if((stbuf[2].imode & 060000) == 040000) {
+                                argp2 = strbuf;
+                                while(*argp2++ = *argp4++);
+                                argp2[-1] = '/';
+                                argp4 = argp[1];
+                                argp1 = argp[1];
+                                while(*argp4)
+                                        if(*argp4++ == '/')
+                                                argp1 = argp4;
+                                while(*argp2++ = *argp1++);
+                                argp4 = strbuf;
+                        }
+                        if(stat(argp4, &stbuf[2]) >= 0) {
+                                if((stbuf[0]==stbuf[2]) && (stbuf[1]==stbuf[3])) {
+                                        write(2,"Files are identical.\n",21);
+                                        exit(1);
+                                }
+                                if(getuid() == stbuf[2].uid)
+                                        b = 0200;
+                                else if(getgid() == stbuf[2].gid)
+                                        b = 020;
+                                else
+                                        b = 02;
+                                if((stbuf[2].imode & b) == 0) {
+                                        printf("%s: %o mode ", argp4,
+                                                stbuf[2].imode & 07777);
+                                        i = b = getchar();
+                                        while(b != '\n' && b != '\0')
+                                                b = getchar();
+                                        if(i != 'y')
+                                                exit(1);
+                                }
+                                if(unlink(argp4) < 0) {
+                                        write(2,"Cannot remove target file.\n",27);
+                                        exit(1);
+                                }
+                        }
+                }
+        }
+        if(link(argp3, argp4) < 0) {
+                i = fork();
+                if(i == -1) {
+                        write(2,"Try again.\n",11);
+                        exit(1);
+                }
+                if(i) {
+                        while(wait(&status) != i);
+                } else {
+                        p = place;
+                        p1 = p;
+                        while(*p++ = *argp3++);
+                        p2 = p;
+                        while(*p++ = *argp4++);
+                        execl("/bin/cp","cp", p1, p2, 0);
+                        write(2, "no cp\n", 6);
+                        exit(1);
+                }
+                if((status & 0377) != 0) {
+                        write(2,"?\n", 2);
+                        exit(1);
+                }
+                if(status != 0)
+                        exit(1);
+        }
+        if(unlink(argp3) < 0) {
+                write(2,"Cannot unlink source file.\n",26);
+                exit(1);
+        }
+}
+
+putchar(c)
+{
+        write(1, &c, 1);
+}
+
+getchar()
+{
+        char c;
+
+        if(read(0, &c, 1) != 1)
+                return(0);
+        return(c);
+}
+g/dev/s//st_dev/g
+g/inum/s//st_ino/g
+g/imode/s//st_mode/g
+g/nlink/s//st_nlink/g
+g/uid/s//st_uid/g
+g/gid/s//st_gid/g
+g/siz1/s//st_siz/g
+g/siz0/s//st_siz0/g
+g/addr/s//st_addr/g
+g/adate/s//st_atime/g
+g/mdate/s//st_mtime/g
+s/ust_nlink/s//unlink/gp
+?
+g/ust/
+link file1 file2
+*/
+                                        write(2,"Cannot remove target file.\n",27);
+                write(2,"Cannot ust_nlink source file.\n",26);
+                exit(1);
+g/ust_nlink/s//unlink/gp
+unlink file2
+unlink file1
+                                if(unlink(argp4) < 0) {
+        if(unlink(argp3) < 0) {
+                write(2,"Cannot unlink source file.\n",26);
+/struct/
+struct sbuf {
+/@.,/}/d
+1i
+\#
+.
+8
+*/
+a
+
+
+\#include "/usr/sys/stat.h"
+
+.
+9
+
+d
+w
+3093
+!cc mv.c
+un: _getst_u
+un: _setst_u
+un: _getst_g
+!
+g/getst_/s//get/p#gp
+                setst_uid(getuid());
+                                if(getuid() == stbuf[2].st_uid)
+                                else if(getgid() == stbuf[2].st_gid)
+g/setst_s#/s//set/gp
+                setuid(getuid());
+
+                if(stat(argp4, &stbuf[2]) >= 0) {
+w
+3081
+!cc mv.c
+!
+q
+% ls /bin/mv
+/bin/mv
+% mv a.out /bin/mv
+/bin/mv: 04755 mode 
+% ls /bin@ls -l /bin/mv
+-rwsr-xr-x 1 root     2330 Jun 10 08:37 /bin/mv
+% su
+# ls -l /bin/@pwd
+../usr/source/s2
+# ls -l /#a.out
+-rwxrwxrwx 1 bin      3256 Sep  7 20:54 a.out
+# chown @cc mv.c
+# ls -l a.out
+-rwxrwxrwx 1 root     3256 Sep  7 20:54 a.out
+# chmod 644 alout
+alout: No such file or directory
+# l@chmod 644 a.out 
+# ls -l alout
+alout not found
+# ls -l a.out
+-rw-r--r-- 1 root     3256 Sep  7 20:55 a.out
+# cj#hmod 755 a.out
+# chmod 4755 a.out
+# ls- l@ls -l a.out
+-rwsr-xr-x 1 root     3256 Sep  7 20:56 a.out
+# chmod 2755 a.out 
+# ls -l a.out
+-rwxr-sr-x 1 root     3256 Sep  7 20:56 a.out
+# chmod 4755 a.out
+# ls -l a.out /bin/a,##mv
+-rwsr-xr-x 1 root     2330 Jun 10 08:37 /bin/mv
+-rwsr-xr-x 1 root     3256 Sep  7 20:56 a.out
+# mv a.out /bin/m,v##v
+# chdir /bin
+# ls -l
+total 347
+-rwxr-xr-x 1 bin      1514 Jun 10 08:37 ar
+-rwxr-xr-x 1 bin      5720 Jun 10 08:37 as
+-rwxr-xr-x 1 bin      5846 Jun 10 08:37 bas
+-rwxr-xr-x 1 bin       152 Jun 10 08:37 cat
+-rwxr-xr-x 1 bin      5104 Jun 10 08:37 cc
+-rwxr-xr-x 1 bin      4550 Jun 10 08:37 cdb
+-rwxr-xr-x 1 bin      7112 Jun 10 08:37 check
+-rwxr-xr-x 1 bin      1546 Jun 10 08:37 chmod
+-rwxr-xr-x 1 bin       484 Jun 10 08:37 chown
+-rwxr--r-- 1 bin       190 Jun 10 08:37 clri
+-rwxr-xr-x 1 bin       418 Jun 10 08:37 cmp
+-rwxr-xr-x 1 bin      1200 Jun 10 08:37 cp
+-rwsr-xr-x 1 root     2120 Jun 12 19:13 date
+-rwxr-xr-x 1 bin      4980 Jun 10 08:37 db
+-rwxr-xr-x 1 bin      6528 Jun 10 08:37 dc
+-rwxr-xr-x 1 bin      4246 Jun 10 08:37 dd
+-rwxr-xr-x 1 bin      1592 Jun 10 08:37 df
+-rwxr-xr-x 1 bin       262 Jun 10 08:37 dsw
+-rwxr-xr-x 1 bin       654 Jun 10 08:37 du
+-rwxr-xr-x 1 bin      4174 Jun 12 19:13 dump
+-rwxr-xr-x 1 bin       894 Jun 10 08:37 echo
+-rwxr-xr-x 1 bin      4292 Jun 10 08:37 ed
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 exit
+-rwxr-xr-x 1 bin      4642 Jun 10 08:37 fc
+-rwxr-xr-x 1 bin       942 Jun 10 08:37 goto
+-rwxr-xr-x 1 bin      1552 Jun 10 08:37 if
+-rwxr-xr-x 1 bin       192 Jun 10 08:37 kill
+-rwxr-xr-x 1 bin      3272 Jun 10 08:37 ld
+-rwxrwxrwx 1 bin       722 Sep  7 20:27 ln
+-rwsr-xr-x 1 root     2488 Jun 10 08:37 login
+-rwxr-xr-x 1 bin      3112 Jun 12 16:54 lpr
+-rwxrwxrwx 1 bin      6348 Sep  7 20:15 ls
+-rwxr-xr-x 1 bin      4608 Jun 12 19:13 mail
+-rwsr-xr-x 1 root      240 Jun 10 08:37 mkdir
+-rwsr-xr-x 1 root     3256 Sep  7 20:57 mv
+-rwxr-xr-x 1 bin      2518 Jun 10 08:37 nm
+-rwxr-xr-x 1 bin      4710 Jun 10 08:37 od
+-rwxrwxrwx 1 bin      4670 Sep  7 20:33 pr
+-rwsr-xr-x 1 bin      2286 Jun 10 08:37 ps
+-rwxr-xr-x 1 bin      4996 Jun 10 08:37 restor
+-rwxr-xr-x 1 bin       114 Jun 10 08:37 rew
+-rwxrwxrwx 1 bin      2408 Sep  7 20:47 rm
+-rwsr-xr-x 1 root      292 Jun 10 08:37 rmdir
+-rwxrwxrwx 1 bin      6712 Aug 18 17:09 sh
+-rwxr-xr-x 1 bin      5572 Aug 18 18:17 sh.bak
+-rwxr-xr-x 1 bin      1218 Jun 10 08:37 size
+-rwxr-xr-x 1 bin      4322 Jun 10 08:37 sort
+-rwxr-xr-x 1 bin       496 Jun 10 08:37 strip
+-rwxrwxrwx 1 bin      2252 Aug 26 22:49 stty
+-rwxrwxrwx 1 bin      2246 Aug 26 22:49 stty.bak
+-rwsr-xr-x 1 root     1944 Jun 10 08:37 su
+-rwxr-xr-x 1 bin       198 Jun 10 08:37 sum
+-rwxr-xr-x 1 bin       144 Jun 10 08:37 sync
+-rwxr-xr-x 1 bin       556 Jun 10 08:37 time
+-rwxr-xr-x 1 bin      4482 Jun 12 19:13 tp
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 tty
+-rwxr-xr-x 1 bin      1968 Jun 10 08:37 uniq
+-rwxr-xr-x 1 bin      1792 Jun 12 19:13 who
+-rwxr-xr-x 1 bin       682 Jun 10 08:37 write
+# chmod 755 stty ln ls clri####
+# ls -l
+total 347
+-rwxr-xr-x 1 bin      1514 Jun 10 08:37 ar
+-rwxr-xr-x 1 bin      5720 Jun 10 08:37 as
+-rwxr-xr-x 1 bin      5846 Jun 10 08:37 bas
+-rwxr-xr-x 1 bin       152 Jun 10 08:37 cat
+-rwxr-xr-x 1 bin      5104 Jun 10 08:37 cc
+-rwxr-xr-x 1 bin      4550 Jun 10 08:37 cdb
+-rwxr-xr-x 1 bin      7112 Jun 10 08:37 check
+-rwxr-xr-x 1 bin      1546 Jun 10 08:37 chmod
+-rwxr-xr-x 1 bin       484 Jun 10 08:37 chown
+-rwxr--r-- 1 bin       190 Jun 10 08:37 clri
+-rwxr-xr-x 1 bin       418 Jun 10 08:37 cmp
+-rwxr-xr-x 1 bin      1200 Jun 10 08:37 cp
+-rwsr-xr-x 1 root     2120 Jun 12 19:13 date
+-rwxr-xr-x 1 bin      4980 Jun 10 08:37 db
+-rwxr-xr-x 1 bin      6528 Jun 10 08:37 dc
+-rwxr-xr-x 1 bin      4246 Jun 10 08:37 dd
+-rwxr-xr-x 1 bin      1592 Jun 10 08:37 df
+-rwxr-xr-x 1 bin       262 Jun 10 08:37 dsw
+-rwxr-xr-x 1 bin       654 Jun 10 08:37 du
+-rwxr-xr-x 1 bin      4174 Jun 12 19:13 dump
+-rwxr-xr-x 1 bin       894 Jun 10 08:37 echo
+-rwxr-xr-x 1 bin      4292 Jun 10 08:37 ed
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 exit
+-rwxr-xr-x 1 bin      4642 Jun 10 08:37 fc
+-rwxr-xr-x 1 bin       942 Jun 10 08:37 goto
+-rwxr-xr-x 1 bin      1552 Jun 10 08:37 if
+-rwxr-xr-x 1 bin       192 Jun 10 08:37 kill
+-rwxr-xr-x 1 bin      3272 Jun 10 08:37 ld
+-rwxr-xr-x 1 bin       722 Sep  7 20:58 ln
+-rwsr-xr-x 1 root     2488 Jun 10 08:37 login
+-rwxr-xr-x 1 bin      3112 Jun 12 16:54 lpr
+-rwxr-xr-x 1 bin      6348 Sep  7 20:58 ls
+-rwxr-xr-x 1 bin      4608 Jun 12 19:13 mail
+-rwsr-xr-x 1 root      240 Jun 10 08:37 mkdir
+-rwsr-xr-x 1 root     3256 Sep  7 20:57 mv
+-rwxr-xr-x 1 bin      2518 Jun 10 08:37 nm
+-rwxr-xr-x 1 bin      4710 Jun 10 08:37 od
+-rwxr-xr-x 1 bin      4670 Sep  7 20:58 pr
+-rwsr-xr-x 1 bin      2286 Jun 10 08:37 ps
+-rwxr-xr-x 1 bin      4996 Jun 10 08:37 restor
+-rwxr-xr-x 1 bin       114 Jun 10 08:37 rew
+-rwxr-xr-x 1 bin      2408 Sep  7 20:58 rm
+-rwsr-xr-x 1 root      292 Jun 10 08:37 rmdir
+-rwxr-xr-x 1 bin      6712 Sep  7 20:58 sh
+-rwxr-xr-x 1 bin      5572 Aug 18 18:17 sh.bak
+-rwxr-xr-x 1 bin      1218 Jun 10 08:37 size
+-rwxr-xr-x 1 bin      4322 Jun 10 08:37 sort
+-rwxr-xr-x 1 bin       496 Jun 10 08:37 strip
+-rwxr-xr-x 1 bin      2252 Sep  7 20:58 stty
+-rwxrwxrwx 1 bin      2246 Aug 26 22:49 stty.bak
+-rwsr-xr-x 1 root     1944 Jun 10 08:37 su
+-rwxr-xr-x 1 bin       198 Jun 10 08:37 sum
+-rwxr-xr-x 1 bin       144 Jun 10 08:37 sync
+-rwxr-xr-x 1 bin       556 Jun 10 08:37 time
+-rwxr-xr-x 1 bin      4482 Jun 12 19:13 tp
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 tty
+-rwxr-xr-x 1 bin      1968 Jun 10 08:37 uniq
+-rwxr-xr-x 1 bin      1792 Jun 12 19:13 who
+-rwxr-xr-x 1 bin       682 Jun 10 08:37 write
+# rm stty.bak
+# chdir /usr/bin
+# ls -l
+total 239
+-rwxr-xr-x 1 bin      2966 Jun 10 08:37 ac
+-rwxr-xr-x 1 bin      2006 Jun 10 08:37 cal
+-rwxr-xr-x 1 bin      1890 Jun 10 08:37 comm
+-rwxr-xr-x 1 bin      9258 Jun 10 08:37 cref
+-rwxr-xr-x 1 bin      2250 Jun 10 08:37 crpost
+-rwxr-xr-x 1 bin      4764 Jun 10 08:37 diff
+-rwxr-xr-x 1 bin      4826 Jun 10 08:37 fed
+-rwxrwxrwx 1 bin      7124 Sep  7 20:40 find
+-rwxr-xr-x 1 bin      4118 Jun 10 08:37 form
+-rwxr-xr-x 1 bin      1370 Jun 10 08:37 grep
+-rwxr-xr-x 1 bin       276 Jun 10 08:37 mesg
+-rwxr-xr-x 1 bin      1122 Jun 10 08:37 nice
+-rwxr-xr-x 1 bin      1328 Jun 10 08:37 nohup
+-rwsr-xr-x 1 root     1214 Jun 10 08:37 passwd
+-rwxr-xr-x 1 bin       240 Jun 10 08:37 pfe
+-rwxrwxrwx 1 bin      5514 Sep  7 20:42 prof
+-rwxrwxrwx 1 bin      1238 Sep  7 20:30 pwd
+-rwxr-xr-x 1 bin      8114 Jun 10 08:37 roff
+-rwxr-xr-x 1 bin      5438 Jun 10 08:37 sa
+-rwxr-xr-x 1 bin       980 Jun 10 08:37 sleep
+-rwxr-xr-x 1 bin      9422 Jun 10 08:37 sno
+-rwxr-xr-x 1 bin      1082 Jun 10 08:37 split
+-rwxr-xr-x 1 bin       706 Jun 10 08:37 tee
+-rwxr-xr-x 1 bin      1840 Jun 10 08:37 tr
+-rwxr-xr-x 1 bin      6364 Jun 10 08:37 typo
+-rwxr-xr-x 1 bin      2198 Jun 10 08:37 upost
+-rwxr-xr-x 1 bin      1896 Jun 10 08:37 wc
+-rwxr-xr-x 1 bin     20258 Jun 10 08:37 yacc
+# chmod 755 find prof pwd
+# sync
+# pwd
+../usr/bin
+# % pwd
+../usr/source/s2
+% ed mv.c
+3081
+/identif#c/
+                                        write(2,"Files are identical.\n",21);
+^
+                                if((stbuf[0]==stbuf[2]) && (stbuf[1]==stbuf[3])) {
+c
+                                if((stbuf[0].st_dev==stbuf[2].st_dev) && (stbuf[0].st_ino==stbuf[2].st_ino)) {
+.
+w
+3109
+q
+% cc mv.c
+% su
+ch# mod 4755 a.out
+# ls -l a.out
+-rwsr-xr-x 1 bin      3256 Sep  7 21:01 a.out
+# chown root a.out
+# l -l@ls -l a.out
+-rwsr-xr-x 1 root     3256 Sep  7 21:02 a.out
+# mv a.out /bin/mv
+# % ed tee.c
+696
+/struct/
+        struct { int x1[2], type, x2[15]; } buf;
+/stat/
+        fstat(1,&buf);
+??
+                if(stat(argv[1],&buf)>=0)
+/struct/
+        struct { int x1[2], type, x2[15]; } buf;
+c
+        stu#ruct sat##tat buf;
+.
+p
+        struct stat buf;
+g/type/s//st_mode/gp
+        t = (buf.st_mode&060000)==020000;
+                        if((buf.st_mode&060000)==020000)
+1i
+\#include "/usr/sys/stat.h"
+.#
+.
+w
+706
+q@c@!cc tee.c
+!
+q
+% chmod 755 a.out
+% mv @ls /bin/tee
+/bin/tee not found
+% ls /bin###usr/bin/tee
+/usr/bin/tee
+% mv a.out /usr/bin/tee
+% chdir ../s1
+% ed cp.c
+1485
+/#g/sa#tat/p
+        fstat(fold, buf);
+                stat(argv[2],  buf);
+g/buf/p
+        int buf[256];
+        fstat(fold, buf);
+        mode = buf[2];
+                stat(argv[2],  buf);
+                if((buf[2] & 060000) == 040000) {
+                        bp = buf;
+                        if((fnew = creat(buf, mode)) < 0) {
+        while(n = read(fold,  buf,  512)) {
+                if(write(fnew, buf, n) != n){
+                conf(ct, 6, buf);
+                buf[3] = '\n';
+                write(1, buf, 7);
+conf(n,width,buf) 
+        char    *buf;
+        while(i--)      buf[i] = ' ';
+        buf[(a = n/10)?conf(a,--width,buf):--width] = n%10 + '0';
+g/buf\[2\]/s//buf.st_mode/gp
+        mode = buf.st_mode;
+                if((buf.st_mode & 060000) == 040000) {
+1
+/*
+i
+\#
+.
+5
+
+1,10p
+#
+/*
+ * cp oldfile newfile
+ */
+
+main(argc,argv)
+char **argv;
+{
+        int buf[256];
+        int fold, fnew, n, ct, tell, preserve;
+4a
+
+\#include "/usr/sys/stat.h"
+.
+w
+1525
+!cc cp.c
+42: Illegal indirection
+42: Illegal lvalue
+42: Lvalue required
+42: Illegal indirection
+45: Illegal indirection
+45: Illegal lvalue
+45: Lvalue required
+45: Illegal indirection
+!
+42
+        mode = buf.st_mode;
+45
+                if((buf.st_mode & 060000) == 040000) {
+g/\.st_mode/s//->st_mode/gp
+        mode = buf->st_mode;
+                if((buf->st_mode & 060000) == 040000) {
+w
+1527
+!cc cp.c
+!
+q
+% ls -l /bin/cp
+-rwxr-xr-x 1 bin      1200 Jun 10 08:37 /bin/cp
+% chmod 755 cp.c####a.out
+% ls -l a.out
+-rwxr-xr-x 1 bin      1552 Sep  7 21:07 a.out
+% mv a.out /bin/cp
+% chdir /bin
+% ls
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+\gotoQuit -- Core dumped
+% ls -@rm core
+% ls -l
+total 343
+-rwxr-xr-x 1 bin      1514 Jun 10 08:37 ar
+-rwxr-xr-x 1 bin      5720 Jun 10 08:37 as
+-rwxr-xr-x 1 bin      5846 Jun 10 08:37 bas
+-rwxr-xr-x 1 bin       152 Jun 10 08:37 cat
+-rwxr-xr-x 1 bin      5104 Jun 10 08:37 cc
+-rwxr-xr-x 1 bin      4550 Jun 10 08:37 cdb
+-rwxr-xr-x 1 bin      7112 Jun 10 08:37 check
+-rwxr-xr-x 1 bin      1546 Jun 10 08:37 chmod
+-rwxr-xr-x 1 bin       484 Jun 10 08:37 chown
+-rwxr--r-- 1 bin       190 Jun 10 08:37 clri
+-rwxr-xr-x 1 bin       418 Jun 10 08:37 cmp
+-rwxr-xr-x 1 bin      1552 Sep  7 21:07 cp
+-rwsr-xr-x 1 root     2120 Jun 12 19:13 date
+-rwxr-xr-x 1 bin      4980 Jun 10 08:37 db
+-rwxr-xr-x 1 bin      6528 Jun 10 08:37 dc
+-rwxr-xr-x 1 bin      4246 Jun 10 08:37 dd
+-rwxr-xr-x 1 bin      1592 Jun 10 08:37 df
+-rwxr-xr-x 1 bin       262 Jun 10 08:37 dsw
+-rwxr-xr-x 1 bin       654 Jun 10 08:37 du
+-rwxr-xr-x 1 bin      4174 Jun 12 19:13 dump
+-rwxr-xr-x 1 bin       894 Jun 10 08:37 echo
+-rwxr-xr-x 1 bin      4292 Jun 10 08:37 ed
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 exit
+-rwxr-xr-x 1 bin      4642 Jun 10 08:37 fc
+-rwxr-xr-x 1 bin       942 Jun 10 08:37 goto
+-rwxr-xr-x 1 bin      1552 Jun 10 08:37 if
+-rwxr-xr-x 1 bin       192 Jun 10 08:37 kill
+-rwxr-xr-x 1 bin      3272 Jun 10 08:37 ld
+-rwxr-xr-x 1 bin       722 Sep  7 20:58 ln
+-rwsr-xr-x 1 root     2488 Jun 10 08:37 login
+-rwxr-xr-x 1 bin      3112 Jun 12 16:54 lpr
+-rwxr-xr-x 1 bin      6348 Sep  7 20:58 ls
+-rwxr-xr-x 1 bin      4608 Jun 12 19:13 mail
+-rwsr-xr-x 1 root      240 Jun 10 08:37 mkdir
+-rwsr-xr-x 1 root     3256 Sep  7 21:02 mv
+-rwxr-xr-x 1 bin      2518 Jun 10 08:37 nm
+-rwxr-xr-x 1 bin      4710 Jun 10 08:37 od
+-rwxr-xr-x 1 bin      4670 Sep  7 20:58 pr
+-rwsr-xr-x 1 bin      2286 Jun 10 08:37 ps
+-rwxr-xr-x 1 bin      4996 Jun 10 08:37 restor
+-rwxr-xr-x 1 bin       114 Jun 10 08:37 rew
+-rwxr-xr-x 1 bin      2408 Sep  7 20:58 rm
+-rwsr-xr-x 1 root      292 Jun 10 08:37 rmdir
+-rwxr-xr-x 1 bin      6712 Sep  7 20:58 sh
+-rwxr-xr-x 1 bin      5572 Aug 18 18:17 sh.bak
+-rwxr-xr-x 1 bin      1218 Jun 10 08:37 size
+-rwxr-xr-x 1 bin      4322 Jun 10 08:37 sort
+-rwxr-xr-x 1 bin       496 Jun 10 08:37 strip
+-rwxr-xr-x 1 bin      2252 Sep  7 20:58 stty
+-rwsr-xr-x 1 root     1944 Jun 10 08:37 su
+-rwxr-xr-x 1 bin       198 Jun 10 08:37 sum
+-rwxr-xr-x 1 bin       144 Jun 10 08:37 sync
+-rwxr-xr-x 1 bin       556 Jun 10 08:37 time
+-rwxr-xr-x 1 bin      4482 Jun 12 19:13 tp
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 tty
+-rwxr-xr-x 1 bin      1968 Jun 10 08:37 uniq
+-rwxr-xr-x 1 bin      1792 Jun 12 19:13 who
+-rwxr-xr-x 1 bin       682 Jun 10 08:37 write
+% strip stty sh
+% ls -l stty sh
+-rwxr-xr-x 1 bin      5560 Sep  7 21:07 sh
+-rwxr-xr-x 1 bin      1844 Sep  7 21:07 stty
+% strip rm pr mv ls lncp## cp
+can't rewrite: mv
+% ls -l
+total 329
+-rwxr-xr-x 1 bin      1514 Jun 10 08:37 ar
+-rwxr-xr-x 1 bin      5720 Jun 10 08:37 as
+-rwxr-xr-x 1 bin      5846 Jun 10 08:37 bas
+-rwxr-xr-x 1 bin       152 Jun 10 08:37 cat
+-rwxr-xr-x 1 bin      5104 Jun 10 08:37 cc
+-rwxr-xr-x 1 bin      4550 Jun 10 08:37 cdb
+-rwxr-xr-x 1 bin      7112 Jun 10 08:37 check
+-rwxr-xr-x 1 bin      1546 Jun 10 08:37 chmod
+-rwxr-xr-x 1 bin       484 Jun 10 08:37 chown
+-rwxr--r-- 1 bin       190 Jun 10 08:37 clri
+-rwxr-xr-x 1 bin       418 Jun 10 08:37 cmp
+-rwxr-xr-x 1 bin      1228 Sep  7 21:07 cp
+-rwsr-xr-x 1 root     2120 Jun 12 19:13 date
+-rwxr-xr-x 1 bin      4980 Jun 10 08:37 db
+-rwxr-xr-x 1 bin      6528 Jun 10 08:37 dc
+-rwxr-xr-x 1 bin      4246 Jun 10 08:37 dd
+-rwxr-xr-x 1 bin      1592 Jun 10 08:37 df
+-rwxr-xr-x 1 bin       262 Jun 10 08:37 dsw
+-rwxr-xr-x 1 bin       654 Jun 10 08:37 du
+-rwxr-xr-x 1 bin      4174 Jun 12 19:13 dump
+-rwxr-xr-x 1 bin       894 Jun 10 08:37 echo
+-rwxr-xr-x 1 bin      4292 Jun 10 08:37 ed
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 exit
+-rwxr-xr-x 1 bin      4642 Jun 10 08:37 fc
+-rwxr-xr-x 1 bin       942 Jun 10 08:37 goto
+-rwxr-xr-x 1 bin      1552 Jun 10 08:37 if
+-rwxr-xr-x 1 bin       192 Jun 10 08:37 kill
+-rwxr-xr-x 1 bin      3272 Jun 10 08:37 ld
+-rwxr-xr-x 1 bin       482 Sep  7 21:07 ln
+-rwsr-xr-x 1 root     2488 Jun 10 08:37 login
+-rwxr-xr-x 1 bin      3112 Jun 12 16:54 lpr
+-rwxr-xr-x 1 bin      5040 Sep  7 21:07 ls
+-rwxr-xr-x 1 bin      4608 Jun 12 19:13 mail
+-rwsr-xr-x 1 root      240 Jun 10 08:37 mkdir
+-rwsr-xr-x 1 root     3256 Sep  7 21:02 mv
+-rwxr-xr-x 1 bin      2518 Jun 10 08:37 nm
+-rwxr-xr-x 1 bin      4710 Jun 10 08:37 od
+-rwxr-xr-x 1 bin      3578 Sep  7 21:07 pr
+-rwsr-xr-x 1 bin      2286 Jun 10 08:37 ps
+-rwxr-xr-x 1 bin      4996 Jun 10 08:37 restor
+-rwxr-xr-x 1 bin       114 Jun 10 08:37 rew
+-rwxr-xr-x 1 bin      1856 Sep  7 21:07 rm
+-rwsr-xr-x 1 root      292 Jun 10 08:37 rmdir
+-rwxr-xr-x 1 bin      5560 Sep  7 21:07 sh
+-rwxr-xr-x 1 bin      5572 Aug 18 18:17 sh.bak
+-rwxr-xr-x 1 bin      1218 Jun 10 08:37 size
+-rwxr-xr-x 1 bin      4322 Jun 10 08:37 sort
+-rwxr-xr-x 1 bin       496 Jun 10 08:37 strip
+-rwxr-xr-x 1 bin      1844 Sep  7 21:07 stty
+-rwsr-xr-x 1 root     1944 Jun 10 08:37 su
+-rwxr-xr-x 1 bin       198 Jun 10 08:37 sum
+-rwxr-xr-x 1 bin       144 Jun 10 08:37 sync
+-rwxr-xr-x 1 bin       556 Jun 10 08:37 time
+-rwxr-xr-x 1 bin      4482 Jun 12 19:13 tp
+-rwxr-xr-x 1 bin       150 Jun 10 08:37 tty
+-rwxr-xr-x 1 bin      1968 Jun 10 08:37 uniq
+-rwxr-xr-x 1 bin      1792 Jun 12 19:13 who
+-rwxr-xr-x 1 bin       682 Jun 10 08:37 write
+% su
+# stru#ip mv
+# % chdir /bin###usr/bin
+% ls -l
+total 239
+-rwxr-xr-x 1 bin      2966 Jun 10 08:37 ac
+-rwxr-xr-x 1 bin      2006 Jun 10 08:37 cal
+-rwxr-xr-x 1 bin      1890 Jun 10 08:37 comm
+-rwxr-xr-x 1 bin      9258 Jun 10 08:37 cref
+-rwxr-xr-x 1 bin      2250 Jun 10 08:37 crpost
+-rwxr-xr-x 1 bin      4764 Jun 10 08:37 diff
+-rwxr-xr-x 1 bin      4826 Jun 10 08:37 fed
+-rwxr-xr-x 1 bin      7124 Sep  7 20:59 find
+-rwxr-xr-x 1 bin      4118 Jun 10 08:37 form
+-rwxr-xr-x 1 bin      1370 Jun 10 08:37 grep
+-rwxr-xr-x 1 bin       276 Jun 10 08:37 mesg
+-rwxr-xr-x 1 bin      1122 Jun 10 08:37 nice
+-rwxr-xr-x 1 bin      1328 Jun 10 08:37 nohup
+-rwsr-xr-x 1 root     1214 Jun 10 08:37 passwd
+-rwxr-xr-x 1 bin       240 Jun 10 08:37 pfe
+-rwxr-xr-x 1 bin      5514 Sep  7 20:59 prof
+-rwxr-xr-x 1 bin      1238 Sep  7 20:59 pwd
+-rwxr-xr-x 1 bin      8114 Jun 10 08:37 roff
+-rwxr-xr-x 1 bin      5438 Jun 10 08:37 sa
+-rwxr-xr-x 1 bin       980 Jun 10 08:37 sleep
+-rwxr-xr-x 1 bin      9422 Jun 10 08:37 sno
+-rwxr-xr-x 1 bin      1082 Jun 10 08:37 split
+-rwxr-xr-x 1 bin       986 Sep  7 21:04 tee
+-rwxr-xr-x 1 bin      1840 Jun 10 08:37 tr
+-rwxr-xr-x 1 bin      6364 Jun 10 08:37 typo
+-rwxr-xr-x 1 bin      2198 Jun 10 08:37 upost
+-rwxr-xr-x 1 bin      1896 Jun 10 08:37 wc
+-rwxr-xr-x 1 bin     20258 Jun 10 08:37 yacc
+% strip find prof pwd tee
+% ls -l find prof pwd tee
+-rwxr-xr-x 1 bin      5936 Sep  7 21:08 find
+-rwxr-xr-x 1 bin      4494 Sep  7 21:08 prof
+-rwxr-xr-x 1 bin       794 Sep  7 21:08 pwd
+-rwxr-xr-x 1 bin       650 Sep  7 21:08 tee
+% chdir /etc
+% ls -l
+total 45
+-rwxrwxrwx 1 bin      1164 Aug 26 21:29 getty
+-rwxrwxrwx 1 bin      2208 Aug 26 18:30 glob
+-rwxrwxrwx 1 bin      2738 Aug 11 21:17 init
+-rwxr-xr-x 1 bin       814 Jun 12 16:55 lpd
+-rwxr--r-- 1 bin      4136 Jun 10 08:37 mkfs
+-rwxr--r-- 1 bin      1800 Jun 10 08:37 mknod
+-rwsr-xr-x 1 root     2078 Jun 10 08:37 mount
+-rwxr-xr-x 1 bin       220 Jun 10 08:37 msh
+-rw-r--r-- 1 bin       679 Aug 29 09:14 passwd
+-rw-r--r-- 1 bin        70 Jun 10 08:37 rc
+-rw-r--r-- 1 bin       128 Aug 11 21:16 ttys
+-rwsr-xr-x 1 root     1990 Jun 10 08:37 umount
+-rwxr-xr-x 1 bin        32 Jun 10 08:37 update
+% chmod 755 getty glob init
+% ls -l
+total 45
+-rwxr-xr-x 1 bin      1164 Sep  7 21:09 getty
+-rwxr-xr-x 1 bin      2208 Sep  7 21:09 glob
+-rwxr-xr-x 1 bin      2738 Sep  7 21:09 init
+-rwxr-xr-x 1 bin       814 Jun 12 16:55 lpd
+-rwxr--r-- 1 bin      4136 Jun 10 08:37 mkfs
+-rwxr--r-- 1 bin      1800 Jun 10 08:37 mknod
+-rwsr-xr-x 1 root     2078 Jun 10 08:37 mount
+-rwxr-xr-x 1 bin       220 Jun 10 08:37 msh
+-rw-r--r-- 1 bin       679 Aug 29 09:14 passwd
+-rw-r--r-- 1 bin        70 Jun 10 08:37 rc
+-rw-r--r-- 1 bin       128 Aug 11 21:16 ttys
+-rwsr-xr-x 1 root     1990 Jun 10 08:37 umount
+-rwxr-xr-x 1 bin        32 Jun 10 08:37 update
+% strip getty glob init
+% chdir /usr/source/s2
+% pwd@ed sh.c
+/sta10267
+t/
+        if(stat(linep, buf) < 0)
+//
+        if(stat(linep, buf) < 0)
+g/buf/p
+        int trebuf[tresiz];
+        treep = trebuf;
+        struct stime timbuf;
+        } tbuf;
+        times(&timbuf);
+        time(timbuf.proct);
+        tbuf.realt = timbuf.proct[1] -
+        tbuf.bcput = timbuf.cputim[1] -
+        tbuf.bsyst = timbuf.systim[1] -
+                tbuf.cname[i] = *np;
+        tbuf.cname[13] = uid;
+        write(acctf, &tbuf, 20);
+        int buf[40];
+        if(stat(linep, buf) < 0)
+        if((buf[2]&060111) != 0)
+/stati#/
+        if(stat(linep, buf) < 0)
+?{?;/}/p
+{
+        int buf[40];
+
+        if(stat(linep, buf) < 0)
+                return(0);
+        if((buf[2]&060111) != 0)
+                return(0);
+        return(1);
+}
+?oint@?int buf/c@?int b?c
+        struct stat buf;
+.
+/if/
+        if(stat(linep, buf) < 0)
+//
+        if((buf[2]&060111) != 0)
+s/buf\[2\]/s#buf->st_mode/
+w
+10277
+!cc sh.c
+807: Bad structure
+809: Undefined structure: .stat
+811: Integer operand required
+811: Illegal structure ref
+814: .st_mode undefined
+!
+807
+        struct stat buf;
+1
+#
+/include/
+?
+1,23p
+#
+/*
+ * copyright 1973 bell telephone laboratories inc.
+ */
+
+#define intr    2
+#define quit    3
+#define linesiz 1000
+#define argsiz 50
+#define tresiz 50
+
+#define quote 0200
+#define fand 1
+#define fcat 2
+#define fpin 4
+#define fpou 8
+#define fpar 16
+#define fint 32
+#define tcom 1
+#define tpar 2
+#define tfil 3
+#define tlst 4
+#define dtyp 0
+4a
+
+\#include "/usr/sys/stat.h"
+.
+w
+10305
+@cc sh.c
+?
+q
+% cc sh.c
+813: Integer operand required
+% ed sh.c
+10305
+813
+        if((buf->st_mode&060111) != 0)
+c
+        if((b#(buf->st_mode)&060111) != 0)
+.
+w
+10307
+!cc sh.c
+813: Integer operand required
+!
+813
+        if(((buf->st_mode)&060111) != 0)
+u
+?
+c
+        if((buf.st_mode)#&060111) != 0)
+.
+w
+10304
+!cc sh.c
+812: Illegal structure
+!
+812
+                return(0);
+?}?;/}@?{?;/}/;#p
+{
+        struct stat buf;
+
+        if(stat(linep, buf) < 0)
+                return(0);
+        if((buf.st_mode&060111) != 0)
+                return(0);
+        return(1);
+}
+1p
+#
+/inde##clude/
+#include "/usr/sys/stat.h"
+.-3,.+3p
+ * copyright 1973 bell telephone laboratories inc.
+ */
+
+#include "/usr/sys/stat.h"
+
+#define intr    2
+#define quit    3
+812
+                return(0);
+!sync
+!
+?stat?
+        if(stat(linep, buf) < 0)
+s/buf/\*b##&buf/p
+        if(stat(linep, &buf) < 0)
+w
+10305
+!cc st#h.c
+!
+q
+% ls -l /bin/sh
+-rwxr-xr-x 1 bin      5560 Sep  7 21:07 /bin/sh
+% chmod 755 sh.c####a.out
+% strip a.out
+% mv a.out /bin/sh
+% chdir ../s1
+% ed cdb.c
+5637
+g/stat/p
+        fstat(fcore, regbuf);
+g/regbuf/p
+int     regbuf[512];
+        read(fsym, regbuf, 020);
+        if (regbuf[0]==0410)
+                textsize = regbuf[1];
+        else if (regbuf[0] != 0407) {   /* magic */
+        symoff = regbuf[1] + regbuf[2];
+        symlen = regbuf[4];
+        if (regbuf[7] != 1)
+        fstat(fcore, regbuf);
+        usize = regbuf[5]-1024;
+        read(fcore, regbuf, 1024);
+        uuusp = &regbuf[512-6];
+        uregs = &regbuf[512];
+/fstat/;.+20p
+        fstat(fcore, regbuf);
+        usize = regbuf[5]-1024;
+        read(fcore, regbuf, 1024);
+        uuusp = &regbuf[512-6];
+        uregs = &regbuf[512];
+        setexit();
+loop:
+        if (errflg) {
+                printf("?\n");
+                errflg = 0;
+        }
+        lp = line;
+        while ((*lp = getchar()) != '\n')
+                if (*lp++ == '\0')
+                        return;
+        lp = line;
+        command();
+        goto loop;
+}
+
+command()
+/fstat/
+        fstat(fcore, regbuf);
+
+        usize = regbuf[5]-1024;
+s/\[5\]/->st_siz/p
+        usize = regbuf->st_siz-1024;
+1
+/*
+i
+\#
+.
+1,10p
+#
+/*
+
+        C debugger
+
+*/
+
+int     fcore;
+int     fsym;
+int     symoff;
+6a
+
+\#incoude @\@@]#@\#include "/s#usr/sys/stat,#.h"
+.
+w
+5672
+!cc cdb.c
+!
+q
+% ls -l /bin/cdb
+-rwxr-xr-x 1 bin      4550 Jun 10 08:37 /bin/cdb
+% chmod 755 a.out
+% strip a.out
+% mv a.out /bin/cdb
+% sync
+% pwd
+../usr/source/s1
+% chdir ../s2
+% ed rm.c
+1344
+g/st_mode/p
+        if((buf->st_mode & 060000) == 040000)   {
+                if((buf->st_mode & b) == 0)     {
+                        printf("%s: %o st_mode ", arg, buf->st_mode);
+s/st_mode@s/st_mode/mode/p
+                        printf("%s: %o mode ", arg, buf->st_mode);
+w
+1341
+q
+% cc @cc rm.c
+% ls -l /bin/rm
+-rwxr-xr-x 1 bin      1856 Sep  7 21:07 /bin/rm
+% chmod 755 a.out
+% strip a.out
+% mv a.out /bin/rm
+% ed pr.c
+4559
+/@g/dev/p
+        tty = "/st_dev/ttyx";
+s/st_dev/dev/p
+        tty = "/dev/ttyx";
+w
+4556
+q
+% cc pr.c
+% chmod 755 a.out
+% strip a.out
+% mv a.out @ls /bin/pr
+/bin/pr
+% mv a.out /bin/pr
+% sync
 % 

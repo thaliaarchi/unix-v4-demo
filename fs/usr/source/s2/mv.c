@@ -1,3 +1,4 @@
+#
 /*
 mv [-d] file1 file2
 
@@ -5,20 +6,10 @@ unlink file2
 link file1 file2
 unlink file1
 */
+
+#include "/usr/sys/stat.h"
+
 int stbuf[42];
-struct sbuf {
-	int dev;
-	int inum;
-	int imode;
-	char nlink;
-	char uid;
-	char gid;
-	char siz0;
-	char siz1;
-	int addr[8];
-	int adate[2];
-	int mdate[2];
-};
 char strbuf[70];
 
 main(argc,argv)
@@ -54,7 +45,7 @@ char *argv[];
 		yes, there is a source.
 		check whether file or directory
 	*/
-	if((stbuf[0].imode & 060000) == 040000) {
+	if((stbuf[0].st_mode & 060000) == 040000) {
 	/*
 		The source is a directory, so
 		we do lots of checking and
@@ -97,7 +88,7 @@ char *argv[];
 	*/
 		setuid(getuid());
 		if(stat(argp4, &stbuf[2]) >= 0) {
-			if((stbuf[2].imode & 060000) == 040000) {
+			if((stbuf[2].st_mode & 060000) == 040000) {
 				argp2 = strbuf;
 				while(*argp2++ = *argp4++);
 				argp2[-1] = '/';
@@ -110,19 +101,19 @@ char *argv[];
 				argp4 = strbuf;
 			}
 			if(stat(argp4, &stbuf[2]) >= 0) {
-				if((stbuf[0]==stbuf[2]) && (stbuf[1]==stbuf[3])) {
+				if((stbuf[0].st_dev==stbuf[2].st_dev) && (stbuf[0].st_ino==stbuf[2].st_ino)) {
 					write(2,"Files are identical.\n",21);
 					exit(1);
 				}
-				if(getuid() == stbuf[2].uid)
+				if(getuid() == stbuf[2].st_uid)
 					b = 0200;
-				else if(getgid() == stbuf[2].gid)
+				else if(getgid() == stbuf[2].st_gid)
 					b = 020;
 				else
 					b = 02;
-				if((stbuf[2].imode & b) == 0) {
+				if((stbuf[2].st_mode & b) == 0) {
 					printf("%s: %o mode ", argp4,
-						stbuf[2].imode & 07777);
+						stbuf[2].st_mode & 07777);
 					i = b = getchar();
 					while(b != '\n' && b != '\0')
 						b = getchar();

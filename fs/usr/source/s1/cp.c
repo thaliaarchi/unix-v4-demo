@@ -1,20 +1,34 @@
+#
 /*
  * cp oldfile newfile
  */
+
+#include "/usr/sys/stat.h"
 
 main(argc,argv)
 char **argv;
 {
 	int buf[256];
-	int fold, fnew, n, ct, tell;
+	int fold, fnew, n, ct, tell, preserve;
 	char *p1, *p2, *bp;
 	int mode;
 
-	tell = 0;
-	if(argc == 4 && argv[1][0] == '-' && argv[1][1] == 't') {
-		argc--;
-		argv++;
-		tell = 1;
+	tell = preserve = 0;
+	while(argc > 1 && argv[1][0] == '-' && argv[1][2] == 0) {
+		switch(argv[1][1]) {
+		case 't':
+			tell = 1;
+			goto bump;
+		case 'p':
+			preserve = 1;
+bump:
+			argc--;
+			argv++;
+			continue;
+		default:
+			break;
+		}
+		break;
 	}
 	if(argc != 3) {
 		write(1, "Usage: cp oldfile newfile\n", 26);
@@ -25,10 +39,10 @@ char **argv;
 		exit(1);
 	}
 	fstat(fold, buf);
-	mode = buf[2];
+	mode = buf->st_mode;
 	if((fnew = creat(argv[2], mode)) < 0){
 		stat(argv[2],  buf);
-		if((buf[2] & 060000) == 040000) {
+		if((buf->st_mode & 060000) == 040000) {
 			p1 = argv[1];
 			p2 = argv[2];
 			bp = buf;
@@ -78,5 +92,3 @@ conf(n,width,buf)
 
 	return(++width);
 }
-
-

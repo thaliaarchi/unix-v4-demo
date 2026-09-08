@@ -1,8 +1,11 @@
+#
 /*
 
 	C debugger
 
 */
+
+#include "/usr/sys/stat.h"
 
 int	fcore;
 int	fsym;
@@ -65,7 +68,7 @@ char **argv;
 		symoff =<< 1;
 	symoff =+ 020;
 	fstat(fcore, regbuf);
-	usize = regbuf[5]-1024;
+	usize = regbuf->st_siz-1024;
 	read(fcore, regbuf, 1024);
 	uuusp = &regbuf[512-6];
 	uregs = &regbuf[512];

@@ -229,10 +229,12 @@ int *ip;
 	bp = bread(ip->i_dev, ldiv(ip->i_number+31, 16));
 	cp = bp->b_addr + 32*lrem(ip->i_number+31, 16) + 24;
 	ip = &(ip->i_dev);
+	/* copy i_dev through i_addr from the inode */
 	for(i=0; i<14; i++) {
 		suword(ub, *ip++);
 		ub =+ 2;
 	}
+	/* copy the times from the disk inode */
 	for(i=0; i<4; i++) {
 		suword(ub, *cp++);
 		ub =+ 2;

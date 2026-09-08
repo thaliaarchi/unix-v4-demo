@@ -1,3 +1,5 @@
+#include "/usr/sys/stat.h"
+
 main(argc, argv)
 char *argv[];
 {
@@ -24,20 +26,6 @@ char *argv[];
 	}
 }
 
-struct stbuf	{
-	int dev;
-	int inum;
-	int mode;
-	char nlink;
-	char uid;
-	char gid;
-	char siz0;
-	char siz1;
-	int addr[8];
-	int adate[2];
-	int mdate[2];
-	};
-
 rm(arg, fflg, rflg)
 char arg[];
 {
@@ -49,7 +37,7 @@ char arg[];
 		printf("%s: non existent\n", arg);
 		return;
 	}
-	if((buf->mode & 060000) == 040000)	{
+	if((buf->st_mode & 060000) == 040000)	{
 		if(rflg) {
 			i = fork();
 			if(i < 0) {
@@ -76,11 +64,11 @@ char arg[];
 
 	if(!fflg) {
 
-		if(getuid() == buf->uid)
+		if(getuid() == buf->st_uid)
 			b = 0200; else
 			b = 2;
-		if((buf->mode & b) == 0)	{
-			printf("%s: %o mode ", arg, buf->mode);
+		if((buf->st_mode & b) == 0)	{
+			printf("%s: %o mode ", arg, buf->st_mode);
 			i = b = getchar();
 			i = b;
 			while(b != '\n' && b != '\0')

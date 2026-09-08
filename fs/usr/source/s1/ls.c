@@ -3,6 +3,8 @@
  * list file or directory
  */
 
+#include "/usr/sys/stat.h"
+
 struct {
 	int	fdes;
 	int	nleft;
@@ -10,30 +12,16 @@ struct {
 	char	buff[512];
 } inf;
 
-struct ibuf {
-	int	idev;
-	int	inum;
-	int	iflags;
-	char	inl;
-	char	iuid;
-	char	igid;
-	char	isize0;
-	int	isize;
-	int	iaddr[8];
-	char	*iatime[2];
-	char	*imtime[2];
-};
-
 struct lbuf {
-	char	lname[14];
-	int	lnum;
-	int	lflags;
-	char	lnl;
-	char	luid;
-	char	lgid;
-	char	lsize0;
-	int	lsize;
-	char	*lmtime[2];
+	char	l_name[14];
+	int	l_ino;
+	int	l_mode;
+	char	l_nlink;
+	char	l_uid;
+	char	l_gid;
+	char	l_siz0;
+	int	l_siz;
+	char	*l_mtime[2];
 };
 
 struct lbufx {
@@ -143,12 +131,12 @@ char **argv;
 		if ((ep = gstat(*++argv, 1))==0)
 			continue;
 		ep->namep = *argv;
-		ep->lflags =| ISARG;
+		ep->l_mode =| ISARG;
 	}
 	qsort(&end, lastp - &end, 28, compar);
 	slastp = lastp;
 	for (ep = &end; ep<slastp; ep++) {
-		if (ep->lflags&DIR && dflg==0 || fflg) {
+		if (ep->l_mode&DIR && dflg==0 || fflg) {
 			if (argc>1)
 				printf("\n%s:\n", ep->namep);
 			lastp = slastp;
@@ -173,29 +161,29 @@ struct lbuf *ap;
 	register struct lbuf *p;
 
 	p = ap;
-	if (p->lnum == -1)
+	if (p->l_ino == -1)
 		return;
 	if (iflg)
-		printf("%5d ", p->lnum);
+		printf("%5d ", p->l_ino);
 	if (lflg) {
-		pmode(p->lflags);
-		printf("%2d ", p->lnl);
-		if (getname(p->luid&0377, tbuf)==0)
+		pmode(p->l_mode);
+		printf("%2d ", p->l_nlink);
+		if (getname(p->l_uid&0377, tbuf)==0)
 			printf("%-6.6s", tbuf);
 		else
-			printf("%-6d", p->luid&0377);
-		if (p->lflags & (BLK|CHR))
-			printf("%3d,%3d", p->lsize.dmajor&0377,
-			    p->lsize.dminor&0377);
+			printf("%-6d", p->l_uid&0377);
+		if (p->l_mode & (BLK|CHR))
+			printf("%3d,%3d", p->l_siz.dmajor&0377,
+			    p->l_siz.dminor&0377);
 		else
-			printf("%7s", locv(p->lsize0, p->lsize));
-		printf(" %-12.12s ", ctime(p->lmtime)+4);
+			printf("%7s", locv(p->l_siz0, p->l_siz));
+		printf(" %-12.12s ", ctime(p->l_mtime)+4);
 	} else if (sflg)
-		printf("%4d ", nblock(p->lsize0, p->lsize));
-	if (p->lflags&ISARG)
+		printf("%4d ", nblock(p->l_siz0, p->l_siz));
+	if (p->l_mode&ISARG)
 		printf("%s\n", p->namep);
 	else
-		printf("%.14s\n", p->lname);
+		printf("%.14s\n", p->l_name);
 }
 
 getname(uid, buf)
@@ -320,10 +308,10 @@ char *dir;
 		if (dentry.dinode == -1)
 			break;
 		ep = gstat(makename(dir, dentry.dname), 0);
-		if (ep->lnum != -1)
-			ep->lnum = dentry.dinode;
+		if (ep->l_ino != -1)
+			ep->l_ino = dentry.dinode;
 		for (j=0; j<14; j++)
-			ep->lname[j] = dentry.dname[j];
+			ep->l_name[j] = dentry.dname[j];
 	}
 	close(inf.fdes);
 }
@@ -331,52 +319,52 @@ char *dir;
 gstat(file, argfl)
 char *file;
 {
-	struct ibuf statb;
+	struct stat statb;
 	register struct lbuf *rep;
 
 	if (lastp+1 >= rlastp) {
 		sbrk(512);
-		rlastp.idev =+ 512;
+		rlastp.st_dev =+ 512;
 	}
 	rep = lastp;
 	lastp++;
-	rep->lflags = 0;
-	rep->lnum = 0;
+	rep->l_mode = 0;
+	rep->l_ino = 0;
 	if (argfl || statreq) {
 		if (stat(file, &statb)<0) {
 			printf("%s not found\n", file);
-			statb.inum = -1;
-			statb.isize0 = 0;
-			statb.isize = 0;
-			statb.iflags = 0;
+			statb.st_ino = -1;
+			statb.st_siz0 = 0;
+			statb.st_siz = 0;
+			statb.st_mode = 0;
 			if (argfl) {
 				lastp--;
 				return(0);
 			}
 		}
-		rep->lnum = statb.inum;
-		statb.iflags =& ~(ISARG |  DIR);
-		if ((statb.iflags&IFMT) == 060000) {
-			statb.iflags =& ~020000;
-		} else if ((statb.iflags&IFMT)==040000) {
-			statb.iflags =& ~IFMT;
-			statb.iflags =| DIR;
+		rep->l_ino = statb.st_ino;
+		statb.st_mode =& ~(ISARG |  DIR);
+		if ((statb.st_mode&IFMT) == 060000) {
+			statb.st_mode =& ~020000;
+		} else if ((statb.st_mode&IFMT)==040000) {
+			statb.st_mode =& ~IFMT;
+			statb.st_mode =| DIR;
 		}
-		rep->lflags = statb.iflags;
-		rep->luid = statb.iuid;
-		rep->lgid = statb.igid;
-		rep->lnl = statb.inl;
-		rep->lsize0 = statb.isize0;
-		rep->lsize = statb.isize;
-		if (rep->lflags & (BLK|CHR) && lflg)
-			rep->lsize = statb.iaddr[0];
-		rep->lmtime[0] = statb.imtime[0];
-		rep->lmtime[1] = statb.imtime[1];
+		rep->l_mode = statb.st_mode;
+		rep->l_uid = statb.st_uid;
+		rep->l_gid = statb.st_gid;
+		rep->l_nlink = statb.st_nlink;
+		rep->l_siz0 = statb.st_siz0;
+		rep->l_siz = statb.st_siz;
+		if (rep->l_mode & (BLK|CHR) && lflg)
+			rep->l_siz = statb.st_addr[0];
+		rep->l_mtime[0] = statb.st_mtime[0];
+		rep->l_mtime[1] = statb.st_mtime[1];
 		if(uflg) {
-			rep->lmtime[0] = statb.iatime[0];
-			rep->lmtime[1] = statb.iatime[1];
+			rep->l_mtime[0] = statb.st_atime[0];
+			rep->l_mtime[1] = statb.st_atime[1];
 		}
-		tblocks =+ nblock(statb.isize0, statb.isize);
+		tblocks =+ nblock(statb.st_siz0, statb.st_siz);
 	}
 	return(rep);
 }
@@ -392,34 +380,34 @@ struct lbuf *ap1, *ap2;
 	p1 = ap1;
 	p2 = ap2;
 	if (dflg==0) {
-		if ((p1->lflags&(DIR|ISARG)) == (DIR|ISARG)) {
-			if ((p2->lflags&(DIR|ISARG)) != (DIR|ISARG))
+		if ((p1->l_mode&(DIR|ISARG)) == (DIR|ISARG)) {
+			if ((p2->l_mode&(DIR|ISARG)) != (DIR|ISARG))
 				return(1);
 		} else {
-			if ((p2->lflags&(DIR|ISARG)) == (DIR|ISARG))
+			if ((p2->l_mode&(DIR|ISARG)) == (DIR|ISARG))
 				return(-1);
 		}
 	}
 	if (tflg) {
 		i = 0;
-		if (p2->lmtime[0] > p1->lmtime[0])
+		if (p2->l_mtime[0] > p1->l_mtime[0])
 			i++;
-		else if (p2->lmtime[0] < p1->lmtime[0])
+		else if (p2->l_mtime[0] < p1->l_mtime[0])
 			i--;
-		else if (p2->lmtime[1] > p1->lmtime[1])
+		else if (p2->l_mtime[1] > p1->l_mtime[1])
 			i++;
-		else if (p2->lmtime[1] < p1->lmtime[1])
+		else if (p2->l_mtime[1] < p1->l_mtime[1])
 			i--;
 		return(i*rflg);
 	}
-	if (p1->lflags&ISARG)
+	if (p1->l_mode&ISARG)
 		p1 = p1->namep;
 	else
-		p1 = p1->lname;
-	if (p2->lflags&ISARG)
+		p1 = p1->l_name;
+	if (p2->l_mode&ISARG)
 		p2 = p2->namep;
 	else
-		p2 = p2->lname;
+		p2 = p2->l_name;
 	for (i=0; i<14; i++)
 		if ((j = *p1.charp++ - *p2.charp++) || p1.charp[-1]==0)
 			return(rflg*j);

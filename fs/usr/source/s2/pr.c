@@ -1,7 +1,10 @@
+#
 /*
  *   print file with headings
  *  2+head+2+page[56]+5
  */
+
+#include "/usr/sys/stat.h"
 
 int	ncol	1;
 char	*header;
@@ -23,20 +26,6 @@ int	length	66;
 int	ntflg;
 char	*tty;
 int	mode;
-
-struct inode {
-	int dev;
-	int inum;
-	int flags;
-	char nlink;
-	char uid;
-	char gid;
-	char siz0;
-	int size;
-	int ptr[8];
-	int atime[2];
-	int mtime[2];
-};
 
 main(argc, argv)
 char **argv;
@@ -100,19 +89,19 @@ onintr()
 
 fixtty()
 {
-	struct inode sbuf;
+	struct stat sbuf;
 	extern fout;
 
 	tty[8] = ttyn(fout);
 	fstat(fout, &sbuf);
-	mode = sbuf.flags&0777;
+	mode = sbuf.st_mode&0777;
 	chmod(tty, 0600);
 }
 
 print(fp)
 char *fp;
 {
-	struct inode sbuf;
+	struct stat sbuf;
 	register int sncol, sheader;
 	register char *cbuf;
 	extern fout;
@@ -137,11 +126,11 @@ char *fp;
 		fstat(file, &sbuf);
 	} else {
 		file = 0;
-		time(sbuf.mtime);
+		time(sbuf.st_mtime);
 	}
 	if (header == 0)
 		header = fp;
-	cbuf = ctime(sbuf.mtime);
+	cbuf = ctime(sbuf.st_mtime);
 	cbuf[16] = '\0';
 	page = 1;
 	icol = 0;
