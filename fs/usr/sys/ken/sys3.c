@@ -178,6 +178,24 @@ chown()
 	iput(ip);
 }
 
+/* backported from Dennis_v5 */
+smdate()
+{
+	register struct inode *ip;
+	register int *tp;
+	int tbuf[2];
+
+	if ((ip = owner()) == NULL)
+		return;
+	ip->i_flag =| IUPD;
+	tp = &tbuf[2];
+	*--tp = u.u_ar0[R1];
+	*--tp = u.u_ar0[R0];
+	iupdat(ip, tp);
+	ip->i_flag =& ~IUPD;
+	iput(ip);
+}
+
 fstat()
 {
 	register *fp;

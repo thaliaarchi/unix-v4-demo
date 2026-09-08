@@ -35,7 +35,7 @@ int	sysent[]
 	0, &nosys,			/* 27 = x */
 	1, &fstat,			/* 28 = fstat */
 	0, &nosys,			/* 29 = x */
-	1, &nullsys,			/* 30 = smdate */
+	1, &smdate,			/* 30 = smdate */
 	1, &stty,			/* 31 = stty */
 	1, &gtty,			/* 32 = gtty */
 	0, &nosys,			/* 33 = x */
