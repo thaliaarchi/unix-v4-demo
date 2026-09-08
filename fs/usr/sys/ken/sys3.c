@@ -181,18 +181,20 @@ chown()
 /* backported from Dennis_v5 */
 smdate()
 {
-	register struct inode *ip;
-	register int *tp;
+	register *ip;
 	int tbuf[2];
+	extern uchar;
 
-	if ((ip = owner()) == NULL)
+	ip = namei(&uchar, 0);
+	if(ip == NULL)
 		return;
-	ip->i_flag =| IUPD;
-	tp = &tbuf[2];
-	*--tp = u.u_ar0[R1];
-	*--tp = u.u_ar0[R0];
-	iupdat(ip, tp);
-	ip->i_flag =& ~IUPD;
+	if(owner(ip)) {
+		ip->i_flag =| IUPD;
+		tbuf[0] = u.u_ar0[R0];
+		tbuf[1] = u.u_ar0[R1];
+		iupdat(ip, tbuf);
+		ip->i_flag =& ~IUPD;
+	}
 	iput(ip);
 }
 
