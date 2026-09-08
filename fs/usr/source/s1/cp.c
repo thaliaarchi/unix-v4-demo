@@ -9,9 +9,9 @@ main(argc,argv)
 char **argv;
 {
 	int buf[256];
+	struct stat statb;
 	int fold, fnew, n, ct, tell, preserve;
 	char *p1, *p2, *bp;
-	int mode;
 
 	tell = preserve = 0;
 	while(argc > 1 && argv[1][0] == '-' && argv[1][2] == 0) {
@@ -38,10 +38,9 @@ bump:
 		write(1, "Cannot open old file.\n", 22);
 		exit(1);
 	}
-	fstat(fold, buf);
-	mode = buf->st_mode;
-	if((fnew = creat(argv[2], mode)) < 0){
-		stat(argv[2],  buf);
+	fstat(fold, &statb);
+	if((fnew = creat(argv[2], statb.st_mode)) < 0){
+		stat(argv[2], buf);
 		if((buf->st_mode & 060000) == 040000) {
 			p1 = argv[1];
 			p2 = argv[2];
@@ -52,7 +51,7 @@ bump:
 			while(*bp = *p1++)
 				if(*bp++ == '/')
 					bp = p2;
-			if((fnew = creat(buf, mode)) < 0) {
+			if((fnew = creat(buf, statb.st_mode)) < 0) {
 				write(1, "Cannot creat new file.\n", 23);
 				exit(1);
 			}
@@ -61,17 +60,18 @@ bump:
 			exit(1);
 		}
 	}
-	while(n = read(fold,  buf,  512)) {
-	if(n < 0) {
-		write(1, "Read error\n", 11);
-		exit(1);
-	} else
-		if(write(fnew, buf, n) != n){
+	while(n = read(fold, buf, 512)) {
+		if(n < 0) {
+			write(1, "Read error\n", 11);
+			exit(1);
+		} else if(write(fnew, buf, n) != n) {
 			write(1, "Write error.\n", 13);
 			exit(1);
 		}
 		ct++;
 	}
+	if(preserve)
+		mdate(argv[2], statb.st_mtime);
 	if(tell) {
 		conf(ct, 6, buf);
 		buf[3] = '\n';

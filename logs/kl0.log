@@ -31822,4 +31822,1325 @@ q
 /bin/pr
 % mv a.out /bin/pr
 % sync
+% date
+Sat Sep  7 21:34:12 MDT 1974
+% ed mv.c
+3109
+1,$p
+#
+/*
+mv [-d] file1 file2
+
+unlink file2
+link file1 file2
+unlink file1
+*/
+
+#include "/usr/sys/stat.h"
+
+int stbuf[42];
+char strbuf[70];
+
+main(argc,argv)
+int argc;
+char *argv[];
+{
+        char **argp;
+        char *argp1, *argp2, *argp3, *argp4;
+        char *p, *p1, *p2;
+        char place[100];
+        int i;
+        int status;
+        int b;
+        argp = argv;
+        /*
+                check for correct number
+                of arguments
+        */
+        if(argc != 3) {
+                write(2,"Usage: mv name1 name2\n",22);
+                exit(1);
+        }
+        /*
+                is there anything to do?
+        */
+        argp3 = argp[1];
+        argp4 = argp[2];
+        if(stat(argp[1], stbuf) < 0) {
+                write(2,"Source file non-existent\n",25);
+                exit(1);
+        }
+        /*
+                yes, there is a source.
+                check whether file or directory
+        */
+        if((stbuf[0].st_mode & 060000) == 040000) {
+        /*
+                The source is a directory, so
+                we do lots of checking and
+                messing around so as not to get
+                into trouble.  This patch of
+                code contains administrative
+                policies rather than system
+                restrictions.
+        */
+                if(stat(argp[2], stbuf) >= 0) {
+                        write(2,"Directory target exists.\n",25);
+                        exit(1);
+                }
+                argp1 = argp[1];
+                argp2 = argp[2];
+                while(*argp1 == *argp2) {
+                        argp1++;
+                        if(*argp2++ == 0) {
+                                write(2,"???\n",4);
+                                exit(1);
+                        }
+                }
+                while(*argp1)
+                        if(*argp1++ == '/') {
+                                write(2,"Directory rename only\n",22);
+                                exit(1);
+                        }
+                while(*argp2)
+                        if(*argp2++ == '/') {
+                                write(2,"Directory rename only\n",22);
+                                exit(1);
+                        }
+                if(*--argp1 == '.') {
+                        write(2,"values of B will give rise to dom!\n",37);
+                        exit(1);
+                }
+        } else {
+        /*
+                the source is a file.
+        */
+                setuid(getuid());
+                if(stat(argp4, &stbuf[2]) >= 0) {
+                        if((stbuf[2].st_mode & 060000) == 040000) {
+                                argp2 = strbuf;
+                                while(*argp2++ = *argp4++);
+                                argp2[-1] = '/';
+                                argp4 = argp[1];
+                                argp1 = argp[1];
+                                while(*argp4)
+                                        if(*argp4++ == '/')
+                                                argp1 = argp4;
+                                while(*argp2++ = *argp1++);
+                                argp4 = strbuf;
+                        }
+                        if(stat(argp4, &stbuf[2]) >= 0) {
+                                if((stbuf[0].st_dev==stbuf[2].st_dev) && (stbuf[0].st_ino==stbuf[2].st_ino)) {
+                                        write(2,"Files are identical.\n",21);
+                                        exit(1);
+                                }
+                                if(getuid() == stbuf[2].st_uid)
+                                        b = 0200;
+                                else if(getgid() == stbuf[2].st_gid)
+                                        b = 020;
+                                else
+                                        b = 02;
+                                if((stbuf[2].st_mode & b) == 0) {
+                                        printf("%s: %o mode ", argp4,
+                                                stbuf[2].st_mode & 07777);
+                                        i = b = getchar();
+                                        while(b !=
+ '\n' && b != '\0')
+                                                b = getchar();
+                                        if(i != 'y')
+                                                exit(1);
+                                }
+                                if(unlink(argp4) < 0) {
+                                        write(2,"Cannot remove target file.\n",27);
+                                        exit(1);
+                                }
+                        }
+                }
+        }
+        if(link(argp3, argp4) < 0) {
+                i = fork();
+                if(i == -1) {
+                        write(2,"Try again.\n",11);
+                        exit(1);
+                }
+                if(i) {
+                        while(wait(&status) != i);
+                } else {
+                        p = place;
+                        p1 = p;
+                        while(*p++ = *argp3++);
+                        p2 = p;
+                        while(*p++ = *argp4++);
+                        execl("/bin/cp","cp", p1, p2, 0);
+                        write(2, "no cp\n", 6);
+                        exit(1);
+                }
+                if((status & 0377) != 0) {
+                        write(2,"?\n", 2);
+                        exit(1);
+                }
+                if(status != 0)
+                        exit(1);
+        }
+        if(unlink(argp3) < 0) {
+                write(2,"Cannot unlink source file.\n",26);
+                exit(1);
+        }
+}
+
+putchar(c)
+{
+        write(1, &c, 1);
+}
+
+getchar()
+{
+        char c;
+
+        if(read(0, &c, 1) != 1)
+                return(0);
+        return(c);
+}
+?
+q
+% ed @chdir ../s1
+% ed cp.c
+1527
+1,$p
+#
+/*
+ * cp oldfile newfile
+ */
+
+#include "/usr/sys/stat.h"
+
+main(argc,argv)
+char **argv;
+{
+        int buf[256];
+        int fold, fnew, n, ct, tell, preserve;
+        char *p1, *p2, *bp;
+        int mode;
+
+        tell = preserve = 0;
+        while(argc > 1 && argv[1][0] == '-' && argv[1][2] == 0) {
+                switch(argv[1][1]) {
+                case 't':
+                        tell = 1;
+                        goto bump;
+                case 'p':
+                        preserve = 1;
+bump:
+                        argc--;
+                        argv++;
+                        continue;
+                default:
+                        break;
+                }
+                break;
+        }
+        if(argc != 3) {
+                write(1, "Usage: cp oldfile newfile\n", 26);
+                exit(1);
+        }
+        if((fold = open(argv[1], 0)) < 0) {
+                write(1, "Cannot open old file.\n", 22);
+                exit(1);
+        }
+        fstat(fold, buf);
+        mode = buf->st_mode;
+        if((fnew = creat(argv[2], mode)) < 0){
+                stat(argv[2],  buf);
+                if((buf->st_mode & 060000) == 040000) {
+                        p1 = argv[1];
+                        p2 = argv[2];
+                        bp = buf;
+                        while(*bp++ = *p2++);
+                        bp[-1] = '/';
+                        p2 = bp;
+                        while(*bp = *p1++)
+                                if(*bp++ == '/')
+                                        bp = p2;
+                        if((fnew = creat(buf, mode)) < 0) {
+                                write(1, "Cannot creat new file.\n", 23);
+                                exit(1);
+                        }
+                } else {
+                        write(1, "Cannot creat new file.\n", 23);
+                        exit(1);
+                }
+        }
+        while(n = read(fold,  buf,  512)) {
+        if(n < 0) {
+                write(1, "Read error\n", 11);
+                exit(1);
+        } else
+                if(write(fnew, buf, n) != n){
+                        write(1, "Write error.\n", 13);
+                        exit(1);
+                }
+                ct++;
+        }
+        if(tell) {
+                conf(ct, 6, buf);
+                buf[3] = '\n';
+                write(1, buf, 7);
+        }
+        exit(0);
+}
+
+conf(n,width,buf) 
+        char    *buf;
+{
+        auto    i,a;
+
+        i = width;
+        while(i--)      buf[i] = ' ';
+
+        buf[(a = n/10)?conf(a,--width,buf):--width] = n%10 + '0';
+
+        return(++width);
+}
+?while.*buf?
+        while(i--)      buf[i] = ' ';
+??
+        while(n = read(fold,  buf,  512)) {
+
+        if(n < 0) {
+.,.+3s/^/       /p
+                } else
+
+                if(write(fnew, buf, n) != n){
+s/              } else@s/i/} else i/p
+                } else if(write(fnew, buf, n) != n){
+s/{/ {/p
+                } else if(write(fnew, buf, n) != n) {
+w
+1539
+.-5,.+8p
+        while(n = read(fold,  buf,  512)) {
+                if(n < 0) {
+                        write(1, "Read error\n", 11);
+                        exit(1);
+                } else
+                } else if(write(fnew, buf, n) != n) {
+                        write(1, "Write error.\n", 13);
+                        exit(1);
+                }
+                ct++;
+        }
+        if(tell) {
+                conf(ct, 6, buf);
+                buf[3] = '\n';
+?else?
+                } else if(write(fnew, buf, n) != n) {
+??
+                } else
+d
+w
+1530
+?if?
+                if(n < 0) {
+??
+//
+                } else if(write(fnew, buf, n) != n) {
+//
+        if(tell) {
+.#i
+        smdate(@.
+w
+1530
+q
+% ls
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.\s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+di
+ff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% chdir ../s3
+% ls
+atan.s
+atof.s
+atoi.s
+compar.s
+crypt.s
+ctime.c
+dpadd.s
+ecvt.s
+exp.s
+fakfp.s
+fp1.s
+fp2.s
+fp3.s
+fpx.s
+gamma.s
+get.s
+hypot.s
+ldiv.s
+log.s
+mesg.s
+mon.s
+nlist.s
+pow.s
+put.s
+qsort.s
+rand.s
+sin.s
+sqrt.s
+switch.s
+ttyn.s
+% chdir ../s4
+% ls
+abort.s
+atan.s
+atan2.s
+atof.s
+chdir.s
+chmod.s
+chown.s
+close.s
+cos.s
+crand.s
+creat.s
+crt0.s
+crypt.s
+dup.s
+ecvt.s
+errlst.c
+execl.s
+execv.s
+exit.s
+exp.s
+ffltpr.s
+floor.s
+fltpr.s
+fmod.s
+fork.s
+fstat.s
+gamma.s
+getc.s
+getchr.s
+getcsw.s
+getgid.s
+getpw.c
+getuid.s
+gtty.s
+hmul.s
+hsw.s
+kill.s
+link.s
+locv.s
+log.s
+ltod.s
+makdir.s
+mcrt0.s
+mdate.s
+mknod.s
+mon.c
+mount.s
+nargs.s
+nice.s
+nlist.s
+open.s
+perror.c
+pipe.s
+pow.s
+printf.s
+prof.s
+putc.s
+putchr.s
+qsort.c
+read.s
+reset.s
+retrn.s
+rin.c
+rsave.s
+sbrk.s
+seek.s
+setgid.s
+setuid.s
+signal.s
+sin.s
+sleep.s
+sqrt.s
+ssw.s
+stat.s
+stime.s
+stty.s
+switch.s
+sync.s
+time.s
+times.s
+umount.s
+unlink.s
+wait.s
+write.s
+% cat  creat.s
+/ C library -- creat
+
+/ file = creat(string, mode);
+/
+/ file == -1 if error
+
+.globl  _creat, retrn, cerror
+
+_creat:
+        mov     r5,-(sp)
+        mov     sp,r5
+        mov     4(r5),0f
+        mov     6(r5),0f+2
+        sys     0; 9f
+        bec     1f
+        jmp     cerror
+1:
+        jmp     retrn
+.data
+9:
+        sys     creat; 0:..; ..
+% cat open.s
+/ C library -- open
+
+/ file = open(string, mode)
+/
+/ file == -1 means error
+
+.globl  _open, retrn, cerror
+
+_open:
+        mov     r5,-(sp)
+        mov     sp,r5
+        mov     4(r5),0f
+        mov     6(r5),0f+2
+        sys     0; 9f
+        bec     1f
+        jmp     cerror
+1:
+        jmp     retrn
+.data
+9:
+        sys     open; 0:..; ..
+% cp open.s smdate.s
+% ed smdate.s
+242
+g/open/s//smdate/
+/#g/mode/p
+/ file = smdate(string, mode)
+s//time/p
+/ file = smdate(string, time)
+/4/
+        mov     4(r5),0f
+.,.+1c
+        mov     4(r5P#),0f
+        mov     6(r5),r0
+        mocv##v 2(r0),r1
+        mov     (r0),r0
+.
+
+        sys     0; 9f
+
+        bec     1f
+
+        jmp     cerror
+
+1:
+
+        jmp     retrn
+
+.data
+
+9:
+
+        sys     smdate; 0:..; ..
+s/; ..##\.\.;//p
+?
+s/; \.\.//p
+        sys     smdate; 0:..
+1,$p
+/ C library -- smdate
+
+/ file = smdate(string, time)
+/
+/ file == -1 means error
+
+.globl  _smdate, retrn, cerror
+
+_smdate:
+        mov     r5,-(sp)
+        mov     sp,r5
+        mov     4(r5),0f
+        mov     6(r5),r0
+        mov     2(r0),r1
+        mov     (r0),r0
+        sys     0; 9f
+        bec     1f
+        jmp     cerror
+1:
+        jmp     retrn
+.data
+9:
+        sys     smdate; 0:..
+w
+273
+q
+% ls
+abort.s
+atan.s
+atan2.s
+atof.s
+chdir.s
+chmod.s
+chown.s
+close.s
+cos.s
+crand.s
+creat.s
+crt0.s
+crypt.s
+dup.s
+ecvt.s
+errlst.c
+execl.s
+execv.s
+exit.s
+exp.s
+ffltpr.s
+floor.s
+fltpr.s
+fmod.s
+fork.s
+fstat.s
+gamma.s
+getc.s
+getchr.s
+getcsw.s
+getgid.s
+getpw.c
+getuid.s
+gtty.s
+hmul.s
+hsw.s
+kill.s
+link.s
+locv.s
+log.s
+ltod.s
+makdir.s
+mcrt0.s
+mdate.s
+mknod.s
+mon.c
+mount.s
+nargs.s
+nice.s
+nlist.s
+open.s
+perror.c
+pipe.s
+pow.s
+printf.s
+prof.s
+putc.s
+putchr.s
+qsort.c
+read.s
+reset.s
+retrn.s
+rin.c
+rsave.s
+sbrk.s
+seek.s
+setgid.s
+setuid.s
+signal.s
+sin.s
+sleep.s
+smdate.s
+sqrt.s
+ssw.s
+stat.s
+stime.s
+stty.s
+switch.s
+sync.s
+time.s
+times.s
+umount.s
+unlink.s
+wait.s
+write.s
+% ar /lib/c#libc.a!@ar tvf /lib/libc.a
+bad usage
+% ar vf##tv /lib/libc.a
+getpw.o
+mon.o
+perror.o
+rin.o
+alloc.o
+fltpr.o
+printf.o
+ffltpr.o
+putchr.o
+getchr.o
+atan.o
+atan2.o
+atof.o
+chdir.o
+chmod.o
+chown.o
+close.o
+cos.o
+crand.o
+creat.o
+crypt.o
+dup.o
+ecvt.o
+execl.o
+execv.o
+exp.o
+floor.o
+fork.o
+fstat.o
+gamma.o
+getc.o
+getcsw.o
+getgid.o
+getuid.o
+gtty.o
+kill.o
+link.o
+log.o
+makdir.o
+mdate.o
+mknod.o
+mount.o
+nice.o
+nlist.o
+open.o
+pipe.o
+pow.o
+prof.o
+putc.o
+qsort.o
+read.o
+sbrk.o
+seek.o
+setgid.o
+setuid.o
+signal.o
+sin.o
+sleep.o
+sqrt.o
+stat.o
+stime.o
+stty.o
+sync.o
+time.o
+times.o
+umount.o
+unlink.o
+wait.o
+write.o
+abort.o
+errlst.o
+exit.o
+hmul.o
+hsw.o
+locv.o
+nargs.o
+reset.o
+retrn.o
+rsave.o
+ltod.o
+% ls
+abort.s
+atan.s
+atan2.s
+atof.s
+chdir.s
+chmod.s
+chown.s
+close.s
+cos.s
+crand.s
+creat.s
+crt0.s
+crypt.s
+dup.s
+ecvt.s
+errlst.c
+execl.s
+execv.s
+exit.s
+exp.s
+ffltpr.s
+floor.s
+fltpr.s
+fmod.s
+fork.s
+fstat.s
+gamma.s
+getc.s
+getchr.s
+getcsw.s
+getgid.s
+getpw.c
+getuid.s
+gtty.s
+hmul.s
+hsw.s
+kill.s
+link.s
+locv.s
+log.s
+ltod.s
+makdir.s
+mcrt0.s
+\mdate.s
+mknod.s
+mon.c
+mount.s
+nargs.s
+nice.s
+nlist.s
+open.s
+perror.c
+pipe.s
+pow.s
+printf.s
+prof.s
+putc.s
+putchr.s
+qsort.c
+read.s
+reset.s
+retrn.s
+rin.c
+rsave.s
+sbrk.s
+seek.s
+setgid.s
+setuid.s
+signal.s
+sin.s
+sleep.s
+smdate.s
+sqrt.s
+ssw.s
+stat.s
+stime.s
+stty.s
+switch.s
+sync.s
+time.s
+times.s
+umount.s
+unlink.s
+wait.s
+write.s
+% as smdate.s
+smdate.s
+u 0023
+% ed smdate.s
+273
+23
+        sys     smdate; 0:..
+q
+% cjhdir @chdir ../s1
+% re#grep@@grep -n smdate *
+Arg list too long
+% ed as19.s
+6779
+1,23p
+/
+/ copyright 1972 bell telephone laboratories inc.
+/
+
+/ a9 -- pdp-11 assembler pass 1
+
+eae = 0
+
+/ key to types
+
+/       0       undefined
+/       1       absolute
+/       2       text
+/       3       data
+/       4       bss
+/       5       flop freg,dst (movfo, = stcfd)
+/       6       branch
+/       7       jsr
+/       10      rts
+/       11      sys
+/       12      movf (=ldf,stf)
+/       13      double operand (mov)
+/       14      flop fsrc,freg (addf)
+/stty/
+<stty\0\0\0\0>;         01;0000037
+.-5,.+5p
+<setuid\0\0>;           01;0000027
+<getuid\0\0>;           01;0000030
+<stime\0\0\0>;          01;0000031
+<fstat\0\0\0>;          01;0000034
+<mdate\0\0\0>;          01;0000036
+<stty\0\0\0\0>;         01;0000037
+<gtty\0\0\0\0>;         01;0000040
+<nice\0\0\0\0>;         01;0000042
+<signal\0\0>;           01;0000060
+
+/ double operand
+s@q
+% sync
+% ls
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.sQuit -- Core dumped
+% rm core
+% chdir ../s4
+% rm smdate.c#s
+% chdir ../s1
+% ed cp.d#c
+1530
+/smdate/
+?
+/if(tell/
+        if(tell) {
+i
+        smda@   mdate(argv[2], &st###statb->##.st_mtime);
+.
+s/^/    /
+i
+        if(preserve)
+.
+/stat/
+                mdate(argv[2], statb.st_mtime);
+g/stat/p
+#include "/usr/sys/stat.h"
+        fstat(fold, buf);
+                stat(argv[2],  buf);
+                mdate(argv[2], statb.st_mtime);
+?stat?
+                stat(argv[2],  buf);
+s/ buf/statb/
+p
+                stat(argv[2], statb);
+g/buf/p
+        int buf[256];
+        fstat(fold, buf);
+        mode = buf->st_mode;
+                if((buf->st_mode & 060000) == 040000) {
+                        bp = buf;
+                        if((fnew = creat(buf, mode)) < 0) {
+        while(n = read(fold,  buf,  512)) {
+                } else if(write(fnew, buf, n) != n) {
+                conf(ct, 6, buf);
+                buf[3] = '\n';
+                write(1, buf, 7);
+conf(n,width,buf) 
+        char    *buf;
+        while(i--)      buf[i] = ' ';
+        buf[(a = n/10)?conf(a,--width,buf):--width] = n%10 + '0';
+s/@g/buf->st/s//statb./p
+        mode = statb._mode;
+                if((statb._mode & 060000) == 040000) {
+g/statb._/s//statb.st_/p
+        mode = statb.st_mode;
+                if((statb.st_mode & 060000) == 040000) {
+?buf?
+        fstat(fold, buf);
+??
+        int buf[256];
+??@@c
+        char buf[512];
+        char@@@ struct stat statb;
+.
+g/stat/p
+#include "/usr/sys/stat.h"
+        struct stat statb;
+        fstat(fold, buf);
+        mode = statb.st_mode;
+                stat(argv[2], statb);
+                if((statb.st_mode & 060000) == 040000) {
+                mdate(argv[2], statb.st_mtime);
+?fstat/s##?s/buf/bu##statb/p
+        fstat(fold, statb);
+w cp.c##2.c
+1604
+!diff cp.c cp2.c
+11c11,12
+*       int buf[256];
+---
+.       char buf[512];
+.       struct stat statb;
+41,42c42,43
+*       fstat(fold, buf);
+*       mode = buf->st_mode;
+---
+.       fstat(fold, statb);
+.       mode = statb.st_mode;
+44,45c45,46
+*               stat(argv[2],  buf);
+*               if((buf->st_mode & 060000) == 040000) {
+---
+.               stat(argv[2], statb);
+.               if((statb.st_mode & 060000) == 040000) {
+73a75,76
+.       if(preserve)
+.               mdate(argv[2], statb.st_mtime);
+!
+!mv cp2.c cp.c
+!
+!cc cp.c
+42: Illegal structure
+45: Illegal structure
+!
+42
+        fstat(fold, statb);
+g/, statb/p
+        fstat(fold, statb);
+                stat(argv[2], statb);
+                mdate(argv[2], statb.st_mtime);
+/fstat/
+        fstat(fold, statb);
+s/statb/&#\*#&statb/p
+        fstat(fold, &statb);
+/stat;#/
+        mode = statb.st_mode;
+//
+                stat(argv[2], statb);
+s/statb/\&statb/p
+                stat(argv[2], &statb);
+w
+1606
+!cc cp.c
+!
+q
+% ls
+a.out
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% chmod 755 a.out
+% a.out -p as11.s x
+% ls -l x as11.s
+-rw-r--r-- 1 bin      1025 Jun 10 08:37 as11.s
+-rw-r--r-- 1 bin      1025 Sep  7 22:07 x
+% sync
+% ed cp.c
+1606
+/stat/
+#include "/usr/sys/stat.h"
+//
+        struct stat statb;
+//
+        fstat(fold, &statb);
+//
+        mode = statb.st_mode;
+//
+                stat(argv[2], &statb);
+s/&statb/buf/p
+                stat(argv[2], buf);
+//sa#tatb/
+?
+/statb/
+                if((statb.st_mode & 060000) == 040000) {
+s//@s/statb./buf->/
+?mode =?
+        mode = statb.st_mode;
+d
+g/mode/p
+        int mode;
+        if((fnew = creat(argv[2], mode)) < 0){
+                if((buf->st_mode & 060000) == 040000) {
+                        if((fnew = creat(buf, mode)) < 0) {
+/int m/
+        int mode;
+d
+/mode/
+        if((fnew = creat(argv[2], mode)) < 0){
+s/mode/statb-#.st_mode/p
+        if((fnew = creat(argv[2], statb.st_mode)) < 0){
+/mode/
+                if((buf->st_mode & 060000) == 040000) {
+//
+                        if((fnew = creat(buf, mode)) < 0) {
+s/mode/statb.sta#_mode/p
+                        if((fnew = creat(buf, statb.st_mode)) < 0) {
+w
+1586
+!cc cp.c
+!
+q
+% a.out as#@a.out -p as11.c#s x
+% ls -l as11.s x
+-rw-r--r-- 1 bin      1025 Jun 10 08:37 as11.s
+-rw-r--r-- 1 bin      1025 Sep  7 22:11 x
+% rm x
+% cp @a.out -p as11.s x
+% ls -l x
+-rw-r--r-- 1 bin      1025 Sep  7 22:11 x
+% /@ed cp.c
+1586
+/char b/
+        char buf[512];
+c
+        int buf[256];
+.
+w
+1585
+!cc cp.c
+!
+q
+% a.out -p as11.c#s x
+% ls -l x
+-rw-r--r-- 1 bin      1025 Sep  7 22:12 x
+% ed cp.c
+1585
+/pres/
+        int fold, fnew, n, ct, tell, preserve;
+//
+        tell = preserve = 0;
+//
+                        preserve = 1;
+//
+        if(preserve)
+s/$/{/
+a
+printf("preserve"#\n");
+.
+
+                mdate(argv[2], statb.st_mtime);
+a
+}
+.
+w
+1610
+q
+% cc cp.c
+% a.out -p as11.s x
+preserve
+% a.out as11.s x
+% ed cp.c
+1610
+/printf/
+printf("preserve\n");
+d
+
+}
+d
+^
+                mdate(argv[2], statb.st_mtime);
+^
+        if(preserve){
+s/{//p
+        if(preserve)
+w
+1585
+q
+% rm a.out
+% rm x
+% chdir ../s4
+% rm a.out
+% sync
+% ed cp.c
+?
+/  /@g //@g/  /p
+?
+g/  /p
+?
+g/  /
+?
+q
+% chdir ../s1
+% ed cp.c
+1585
+g/  /p
+        while(n = read(fold,  buf,  512)) {
+g/  /s@s/  / /gp
+        while(n = read(fold, buf, 512)) {
+w
+1583
+q
+% sync
 % 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
