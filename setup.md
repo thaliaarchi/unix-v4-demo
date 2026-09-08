@@ -1524,4 +1524,251 @@ sim> c
 
 ## Mirroring a terminal for a projector
 
-How to connect to a line a second time for read-only projection?
+Patch SIMH to not buffer logs and view `tail -f logs/kl0.log` with `vt52`.
+
+## Install aap manuals
+
+Following aap's [nroff and the manual](http://squoze.net/UNIX/v4/README)
+instructions.
+
+I have devices configured incorrectly:
+
+```
+login: bin
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> at tc1 nroff.tp
+TC1: 16b format, buffering file in memory
+sim> c
+
+% chdir /usr/source/s7
+% tp 1t
+Tape read error
+END
+```
+
+Consulting conf.c and /dec, we have the following devices configured:
+
+| Driver | Type | Major | Minor 0 | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 10   | 11   | 12   | 13   | 14   | 15   |
+| ------ | ---- | ----- | ------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| rk     | b    | 0     | rp0     | rp1  |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| tc     | b    | 1     | rk0     | rk1  |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| tm     | b    | 2     | tap0    | tap1 | tap2 | tap3 | tap4 | tap5 | tap6 | tap7 |      |      |      |      |      |      |      |      |
+|        | b    | 3     | mt0     | mt1  | mt2  | mt3  | mt4  | mt5  | mt6  | mt7  |      |      |      |      |      |      |      |      |
+| kl     | c    | 0     | tty8    | tty9 | ttyi | ttyj | ttyk | ttyl | ttym | ttyn | ttyo | ttyp | ttyq | ttyr | ttys | ttyt | ttyu | ttyv |
+| rk     | c    | 1     |         |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| tm     | c    | 2     |         |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| dc     | c    | 3     | tty0    | tty1 | tty2 | tty3 | tty4 | tty5 | tty6 | tty7 | ttya | ttyb | ttyc | ttyd | ttye | ttyf | ttyg | ttyh |
+| pc     | c    | 4     | ptr     |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| mem    | c    | 5     | mem     | kmem | null |      |      |      |      |      |      |      |      |      |      |      |      |      |
+
+```
+% cat /usr/sys/conf/conf.c
+/*
+ *      Copyright 1974 Bell Telephone Laboratories Inc
+ */
+
+int     (*bdevsw[])()
+{
+        &nulldev,       &nulldev,       &rkstrategy,    &rktab,
+        &nulldev,       &tcclose,       &tcstrategy,    &tctab,
+        &tmopen,        &tmclose,       &tmstrategy,    &tmtab,
+        0
+};
+
+int     (*cdevsw[])()
+{
+        &klopen,   &klclose,   &klread,   &klwrite,   &klsgtty,
+        &nulldev,  &nulldev,   &rkread,   &rkwrite,   &nodev,
+        &tmopen,   &tmclose,   &tmread,   &tmwrite,   &nodev,
+        &dcopen,   &dcclose,   &dcread,   &dcwrite,   &dcsgtty,
+        &pcopen,   &pcclose,   &pcread,   &pcwrite,   &nodev,
+        &nulldev,  &nulldev,   &mmread,   &mmwrite,   &nodev,
+        0
+};
+
+int     rootdev {(0<<8)|0};
+int     swapdev {(0<<8)|0};
+int     swplo   4000;
+int     nswap   872;
+```
+
+```
+% ls -l /dev
+total 0
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+crw-rw-rw- 1 root    4,  0 Aug 18 10:27 ptr
+brw-rw-rw- 1 root    1,  0 Aug 11 03:44 rk0
+brw-rw-rw- 1 root    1,  1 Aug 11 03:44 rk1
+brw-rw-rw- 1 root    0,  0 Aug 11 03:44 rp0
+brw-rw-rw- 1 root    0,  1 Aug 11 03:44 rp1
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 root    3,  0 Sep  8 00:49 tty0
+crw--w--w- 1 root    3,  1 Sep  8 00:49 tty1
+crw--w--w- 1 root    3,  2 Sep  8 00:49 tty2
+crw--w--w- 1 root    3,  3 Sep  8 00:49 tty3
+crw--w--w- 1 root    3,  4 Sep  8 00:49 tty4
+crw--w--w- 1 root    3,  5 Sep  8 00:49 tty5
+crw--w--w- 1 root    3,  6 Sep  8 00:49 tty6
+crw--w--w- 1 root    3,  7 Sep  8 00:49 tty7
+crw--w--w- 1 bin     0,  0 Sep  8 10:29 tty8
+crw--w--w- 1 root    0,  1 Sep  8 10:29 tty9
+crw--w--w- 1 root    3,  8 Sep  8 00:49 ttya
+crw--w--w- 1 root    3,  9 Sep  8 00:49 ttyb
+crw--w--w- 1 root    3, 10 Sep  8 00:49 ttyc
+crw--w--w- 1 root    3, 11 Sep  8 00:49 ttyd
+crw--w--w- 1 root    3, 12 Sep  8 00:49 ttye
+crw--w--w- 1 root    3, 13 Sep  8 00:49 ttyf
+crw--w--w- 1 root    3, 14 Sep  8 00:49 ttyg
+crw--w--w- 1 root    3, 15 Sep  8 00:49 ttyh
+crw--w--w- 1 root    0,  2 Sep  8 10:29 ttyi
+crw--w--w- 1 root    0,  3 Sep  8 10:29 ttyj
+crw--w--w- 1 root    0,  4 Sep  8 10:29 ttyk
+crw--w--w- 1 root    0,  5 Sep  8 10:29 ttyl
+crw--w--w- 1 root    0,  6 Sep  8 10:29 ttym
+crw--w--w- 1 root    0,  7 Sep  8 10:29 ttyn
+crw--w--w- 1 root    0,  8 Sep  8 10:29 ttyo
+crw--w--w- 1 root    0,  9 Sep  8 10:29 ttyp
+crw--w--w- 1 root    0, 10 Sep  8 10:29 ttyq
+crw--w--w- 1 root    0, 11 Sep  8 10:29 ttyr
+crw--w--w- 1 root    0, 12 Sep  8 10:29 ttys
+crw--w--w- 1 root    0, 13 Sep  8 10:29 ttyt
+crw--w--w- 1 root    0, 14 Sep  8 10:29 ttyu
+crw--w--w- 1 root    0, 15 Sep  8 10:29 ttyv
+```
+
+The stock Utah_v4 driver configuration is as follows. Note that I changed `dc`
+to `dh` and added `mem`. The mismatched minors are from following aap's
+instructions with my configuration.
+
+| Driver | Type | Major |
+| ------ | ---- | ----- |
+| rk     | b    | 0     |
+| tc     | b    | 1     |
+| tm     | b    | 2     |
+| kl     | c    | 0     |
+| rk     | c    | 1     |
+| tm     | c    | 2     |
+| dh     | c    | 3     |
+| pc     | c    | 4     |
+| mem    | c    | 5     |
+
+```
+% cat /usr/sys/conf/conf.c
+/*
+ *      Copyright 1974 Bell Telephone Laboratories Inc
+ */
+
+int     (*bdevsw[])()
+{
+        &nulldev,       &nulldev,       &rkstrategy,    &rktab,
+        &nulldev,       &tcclose,       &tcstrategy,    &tctab,
+        &tmopen,        &tmclose,       &tmstrategy,    &tmtab,
+        0
+};
+
+int     (*cdevsw[])()
+{
+        &klopen,   &klclose,   &klread,   &klwrite,   &klsgtty,
+        &nulldev,  &nulldev,   &rkread,   &rkwrite,   &nodev,
+        &tmopen,   &tmclose,   &tmread,   &tmwrite,   &nodev,
+        &dhopen,   &dhclose,   &dhread,   &dhwrite,   &dhsgtty,
+        &pcopen,   &pcclose,   &pcread,   &pcwrite,   &nodev,
+        0
+};
+
+int     rootdev {(0<<8)|0};
+int     swapdev {(0<<8)|0};
+int     swplo   4000;
+int     nswap   872;
+```
+
+Fix the majors of `rk`, `tap`, and `mt`, add character device versions of `rk`
+and `mt`, and remove `rp`, as it is not configured. I should configure `rp`
+later.
+
+```
+login: root
+# chdir /dev
+# rm rp0 rp1
+# rm rk0 rk1
+# /etc/mknod rk0 b 0 0
+# /etc/mknod rk1 b 0 1
+# /etc/mknod rk2 b 0 2
+# /etc/mknod rk3 b 0 3
+# rm tap0 tap1 tap2 tap3 tap4 tap5 tap6 tap7
+# /etc/mknod tap0 b 1 0
+# /etc/mknod tap1 b 1 1
+# /etc/mknod tap2 b 1 2
+# /etc/mknod tap3 b 1 3
+# /etc/mknod tap4 b 1 4
+# /etc/mknod tap5 b 1 5
+# /etc/mknod tap6 b 1 6
+# /etc/mknod tap7 b 1 7
+# rm mt0 mt1 mt2 mt3 mt4 mt5 mt6 mt7
+# /etc/mknod mt0 b 2 0
+# /etc/mknod mt1 b 2 1
+# /etc/mknod mt2 b 2 2
+# /etc/mknod mt3 b 2 3
+# /etc/mknod mt4 b 2 4
+# /etc/mknod mt5 b 2 5
+# /etc/mknod mt6 b 2 6
+# /etc/mknod mt7 b 2 7
+# /etc/mknod rrk0 c 1 0
+# /etc/mknod rrk1 c 1 1
+# /etc/mknod rrk2 c 1 2
+# /etc/mknod rrk3 c 1 3
+# /etc/mknod rmt0 c 2 0
+# /etc/mknod rmt1 c 2 1
+# /etc/mknod rmt2 c 2 2
+# /etc/mknod rmt3 c 2 3
+# /etc/mknod rmt4 c 2 4
+# /etc/mknod rmt5 c 2 5
+# /etc/mknod rmt6 c 2 6
+# /etc/mknod rmt7 c 2 7
+```
+
+| Driver | Type | Major | Minor 0 | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 10   | 11   | 12   | 13   | 14   | 15   |
+| ------ | ---- | ----- | ------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| rk     | b    | 0     | rk0     | rk1  | rk2  | rk3  |      |      |      |      |      |      |      |      |      |      |      |      |
+| tc     | b    | 1     | tap0    | tap1 | tap2 | tap3 | tap4 | tap5 | tap6 | tap7 |      |      |      |      |      |      |      |      |
+| tm     | b    | 2     | mt0     | mt1  | mt2  | mt3  | mt4  | mt5  | mt6  | mt7  |      |      |      |      |      |      |      |      |
+| kl     | c    | 0     | tty8    | tty9 | ttyi | ttyj | ttyk | ttyl | ttym | ttyn | ttyo | ttyp | ttyq | ttyr | ttys | ttyt | ttyu | ttyv |
+| rk     | c    | 1     | rrk0    | rrk1 | rrk2 | rrk3 |      |      |      |      |      |      |      |      |      |      |      |      |
+| tm     | c    | 2     | rmt0    | rmt1 | rmt2 | rmt3 | rmt4 | rmt5 | rmt6 | rmt7 |      |      |      |      |      |      |      |      |
+| dc     | c    | 3     | tty0    | tty1 | tty2 | tty3 | tty4 | tty5 | tty6 | tty7 | ttya | ttyb | ttyc | ttyd | ttye | ttyf | ttyg | ttyh |
+| pc     | c    | 4     | ptr     |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| mem    | c    | 5     | mem     | kmem | null |      |      |      |      |      |      |      |      |      |      |      |      |      |
+
+`rk` has 4 partitions and `nrp` has 8. They both allow more minors than that and
+above 7 is not clear to me.
+
+```
+# ed /usr/sys/dmr/rk.c
+2981
+/NRK/
+#define NRK     4
+q
+# ed /usr/sys/dmr/rp.c
+3055
+/NRP/
+#define NRP     8
+q
+```

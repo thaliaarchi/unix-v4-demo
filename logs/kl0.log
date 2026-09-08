@@ -34712,4 +34712,420 @@ total 2
 -rwxr-xr-x 1 thalia    248 Aug 18 03:44 a.out
 -rw-r--r-- 1 thalia    465 Aug 18 03:44 mullv4.c
 # % sync
+% Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: bin
+% date 09081020
+Sun Sep  8 10:20:00 MDT 1974
 % 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> at tc1 nroff.tp
+TC1: 16b format, buffering file in memory
+sim> c
+chdur /@chdir /usr/source/s67##7
+% tp 1t
+Tape read error
+END
+% ls -l
+total 99
+-rw-r--r-- 1 bin      6518 Jun 10 08:37 roff1.s
+-rw-r--r-- 1 bin      3990 Jun 10 08:37 roff2.s
+-rw-r--r-- 1 bin      4813 Jun 10 08:37 roff3.s
+-rw-r--r-- 1 bin      5149 Jun 10 08:37 roff4.s
+-rw-r--r-- 1 bin      2990 Jun 10 08:37 roff5.s
+-rw-r--r-- 1 bin      6207 Jun 10 08:37 roff7.s
+-rw-r--r-- 1 bin      1436 Jun 10 08:37 roff8.s
+-rw-r--r-- 1 bin     15113 Jun 10 08:37 suftab.s
+% ls -a
+.
+..
+roff1.s
+roff2.s
+roff3.s
+roff4.s
+roff5.s
+roff7.s
+roff8.s
+suftab.s
+% ls -al
+total 101
+drwxr-xr-x 2 bin       160 Jun 10 08:37 .
+drwxr-xr-x 7 bin       112 Jun 10 08:37 ..
+-rw-r--r-- 1 bin      6518 Jun 10 08:37 roff1.s
+-rw-r--r-- 1 bin      3990 Jun 10 08:37 roff2.s
+-rw-r--r-- 1 bin      4813 Jun 10 08:37 roff3.s
+-rw-r--r-- 1 bin      5149 Jun 10 08:37 roff4.s
+-rw-r--r-- 1 bin      2990 Jun 10 08:37 roff5.s
+-rw-r--r-- 1 bin      6207 Jun 10 08:37 roff7.s
+-rw-r--r-- 1 bin      1436 Jun 10 08:37 roff8.s
+-rw-r--r-- 1 bin     15113 Jun 10 08:37 suftab.s
+% sync
+% ls -l /dev/mt*
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 /dev/mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 /dev/mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 /dev/mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 /dev/mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 /dev/mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 /dev/mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 /dev/mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 /dev/mt7
+% ls -l /dev
+total 0
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+crw-rw-rw- 1 root    4,  0 Aug 18 10:27 ptr
+brw-rw-rw- 1 root    1,  0 Aug 11 03:44 rk0
+brw-rw-rw- 1 root    1,  1 Aug 11 03:44 rk1
+brw-rw-rw- 1 root    0,  0 Aug 11 03:44 rp0
+brw-rw-rw- 1 root    0,  1 Aug 11 03:44 rp1
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 root    3,  0 Sep  8 00:49 tty0
+crw--w--w- 1 root    3,  1 Sep  8 00:49 tty1
+crw--w--w- 1 root    3,  2 Sep  8 00:49 tty2
+crw--w--w- 1 root    3,  3 Sep  8 00:49 tty3
+crw--w--w- 1 root    3,  4 Sep  8 00:49 tty4
+crw--w--w- 1 root    3,  5 Sep  8 00:49 tty5
+crw--w--w- 1 root    3,  6 Sep  8 00:49 tty6
+crw--w--w- 1 root    3,  7 Sep  8 00:49 tty7
+crw--w--w- 1 bin     0,  0 Sep  8 10:29 tty8
+crw--w--w- 1 root    0,  1 Sep  8 10:29 tty9
+crw--w--w- 1 root    3,  8 Sep  8 00:49 ttya
+crw--w--w- 1 root    3,  9 Sep  8 00:49 ttyb
+crw--w--w- 1 root    3, 10 Sep  8 00:49 ttyc
+crw--w--w- 1 root    3, 11 Sep  8 00:49 ttyd
+crw--w--w- 1 root    3, 12 Sep  8 00:49 ttye
+crw--w--w- 1 root    3, 13 Sep  8 00:49 ttyf
+crw--w--w- 1 root    3, 14 Sep  8 00:49 ttyg
+crw--w--w- 1 root    3, 15 Sep  8 00:49 ttyh
+crw--w--w- 1 root    0,  2 Sep  8 10:29 ttyi
+crw--w--w- 1 root    0,  3 Sep  8 10:29 ttyj
+crw--w--w- 1 root    0,  4 Sep  8 10:29 ttyk
+crw--w--w- 1 root    0,  5 Sep  8 10:29 ttyl
+crw--w--w- 1 root    0,  6 Sep  8 10:29 ttym
+crw--w--w- 1 root    0,  7 Sep  8 10:29 ttyn
+crw--w--w- 1 root    0,  8 Sep  8 10:29 ttyo
+crw--w--w- 1 root    0,  9 Sep  8 10:29 ttyp
+crw--w--w- 1 root    0, 10 Sep  8 10:29 ttyq
+crw--w--w- 1 root    0, 11 Sep  8 10:29 ttyr
+crw--w--w- 1 root    0, 12 Sep  8 10:29 ttys
+crw--w--w- 1 root    0, 13 Sep  8 10:29 ttyt
+crw--w--w- 1 root    0, 14 Sep  8 10:29 ttyu
+crw--w--w- 1 root    0, 15 Sep  8 10:29 ttyv
+% chdir @ls -al
+total 101
+drwxr-xr-x 2 bin       160 Jun 10 08:37 .
+drwxr-xr-x 7 bin       112 Jun 10 08:37 ..
+-rw-r--r-- 1 bin      6518 Jun 10 08:37 roff1.s
+-rw-r--r-- 1 bin      3990 Jun 10 08:37 roff2.s
+-rw-r--r-- 1 bin      4813 Jun 10 08:37 roff3.s
+-rw-r--r-- 1 bin      5149 Jun 10 08:37 roff4.s
+-rw-r--r-- 1 bin      2990 Jun 10 08:37 roff5.s
+-rw-r--r-- 1 bin      6207 Jun 10 08:37 roff7.s
+-rw-r--r-- 1 bin      1436 Jun 10 08:37 roff8.s
+-rw-r--r-- 1 bin     15113 Jun 10 08:37 suftab.s
+% cat /usr/sys/conf/conf.c
+/*
+ *      Copyright 1974 Bell Telephone Laboratories Inc
+ */
+
+int     (*bdevsw[])()
+{
+        &nulldev,       &nulldev,       &rkstrategy,    &rktab,
+        &nulldev,       &tcclose,       &tcstrategy,    &tctab,
+        &tmopen,        &tmclose,       &tmstrategy,    &tmtab,
+        0
+};
+
+int     (*cdevsw[])()
+{
+        &klopen,   &klclose,   &klread,   &klwrite,   &klsgtty,
+        &nulldev,  &nulldev,   &rkread,   &rkwrite,   &nodev,
+        &tmopen,   &tmclose,   &tmread,   &tmwrite,   &nodev,
+        &dcopen,   &dcclose,   &dcread,   &dcwrite,   &dcsgtty,
+        &pcopen,   &pcclose,   &pcread,   &pcwrite,   &nodev,
+        &nulldev,  &nulldev,   &mmread,   &mmwrite,   &nodev,
+        0
+};
+
+int     rootdev {(0<<8)|0};
+int     swapdev {(0<<8)|0};
+int     swplo   4000;
+int     nswap   872;
+% ls /dec/##@ls /usr/sys/dmr
+bio.c
+cat.c
+dc.c
+dh.c
+dhdm.c
+dhfdm.c
+dn.c
+dp.c
+dv.c
+kl.c
+lp.c
+malloc.c
+mem.c
+partab.c
+pc.c
+pipe.c
+rf.c
+rk.c
+rp.c
+run
+tc.c
+tm.c
+tty.c
+vs.c
+vt.c
+% 
+;login: root
+# chdir /dev
+# rm rp0 rp1
+# rm rk0 r1#k1
+# F#@grep 'define NRK' /usr/sys/dmr/rk.c
+# grep 'def@grep NRK /usr/sys/dmr/rk.c
+#define NRK     4
+#define NRKBLK  4872
+struct buf *rk_q[NRK];
+        if (bp->b_blkno >= NRKBLK*d) {
+        for (qp = rk_q; qp < &rk_q[NRK];) {
+        for (qp = rk_q; qp < &rk_q[NRK];)
+# ed /usr/sys/dmr/rk.c
+2981
+/NRK/
+#define NRK     4
+q
+# ed /usr/sys/dmr/rp.c
+3055
+/NRP/
+#define NRP     8
+q
+# /etc/mknod rk0 b 0 0
+/# etc/mknod rk1 b 0 1
+/# etc/mknod rk2 b 0 2
+/etc/mknod rk3 b 0 3# 
+# ls
+kmem
+mem
+mt0
+mt1
+mt2
+mt3
+mt4
+mt5
+mt6
+mt7
+null
+ptr
+rk0
+rk1
+rk2
+rk3
+tap0
+tap1
+tap2
+tap3
+tap4
+tap5
+tap6
+tap7
+tty0
+tty1
+tty2
+tty3
+tty4
+tty5
+tty6
+tty7
+tty8
+tty9
+ttya
+ttyb
+ttyc
+ttyd
+ttye
+ttyf
+ttyg
+ttyh
+ttyi
+ttyj
+tls tyk
+ttyl
+ttym
+ttyn
+-lttyo
+ttyp
+ttyq
+ttyr
+ttys
+ttyt
+ttyu
+ttyv
+# 
+total 0
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    3,  0 Aug 11 03:45 mt0
+brw-rw-rw- 1 root    3,  1 Aug 11 03:45 mt1
+brw-rw-rw- 1 root    3,  2 Aug 11 03:45 mt2
+brw-rw-rw- 1 root    3,  3 Aug 11 03:45 mt3
+brw-rw-rw- 1 root    3,  4 Aug 11 03:45 mt4
+brw-rw-rw- 1 root    3,  5 Aug 11 03:46 mt5
+brw-rw-rw- 1 root    3,  6 Aug 11 03:46 mt6
+brw-rw-rw- 1 root    3,  7 Aug 11 03:46 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+crw-rw-rw- 1 root    4,  0 Aug 18 10:27 ptr
+brw-rw-rw- 1 root    0,  0 Sep  8 11:03 rk0
+brw-rw-rw- 1 root    0,  1 Sep  8 11:03 rk1
+brw-rw-rw- 1 root    0,  2 Sep  8 11:03 rk2
+brw-rw-rw- 1 root    0,  3 Sep  8 11:03 rk3
+brw-rw-rw- 1 root    2,  0 Aug 11 03:44 tap0
+brw-rw-rw- 1 root    2,  1 Aug 11 03:44 tap1
+brw-rw-rw- 1 root    2,  2 Aug 11 03:44 tap2
+brw-rw-rw- 1 root    2,  3 Aug 11 03:45 tap3
+brw-rw-rw- 1 root    2,  4 Aug 11 03:45 tap4
+brw-rw-rw- 1 root    2,  5 Aug 11 03:45 tap5
+brw-rw-rw- 1 root    2,  6 Aug 11 03:45 tap6
+brw-rw-rw- 1 root    2,  7 Aug 11 03:45 tap7
+crw--w--w- 1 root    3,  0 Sep  8 00:49 tty0
+crw--w--w- 1 root    3,  1 Sep  8 00:49 tty1
+crw--w--w- 1 root    3,  2 Sep  8 00:49 tty2
+crw--w--w- 1 root    3,  3 Sep  8 00:49 tty3
+crw--w--w- 1 root    3,  4 Sep  8 00:49 tty4
+crw--w--w- 1 root    3,  5 Sep  8 00:49 tty5
+crw--w--w- 1 root    3,  6 Sep  8 00:49 tty6
+crw--w--w- 1 root    3,  7 Sep  8 00:49 tty7
+crw--w--w- 1 root    0,  0 Sep  8 11:03 tty8
+crw--w--w- 1 root    0,  1 Sep  8 11:03 tty9
+crw--w--w- 1 root    3,  8 Sep  8 00:49 ttya
+crw--w--w- 1 root    3,  9 Sep  8 00:49 ttyb
+crw--w--w- 1 root    3, 10 Sep  8 00:49 ttyc
+crw--w--w- 1 root    3, 11 Sep  8 00:49 ttyd
+crw--w--w- 1 root    3, 12 Sep  8 00:49 ttye
+crw--w--w- 1 root    3, 13 Sep  8 00:49 ttyf
+crw--w--w- 1 root    3, 14 Sep  8 00:49 ttyg
+crw--w--w- 1 root    3, 15 Sep  8 00:49 ttyh
+crw--w--w- 1 root    0,  2 Sep  8 11:03 ttyi
+crw--w--w- 1 root    0,  3 Sep  8 11:03 ttyj
+crw--w--w- 1 root    0,  4 Sep  8 11:03 ttyk
+crw--w--w- 1 root    0,  5 Sep  8 11:03 ttyl
+crw--w--w- 1 root    0,  6 Sep  8 11:03 ttym
+crw--w--w- 1 root    0,  7 Sep  8 11:03 ttyn
+crw--w--w- 1 root    0,  8 Sep  8 11:03 ttyo
+crw--w--w- 1 root    0,  9 Sep  8 11:03 ttyp
+crw--w--w- 1 root    0, 10 Sep  8 11:03 ttyq
+crw--w--w- 1 root    0, 11 Sep  8 11:03 ttyr
+crw--w--w- 1 root    0, 12 Sep  8 11:03 ttys
+crw--w--w- 1 root    0, 13 Sep  8 11:03 ttyt
+crw--w--w- 1 root    0, 14 Sep  8 11:03 ttyu
+crw--w--w- 1 root    0, 15 Sep  8 11:03 ttyv
+# rm tap0 tap1 tap2 tap3 tap4 tap5 tap6 tap7
+# /etc/mknod tap0 b 1 0
+/# etc/mknod tap1 b 1 1
+/# etc/mknod tap2 b 1 2
+/etc/mknod tap3 b 1 3
+/etc/mknod tap4 b 1 4
+/etc/mknod tap5 b 1 5
+/etc/mknod tap6 b 1 6
+/etc/mknod tap7 b 1 7# # # # # 
+# rm mt0 mt1 mt2 mt3 mt4 mt5 mt6 mt7
+/e# tc/mknod mt0 b 2 0
+/# etc/mknod mt1 b 2 1
+/etc/mknod mt2 b 2 2
+/etc/mknod mt3 b 2 3
+/etc/mknod mt4 b 2 4
+/etc/mknod mt5 b 2 5
+/etc/mknod mt6 b 2 6
+/etc/mknod mt7 b 2 7# # # # # # 
+# ls -l
+total 0
+crw-rw-rw- 1 root    5,  1 Aug 16 14:11 kmem
+crw-rw-rw- 1 root    5,  0 Aug 16 14:11 mem
+brw-rw-rw- 1 root    2,  0 Sep  8 11:07 mt0
+brw-rw-rw- 1 root    2,  1 Sep  8 11:07 mt1
+brw-rw-rw- 1 root    2,  2 Sep  8 11:07 mt2
+brw-rw-rw- 1 root    2,  3 Sep  8 11:07 mt3
+brw-rw-rw- 1 root    2,  4 Sep  8 11:07 mt4
+brw-rw-rw- 1 root    2,  5 Sep  8 11:07 mt5
+brw-rw-rw- 1 root    2,  6 Sep  8 11:07 mt6
+brw-rw-rw- 1 root    2,  7 Sep  8 11:07 mt7
+crw-rw-rw- 1 root    5,  2 Aug 18 03:37 null
+crw-rw-rw- 1 root    4,  0 Aug 18 10:27 ptr
+brw-rw-rw- 1 root    0,  0 Sep  8 11:03 rk0
+brw-rw-rw- 1 root    0,  1 Sep  8 11:03 rk1
+brw-rw-rw- 1 root    0,  2 Sep  8 11:03 rk2
+brw-rw-rw- 1 root    0,  3 Sep  8 11:03 rk3
+brw-rw-rw- 1 root    1,  0 Sep  8 11:06 tap0
+brw-rw-rw- 1 root    1,  1 Sep  8 11:06 tap1
+brw-rw-rw- 1 root    1,  2 Sep  8 11:06 tap2
+brw-rw-rw- 1 root    1,  3 Sep  8 11:06 tap3
+brw-rw-rw- 1 root    1,  4 Sep  8 11:06 tap4
+brw-rw-rw- 1 root    1,  5 Sep  8 11:06 tap5
+brw-rw-rw- 1 root    1,  6 Sep  8 11:06 tap6
+brw-rw-rw- 1 root    1,  7 Sep  8 11:06 tap7
+crw--w--w- 1 root    3,  0 Sep  8 00:49 tty0
+crw--w--w- 1 root    3,  1 Sep  8 00:49 tty1
+crw--w--w- 1 root    3,  2 Sep  8 00:49 tty2
+crw--w--w- 1 root    3,  3 Sep  8 00:49 tty3
+crw--w--w- 1 root    3,  4 Sep  8 00:49 tty4
+crw--w--w- 1 root    3,  5 Sep  8 00:49 tty5
+crw--w--w- 1 root    3,  6 Sep  8 00:49 tty6
+crw--w--w- 1 root    3,  7 Sep  8 00:49 tty7
+crw--w--w- 1 root    0,  0 Sep  8 11:07 tty8
+crw--w--w- 1 root    0,  1 Sep  8 11:07 tty9
+crw--w--w- 1 root    3,  8 Sep  8 00:49 ttya
+crw--w--w- 1 root    3,  9 Sep  8 00:49 ttyb
+crw--w--w- 1 root    3, 10 Sep  8 00:49 ttyc
+crw--w--w- 1 root    3, 11 Sep  8 00:49 ttyd
+crw--w--w- 1 root    3, 12 Sep  8 00:49 ttye
+crw--w--w- 1 root    3, 13 Sep  8 00:49 ttyf
+crw--w--w- 1 root    3, 14 Sep  8 00:49 ttyg
+crw--w--w- 1 root    3, 15 Sep  8 00:49 ttyh
+crw--w--w- 1 root    0,  2 Sep  8 11:07 ttyi
+crw--w--w- 1 root    0,  3 Sep  8 11:07 ttyj
+crw--w--w- 1 root    0,  4 Sep  8 11:07 ttyk
+crw--w--w- 1 root    0,  5 Sep  8 11:07 ttyl
+crw--w--w- 1 root    0,  6 Sep  8 11:07 ttym
+crw--w--w- 1 root    0,  7 Sep  8 11:07 ttyn
+crw--w--w- 1 root    0,  8 Sep  8 11:07 ttyo
+crw--w--w- 1 root    0,  9 Sep  8 11:07 ttyp
+crw--w--w- 1 root    0, 10 Sep  8 11:07 ttyq
+crw--w--w- 1 root    0, 11 Sep  8 11:07 ttyr
+crw--w--w- 1 root    0, 12 Sep  8 11:07 ttys
+crw--w--w- 1 root    0, 13 Sep  8 11:07 ttyt
+crw--w--w- 1 root    0, 14 Sep  8 11:07 ttyu
+crw--w--w- 1 root    0, 15 Sep  8 11:07 ttyv
+# v#/etc/mknod rrk0 c 1 0
+/# etc/mknod rrk1 c 1 1
+# /etc/mknod rrk2 c 1 2
+/etc/mknod rrk3 c 1 3# 
+# /etc/mknod rmt0 c 2 0
+/e# tc/mknod rmt1 c 2 1
+/e# tc/mknod rmt2 c 2 2
+/etc/mknod rmt3 c 2 3
+/etc/mknod rmt4 c 2 4
+/etc/mknod rmt5 c 2 5
+/etc/mknod rmt6 c 2 6
+/etc/mknod rmt7 c 2 7# # # # # 
+# sync
+# 
