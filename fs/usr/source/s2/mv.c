@@ -160,7 +160,7 @@ char *argv[];
 		exit(1);
 	}
 	if(mdate(argp4, mtime) < 0) {
-		write(2, "Cannot preserve date#.\n", 22);
+		write(2, "Cannot preserve date.\n", 22);
 		exit(1);
 	}
 }

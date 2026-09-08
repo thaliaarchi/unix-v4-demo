@@ -34277,4 +34277,439 @@ Sun Sep  8 00:08:00 MDT 1974
 -rwsr-xr-x 1 root     2766 Sep  8 00:07 y
 # v@y y /bin/mv
 # sync
-# 
+# Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: thalia
+% mkdir /usr/puzzle
+/usr/puzzle ?
+% dat e09080035
+dat: not found
+% date 09080036
+Sun Sep  8 00:36:00 MDT 1974
+% u#su
+# mkdir /usr/puzzle
+# chmod 755 /usr/puzzle
+# chown thalia /usr/puzzle
+# ls -l /usr/thali a##a /usr/puzzle
+
+/usr/puzzle:
+total 0
+
+/usr/thalia:
+total 48
+-rw-rw-rw- 1 thalia    414 Aug 29 00:53 TODO
+-rw-rw-rw- 1 root       86 Aug 18 18:08 beeps.c
+drwxr-xr-x 7 thalia    176 Aug 18 12:23 hints
+-rw-rw-rw- 1 thalia   1383 Aug 18 17:18 lrc2026
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia   5317 Aug 18 10:28 rfc4
+-rw-rw-rw- 1 thalia   9227 Aug 18 17:36 saturnv
+-rw-rw-rw- 1 thalia     25 Aug 18 11:08 thanks
+-rwxrwxrwx 1 thalia   2040 Aug 26 23:41 ttyinfo
+-rw-rw-rw- 1 thalia   1112 Aug 26 23:41 ttyinfo.c
+drwxrwxrwx 2 thalia    112 Aug 28 20:20 ws
+# ls -l uis###/usr
+total 39
+drwxr-xr-x 2 bin        32 Jun 10 08:37 adm
+drwxrwxrwx 2 alex      288 Aug 18 18:17 alex
+drwxrwxrwx 2 root      112 Aug 18 18:17 amitb
+drwxrwxrwx 2 andrew     32 Aug 25 12:45 andrew
+drwxrwxrwx 2 root       96 Aug 18 12:05 auberon
+drwxrwxrwx 2 ben        32 Aug 22 21:53 ben
+drwxr-xr-x 2 bin       480 Sep  7 21:04 bin
+drwxrwxrwx 2 bx        128 Aug 18 18:17 bx
+drwxr-xr-x 2 bin       480 Aug 28 11:55 c
+drwxrwxrwx 2 root       96 Aug 18 12:23 cody
+drwxrwxrwx 2 bin        32 Aug 18 11:15 dnm
+drwxrwxrwx 2 domini     64 Aug 18 16:50 dominic
+drwxrwxrwx 2 root       32 Aug 18 13:17 doug
+drwxr-xr-x 2 bin       160 Jun 10 08:37 fort
+drwxr-xr-x 2 bin       144 Jun 10 08:37 games
+drwxrwxrwx 2 root       32 Aug 18 14:20 hacker
+drwxrwxrwx 2 105        32 Aug 18 11:15 hash
+drwxr-xr-x 2 jackso    128 Aug 25 14:48 jackson
+drwxrwxrwx 2 joe        32 Aug 18 11:15 joe
+drwxrwxrwx 2 jordan    144 Aug 18 16:46 jordan
+drwxrwxrwx 2 justin     32 Aug 18 12:14 justin
+drwxrwxrwx 2 kevin     128 Aug 18 15:29 kevin
+drwxr-xr-x 2 bin       144 Jun 10 08:37 lib
+drwxrwxrwx 2 bin        32 Jun 12 16:51 lpd
+drwxr-xr-x 2 bin       192 Jun 10 08:37 mdec
+drwxrwxrwx 2 root       32 Aug 18 13:55 michael
+drwxrwxrwx 2 root       32 Aug 18 11:15 ncb
+drwxrwxrwx 2 newt       64 Aug 18 12:05 newt
+drwxrwxrwx 2 nick      144 Aug 29 09:40 nick
+drwxr-xr-x 2 bin        96 Jun 10 08:37 pub
+drwxr-xr-x 2 thalia     32 Sep  8 00:36 puzzle
+drwxr-xr-x 2 bin       112 Jun 10 08:37 sno
+drwxr-xr-x 7 bin       112 Jun 10 08:37 source
+drwxr-xr-x 5 bin       464 Sep  7 23:18 sys
+drwxr-xr-x 4 thalia    320 Aug 28 22:18 thalia
+drwxrwxrwx 2 bin        48 Aug 18 13:31 tmp
+drwxrwxrwx 2 198        32 Aug 18 11:15 ty
+drwxrwxrwx 2 root       32 Aug 18 13:49 voytilla
+drwxrwxrwx 2 yang       32 Aug 18 12:14 yang
+# chdir /usr/thalia
+# chdir hints
+# ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+resources
+# mv resources /usr/puzzle
+# mv ../mullender.c /usr/puzzle
+# chdir /usr/puzzle
+# mkdir 1compile 2syntax 3semantics 4debug 5solution 
+# chdir /usr/thalia/hints
+# ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+# cdir 1com!@chdir 1compile
+# ls
+hint
+# mv hint /usr/puzzle/1compile/1.txt
+# chdir ../2syntax
+# ls
+hint1
+hint2
+hint3a
+hint3b
+solution.c
+# mv hint1 /usr/puzzle/2syntax/1.txt
+# mv hint2 /usr/puzzle/2sn#yntax/2.txt
+mv # hint3 /usr/puzzle #/2sn#yntax/3a@mv 3a##hint3a /usr/puzzle/3a.tt#xt
+# mv hint3b /usr/puzzle #/3b.txt
+# mv solution.t#x#c /usr/puzzle/2stn##yntax/
+# chdir /usr/puzzle
+# ls
+1compile
+2syntax
+3a.txt
+3b.txt
+3semantics
+4debug
+5solution
+mullender.c
+resources
+# mv e*@*.@mv *.txt 2syntax
+Usage: mv name1 name2
+# ls
+1compile
+2syntax
+3a.txt
+3b.txt
+3semantics
+4debug
+5solution
+mullender.c
+resources
+# mv 3a* 2*
+# mv 3b* 2*
+# ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+resources
+# ls -l
+total 7
+drwxrwxrwx 2 root       48 Sep  8 00:38 1compile
+drwxrwxrwx 2 root      112 Sep  8 00:40 2syntax
+drwxrwxrwx 2 root       32 Sep  8 00:38 3semantics
+drwxrwxrwx 2 root       32 Sep  8 00:38 4debug
+drwxrwxrwx 2 root       32 Sep  8 00:38 5solution
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 resources
+# mv resources sites.txt
+# ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+# chdir /usr/thalia/hints
+# ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+# rmdir 1compile 2syntax
+# chdir 3semantics
+# ls
+hint1
+hint2
+hint3
+mullender.das
+mullender.s
+# mv hint1 /usr/puzzle/3semantics/1.txt
+mv hint2 # /usr/puzzle/3semantics/2.txt
+mv hint3 /usr/puzzle/3semantics/3.txt
+mv mullender.das /usr/puzzle/3semantics/mullender.das
+mv mullender.s /usr/puzzle/3semantics/mullender.s# # # 
+# chdir ..;#/4debug
+# ls
+hint1
+hint2a
+hint2b
+hint3
+# mv hint1 /usr/puzzle/1.txt
+mv hint2a # /usr/puzzle/2a.txt
+mv hint2b # /usr/puzzle/2b.txt
+mv hint3 /usr/puzzle/3.txt# 
+# ls
+# chdir ..
+# ls
+3semantics
+4debug
+5solution
+# chdir /usr/puzzle
+# ls
+1.txt
+1compile
+2a.txt
+2b.txt
+2syntax
+3.txt
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+# mv 1*t@mv 1.txt 4*
+# mv 2.#a* 4*
+# mv 2b* 4*
+# mv 3.* 4*
+# ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+# chdir /usr/thalia/hints
+# rmdir 3semantics 4debug
+# ls
+5solution
+# chdir 5solution
+# ls
+a.out
+mullv4.c
+# mv a.out /usr/puzzle/5*/
+Usage: mv name1 name2
+# mv a.out /usr/puzzle/5solution
+# mv mullv4.c /usr/puzzle/5solution
+# chdir ..
+# rmdir 5solution
+# chdir ..
+# rmdir hints
+# chdir /usr/@ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+# chdir /usr/uzzle
+chdir: bad directory
+# ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+# chdir /usr/puzzle
+ls
+# 1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+# sync
+# chdir /usr/source/s1
+# ed cp.c
+1668
+g/\#/p
+#
+#include "/usr/sys/stat.h"
+q
+# cdi@chdir ../s2
+# ed mv.c
+3281
+g/\#/p
+#
+#include "/usr/sys/stat.h"
+                write(2, "Cannot preserve date#.\n", 22);
+s///p
+                write(2, "Cannot preserve date.\n", 22);
+w
+3280
+q
+# cc mv.c
+# ls
+a.out
+mail.c
+mesg.s
+mkdir.s
+mkfs.c
+mknod.c
+mount.c
+msh.s
+mv.c
+nice.c
+nm.c
+nohup.c
+od.c
+passwd.s
+pfe.s
+pr.c
+prof.c
+ps.c
+pwd.c
+restor.c
+rew.s
+rm.c
+rmdir.s
+sa.c
+sh.alias
+sh.c
+size.c
+sleep.c
+sort.c
+split.c
+strip.s
+stty.c
+su.c
+sum.s
+sync.c
+tee.c
+time.s
+tp1.s
+tp2.s
+tp3.s
+tp4.s
+tr.c
+tty.s
+typo.c
+umount.c
+uniq.c
+update.s
+wc.c
+who.c
+write.s
+# chmod 4755 a.out
+# strip a.out
+# ls -l a.out /usr/#####bin/c#mv
+bin/mv not found
+-rwsr-xr-x 1 root     2766 Sep  8 00:48 a.out
+# ls -l /bin/mv
+-rwsr-xr-x 1 root     2766 Sep  8 00:07 /bin/mv
+# mv a.out /bin/mv
+# % ls
+TODO
+beeps.c
+lrc2026
+rfc4
+saturnv
+thanks
+ttyinfo
+ttyinfo.c
+ws
+% chdir ../puzzle
+% ls
+1compile
+2syntax
+3semantics
+4debug
+5solution
+mullender.c
+sites.txt
+% ls -la
+total 10
+drwxr-xr-x 7 thalia    208 Sep  8 00:43 .
+drwxr-xr-x41 bin       656 Sep  8 00:36 ..
+drwxrwxrwx 2 root       48 Sep  8 00:38 1compile
+drwxrwxrwx 2 root      112 Sep  8 00:40 2syntax
+drwxrwxrwx 2 root      112 Sep  8 00:41 3semantics
+drwxrwxrwx 2 root       96 Sep  8 00:42 4debug
+drwxrwxrwx 2 root       64 Sep  8 00:43 5solution
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 sites.txt
+% su
+# chown thalia 1* 2* 3* 4* 5*
+# ls -l
+total 7
+drwxrwxrwx 2 thalia     48 Sep  8 00:49 1compile
+drwxrwxrwx 2 thalia    112 Sep  8 00:49 2syntax
+drwxrwxrwx 2 thalia    112 Sep  8 00:49 3semantics
+drwxrwxrwx 2 thalia     96 Sep  8 00:49 4debug
+drwxrwxrwx 2 thalia     64 Sep  8 00:49 5solution
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 sites.txt
+# chdir 1compile
+# ls
+1.txt
+# ls -l
+total 1
+-rw-r--r-- 1 thalia    123 Aug 18 03:43 1.txt
+# chdir ..
+# ls -l *
+-rw-r--r-- 1 thalia    469 Aug 18 03:45 mullender.c
+-rw-rw-rw- 1 thalia    178 Aug 18 03:47 sites.txt
+
+1compile:
+total 1
+-rw-r--r-- 1 thalia    123 Aug 18 03:43 1.txt
+
+2syntax:
+total 6
+-rw-r--r-- 1 thalia    237 Aug 18 03:43 1.txt
+-rw-r--r-- 1 thalia     88 Aug 18 03:43 2.txt
+-rw-r--r-- 1 thalia    444 Aug 18 03:43 3a.txt
+-rw-r--r-- 1 thalia    331 Aug 18 03:43 3b.txt
+-rw-r--r-- 1 thalia    521 Aug 18 03:43 solution.c
+
+3semantics:
+total 5
+-rw-r--r-- 1 thalia    154 Aug 18 03:43 1.txt
+-rw-r--r-- 1 thalia    375 Aug 18 03:43 2.txt
+-rw-r--r-- 1 thalia    315 Aug 18 03:43 3.txt
+-rw-r--r-- 1 thalia    327 Aug 18 03:43 mullender.das
+-rw-r--r-- 1 thalia    122 Aug 18 03:43 mullender.s
+
+4debug:
+total 4
+-rw-r--r-- 1 thalia    188 Aug 18 03:41 1.txt
+-rw-r--r-- 1 thalia     82 Aug 18 03:41 2a.txt
+-rw-r--r-- 1 thalia    257 Aug 18 03:41 2b.txt
+-rw-rw-rw- 1 thalia     70 Aug 18 03:46 3.txt
+
+5solution:
+total 2
+-rwxr-xr-x 1 thalia    248 Aug 18 03:44 a.out
+-rw-r--r-- 1 thalia    465 Aug 18 03:44 mullv4.c
+# % sync
+% 
