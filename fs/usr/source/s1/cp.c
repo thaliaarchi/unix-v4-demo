@@ -9,7 +9,7 @@ main(argc,argv)
 char **argv;
 {
 	int buf[256];
-	struct stat statb;
+	struct stat stbuf;
 	char name[100];
 	int fold, fnew, n, ct, tell, preserve;
 	char *p1, *p2, *bp;
@@ -42,8 +42,8 @@ bump:
 	p2 = argv[2];
 	bp = name;
 	while(*bp++ = *p2++);
-	fstat(fold, &statb);
-	if((fnew = creat(argv[2], statb.st_mode)) < 0){
+	fstat(fold, &stbuf);
+	if((fnew = creat(argv[2], stbuf.st_mode)) < 0){
 		stat(argv[2], buf);
 		if((buf->st_mode & 060000) == 040000) {
 			p1 = argv[1];
@@ -52,7 +52,7 @@ bump:
 			while(*bp = *p1++)
 				if(*bp++ == '/')
 					bp = p2;
-			if((fnew = creat(name, statb.st_mode)) < 0) {
+			if((fnew = creat(name, stbuf.st_mode)) < 0) {
 				write(2, "Cannot creat new file.\n", 23);
 				exit(1);
 			}
@@ -72,7 +72,7 @@ bump:
 		}
 		ct++;
 	}
-	if(preserve && mdate(name, statb.st_mtime) < 0) {
+	if(preserve && mdate(name, stbuf.st_mtime) < 0) {
 		write(2, "Cannot preserve date.\n", 22);
 		exit(1);
 	}

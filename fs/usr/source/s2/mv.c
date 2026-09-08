@@ -10,6 +10,7 @@ unlink file1
 #include "/usr/sys/stat.h"
 
 int stbuf[42];
+int mtime[2];
 char strbuf[70];
 
 main(argc,argv)
@@ -37,10 +38,12 @@ char *argv[];
 	*/
 	argp3 = argp[1];
 	argp4 = argp[2];
-	if(stat(argp[1], stbuf) < 0) {
+	if(stat(argp3, stbuf) < 0) {
 		write(2,"Source file non-existent\n",25);
 		exit(1);
 	}
+	mtime[0] = stbuf->st_mtime[0];
+	mtime[1] = stbuf->st_mtime[1];
 	/*
 		yes, there is a source.
 		check whether file or directory
@@ -141,7 +144,7 @@ char *argv[];
 			while(*p++ = *argp3++);
 			p2 = p;
 			while(*p++ = *argp4++);
-			execl("/bin/cp","cp", p1, p2, 0);
+			execl("/bin/cp", "cp", "-p", p1, p2, 0);
 			write(2, "no cp\n", 6);
 			exit(1);
 		}
@@ -154,6 +157,10 @@ char *argv[];
 	}
 	if(unlink(argp3) < 0) {
 		write(2,"Cannot unlink source file.\n",26);
+		exit(1);
+	}
+	if(mdate(argp4, mtime) < 0) {
+		write(2, "Cannot preserve date#.\n", 22);
 		exit(1);
 	}
 }

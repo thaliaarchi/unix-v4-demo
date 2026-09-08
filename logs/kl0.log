@@ -33734,4 +33734,547 @@ drwxr-xr-x 2 bin       640 Sep  7 23:17 ken
 % sync
 % strip /bin/cp
 % stn##ync
-% 
+% chdir ../s2
+chdir: bad directory
+% w@pwd
+../usr/sys
+% chdir /usr/source/s2
+% ed mv.c
+3109
+/cp/
+                        execl("/bin/cp","cp", p1, p2, 0);
+c
+                        execl("/bin/cp", "cp", "-p", p1, p2, 0);
+.
+w
+3116
+q
+% cc mv.c
+% ls -l /bin/mv /bin/cp
+-rwxr-xr-x 1 bin      1348 Sep  7 23:39 /bin/cp
+-rwsr-xr-x 1 root     2644 Sep  7 21:08 /bin/mv
+% su
+# chmod 4755 a.out
+# chown root a.out
+# ls -l a.out
+-rwsr-xr-x 1 root     3264 Sep  7 23:43 a.out
+# date
+Sat Sep  7 23:43:47 MDT 1974
+# date
+Sat Sep  7 23:43:58 MDT 1974
+# mv a.out mv
+# ls -l mv
+-rwsr-xr-x 1 root     3264 Sep  7 23:44 mv
+# mv mv a.out
+# ls -l a.out
+-rwsr-xr-x 1 root     3264 Sep  7 23:44 a.out
+# date
+Sat Sep  7 23:44:45 MDT 1974
+# date
+Sat Sep  7 23:45:02 MDT 1974
+# a.out a.out mv
+# ls -l mv
+-rwsr-xr-x 1 root     3264 Sep  7 23:45 mv
+# /bin/mv mv a.out
+# ls -l /bin/cp /usr/source/s1/cp.c
+-rwxr-xr-x 1 bin      1348 Sep  7 23:39 /bin/cp
+-rw-rw-rw- 1 bin      1668 Sep  7 23:36 /usr/source/s1/cp.c
+# strip a.out
+# strip mv
+open error: mv
+# ed mv.c
+3116
+1,$p
+#
+/*
+mv [-d] file1 file2
+
+unlink file2
+link file1 file2
+unlink file1
+*/
+
+#include "/usr/sys/stat.h"
+
+int stbuf[42];
+char strbuf[70];
+
+main(argc,argv)
+int argc;
+char *argv[];
+{
+        char **argp;
+        char *argp1, *argp2, *argp3, *argp4;
+        char *p, *p1, *p2;
+        char place[100];
+        int i;
+        int status;
+        int b;
+        argp = argv;
+        /*
+                check for correct number
+                of arguments
+        */
+        if(argc != 3) {
+                write(2,"Usage: mv name1 name2\n",22);
+                exit(1);
+        }
+        /*
+                is there anything to do?
+        */
+        argp3 = argp[1];
+        argp4 = argp[2];
+        if(stat(argp[1], stbuf) < 0) {
+                write(2,"Source file non-existent\n",25);
+                exit(1);
+        }
+        /*
+                yes, there is a source.
+                check whether file or directory
+        */
+        if((stbuf[0].st_mode & 060000) == 040000) {
+        /*
+                The source is a directory, so
+                we do lots of checking and
+                messing around so as not to get
+                into trouble.  This patch of
+                code contains administrative
+                policies rather than system
+                restrictions.
+        */
+                if(stat(argp[2], stbuf) >= 0) {
+                        write(2,"Directory target exists.\n",25);
+                        exit(1);
+                }
+                argp1 = argp[1];
+                argp2 = argp[2];
+                while(*argp1 == *argp2) {
+                        argp1++;
+                        if(*argp2++ == 0) {
+                                write(2,"???\n",4);
+                                exit(1);
+                        }
+                }
+                while(*argp1)
+                        if(*argp1++ == '/') {
+                                write(2,"Directory rename only\n",22);
+                                exit(1);
+                        }
+                while(*argp2)
+                        if(*argp2++ == '/') {
+                                write(2,"Directory rename only\n",22);
+                                exit(1);
+                        }
+                if(*--argp1 == '.') {
+                        write(2,"values of B will give rise to dom!\n",37);
+                        exit(1);
+                }
+        } else {
+        /*
+                the source is a file.
+        */
+                setuid(getuid());
+                if(stat(argp4, &stbuf[2]) >= 0) {
+                        if((stbuf[2].st_mode & 060000) == 040000) {
+                                argp2 = strbuf;
+                                while(*argp2++ = *argp4++);
+                                argp2[-1] = '/';
+                                argp4 = argp[1];
+                                argp1 = argp[1];
+                                while(*argp4)
+                                        if(*argp4++ == '/')
+                                                argp1 = argp4;
+                                while(*argp2++ = *argp1++);
+                                argp4 = strbuf;
+                        }
+                        if(stat(argp4, &stbuf[2]) >= 0) {
+                                if((stbuf[0].st_dev==stbuf[2].st_dev) && (stbuf[0].st_ino==stbuf[2].st_ino)) {
+                                        write(2,"Files are identical.\n",21);
+                                        exit(1);
+                                }
+                                if(getuid() == stbuf[2].st_uid)
+                                        b = 0200;
+                                else if(getgid() == stbuf[2].st_gid)
+                                        b = 020;
+                                else
+                                        b = 02;
+                                if((stbuf[2].st_mode & b) == 0) {
+                                        printf("%s: %o mode ", argp4,
+                                                stbuf[2].st_mode & 07777);
+                                        i = b = getchar();
+                                        while(b != '\n' && b != '\0')
+                                                b = getchar();
+                                        if(i != 'y')
+                                                exit(1);
+                                }
+                                if(unlink(argp4) < 0) {
+                                        write(2,"Cannot remove target file.\n",27);
+                                        exit(1);
+                                }
+                        }
+                }
+        }
+        if(link(argp3, argp4) < 0) {
+                i = fork();
+                if(i == -1) {
+                        write(2,"Try again.\n",11);
+                        exit(1);
+                }
+                if(i) {
+                        while(wait(&status) != i);
+                } else {
+                        p = place;
+                        p1 = p;
+                        while(*p++ = *argp3++);
+                        p2 = p;
+                        while(*p++ = *argp4++);
+                        execl("/bin/cp", "cp", "-p", p1, p2, 0);
+                        write(2, "no cp\n", 6);
+                        exit(1);
+                }
+                if((status & 0377) != 0) {
+                        write(2,"?\n", 2);
+                        exit(1);
+                }
+                if(status != 0)
+                        exit(1);
+        }
+        if(unlink(argp3) < 0) {
+                write(2,"Cannot unlink source file.\n",26);
+                exit(1);
+        }
+}
+
+putchar(c)
+{
+        write(1, &c, 1);
+}
+
+getchar()
+{
+        char c;
+
+        if(read(0, &c, 1) != 1)
+                return(0);
+        return(c);
+}
+g/stat/p
+#include "/usr/sys/stat.h"
+        int status;
+        if(stat(argp[1], stbuf) < 0) {
+                if(stat(argp[2], stbuf) >= 0) {
+                if(stat(argp4, &stbuf[2]) >= 0) {
+                        if(stat(argp4, &stbuf[2]) >= 0) {
+                        while(wait(&status) != i);
+                if((status & 0377) != 0) {
+                if(status != 0)
+/stat/
+#include "/usr/sys/stat.h"
+//
+        int status;
+//
+        if(stat(argp[1], stbuf) < 0) {
+.-2,.p
+        argp3 = argp[1];
+        argp4 = argp[2];
+        if(stat(argp[1], stbuf) < 0) {
+s/argp\[1\]/argp3/p
+        if(stat(argp3, stbuf) < 0) {
+/^int st/p
+int stbuf[42];
+a
+int tm[2];
+.
+s/tm/mtime/p
+int mtime[2];
+/t#stat
+?
+/stat/
+        int status;
+//
+        if(stat(argp3, stbuf) < 0) {
+
+                write(2,"Source file non-existent\n",25);
+
+                exit(1);
+
+        }
+
+        /*
+
+                yes, there is a source.
+i
+        mtime[0] = stbuf.st_mtime[0];
+        mtime[1]  #= stbuf.st_mtime[1];
+.
+/n#unlink@g/in##unlink/p
+unlink file2
+unlink file1
+                                if(unlink(argp4) < 0) {
+        if(unlink(argp3) < 0) {
+                write(2,"Cannot unlink source file.\n",26);
+?unlink?
+        if(unlink(argp3) < 0) {
+i
+        if(mdate(argp4, stat####stbuf.st########mtime) < 0) {
+                write(2, "Cannot preserve date\n##.\n", 22);
+                exit(1);
+        }
+.
+w
+3279
+q
+# cc @chdir ../s1
+# ed cp.c
+1668
+g/statb/p
+        struct stat statb;
+        fstat(fold, &statb);
+        if((fnew = creat(argv[2], statb.st_mode)) < 0){
+                        if((fnew = creat(name, statb.st_mode)) < 0) {
+        if(preserve && mdate(name, statb.st_mtime) < 0) {
+g/statb/s//stbiu##uf/p
+        struct stat stbuf;
+        fstat(fold, &stbuf);
+        if((fnew = creat(argv[2], stbuf.st_mode)) < 0){
+                        if((fnew = creat(name, stbuf.st_mode)) < 0) {
+        if(preserve && mdate(name, stbuf.st_mtime) < 0) {
+w
+1668
+q
+# cc @chdir ../s3@3@3@chdir ../s2
+# cc mv.c
+# ls -l
+total 298
+-rwxrwxrwx 1 root     3402 Sep  7 23:58 a.out
+-rw-r--r-- 1 bin      4233 Jun 10 08:37 mail.c
+-rw-r--r-- 1 bin       588 Jun 10 08:37 mesg.s
+-rw-r--r-- 1 bin      1088 Jun 10 08:37 mkdir.s
+-rw-r--r-- 1 bin      6922 Jun 10 08:37 mkfs.c
+-rw-r--r-- 1 bin       563 Jun 10 08:37 mknod.c
+-rw-r--r-- 1 bin      1155 Jun 10 08:37 mount.c
+-rw-r--r-- 1 bin       979 Jun 10 08:37 msh.s
+-rw-r--r-- 1 bin      3279 Sep  7 23:56 mv.c
+-rw-r--r-- 1 bin       495 Jun 10 08:37 nice.c
+-rw-r--r-- 1 bin      2084 Jun 10 08:37 nm.c
+-rw-r--r-- 1 bin       530 Jun 10 08:37 nohup.c
+-rw-r--r-- 1 bin      7157 Jun 10 08:37 od.c
+-rw-r--r-- 1 bin      1991 Jun 10 08:37 passwd.s
+-rw-r--r-- 1 bin       492 Jun 10 08:37 pfe.s
+-rw-r--r-- 1 bin      4556 Sep  7 21:26 pr.c
+-rw-r--r-- 1 bin      4926 Sep  7 20:41 prof.c
+-rw-r--r-- 1 bin      2755 Jun 10 08:37 ps.c
+-rw-r--r-- 1 bin      1082 Sep  7 20:29 pwd.c
+-rw-r--r-- 1 bin      6507 Jun 10 08:37 restor.c
+-rw-r--r-- 1 bin       451 Jun 10 08:37 rew.s
+-rw-r--r-- 1 bin      1341 Sep  7 21:25 rm.c
+-rw-r--r-- 1 bin      1197 Jun 10 08:37 rmdir.s
+-rw-r--r-- 1 bin      5851 Jun 10 08:37 sa.c
+-rw-rw-rw- 1 bin     10382 Aug 18 17:29 sh.alias
+-rw-r--r-- 1 bin     10305 Sep  7 21:18 sh.c
+-rw-r--r-- 1 bin       564 Jun 10 08:37 size.c
+-rw-r--r-- 1 bin       255 Jun 10 08:37 sleep.c
+-rw-r--r-- 1 bin      6867 Jun 10 08:37 sort.c
+-rw-r--r-- 1 bin      1242 Jun 10 08:37 split.c
+-rw-r--r-- 1 bin      1657 Jun 10 08:37 strip.s
+-rw-rw-rw- 1 bin      1281 Aug 26 23:00 stty.c
+-rw-r--r-- 1 bin       741 Jun 10 08:37 su.c
+-rw-r--r-- 1 bin       825 Jun 10 08:37 sum.s
+-rw-r--r-- 1 bin        21 Jun 10 08:37 sync.c
+-rw-r--r-- 1 bin       706 Sep  7 21:03 tee.c
+-rw-r--r-- 1 bin      2126 Jun 10 08:37 time.s
+-rw-r--r-- 1 bin      2763 Jun 10 08:37 tp1.s
+-rw-r--r-- 1 bin      4828 Jun 10 08:37 tp2.s
+-rw-r--r-- 1 bin      5890 Jun 10 08:37 tp3.s
+-rw-r--r-- 1 bin       621 Jun 10 08:37 tp4.s
+-rw-r--r-- 1 bin      2380 Jun 10 08:37 tr.c
+-rw-r--r-- 1 bin       153 Jun 10 08:37 tty.s
+-rw-r--r-- 1 bin      6554 Jun 10 08:37 typo.c
+-rw-r--r-- 1 bin       931 Jun 10 08:37 umount.c
+-rw-r--r-- 1 bin      1955 Jun 10 08:37 uniq.c
+-rw-r--r-- 1 bin        95 Jun 10 08:37 update.s
+-rw-r--r-- 1 bin      2294 Jun 10 08:37 wc.c
+-rw-r--r-- 1 bin       776 Jun 10 08:37 who.c
+-rw-r--r-- 1 bin      2151 Jun 10 08:37 write.s
+# touch x
+touch: not found
+# echo > x
+# ls -l x
+-rw-rw-rw- 1 root        0 Sep  7 23:58 x
+# date
+Sat Sep  7 23:58:49 MDT 1974
+# date
+Sat Sep  7 23:58:55 MDT 1974
+# date
+Sat Sep  7 23:59:01 MDT 1974
+# a.out x y
+# ls -l y
+-rw-rw-rw- 1 root        0 Sep  7 23:59 y
+# sync
+# ed mv.c
+3279
+/mtime/
+int mtime[2];
+//
+        mtime[0] = stbuf.st_mtime[0];
+.-5,.+5p
+        if(stat(argp3, stbuf) < 0) {
+                write(2,"Source file non-existent\n",25);
+                exit(1);
+        }
+        /*
+        mtime[0] = stbuf.st_mtime[0];
+        mtime[1] = stbuf.st_mtime[1];
+                yes, there is a source.
+                check whether file or directory
+        */
+        if((stbuf[0].st_mode & 060000) == 040000) {
+?mtime?
+        mtime[1] = stbuf.st_mtime[1];
+.-1,.m.+3
+.,.+5p
+        mtime[1] = stbuf.st_mtime[1];
+        if((stbuf[0].st_mode & 060000) == 040000) {
+        /*
+                The source is a directory, so
+                we do lots of checking and
+                messing around so as not to get
+.-2
+                The source is a directory, so
+.-6,.p
+                check whether file or directory
+        */
+        mtime[0] = stbuf.st_mtime[0];
+        mtime[1] = stbuf.st_mtime[1];
+        if((stbuf[0].st_mode & 060000) == 040000) {
+        /*
+                The source is a directory, so
+?mtime?
+        mtime[1] = stbuf.st_mtime[1];
+.,#-1,.m?}?p
+        mtime[1] = stbuf.st_mtime[1];
+.-3,.+3p
+                exit(1);
+        }
+        mtime[0] = stbuf.st_mtime[0];
+        mtime[1] = stbuf.st_mtime[1];
+        /*
+                yes, there is a source.
+                check whether file or directory
+w
+3279
+q
+# cc mv.c
+45: Illegal indirection
+45: Illegal lvalue
+45: Lvalue required
+45: Illegal indirection
+46: Illegal indirection
+46: Illegal lvalue
+46: Lvalue required
+46: Illegal indirection
+# ed mv.c
+3279
+45
+        mtime[0] = stbuf.st_mtime[0];
+g/stbuf/p
+int stbuf[42];
+        if(stat(argp3, stbuf) < 0) {
+        mtime[0] = stbuf.st_mtime[0];
+        mtime[1] = stbuf.st_mtime[1];
+        if((stbuf[0].st_mode & 060000) == 040000) {
+                if(stat(argp[2], stbuf) >= 0) {
+                if(stat(argp4, &stbuf[2]) >= 0) {
+                        if((stbuf[2].st_mode & 060000) == 040000) {
+                        if(stat(argp4, &stbuf[2]) >= 0) {
+                                if((stbuf[0].st_dev==stbuf[2].st_dev) && (stbuf[0].st_ino==stbuf[2].st_ino)) {
+                                if(getuid() == stbuf[2].st_uid)
+                                else if(getgid() == stbuf[2].st_gid)
+                                if((stbuf[2].st_mode & b) == 0) {
+                                                stbuf[2].st_mode & 07777);
+/mtime/
+        if(mdate(argp4, mtime) < 0) {
+//
+int mtime[2];
+//
+        mtime[0] = stbuf.st_mtime[0];
+.,.+1s/\./->/p
+        mtime[1] = stbuf->st_mtime[1];
+w
+3281
+!cc mv.c
+!
+q
+# ls -l x
+x not found
+# ls -l y
+-rw-rw-rw- 1 root        0 Sep  7 23:59 y
+# date
+Sun Sep  8 00:03:14 MDT 1974
+# a.out y z
+# ls -l z
+-rw-rw-rw- 1 root        0 Sep  8 00:03 z
+# sync
+# ed mv.c
+3281
+/unlinke#/
+unlink file2
+//
+unlink file1
+//
+                                if(unlink(argp4) < 0) {
+//
+        if(unlink(argp3) < 0) {
+.-3,.-1p
+                write(2, "Cannot preserve date#.\n", 22);
+                exit(1);
+        }
+.-3,.p
+        if(mdate(argp4, mtime) < 0) {
+                write(2, "Cannot preserve date#.\n", 22);
+                exit(1);
+        }
+.-3,.m.+4
+.-5,._#+1p
+                exit(1);
+        }
+        if(mdate(argp4, mtime) < 0) {
+                write(2, "Cannot preserve date#.\n", 22);
+                exit(1);
+        }
+}
+w
+3281
+q
+# cc mv.c
+# ls -l z
+-rw-rw-rw- 1 root        0 Sep  8 00:03 z
+# date
+Sun Sep  8 00:05:28 MDT 1974
+# mv @a.out z y
+# ls -l y
+-rw-rw-rw- 1 root        0 Sep  8 00:03 y
+# rm y
+# mv a.out @ls -l a.out
+-rwxrwxrwx 1 root     3414 Sep  8 00:05 a.out
+# ls -ol##l /bin/mv
+-rwsr-xr-x 1 root     2644 Sep  7 21:08 /bin/mv
+# chmod 4755 a.out 
+# ls -l a.out
+-rwsr-xr-x 1 root     3414 Sep  8 00:06 a.out
+# strip a.out
+# date
+Sun Sep  8 00:06:45 MDT 1974
+# date
+Sun Sep  8 00:06:59 MDT 1974
+# mv a.out x
+# ls -l x
+-rwsr-xr-x 1 root     2766 Sep  8 00:07 x
+# date 09080008
+Sun Sep  8 00:08:00 MDT 1974
+# x x y
+# ls -l y
+-rwsr-xr-x 1 root     2766 Sep  8 00:07 y
+# v@y y /bin/mv
+# sync
+# 
