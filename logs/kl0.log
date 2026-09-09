@@ -21504,7 +21504,7 @@ total 327
 -rw-r--r-- 1 bin       776 Jun 10 08:37 c1t.s
 -rw-r--r-- 1 bin     16474 Jun 10 08:37 c20.c
 -rw-r--r-- 1 bin      1217 Jun 10 08:37 cctab.s
--rwxr-xr-x 1 bin      2438 Jun 10 08:37 cvopt
+-rwxr-xr-x 1 bin      2438 Jun 10 08:37 cvopt
 % 
 # 
 % ls core
@@ -30174,7 +30174,7 @@ Insufficient args
 ./cc.c
 ./cdb.c
 ./check.c
-./chmod.c
+./chmod.c
 % mv a.out /@ls /bin/find
 /bin/find not found
 % ls /etc/bin/find
@@ -36612,4 +36612,151 @@ k
 unix
 mem = 64523
 
-;login: 
+;login: Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: bin
+% chdir /usr/source/s7
+% as nroff[1-5].s roff7.s nroff8.s
+% ld -s -n a.out
+% a#ls /usr/bin/nroff
+Red stack trap, PC: 000774 (ASH @-(SP),R1)
+sim> c
+
+Trap stack push abort, PC: 001002 (CMP (R1),-(R4))
+sim> c
+
+Red stack trap, PC: 000774 (ASH @-(SP),R1)
+sim> c
+
+Trap stack push abort, PC: 001002 (CMP (R1),-(R4))
+sim> b rk
+k
+unix
+mem = 64523
+
+;login: bin
+% ls x
+x not found
+% chdir /usr/source/s7
+% chdir /
+% ls /usr/bin/nroff
+/usr/bin/nroff not found
+% chdir /usr/source/s7
+% nv a,iyt@
+% mv a.out /usr/bin/nroff
+Cannot open old file.
+% ls a.out
+a.out
+% mv a.out ..
+% chdir ..
+% ls
+a.out
+s1
+s2
+s3
+s4
+s7
+% mv a.out ..
+Files are identical.
+% mv a.out /
+Cannot open old file.
+% rm a.out
+a.out: 0 mode 
+% rm a.out -f
+a.out: 0 mode rm 
+% rm -f a.out
+% chdir s7
+% ls
+nroff1.s
+nroff2.s
+nroff3.s
+nroff4.s
+nroff5.s
+nroff8.s
+roff1.s
+roff2.s
+roff3.s
+roff4.s
+roff5.s
+roff7.s
+roff8.s
+suftab.s
+% chdir /usr/bin
+% % as /usr/source/s7/nroff[1-5].s /usr/source/s7/roff7.s /usr/source/s7/nroff8.s
+Command not found
+% ls
+ac
+cal
+comm
+cref
+crpost
+diff
+fed
+find
+form
+grep
+mesg
+nice
+nohup
+passwd
+pfe
+prof
+pwd
+roff
+sa
+sleep
+sno
+split
+tee
+tr
+typo
+upost
+wc
+yacc
+% % as /usr/source/s7/nroff[1-5].s /usr/source/s7/roff7.s /usr/source/s7/nroff8.s
+Command not found
+% as /usr/source/s7/nroff[1-5].s /usr/source/s7/roff7.s /usr/source/s7/nroff8.s
+
+[3~
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64523
+
+;login: bin
+% chdir /usr/bin
+% as /usr/source/s7/nroff1.sbusy i
+busy i
+busy i
+busy i
+
+
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+chdir 
+
+k
+unix
+mem = 64523
+ka6 = 1237
+aps = 141616
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64523
+ka6 = 1237
+aps = 141616
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed

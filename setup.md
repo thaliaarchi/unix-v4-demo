@@ -2015,3 +2015,82 @@ Add it to boot.ini:
 attach rk0 disk.rk
 attach rk1 source.rk
 ```
+
+## Attempting to install aap manuals (continued)
+
+```
+login: bin
+% chdir /usr/source/s7
+% as nroff[1-5].s roff7.s nroff8.s
+% ld -s -n a.out
+% ls /usr/bin/nroff
+Red stack trap, PC: 000774 (ASH @-(SP),R1)
+sim> c
+
+Trap stack push abort, PC: 001002 (CMP (R1),-(R4))
+sim> c
+
+Red stack trap, PC: 000774 (ASH @-(SP),R1)
+sim> c
+
+Trap stack push abort, PC: 001002 (CMP (R1),-(R4))
+sim> 
+```
+
+This stack exhaustion is likely from the new source partition. `/usr/source/s7`
+is on the source partition and `/usr/bin` is on the root partition. I've noticed
+that `cd ..` while in `/usr/source` does nothing, leaving you at `/usr/source`.
+I assume that `ls` traverses parents recursively, in this case infinitely,
+exhausting the stack. I should fix this later.
+
+Back to installation. We see a similar issue with mounts with `mv`.
+
+```
+login: bin
+% chdir /
+% ls /usr/bin/nroff
+/usr/bin/nroff not found
+% chdir /usr/source/s7
+% mv a.out /usr/bin/nroff
+Cannot open old file.
+```
+
+Instead, compile it directly to `/usr/bin`. It seems to loop forever and doesn't
+react to DEL interrupt. Attempting to assemble a single file also fails.
+
+```
+% chdir /usr/bin
+% as /usr/source/s7/nroff[1-5].s /usr/source/s7/roff7.s /usr/source/s7/nroff8.s
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64523
+
+login: bin
+% chdir /usr/bin
+busy iusr/source/s7/nroff1.s
+busy i
+busy i
+busy i
+
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64523
+ka6 = 1237
+aps = 141616
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64523
+ka6 = 1237
+aps = 141616
+```
+
+Time to revert the disk image. If it wasn't already broken, perhaps the
+filesystem was corrupted when I rebooted without `sync`ing.
