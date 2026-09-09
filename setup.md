@@ -689,7 +689,7 @@ q
 % sh run
 ...
 % mv a.out /nunix
-% ^D
+% ^E
 Simulation stopped, PC: 002240 (MOV (SP)+,177776)
 sim> b rk
 k
@@ -1533,7 +1533,7 @@ incorrectly:
 
 ```
 login: bin
-% 
+% ^E
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> at tc1 nroff.tp
 TC1: 16b format, buffering file in memory
@@ -1778,7 +1778,7 @@ instructions. Note that `tp 1vx` is used for extraction, not `tp 1t`.
 
 ```
 login: bin
-% 
+% ^E
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> attach tc1 nroff.tp
 TC1: 16b format, buffering file in memory
@@ -1885,7 +1885,7 @@ Follow aap's [Dumping the source code to a second disk](http://squoze.net/UNIX/v
 instructions.
 
 ```
-% 
+% ^E
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> attach tm0 source.tap
 %SIM-INFO: TM0: creating new file
@@ -2004,7 +2004,7 @@ i
 w
 102
 q
-# 
+# ^E
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> detach tm0
 ```
@@ -2061,6 +2061,7 @@ react to DEL interrupt. Attempting to assemble a single file also fails.
 ```
 % chdir /usr/bin
 % as /usr/source/s7/nroff[1-5].s /usr/source/s7/roff7.s /usr/source/s7/nroff8.s
+^E
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> b rk
 k
@@ -2074,7 +2075,7 @@ busy i
 busy i
 busy i
 
-
+^E
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> b rk
 k
@@ -2082,7 +2083,7 @@ unix
 mem = 64523
 ka6 = 1237
 aps = 141616
-
+^E
 Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> b rk
 k
@@ -2094,3 +2095,154 @@ aps = 141616
 
 Time to revert the disk image. If it wasn't already broken, perhaps the
 filesystem was corrupted when I rebooted without `sync`ing.
+
+## Install aap manuals (continued 2)
+
+aap observed:
+
+> Because the RK driver currently does not work correctly under emulation when
+> using multiple disks, the RK driver from v5 has been included here.
+
+Grab the rk driver from V5. The copy of rk.c from aap's sys.tp is
+near-identical, only differing in that the line `deverror(bp, RKADDR->rker);`
+has been deleted. We'll see that this is necessary for V4.
+
+```
+wget https://tuhs.org/Archive/Distributions/Research/Dennis_v5/v5root.tar.gz
+tar xf v5root.tar.gz --strip-components=4 ./usr/sys/dmr/rk.c
+```
+
+Now aap's instructions can be followed:
+
+```
+login: bin
+% chdir /usr/sys/dmr
+% mv rk.c rk.c.bak
+% ^E
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att ptr rk.c
+sim> c
+
+% cat /dev/ptr > rk.c
+% wc -l rk.c
+    131 rk.c
+% cc -c rk.c
+% rm rk.o
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+[...]
+vt.c:
+un: _end
+un: _edata
+un: _deverro
+% chdir dmr
+% ed rk.c
+1849
+/deverro/
+                deverror(bp, RKADDR->rker);
+d
+w
+1819
+q
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+[...]
+vt.c:
+% mv a.out /nunix
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64524
+
+login: bin
+% chdir /usr/source/s7
+% as nroff[1-5].s roff7.s nroff8.s
+% ld -s -n a.out
+% ls /usr/bin/nroff
+/usr/bin/nroff not found
+% mv a.out /usr/bin/nroff
+% ^E
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att rk2 man.rk
+%SIM-INFO: RK2: Creating new file: man.rk
+sim> att tm0 man.tap
+%SIM-INFO: TM0: Tape Image 'man.tap' scanned as SIMH format
+sim> c
+
+login: root
+# /etc/mkfs /dev/rk2 4872
+isize = 103
+# chdir /usr
+# mkdir man
+# /etc/mount /dev/rk2 /usr/man
+# chdir /usr/man
+# mkdir man0 man1 man2 man3 man4 man5 man6 man7 man8 manx
+# chown bin *
+# chmod 664 *
+# tp mvx
+x man
+x man0/ptx
+x man0/toc
+x man0/naa
+x man0/taa
+x man0/tocrc
+[...]
+END
+# mv man /usr/bin/man
+# man ed
+
+
+ED(I)                        1/15/73                        ED(I)
+
+
+
+NAME
+     ED - EDITOR
+
+SYNOPSIS
+     __ [ - ] [ NAME ]
+
+DESCRIPTION
+     __ IS THE STANDARD TEXT EDITOR.
+
+     IF A ____ ARGUMENT IS GIVEN, __ SIMULATES AN _ COMMAND  (SEE
+     BELOW)\!  ON THE NAMED FILE; THAT IS TO SAY, THE FILE IS READ
+     INTO __'_ BUFFER SO THAT IT CAN BE EDITED.  THE  OPTIONAL  -
+     SIMULATES  AN  __  COMMAND (SEE BELOW)\! WHICH SUPPRESSES THE
+     PRINTING OF CHARACTERS COUNTS BY _, _, AND _ COMMANDS.
+
+[...]
+# ED /ETC/RC
+102
+q
+# ^D
+login: root
+# ed /etc/rc
+102
+/mount/
+/etc/mount /dev/rk1 /usr/source
+a
+/etc/mount /dev/rk2 /usr/man
+.
+w
+131
+q
+# 
+```
+
+Strangely, nroff switches the tty to uppercase mode, as aap observed.
+
+Add it to boot.ini:
+
+```
+attach rk0 disk.rk
+attach rk1 source.rk
+attach rk2 man.rk
+```

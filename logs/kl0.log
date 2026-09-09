@@ -36760,3 +36760,891 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: bin
+% chdir /usr/sys/dmr
+% mv rk.c rk.c.bak
+% ls -l rk*
+-rw-r--r-- 1 bin      2981 Sep  7 17:42 rk.c.bak
+% dat e@date @date
+Sun Sep  8 12:09:01 MDT 1974
+% date 09082108
+Sun Sep  8 21:08:00 MDT 1974
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att ptr rk.c
+sim> c
+cat /dev/ptr > rk.c
+% wc -l rk.c
+    131 rk.c
+% cc -c rk.c
+% rm rk.o
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+un: _end
+un: _edata
+un: _deverro
+% chdir dmr
+% ed rk.c
+1849
+/deverro/
+                deverror(bp, RKADDR->rker);
+d
+w
+1819
+q
+% chdir ..
+% sh run
+alloc.c:
+clock.c:
+fio.c:
+iget.c:
+main.c:
+nami.c:
+prf.c:
+rdwri.c:
+sig.c:
+60: Warning: assignment understood
+61: Warning: assignment understood
+slp.c:
+subr.c:
+sys1.c:
+sys2.c:
+sys3.c:
+sys4.c:
+sysent.c:
+text.c:
+trap.c:
+bio.c:
+cat.c:
+dc.c:
+dh.c:
+dhdm.c:
+dhfdm.c:
+dn.c:
+dp.c:
+dv.c:
+kl.c:
+lp.c:
+malloc.c:
+mem.c:
+partab.c:
+pc.c:
+pipe.c:
+rf.c:
+rk.c:
+rp.c:
+tc.c:
+tm.c:
+tty.c:
+vs.c:
+vt.c:
+% mv a.ou /##t /nunix
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64523
+
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64524
+
+;login: thalia
+% chdir /usr/source
+% chdir ..
+% pwd
+% ls
+s1
+s2
+s3
+s4
+s7
+% chdir /
+% ls
+bin
+dev
+etc
+lib
+mnt
+nunix
+tmp
+unix
+usr
+% 
+;login: bin
+% chdir /usr/source/s7
+% as nroff[1-5].s roff7.s nroff8.s
+% ld -s -n a.out
+% ls /usr/bin/nroff
+/usr/bin/nroff not found
+% mv a.out /usr/bin/nroff
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> att rk2 man.rk
+%SIM-INFO: RK2: Creating new file: man.rk
+sim> att tm0 man.tp
+%SIM-INFO: TM0: creating new file
+%SIM-INFO: TM0: Tape Image 'man.tp' scanned as SIMH format
+sim> att tm0 man.tap
+%SIM-INFO: TM0: Tape Image 'man.tap' scanned as SIMH format
+sim> c
+
+;login: root
+# /etc/mkfs /dev/rk2 4872
+isize = 103
+# chdir /usr
+# mkdir man
+# /etc/mount /dev/rk2 /usr/man
+# chdir /usr/man
+# mkdir man0 man1 man2 man3 man4 man5 man6 man7 man8 manx
+# chown bin *
+# chmod 664 *
+# tp mvx
+x man
+x man0/ptx
+x man0/toc
+x man0/naa
+x man0/taa
+x man0/tocrc
+x man0/basinf
+x man0/intro
+x man1/pfe.1
+x man1/sleep.1
+x man1/nohup.1
+x man1/nice.1
+x man1/file.1
+x man1/proof.1
+x man1/tp.1
+x man1/tr.1
+x man1/type.1
+x man1/grep.1
+x man1/sno.1
+x man1/speak.1
+x man1/catsim.1
+x man1/du.1
+x man1/ps.1
+x man1/typo.1
+x man1/passwd.1
+x man1/size.1
+x man1/fc.1
+x man1/dc.1
+x man1/man.1
+x man1/cdb.1
+x man1/tss.1
+x man1/wc.1
+x man1/opr.1
+x man1/sort.1
+x man1/stty.1
+x man1/plot.1
+x man1/ar.1
+x man1/as.1
+x man1/bas.1
+x man1/cat.1
+x man1/chdir.1
+x man1/chmod.1
+x man1/chown.1
+x man1/cmp.1
+x man1/cp.1
+x man1/date.1
+x man1/db.1
+x man1/merge.1
+x man1/dsw.1
+x man1/cc.1
+x man1/split.1
+x man1/ed.1
+x man1/time.1
+x man1/ln.1
+x man1/ls.1
+x man1/mail.1
+x man1/mesg.1
+x man1/mkdir.1
+x man1/mv.1
+x man1/nm.1
+x man1/od.1
+x man1/pr.1
+x man1/rew.1
+x man1/form.1
+x man1/fed.1
+x man1/rm.1
+x man1/rmdir.1
+x man1/roff.1
+x man1/sh.1
+x man1/troff.1
+x man1/strip.1
+x man1/cref.1
+x man1/sum.1
+x man1/wait.1
+x man1/kill.1
+x man1/tty.1
+x man1/uniq.1
+x man1/ld.1
+x man1/who.1
+x man1/write.1
+x man1/comm.1
+x man1/shift.1
+x man1/login.1
+x man1/if.1
+x man1/goto.1
+x man1/exit.1
+x man1/echo.1
+x man1/nroff.1
+x man2/intro
+x man2/getgid.2
+x man2/nice.2
+x man2/times.2
+x man2/dup.2
+x man2/signal.2
+x man2/break.2
+x man2/chdir.2
+x man2/chmod.2
+x man2/chown.2
+x man2/close.2
+x man2/creat.2
+x man2/exec.2
+x man2/exit.2
+x man2/fork.2
+x man2/fstat.2
+x man2/getuid.2
+x man2/gtty.2
+x man2/pipe.2
+x man2/link.2
+x man2/mount.2
+x man2/open.2
+x man2/read.2
+x man2/mknod.2
+x man2/seek.2
+x man2/setuid.2
+x man2/sync.2
+x man2/stat.2
+x man2/stime.2
+x man2/stty.2
+x man2/time.2
+x man2/umount.2
+x man2/unlink.2
+x man2/wait.2
+x man2/write.2
+x man2/indir.2
+x man2/sleep.2
+x man2/kill.2
+x man2/csw.2
+x man2/setgid.2
+x man3/getarg.3
+x man3/getchr.3
+x man3/vt.3
+x man3/reset.3
+x man3/putchr.3
+x man3/nargs.3
+x man3/ldiv.3
+x man3/hmul.3
+x man3/getpw.3
+x man3/setfil.3
+x man3/ttyn.3
+x man3/rand.3
+x man3/pow.3
+x man3/compar.3
+x man3/crypt.3
+x man3/atof.3
+x man3/ctime.3
+x man3/exp.3
+x man3/fptrap.3
+x man3/putc.3
+x man3/perror.3
+x man3/log.3
+x man3/mesg.3
+x man3/ierror.3
+x man3/printf.3
+x man3/sin.3
+x man3/switch.3
+x man3/gerts.3
+x man3/getc.3
+x man3/qsort.3
+x man3/nlist.3
+x man3/sqrt.3
+x man3/ecvt.3
+x man3/atan.3
+x man3/hypot.3
+x man4/vs.4
+x man4/tiu.4
+x man4/da.4
+x man4/cat.4
+x man4/rp.4
+x man4/tm.4
+x man4/tc.4
+x man4/mem.4
+x man4/rf.4
+x man4/pc.4
+x man4/dc.4
+x man4/vt.4
+x man4/kl.4
+x man4/dn.4
+x man4/dp.4
+x man4/rk.4
+x man5/tp.5
+x man5/ar.5
+x man5/a.out.5
+x man5/core.5
+x man5/dir.5
+x man5/fs.5
+x man5/passwd.5
+x man5/utmp.5
+x man5/wtmp.5
+x man6/sfs.6
+x man6/wump.6
+x man6/hyphen.6
+x man6/factor.6
+x man6/ov.6
+x man6/ttt.6
+x man6/moo.6
+x man6/maze.6
+x man6/cubic.6
+x man6/chess.6
+x man6/cal.6
+x man6/m6.6
+x man6/tmg.6
+x man6/azel.6
+x man6/sky.6
+x man6/yacc.6
+x man6/spline.6
+x man6/ptx.6
+x man6/bj.6
+x man7/tmheader.7
+x man7/vs.7
+x man7/greek.7
+x man7/dpd.7
+x man7/tabs.7
+x man7/msh.7
+x man7/glob.7
+x man7/ascii.7
+x man7/init.7
+x man7/getty.7
+x man8/restor.8
+x man8/dump.8
+x man8/ino.8
+x man8/update.8
+x man8/sync.8
+x man8/reloc.8
+x man8/bproc.8
+x man8/20boot.8
+x man8/mount.8
+x man8/check.8
+x man8/df.8
+x man8/su.8
+x man8/mknod.8
+x man8/umount.8
+x man8/clri.8
+x man8/mkfs.8
+x manx/mon.6
+x manx/itoa.3
+x manx/ftoa.3
+x manx/dli.8
+x manx/mt.1
+x manx/tap.1
+x manx/atoi.3
+x manx/ftoo.3
+x manx/prof.1
+x manx/toc
+x manx/bc.6
+x manx/forml.1
+x manx/unspk.8
+x manx/tm.8
+x manx/swtmp.8
+x manx/salv.8
+x manx/kill.8
+x manx/istat.8
+x manx/gacct.8
+x manx/dcheck.8
+x manx/chk.8
+x manx/acct.8
+x manx/crypt.1
+x manx/ilgins.2
+x manx/ptime.3
+x manx/salloc.3
+x manx/mon.3
+x manx/ddsput.3
+x manx/profil.2
+x manx/quit.2
+x manx/mdate.2
+x manx/fpe.2
+x manx/intr.2
+x manx/un.1
+x manx/stat.1
+x manx/vs.1
+x manx/cemt.2
+x manx/stty.2
+x manx/boot.2
+END
+# mv man /usr/bin/man
+# man ed
+
+
+ED(I)                        1/15/73                        ED(I)
+
+
+
+NAME
+     ED - EDITOR
+
+SYNOPSIS
+     ED__ [ - ] [ NAME ]
+
+DESCRIPTION
+     ED__ IS THE STANDARD TEXT EDITOR.
+
+     IF A NAME____ ARGUMENT IS GIVEN, ED__ SIMULATES AN E_ COMMAND  (SEE
+     BELOW)\!  ON THE NAMED FILE; THAT IS TO SAY, THE FILE IS READ
+     INTO ED__'S_ BUFFER SO THAT IT CAN BE EDITED.  THE  OPTIONAL  -
+     SIMULATES  AN  OS__  COMMAND (SEE BELOW)\! WHICH SUPPRESSES THE
+     PRINTING OF CHARACTERS COUNTS BY E_, R_, AND W_ COMMANDS.
+
+     ED__ OPERATES ON A COPY OF ANY FILE  IT  IS  EDITING;  CHANGES
+     MADE  IN  THE  COPY  HAVE  NO  EFFECT  ON THE FILE UNTIL A W
+     (WRITE)\! COMMAND IS GIVEN.  THE COPY OF THE TEXT BEING EDIT-
+     ED  RESIDES IN A TEMPORARY FILE CALLED THE BUFFER______.  THERE IS
+     ONLY ONE BUFFER.
+
+     COMMANDS TO ED__ HAVE A SIMPLE AND REGULAR STRUCTURE: ZERO  OR
+     MORE  ADDRESSES_________ FOLLOWED BY A SINGLE CHARACTER COMMAND_______, POS-
+     SIBLY FOLLOWED BY PARAMETERS  TO  THE  COMMAND.   THESE  AD-
+     DRESSES SPECIFY ONE OR MORE LINES IN THE BUFFER.  EVERY COM-
+     MAND WHICH REQUIRES ADDRESSES HAS DEFAULT ADDRESSES, SO THAT
+     THE ADDRESSES CAN OFTEN BE OMITTED.
+
+     IN GENERAL, ONLY ONE COMMAND MAY APPEAR ON A LINE.   CERTAIN
+     COMMANDS  ALLOW  THE  INPUT OF TEXT.  THIS TEXT IS PLACED IN
+     THE APPROPRIATE PLACE IN THE BUFFER.  WHILE ED__ IS  ACCEPTING
+     TEXT, IT IS SAID TO BE IN INPUT MODE.  IN THIS MODE, NO COM-
+     MANDS ARE RECOGNIZED; ALL INPUT IS MERELY COLLECTED.   INPUT
+     MODE  IS  LEFT BY TYPING A PERIOD \'.' ALONE AT THE BEGINNING
+     OF A LINE.
+
+     ED__ SUPPORTS A LIMITED FORM OF REGULAR_______  EXPRESSION__________  NOTATION.
+     A  REGULAR EXPRESSION IS AN EXPRESSION WHICH SPECIFIES A SET
+     OF STRINGS OF CHARACTERS.  A MEMBER OF THIS SET  OF  STRINGS
+     IS  SAID TO BE MATCHED_______ BY THE REGULAR EXPRESSION.  THE REGU-
+     LAR EXPRESSIONS ALLOWED BY ED__ ARE CONSTRUCTED AS FOLLOWS:
+
+        1. AN ORDINARY CHARACTER  (NOT  ONE  OF  THOSE  DISCUSSED
+           BELOW)  IS A REGULAR EXPRESSION AND MATCHES THAT CHAR-
+           ACTER.
+
+        2. A CIRCUMFLEX \'^' AT THE BEGINNING OF A REGULAR EXPRES-
+           SION  MATCHES THE NULL CHARACTER AT THE BEGINNING OF A
+           LINE.
+
+        3. A CURRENCY SYMBOL \'$' AT THE END OF A REGULAR  EXPRES-
+           SION MATCHES THE NULL CHARACTER AT THE END OF A LINE.
+
+        4. A PERIOD \'.' MATCHES  ANY  CHARACTER  BUT  A  NEW-LINE
+           CHARACTER.
+
+
+
+                              - 1 -
+
+
+
+ED(I)                        1/15/73                        ED(I)
+
+
+        5. A REGULAR  EXPRESSION  FOLLOWED  BY  AN  ASTERISK  \'*'
+           MATCHES  ANY NUMBER OF ADJACENT OCCURRENCES (INCLUDING
+           ZERO)  OF THE REGULAR EXPRESSION IT FOLLOWS.
+
+        6. A STRING OF CHARACTERS ENCLOSED IN SQUARE BRACKETS  \'[
+           ]'  MATCHES ANY CHARACTER IN THE STRING BUT NO OTHERS.
+           IF, HOWEVER, THE FIRST CHARACTER OF THE  STRING  IS  A
+           CIRCUMFLEX  \'^'  THE  REGULAR  EXPRESSION  MATCHES ANY
+           CHARACTER BUT  NEW-LINE  AND  THE  CHARACTERS  IN  THE
+           STRING.
+
+        7. THE CONCATENATION OF REGULAR EXPRESSIONS IS A  REGULAR
+           EXPRESSION  WHICH  MATCHES  THE  CONCATENATION  OF THE
+           STRINGS MATCHED BY THE COMPONENTS OF THE  REGULAR  EX-
+           PRESSION.
+
+        8. THE  NULL  REGULAR  EXPRESSION   STANDING   ALONE   IS
+           EQUIVALENT TO THE LAST REGULAR EXPRESSION ENCOUNTERED.
+
+     REGULAR EXPRESSIONS ARE USED IN ADDRESSES TO  SPECIFY  LINES
+     AND  IN ONE COMMAND (SEE S_ BELOW)  TO SPECIFY A PORTION OF A
+     LINE WHICH IS TO BE REPLACED.
+
+     IF IT IS DESIRED TO USE ONE OF THE REGULAR EXPRESSION  META-
+     CHARACTERS  AS  AN ORDINARY CHARACTER, THAT CHARACTER MAY BE
+     PRECEDED BY \'\'.  THIS ALSO APPLIES TO THE CHARACTER  BOUND-
+     ING THE REGULAR EXPRESSION (OFTEN \'/')  AND TO \'\' ITSELF.
+
+     ADDRESSES ARE CONSTRUCTED AS  FOLLOWS.   TO  UNDERSTAND  AD-
+     DRESSING  IN  ED__  IT  IS  NECESSARY TO KNOW THAT AT ANY TIME
+     THERE IS A CURRENT LINE.  GENERALLY  SPEAKING,  THE  CURRENT
+     LINE  IS  THE  LAST LINE AFFECTED BY A COMMAND; HOWEVER, THE
+     EXACT EFFECT ON THE CURRENT LINE BY  EACH  COMMAND  IS  DIS-
+     CUSSED UNDER THE DESCRIPTION OF THE COMMAND.
+
+        1. THE CHARACTER \'.' ADDRESSES THE CURRENT LINE.
+
+        2. THE CHARACTER \'^' ADDRESSES THE LINE  IMMEDIATELY  BE-
+           FORE THE CURRENT LINE.
+
+        3. THE CHARACTER \'$'  ADDRESSES  THE  LAST  LINE  OF  THE
+           BUFFER.
+
+        4. A DECIMAL NUMBER N_ ADDRESSES  THE  N-TH  LINE  OF  THE
+           BUFFER.
+
+        5. \''X' ADDRESSES THE LINE ASSOCIATED (MARKED)  WITH  THE
+           MARK  NAME CHARACTER X WHICH MUST BE A PRINTABLE CHAR-
+           ACTER.  LINES ARE MARKED WITH THE K_ COMMAND  DESCRIBED
+           BELOW.
+
+        6. A REGULAR EXPRESSION ENCLOSED IN SLASHES \'/' ADDRESSES
+           THE  FIRST  LINE  FOUND BY SEARCHING TOWARD THE END OF
+           THE BUFFER AND STOPPING AT THE FIRST LINE CONTAINING A
+           STRING  MATCHING THE REGULAR EXPRESSION.  IF NECESSARY
+           THE SEARCH  WRAPS  AROUND  TO  THE  BEGINNING  OF  THE
+           BUFFER.
+
+
+                              - 2 -
+
+
+
+ED(I)                        1/15/73                        ED(I)
+
+
+        7. A REGULAR EXPRESSION ENCLOSED IN QUERIES \'?' ADDRESSES
+           THE FIRST LINE FOUND BY SEARCHING TOWARD THE BEGINNING
+           OF THE BUFFER AND STOPPING AT  THE  FIRST  LINE  FOUND
+           CONTAINING  A  STRING MATCHING THE REGULAR EXPRESSION.
+           IF NECESSARY THE SEARCH WRAPS AROUND TO THE END OF THE
+           BUFFER.
+
+        8. AN ADDRESS FOLLOWED BY A PLUS SIGN \'+' OR A MINUS SIGN
+           \'-'  FOLLOWED  BY  A DECIMAL NUMBER SPECIFIES THAT AD-
+           DRESS PLUS (RESP.  MINUS)   THE  INDICATED  NUMBER  OF
+           LINES.  THE PLUS SIGN MAY BE OMITTED.
+
+     COMMANDS MAY REQUIRE ZERO, ONE, OR TWO ADDRESSES.   COMMANDS
+     WHICH REQUIRE NO ADDRESSES REGARD THE PRESENCE OF AN ADDRESS
+     AS AN ERROR.  COMMANDS WHICH ACCEPT ONE OR TWO ADDRESSES AS-
+     SUME DEFAULT ADDRESSES WHEN INSUFFICIENT ARE GIVEN.  IF MORE
+     ADDRESSES ARE GIVEN THAN SUCH A COMMAND REQUIRES,  THE  LAST
+     ONE OR TWO (DEPENDING ON WHAT IS ACCEPTED)  ARE USED.
+
+     ADDRESSES ARE SEPARATED FROM EACH OTHER TYPICALLY BY A COMMA
+     \','.   THEY  MAY  ALSO  BE SEPARATED BY A SEMICOLON \';'.  IN
+     THIS CASE THE CURRENT LINE \'.' IS SET TO  THE  PREVIOUS  AD-
+     DRESS  BEFORE THE NEXT ADDRESS IS INTERPRETED.  THIS FEATURE
+     CAN BE USED TO DETERMINE THE STARTING LINE FOR  FORWARD  AND
+     BACKWARD  SEARCHES  (\'/',  \'?') .  THE SECOND ADDRESS OF ANY
+     TWO-ADDRESS SEQUENCE MUST CORRESPOND TO A LINE FOLLOWING THE
+     LINE CORRESPONDING TO THE FIRST ADDRESS.
+
+     IN THE FOLLOWING LIST OF ED__ COMMANDS, THE DEFAULT  ADDRESSES
+     ARE  SHOWN  IN PARENTHESES.  THE PARENTHESES ARE NOT PART OF
+     THE ADDRESS, BUT ARE USED TO SHOW THAT THE  GIVEN  ADDRESSES
+     ARE THE DEFAULT.
+
+     AS MENTIONED, IT IS GENERALLY ILLEGAL FOR MORE THAN ONE COM-
+     MAND  TO APPEAR ON A LINE.  HOWEVER, ANY COMMAND MAY BE SUF-
+     FIXED BY \'P' (FOR \'PRINT') .  IN THAT CASE, THE CURRENT LINE
+     IS PRINTED AFTER THE COMMAND IS COMPLETE.
+
+          ( . ) A
+          <TEXT>
+          .
+               THE APPEND COMMAND READS THE GIVEN  TEXT  AND  AP-
+               PENDS IT AFTER THE ADDRESSED LINE.  \'.' IS LEFT ON
+               THE LAST LINE INPUT, IF THERE WERE ANY,  OTHERWISE
+               AT  THE  ADDRESSED LINE.  ADDRESS \'0' IS LEGAL FOR
+               THIS COMMAND; TEXT IS PLACED AT THE  BEGINNING  OF
+               THE BUFFER.
+
+          ( . , . ) C
+          <TEXT>
+          .
+               THE CHANGE COMMAND DELETES  THE  ADDRESSED  LINES,
+               THEN  ACCEPTS  INPUT  TEXT  WHICH  REPLACES  THESE
+               LINES.  \'.' IS LEFT AT THE  LAST  LINE  INPUT;  IF
+               THERE  WERE NONE, IT IS LEFT AT THE FIRST LINE NOT
+               CHANGED.
+
+
+
+                              - 3 -
+
+
+
+ED(I)                        1/15/73                        ED(I)
+
+
+          ( . , . )  D
+               THE DELETE COMMAND  DELETES  THE  ADDRESSED  LINES
+               FROM  THE  BUFFER.   THE LINE ORIGINALLY AFTER THE
+               LAST LINE DELETED BECOMES THE CURRENT LINE; IF THE
+               LINES  DELETED WERE ORIGINALLY AT THE END, THE NEW
+               LAST LINE BECOMES THE CURRENT LINE.
+
+          E FILENAME
+               THE EDIT COMMAND CAUSES THE ENTIRE CONTENTS OF THE
+               BUFFER  TO  BE DELETED, AND THEN THE NAMED FILE TO
+               BE READ IN.  \'.' IS SET TO THE LAST  LINE  OF  THE
+               BUFFER.   THE  NUMBER OF CHARACTERS READ IS TYPED.
+               \'FILENAME' IS REMEMBERED FOR POSSIBLE USE AS A DE-
+               FAULT FILE NAME IN A SUBSEQUENT R_ OR W_ COMMAND.
+
+          F FILENAME
+               THE FILENAME COMMAND PRINTS THE  CURRENTLY  REMEM-
+               BERED  FILE  NAME.   IF  \'FILENAME'  IS GIVEN, THE
+               CURRENTLY  REMEMBERED  FILE  NAME  IS  CHANGED  TO
+               \'FILENAME'.
+
+          (1,$) G/REGULAR EXPRESSION/COMMAND LIST
+               IN THE GLOBAL COMMAND, THE FIRST STEP IS  TO  MARK
+               EVERY LINE WHICH MATCHES THE GIVEN REGULAR EXPRES-
+               SION.  THEN FOR EVERY SUCH LINE, THE GIVEN COMMAND
+               LIST  IS  EXECUTED  WITH \'.' INITIALLY SET TO THAT
+               LINE.  A SINGLE COMMAND OR THE FIRST  OF  MULTIPLE
+               COMMANDS  APPEARS ON THE SAME LINE WITH THE GLOBAL
+               COMMAND.  ALL LINES OF A  MULTI-LINE  LIST  EXCEPT
+               THE LAST LINE MUST BE ENDED WITH \'\'.  A_, I_, AND C_
+               COMMANDS AND ASSOCIATED INPUT ARE  PERMITTED;  THE
+               \'.'  TERMINATING  INPUT  MODE MAY BE OMITTED IF IT
+               WOULD BE ON THE LAST LINE  OF  THE  COMMAND  LIST.
+               THE  (GLOBAL)  COMMANDS, G_, AND V_, ARE NOT PERMIT-
+               TED IN THE COMMAND LIST.
+
+          ( . ) I
+          <TEXT>
+          .
+               THIS COMMAND INSERTS THE GIVEN TEXT BEFORE THE AD-
+               DRESSED LINE.  \'.' IS LEFT AT THE LAST LINE INPUT;
+               IF THERE WERE NONE, AT THE ADDRESSED  LINE.   THIS
+               COMMAND  DIFFERS  FROM  THE  A_ COMMAND ONLY IN THE
+               PLACEMENT OF THE TEXT.
+
+          ( . ) KX
+               THE MARK COMMAND ASSOCIATES OR MARKS THE ADDRESSED
+               LINE  WITH  THE SINGLE CHARACTER MARK NAME X_.  THE
+               TEN MOST RECENT MARK NAMES  ARE  REMEMBERED.   THE
+               CURRENT  MARK NAMES MAY BE PRINTED WITH THE N_ COM-
+               MAND.
+
+          ( . , . ) MA
+               THE MOVE COMMAND  WILL  REPOSITION  THE  ADDRESSED
+               LINES  AFTER THE LINE ADDRESSED BY A_.  THE LAST OF
+               THE MOVED LINES BECOMES THE CURRENT LINE.
+
+
+
+                              - 4 -
+
+
+
+ED(I)                        1/15/73                        ED(I)
+
+
+          N
+               THE N COMMAND WILL PRINT THE CURRENT MARK NAMES.
+
+          OS
+          OV
+               AFTER OS__ CHARACTER COUNTS PRINTED BY E_, R_,  AND  W_
+               ARE SUPPRESSED.  OV__ TURNS THEM BACK ON.
+
+          ( . , . ) P
+               THE PRINT COMMAND PRINTS THE ADDRESSED LINES.  \'.'
+               IS  LEFT  AT THE LAST LINE PRINTED.  THE P_ COMMAND
+               MAY___ BE PLACED ON THE SAME LINE AFTER ANY COMMAND.
+
+          Q
+               THE QUIT COMMAND CAUSES ED__ TO EXIT.  NO  AUTOMATIC
+               WRITE OF A FILE IS DONE.
+
+          ($) R FILENAME
+               THE READ COMMAND READS IN THE GIVEN FILE AFTER THE
+               ADDRESSED  LINE.   IF  NO  FILE NAME IS GIVEN, THE
+               REMEMBERED FILE NAME, IF ANY, IS USED (SEE E_ AND F_
+               COMMANDS) .   THE  REMEMBERED  FILE  NAME  IS  NOT
+               CHANGED UNLESS \'FILENAME' IS THE VERY  FIRST  FILE
+               NAME  MENTIONED.   ADDRESS  \'0' IS LEGAL FOR R_ AND
+               CAUSES THE FILE TO BE READ AT THE BEGINNING OF THE
+               BUFFER.   IF THE READ IS SUCCESSFUL, THE NUMBER OF
+               CHARACTERS READ IS TYPED.  \'.' IS LEFT AT THE LAST
+               LINE READ IN FROM THE FILE.
+
+          ( . , . ) S/REGULAR EXPRESSION/REPLACEMENT/    OR,
+          ( . , . ) S/REGULAR EXPRESSION/REPLACEMENT/G
+               THE SUBSTITUTE  COMMAND  SEARCHES  EACH  ADDRESSED
+               LINE  FOR  AN  OCCURRENCE OF THE SPECIFIED REGULAR
+               EXPRESSION.  ON EACH LINE  IN  WHICH  A  MATCH  IS
+               FOUND, ALL MATCHED STRINGS ARE REPLACED BY THE RE-
+               PLACEMENT SPECIFIED, IF THE GLOBAL REPLACEMENT IN-
+               DICATOR  \'G'  APPEARS  AFTER  THE COMMAND.  IF THE
+               GLOBAL INDICATOR DOES NOT APPEAR, ONLY  THE  FIRST
+               OCCURRENCE  OF THE MATCHED STRING IS REPLACED.  IT
+               IS AN ERROR FOR THE SUBSTITUTION TO  FAIL  ON  ALL
+               ADDRESSED  LINES.   ANY CHARACTER OTHER THAN SPACE
+               OR NEW-LINE MAY BE USED INSTEAD OF \'/' TO  DELIMIT
+               THE  REGULAR  EXPRESSION AND THE REPLACEMENT.  \'.'
+               IS LEFT AT THE LAST LINE SUBSTITUTED.
+
+               AN AMPERSAND \'&' APPEARING IN THE  REPLACEMENT  IS
+               REPLACED   BY  THE  REGULAR  EXPRESSION  THAT  WAS
+               MATCHED.  THE SPECIAL MEANING OF \'&' IN THIS  CON-
+               TEXT MAY BE SUPPRESSED BY PRECEDING IT BY \'\'.
+
+          (1,$) V/REGULAR EXPRESSION/COMMAND LIST
+               THIS COMMAND IS THE SAME AS THE GLOBAL COMMAND EX-
+               CEPT  THAT  THE  COMMAND LIST IS EXECUTED WITH \'.'
+               INITIALLY SET TO EVERY LINE EXCEPT______ THOSE  MATCHING
+               THE REGULAR EXPRESSION.
+
+          (1,$) W FILENAME
+
+
+                              - 5 -
+
+
+
+ED(I)                        1/15/73                        ED(I)
+
+
+               THE WRITE COMMAND WRITES THE ADDRESSED LINES  ONTO
+               THE GIVEN FILE.  IF THE FILE DOES NOT EXIST, IT IS
+               CREATED MODE 666 (READABLE AND WRITEABLE BY EVERY-
+               ONE) .   THE  REMEMBERED  FILE NAME IS NOT___ CHANGED
+               UNLESS \'FILENAME' IS THE VERY FIRST FILE NAME MEN-
+               TIONED.   IF NO FILE NAME IS GIVEN, THE REMEMBERED
+               FILE NAME, IF ANY, IS  USED  (SEE  E_  AND  F_  COM-
+               MANDS) .   \'.'  IS  UNCHANGED.   IF THE COMMAND IS
+               SUCCESSFUL, THE NUMBER OF  CHARACTERS  WRITTEN  IS
+               TYPED.
+
+          ($) =
+               THE LINE NUMBER OF THE ADDRESSED  LINE  IS  TYPED.
+               \'.' IS UNCHANGED BY THIS COMMAND.
+
+          !UNIX COMMAND
+               THE REMAINDER OF THE LINE AFTER THE \'!' IS SENT TO
+               UNIX  TO  BE INTERPRETED AS A COMMAND.  \'.' IS UN-
+               CHANGED.  THE ENTIRE SHELL SYNTAX  IS  NOT  RECOG-
+               NIZED.  SEE MSH(VII) FOR THE RESTRICTIONS.
+
+          ( .+1 ) <NEWLINE>
+               AN ADDRESS ALONE ON A LINE  CAUSES  THE  ADDRESSED
+               LINE  TO  BE  PRINTED.   A  BLANK  LINE  ALONE  IS
+               EQUIVALENT TO \'.+1P'; IT IS  USEFUL  FOR  STEPPING
+               THROUGH TEXT.
+
+     IF AN INTERRUPT SIGNAL (ASCII DEL)  IS SENT, ED__ WILL PRINT A
+     \'?' AND RETURN TO ITS COMMAND LEVEL.
+
+     IF INVOKED WITH THE COMMAND NAME \'-', (SEE  INIT(VII) )   ED__
+     WILL SIGN ON WITH THE MESSAGE \'EDITING SYSTEM' AND PRINT \'*'
+     AS THE COMMAND LEVEL PROMPT CHARACTER.
+
+     ED__ HAS SIZE LIMITATIONS ON THE MAXIMUM NUMBER OF LINES  THAT
+     CAN  BE  EDITED,  ON  THE  MAXIMUM NUMBER OF CHARACTERS IN A
+     LINE, IN A GLOBAL'S COMMAND LIST, IN A REMEMBERED FILE NAME,
+     AND  IN  THE  SIZE OF THE TEMPORARY FILE.  THE CURRENT SIZES
+     ARE: 4000 LINES PER FILE, 512 CHARACTERS PER LINE, 256 CHAR-
+     ACTERS PER GLOBAL COMMAND LIST, 64 CHARACTERS PER FILE NAME,
+     AND 64K CHARACTERS IN THE TEMPORARY FILE (SEE BUGS) .
+
+FILES
+     /TMP/ETM?, TEMPORARY
+     /ETC/MSH, TO IMPLEMENT THE \'!' COMMAND.
+
+DIAGNOSTICS
+     \'?' FOR ERRORS IN COMMANDS; \'TMP' FOR TEMPORARY  FILE  OVER-
+     FLOW.
+
+BUGS
+     THE TEMPORARY FILE CAN GROW TO NO MORE THAN 64K BYTES.
+
+
+
+
+
+
+
+                              - 6 -
+
+# ED /ETC/RC
+102
+/MOUNT/
+/ETC/MOUNT /DEV/RK1 /USR/SOURCE
+# 
+;login: o#root
+# ed /etc/rc
+102
+/mount/
+/etc/mount /dev/rk1 /usr/source
+a
+/etc/mount /dev/rk2 /usr/man
+.
+w
+131
+q
+# sync
+# chdir /usr/source/s7
+# rm a.out
+a.out: non existent
+# strip /usr/bin/nroff
+# 

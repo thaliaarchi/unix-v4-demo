@@ -3,4 +3,5 @@ chdir /tmp
 rm -f [a-t]* [x-z]* v*
 chdir /
 /etc/mount /dev/rk1 /usr/source
+/etc/mount /dev/rk2 /usr/man
 /etc/update

@@ -1,0 +1,19 @@
+if $1x = x goto usage
+if $2x = x goto default
+
+chdir /usr/man/man$1
+shift
+goto print
+
+: default
+chdir /usr/man/man1
+
+: print
+if $1x = x exit
+nroff /usr/man/man0/naa $1.?
+shift
+goto print
+
+: usage
+echo usage: man "[section] [title ...]"
+exit
