@@ -37647,4 +37647,698 @@ q
 # rm a.out
 a.out: non existent
 # strip /usr/bin/nroff
+# Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: bin
+% 
+;login: root
+# chdir /usr@ed /edt/pas@/#ed /etc/passwd
+970
+/thalia/
+thalia::4:4::/usr/thalia:
+/bin/\#
+?
+/bin/
+bin::3:1::/bin:
+/root/
+root::0:1::/:
+/thalia/s/4:4:#/4:1/p
+thalia::4:1::/usr/thalia:
+w
+970
+q
 # 
+;login: thalia
+% chdir /usr/sys
+% cat user.h
+struct user {
+        int     u_rsav[2];              /* must be first */
+        int     u_fsav[25];             /* must be second */
+        char    u_segflg;
+        char    u_error;
+        char    u_uid;
+        char    u_gid;
+        char    u_ruid;
+        char    u_rgid;
+        int     u_procp;
+        char    *u_base;
+        char    *u_count;
+        char    *u_offset[2];
+        int     *u_cdir;
+        char    u_dbuf[DIRSIZ];
+        char    *u_dirp;
+        struct  {
+                int     u_ino;
+                char    u_name[DIRSIZ];
+        } u_dent;
+        int     *u_pdir;
+        int     u_uisa[8];
+        int     u_uisd[8];
+        int     u_ofile[NOFILE];
+        int     u_arg[5];
+        int     u_tsize;
+        int     u_dsize;
+        int     u_ssize;
+        int     u_qsav[2];
+        int     u_ssav[2];
+        int     u_signal[NSIG];
+        int     u_utime;
+        int     u_stime;
+        int     u_cutime[2];
+        int     u_cstime[2];
+        int     *u_ar0;
+        int     u_prof[4];
+        char    u_nice;
+        char    u_dsleep;
+} u;    /* u = 140000 */
+% grep -n DIRSIZ *
+param.h:63 #define      DIRSIZ  14
+user.h:15       char    u_dbuf[DIRSIZ];
+user.h:19               char    u_name[DIRSIZ];
+% ed param.h
+941
+/DIRSIZ/
+#define DIRSIZ  14
+.#1,.-1d
+.+1,$p
+
+struct
+{
+        char    lobyte;
+        char    hibyte;
+};
+/DIRSIZ/+1,$d
+1,$p
+#define DIRSIZ  14
+w dirent.h
+?
+!ls
+buf.h
+conf
+conf.h
+conf.o
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+stat.h
+systm.h
+text.h
+tty.h
+user.h
+!
+q
+% su#@
+;login: tali@thalia
+% cd#hdir /usr/sys
+% echo > dirent.h
+dirent.h: cannot create
+% ls -al .
+total 218
+drwxr-xr-x 5 bin       464 Sep  8 21:10 .
+drwxr-xr-x53 bin       848 Sep  8 21:12 ..
+-rw-r--r-- 1 bin       628 Jun 10 08:37 buf.h
+drwxr-xr-x 2 bin       224 Sep  8 21:10 conf
+-rw-r--r-- 1 bin       291 Jun 10 08:37 conf.h
+-rw-rw-rw- 1 bin       652 Sep  8 21:10 conf.o
+drwxr-xr-x 2 bin       848 Sep  8 21:10 dmr
+-rw-rw-rw- 1 bin       527 Aug 26 17:07 errno.h
+-rw-r--r-- 1 bin       157 Jun 10 08:37 file.h
+-rw-r--r-- 1 bin       188 Jun 10 08:37 filsys.h
+-rw-r--r-- 1 bin       561 Jun 10 08:37 inode.h
+drwxr-xr-x 2 bin       640 Sep  8 21:10 ken
+-rw-r--r-- 1 bin        35 Jun 10 08:37 ld
+-rw-rw-rw- 1 bin     47658 Sep  8 21:10 lib1
+-rw-rw-rw- 1 bin     39734 Sep  8 21:10 lib2
+-rw-rw-rw- 1 bin      1356 Sep  8 21:10 low.o
+-rw-rw-rw- 1 bin      3720 Sep  8 21:10 mch.o
+-rw-r--r-- 1 bin       941 Jun 10 08:37 param.h
+-rw-r--r-- 1 bin       387 Jun 10 08:37 proc.h
+-rw-r--r-- 1 bin       142 Jun 10 08:37 reg.h
+-rw-r--r-- 1 bin       251 Aug 26 21:45 run
+-rw-r--r-- 1 bin       228 Jun 10 08:37 seg.h
+-rw-rw-rw- 1 bin       501 Sep  7 20:14 stat.h
+-rw-r--r-- 1 bin       410 Jun 10 08:37 systm.h
+-rw-r--r-- 1 bin       115 Jun 10 08:37 text.h
+-rw-r--r-- 1 bin       882 Aug 27 10:45 tty.h
+-rw-r--r-- 1 bin       671 Aug 26 21:30 user.h
+% 
+;login: bin
+% cdirt @chdir @ed /etc/passwd
+970
+/thalia/
+thalia::4:1::/usr/thalia:
+q
+% chdir /usr/sys
+% ed con###param.h
+941
+/DIRSIZ/+1,$p#d
+.
+#define DIRSIZ  14
+1,.-1d
+1,$p
+#define DIRSIZ  14
+w dirent.h
+18
+q
+% date 09090813
+Mon Sep  9 08:13:00 MDT 1974
+% ed dirent.h
+18
+a
+
+struct dirent {
+        int     d_ino;
+        char    d_name[DIRSIZ];
+}
+.
+c
+};
+.
+w
+72
+q
+% grep -n u_ino
+% grep -n u_ino *
+user.h:18               int     u_ino;
+% grep -n u_name *
+user.h:19               char    u_name[DIRSIZ];
+% chdir /usr/source/s1
+% grep -n [1-f@grep -n @ed ls.c
+7016
+/readdir/;^}##/^}/p
+                        readdir(ep->namep);
+                        if (fflg==0)
+                                qsort(slastp, lastp - slastp, 28, compar);
+                        if (statreq)
+                                printf("total %d\n", tblocks);
+                        for (ep1=slastp; ep1<lastp; ep1++)
+                                pentry(ep1);
+                } else 
+                        pentry(ep);
+        }
+        flush();
+}
+/^readdir/;/}/p
+readdir(dir)
+char *dir;
+{
+        static struct {
+                int     dinode;
+                char    dname[14];
+        } dentry;
+/^readdir/;/^}/p
+readdir(dir)
+char *dir;
+{
+        static struct {
+                int     dinode;
+                char    dname[14];
+        } dentry;
+        register char *p;
+        register int j;
+        register struct lbuf *ep;
+
+        if (fopen(dir, &inf) < 0) {
+                printf("%s unreadable\n", dir);
+                return;
+        }
+        tblocks = 0;
+        for(;;) {
+                p = &dentry;
+                for (j=0; j<16; j++)
+                        *p++ = getc(&inf);
+                if (dentry.dinode==0
+                 || aflg==0 && dentry.dname[0]=='.')
+                        continue;
+                if (dentry.dinode == -1)
+                        break;
+                ep = gstat(makename(dir, dentry.dname), 0);
+                if (ep->l_ino != -1)
+                        ep->l_ino = dentry.dinode;
+                for (j=0; j<14; j++)
+                        ep->l_name[j] = dentry.dname[j];
+        }
+        close(inf.fdes);
+}
+?struct?
+        register struct lbuf *ep;
+??
+        static struct {
+.,.+3c
+        static struct dirent dentry;
+.
+g/dinodep#/p
+                if (dentry.dinode==0
+                if (dentry.dinode == -1)
+                        ep->l_ino = dentry.dinode;
+g/dinode/s//d_ino/gp
+                if (dentry.d_ino==0
+                if (dentry.d_ino == -1)
+                        ep->l_ino = dentry.d_ino;
+g/dname/s//d_name/gp
+                 || aflg==0 && dentry.d_name[0]=='.')
+                ep = gstat(makename(dir, dentry.d_name), 0);
+                        ep->l_name[j] = dentry.d_name[j];
+g/14/p
+        char    l_name[14];
+                printf("%.14s\n", p->l_name);
+        for (i=0; i<14; i++)
+                for (j=0; j<14; j++)
+        for (i=0; i<14; i++)
+/l_name/
+        char    l_name[14];
+^
+struct lbuf {
+^
+
+
+struct lbuf {
+/lbuf/
+struct lbufx {
+j@/l_name/
+                printf("%.14s\n", p->l_name);
+1
+#
+/inc/
+#include "/usr/sys/stat.h"
+i
+\#include "/usr/sys/dirent.h"
+.
+w
+7015
+/14
+?
+/14/
+        char    l_name[14];
+s//DIRSIZ/
+//
+                printf("%.14s\n", p->l_name);
+//
+        for (i=0; i<14; i++)
+.-3,.+5p
+                *dp++ = *fp++;
+        *dp++ = '/';
+        fp = file;
+        for (i=0; i<14; i++)
+                *dp++ = *fp++;
+        *dp = 0;
+        return(dfile);
+}
+
+?^{?-2;/^}/p
+makename(dir, file)
+char *dir, *file;
+{
+        static char dfile[100];
+        register char *dp, *fp;
+        register int i;
+
+        dp = dfile;
+        fp = dir;
+        while (*fp)
+                *dp++ = *fp++;
+        *dp++ = '/';
+        fp = file;
+        for (i=0; i<14; i++)
+                *dp++ = *fp++;
+        *dp = 0;
+        return(dfile);
+}
+/m@g/makename/p
+makename(dir, file)
+                ep = gstat(makename(dir, dentry.d_name), 0);
+/makename/
+makename(dir, file)
+/14/
+        for (i=0; i<14; i++)
+s//DIRIZ##SIZ/p
+        for (i=0; i<DIRSIZ; i++)
+/14/
+                for (j=0; j<14; j++)
+.-5,.+5p
+                if (dentry.d_ino == -1)
+                        break;
+                ep = gstat(makename(dir, dentry.d_name), 0);
+                if (ep->l_ino != -1)
+                        ep->l_ino = dentry.d_ino;
+                for (j=0; j<14; j++)
+                        ep->l_name[j] = dentry.d_name[j];
+        }
+        close(inf.fdes);
+}
+
+?14?
+                for (j=0; j<14; j++)
+s//DIRIZ##SIZ/p
+                for (j=0; j<DIRSIZ; j++)
+/14/
+        for (i=0; i<14; i++)
+.-5,.+5p
+?
+.-5,$P
+?
+,-5,$p
+?
+.-5,.#$P$p
+?
+.=
+409
+.-5,$p
+                p1 = p1->l_name;
+        if (p2->l_mode&ISARG)
+                p2 = p2->namep;
+        else
+                p2 = p2->l_name;
+        for (i=0; i<14; i++)
+                if ((j = *p1.charp++ - *p2.charp++) || p1.charp[-1]==0)
+                        return(rflg*j);
+        return(0);
+}
+?^{?-2,$p
+compar(ap1, ap2)
+struct lbuf *ap1, *ap2;
+{
+        register struct lbuf *p1, *p2;
+        register int i;
+        int j;
+        struct { char *charp;};
+
+        p1 = ap1;
+        p2 = ap2;
+        if (dflg==0) {
+                if ((p1->l_mode&(DIR|ISARG)) == (DIR|ISARG)) {
+                        if ((p2->l_mode&(DIR|ISARG)) != (DIR|ISARG))
+                                return(1);
+                } else {
+                        if ((p2->l_mode&(DIR|ISARG)) == (DIR|ISARG))
+                                return(-1);
+                }
+        }
+        if (tflg) {
+                i = 0;
+                if (p2->l_mtime[0] > p1->l_mtime[0])
+                        i++;
+                else if (p2->l_mtime[0] < p1->l_mtime[0])
+                        i--;
+                else if (p2->l_mtime[1] > p1->l_mtime[1])
+                        i++;
+                else if (p2->l_mtime[1] < p1->l_mtime[1])
+                        i--;
+                return(i*rflg);
+        }
+        if (p1->l_mode&ISARG)
+                p1 = p1->namep;
+        else
+                p1 = p1->l_name;
+        if (p2->l_mode&ISARG)
+                p2 = p2->namep;
+        else
+                p2 = p2->l_name;
+        for (i=0; i<14; i++)
+                if ((j = *p1.charp++ - *p2.charp++) || p1.charp[-1]==0)
+                        return(rflg*j);
+        return(0);
+}
+?14?s//DIRSIZ/
+/14/
+                printf("%.14s\n", p->l_name);
+//
+                printf("%.14s\n", p->l_name);
+w
+7031
+q
+% cc ls.c
+% sync
+/printf/
+
+
+
+
+
+
+
+Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64523
+
+;login: thalia
+% sync
+% chdir /usr/source
+% sync
+% 
+;login: thalia
+% 
+;login: bin
+% cdir /us@ed @chdir /usr/source/s2#1
+% ed ls.cbusy i
+
+7031
+
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+unix
+mem = 64523
+
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> b rk
+k
+nunix
+mem = 64524
+
+;login: bin
+% mv nunix unix
+Source file non-existent
+% chdir /
+% mv nunix unix
+% a#
+% sync
+% chdir /usr/source/s1
+% ed ls.c
+7031
+/14/
+                printf("%.14s\n", p->l_name);
+c
+                printf("%."DIRSIZ"s\n", p->l_name);
+.
+w
+7037
+!cc ls.cbusy i
+busy i
+busy i
+
+187: Expression syntax
+188: l_name undefined
+!
+s/"DIRSIZ"/14/p
+                printf("%.14s\n", p->l_name);
+w
+7031
+w
+7031
+w
+7031
+w
+7031
+w
+7031
+w
+7031
+w
+7031
+w
+7031
+s/14/"DIRSIZ"/p
+                printf("%."DIRSIZ"s\n", p->l_name);
+w
+7037
+w
+7037
+w
+7037
+s/"DIRSIZ"/14/p
+                printf("%.14s\n", p->l_name);
+w
+7031
+w
+7031
+w
+7031
+q
+% cc ls.c
+busy i
+% cc ls.c
+% a.out
+a.out
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% ls -l /bin/ls
+-rwxr-xr-x 1 bin      5040 Sep  7 21:07 /bin/ls
+% chmod 755 ls##a.out
+% mv a.out /bin/ls
+% strip /bin/ls
+% ed find.c
+8670
+/dentry/
+        } dentry[32];
+?struct?,.p
+        struct {
+                int     dinode;
+                char    dname[14];
+        } dentry[32];
+.-3,.c
+        struct dent###irent dentry[32];
+.
+g/dinode/s//d_ino/p
+                        if(dentry[i].d_ino==0||dentry[i].dname[0]=='.')
+                        if (dentry[i].d_ino == -1) break;
+g/dname/s//d_name/gp
+                        if(dentry[i].d_ino==0||dentry[i].d_name[0]=='.')
+                        for(k=0; (aname[j++]=dentry[i].d_name[k]) &&
+g/dinode/
+g/dinode/gp
+
+                                k<13; ++k);
+/dinode/
+?
+1
+#
+/include/
+#include "/usr/sys/stat.h"
+i
+\#include "/usr/sys/dirent.h"
+.
+/14/
+?
+/d_nae@g/d_name/
+                                continue;
+                                k<13; ++k);
+g/d_name/p
+                        if(dentry[i].d_ino==0||dentry[i].d_name[0]=='.')
+                        for(k=0; (aname[j++]=dentry[i].d_name[k]) &&
+
+                                k<13; ++k);
+s/14#3/DIRSIZ-1/p
+                                k<DIRSIZ-1; ++k);
+w
+8675
+q
+% cc find.c
+% strip a.out
+% chmod 755 a.out
+% mv a.out /@ls /etc/find
+/etc/find not found
+% ls /usr/bin/find
+/usr/bin/find
+% mv a.out /usr/bin/find
+% sync
+% 
+;login: 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed

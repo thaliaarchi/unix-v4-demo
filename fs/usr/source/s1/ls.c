@@ -3,6 +3,7 @@
  * list file or directory
  */
 
+#include "/usr/sys/dirent.h"
 #include "/usr/sys/stat.h"
 
 struct {
@@ -13,7 +14,7 @@ struct {
 } inf;
 
 struct lbuf {
-	char	l_name[14];
+	char	l_name[DIRSIZ];
 	int	l_ino;
 	int	l_mode;
 	char	l_nlink;
@@ -276,7 +277,7 @@ char *dir, *file;
 		*dp++ = *fp++;
 	*dp++ = '/';
 	fp = file;
-	for (i=0; i<14; i++)
+	for (i=0; i<DIRSIZ; i++)
 		*dp++ = *fp++;
 	*dp = 0;
 	return(dfile);
@@ -285,10 +286,7 @@ char *dir, *file;
 readdir(dir)
 char *dir;
 {
-	static struct {
-		int	dinode;
-		char	dname[14];
-	} dentry;
+	static struct dirent dentry;
 	register char *p;
 	register int j;
 	register struct lbuf *ep;
@@ -302,16 +300,16 @@ char *dir;
 		p = &dentry;
 		for (j=0; j<16; j++)
 			*p++ = getc(&inf);
-		if (dentry.dinode==0
-		 || aflg==0 && dentry.dname[0]=='.')
+		if (dentry.d_ino==0
+		 || aflg==0 && dentry.d_name[0]=='.')
 			continue;
-		if (dentry.dinode == -1)
+		if (dentry.d_ino == -1)
 			break;
-		ep = gstat(makename(dir, dentry.dname), 0);
+		ep = gstat(makename(dir, dentry.d_name), 0);
 		if (ep->l_ino != -1)
-			ep->l_ino = dentry.dinode;
-		for (j=0; j<14; j++)
-			ep->l_name[j] = dentry.dname[j];
+			ep->l_ino = dentry.d_ino;
+		for (j=0; j<DIRSIZ; j++)
+			ep->l_name[j] = dentry.d_name[j];
 	}
 	close(inf.fdes);
 }
@@ -408,7 +406,7 @@ struct lbuf *ap1, *ap2;
 		p2 = p2->namep;
 	else
 		p2 = p2->l_name;
-	for (i=0; i<14; i++)
+	for (i=0; i<DIRSIZ; i++)
 		if ((j = *p1.charp++ - *p2.charp++) || p1.charp[-1]==0)
 			return(rflg*j);
 	return(0);

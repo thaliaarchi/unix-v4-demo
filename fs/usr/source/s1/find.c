@@ -7,6 +7,7 @@
 	if the predicates succeed.
  */
 
+#include "/usr/sys/dirent.h"
 #include "/usr/sys/stat.h"
 
 int randlast;
@@ -374,10 +375,7 @@ char *name, goal;
 {
 	int dir /* open directory */, offset /* in directory */;
 	int dsize, top;
-	struct {
-		int	dinode;
-		char	dname[14];
-	} dentry[32];
+	struct dirent dentry[32];
 	register int i, j, k;
 	char aname[128];
 
@@ -406,13 +404,13 @@ char *name, goal;
 		}
 		close(dir);
 		for(i = 0; i < (dsize>>4); ++i) { /* each dir. entry */
-			if(dentry[i].dinode==0||dentry[i].dname[0]=='.')
+			if(dentry[i].d_ino==0||dentry[i].d_name[0]=='.')
 				continue;
-			if (dentry[i].dinode == -1) break;
+			if (dentry[i].d_ino == -1) break;
 			for(j=0;aname[j]=name[j];++j);
 			if(aname[j-1]!='/') aname[j++] = '/';
-			for(k=0; (aname[j++]=dentry[i].dname[k]) &&
-				k<13; ++k);
+			for(k=0; (aname[j++]=dentry[i].d_name[k]) &&
+				k<DIRSIZ-1; ++k);
 			aname[j] = '\0';
 			if(descend(aname,goal,func,arg)==0)
 				printf("--%s\n",name);
