@@ -38511,3 +38511,891 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Thu Sep 10 13:54:53 2026
+boot.ini-22> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+Unexpected specifier: 9600-8N1
+boot.ini-25> attach dci line=2,4002
+Can't open network port: 4002
+boot.ini-26> attach dci line=3,4003
+Can't open network port: 4003
+boot.ini-27> attach dci line=4,4004
+Can't open network port: 4004
+boot.ini-28> attach dci line=5,4005
+Can't open network port: 4005
+boot.ini-29> attach dci line=6,4006
+Can't open network port: 4006
+boot.ini-30> attach dci line=7,4007
+Can't open network port: 4007
+boot.ini-31> attach dci line=8,4008
+Can't open network port: 4008
+boot.ini-32> attach dci line=9,4009
+Can't open network port: 4009
+boot.ini-33> attach dci line=10,4010
+Can't open network port: 4010
+boot.ini-34> attach dci line=11,4011
+Can't open network port: 4011
+boot.ini-35> attach dci line=12,4012
+Can't open network port: 4012
+boot.ini-36> attach dci line=13,4013
+Can't open network port: 4013
+boot.ini-37> attach dci line=14,4014
+Can't open network port: 4014
+boot.ini-38> attach dci line=15,4015
+Can't open network port: 4015
+boot.ini-59> attach dli line=0,4016
+Can't open network port: 4016
+boot.ini-60> attach dli line=1,4017
+Can't open network port: 4017
+boot.ini-61> attach dli line=2,4018
+Can't open network port: 4018
+boot.ini-62> attach dli line=3,4019
+Can't open network port: 4019
+boot.ini-63> attach dli line=4,4020
+Can't open network port: 4020
+boot.ini-64> attach dli line=5,4021
+Can't open network port: 4021
+boot.ini-65> attach dli line=6,4022
+Can't open network port: 4022
+boot.ini-66> attach dli line=7,4023
+Can't open network port: 4023
+boot.ini-67> attach dli line=8,4024
+Can't open network port: 4024
+boot.ini-68> attach dli line=9,4025
+Can't open network port: 4025
+boot.ini-69> attach dli line=10,4026
+Can't open network port: 4026
+boot.ini-70> attach dli line=11,4027
+Can't open network port: 4027
+boot.ini-71> attach dli line=12,4028
+Can't open network port: 4028
+boot.ini-72> attach dli line=13,4029
+Can't open network port: 4029
+boot.ini-73> attach dli line=14,4030
+Can't open network port: 4030
+
+k
+unix
+mem = 64524
+
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Thu Sep 10 13:55:15 2026
+boot.ini-22> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+Unexpected specifier: 9600-8N1
+boot.ini-25> attach dci line=2,4002
+Can't open network port: 4002
+boot.ini-26> attach dci line=3,4003
+Can't open network port: 4003
+boot.ini-27> attach dci line=4,4004
+Can't open network port: 4004
+boot.ini-28> attach dci line=5,4005
+Can't open network port: 4005
+boot.ini-29> attach dci line=6,4006
+Can't open network port: 4006
+boot.ini-30> attach dci line=7,4007
+Can't open network port: 4007
+boot.ini-31> attach dci line=8,4008
+Can't open network port: 4008
+boot.ini-32> attach dci line=9,4009
+Can't open network port: 4009
+boot.ini-33> attach dci line=10,4010
+Can't open network port: 4010
+boot.ini-34> attach dci line=11,4011
+Can't open network port: 4011
+boot.ini-35> attach dci line=12,4012
+Can't open network port: 4012
+boot.ini-36> attach dci line=13,4013
+Can't open network port: 4013
+boot.ini-37> attach dci line=14,4014
+Can't open network port: 4014
+boot.ini-38> attach dci line=15,4015
+Can't open network port: 4015
+boot.ini-59> attach dli line=0,4016
+Can't open network port: 4016
+boot.ini-60> attach dli line=1,4017
+Can't open network port: 4017
+boot.ini-61> attach dli line=2,4018
+Can't open network port: 4018
+boot.ini-62> attach dli line=3,4019
+Can't open network port: 4019
+boot.ini-63> attach dli line=4,4020
+Can't open network port: 4020
+boot.ini-64> attach dli line=5,4021
+Can't open network port: 4021
+boot.ini-65> attach dli line=6,4022
+Can't open network port: 4022
+boot.ini-66> attach dli line=7,4023
+Can't open network port: 4023
+boot.ini-67> attach dli line=8,4024
+Can't open network port: 4024
+boot.ini-68> attach dli line=9,4025
+Can't open network port: 4025
+boot.ini-69> attach dli line=10,4026
+Can't open network port: 4026
+boot.ini-70> attach dli line=11,4027
+Can't open network port: 4027
+boot.ini-71> attach dli line=12,4028
+Can't open network port: 4028
+boot.ini-72> attach dli line=13,4029
+Can't open network port: 4029
+boot.ini-73> attach dli line=14,4030
+Can't open network port: 4030
+
+k
+unix
+mem = 64524
+
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Thu Sep 10 13:55:25 2026
+boot.ini-22> attach dci line=1,connect=/dev/ttyUSB1;9600-8N1
+Unexpected specifier: 9600-8N1
+boot.ini-25> attach dci line=2,4002
+Can't open network port: 4002
+boot.ini-26> attach dci line=3,4003
+Can't open network port: 4003
+boot.ini-27> attach dci line=4,4004
+Can't open network port: 4004
+boot.ini-28> attach dci line=5,4005
+Can't open network port: 4005
+boot.ini-29> attach dci line=6,4006
+Can't open network port: 4006
+boot.ini-30> attach dci line=7,4007
+Can't open network port: 4007
+boot.ini-31> attach dci line=8,4008
+Can't open network port: 4008
+boot.ini-32> attach dci line=9,4009
+Can't open network port: 4009
+boot.ini-33> attach dci line=10,4010
+Can't open network port: 4010
+boot.ini-34> attach dci line=11,4011
+Can't open network port: 4011
+boot.ini-35> attach dci line=12,4012
+Can't open network port: 4012
+boot.ini-36> attach dci line=13,4013
+Can't open network port: 4013
+boot.ini-37> attach dci line=14,4014
+Can't open network port: 4014
+boot.ini-38> attach dci line=15,4015
+Can't open network port: 4015
+boot.ini-59> attach dli line=0,4016
+Can't open network port: 4016
+boot.ini-60> attach dli line=1,4017
+Can't open network port: 4017
+boot.ini-61> attach dli line=2,4018
+Can't open network port: 4018
+boot.ini-62> attach dli line=3,4019
+Can't open network port: 4019
+boot.ini-63> attach dli line=4,4020
+Can't open network port: 4020
+boot.ini-64> attach dli line=5,4021
+Can't open network port: 4021
+boot.ini-65> attach dli line=6,4022
+Can't open network port: 4022
+boot.ini-66> attach dli line=7,4023
+Can't open network port: 4023
+boot.ini-67> attach dli line=8,4024
+Can't open network port: 4024
+boot.ini-68> attach dli line=9,4025
+Can't open network port: 4025
+boot.ini-69> attach dli line=10,4026
+Can't open network port: 4026
+boot.ini-70> attach dli line=11,4027
+Can't open network port: 4027
+boot.ini-71> attach dli line=12,4028
+Can't open network port: 4028
+boot.ini-72> attach dli line=13,4029
+Can't open network port: 4029
+boot.ini-73> attach dli line=14,4030
+Can't open network port: 4030
+
+k
+unix
+mem = 64524
+
+;login: 
+LOGIN INCORRECT.
+NAME: 
+;login: thalia
+% 
+;login: 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Thu Sep 10 13:56:57 2026
+boot.ini-24> attach dci line=2,4002
+Can't open network port: 4002
+boot.ini-25> attach dci line=3,4003
+Can't open network port: 4003
+boot.ini-26> attach dci line=4,4004
+Can't open network port: 4004
+boot.ini-27> attach dci line=5,4005
+Can't open network port: 4005
+boot.ini-28> attach dci line=6,4006
+Can't open network port: 4006
+boot.ini-29> attach dci line=7,4007
+Can't open network port: 4007
+boot.ini-30> attach dci line=8,4008
+Can't open network port: 4008
+boot.ini-31> attach dci line=9,4009
+Can't open network port: 4009
+boot.ini-32> attach dci line=10,4010
+Can't open network port: 4010
+boot.ini-33> attach dci line=11,4011
+Can't open network port: 4011
+boot.ini-34> attach dci line=12,4012
+Can't open network port: 4012
+boot.ini-35> attach dci line=13,4013
+Can't open network port: 4013
+boot.ini-36> attach dci line=14,4014
+Can't open network port: 4014
+boot.ini-37> attach dci line=15,4015
+Can't open network port: 4015
+boot.ini-58> attach dli line=0,4016
+Can't open network port: 4016
+boot.ini-59> attach dli line=1,4017
+Can't open network port: 4017
+boot.ini-60> attach dli line=2,4018
+Can't open network port: 4018
+boot.ini-61> attach dli line=3,4019
+Can't open network port: 4019
+boot.ini-62> attach dli line=4,4020
+Can't open network port: 4020
+boot.ini-63> attach dli line=5,4021
+Can't open network port: 4021
+boot.ini-64> attach dli line=6,4022
+Can't open network port: 4022
+boot.ini-65> attach dli line=7,4023
+Can't open network port: 4023
+boot.ini-66> attach dli line=8,4024
+Can't open network port: 4024
+boot.ini-67> attach dli line=9,4025
+Can't open network port: 4025
+boot.ini-68> attach dli line=10,4026
+Can't open network port: 4026
+boot.ini-69> attach dli line=11,4027
+Can't open network port: 4027
+boot.ini-70> attach dli line=12,4028
+Can't open network port: 4028
+boot.ini-71> attach dli line=13,4029
+Can't open network port: 4029
+boot.ini-72> attach dli line=14,4030
+Can't open network port: 4030
+
+k
+unix
+mem = 64524
+
+;login: 
+LOGIN INCORRECT.
+NAME: 
+;login: 
+LOGIN INCORRECT.
+NAME: THALIA
+% LS
+TODO
+BEEPS.C
+LRC2026
+RFC4
+SATURNV
+THANKS
+TMP
+TTYINFO
+TTYINFO.C
+WS
+% 
+;login: thalia
+% date 09101415
+Tue Sep 10 14:15:00 MDT 1974
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> attach rk2 man.rk
+sim> c
+
+% man ed
+chdir: bad directory
+% mount /usr@
+% cat /etc/rc
+rm -f /etc/mtab
+chdir /tmp
+rm -f [a-t]* [x-z]* v*
+chdir /
+/etc/mount /dev/rk1 /usr/source
+/etc/mount /dev/rk2 /usr/man
+/etc/update
+% /mount /dev/rk #2 /usr/man
+/mount: not found
+% /etc/mount /dev/rk2 /usr/man
+% man ed
+chdir: bad directory
+% chdi r## #r /usr
+% ls
+aco
+adm
+alex
+amitb
+andrew
+auberon
+axel
+ben
+bhargav
+bin
+brian
+bruno
+bx
+c
+cem
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+man
+mdec
+michael
+ncb
+newt
+nick
+pub
+puzzle
+reyes
+rushi
+ryan
+sno
+source
+sys
+tanner
+thalia
+tmp
+ty
+vincent
+voytilla
+yang
+% chdir usr
+chdir: bad directory
+% chdir  kan##3#man
+chdir: bad directory
+% ls
+aco
+adm
+alex
+amitb
+andrew
+auberon
+axel
+ben
+bhargav
+bin
+brian
+bruno
+bx
+c
+cem
+cody
+dnm
+dominic
+doug
+fort
+games
+hacker
+hash
+jackson
+joe
+jordan
+justin
+kevin
+lib
+lpd
+man
+mdec
+michael
+ncb
+newt
+nick
+pub
+puzzle
+reyes
+rushi
+ryan
+sno
+source
+sys
+tanner
+thalia
+tmp
+ty
+vincent
+voytilla
+yang
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> attach rk2 man.rk
+sim> c
+
+% /etc/mount /dev/rk2 /usr/man
+mount: Mount device busy
+% cd#hdir man
+% ls
+man0
+man1
+man2
+man3
+man4
+man5
+man6
+man7
+man8
+manx
+% man ed
+chdir: bad directory
+% chdir /usr/sys
+% ls
+buf.h
+conf
+conf.h
+conf.o
+dirent.h
+dmr
+errno.h
+file.h
+filsys.h
+inode.h
+ken
+ld
+lib1
+lib2
+low.o
+mch.o
+param.h
+proc.h
+reg.h
+run
+seg.h
+stat.h
+systm.h
+text.h
+tty.h
+user.h
+% ls -l
+total 216
+-rw-r--r-- 1 bin       628 Jun 10 08:37 buf.h
+drwxr-xr-x 2 bin       224 Sep  8 21:10 conf
+-rw-r--r-- 1 bin       291 Jun 10 08:37 conf.h
+-rw-rw-rw- 1 bin       652 Sep  8 21:10 conf.o
+-rw-rw-rw- 1 bin        72 Sep  9 08:13 dirent.h
+drwxr-xr-x 2 bin       848 Sep  8 21:10 dmr
+-rw-rw-rw- 1 bin       527 Aug 26 17:07 errno.h
+-rw-r--r-- 1 bin       157 Jun 10 08:37 file.h
+-rw-r--r-- 1 bin       188 Jun 10 08:37 filsys.h
+-rw-r--r-- 1 bin       561 Jun 10 08:37 inode.h
+drwxr-xr-x 2 bin       640 Sep  8 21:10 ken
+-rw-r--r-- 1 bin        35 Jun 10 08:37 ld
+-rw-rw-rw- 1 bin     47658 Sep  8 21:10 lib1
+-rw-rw-rw- 1 bin     39734 Sep  8 21:10 lib2
+-rw-rw-rw- 1 bin      1356 Sep  8 21:10 low.o
+-rw-rw-rw- 1 bin      3720 Sep  8 21:10 mch.o
+-rw-r--r-- 1 bin       941 Jun 10 08:37 param.h
+-rw-r--r-- 1 bin       387 Jun 10 08:37 proc.h
+-rw-r--r-- 1 bin       142 Jun 10 08:37 reg.h
+-rw-r--r-- 1 bin       251 Aug 26 21:45 run
+-rw-r--r-- 1 bin       228 Jun 10 08:37 seg.h
+-rw-rw-rw- 1 bin       508 Sep 10 10:06 stat.h
+-rw-r--r-- 1 bin       410 Jun 10 08:37 systm.h
+-rw-r--r-- 1 bin       115 Jun 10 08:37 text.h
+-rw-r--r-- 1 bin       882 Aug 27 10:45 tty.h
+-rw-r--r-- 1 bin       671 Aug 26 21:30 user.h
+% chdir ken
+% ls
+alloc.c
+clock.c
+fio.c
+iget.c
+main.c
+nami.c
+prf.c
+rdwri.c
+run
+sig.c
+slp.c
+subr.c
+sys1.c
+sys2.c
+sys3.c
+sys4.c
+sysent.c
+text.c
+trap.c
+% ed sys1.c
+5493
+q
+% ed sysent.c
+1956
+1,23p
+#
+/*
+ *      Copyright 1973 Bell Telephone Laboratories Inc
+ */
+
+int     sysent[]
+{
+        0, &nullsys,                    /*  0 = indir */
+        0, &rexit,                      /*  1 = exit */
+        0, &fork,                       /*  2 = fork */
+        2, &read,                       /*  3 = read */
+        2, &write,                      /*  4 = write */
+        2, &open,                       /*  5 = open */
+        0, &close,                      /*  6 = close */
+        0, &wait,                       /*  7 = wait */
+        2, &creat,                      /*  8 = creat */
+        2, &link,                       /*  9 = link */
+        1, &unlink,                     /* 10 = unlink */
+        2, &exec,                       /* 11 = exec */
+        1, &chdir,                      /* 12 = chdir */
+        0, &gtime,                      /* 13 = time */
+        3, &mknod,                      /* 14 = mknod */
+        2, &chmod,                      /* 15 = chmod */
+qg
+?
+q
+% grep -n '^unlink' *
+sys3.c:100 unlink()
+% ed syse.c###3.c
+4885
+/^unlink/;/^}/p
+unlink()
+{
+        register *ip, *pp;
+        extern uchar;
+
+        pp = namei(&uchar, 2);
+        if(pp == NULL)
+                return;
+        prele(pp);
+        ip = iget(pp->i_dev, u.u_dent.u_ino);
+        if(ip == NULL)
+                panic("unlink -- iget");
+        if((ip->i_mode&IFMT)==IFDIR && !suser())
+                goto out;
+        u.u_offset[1] =- DIRSIZ+2;
+        u.u_base = &u.u_dent;
+        u.u_count = DIRSIZ+2;
+        u.u_dent.u_ino = 0;
+        writei(pp);
+        ip->i_nlink--;
+        ip->i_flag =| IUPD;
+
+out:
+        iput(pp);
+        iput(ip);
+}
+q
+% ed sys1.c
+5493
+q
+% ed sys3.c
+4885
+/^unlink/;.+22
+out:
+/^unlink/;.+22p
+unlink()
+{
+        register *ip, *pp;
+        extern uchar;
+
+        pp = namei(&uchar, 2);
+        if(pp == NULL)
+                return;
+        prele(pp);
+        ip = iget(pp->i_dev, u.u_dent.u_ino);
+        if(ip == NULL)
+                panic("unlink -- iget");
+        if((ip->i_mode&IFMT)==IFDIR && !suser())
+                goto out;
+        u.u_offset[1] =- DIRSIZ+2;
+        u.u_base = &u.u_dent;
+        u.u_count = DIRSIZ+2;
+        u.u_dent.u_ino = 0;
+        writei(pp);
+        ip->i_nlink--;
+        ip->i_flag =| IUPD;
+
+out:
+.,.+23p
+out:
+        iput(pp);
+        iput(ip);
+}
+
+chdir()
+{
+        register *ip;
+        extern uchar;
+
+        ip = namei(&uchar, 0);
+        if(ip == NULL)
+                return;
+        if((ip->i_mode&IFMT) != IFDIR) {
+                u.u_error = ENOTDIR;
+        bad:
+                iput(ip);
+                return;
+        }
+        if(access(ip, IEXEC))
+                goto bad;
+        iput(u.u_cdir);
+        u.u_cdir = ip;
+        prele(ip);
+.,.+23p
+        prele(ip);
+}
+
+chmod()
+{
+        register *ip;
+        extern uchar;
+
+        ip = namei(&uchar, 0);
+        if(ip == NULL)
+                return;
+        if(owner(ip)) {
+                ip->i_mode =& ~07777;
+                ip->i_mode =| u.u_arg[1]&07777;
+                ip->i_flag =| IUPD;
+        }
+        iput(ip);
+}
+
+chown()
+{
+        register *ip;
+        extern uchar;
+
+.,.+243p
+?
+.,.+23p
+
+        ip = namei(&uchar, 0);
+        if(ip == NULL)
+                return;
+        if(owner(ip)) {
+                ip->i_uid = u.u_arg[1];
+                if(u.u_uid != 0)
+                        ip->i_mode =& ~ISUID;
+                ip->i_flag =| IUPD;
+        }
+        iput(ip);
+}
+
+/* backported from Dennis_v5 */
+smdate()
+{
+        register *ip;
+        int tbuf[2];
+        extern uchar;
+
+        ip = namei(&uchar, 0);
+        if(ip == NULL)
+                return;
+        if(owner(ip)) {
+.-46,.-23p
+        prele(ip);
+}
+
+chmod()
+{
+        register *ip;
+        extern uchar;
+
+        ip = namei(&uchar, 0);
+        if(ip == NULL)
+                return;
+        if(owner(ip)) {
+                ip->i_mode =& ~07777;
+                ip->i_mode =| u.u_arg[1]&07777;
+                ip->i_flag =| IUPD;
+        }
+        iput(ip);
+}
+
+chown()
+{
+        register *ip;
+        extern uchar;
+
+q
+% man
+usage: man [section] [title ...]
+% man ls
+chdir: bad directory
+% ls /etc
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+mtab
+passwd
+rc
+ttys
+umount
+update
+% /etc/umount /dev/rk2
+% .
+.: not found
+% /etc/mount /dev/rk2 /usr/man
+% man ed
+chdir: bad directory
+% /etc/umount /dev/rk2
+% chdir /usr/man
+% ls
+% /etc/mount /dev/rk2 /usr/man
+mount: Mount device busy
+% /etc/mount /dev/rk2 /usr/man
+mount: Mount device busy
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> c
+c
+c: not found
+% s/42/4132/p#gp@
+% ls/ ## /usr/bin/mnr###nroff
+/usr/bin/nroff
+% ed /usr/bin/man
+241
+1,$p
+if $1x = x goto usage
+if $2x = x goto default
+
+chdir /usr/man/man$1
+shift
+goto print
+
+: default
+chdir /usr/man/man1
+
+: print
+if $1x = x exit
+nroff /usr/man/man0/naa $1.?
+shift
+goto print
+
+: usage
+echo usage: man "[section] [title ...]"
+exit
+q
+% chdir /usr/man/man1
+chdir: bad directory
+% chdir /usr/man
+% ls
+% /etc/mount /dev/rk2 /usr/man
+mount: Mount device busy
+% /etc/umount /dev/rk2 /usr/#####
+umount: Invalid argument
+% /etc/umount /dev/rk2
+umount: Invalid argument
+% sync
+% 
+Simulation stopped, PC: 001070 (MOV 177776,-(SP))
+sim> exit
+Goodbye
+Log file closed
+Logging to file "logs/kl0.log"
+Logging to file "logs/kl0.log" at Thu Sep 10 14:52:04 2026
+boot.ini-25> attach dci line=2,4002
+Can't open network port: 4002
+boot.ini-26> attach dci line=3,4003
+Can't open network port: 4003
+boot.ini-27> attach dci line=4,4004
+Can't open network port: 4004
+boot.ini-28> attach dci line=5,4005
+Can't open network port: 4005
+boot.ini-29> attach dci line=6,4006
+Can't open network port: 4006
+boot.ini-30> attach dci line=7,4007
+Can't open network port: 4007
+boot.ini-31> attach dci line=8,4008
+Can't open network port: 4008
+boot.ini-32> attach dci line=9,4009
+Can't open network port: 4009
+boot.ini-33> attach dci line=10,4010
+Can't open network port: 4010
+boot.ini-34> attach dci line=11,4011
+Can't open network port: 4011
+boot.ini-35> attach dci line=12,4012
+Can't open network port: 4012
+boot.ini-36> attach dci line=13,4013
+Can't open network port: 4013
+boot.ini-37> attach dci line=14,4014
+Can't open network port: 4014
+boot.ini-38> attach dci line=15,4015
+Can't open network port: 4015
+boot.ini-59> attach dli line=0,4016
+Can't open network port: 4016
+boot.ini-60> attach dli line=1,4017
+Can't open network port: 4017
+boot.ini-61> attach dli line=2,4018
+Can't open network port: 4018
+boot.ini-62> attach dli line=3,4019
+Can't open network port: 4019
+boot.ini-63> attach dli line=4,4020
+Can't open network port: 4020
+boot.ini-64> attach dli line=5,4021
+Can't open network port: 4021
+boot.ini-65> attach dli line=6,4022
+Can't open network port: 4022
+boot.ini-66> attach dli line=7,4023
+Can't open network port: 4023
+boot.ini-67> attach dli line=8,4024
+Can't open network port: 4024
+boot.ini-68> attach dli line=9,4025
+Can't open network port: 4025
+boot.ini-69> attach dli line=10,4026
+Can't open network port: 4026
+boot.ini-70> attach dli line=11,4027
+Can't open network port: 4027
+boot.ini-71> attach dli line=12,4028
+Can't open network port: 4028
+boot.ini-72> attach dli line=13,4029
+Can't open network port: 4029
+boot.ini-73> attach dli line=14,4030
+Can't open network port: 4030
+
+k
+unix
+mem = 64524
+
+;login: thalia
+% man ed
+chdir: bad directory
+% synvc
+synvc: not found
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed

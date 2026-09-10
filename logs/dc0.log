@@ -5200,3 +5200,754 @@ short main[] = {
 	'p', 072163, 'r', 29303, 29801, 'e' };
 % 
 ;login: 
+;login: 
+;login: 
+;login: 
+;login: e
+Login incorrect.
+Name: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# cd bin
+haha
+# chdir bin
+# ls
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+sh.bak
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# grep
+arg count
+# grep foo
+foo: not found
+# mk
+# ls
+ar
+as
+bas
+cat
+cc
+cdb
+check
+chmod
+chown
+clri
+cmp
+cp
+date
+db
+dc
+dd
+df
+dsw
+du
+dump
+echo
+ed
+exit
+fc
+goto
+if
+kill
+ld
+ln
+login
+lpr
+ls
+mail
+mkdir
+mv
+nm
+od
+pr
+ps
+restor
+rew
+rm
+rmdir
+sh
+sh.bak
+size
+sort
+strip
+stty
+su
+sum
+sync
+time
+tp
+tty
+uniq
+who
+write
+# useradd kingsfoil
+useradd: not found
+# user
+user: not found
+# cd /
+haha
+# chdir /etc/
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+mtab
+passwd
+rc
+ttys
+umount
+update
+# vi /etc/passwd
+vi: not found
+# vim
+vim: not found
+# ed pss
+?
+ed passwd?
+?
+:?
+:q\
+?
+q
+?
+q
+# ed passwd
+970
+g/thalia/p
+thalia::4:1::/usr/thalia:
+1m@1,$p
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:1::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16:16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+andrew::17:17::/usr/andrew:
+nick::242:242::/usr/nick:
+tanner::2:2::/usr/tanner:
+reyes::96:96::/usr/reyes/:
+bhargav::82:82::/usr/bhargav:
+rushi::10:10::/usr/rushi:
+vincent::77:77::/usr/vincent:
+ryan::1212:1212::/usr/ryan:
+cem::255:255::/usr/cem:
+bruno::123:123::/usr/bruno:
+axel::27:27::/usr/axel:
+brian::28:28::/usr/brian:
+aco::65:65::/usr/aco:
+a
+kingsfoil::42:42:/usr/kingsfoil
+.
+wq
+?
+w
+1002
+q
+# less
+# more
+more: not found
+# exit
+# e
+# 
+;login: kinfa
+Login incorrect.
+Name: kingsfoil
+Login incorrect.
+Name: root
+# ed /etc/passwd
+1002
+p
+kingsfoil::42:42:/usr/kingsfoil
+s/kingsfoil@s/42:/42::/p
+kingsfoil::42::42:/usr/kingsfoil
+c
+s@kingsfoil::42:42::/usr/kingsfoil
+.
+w
+1003
+q
+# 
+;login: kingsfoil
+Login incorrect.
+Name: root
+# man ed
+chdir: bad directory
+# man
+usage: man [section] [title ...]
+# chdir /usr/source
+# ls
+s1
+s2
+s3
+s4
+s7
+# man ed
+chdir: bad directory
+# chdir /etc
+# ls
+getty
+glob
+init
+lpd
+mkfs
+mknod
+mount
+msh
+mtab
+passwd
+rc
+ttys
+umount
+update
+# cd@ed /etc/passwd
+1003
+p
+kingsfoil::42:42::/usr/kingsfoil
+p1,$
+?
+p
+kingsfoil::42:42::/usr/kingsfoil
+s/\/usr\/kingsfoil/\/usr\/kingsfoil:/
+.
+kingsfoil::42:42::/usr/kingsfoil:
+w
+1004
+.,-56#
+?
+.,.-5p
+?
+.=
+39
+p
+kingsfoil::42:42::/usr/kingsfoil:
+.-5,.p
+cem::255:255::/usr/cem:
+bruno::123:123::/usr/bruno:
+axel::27:27::/usr/axel:
+brian::28:28::/usr/brian:
+aco::65:65::/usr/aco:
+kingsfoil::42:42::/usr/kingsfoil:
+w
+1004
+q
+# 
+;login: kingsfoil
+Login incorrect.
+Name: root
+# ed /etc/passwd
+/etc/passwd: not found
+# ed /etc/passwd
+1004
+p
+kingsfoil::42:42::/usr/kingsfoil:
+s/42:42/4132:4132/g
+w
+1008
+p
+kingsfoil::4132:4132::/usr/kingsfoil:
+g/42/p
+bx::42:42::/usr/bx:
+nick::242:242::/usr/nick:
+g/:/s//!/p
+root!:0:1::/:
+bin!:3:1::/bin:
+thalia!:4:1::/usr/thalia:
+ben!:5:5::/usr/ben:
+alex!:9:9::/usr/alex:
+newt!:64:64::/usr/newt:
+auberon!:18:18::/usr/auberon:
+ncb!:12:12::/usr/ncb:
+joe!:88:88::/usr/joe:
+cody!:25:25::/usr/cody:
+hash!:31337:31337::/usr/hash:
+dnm!:55555:55555::/usr/dnm:
+ty!:1990:1990::/usr/ty:
+justin!:70:70::/usr/justin:
+yang!:16:16::/usr/yang:
+doug!:8:::/usr/doug:
+amitb!:6:6::/usr/amitb:
+voytilla!:7:7::/usr/voytilla:
+kevin!:10:10::/usr/kevin:
+michael!:30:30::/usr/michael:
+bx!:42:42::/usr/bx:
+hacker!:256:256::/usr/hacker:
+jordan!:69:69::/usr/jordan:
+dominic!:111:111::/usr/dominic:
+jackson!:11:11::/usr/jackson:
+andrew!:17:17::/usr/andrew:
+nick!:242:242::/usr/nick:
+tanner!:2:2::/usr/tanner:
+reyes!:96:96::/usr/reyes/:
+bhargav!:82:82::/usr/bhargav:
+rushi!:10:10::/usr/rushi:
+vincent!:77:77::/usr/vincent:
+ryan!:1212:1212::/usr/ryan:
+cem!:255:255::/usr/cem:
+bruno!:123:123::/usr/bruno:
+axel!:27:27::/usr/axel:
+brian!:28:28::/usr/brian:
+aco!:65:65::/usr/aco:
+kingsfoil!:4132:4132::/usr/kingsfoil:
+g/:/s//!/gp
+root!!0!1!!/!
+bin!!3!1!!/bin!
+thalia!!4!1!!/usr/thalia!
+ben!!5!5!!/usr/ben!
+alex!!9!9!!/usr/alex!
+newt!!64!64!!/usr/newt!
+auberon!!18!18!!/usr/auberon!
+ncb!!12!12!!/usr/ncb!
+joe!!88!88!!/usr/joe!
+cody!!25!25!!/usr/cody!
+hash!!31337!31337!!/usr/hash!
+dnm!!55555!55555!!/usr/dnm!
+ty!!1990!1990!!/usr/ty!
+justin!!70!70!!/usr/justin!
+yang!!16!16!!/usr/yang!
+doug!!8!!!/usr/doug!
+amitb!!6!6!!/usr/amitb!
+voytilla!!7!7!!/usr/voytilla!
+kevin!!10!10!!/usr/kevin!
+michael!!30!30!!/usr/michael!
+bx!!42!42!!/usr/bx!
+hacker!!256!256!!/usr/hacker!
+jordan!!69!69!!/usr/jordan!
+dominic!!111!111!!/usr/dominic!
+jackson!!11!11!!/usr/jackson!
+andrew!!17!17!!/usr/andrew!
+nick!!242!242!!/usr/nick!
+tanner!!2!2!!/usr/tanner!
+reyes!!96!96!!/usr/reyes/!
+bhargav!!82!82!!/usr/bhargav!
+rushi!!10!10!!/usr/rushi!
+vincent!!77!77!!/usr/vincent!
+ryan!!1212!1212!!/usr/ryan!
+cem!!255!255!!/usr/cem!
+bruno!!123!123!!/usr/bruno!
+axel!!27!27!!/usr/axel!
+brian!!28!28!!/usr/brian!
+aco!!65!65!!/usr/aco!
+kingsfoil!!4132!4132!!/usr/kingsfoil!
+g/!/s/:/gp
+?
+g/!/s//:/gp
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:1::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16:16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+andrew::17:17::/usr/andrew:
+nick::242:242::/usr/nick:
+tanner::2:2::/usr/tanner:
+reyes::96:96::/usr/reyes/:
+bhargav::82:82::/usr/bhargav:
+rushi::10:10::/usr/rushi:
+vincent::77:77::/usr/vincent:
+ryan::1212:1212::/usr/ryan:
+cem::255:255::/usr/cem:
+bruno::123:123::/usr/bruno:
+axel::27:27::/usr/axel:
+brian::28:28::/usr/brian:
+aco::65:65::/usr/aco:
+kingsfoil::4132:4132::/usr/kingsfoil:
+q
+# cat /etc/passwd
+root::0:1::/:
+bin::3:1::/bin:
+thalia::4:1::/usr/thalia:
+ben::5:5::/usr/ben:
+alex::9:9::/usr/alex:
+newt::64:64::/usr/newt:
+auberon::18:18::/usr/auberon:
+ncb::12:12::/usr/ncb:
+joe::88:88::/usr/joe:
+cody::25:25::/usr/cody:
+hash::31337:31337::/usr/hash:
+dnm::55555:55555::/usr/dnm:
+ty::1990:1990::/usr/ty:
+justin::70:70::/usr/justin:
+yang::16:16::/usr/yang:
+doug::8:::/usr/doug:
+amitb::6:6::/usr/amitb:
+voytilla::7:7::/usr/voytilla:
+kevin::10:10::/usr/kevin:
+michael::30:30::/usr/michael:
+bx::42:42::/usr/bx:
+hacker::256:256::/usr/hacker:
+jordan::69:69::/usr/jordan:
+dominic::111:111::/usr/dominic:
+jackson::11:11::/usr/jackson:
+andrew::17:17::/usr/andrew:
+nick::242:242::/usr/nick:
+tanner::2:2::/usr/tanner:
+reyes::96:96::/usr/reyes/:
+bhargav::82:82::/usr/bhargav:
+rushi::10:10::/usr/rushi:
+vincent::77:77::/usr/vincent:
+ryan::1212:1212::/usr/ryan:
+cem::255:255::/usr/cem:
+bruno::123:123::/usr/bruno:
+axel::27:27::/usr/axel:
+brian::28:28::/usr/brian:
+aco::65:65::/usr/aco:
+kingsfoil::4132:4132::/usr/kingsfoil:
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# mkdir /usr/kingsfoil
+# 
+;login: kingsfoil
+Login incorrect.
+Name: root
+# ed /etc/passwd
+1008
+p
+kingsfoil::4132:4132::/usr/kingsfoil:
+l
+kingsfoil::4132:4132::/usr/kingsfoil:
+g/4132/p
+kingsfoil::4132:4132::/usr/kingsfoil:
+^
+aco::65:65::/usr/aco:
+
+kingsfoil::4132:4132::/usr/kingsfoil:
+^
+aco::65:65::/usr/aco:
+q#chown /us?
+?
+q
+# chown kingsfoil /usr/kingsfoil
+# 
+;login: kingsfoil
+Login incorrect.
+Name: root
+# ls
+bin
+dev
+etc
+lib
+mnt
+tmp
+unix
+usr
+# 
+;login: aco
+% ed /us@chdir /usr/source
+% ls
+s1
+s2
+s3
+s4
+s7
+% chdir s1
+% ls
+ac.c
+ar.s
+as11.s
+as12.s
+as13.s
+as14.s
+as15.s
+as16.s
+as17.s
+as18.s
+as19.s
+as21.s
+as22.s
+as23.s
+as24.s
+as25.s
+as26.s
+as27.s
+as28.s
+as29.s
+bas0.s
+bas1.s
+bas2.s
+bas3.s
+bas4.s
+bas5.s
+basx.s
+cal.c
+cat.s
+cc.c
+cdb.c
+check.c
+chmod.c
+chown.s
+clri.s
+cmp.s
+comm.c
+cp.c
+date.c
+db1.s
+db2.s
+db3.s
+db4.s
+dc1.s
+dc2.s
+dc3.s
+dc4.s
+dc5.s
+dd.c
+df.c
+diff1.c
+diff2.s
+dsw.s
+du.s
+dump.c
+echo.c
+ed1.s
+ed2.s
+ed3.s
+exit.c
+fc.c
+fed1.s
+fed2.s
+fed3.s
+find.c
+form1.s
+form2.s
+form3.s
+form4.s
+form5.s
+form6.s
+getty.s
+glob.c
+goto.c
+grep.s
+if.c
+init.c
+kill.s
+ld1.s
+ld2.s
+ldx.s
+ln.c
+login.c
+lpd.s
+lpr.c
+ls.c
+% ls@ls -l login.c
+-rw-r--r-- 1 bin      2884 Jun 10 08:37 login.c
+% whoami
+whoami: not found
+% who
+aco     tty0 Sep 10 14:38
+thalia  tty8 Sep 10 10:21
+% w
+w: not found
+% e login.c
+e: not found
+% ed login.c
+2884
+1
+#
+.#.,23
+main(argc, argv)
+.,#1
+char **argv;
+1
+#
+.,23p
+#
+/*
+ * login [ name ]
+ */
+
+struct {
+	char	name[8];
+	char	tty;
+	char	ifill;
+	int	time[2];
+	int	ufill;
+} utmp;
+
+struct {
+	int	regs[2];
+	int	tflags;
+} ttyb;
+
+char	*ttyx;
+
+#define	ECHO	010
+
+main(argc, argv)
+
+char **argv;
+
+{
+
+	char pbuf[128];
+
+	register char *namep, *np;
+
+	char pwbuf[9];
+
+	int t, sflags, f, c, uid, gid;
+
+
+.,.+23
+		}
+.-23
+
+.,.+23p
+
+	signal(3, 1);
+	signal(2, 1);
+	ttyx = "/dev/ttyx";
+	if ((utmp.tty=ttyn(0)) == 'x') {
+		write(1, "Sorry.\n", 7);
+		exit();
+	}
+	ttyx[8] = utmp.tty;
+    loop:
+	namep = utmp.name;
+	if (argc>1) {
+		np = argv[1];
+		while (namep<utmp.name+8 && *np)
+			*namep++ = *np++;
+		argc = 0;
+	} else {
+		write(1, "Name: ", 7);
+		while ((c = getchar()) != '\n') {
+			if (c <= 0)
+				exit();
+			if (namep < utmp.name+8)
+				*namep++ = c;
+		}
+q
+% 
+;login: root
+# ed /etc/passwd
+1008
+p
+kingsfoil::4132:4132::/usr/kingsfoil:
+s/kingsfoil/kings@s/kngsfl@s/kingsfoil/kngsfl/gp
+kngsfl::4132:4132::/usr/kngsfl:
+w
+1002
+q
+# 
+;login: kngsfl
+No directory
+Name: root
+# mkdir /usr/kin@mkdir /usr/kngsfl
+# chown kngsfl /usr/kngsfl
+# 
+;login: kngsfl
+% who
+kngsfl  tty0 Sep 10 14:50
+thalia  tty8 Sep 10 10:21
+% 
+;login: 
