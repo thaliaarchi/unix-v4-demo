@@ -253,7 +253,7 @@ struct { int f, sz, s; } *p;
 {
 	register int i;
 	i = statb.st_siz0 << 7;
-	i=| (statb.st_siz >> 9) & 0777;
+	i=| (statb.st_siz >> 9) & 0177;
 	return(scomp(i,p->sz,p->s));
 }
 perm(p)

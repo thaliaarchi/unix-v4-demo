@@ -1,6 +1,6 @@
 struct stat {
-	int	st_dev;		/* device major and minor */
-	int	st_ino;		/* inode */
+	int	st_dev;		/* device where inode resides */
+	int	st_ino;		/* inumber */
 	int	st_mode;	/* mode flags */
 	char	st_nlink;	/* number of links to file */
 	char	st_uid;		/* user ID of owner */
