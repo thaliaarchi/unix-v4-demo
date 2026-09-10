@@ -38342,3 +38342,59 @@ Simulation stopped, PC: 002430 (MOV (SP)+,177776)
 sim> q
 Goodbye
 Log file closed
+Logging to file "logs/kl0.log"
+
+k
+unix
+mem = 64524
+
+;login: thalia
+% chdir /usr/sys
+% ed stat.j#h
+501
+1,$p
+struct stat {
+        int     st_dev;         /* device major and minor */
+        int     st_ino;         /* inode */
+        int     st_mode;        /* mode flags */
+        char    st_nlink;       /* number of links to file */
+        char    st_uid;         /* user ID of owner */
+        char    st_gid;         /* group ID of owner */
+        char    st_siz0;        /* high byte of 23-bit size */
+        int     st_siz; /* low word of 24-bit size */
+        int     st_addr[8];     /* block numbers or device number */
+        /*unsigned*/int st_atime[2];    /* time of last access */
+        /*unsigned*/int st_mtime[2];    /* time of last modification */
+};
+/23/s//24/
+/low/
+        int     st_siz; /* low word of 24-bit size */
+s/;/;           /;#p
+        int     st_siz;                 /* low word of 24-bit size */
+s/              /       /p
+        int     st_siz;         /* low word of 24-bit size */
+1,$P
+?
+1,$p
+struct stat {
+        int     st_dev;         /* device major and minor */
+        int     st_ino;         /* inode */
+        int     st_mode;        /* mode flags */
+        char    st_nlink;       /* number of links to file */
+        char    st_uid;         /* user ID of owner */
+        char    st_gid;         /* group ID of owner */
+        char    st_siz0;        /* high byte of 24-bit size */
+        int     st_siz;         /* low word of 24-bit size */
+        int     st_addr[8];     /* block numbers or device number */
+        /*unsigned*/int st_atime[2];    /* time of last access */
+        /*unsigned*/int st_mtime[2];    /* time of last modification */
+};
+q#w
+502
+q
+% sync
+% 
+Simulation stopped, PC: 002430 (MOV (SP)+,177776)
+sim> q
+Goodbye
+Log file closed
